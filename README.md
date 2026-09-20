@@ -14,3 +14,11 @@ audit; corrections from that audit are marked in the text.
 - `maps/coverage-gap.html` — five-minute-walk coverage against subway ridership
 
 Prepared for PMBA6093 Analytics for Managers, HKU MBA.
+
+## Code, data and audit trail
+
+- `analysis/R/` — all 35 scripts, in order, including the models that failed
+- `analysis/notes/` — research notes per workstream, with sources and access dates
+- `analysis/data/` — every dataset pulled
+- `analysis/WORKLOG.md` — the full audit trail: 32 defects found, fixed, and verified
+- [`METHODS.md`](METHODS.md) — how to reproduce it
