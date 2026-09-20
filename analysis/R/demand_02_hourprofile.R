@@ -28,7 +28,7 @@
 # aggregate makes Socrata re-run the whole aggregation for every page.
 # Every week is checkpointed, so a failure costs one week, not the run.
 
-source("/Users/jonathanwong/Desktop/MBA/PMBA6093 Analytics for Managers/Final Project/Restroom_Rebuild/R/demand_00_helpers.R")
+source(file.path(Sys.getenv("RESTROOM_PROJ", unset = "."), "R", "demand_00_helpers.R"))
 
 CKPT <- file.path(RAW, "_hourprofile_parts"); dir.create(CKPT, showWarnings = FALSE)
 OUT  <- file.path(RAW, sprintf("mta_5wq4-mkjj_hourprofile_%s.csv", STAMP))

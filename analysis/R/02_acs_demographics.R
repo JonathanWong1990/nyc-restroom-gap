@@ -10,7 +10,7 @@
 # One pipe-delimited file per table, all US geographies, ~18 MB each.
 # --------------------------------------------------------------------------
 
-PROJ <- "/Users/jonathanwong/Desktop/MBA/PMBA6093 Analytics for Managers/Final Project/Restroom_Rebuild"
+PROJ <- Sys.getenv("RESTROOM_PROJ", unset = ".")   # run from the project root, or set RESTROOM_PROJ
 source(file.path(PROJ, "R", "geo_helpers.R"))
 suppressPackageStartupMessages({library(dplyr); library(data.table)})
 

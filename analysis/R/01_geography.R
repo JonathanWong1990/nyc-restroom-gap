@@ -3,7 +3,7 @@
 # taxi-zone -> census-tract crosswalk. Re-runnable; everything is cached.
 # --------------------------------------------------------------------------
 
-PROJ <- "/Users/jonathanwong/Desktop/MBA/PMBA6093 Analytics for Managers/Final Project/Restroom_Rebuild"
+PROJ <- Sys.getenv("RESTROOM_PROJ", unset = ".")   # run from the project root, or set RESTROOM_PROJ
 source(file.path(PROJ, "R", "geo_helpers.R"))
 RAW <- file.path(PROJ, "data_raw")
 STAMP <- "20260920"

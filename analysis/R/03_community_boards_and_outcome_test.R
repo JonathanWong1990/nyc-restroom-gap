@@ -7,7 +7,7 @@
 #   C. builds every crosswalk + the per-capita denominators at CD and NTA level
 # --------------------------------------------------------------------------
 
-PROJ <- "/Users/jonathanwong/Desktop/MBA/PMBA6093 Analytics for Managers/Final Project/Restroom_Rebuild"
+PROJ <- Sys.getenv("RESTROOM_PROJ", unset = ".")   # run from the project root, or set RESTROOM_PROJ
 source(file.path(PROJ, "R", "geo_helpers.R"))
 suppressPackageStartupMessages({library(dplyr)})
 RAW <- file.path(PROJ, "data_raw"); f <- function(x) file.path(RAW, x)

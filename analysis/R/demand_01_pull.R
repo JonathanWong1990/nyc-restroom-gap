@@ -1,6 +1,6 @@
 # demand_01_pull.R -- DEMAND workstream: measures of human presence by area.
 # Run: Rscript demand_01_pull.R
-source("/Users/jonathanwong/Desktop/MBA/PMBA6093 Analytics for Managers/Final Project/Restroom_Rebuild/R/demand_00_helpers.R")
+source(file.path(Sys.getenv("RESTROOM_PROJ", unset = "."), "R", "demand_00_helpers.R"))
 
 NY  <- "data.ny.gov"              # MTA / state
 NYC <- "data.cityofnewyork.us"    # NYC Open Data

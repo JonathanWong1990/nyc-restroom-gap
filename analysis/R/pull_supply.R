@@ -2,7 +2,7 @@
 options(scipen = 999, stringsAsFactors = FALSE)
 suppressPackageStartupMessages({library(httr); library(jsonlite); library(dplyr)})
 
-BASE <- "/Users/jonathanwong/Desktop/MBA/PMBA6093 Analytics for Managers/Final Project/Restroom_Rebuild"
+BASE <- Sys.getenv("RESTROOM_PROJ", unset = ".")   # run from the project root, or set RESTROOM_PROJ
 RAW  <- file.path(BASE, "data_raw")
 STAMP <- format(Sys.Date(), "%Y%m%d")
 dir.create(RAW, showWarnings = FALSE, recursive = TRUE)

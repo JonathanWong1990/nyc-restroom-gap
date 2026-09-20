@@ -6,7 +6,7 @@ suppressPackageStartupMessages({
   library(httr); library(jsonlite); library(dplyr)
 })
 
-RAW <- "/Users/jonathanwong/Desktop/MBA/PMBA6093 Analytics for Managers/Final Project/Restroom_Rebuild/data_raw"
+RAW <- file.path(Sys.getenv("RESTROOM_PROJ", unset = "."), "data_raw")
 STAMP <- "20260920"
 
 # NOTE: this shells out to system curl rather than using httr::GET.

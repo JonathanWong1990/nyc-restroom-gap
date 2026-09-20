@@ -276,7 +276,7 @@ parse_hours_table <- function(restrooms) {
 
 # --- run when sourced as a script -------------------------------------------
 if (sys.nframe() == 0 || identical(environment(), globalenv())) {
-  BASE <- "/Users/jonathanwong/Desktop/MBA/PMBA6093 Analytics for Managers/Final Project/Restroom_Rebuild"
+  BASE <- Sys.getenv("RESTROOM_PROJ", unset = ".")   # run from the project root, or set RESTROOM_PROJ
   f <- list.files(file.path(BASE, "data_raw"), "^nycrestrooms_.*csv$", full.names = TRUE)[1]
   R <- read.csv(f)
   hrs <- parse_hours_table(R)
