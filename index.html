@@ -1,6 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Where should New York site its next 1,150 legally-mandated public restrooms? An independent analysis.">
+<meta name="description" content="Where should New York site the public restrooms implied by its own 2035 target? An independent analysis.">
 <style>:root{padding:0}body{margin:0;font:14px system-ui,-apple-system,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 </head><body>
 <title>The NYC Restroom Gap</title>
@@ -230,7 +230,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 <header class="masthead">
   <p class="eyebrow">PMBA6093 · Analytics for Managers · Final project proposal</p>
   <h1>When nature calls, where should New York answer?</h1>
-  <p class="standfirst">New York City is legally required to add roughly 1,150 public restrooms by 2035. It has no published method for deciding where they go. This is ours — and what the data says when you actually run it.</p>
+  <p class="standfirst">New York City has set itself a target of 2,120 public restrooms by 2035 and is legally required to publish a strategy for reaching it. It has no published method for deciding where they go. This is an attempt at one — and what the data says when you actually run it.</p>
   <div class="byline">
     <span>Group project · HKU MBA</span>
     <span>Analysis: 197 neighbourhoods · 6 models</span>
@@ -251,7 +251,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 <section class="tldr">
   <h2>The short version</h2>
   <ul>
-    <li><strong>The mandate is real.</strong> Local Law 58 of 2025 commits NYC to <strong>2,120 public restrooms by 2035</strong>. Today there are 973 operational, only 8 open 24/7, and 49.4% of residents within a five-minute walk.</li>
+    <li><strong>The city has committed to a number and owes a plan.</strong> Local Law 58 of 2025 does not require New York to <em>build</em> anything — it requires a <strong>citywide bathroom strategy</strong>, updated every four years, built around a target metric of <strong>at least 2,120 public bathrooms by 2035, half publicly owned</strong>. Today there are 973 operational and only 8 open 24/7. The strategy is due; the siting method is missing.</li>
     <li><strong>It is not a money problem.</strong> NYC's own capital records put the median restroom project at <strong>$1.56M</strong>, and the Comptroller ranked the city <strong>93rd of the 100 largest US cities</strong> on park comfort stations per capita (2019). It once promised 20 automatic toilets, installed 5, and left 15 in a warehouse for a decade. The failure is siting, not funding.</li>
     <li><strong>The restrooms are in the wrong kind of place.</strong> 824 of 1,066 facilities sit in <em>parks</em>. The demand is on <em>streets</em> — transit hubs, commercial corridors, nightlife districts.</li>
     <li><strong>We tested that claim three ways.</strong> Restroom supply has no association with need once you control for who is actually present; the funding pipeline runs through Parks capital projects, which by definition only reach parks; and a closure analysis that we built, tested and then discarded when it failed its own control — so we claim nothing from it.</li>
@@ -260,7 +260,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 </section>
 
 <div class="kpis">
-  <div class="kpi"><span class="v">2,120</span><span class="k">Restrooms required by 2035 (Local Law 58)</span></div>
+  <div class="kpi"><span class="v">2,120</span><span class="k">Target restrooms by 2035 (Local Law 58)</span></div>
   <div class="kpi"><span class="v neg">8</span><span class="k">Facilities open 24 hours, citywide</span></div>
   <div class="kpi"><span class="v neg">37%</span><span class="k">Subway complexes with no restroom within 400m</span></div>
   <div class="kpi"><span class="v pos">3</span><span class="k">Comfort stations’ worth of capital covers 27 areas</span></div>
@@ -272,9 +272,10 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 <div id="full" hidden>
 
 <h2><span class="num">01</span>The decision on the table</h2>
-<p class="lede">This project is not an argument that New York should care about public restrooms. The city has already committed. The question is where the next 1,150 go.</p>
-<p>Local Law 58 of 2025 binds NYC to <strong>2,120 public restrooms by 2035</strong>, half publicly owned. The Council's own December 2025 assessment sets the baseline: <strong>973 operational</strong>, only <strong>8 open 24/7</strong>, and one per roughly 9,000 residents. (A widely-quoted <strong>49.42%</strong> five-minute-walk figure also circulates; §06 explains why we do not rely on it.)</p>
-<p>That gap has to be allocated somewhere, by someone, on some basis. At present there is no published method. The audience for this work is therefore concrete: the Mayor's Office of Operations setting citywide priorities, NYC Parks deciding what to reopen or extend, DOT Public Realm siting modular units, and the MTA flagging station complexes with weak access.</p>
+<p class="lede">This project is not an argument that New York should care about public restrooms. The city has already named a number. The question is where the next ones go — and the city is legally obliged to answer that in writing.</p>
+<p><strong>Local Law 58 of 2025 is a planning mandate, not a construction mandate</strong>, and the distinction matters. It requires a Deputy Mayor to lead a <em>citywide bathroom strategy</em> and to file a strategic planning report, updated every four years, working toward a stated target metric of <strong>at least 2,120 public bathrooms by 2035, at least half publicly owned</strong>. Nothing in the law obliges the city to build a single facility.</p>
+<p>What it does oblige the city to do is <strong>produce a method</strong>: a capital strategy, a set of conversion sites, a modular design recommendation and a public map. Against a current 973 operational restrooms, the target implies roughly <strong>1,150 additional facilities</strong> — a planning shortfall rather than a legal deficit, and one the city has to explain how it will close.</p>
+<p>That is the gap this analysis addresses. The audience is concrete: the Mayor's Office of Operations, which owns the strategy; NYC Parks, which decides what to reopen or extend; DOT Public Realm, which sites units in plazas; and the MTA, which knows which station complexes have weak access.</p>
 
 <div class="call warn">
   <span class="tag">The precedent that frames everything</span>
@@ -295,14 +296,14 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 <p>Every dataset below was pulled and verified independently rather than inherited. Join keys were checked for cardinality before any aggregation, and failures were recorded as findings.</p>
 <div class="tbox">
 <table>
-  <caption>Sources pulled September 2026. Hosts differ: MTA data is on data.ny.gov, not NYC Open Data.</caption>
+  <caption>*Our September 2026 pull returns 1,066 records; the Council's December 2025 report states 1,063 and its dashboard 1,064. The dataset refreshes roughly twice yearly. Sources pulled September 2026. Hosts differ: MTA data is on data.ny.gov, not NYC Open Data.</caption>
   <thead><tr><th>Source</th><th>What it gives</th><th class="n">Scale</th><th>Verdict</th></tr></thead>
   <tbody>
     <tr><td>311 Service Requests</td><td>Public-urination complaints — the outcome</td><td class="n">3,629</td><td><span class="hi">core</span></td></tr>
     <tr><td>MTA subway ridership</td><td>Transit presence by station</td><td class="n">426 complexes</td><td><span class="hi">strong</span></td></tr>
     <tr><td>LEHD workplace jobs</td><td>Where people work, not sleep</td><td class="n">4.59M jobs</td><td><span class="hi">strong</span></td></tr>
     <tr><td>TLC taxi &amp; rideshare</td><td>Floating demand by zone</td><td class="n">~2.0B trips</td><td>tested, not retained</td></tr>
-    <tr><td>NYC Public Restrooms</td><td>Supply, hours, accessibility</td><td class="n">1,066</td><td><span class="hi">core</span></td></tr>
+    <tr><td>NYC Public Restrooms</td><td>Supply, hours, accessibility</td><td class="n">1,066*</td><td><span class="hi">core</span></td></tr>
     <tr><td>Parks capital projects</td><td>Real construction costs</td><td class="n">191 restroom</td><td><span class="hi">strong</span></td></tr>
     <tr><td>Park inspections (PIP)</td><td>20 years of facility condition</td><td class="n">31,768</td><td><span class="hi">strong</span></td></tr>
     <tr><td>Hotels (tax records)</td><td>Tourist presence proxy</td><td class="n">1,225</td><td>moderate</td></tr>
@@ -567,7 +568,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 <h2><span class="num">13</span>What we are asking</h2>
 <p>Confirmation that the framing is right before we build the presentation:</p>
 <ul>
-  <li>Is <strong>"where should the next 1,150 restrooms go, and which need building at all"</strong> the right question for this audience?</li>
+  <li>Is <strong>"where should the next 1,150 restrooms should go, and which need building at all"</strong> the right question for this audience?</li>
   <li>Is it acceptable to lead with a <strong>null causal result</strong> as supporting evidence, rather than burying it?</li>
   <li>Does the method mix — regression, spatial analysis, logistic classification, a tree comparison reported as a loss, and a proposed staggered trial — sit at the right level?</li>
   <li>Is it acceptable that our strongest recommendation is <em>an experiment to run</em> rather than a site to build, given we could not measure the effect from observational data?</li>

@@ -1,7 +1,7 @@
 # The NYC Restroom Gap
 
-Where should New York site the next ~1,150 public restrooms it is legally required to
-build by 2035, and which of them need building at all?
+Where should New York site the ~1,150 public restrooms implied by its own 2035 target,
+and which of them need building at all?
 
 **Read it: https://jonathanwong1990.github.io/nyc-restroom-gap/**
 
