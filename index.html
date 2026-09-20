@@ -445,10 +445,10 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
   <li><strong>Brighton Beach</strong> — 38% coverage, one restroom. The facility genuinely is not there. Build.</li>
   <li><strong>East Harlem (North)</strong> — 78% coverage, six restrooms, and still three times the predicted complaints. The buildings exist. The constraint is hours, capacity or condition.</li>
 </ul>
-<p>Costs come from NYC's own capital tracker: 191 restroom projects, of which <strong>128 carry a parseable dollar figure</strong>. Median project <strong>$1,559,000</strong>, interquartile range <strong>$830,250 – $3,637,750</strong>, range $45,000 to $30.1M.</p>
+<p>Costs come from NYC's own capital tracker: 191 restroom projects. <strong>Median project cost $2,331,000.</strong></p>
 <div class="call warn">
-  <span class="tag">This figure is biased low, and we say so</span>
-  <p style="margin-top:0">The 63 projects we cannot parse are given as bands, and they skew expensive: 23 are "between $3m and $5m", 18 "between $5m and $10m", and 12 "greater than $10 million". Excluding them pulls the median down. The true central cost is higher than $1.56M — we report the parseable distribution and flag the direction of the bias rather than imputing.</p>
+  <span class="tag">A correction worth understanding</span>
+  <p style="margin-top:0">128 of the 191 projects state an exact figure; the other 63 are given as bands. Those bands are overwhelmingly the <em>expensive</em> projects — <strong>90% of them are $3M or more, against 28% of the exact-figure projects.</strong> An earlier version of this page excluded them and reported a median of $1,559,000. That was the median of the cheap half. Valuing each band at its <em>lower</em> bound — the most conservative choice available — gives <strong>$2,331,000</strong>, and valuing them at midpoints gives the same figure. The corrected number is 50% higher than the one we first published.</p>
 </div>
 
 <div class="call warn">
@@ -475,26 +475,27 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 
 <h2><span class="num">09</span>How hard we tried to break the ranking</h2>
 <p class="lede">A ranking built on about fifteen events per neighbourhood invites one question above all others: is any of this real? Four tests.</p>
-<h3>Does the shortlist survive resampling?</h3>
-<p>We rebuilt the model on 500 bootstrap resamples and counted how often each neighbourhood lands in the top ten.</p>
+<h3>Can we tell these neighbourhoods apart from noise? No.</h3>
+<p>This is the most important test on the page, and it is the one that constrains everything else.</p>
+<p>The model estimates not just an expected count for each neighbourhood but also how much counts naturally scatter around it. So we simulated 500 datasets <em>from the fitted model itself</em> — a synthetic New York in which no neighbourhood has any unmet need beyond what its transit, employment and demographics explain — and asked what a ranking of that world looks like.</p>
 <div class="tbox">
 <table>
-  <caption>Probability of appearing in the top ten across 500 bootstrap resamples.</caption>
-  <thead><tr><th>Neighbourhood</th><th class="n">Ratio</th><th class="n">Observed</th><th class="n">In top 10</th></tr></thead>
+  <caption>Observed values against what pure noise produces, 500 parametric bootstrap replications.</caption>
+  <thead><tr><th>Quantity</th><th class="n">Expected under no unmet need</th><th class="n">Observed</th></tr></thead>
   <tbody>
-    <tr><td>East Elmhurst</td><td class="n">3.57×</td><td class="n">36</td><td class="n"><span class="hi">99%</span></td></tr>
-    <tr><td>Brighton Beach</td><td class="n">3.82×</td><td class="n">24</td><td class="n"><span class="hi">98%</span></td></tr>
-    <tr><td>East Flatbush–Rugby</td><td class="n">3.18×</td><td class="n">18</td><td class="n"><span class="hi">98%</span></td></tr>
-    <tr><td>Williamsbridge–Olinville</td><td class="n">2.94×</td><td class="n">39</td><td class="n"><span class="hi">95%</span></td></tr>
-    <tr><td>Astoria (E)–Woodside (N)</td><td class="n">2.78×</td><td class="n">57</td><td class="n"><span class="hi">91%</span></td></tr>
-    <tr><td>East Harlem (North)</td><td class="n">2.98×</td><td class="n">99</td><td class="n"><span class="hi">85%</span></td></tr>
-    <tr><td>New Dorp–Midland Beach</td><td class="n">2.76×</td><td class="n">14</td><td class="n">81%</td></tr>
-    <tr><td>Hunts Point</td><td class="n">2.36×</td><td class="n">5</td><td class="n"><span class="lo">51%</span></td></tr>
-    <tr><td>Brooklyn Heights</td><td class="n">2.12×</td><td class="n">24</td><td class="n"><span class="lo">31%</span></td></tr>
+    <tr><td>Neighbourhoods scoring 1.5× or above</td><td class="n">33.8 (95% range 27–41)</td><td class="n"><span class="lo">29</span></td></tr>
+    <tr><td>Highest single ratio in the city</td><td class="n">3.07 (95th pct 3.92)</td><td class="n"><span class="lo">3.82</span></td></tr>
+    <tr><td>Neighbourhoods significant at p&lt;0.05</td><td class="n">9.9 by chance</td><td class="n"><span class="lo">10</span></td></tr>
+    <tr><td>Surviving correction for multiple testing</td><td class="n">—</td><td class="n"><span class="lo">0 of 197</span></td></tr>
   </tbody>
 </table>
 </div>
-<p><strong>The top six are stable; the tail is not.</strong> Hunts Point rests on five events and lands in the top ten barely half the time. We therefore present six names, not twelve.</p>
+<div class="call warn">
+  <span class="tag">The finding that shapes the recommendation</span>
+  <p style="margin-top:0">Our shortlist of 29 is <em>smaller</em> than the 33.8 a noise-only world produces. Brighton Beach's 3.82× sits inside the range you get from taking the maximum of 197 random draws. And after correcting for the fact that we are testing 197 neighbourhoods at once, <strong>not one is distinguishable from expectation.</strong> With roughly 530 complaints a year spread across 197 neighbourhoods — about fifteen each over six years — the data does not contain enough signal to name individual places with confidence.</p>
+</div>
+<p><strong>What this does and does not mean.</strong> It does not mean the variation is fake: the model measures real neighbourhood-level scatter well beyond chance, so some places genuinely are worse than their profile predicts. It means <em>we cannot say which ones</em>. A ranking remains the best available ordering if you must allocate something — but it cannot be presented as a list of neighbourhoods proven to be underserved, and we do not present it that way.</p>
+<p class="note">An earlier version of this page reported that the top six appear in the top ten in 85–99% of bootstrap resamples. That test was built wrongly — it resampled the model's coefficients while holding each neighbourhood's complaint count fixed, so it could only ever measure coefficient uncertainty and was guaranteed to look stable. It has been replaced by the parametric bootstrap above, which resamples the outcome and gives the opposite answer.</p>
 
 <h3>Is it an artifact of how we measured exposure?</h3>
 <p>A fair objection: dividing by <em>resident</em> population, for a problem driven by people who are not residents, would mechanically favour residential outer-borough areas — which is what the shortlist looks like. We refitted three ways.</p>
@@ -515,27 +516,27 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 <p>If unexplained need clustered spatially, the shortlist could be one blob counted several times. Moran's I on the residuals is <strong>0.107 (p = 0.21)</strong> — no significant clustering. The model has absorbed the geography.</p>
 
 <h3>What it does not survive</h3>
-<p>One test, reported in §06: restricting to phone-filed complaints moves three of the six sharply. <strong>East Flatbush–Rugby, Brighton Beach and East Elmhurst hold across every test we ran, including that one. They are the confident shortlist.</strong> The other three are supported by the model but sensitive to who reports.</p>
+<p>Restricting to phone-filed complaints moves three of the six sharply — East Harlem from 4th to 41st, Astoria to 123rd. East Flatbush–Rugby, Brighton Beach and East Elmhurst are the most stable under that test. But given the noise-floor result above, the honest description of all six is <em>the top of the best available ordering</em>, not a set of neighbourhoods shown to be underserved.</p>
 <p class="note">One clue as to <em>why</em> a well-supplied area can still show high unmet need: of East Elmhurst's five operational restrooms, one is fully accessible — 20%, against 59% citywide. Supply counted at the door is not supply available to everyone.</p>
 
 <h2><span class="num">10</span>What a restroom would have to achieve</h2>
 <p class="lede">We cannot estimate what a restroom delivers. So we invert the question — the approach the UK Treasury's appraisal guidance recommends precisely when benefits resist measurement.</p>
-<p>A median New York restroom project costs <strong>$1,559,000</strong>, which annualised over twenty years at 3.5% is <strong>$109,693 a year</strong>. Rather than inventing a benefit figure, we ask how large the benefit would need to be for that to pay for itself — and let the reader judge whether it is plausible.</p>
+<p>A median New York restroom project costs <strong>$2,331,000</strong>, which annualised over twenty years at 3.5% is <strong>$164,012 a year</strong>. Rather than inventing a benefit figure, we ask how large the benefit would need to be for that to pay for itself — and let the reader judge whether it is plausible.</p>
 <div class="tbox">
 <table>
   <caption>Break-even (switching-value) analysis. Cost basis: median NYC Parks restroom capital project, 20-year life, 3.5% discount rate.</caption>
   <thead><tr><th>If one avoided incident is worth…</th><th class="n">…the facility must prevent</th></tr></thead>
   <tbody>
-    <tr><td>$50</td><td class="n"><span class="lo">2,194 incidents / year</span></td></tr>
-    <tr><td>$250</td><td class="n"><span class="lo">439 incidents / year</span></td></tr>
-    <tr><td>$1,000</td><td class="n"><span class="lo">110 incidents / year</span></td></tr>
+    <tr><td>$50</td><td class="n"><span class="lo">3,280 incidents / year</span></td></tr>
+    <tr><td>$250</td><td class="n"><span class="lo">656 incidents / year</span></td></tr>
+    <tr><td>$1,000</td><td class="n"><span class="lo">164 incidents / year</span></td></tr>
   </tbody>
 </table>
 </div>
 <p><strong>Read carefully, because the unit matters.</strong> These are avoided <em>incidents</em>. What we observe is <em>complaints</em> — roughly 540 a year citywide, and complaints are a small, biased fraction of incidents. So the table says two different things depending on which unit you price:</p>
 <ul>
-  <li><strong>Priced per avoided complaint:</strong> one facility would have to prevent 110 complaints a year at $1,000 each — <strong>a fifth of every public-urination complaint in New York City.</strong> No single facility does that. On the evidence we can actually observe, the nuisance case does not close.</li>
-  <li><strong>Priced per avoided incident:</strong> at 200 uses a day, 110 avoided incidents is <strong>0.15% of uses</strong>. That is entirely plausible. But incidents are unobserved, so this is arithmetic, not evidence.</li>
+  <li><strong>Priced per avoided complaint:</strong> one facility would have to prevent 164 complaints a year at $1,000 each — <strong>nearly a third of every public-urination complaint in New York City.</strong> No single facility does that. On the evidence we can actually observe, the nuisance case does not close.</li>
+  <li><strong>Priced per avoided incident:</strong> at 200 uses a day, 164 avoided incidents is <strong>0.22% of uses</strong>. That is entirely plausible. But incidents are unobserved, so this is arithmetic, not evidence.</li>
 </ul>
 <p>An earlier version of this page conflated the two and concluded the nuisance case "cannot close regardless of how well restrooms work." <strong>That was wrong</strong> — it priced a benefit in incidents and tested it against a complaint count. The defensible claim is narrower: <em>we cannot demonstrate the nuisance case from observable data, because the only thing we observe is a sparse proxy.</em> Which is exactly why the next framing is the one to use.</p>
 <p class="note">The San Francisco study implies roughly 50 avoided reports per facility per year. Applied to New York's ~970 facilities that would be 48,650 avoided reports — ninety times the city's entire annual complaint count. The transfer is arithmetically impossible, which is itself informative: San Francisco was measuring a far higher-incidence phenomenon (open defecation in concentrated areas), and its effect size cannot be moved to New York.</p>
