@@ -45,6 +45,7 @@
   --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
 }
 *{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; overflow-x:hidden}
 body{
   background:var(--bg); color:var(--ink);
   font-family:var(--f-body); font-size:17px; line-height:1.62;
@@ -78,7 +79,8 @@ h1{
   padding-block:10px; margin-bottom:30px;
 }
 .seg{display:inline-flex; border:1px solid var(--rule-strong); border-radius:7px; overflow:hidden}
-.seg button{
+.seg button{-webkit-tap-highlight-color:transparent; touch-action:manipulation;
+  
   font-family:var(--f-display); font-weight:600; font-size:13px;
   padding:7px 15px; border:0; background:transparent; color:var(--ink-2); cursor:pointer;
 }
@@ -175,11 +177,50 @@ caption{caption-side:bottom; text-align:left; padding:10px 13px; font-family:var
 .chip.no{background:var(--alert-soft); color:var(--alert); border-color:transparent}
 footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); color:var(--muted);
   font-family:var(--f-mono); font-size:11.5px; line-height:1.7}
-@media (max-width:520px){
-  body{font-size:16px}
-  .bar{grid-template-columns:1fr; gap:4px}
+/* ---------- phone ---------- */
+@media (max-width:640px){
+  body{font-size:16.5px; line-height:1.58}
+  .wrap{padding-inline:16px; padding-block:0 48px}
+  h1{font-size:clamp(28px,8vw,36px)}
+  h2{font-size:21px; margin:38px 0 6px; padding-top:18px}
+  h3{font-size:17px; margin:24px 0 4px}
+  .standfirst{font-size:17px}
+  .lede{font-size:17px}
+  .tldr{padding:20px 17px}
+  .tldr h2{font-size:19px}
+  .pull{font-size:18px; margin:20px 0}
+  .bar{grid-template-columns:1fr; gap:3px}
   .bar .track{height:13px}
-  .tldr{padding:20px 18px}
+  .bar .lab{font-size:12.5px}
+  /* toggle: let the three buttons breathe, keep them one tap each */
+  .modebar{gap:8px; padding-block:9px; margin-bottom:22px}
+  .seg{width:100%}
+  .seg button{-webkit-tap-highlight-color:transparent; touch-action:manipulation;
+  flex:1 1 0; padding:9px 6px; font-size:12.5px; min-height:40px}
+  .modehint{font-size:11px; line-height:1.4}
+  /* stat tiles: two up, never one orphan on its own row */
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .kpi{padding:13px 12px 11px}
+  .kpi .v{font-size:21px}
+  .kpi .k{font-size:9.5px; letter-spacing:.06em}
+  /* tables scroll horizontally inside their own box, body never does */
+  .tbox{margin:16px -16px; border-radius:0; border-left:0; border-right:0}
+  table{font-size:12.5px}
+  th,td{padding:8px 11px}
+  td.n{font-size:11.5px}
+  caption{padding:9px 16px; font-size:10.5px}
+  .call{padding-left:14px; margin:18px 0}
+  .mapwrap{margin:18px -16px; border-radius:0; border-left:0; border-right:0; padding:10px}
+  .maplegend{gap:9px 11px}
+  .maplegend .it{font-size:9.5px}
+  ul,ol{padding-left:18px}
+  .byline{gap:5px 14px; font-size:11px}
+  footer{font-size:10.5px}
+}
+@media (max-width:380px){
+  .kpis{grid-template-columns:1fr}
+  .seg button{-webkit-tap-highlight-color:transparent; touch-action:manipulation;
+  font-size:11.5px; padding:9px 4px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
 </style>
@@ -201,8 +242,9 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
   <div class="seg" role="group" aria-label="Level of detail">
     <button id="btn-brief" aria-pressed="true">Summary</button>
     <button id="btn-full" aria-pressed="false">Full report</button>
+    <button id="btn-team" aria-pressed="false">For the team</button>
   </div>
-  <span class="modehint" id="hint">Two-minute read. Switch for methods, results and caveats.</span>
+  <span class="modehint" id="hint">Two-minute read. Switch for the full report, or for what needs deciding together.</span>
 </div>
 
 <!-- ============ TL;DR ============ -->
@@ -540,6 +582,58 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 
 </div><!-- /full -->
 
+<div id="team" hidden>
+<h2><span class="num">TUE</span>What we need to agree</h2>
+<p class="lede">Decisions already taken that the group has not yet signed off, things dropped from the original proposal, and the questions that need an answer before this goes to the professor.</p>
+
+<h3>1. The original proposal's method is gone</h3>
+<p>The proposal built a <strong>Relief Gap Index</strong> — demand and supply measures combined with hand-chosen weights (0.35, 0.30, 0.15…). That is not in this analysis. The weights are now <em>estimated from data</em> rather than chosen, because assigned weights cannot answer the obvious question: <em>"move demand from 0.35 to 0.30 — does your top ten change?"</em></p>
+<p><strong>What that costs us:</strong> the index was easy to explain and made a tidy slide. The regression is harder to present. <strong>What it buys:</strong> coefficients with standard errors, out-of-sample validation, and a defence in Q&amp;A.</p>
+<p><strong>Kept from the proposal:</strong> the two-stage discipline — never cost an intervention outside a verified shortlist — and the mapping of each decision-maker to the decision they control. Both are genuinely good and both survive.</p>
+
+<h3>2. The ROI formula was dropped, and it had to be</h3>
+<p><code>SROI = NPV ÷ CapEx</code> breaks mechanically: extending opening hours has near-zero capital cost, so the ratio explodes and the rule recommends "extend hours" everywhere regardless of the data. It is replaced by break-even analysis — instead of inventing a benefit figure, we state how large the benefit would have to be and let the reader judge.</p>
+<p><strong>The team should know:</strong> this means we present <em>no ROI number</em>. Anyone expecting one will be disappointed. The honest position is that no rigorous US valuation of public toilet provision exists — we checked twice.</p>
+
+<h3>3. We cannot prove restrooms work</h3>
+<p>Two causal designs were built and both were abandoned — the second failed a placebo test we set for it in advance. <strong>This is the single most important thing to align on</strong>, because it shapes the whole presentation.</p>
+<p>Two defensible framings, and the group should pick one deliberately rather than drift into it:</p>
+<ul>
+  <li><strong>Lead with it.</strong> "Nobody in New York can currently measure whether a public restroom does anything — here is why, and here is the experiment that would settle it." Confident, unusual, and hard to attack.</li>
+  <li><strong>Bury it in limitations.</strong> Safer, but a sharp examiner finds it in Q&amp;A and then it looks like something we hoped they would miss.</li>
+</ul>
+<p>My recommendation is the first. It is also the reason the final ask is a pilot rather than a construction plan.</p>
+
+<h3>4. The shortlist is six names, not twenty-nine</h3>
+<p>Bootstrap resampling shows the top six hold in 85–99% of resamples. Below that it decays fast — Hunts Point 51%, Brooklyn Heights 31%. And three of the six are sensitive to who files complaints: restricting to phone-filed reports moves East Harlem from 4th to 41st.</p>
+<p><strong>The three that survive every test:</strong> East Flatbush–Rugby, Brighton Beach, East Elmhurst. <strong>The three that are model-supported but reporting-sensitive:</strong> East Harlem (North), Williamsbridge–Olinville, Astoria (East)–Woodside (North).</p>
+<p>The group needs to decide whether to present three names with high confidence or six with a stated caveat.</p>
+
+<h3>5. Claims we withdrew — do not put these back</h3>
+<ul>
+  <li><strong>"49.42% of residents within a five-minute walk."</strong> Widely quoted and not in the Council report at all. It comes from a dashboard that publishes no method, so our own coverage figure cannot be compared to it.</li>
+  <li><strong>"NYC ranks 93rd of 100 US cities."</strong> True, but it is a 2019 figure counting <em>park</em> bathrooms from a self-reported park-amenity survey. Not a statement about all public restrooms.</li>
+  <li><strong>"Ten neighbourhoods just need longer hours."</strong> Survives as a <em>cost</em> argument only. Two-thirds of the hours records are Parks Department placeholder text, and facilities with genuine hours give a wrong-signed result.</li>
+</ul>
+
+<h3>6. The open questions for Tuesday</h3>
+<ol>
+  <li><strong>Who presents what?</strong> Twelve minutes, six to eight people. The analysis is currently single-threaded through one person, and that is a delivery risk, not an analysis risk.</li>
+  <li><strong>What gets cut?</strong> Thirteen sections and six models will not fit. The danger is that compressing for time cuts the caveats — which is where the credibility lives.</li>
+  <li><strong>Do we send this to the professor before or after the deck?</strong> The framing is settled enough to ask now.</li>
+  <li><strong>Does anyone want to defend the original index?</strong> A fair hearing is better than a quiet replacement. If someone can answer the weights question, that changes things.</li>
+</ol>
+
+<h3>7. Where I could be wrong</h3>
+<p>Stated plainly so it can be argued with:</p>
+<ul>
+  <li><strong>The parks thesis is inferred, not measured.</strong> We never compared park-sited against street-sited restrooms directly — there are too few non-park facilities to test it. The evidence fits, but "the restrooms are in the wrong place" is an interpretation.</li>
+  <li><strong>The whole ranking rests on one thin, biased instrument.</strong> About fifteen complaints per neighbourhood over six years. We tested a denser alternative and rejected it for measuring policing instead of need. That leaves us with the weaker measure by choice, not by oversight.</li>
+  <li><strong>A complaint is not a person in need.</strong> The complainant and the person who needed a toilet are different people with opposed interests. That is a real limitation of the outcome and we have no way around it.</li>
+</ul>
+</div>
+
+
 <footer>
   Independent analysis built from primary sources · NYC Open Data · data.ny.gov · US Census ACS &amp; LEHD<br>
   Outcome: 311 public-urination complaints, 2 Jan 2020 – 18 Sep 2026 (6.71 yr), de-duplicated to address-month · 3,629 citywide, 3,556 within the 197 residential NTAs modelled<br>
@@ -555,22 +649,26 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 
 <script>
 (function(){
-  var full = document.getElementById('full');
-  var b1 = document.getElementById('btn-brief');
-  var b2 = document.getElementById('btn-full');
+  var views = {brief:null, full:document.getElementById('full'), team:document.getElementById('team')};
+  var btns = {brief:document.getElementById('btn-brief'), full:document.getElementById('btn-full'), team:document.getElementById('btn-team')};
   var hint = document.getElementById('hint');
-  function set(showFull){
-    full.hidden = !showFull;
-    b1.setAttribute('aria-pressed', String(!showFull));
-    b2.setAttribute('aria-pressed', String(showFull));
-    hint.textContent = showFull
-      ? 'Full report — method, results, limitations.'
-      : 'Two-minute read. Switch for methods, results and caveats.';
-    try{ localStorage.setItem('restroom-view', showFull ? 'full' : 'brief'); }catch(e){}
+  var hints = {
+    brief:'Two-minute read. Switch for the full report, or for what needs deciding together.',
+    full:'Full report \u2014 method, results, robustness and limitations.',
+    team:'Decisions taken, claims dropped, and what needs agreeing on Tuesday.'
+  };
+  function set(v, scroll){
+    views.full.hidden = (v !== 'full');
+    views.team.hidden = (v !== 'team');
+    for (var k in btns) btns[k].setAttribute('aria-pressed', String(k === v));
+    hint.textContent = hints[v];
+    try { localStorage.setItem('restroom-view', v); } catch(e) {}
+    if (scroll) window.scrollTo({top:0, behavior:'smooth'});
   }
-  b1.addEventListener('click', function(){ set(false); });
-  b2.addEventListener('click', function(){ set(true); window.scrollTo({top:0,behavior:'smooth'}); });
-  try{ if(localStorage.getItem('restroom-view') === 'full') set(true); }catch(e){}
+  btns.brief.addEventListener('click', function(){ set('brief', false); });
+  btns.full.addEventListener('click', function(){ set('full', true); });
+  btns.team.addEventListener('click', function(){ set('team', true); });
+  try { var s = localStorage.getItem('restroom-view'); if (s && views.hasOwnProperty(s)) set(s, false); } catch(e) {}
 })();
 </script>
 </body></html>
