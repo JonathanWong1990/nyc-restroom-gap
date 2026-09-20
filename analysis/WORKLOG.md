@@ -198,6 +198,68 @@ enforcement signal, not need signal.
 denser outcome measure, tested it properly, and rejected it because it measures policing
 rather than need" is exactly the discipline the benchmark habit exists to enforce.
 
+## PRE-SIGNOFF SAFETY REVIEW (2026-09-21) — FOUR MATERIAL FINDINGS, ALL FIXED
+
+Four cold agents, briefed to find project-ending errors rather than improvements.
+
+### 1. THE RANKING DOES NOT CLEAR THE MODEL'S OWN NOISE FLOOR. `R/A1_noise_floor.R`
+Parametric bootstrap, 500 replications simulated FROM the fitted model (theta 4.48):
+- Neighbourhoods at ratio >= 1.5: **expected 33.8 under no unmet need, observed 29.**
+  Our shortlist is SMALLER than the noise-only expectation.
+- Maximum ratio: null median 3.07, 95th pct 3.92. **Observed 3.82 — inside the band.**
+- Per-NTA tail tests: 10 of 197 at p<0.05 (chance: 9.9). **Zero survive Benjamini-Hochberg
+  or Bonferroni.** Not one neighbourhood is individually distinguishable.
+- **The previous stability claim was an artifact of a broken test.** `R/98_coldread_fixes.R`
+  resampled rows, refitted, then computed the ratio using the ORIGINAL `events_311` vector —
+  the numerator never varied, so it measured only coefficient uncertainty and was guaranteed
+  to return 98-99%. Replaced.
+- **Consequence:** the six-name shortlist cannot be presented as neighbourhoods shown to be
+  underserved. It is the top of the best available ordering. The honest headline is the null,
+  which makes the staggered-hours trial the recommendation rather than the footnote.
+- Note the nuance: theta is estimated from this data, so a parametric bootstrap partly
+  absorbs the variation by construction. The decisive, non-circular result is the FDR test.
+
+### 2. THE COST MEDIAN WAS THE MEDIAN OF THE CHEAP HALF. `R/A2_cost_bands.R`
+128 of 191 projects state an exact figure; 63 are banded text. **90% of the banded ones are
+>= $3M, against 28% of the exact ones** — the filter silently deleted the right tail.
+Valuing bands at their LOWER bound (most conservative) or midpoint both give **$2,331,000**
+vs the published $1,559,000. Downstream: annualised $109,693 -> **$164,012**; cost per use
+$1.50 -> **$2.25**; Local Law 58 capital $1.79bn -> **$2.67bn** ($315/resident).
+
+### 3. "LEGALLY REQUIRED TO BUILD" IS WRONG — LL58 IS A PLANNING MANDATE.
+Verified against the Council's own press release (council.nyc.gov/press/2025/04/10/2831/):
+the law requires a **citywide bathroom strategy**, updated every four years, built around a
+**target metric** of at least 2,120 bathrooms by 2035, half publicly owned. **It does not
+oblige the city to build anything.** Reframed throughout as a planning shortfall the city
+must explain how to close — which is a better hook, since the city legally owes a method and
+has none. Also corrected: our 1,066/824 counts vs the Council's 1,063/821 (different pull
+dates, now footnoted).
+
+### 4. THE REPOSITORY DID NOT REPRODUCE ON ANOTHER MACHINE.
+All 35 scripts ran and **every headline number reproduced exactly** — but the packaging was
+broken: `METHODS.md` documented `analysis/data/` while 33 scripts read `data_raw/`, and
+**8 scripts hardcoded the author's home directory**. A teammate's clone died on the first
+script. **This machine could not detect it** — running the clone's script wrote output into
+the Desktop working copy, so a broken clone looked like a passing one.
+Fixed: repo restructured to `analysis/data_raw/`, all paths relative with a `RESTROOM_PROJ`
+override, verified by a fresh clone + run.
+
+### 5. TWO PUBLISHED CLAIMS HAD NO BACKING SCRIPT. `R/A3_*`, `R/A4_*`
+Written, and one did not reproduce: **the 0.597 reporting-channel correlation is the RAW
+series.** On the de-duplicated series we actually model it is **0.31** (and total-311 volume
+0.14, not 0.027) — de-duplication removes the repeat-complainant addresses driving it. The
+bias is weaker than we claimed, but we were quoting a figure for data we do not use.
+Corrected on the page with both series shown.
+
+### 6. `demand_02_hourprofile.R` IS AN ORPHAN.
+Needs an hour-plus of live network, has never produced its final output, and **no script
+reads it.** Marked "do not run" in METHODS.md rather than left in the documented pipeline.
+
+### Confirmed sound by independent re-derivation from raw files
+311 series 3,629 / 3,556 exact · 843 operational year-round · 4,585,129 jobs · 197 NTAs ·
+model 0.794 vs benchmark 0.708 · top-six ratios identical to 2dp · all distance constants ·
+determinism byte-identical across re-runs · no join loss correlated with the outcome.
+
 ## KNOWN DEFECTS — FIX BEFORE ANY NUMBER GOES ON A SLIDE
 *(From the 2026-09-20 adversarial audit. Nothing below is fixed yet.)*
 
