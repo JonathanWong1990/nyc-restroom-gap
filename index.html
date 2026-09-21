@@ -157,6 +157,14 @@ caption{caption-side:bottom; text-align:left; padding:10px 13px; font-family:var
 .bar.base .fill{background:var(--rule-strong)}
 .bar .val{font-family:var(--f-mono); font-size:12.5px; font-variant-numeric:tabular-nums; color:var(--ink)}
 
+/* ---------- walkthrough findings ---------- */
+#walk h3{border-top:1px solid var(--rule); padding-top:20px; margin-top:34px}
+#walk .find{background:var(--accent-soft); border-left:3px solid var(--accent);
+  padding:13px 16px; margin:20px 0; border-radius:0 3px 3px 0; color:var(--ink)}
+#walk .find strong{color:var(--accent)}
+#walk table{font-size:13px}
+:root:not([data-theme="light"]) #walk .find strong, :root[data-theme="dark"] #walk .find strong{color:var(--m6)}
+
 /* ---------- map ---------- */
 .mapwrap{margin:22px 0; border:1px solid var(--rule); border-radius:4px; background:var(--surface); padding:14px}
 .mapwrap svg{width:100%; height:auto; display:block}
@@ -233,9 +241,10 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 <div class="modebar">
   <div class="seg" role="group" aria-label="Level of detail">
     <button id="btn-brief" aria-pressed="true">Summary</button>
+    <button id="btn-walk" aria-pressed="false">Walkthrough</button>
     <button id="btn-full" aria-pressed="false">Full report</button>
-    <button id="btn-tried" aria-pressed="false">What we tried</button>
-    <button id="btn-team" aria-pressed="false">For the team</button>
+    <button id="btn-tried" aria-pressed="false">Dead ends</button>
+    <button id="btn-team" aria-pressed="false">Team</button>
   </div>
   <span class="modehint" id="hint">Two-minute read. Switch for the full report, or for what needs deciding together.</span>
 </div>
@@ -247,6 +256,68 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 <div class="kpis"><div class="kpi"><span class="v"></span><span class="k"></span></div><div class="kpi"><span class="v"><strong>2,120</strong></span><span class="k">Target restrooms by 2035 (Local Law 58)</span></div><div class="kpi"><span class="v"><strong>8</strong></span><span class="k">Facilities open 24 hours, citywide</span></div><div class="kpi"><span class="v"><strong>37%</strong></span><span class="k">Subway complexes with no restroom within 400m</span></div><div class="kpi"><span class="v"><strong>3</strong></span><span class="k">Comfort stations' worth of capital covers 27 areas</span></div></div>
 <p>Figures are derived from NYC Open Data, MTA, TLC and US Census sources, and reproduced from raw data rather than quoted from secondary reports.</p>
 </section>
+<div id="walk" hidden>
+<h2>Walkthrough</h2>
+<p>The whole project, step by step, with the arithmetic shown. Findings first; everything that could be wrong with them is collected at the end.</p>
+<h3>The situation</h3>
+<ul><li>New York has <strong>973</strong> operational public toilets.</li><li>A 2025 law sets a target of <strong>2,120 by 2035</strong> and requires the city to publish a plan for getting there.</li><li><strong>2,120 − 973 = 1,147</strong> more facilities implied.</li><li>The city has no published method for deciding where they go.</li><li>Last time it tried: 20 automatic toilets bought, <strong>5 installed, 15 left in a Queens warehouse</strong> for over a decade. The constraint was never money.</li></ul>
+<p><strong>Our question: where should the next ones go?</strong></p>
+<h3>The measurement problem</h3>
+<ul><li>Nobody records "person needed a toilet, could not find one."</li><li>The closest observable thing: <strong>311 complaints about public urination</strong>.</li><li>So that becomes the signal — imperfect, but real, dated and mapped.</li></ul>
+<h3>Step 1 — Clean the signal</h3>
+<p>Raw complaint records, filtered down:</p>
+<div class="tbox"><table><thead><tr><th>Step</th><th>Records</th></tr></thead><tbody><tr><td>All "Urinating in Public" complaints, 2020–2026</td><td class="n">7,926</td></tr><tr><td>Keep only public places (drop complaints inside residential buildings)</td><td class="n">4,706</td></tr><tr><td>Keep only those with usable coordinates</td><td class="n">4,584</td></tr><tr><td>Collapse repeats: one count per address per month</td><td><strong>3,629</strong></td></tr></tbody></table></div>
+<p><strong>Why that last step matters:</strong></p>
+<ul><li>The top <strong>1%</strong> of addresses produce <strong>22.6%</strong> of all complaints.</li><li>East Harlem ranked worst in the city — but <strong>223 of its 384</strong> complaints came from <strong>five adjacent addresses</strong> on one street.</li><li>That is one persistent complainant beside one problem spot. Not a restroom desert.</li><li>After collapsing repeats, the worst areas become Midtown, the Upper West Side, Chelsea, the Village, Elmhurst, Jackson Heights. Busy, plausible.</li></ul>
+<p class="find"><strong>Finding 1: how you count changes the answer.</strong> Two defensible ways of reading the same data send the city's money to opposite ends of the map.</p>
+<h3>Step 2 — Account for crowds</h3>
+<ul><li>Busy places get more complaints. Obviously. That tells you nothing.</li><li>So we estimate how many complaints a place <em>should</em> have, given how many people are there.</li></ul>
+<p>What goes into the estimate:</p>
+<div class="tbox"><table><thead><tr><th>Input</th><th>Why</th></tr></thead><tbody><tr><td>Subway riders</td><td>Largest source of people away from home</td></tr><tr><td>Jobs in the area</td><td>People at work cannot use their own bathroom</td></tr><tr><td>Hotels</td><td>Visitors</td></tr><tr><td>Residents, income, age</td><td>Who lives there</td></tr><tr><td>Existing toilets nearby</td><td>Supply already in place</td></tr></tbody></table></div>
+<ul><li>Method: a <strong>negative binomial regression</strong> — a standard model for counting things that cluster unevenly.</li><li>Output: for every neighbourhood, an expected number of complaints.</li></ul>
+<h3>Step 3 — Find the places that break the pattern</h3>
+<p>The calculation, for each of 197 neighbourhoods:</p>
+<p><strong>observed complaints ÷ expected complaints = unmet need</strong></p>
+<p>Worked example:</p>
+<ul><li>Brighton Beach: <strong>24</strong> complaints observed.</li><li>Given its transit, jobs, hotels and population, the model expects <strong>6.3</strong>.</li><li>24 ÷ 6.3 = <strong>3.8×</strong> more than expected.</li></ul>
+<p>Top of the list:</p>
+<div class="tbox"><table><thead><tr><th>Neighbourhood</th><th>Observed</th><th>Expected</th><th>Ratio</th></tr></thead><tbody><tr><td>Brighton Beach</td><td class="n">24</td><td class="n">6.3</td><td class="n">3.8×</td></tr><tr><td>East Elmhurst</td><td class="n">36</td><td class="n">10.1</td><td class="n">3.6×</td></tr><tr><td>East Flatbush–Rugby</td><td class="n">18</td><td class="n">5.7</td><td class="n">3.2×</td></tr><tr><td>East Harlem (North)</td><td class="n">99</td><td class="n">33.2</td><td class="n">3.0×</td></tr><tr><td>Williamsbridge–Olinville</td><td class="n">39</td><td class="n">13.3</td><td class="n">2.9×</td></tr><tr><td>Astoria (E)–Woodside (N)</td><td class="n">57</td><td class="n">20.5</td><td class="n">2.8×</td></tr></tbody></table></div>
+<p class="find"><strong>Finding 2: the answer is not the obvious one.</strong> Ranking by raw complaints points at Midtown — already the best-served part of the city. Ranking by <em>unexplained</em> complaints points at ordinary outer-borough neighbourhoods.</p>
+<h3>Step 4 — Check the model is worth having</h3>
+<ul><li>Before building anything, we set a bar: rank neighbourhoods by <strong>subway ridership alone</strong>. Dumb, one line of code. It scores <strong>0.709</strong>.</li><li>A cleverer version — ridership at stations with no toilet within 400m — scores <strong>0.487</strong>. Worse.</li><li>The full model scores <strong>0.793</strong>, tested on neighbourhoods it had never seen, and beats the simple rule in <strong>94%</strong> of trials.</li></ul>
+<p class="find"><strong>Finding 3: the model earns its complexity</strong>, and the obvious refinement would have made things worse.</p>
+<h3>Step 5 — Look at what exists today</h3>
+<ul><li><strong>824 of 1,066</strong> public toilets are inside <strong>parks</strong>.</li><li>Complaints cluster on <strong>streets</strong> — transit, commercial strips, nightlife.</li><li>We modelled which neighbourhoods receive toilet construction money: <strong>parkland predicts it. Measured need does not.</strong></li><li>Midtown has the highest complaint count in Manhattan and has <strong>never</strong> received a Parks toilet project — because Midtown has almost no parkland.</li></ul>
+<p class="find"><strong>Finding 4: the money can only reach parks.</strong> The supply is in the wrong category of place, and the funding pipeline keeps it there.</p>
+<h3>Step 6 — Look at when they are open</h3>
+<div class="tbox"><table><thead><tr><th>Time</th><th>Share of complaints</th><th>Toilets open</th></tr></thead><tbody><tr><td>Afternoon</td><td class="n">37%</td><td class="n">~86%</td></tr><tr><td><strong>6pm–midnight</strong></td><td><strong>30%</strong></td><td><strong>45% → 7%</strong></td></tr><tr><td>Overnight</td><td class="n">6%</td><td>under 3%</td></tr></tbody></table></div>
+<ul><li>Peak complaint hour: <strong>6pm</strong>. That is the hour availability collapses.</li><li>Only <strong>8</strong> facilities citywide are open 24 hours.</li></ul>
+<p class="find"><strong>Finding 5: supply disappears exactly when demand peaks.</strong></p>
+<h3>Step 7 — Price the fixes</h3>
+<p>Cost of a toilet, from the city's own capital records:</p>
+<ul><li>Median project: <strong>$2,331,000</strong></li><li>Spread over a 20-year life at 3.5%: <strong>$164,012 per year</strong></li><li>A facility taking 200 visits a day handles <strong>73,000 visits a year</strong></li><li>$164,012 ÷ 73,000 = <strong>$2.25 per use</strong></li></ul>
+<p>Which fix each area needs, cheapest option its conditions allow:</p>
+<div class="tbox"><table><thead><tr><th>Condition</th><th>Fix</th></tr></thead><tbody><tr><td>No toilet, or under 35% coverage</td><td>Build</td></tr><tr><td>Toilets exist but rated unacceptable</td><td>Repair</td></tr><tr><td>Toilets exist and are fine, but shut early</td><td><strong>Extend hours</strong></td></tr></tbody></table></div>
+<p>Result across the 29 priority areas:</p>
+<ul><li><strong>10</strong> need only longer opening hours — nothing built</li><li><strong>19</strong> need construction or repair</li><li>Total capital: <strong>$11.3M</strong>, about <strong>three</strong> traditional comfort stations</li></ul>
+<p class="find"><strong>Finding 6: a third of the problem needs no building at all.</strong></p>
+<h3>What we recommend</h3>
+<ul><li>Not a construction programme. <strong>An experiment.</strong></li><li>Take the <strong>10</strong> neighbourhoods needing only hours.</li><li>Extend closing time by four hours, <strong>staggered in random order over ten months</strong>.</li><li>Cost: about <strong>$51,000 per facility per year</strong>. No capital.</li><li>Measure complaints nearby before and after.</li><li>This produces the number nobody in New York has: <strong>what a toilet-hour actually achieves.</strong></li><li>Then spend the $11.3M knowing the answer.</li></ul>
+<h3>Now the problems</h3>
+<p>Everything above is what we found. Here is everything that could be wrong with it, in one place.</p>
+<p><strong>1. We cannot prove toilets work.</strong></p>
+<ul><li>We tried twice to measure whether opening or closing a toilet changes street urination.</li><li>First attempt: the data recorded construction work, not closures. Unusable.</li><li>Second attempt: compared toilets that shut for winter against ones that stay open. It produced a result — but a control test failed. Seasonal toilets sit in parks, and parks empty in winter, so <em>every</em> kind of street summons falls, not just urination. The effect was the season, not the toilet.</li><li><strong>No study anywhere in the US has measured this.</strong> We are not failing a bar others have cleared.</li></ul>
+<p><strong>2. The ranking is an ordering, not a verdict.</strong></p>
+<ul><li>About <strong>15 complaints per neighbourhood over six years</strong>. Thin.</li><li>We simulated a version of New York where no neighbourhood has any unmet need. It produced a list as strong as ours.</li><li>After correcting for testing 197 places at once, <strong>not one neighbourhood is individually distinguishable</strong>.</li><li>So: useful for deciding where to look first. Not proof that any single place is underserved.</li></ul>
+<p><strong>3. Complaints measure complainers.</strong></p>
+<ul><li>Re-ranking using only complaints filed by phone rather than online moves three of our top six sharply.</li><li>East Flatbush–Rugby, Brighton Beach and East Elmhurst hold up. The other three are less certain.</li></ul>
+<p><strong>4. The "parks" conclusion is inferred, not measured.</strong></p>
+<ul><li>We never compared park toilets against street toilets directly — there are too few street ones to test it.</li><li>Three pieces of evidence point the same way. That is not the same as measuring it.</li></ul>
+<p><strong>5. The hours data is largely placeholder text.</strong></p>
+<ul><li><strong>525 of 843</strong> facilities carry the identical string "8am-4pm, Open later seasonally".</li><li>Every hours figure above excludes them. The pattern holds on the 318 with real records.</li><li>It also means the city cannot answer "what is open at 9pm?" from its own asset register.</li></ul>
+<p><strong>6. We report no return on investment.</strong></p>
+<ul><li>There is no honest way to produce one. No valuation study exists.</li><li>The cost figures are what the options cost, not what they are worth.</li></ul>
+</div>
 <div id="full" hidden>
 <h2><span class="num">01</span>The question New York has to answer</h2>
 <p>Local Law 58 of 2025 is a planning mandate. It requires a Deputy Mayor to lead a citywide bathroom strategy and to file a strategic planning report, updated every four years, working toward a target metric of at least 2,120 public bathrooms by 2035, at least half publicly owned. Nothing in the law obliges the city to build a single facility.</p>
@@ -424,11 +495,12 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 </div>
 <script>
 (function(){
-  var ids = {full:'full', tried:'tried', team:'team'};
-  var btns = {brief:'btn-brief', full:'btn-full', tried:'btn-tried', team:'btn-team'};
+  var ids = {walk:'walk', full:'full', tried:'tried', team:'team'};
+  var btns = {brief:'btn-brief', walk:'btn-walk', full:'btn-full', tried:'btn-tried', team:'btn-team'};
   var hint = document.getElementById('hint');
   var hints = {
-    brief:'Two-minute read. Switch for the full report, the routes that did not work, or what needs deciding together.',
+    brief:'Two-minute read. Start with the walkthrough if you want the whole thing step by step.',
+    walk:'The whole project step by step, with the arithmetic shown. Problems collected at the end.',
     full:'The full report — method, findings, costs and limits.',
     tried:'Routes that did not work, recorded so nobody repeats them.',
     team:'Decisions taken, and what needs agreeing before this goes further.'
