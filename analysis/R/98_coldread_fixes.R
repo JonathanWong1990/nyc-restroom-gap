@@ -41,7 +41,8 @@ cat("\n=== 3. ARE THE RESIDUALS SPATIALLY CLUSTERED? (Moran's I) ===\n")
 nta <- st_read(file.path(D,"nycopendata_9nt8-h7nd_nta2020_20260920.geojson"), quiet=TRUE) |>
   st_transform(2263) |> dplyr::select(nta2020) |> inner_join(dd |> dplyr::select(nta2020, resid_ratio), by="nta2020")
 nb <- st_touches(nta)
-x <- log(nta$resid_ratio); x <- x - mean(x)
+x <- log(pmax(nta$resid_ratio, 0.05))   # 4 areas have a zero ratio; floor before logging
+x <- x - mean(x)
 W <- 0; num <- 0
 for(i in seq_along(nb)){ j <- nb[[i]]; if(!length(j)) next
   w <- 1/length(j); num <- num + sum(w*x[i]*x[j]); W <- W + sum(w) }
