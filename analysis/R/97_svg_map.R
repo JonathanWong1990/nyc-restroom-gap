@@ -4,7 +4,7 @@ options(scipen=999); D <- "data_raw"
 sc <- read.csv(file.path(D,"model_with_commercial_20260920.csv"))
 nta <- st_read(file.path(D,"nycopendata_9nt8-h7nd_nta2020_20260920.geojson"), quiet=TRUE) |>
   st_transform(2263) |> dplyr::select(nta2020)
-g <- nta |> inner_join(sc |> dplyr::select(nta2020, ntaname, resid_ratio, events_311, restrooms),
+g <- nta |> inner_join(sc |> dplyr::select(nta2020, ntaname, boroname, resid_ratio, events_311, restrooms),
                        by="nta2020") |>
   st_simplify(dTolerance=260, preserveTopology=TRUE)
 bb <- st_bbox(g); W <- 900
@@ -41,6 +41,17 @@ for(i in seq_len(nrow(g))){
     pathfor(st_geometry(g)[i]), as.integer(g$bin[i]),
     gsub("&","and", gsub("<|>","", ttl)))
 }
+# borough labels and one landmark, so a reader who does not know New York can orient
+bor <- g |> group_by(boroname) |> summarise(geometry = st_union(geometry), .groups="drop")
+ctr <- st_coordinates(st_point_on_surface(bor))
+labs <- sprintf('<text x="%.0f" y="%.0f" class="blab">%s</text>',
+                sx(ctr[,1]), sy(ctr[,2]), toupper(bor$boroname))
+ts <- st_transform(st_sfc(st_point(c(-73.9855, 40.7580)), crs=4326), 2263)
+tsc <- st_coordinates(ts)
+mark <- sprintf('<circle cx="%.0f" cy="%.0f" r="5" class="mark"/><text x="%.0f" y="%.0f" class="mlab">Times Square</text>',
+                sx(tsc[1,1]), sy(tsc[1,2]), sx(tsc[1,1])+9, sy(tsc[1,2])+4)
+parts <- c(parts, labs, mark)
+
 svg <- paste0('<svg viewBox="0 0 ', W, ' ', H, '" role="img" aria-label="Choropleth of New York City neighbourhoods shaded by unmet restroom need, the ratio of observed to model-predicted complaints. The darkest areas are Brighton Beach, East Elmhurst, East Flatbush and East Harlem North." xmlns="http://www.w3.org/2000/svg">',
   paste(parts, collapse=""), '</svg>')
 writeLines(svg, file.path(D,"map_unmet_need.svg"))

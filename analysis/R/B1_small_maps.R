@@ -39,11 +39,18 @@ assign_nta <- function(df) st_as_sf(df, coords=c("longitude","latitude"), crs=43
 sup <- assign_nta(op) |> filter(!is.na(nta2020)) |> count(nta2020, name="n")
 g0$supply <- sup$n[match(g0$nta2020, sup$nta2020)]; g0$supply[is.na(g0$supply)] <- 0
 cat("restrooms per NTA: median", median(g0$supply), " max", max(g0$supply), "\n")
+# binary highlight: the 30 best-supplied areas, so the contrast with need is immediate
+thr_s <- sort(g0$supply, decreasing=TRUE)[30]
+emit(ifelse(g0$supply >= thr_s, 2, 1), c(0,1,2), "map_supply_top.svg",
+     "The 30 neighbourhoods with the most public restrooms")
 emit(g0$supply, c(-1,0,1,3,5,8,999), "map_supply.svg",
      "Public restrooms per neighbourhood")
 
 ## --- unmet need, simplified to match the small maps --------------------------
 g0$ratio <- sc$resid_ratio[match(g0$nta2020, sc$nta2020)]
+thr_n <- sort(g0$ratio, decreasing=TRUE)[30]
+emit(ifelse(g0$ratio >= thr_n, 2, 1), c(0,1,2), "map_need_top.svg",
+     "The 30 neighbourhoods with the most unexplained need")
 emit(g0$ratio, c(-1, 1.25, 1.8, 2.5, 99), "map_need_small.svg",
      "Unmet need by neighbourhood")
 
