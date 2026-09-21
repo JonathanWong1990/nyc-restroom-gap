@@ -234,6 +234,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
   <div class="seg" role="group" aria-label="Level of detail">
     <button id="btn-brief" aria-pressed="true">Summary</button>
     <button id="btn-full" aria-pressed="false">Full report</button>
+    <button id="btn-tried" aria-pressed="false">What we tried</button>
     <button id="btn-team" aria-pressed="false">For the team</button>
   </div>
   <span class="modehint" id="hint">Two-minute read. Switch for the full report, or for what needs deciding together.</span>
@@ -296,14 +297,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 <p>One result cuts against the easy narrative. Poverty doubles the odds of investment. New York is spending in poorer neighbourhoods, so this is not a story about class. It is a story about the category of place that the funding pipeline can reach.</p>
 <p>Midtown–Times Square is the busiest complaint district in Manhattan and has never received a Parks capital restroom project, because Parks capital projects only reach parks and Midtown has almost none.</p>
 <p>A note on units, since both appear in this analysis and are labelled at each use: at neighbourhood level the highest de-duplicated complaint count is East Harlem (North) at 99, with Midtown second at 84. At community-district level, Midtown ranks first.</p>
-<h3>Measuring the effect of a closure</h3>
-<p>The cleanest way to establish that restrooms matter would be to watch what happens when one closes. We built two designs for this. Neither produced an estimate we are willing to publish.</p>
-<p>The first used park-inspection closure records. The underlying field turned out to record construction activity rather than closure, and only 151 of 2,057 flagged records actually read "closed". Once corrected, the design rests on 44 facilities and could not have detected an effect smaller than about 20%.</p>
-<p>The second design is stronger in principle. About 132 NYC restrooms close every winter and reopen in spring, while 843 stay open year-round, which gives a recurring, dated closure with a built-in control group. We counted summonses for public urination within 250 metres of each facility — a radius narrow enough that a park interior and the street outside are not pooled — using a Poisson regression with facility and season fixed effects and errors clustered by facility. The incidence rate ratio (IRR) is the ratio of expected counts, where 1.00 means no change.</p>
-<div class="tbox"><table><thead><tr><th>Specification</th><th>IRR</th><th>95% CI</th><th>p</th></tr></thead><tbody><tr><td>Urination summonses</td><td class="n">0.624</td><td class="n">0.50–0.78</td><td class="n">&lt;0.001</td></tr><tr><td>+ park acreage × winter control</td><td class="n">0.684</td><td class="n">0.54–0.86</td><td class="n">0.001</td></tr><tr><td>Placebo: alcohol summonses</td><td class="n">0.699</td><td class="n">0.56–0.88</td><td class="n">0.002</td></tr></tbody></table></div>
-<p class="lede">569 facilities with nearby events (63 seasonal, 506 year-round), 2023–2026.</p>
-<p>The third row is a placebo test: a check on an outcome the treatment should not affect. Alcohol summonses have nothing to do with restrooms, yet they move almost as much as the outcome of interest. The explanation is that seasonal restrooms sit where people stop going in winter — parks, beaches, waterfront — so every category of summons falls together. This is population seasonality showing up as a restroom effect, and controlling for parkland only narrows the gap. We therefore publish no effect estimate from this design.</p>
-<p>That leaves the parks thesis supported by two of the three tests and by the mechanism, and unsupported by direct measurement. We never compared park-sited against street-sited restrooms head to head, because there are too few non-park facilities to test it. The evidence fits the interpretation; it does not establish it.</p>
+<p>We also tried to measure the effect directly — whether closing a restroom changes street urination nearby. Two designs were built and neither produced a usable estimate. The detail is in <em>What we tried</em>, along with the other routes that did not work.</p>
 <h2><span class="num">05</span>The evening gap</h2>
 <p>Street urination in this data is not mainly a late-night phenomenon. It peaks at exactly the hour the restrooms shut.</p>
 <div class="tbox"><table><thead><tr><th>Window</th><th>Share of complaints</th><th>Share of facilities open</th></tr></thead><tbody><tr><td>12:00–17:59 afternoon</td><td class="n">36.9%</td><td class="n">81–86%</td></tr><tr><td>18:00–23:59 evening</td><td class="n">29.9%</td><td class="n">45% → 7%</td></tr><tr><td>00:00–05:59 overnight</td><td class="n">5.7%</td><td>under 3%</td></tr></tbody></table></div>
@@ -327,9 +321,6 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 <p>These are outer-borough, low-supply, largely non-touristy places. Neither a hand-weighted index nor the simple ridership benchmark would have surfaced any of them. Ranking on raw complaints points at Midtown, which is already the best-served part of the city.</p>
 <p>Ratio and absolute deficit answer different questions, and a build decision needs both. Ranked by absolute excess complaints, the order changes: East Harlem (North) +66, Midtown–Times Square +40, Astoria (E)–Woodside (N) +36, West Village +26, East Elmhurst +26. Brighton Beach tops the ratio and does not appear in the top ten by volume. The ratio identifies the most underserved place per unit of demand; the excess identifies the biggest absolute deficit.</p>
 <p><strong>Map of unmet need.</strong> The full ranking is mapped across all 197 residential neighbourhoods, shaded by the ratio of observed complaints to model prediction, in bands: under 0.6 · 0.6–0.9 · 0.9–1.2 · 1.2–1.6 · 1.6–2.2 · over 2.2. Darker shading means more unmet need than the area's transit, employment, hotel and demographic profile predicts. The Financial District and the Upper West Side sit pale despite high raw complaint counts, because their volume is fully explained by how many people are there. Every neighbourhood's figures appear in Appendix A.</p>
-<h3>Five-minute-walk coverage</h3>
-<p>We computed the share of New Yorkers within a five-minute walk of an operational restroom: <strong>53.45%</strong>. A figure of 49.42% is widely quoted in coverage of this issue, and the two invite comparison.</p>
-<p>They should not be compared. The 49.42% figure does not appear in the Council's published report. It appears only on a Council dashboard that discloses no method — no walking speed, no distance threshold, no statement of whether it measures straight-line or street-network distance, and no population denominator. Reverse-engineering the denominator implies 8,791,055 residents, which matches no published population figure. Two coverage numbers computed by unknown and different methods say nothing when set side by side, so the 4-point gap between them means nothing either. Ours is stated: straight-line 400-metre buffers around the 843 operational year-round facilities, intersected with census-tract polygons and weighted by tract population. Straight-line distance reaches further than walking a street grid, so our figure is, if anything, generous.</p>
 <h2><span class="num">08</span>Testing the ranking</h2>
 <p>A ranking built on roughly fifteen events per neighbourhood invites one question above all others. Four tests bear on it, and the first is the one that constrains everything else.</p>
 <h3>Signal against noise</h3>
@@ -338,12 +329,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 <p>Read down the table. Our shortlist of 29 neighbourhoods at 1.5× or above is <em>smaller</em> than the 33.8 that a noise-only world produces. Brighton Beach's 3.82× sits inside the range you get from taking the maximum of 197 random draws. Ten neighbourhoods clear p &lt; 0.05, and chance alone would deliver 9.9. And once you account for the fact that 197 neighbourhoods are being tested simultaneously — which inflates the chance of a spurious hit, and is standard practice to correct for — not one of them is distinguishable from expectation.</p>
 <p>With roughly 530 complaints a year spread across 197 neighbourhoods, about fifteen each over six years, the data does not contain enough signal to name individual places with confidence.</p>
 <p>This does not mean the variation is fake. The model measures real neighbourhood-level scatter well beyond chance, so some places genuinely are worse than their profile predicts. What it means is that we cannot say which ones. A ranking remains the best available ordering if something must be allocated, and it cannot be presented as a list of neighbourhoods proven to be underserved. It is not presented that way here.</p>
-<h3>Sensitivity to the exposure measure</h3>
-<p>Dividing by resident population, for a problem driven largely by people who are not residents, could mechanically favour residential outer-borough areas — which is what the shortlist looks like. We refit the model three ways to check.</p>
-<div class="tbox"><table><thead><tr><th>Specification</th><th>Rank correlation with published ranking</th><th>Top-10 overlap</th></tr></thead><tbody><tr><td>Residents + jobs as exposure</td><td class="n">0.922</td><td class="n">9/10</td></tr><tr><td>Population freed as a covariate</td><td class="n">0.975</td><td class="n">9/10</td></tr><tr><td>Adding taxi and rideshare activity</td><td class="n">0.997</td><td class="n">10/10</td></tr></tbody></table></div>
-<p>The same names appear throughout. How exposure is specified does not drive the result.</p>
-<h3>Spatial clustering</h3>
-<p>If unexplained need clustered spatially, the shortlist could be one contiguous blob counted several times over. Moran's I is a standard measure of spatial clustering. On the model residuals it is 0.107 with p = 0.21, which shows no significant clustering. The model has absorbed the geography.</p>
+<p>The ranking also survives two further checks, reported in <em>What we tried</em>: it does not depend on how population exposure was measured, and the unexplained need is not spatially clustered.</p>
 <h3>Sensitivity to who reports</h3>
 <p>Restricting the outcome to phone-filed complaints only — 36.8% of records, and the channel least affected by app-adoption bias — moves three of the top six sharply.</p>
 <div class="tbox"><table><thead><tr><th>Neighbourhood</th><th>Rank, all complaints</th><th>Rank, phone-filed only</th></tr></thead><tbody><tr><td>East Flatbush–Rugby</td><td class="n">3</td><td class="n">1</td></tr><tr><td>Brighton Beach</td><td class="n">1</td><td class="n">2</td></tr><tr><td>East Elmhurst</td><td class="n">2</td><td class="n">5</td></tr><tr><td>East Harlem (North)</td><td class="n">4</td><td class="n">41</td></tr><tr><td>Williamsbridge–Olinville</td><td class="n">5</td><td class="n">52</td></tr><tr><td>Astoria (E)–Woodside (N)</td><td class="n">6</td><td class="n">123</td></tr></tbody></table></div>
@@ -388,6 +374,36 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 <p>Everything behind this analysis is published: all 35 scripts, 7 research notes, 60 datasets, reproduction instructions, and interactive maps of unmet need and of the coverage gap.</p>
 <ul><li>Repository: https://github.com/JonathanWong1990/nyc-restroom-gap</li><li>Methods: https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/METHODS.md</li><li>Interactive map, unmet need: <code>maps/unmet-need.html</code></li><li>Interactive map, coverage gap: <code>maps/coverage-gap.html</code></li></ul>
 </div>
+<div id="tried" hidden>
+<h2>What we tried</h2>
+<p>Routes that did not work, recorded so nobody repeats them. None of this belongs in a twelve-minute presentation; all of it is worth knowing before someone spends a weekend going back down one of these paths.</p>
+<h3>Measuring the effect of a closure</h3>
+<p>The cleanest way to establish that restrooms matter would be to watch what happens when one closes. We built two designs for this. Neither produced an estimate we are willing to publish.</p>
+<p>The first used park-inspection closure records. The underlying field turned out to record construction activity rather than closure, and only 151 of 2,057 flagged records actually read "closed". Once corrected, the design rests on 44 facilities and could not have detected an effect smaller than about 20%.</p>
+<p>The second design is stronger in principle. About 132 NYC restrooms close every winter and reopen in spring, while 843 stay open year-round, which gives a recurring, dated closure with a built-in control group. We counted summonses for public urination within 250 metres of each facility — a radius narrow enough that a park interior and the street outside are not pooled — using a Poisson regression with facility and season fixed effects and errors clustered by facility. The incidence rate ratio (IRR) is the ratio of expected counts, where 1.00 means no change.</p>
+<div class="tbox"><table><thead><tr><th>Specification</th><th>IRR</th><th>95% CI</th><th>p</th></tr></thead><tbody><tr><td>Urination summonses</td><td class="n">0.624</td><td class="n">0.50–0.78</td><td class="n">&lt;0.001</td></tr><tr><td>+ park acreage × winter control</td><td class="n">0.684</td><td class="n">0.54–0.86</td><td class="n">0.001</td></tr><tr><td>Placebo: alcohol summonses</td><td class="n">0.699</td><td class="n">0.56–0.88</td><td class="n">0.002</td></tr></tbody></table></div>
+<p class="lede">569 facilities with nearby events (63 seasonal, 506 year-round), 2023–2026.</p>
+<p>The third row is a placebo test: a check on an outcome the treatment should not affect. Alcohol summonses have nothing to do with restrooms, yet they move almost as much as the outcome of interest. The explanation is that seasonal restrooms sit where people stop going in winter — parks, beaches, waterfront — so every category of summons falls together. This is population seasonality showing up as a restroom effect, and controlling for parkland only narrows the gap. We therefore publish no effect estimate from this design.</p>
+<p>That leaves the parks thesis supported by two of the three tests and by the mechanism, and unsupported by direct measurement. We never compared park-sited against street-sited restrooms head to head, because there are too few non-park facilities to test it. The evidence fits the interpretation; it does not establish it.</p>
+<h3>The five-minute-walk coverage figure</h3>
+<p>We computed the share of New Yorkers within a five-minute walk of an operational restroom: <strong>53.45%</strong>. A figure of 49.42% is widely quoted in coverage of this issue, and the two invite comparison.</p>
+<p>They should not be compared. The 49.42% figure does not appear in the Council's published report. It appears only on a Council dashboard that discloses no method — no walking speed, no distance threshold, no statement of whether it measures straight-line or street-network distance, and no population denominator. Reverse-engineering the denominator implies 8,791,055 residents, which matches no published population figure. Two coverage numbers computed by unknown and different methods say nothing when set side by side, so the 4-point gap between them means nothing either. Ours is stated: straight-line 400-metre buffers around the 843 operational year-round facilities, intersected with census-tract polygons and weighted by tract population. Straight-line distance reaches further than walking a street grid, so our figure is, if anything, generous.</p>
+<h3>Checks that did work</h3>
+<p><strong>Exposure.</strong></p>
+<p>Dividing by resident population, for a problem driven largely by people who are not residents, could mechanically favour residential outer-borough areas — which is what the shortlist looks like. We refit the model three ways to check.</p>
+<div class="tbox"><table><thead><tr><th>Specification</th><th>Rank correlation with published ranking</th><th>Top-10 overlap</th></tr></thead><tbody><tr><td>Residents + jobs as exposure</td><td class="n">0.922</td><td class="n">9/10</td></tr><tr><td>Population freed as a covariate</td><td class="n">0.975</td><td class="n">9/10</td></tr><tr><td>Adding taxi and rideshare activity</td><td class="n">0.997</td><td class="n">10/10</td></tr></tbody></table></div>
+<p>The same names appear throughout. How exposure is specified does not drive the result.</p>
+<p><strong>Spatial clustering.</strong></p>
+<p>If unexplained need clustered spatially, the shortlist could be one contiguous blob counted several times over. Moran's I is a standard measure of spatial clustering. On the model residuals it is 0.107 with p = 0.21, which shows no significant clustering. The model has absorbed the geography.</p>
+<h3>A denser outcome measure, rejected</h3>
+<p>Police summonses for public urination are far denser than 311 complaints — 27,384 records over three and a half years against roughly 2,000 complaints in the same window, all cleanly coded and fully geocoded. They looked like a direct upgrade.</p>
+<p>They are not. Summons counts track where officers write summonses: the correlation with alcohol-possession summonses across neighbourhoods is 0.95, and enforcement intensity alone explains most of what a model of them can explain. Tested against the right benchmark — not subway ridership but enforcement itself — a demand model loses, winning in 3% of splits. A ranking built on summonses would be a map of policing wearing a public-health label.</p>
+<p>Two uses survive. Enforcement contaminates levels but not changes, so summonses remain the right outcome for a before-and-after design. And the alcohol series makes a ready-made placebo, which is what exposed the winterization result above.</p>
+<h3>Datasets that looked useful and were not</h3>
+<p>The cultural organisations file is widely used as a measure of tourist attraction. It is a grants roster of small community arts nonprofits — 429 theatre companies, 403 music organisations, 99 museums — in which a thirty-seat Bushwick collective and the Metropolitan Museum each occupy one row, and which omits Times Square, the High Line and Central Park entirely.</p>
+<p>DOT pedestrian counts cover 114 screenlines citywide. That is too sparse to model on, though it is a genuine nineteen-year series at the locations it does cover, so it serves as an out-of-sample check rather than an input.</p>
+<p>A commercial-supply proxy — 1,886 chain coffee shops, fast-food outlets and similar, on the theory that a Starbucks is a restroom in practice — turned out not to matter. Adding it to the model leaves the ranking essentially unchanged, at a rank correlation of 0.997.</p>
+</div>
 <div id="team" hidden>
 <h2><span class="num">12</span>Open questions for the team</h2>
 <p>Decisions taken in the analysis that the group has not yet signed off, and questions that need answering before this goes further.</p>
@@ -413,26 +429,25 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 </div>
 <script>
 (function(){
-  var views = {brief:null, full:document.getElementById('full'), team:document.getElementById('team')};
-  var btns = {brief:document.getElementById('btn-brief'), full:document.getElementById('btn-full'), team:document.getElementById('btn-team')};
+  var ids = {full:'full', tried:'tried', team:'team'};
+  var btns = {brief:'btn-brief', full:'btn-full', tried:'btn-tried', team:'btn-team'};
   var hint = document.getElementById('hint');
   var hints = {
-    brief:'Two-minute read. Switch for the full report, or for what needs deciding together.',
-    full:'Full report \u2014 method, results, robustness and limitations.',
-    team:'Decisions taken, claims dropped, and what needs agreeing on Tuesday.'
+    brief:'Two-minute read. Switch for the full report, the routes that did not work, or what needs deciding together.',
+    full:'The full report — method, findings, costs and limits.',
+    tried:'Routes that did not work, recorded so nobody repeats them.',
+    team:'Decisions taken, and what needs agreeing before this goes further.'
   };
   function set(v, scroll){
-    views.full.hidden = (v !== 'full');
-    views.team.hidden = (v !== 'team');
-    for (var k in btns) btns[k].setAttribute('aria-pressed', String(k === v));
+    for (var k in ids) document.getElementById(ids[k]).hidden = (k !== v);
+    for (var b in btns) document.getElementById(btns[b]).setAttribute('aria-pressed', String(b === v));
     hint.textContent = hints[v];
     try { localStorage.setItem('restroom-view', v); } catch(e) {}
     if (scroll) window.scrollTo({top:0, behavior:'smooth'});
   }
-  btns.brief.addEventListener('click', function(){ set('brief', false); });
-  btns.full.addEventListener('click', function(){ set('full', true); });
-  btns.team.addEventListener('click', function(){ set('team', true); });
-  try { var s = localStorage.getItem('restroom-view'); if (s && views.hasOwnProperty(s)) set(s, false); } catch(e) {}
+  Object.keys(btns).forEach(function(k){
+    document.getElementById(btns[k]).addEventListener('click', function(){ set(k, k !== 'brief'); });
+  });
+  try { var s = localStorage.getItem('restroom-view'); if (s && btns[s]) set(s, false); } catch(e) {}
 })();
-</script>
-</body></html>
+</script></body></html>
