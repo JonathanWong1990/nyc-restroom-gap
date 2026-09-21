@@ -26,9 +26,10 @@ pathfor <- function(geom){
 # The value has a meaningful midpoint: 1.0 = exactly as many complaints as expected.
 # So this is a DIVERGING scale - below expectation / about as expected / above expectation -
 # not a light-to-dark ramp, which would hide where the dividing line falls.
-brk <- c(-Inf, 0.5, 0.8, 1.25, 1.8, 2.5, Inf)
-lab <- c("less than half expected","below expected","about as expected",
-         "above expected","well above","far above")
+# Everything at or below expectation reads as one flat neutral: the distinction between
+# 0.4x and 0.9x is not actionable. Only the above-expectation range is ramped.
+brk <- c(-Inf, 1.25, 1.8, 2.5, Inf)
+lab <- c("at or below expected","above expected","well above","far above")
 g$bin <- cut(g$resid_ratio, brk, labels=lab)
 cat("bin counts:\n"); print(table(g$bin))
 

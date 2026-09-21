@@ -44,7 +44,7 @@ emit(g0$supply, c(-1,0,1,3,5,8,999), "map_supply.svg",
 
 ## --- unmet need, simplified to match the small maps --------------------------
 g0$ratio <- sc$resid_ratio[match(g0$nta2020, sc$nta2020)]
-emit(g0$ratio, c(-1, 0.5, 0.8, 1.25, 1.8, 2.5, 99), "map_need_small.svg",
+emit(g0$ratio, c(-1, 1.25, 1.8, 2.5, 99), "map_need_small.svg",
      "Unmet need by neighbourhood")
 
 ## --- what is open at 3pm vs 9pm -------------------------------------------
