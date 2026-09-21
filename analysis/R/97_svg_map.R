@@ -23,9 +23,12 @@ pathfor <- function(geom){
   }
   paste(out, collapse="")
 }
-# 6 bins, single-hue sequential (light -> dark) as the magnitude encoding
-brk <- c(-Inf, 0.6, 0.9, 1.2, 1.6, 2.2, Inf)
-lab <- c("under 0.6","0.6-0.9","0.9-1.2","1.2-1.6","1.6-2.2","over 2.2")
+# The value has a meaningful midpoint: 1.0 = exactly as many complaints as expected.
+# So this is a DIVERGING scale - below expectation / about as expected / above expectation -
+# not a light-to-dark ramp, which would hide where the dividing line falls.
+brk <- c(-Inf, 0.5, 0.8, 1.25, 1.8, 2.5, Inf)
+lab <- c("less than half expected","below expected","about as expected",
+         "above expected","well above","far above")
 g$bin <- cut(g$resid_ratio, brk, labels=lab)
 cat("bin counts:\n"); print(table(g$bin))
 
