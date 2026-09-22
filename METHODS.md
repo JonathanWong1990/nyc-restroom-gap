@@ -43,16 +43,15 @@ Scripts read `data_raw/` relative to the working directory. To run from elsewher
 | `95_convergent_shortlist.R` | Agreement between the two outcome measures |
 | `96_commercial_supply.R` | Does informal (commercial) supply change the ranking? |
 | `98_coldread_fixes.R` | Time-of-day on genuine hours, accessibility, Moran's I |
-| `99_offset_test.R` | Is the shortlist an artifact of the exposure measure? |
+| `99_offset_test.R` | Is the shortlist an artefact of the exposure measure? |
 | `A1_noise_floor.R` | **Parametric bootstrap: can the ranking be told apart from noise?** |
-
 | `A2_cost_bands.R` | Valuing the banded capital projects excluded from an earlier median |
 | `A3_seed_stability.R` | The out-of-sample result across six random seeds |
 | `A4_reporting_channel.R` | Reporting-channel correlations, raw vs de-duplicated series |
 | `A5_null_comparison.R` | Both nulls side by side. NB overdispersion IS between-area rate variation, so simulating from it is not a no-effect null; Poisson is |
 | `A6_empirical_bayes.R` | Per-neighbourhood posteriors, with leave-one-out. Seven exceed 0.95. Sparse counts only, not reporting validity |
 | `A7_repair_vs_build.R` | Build new ($4.0M, n=68) vs reconstruct existing ($1.66M, n=108). Component work n=5, too thin to quote |
-| `A8_condition_trend.R` | Inspection condition 2022-2026, facility fixed effects, internal placebo (litter flat, structural triples) |
+| `A8_condition_trend.R` | Inspection condition 2022–2026, facility fixed effects, internal placebo (litter flat, structural triples) |
 
 `20_regression.R` prints 0.790 / 0.710 from its own random splits; the site quotes
 `50_tree_vs_regression.R` at 0.793 / 0.709. Same model, different splits, same conclusion.

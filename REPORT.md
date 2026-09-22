@@ -1,5 +1,6 @@
-> **Archived long-form write-up.** The live version of this project is the site
-> (Walkthrough + "What's wrong with it"): https://jonathanwong1990.github.io/nyc-restroom-gap/
+> **Archived long-form write-up.** The live version of this project is the site —
+> Walkthrough, Limits, and Data & code:
+> https://jonathanwong1990.github.io/nyc-restroom-gap/
 > This file is the prose report it was built from, kept for reference only. If a
 > number here disagrees with the site, **the site is right** — check it before quoting
 > anything from this file.

@@ -9,7 +9,7 @@ An independent analysis built from primary sources — NYC Open Data, MTA, TLC, 
 summonses, US Census ACS and LEHD. Every figure was re-derived from source in an adversarial
 audit; corrections from that audit are marked in the text.
 
-- `index.html` — the write-up (summary view, with a toggle for the full report)
+- `index.html` — the write-up (three views: Walkthrough, Limits, Data & code)
 - `maps/unmet-need.html` — interactive choropleth of modelled unmet need
 - `maps/coverage-gap.html` — five-minute-walk coverage against subway ridership
 
@@ -19,6 +19,6 @@ Prepared for PMBA6093 Analytics for Managers, HKU MBA.
 
 - `analysis/R/` — all 35 scripts, in order, including the models that failed
 - `analysis/notes/` — research notes per workstream, with sources and access dates
-- `analysis/data/` — every dataset pulled
+- `analysis/data_raw/` — every dataset pulled
 - `analysis/WORKLOG.md` — the full audit trail: 32 defects found, fixed, and verified
 - [`METHODS.md`](METHODS.md) — how to reproduce it
