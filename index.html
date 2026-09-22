@@ -291,8 +291,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 <div class="modebar">
   <div class="seg" role="group" aria-label="Level of detail">
     <button id="btn-walk" aria-pressed="true">Walkthrough</button>
-    <button id="btn-lim" aria-pressed="false">What’s wrong with it</button>
-    <button id="btn-team" aria-pressed="false">Team</button>
+    <button id="btn-lim" aria-pressed="false">Limits</button>
   </div>
   <span class="modehint" id="hint" role="status" aria-live="polite">The whole project, step by step — what we did, and where it is weak.</span>
 </div>
@@ -422,10 +421,10 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 <p class="find"><strong>Finding 9: seven neighbourhoods are individually above 95% confidence.</strong> Each was re-scored with the model and the prior rebuilt from the other 196, so it could not vouch for itself. All seven held.</p>
 <p>This fixes the thin-counts problem and nothing else — it does not touch what the complaints measure.</p>
 <h3>What this cannot do</h3>
-<p>Every limitation, with the arithmetic, is in <strong>What's wrong with it</strong> — the second tab. The three that matter most: the ranking orders places but does not sort them into categories; complaints measure complainers; and the gap between prediction and reality is the one quantity nobody can validate, here or anywhere.</p>
+<p>Every limitation, with the arithmetic, is in <strong>Limits</strong> — the second tab. The three that matter most: the ranking orders places but does not sort them into categories; complaints measure complainers; and the gap between prediction and reality is the one quantity nobody can validate, here or anywhere.</p>
 </div>
 <div id="lim" hidden>
-<h2>What's wrong with it</h2>
+<h2>Limits and open questions</h2>
 <p>Every weakness in one place, worst first.</p>
 <h3>1. The ranking orders places; it does not sort them into categories</h3>
 <p>A ranking built on thin counts invites three different questions, and they have three different answers.</p>
@@ -485,16 +484,6 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 <p>Everything behind this analysis is published: all scripts, research notes, 60 datasets, reproduction instructions, and interactive maps.</p>
 <ul><li>Repository: https://github.com/JonathanWong1990/nyc-restroom-gap</li><li>Methods, script by script: https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/METHODS.md</li></ul>
 </div>
-<div id="team" hidden>
-<h2>Open questions for the team</h2>
-<p>Decisions taken in the analysis that the group has not signed off, and questions that need answering before this goes further. Every known weakness is in <strong>What's wrong with it</strong> — this tab is only what needs deciding.</p>
-<p><strong>How to present the null result.</strong> Two causal designs were built and both abandoned; the second failed a placebo test set for it in advance. This is the single most important thing to align on, because it shapes the whole presentation. Two defensible framings, and the group should pick one deliberately. Lead with it: <em>"nobody in New York can currently measure whether a public restroom does anything — here is why, and here is the experiment that would settle it."</em> Confident, unusual, hard to attack. Or bury it in limitations, which is safer right up until a sharp examiner finds it in Q&amp;A, at which point it looks like something we hoped they would miss. My recommendation is the first, and it is also why the final ask is a pilot rather than a construction plan.</p>
-<p><strong>Three names or six.</strong> East Flatbush–Rugby, Brighton Beach and East Elmhurst survive every test. East Harlem (North), Williamsbridge–Olinville and Astoria (East)–Woodside (North) are model-supported but reporting-sensitive. Present three with high confidence, or six with a stated caveat?</p>
-<p><strong>Presentation mechanics.</strong> Twelve minutes, six to eight people. The analysis is currently single-threaded through one person, which is a delivery risk. Twelve sections and six models will not fit in twelve minutes, and the danger in compressing is that the caveats go first — which is exactly where the credibility lives.</p>
-<p><strong>What happened to the original index.</strong> The group's earlier proposal scored neighbourhoods with a weighted index whose weights were chosen by hand. This analysis estimates them from data instead, because assigned weights cannot answer the obvious question: move one weight from 0.35 to 0.30 and does the top ten change? What that costs is a tidy slide and an easy explanation. What it buys is coefficients with standard errors and a defence in Q&amp;A. Two things from the original proposal are kept and worth keeping: costing interventions only for a verified shortlist, and mapping each decision-maker to the decision they actually control. If someone wants to defend the original index, a fair hearing beats a quiet replacement.</p>
-<p><strong>Course methods covered</strong> — checked against the delivered decks, not the printed syllabus, because the two differ. Regression (Session 4); dummy variables and spatial analysis (<strong>Session 5</strong> — its agenda slide reads "Dummy Variables · Spatial Data"); logistic regression and confusion matrix (Session 6); trees and train/test (Session 7); difference-in-differences, natural experiments and matching (<strong>Session 8</strong> — DiD and panel data were moved here from Session 5, and the Session 5 deck shows the schedule being corrected); staggered trial design (Session 9, not yet taught). <strong>Regression discontinuity was never taught</strong> — it appears in the printed syllabus and in none of the seven decks — so it is correctly absent. Still uncovered and cheap: propensity score matching (Session 8), and kNN (Session 7), which earlier notes wrongly called inapplicable.</p>
-<p><strong>Questions for the professor.</strong> Is <em>"where should the next 1,150 restrooms go, and which need building at all"</em> the right question for this audience? Is it acceptable to lead with a null causal result as supporting evidence? Does the method mix sit at the right level? And is it acceptable that the strongest recommendation is an experiment to run rather than a site to build, given the effect could not be measured from observational data?</p>
-</div>
 <footer>
   Built from primary sources · NYC Open Data · data.ny.gov · US Census ACS &amp; LEHD<br>
   Outcome: 311 public-urination complaints, 2 Jan 2020 – 18 Sep 2026, de-duplicated to address-month · 197 residential neighbourhoods<br>
@@ -507,13 +496,12 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 </div>
 <script>
 (function(){
-  var ids = {walk:'walk', lim:'lim', team:'team'};
-  var btns = {walk:'btn-walk', lim:'btn-lim', team:'btn-team'};
+  var ids = {walk:'walk', lim:'lim'};
+  var btns = {walk:'btn-walk', lim:'btn-lim'};
   var hint = document.getElementById('hint');
   var hints = {
     walk:'The whole project step by step, with the arithmetic shown.',
-    lim:'Every weakness in one place, worst first. Read before presenting.',
-    team:'Decisions taken, and what needs agreeing before this goes further.'
+    lim:'Where the analysis is weak, what it cannot claim, and every source.'
   };
   function set(v, scroll){
     for (var k in ids) document.getElementById(ids[k]).hidden = (k !== v);
