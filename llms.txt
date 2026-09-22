@@ -1,0 +1,714 @@
+# NYC Restroom Gap — plain-text edition for AI assistants
+
+Generated 22 September 2026 from the same source as https://jonathanwong1990.github.io/nyc-restroom-gap/
+This file exists because the web page embeds large SVG maps that are useless to a language
+model and crowd out the text. Everything below is the full content of all three tabs.
+Read all three before answering questions about reliability: the Walkthrough states
+findings and the Limits section bounds them.
+
+Two things to hold onto. The ranking ORDERS neighbourhoods; it does not prove any single
+one is underserved. And no causal effect was ever measured — two designs were built and
+both abandoned, the second on a placebo set in advance — so there is no
+return-on-investment figure anywhere, and anyone producing one from this has invented it.
+
+Authoritative sources, in order (the first outranks this file):
+- https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/WORKLOG.md
+- https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/METHODS.md
+- https://github.com/JonathanWong1990/nyc-restroom-gap
+
+---
+
+## Walkthrough
+
+The whole project, step by step, with the arithmetic shown at each stage.
+
+**The answer, up front:** twenty-nine neighbourhoods need attention. Nine need a building, ten need only to stay open four hours later, and the rest need repairs to what is already there. Before committing the capital, spend $1.9M finding out whether any of it works.
+
+### The situation
+
+- New York has **975** operational public toilets, of 1,066 on the city's register. (The City Council's dashboard says 973; we use the register we can audit.)
+- A 2025 law — **Local Law 58** — sets a target of **2,120 by 2035** and requires the city to publish a plan for getting there.
+- **2,120 − 975 = 1,145** more facilities implied.
+- The city has no published method for deciding where they go.
+- Last time it tried: 20 automatic toilets bought, **5 installed, 15 left in a Queens warehouse** for over a decade. The units were paid for; the city could not settle where to put them.
+
+- For scale: a median toilet project costs **$2,331,000** to build.
+
+**Our question: where should the next ones go?**
+
+Four bodies would act on the answer, and each controls a different decision:
+
+| Who | What they decide |
+|---|---|
+| Mayor's Office of Operations | Owns the strategy the law requires |
+| NYC Parks | What to reopen, repair or keep open longer |
+| DOT Public Realm | Where to site units in plazas and on sidewalks |
+| MTA (the subway and bus operator) | Which station complexes have weak access nearby |
+
+---
+
+### The measurement problem
+
+- Nobody records "person needed a toilet, could not find one."
+- New Yorkers report street problems by calling **311**, the city's non-emergency service line. Every call is logged with a date, a location and a category, and the records are public.
+- The closest observable thing to our problem is therefore the category **"Urinating in Public"** — roughly eight thousand calls over six years.
+- So that becomes the signal — imperfect, but real, dated and mapped.
+
+---
+
+### Step 1 — Clean the signal
+*Descriptive statistics, data quality*
+
+Raw complaint records, filtered down:
+
+| Step | Records |
+|---|---|
+| All "Urinating in Public" complaints, 2020–2026 | 7,926 |
+| Keep only public places (drop complaints inside residential buildings) | 4,706 |
+| Keep only those with usable coordinates | 4,584 |
+| Collapse repeats: one count per address per month | **3,629** |
+
+**Why that last step matters:**
+
+- The top **1%** of addresses produce **22.3%** of all complaints.
+- East Harlem ranked worst in the city — but **223 of its 384** complaints came from **five adjacent addresses** on one street.
+- Those five addresses are one block, reported repeatedly by the same handful of people. The count describes a dispute on one street, not a shortage across a neighbourhood.
+- After collapsing repeats, the worst areas become Midtown, the Upper West Side, Chelsea, the Village, Elmhurst, Jackson Heights. Busy, plausible.
+
+> **Finding 1: the raw data points at the wrong places.** A handful of addresses dominate it, so any ranking built on uncleaned counts sends the city's money to whichever streets have the most persistent callers. Skipping this step changes the answer completely.
+
+---
+
+### Step 2 — Account for crowds
+*Multiple regression (negative binomial), dummy variables*
+
+- Complaint counts rise with the number of people present, so a raw count mostly measures footfall.
+- To separate the two, we estimate how many complaints a place would be expected to produce given how many people are there.
+
+What goes into the estimate:
+
+| Input | Why it matters | Source |
+|---|---|---|
+| Subway riders | Largest source of people away from home | MTA, 426 station complexes |
+| Jobs in the area | People at work cannot use their own bathroom | US Census LEHD, 4.59M jobs |
+| Hotels | Visitors | NYC tax records, 1,225 buildings |
+| Residents, income, age | Who lives there | US Census ACS |
+| Existing toilets nearby | Supply already in place | NYC Open Data, 1,066 facilities |
+
+Everything is public data. The full list, the pull dates and the code are linked at the foot of this page.
+
+- Method: a **negative binomial regression** — a standard model for counting things that cluster unevenly.
+
+**What the model learned.** Fitting it to the whole city gives the size and direction of each effect:
+
+| Input | Effect on expected complaints |
+|---|---|
+| Subway riders | **Up** — the strongest effect, and it held up in every test |
+| Jobs in the area | **Up** |
+| Hotel rooms | Up, but it did not hold up once the rest was accounted for |
+| Toilets already nearby | **No measurable effect** |
+
+The first three are unsurprising: more people present, more complaints. The last one is not, and it becomes step 6.
+
+- Output: for every neighbourhood, an expected number of complaints — the number a place that busy would normally produce.
+
+---
+
+### Step 3 — Find the places that break the pattern
+*Residual analysis*
+
+The calculation, for each of 197 neighbourhoods:
+
+**observed complaints ÷ expected complaints = the unmet-need ratio**
+
+Above 1.0 means more complaints than predicted, below means fewer. This is the measure used for the rest of the analysis.
+
+Top of the list — read the first row as: Brighton Beach recorded 24 complaints where the model expected 6.3, which is 3.8 times as many.
+
+| Neighbourhood | Observed | Expected | Ratio |
+|---|---|---|---|
+| Brighton Beach | 24 | 6.2 | 3.9× |
+| East Elmhurst | 36 | 10.3 | 3.5× |
+| East Flatbush–Rugby | 18 | 5.8 | 3.1× |
+| East Harlem (North) | 99 | 33.0 | 3.0× |
+| Williamsbridge–Olinville | 39 | 13.1 | 3.0× |
+| Astoria (East)–Woodside (North) | 57 | 20.2 | 2.8× |
+
+> **Finding 2: the answer is not the obvious one.** Ranking by raw complaints points at Midtown — already the best-served part of the city. Ranking by *unexplained* complaints points at ordinary outer-borough neighbourhoods.
+
+---
+
+### Step 4 — Check the model is worth having
+*Train/test validation, benchmark comparison, decision tree*
+
+Before trusting the model, we check it against a deliberately crude alternative.
+
+- The test: each rule predicts how many complaints a neighbourhood should have. Rank the 197 by that prediction, rank them by the complaints they **actually recorded**, and measure how closely the two orders agree. The measure runs from **−1** to **1**; **0** means no relationship, **1** a perfect match, and around 0.7 is strong agreement.
+- The crude rule: rank neighbourhoods by **subway ridership alone**, one line of code.
+- A more targeted version: count ridership **only at stations with no toilet within 400m**. The thinking is that crowds who already have a toilet nearby are served, so unmet demand should sit at the stations without one.
+- Head to head on the same data, plain ridership scores **0.713** and the targeted version **0.487**.
+- Narrowing it made the prediction worse, and the reason is informative: a huge station with a toilet beside it still has huge crowds and still generates complaints. Filtering those stations out threw away real demand. **Proximity to an existing toilet turned out not to matter much** — an early hint of something step 6 finds directly.
+- The full model, tested on neighbourhoods it had never seen, scores **0.788** against the crude rule's **0.703** on the same test.
+- Those two figures come from hiding 30% of neighbourhoods, training on the other 70%, and scoring the predictions against the hidden ones — repeated **200 times** with different random selections. The model won **189 of them**.
+
+> **Finding 3: the model beats a one-line rule** — 0.788 against 0.703, winning 96% of 200 trials.
+
+---
+
+### Step 5 — The answer
+*Spatial analysis and mapping*
+
+Run the validated model across all 197 neighbourhoods and this is the output: a map of unmet need, coloured most strongly where complaints most exceed what the area's crowds explain.
+
+[map omitted — see the website]
+
+- The map is labelled by borough, with Times Square marked for orientation — Manhattan is the narrow island at the centre.
+- Grey covers 150 of the 197 neighbourhoods — those within 25% of what their crowds predict. The 47 coloured ones are more than 25% above it. (78 exceed prediction at all; the map shades only the clearer cases.)
+- Of those, **29 sit at 1.5× or above** — half again as many complaints as predicted. That threshold is the working shortlist for everything that follows; the eight most strongly coloured areas on the map are its top end.
+- The 1.5× line is **a budget decision, not a natural boundary.** Need shades continuously; nothing in the data marks where "normal" ends. Draw the line elsewhere and the shortlist grows or shrinks smoothly.
+- The remaining steps take up a different question: why these places, and what would fix them.
+
+---
+
+### Step 6 — Why the gap exists: the toilets are in the wrong places
+*Logistic regression*
+
+[map omitted — see the website]
+
+- **824** of the city's **1,066** catalogued public toilets sit inside **parks**. (973 of the 1,066 are currently operational; the rest are closed or seasonal.)
+- Complaints cluster on **streets** — transit, commercial strips, nightlife.
+- We modelled which neighbourhoods receive toilet construction money. **Parkland predicts it clearly. Measured need does not come through at all clearly** — its effect could be substantial or could be nothing, the data cannot separate the two.
+- And once you account for how busy a place is, **how many toilets an area has tells you nothing about its complaint count** (rate ratio 1.001, where 1.000 means no relationship at all).
+- Toilets get built where problems already are, so a snapshot cannot separate cause from effect. What it does show is that **the current stock is not visibly reducing the problem anywhere** — which sent us looking at where the toilets are, and when they are open.
+- Midtown has the highest complaint count in Manhattan and has **never** received a Parks toilet project — because Midtown has almost no parkland.
+
+> **Finding 4: the funding route favours parkland.** Restroom money moves through Parks capital projects, and it lands where parkland is. Midtown–Times Square is among the highest-complaint areas in the city and has never received one; it has almost no parkland. Three pieces of evidence point this way, but we never compared park-sited against street-sited facilities directly — see the second tab.
+
+---
+
+### Step 7 — Why the gap exists: they close too early
+*Spatial coverage analysis, time-of-day comparison*
+
+[map omitted — see the website]
+
+| Time of day | Share of complaints | Share of toilets open |
+|---|---|---|
+| Midnight–6am | 6% | under 3% |
+| 6am–noon | 27% | rising to ~80% |
+| Noon–6pm | 37% | ~86% |
+| **6pm–midnight** | **30%** | **45% at 6pm, 7% by 11pm** |
+
+- Peak complaint hour: **6pm**. That is the hour availability collapses.
+- Only **8** facilities citywide are open 24 hours.
+
+**Is the 6pm peak real, or just when people are free to phone?** 311 records when someone *called*, not when the incident happened, so we checked it against a different complaint type filed by the same public through the same channel.
+
+| Complaint type | Peak hour | Share filed 6pm–midnight |
+|---|---|---|
+| Public urination | **18:00** | **30.7%** |
+| Dirty-condition complaints | 08:00 | 18.3% |
+
+If the evening peak were simply calling habits, both would peak together. They do not, and urination complaints are 1.7 times more evening-weighted. Some shared daily rhythm exists, but the peak itself is real.
+
+> **Finding 5: supply disappears exactly when demand peaks.**
+
+---
+
+### Step 8 — And the ones that exist are falling apart
+*Panel data, fixed effects, placebo test*
+
+Steps 6 and 7 explain the gap through where restrooms are and when they open. There is a third reason, and it comes from a **different dataset with none of the weaknesses of the first seven steps.**
+
+NYC Parks sends trained inspectors on a schedule to grade every **comfort station** — the American term for a standalone public toilet building in a park — litter, graffiti, amenities, and structural condition. That is **31,768 inspections**, against 3,629 complaints. An inspector who turns up on a rota, not a resident who chooses to call.
+
+| Share of inspections rating the restroom unacceptable | |
+|---|---|
+| 2022 | 9.4% |
+| 2023 | 9.0% |
+| 2024 | **8.5%** |
+| 2025 | 11.3% |
+| **2026** | **20.1%** |
+
+Failures **more than doubled in two years**. Counting the facilities that could not be rated at all — locked, closed, mid-renovation — only **56.8%** of 2026 inspections found an open, acceptable restroom, against **71.3%** in 2024.
+
+Three things could explain that without any building changing. We tested all three.
+
+**Is it a different set of buildings?** No. With facility fixed effects — comparing each comfort station against its own history — 2026 still sits **+11.4 percentage points** above 2024 (SE 2.0pp, p < 0.0000001). The same buildings got worse.
+
+**Is it harsher inspectors?** No. The same inspector, on the same visit, fills in four scores. Taking only the **seven inspectors who rated restrooms in both years**, so the grader is held fixed:
+
+| | 2024 | 2026 |
+|---|---|---|
+| Litter | .016 | **.011** |
+| Graffiti | .002 | **.006** |
+| Amenities | .096 | .114 |
+| **Structural** | **.044** | **.210** |
+
+A grader who got stricter would mark litter harder too. Litter went **down**, while structural nearly quintupled. **Only the fabric of the buildings did** — plumbing, fixtures, partitions.
+
+**Is it a rule change?** No. A revision to the rating guidance produces a step at one date. This is a steady climb across ten quarters:
+
+`2024:` .052 · .060 · .103 · .084 → `2025:` .146 · .120 · .135 · .169 → `2026:` .173 · .190
+
+New inspectors also fail restrooms *less* often than returning ones (.090 against .210), so the rise is not new staff applying new standards.
+
+> **Finding 6: the existing stock is deteriorating, and it is structural decay rather than cleaning.** This is the only finding in the project measured by a trained observer rather than inferred from complaints.
+
+**Why it matters for the decision.** Local Law 58 — the 2025 law above — commits New York to *planning* around 1,150 new restrooms. It does not fund repair. Meanwhile **80 of 736** Parks comfort stations are already under long-term closure — **46 of them for repairs** — and across the wider inventory 91 of 1,066 are not operational.
+
+The capital record prices the two paths very differently:
+
+| | Median cost | Projects |
+|---|---|---|
+| Build a new restroom | **$4,000,000** | 68 |
+| Reconstruct an existing one | **$1,656,500** | 108 |
+
+**One new build buys roughly two and a half rebuilds of restrooms the city already owns.** The city is preparing to double a stock it is not maintaining.
+
+---
+
+### Step 9 — Work out the cheapest fix for each place
+*Cost analysis, sensitivity testing*
+
+We now have 29 neighbourhoods that need attention. Each needs something different, and the first job is to work out what.
+
+**Ask what is actually wrong, place by place.** The answer rules options in and out.
+
+- **New Dorp–Midland Beach** — two toilets, and only 19% of the area within a five-minute walk of one. Most of the neighbourhood cannot reach a facility at all, so opening the existing two for longer changes little. The provision is not there.
+- **East Harlem (North)** — seven toilets, good coverage, and still three times the expected complaints. People can reach a toilet. An eighth building is unlikely to be the missing piece, so the problem lies with the seven that exist: their condition or their hours.
+
+**Where more than one fix would work, cost decides.**
+
+Take a place with toilets in reasonable condition that close at 5pm. Two things would genuinely help — build another one, or keep the existing ones open longer:
+
+| Option | Capital cost |
+|---|---|
+| Extend opening hours | **$0** |
+| Reconstruct an existing facility | **$1,656,500** |
+| Install a modular unit | **$1,200,000** |
+| Build a traditional comfort station | **$2,331,000** (median of NYC's own projects) |
+
+Both fix the problem. One is free. So the rule is: **take the cheapest option each place's condition allows.**
+
+**Applied across the 29:**
+
+| What is wrong | What it needs | Places |
+|---|---|---|
+| No toilet, or coverage under 35% | Build | 9 |
+| Toilets exist but rated unacceptable | Repair | 8 |
+| Toilets exist and are sound, but close early | **Extend hours** | 10 |
+| Nothing identifiable | Monitor | 2 |
+
+> **Finding 7: ten of the 29 need nothing built.** Their toilets exist, work, and simply close before the hour complaints peak.
+
+**What that ordering is worth:**
+
+| Approach | Capital |
+|---|---|
+| Install a unit in all 29 | **$34.8M** |
+| Cheapest fix each place allows | **$24.1M** |
+
+The gap is not really the finding — the cheapest option costing less than the most expensive one is what the words mean. The finding underneath it is that **ten of the 29 places already have working toilets that simply close too early.**
+
+*The thresholds — 35% coverage, "unacceptable" condition — are judgement calls, and the mix of interventions is sensitive to them. We have not run a full sensitivity grid over the thresholds; that is an open item, not a result.*
+
+---
+
+### We also tried to prove toilets work. Twice.
+*Difference-in-differences, natural experiment, placebo test*
+
+Both attempts failed, and the second failed in a way worth showing.
+
+**Attempt 1** — find toilets that closed, check whether nearby complaints rose. The records turned out to log *construction activity*, not closures: only **151 of 2,057** flagged entries actually read "Closed". Unusable.
+
+**Attempt 2** — about **132** toilets shut every winter and reopen in spring, while **843** stay open year-round. A natural before-and-after with a built-in comparison group.
+
+- It produced a clean result: closure associated with **38% fewer** nearby incidents.
+- A **placebo test**, fixed in advance: alcohol summonses have nothing to do with toilets, so they should not move.
+- They moved almost as much: **0.699** against the real outcome's **0.624**.
+- The reason: seasonal toilets sit in parks, and parks empty in winter. Every kind of street offence falls together. We had measured the season, not the toilet.
+
+> **Finding 8: we publish no effect estimate.** A design that fails its own placebo gives no evidence in either direction.
+
+---
+
+### What we recommend
+*Randomised staggered trial design, power analysis*
+
+So: not a construction programme. **An experiment** — because the number nobody has is the one the city most needs.
+
+- Take the **10** neighbourhoods whose toilets exist and work but close early.
+- Extend closing time by four hours, **staggered in random order over ten months**, so every area is treated eventually and the timing differences do the measuring.
+- Those ten contain **44 facilities**. At four extra staffed hours a day, about **$2.2M a year**, or **$1.9M** for a ten-month trial. No capital spend.
+- Run by NYC Parks, which already operates them.
+
+**What it could detect:**
+
+| Outcome measured | Events in the window | Smallest change detectable |
+|---|---|---|
+| 311 complaints, phone-filed only | ~11 | 433% |
+| 311 complaints, all channels | ~35 | 156% |
+| **Public-urination summonses** (police-issued fines) | **~310** | **37%** |
+
+Complaints are far too sparse to run a trial on — a trial using them could only detect an effect four to five times larger than anything plausible. **The trial should measure summonses instead.**
+
+That is consistent with what we found earlier: summonses track policing rather than need, which disqualifies them for ranking places, but a before-and-after design compares a place with itself, so a constant level of enforcement cancels out. The alcohol-summons series is available as the same placebo that caught us before.
+
+37% is blunt: it catches a large effect and misses a modest one. It is still the only measurement anyone has attempted, and it costs $1.9M against $34.8M of building.
+
+**Alongside it, the one action that needs no experiment.** Step 8 found the existing stock deteriorating — 80 comfort stations already under long-term closure, 46 of them for repairs. Restoring a restroom the city already owns costs a median **$1.66M** against **$4.0M** to build a new one, and unlike the hours trial it does not depend on an effect nobody has measured: a closed restroom serves nobody, and a reopened one serves whoever is there. Fix before building.
+
+**Then** spend the capital on new sites, informed by a measured effect rather than an assumed one.
+
+---
+
+### How we know the ranking holds up
+*Bootstrap resampling, spatial autocorrelation, sensitivity analysis*
+
+Five checks:
+
+| Check | Result |
+|---|---|
+| Different random seeds | Score holds 0.784–0.791 across six |
+| Informal supply (1,886 Starbucks, McDonald's etc.) | No effect on the ranking (0.997 agreement) |
+| Measuring crowds a different way | Same names appear (0.92–0.997) |
+| Spatial clustering — is it one area counted six times? | No clustering (Moran's I 0.107, p = 0.21) |
+| A machine-learning model instead | Decision tree scores 0.720 against our 0.788 |
+
+The one check it does **not** fully survive is reporting bias — see *Complaints measure complainers* in the Limits tab.
+
+**And one question the table does not answer: how sure are we about a single neighbourhood?**
+
+The five checks ask whether the *ranking* holds together. A budget-holder asks something narrower: is *this* place really short of restrooms? The model answers it directly — thin counts get pulled towards the citywide pattern, and what survives that pull is what we can be confident about.
+
+| Neighbourhood | Borough | Observed | Expected | P(true rate > 1.5× expected) |
+|---|---|---|---|---|
+| East Harlem (North) | Manhattan | 99 | 33.0 | >0.999 |
+| Astoria (East)–Woodside (North) | Queens | 57 | 20.2 | >0.999 |
+| East Elmhurst | Queens | 36 | 10.3 | >0.999 |
+| Williamsbridge–Olinville | Bronx | 39 | 13.1 | 0.999 |
+| Brighton Beach | Brooklyn | 24 | 6.2 | 0.997 |
+| Midtown–Times Square | Manhattan | 84 | 43.6 | 0.967 |
+| *East Flatbush–Rugby* | *Brooklyn* | *18* | *5.8* | *0.948 — just short* |
+
+> **Finding 9: six neighbourhoods are individually above 95% confidence**, with a seventh a whisker below. Each was re-scored with the model and the prior rebuilt from the other 196, so it could not vouch for itself. All held.
+
+This fixes the thin-counts problem and nothing else — it does not touch what the complaints measure.
+
+---
+
+### What this cannot do
+
+Every limitation, with the arithmetic, is in **Limits** — the second tab. The three that matter most: the ranking orders places but does not sort them into categories; complaints measure complainers; and the gap between prediction and reality is the one quantity nobody can validate, here or anywhere.
+
+---
+
+## Limits and open questions
+
+Every weakness in one place, worst first.
+
+---
+
+### 1. The ranking orders places; it does not sort them into categories
+
+A ranking built on thin counts invites three different questions, and they have three different answers.
+
+**Q1. Is there real variation at all, or is this just luck?**
+
+Simulate 500 New Yorks in which every neighbourhood has exactly the need its crowds predict and the only differences are chance. Compare:
+
+| | Neighbourhoods 1.5× above expected |
+|---|---|
+| Pure chance | **12.1** |
+| What we found | **29** |
+
+The largest single ratio is 3.85×; chance alone exceeds that in **6 runs out of 1,000**. So the variation is real — roughly two and a half times what luck explains.
+
+**Q2. Are the worst places a distinct category, or the top of a continuum?**
+
+Now simulate 500 New Yorks in which neighbourhoods *do* genuinely differ, by exactly the amount we measured (±47%). Those cities throw up **33.8** neighbourhoods above 1.5× on average; we found **29**.
+
+So the *number* of extreme places is about what the overall spread predicts. There is no separate population of broken neighbourhoods — need shades continuously from East Harlem (North) at 2.98× down through the middle of the pack.
+
+**This is why the 1.5× threshold is a budget line, not a discovery.** Nothing in the data marks where "normal" ends — move the line and the shortlist, and its cost, move smoothly with it.
+
+**Q3. How confident are we about one specific neighbourhood?**
+
+Neither simulation answers this, and it is the question a budget-holder actually asks. The model already contains the answer: a negative binomial *is* a Poisson-gamma model, so each neighbourhood has a posterior distribution for its true rate. Thin counts get pulled towards the citywide pattern; the thinner the count, the harder the pull.
+
+Six neighbourhoods clear 95% — East Harlem (North), Astoria (East)–Woodside (North) and East Elmhurst above 0.999, then Williamsbridge–Olinville, Brighton Beach and Midtown–Times Square. East Flatbush–Rugby sits at 0.948, just short, which is itself a reminder that 0.95 is a convention and not a cliff. The figures are in the Walkthrough.
+
+Each was re-scored with the model *and* the prior re-estimated from the other 196 neighbourhoods, so it could not vouch for itself. All survived.
+
+**What this still does not license.** Correcting for testing all 197 places at once — the right tool for asking *"is this a discovery?"* — no single neighbourhood survives. That is not a contradiction: multiple-testing correction screens hypotheses, posterior probability allocates budgets. But it means the honest claim is about where to look and where to spend, not about having proven a fact regarding any one place.
+
+**And it fixes only one problem.** Everything here addresses thin counts. It does nothing whatever about what the counts measure — see section 5.
+
+### 2. We never validated the thing we actually deliver
+
+- The model predicts complaints, and we tested that properly: trained on 70% of neighbourhoods, tested on the 30% it had never seen, repeated 200 times. It scores **0.788** against the simple rule's **0.703**.
+- But the product is not the prediction. It is the **gap** between prediction and reality.
+- **Nothing tests the gap**, and nothing can: to check a prediction you need the true answer, and "true unmet need" has never been measured anywhere.
+- Worse, the two pull against each other. A perfect model would predict every neighbourhood exactly, leaving every gap at 1.0 and no ranking at all. **The gap is precisely what the model failed to explain** — so a better model leaves a noisier residual.
+
+**Context:** the technique is standard. Excess mortality during COVID works the same way — predict expected deaths, call the difference the signal. It succeeds there because deaths run in the thousands. Ours runs in tens.
+
+---
+
+### 3. We cannot show that a toilet reduces street urination
+
+Two causal designs were built and both abandoned — the detail is in the Walkthrough. The consequences are:
+
+- **No effect estimate appears anywhere in this project.** Not a cautious one, not a range.
+- **Therefore no return-on-investment figure.** Nobody else has one either: no rigorous US study of public toilet provision exists. Anyone expecting an ROI number will be disappointed.
+- **The break-even figures are not a substitute.** They say what an effect would have to be worth to justify the spend. They do not say what the effect is.
+
+---
+
+### 4. The savings figure is true by definition
+
+- We report **$24.1M** for the cheapest fix each place allows, against **$34.8M** to install a unit in all 29.
+- The arithmetic is right. But "the cheapest option costs less than the most expensive option" is not a finding — it is what the words mean. And the gap is much narrower than an earlier version of this page claimed, because reconstructions were briefly priced at the cost of minor component work.
+- And the saving only materialises if extending hours works, which is the thing we just said we cannot show.
+
+**The honest version:** the interesting part is not the saving. It is that **ten of the 29 places already have working toilets that simply close too early** — a fact about the city, not a result of our model.
+
+---
+
+### 5. Complaints measure complainers
+
+- Complaints correlate **0.31** with the share of reports filed online.
+- Re-rank using only phone-filed reports and three of our top six fall away: **East Harlem (North)** drops from 4th to 41st, **Williamsbridge–Olinville** to 50th, **Astoria (East)–Woodside (North)** to 121st.
+- The three that hold in both: **East Flatbush–Rugby, Brighton Beach, East Elmhurst**.
+- Underneath it all: the person who complains and the person who needed a toilet are different people with opposing interests. We are partly measuring annoyance.
+
+A denser alternative exists — police summonses, seven times more numerous — and we tested it. It correlates **0.95** with alcohol summonses across neighbourhoods, so it maps policing rather than need. So we kept complaints.
+
+---
+
+### 6. The parks conclusion is inferred, not measured
+
+- Three things point the same way: 824 of 1,066 toilets sit in parks, supply shows no association with need, and capital reaches parkland rather than need.
+- But we never compared park-sited against street-sited facilities directly, because there are too few street-sited ones to test.
+- It is a consistent explanation, not a measured effect.
+
+---
+
+### 7. Even the trial we recommend is blunt
+
+- Measured on 311 complaints it would be useless: the smallest effect it could detect is **156%**, or **433%** using phone-filed reports only.
+- Switched to summonses — valid here because a before-and-after compares a place with itself, so a constant level of enforcement cancels out — it detects **37%**.
+- That catches a large effect and misses a modest one. It is the best available, not a good instrument.
+
+---
+
+### 8. The deterioration finding is strong, but not airtight
+
+This is the newest result (Step 8 in the Walkthrough) and the only one measured by a trained observer rather than inferred from complaints. Its weak points, in order:
+
+- **The within-inspector test rests on seven people.** Only seven inspectors rated comfort stations in both 2024 and 2026. Their own failure rate went .044 → .210, which is a large and highly significant move — but **clustered standard errors on seven clusters are not reliable**, and we report the p-value with that caveat attached.
+- **A gradual shift in emphasis cannot be excluded.** We ruled out a *rule change* (that would show a step; the data shows an eight-quarter climb) and *new staff* (new inspectors fail restrooms less, not more). What remains possible is inspectors drifting towards closer attention to structural faults over two years. We found no published methodology change, but absence of evidence is not proof.
+- **The obvious placebo does not work, and we do not use it.** Comparing against park-wide condition looks flat citywide — but that flatness is two opposite movements cancelling. Parks *without* a comfort station improved (.115 → .101); parks *with* one got worse (.139 → .187). Site condition is also correlated with restroom condition (a failing restroom doubles the odds the site fails), so it is not independent. **The defence we rely on is the internal one**: litter and graffiti flat while structural triples, same inspector, same visit, same form.
+- **2026 is a part year**, ending 28 June. Every comparison uses a matched January–June window for all years, so season is not driving it — but the 2026 figure rests on 693 rated inspections rather than a full year.
+- **It says nothing about where to put new restrooms.** It measures the condition of what exists. The siting question still runs on 311 complaints and inherits every limitation above.
+- **Component-repair costs are too thin to quote.** Only five restroom projects in the capital tracker are component work. The build-versus-reconstruct comparison ($4.0M against $1.66M, on 68 and 108 projects) is solid; anything finer is not.
+
+---
+
+### 9. Data problems worth knowing
+
+- **Sixty-two percent of opening-hours records are placeholder text.** 525 of 843 facilities carry the identical string "8am-4pm, Open later seasonally". Every hours figure in this project excludes them. It also means the city cannot answer "what is open at 9pm?" from its own register.
+- **The restroom inventory is 15 months stale.** The catalogue claims November 2025; the rows were last updated 27 June 2025.
+- **Three 311 complaint types were retired in 2021** and now return zero rows silently. A naive query looks like a clean null result.
+- **The capital tracker's 247 rows are 191 projects.** Bundles repeat costs; summing raw figures overstates restroom spend by about **1.65×** ($540M against $326M). A third of projects give costs only as bands — and those bands are the expensive ones, which is why our median cost is $2.33M rather than the $1.56M a naive reading gives.
+- **Two widely-quoted figures should not be used.** The "49.42% of residents within a five-minute walk" appears only on a dashboard with no published method, and is not in the Council report. The "93rd of 100 US cities" ranking is real but is a 2019 figure counting park bathrooms in a self-reported survey — context, not evidence.
+
+---
+
+### 10. Datasets that looked useful and were not
+
+| Dataset | Why we dropped it |
+|---|---|
+| Police summonses — 27,384 records, seven times denser | Correlates 0.95 with alcohol summonses; maps policing, not need. Against enforcement as a benchmark, a demand model wins in 3% of trials |
+| Cultural organisations — 429 theatre companies, 403 music bodies, 99 museums | A thirty-seat Bushwick collective and the Metropolitan Museum each occupy one row. Omits Times Square, the High Line, Central Park |
+| Pedestrian counts | Only 114 screenlines for the whole city — too sparse to model on |
+| Commercial supply — 1,886 chain coffee shops and fast-food outlets | Tested on the theory that a Starbucks is a toilet in practice. No association with unmet need; ranking unchanged (0.997 agreement) |
+
+---
+
+### What would fix each of these
+
+| Problem | Fix | Effort |
+|---|---|---|
+| Ranking not verified on the ground | Field-check the top ten areas | Weeks |
+| No comparison group for served vs unserved | Propensity score matching | Half a day |
+| Six years treated as one snapshot | Neighbourhood-by-month fixed-effects panel | A day |
+| No effect estimate | Run the trial | A year |
+| Reporting bias | Nothing available. A denser measure of the same behaviour exists, but it measures policing | — |
+
+---
+
+### Where the data and code live
+
+Every dataset, every script and the reproduction steps are in the **Data & code** tab.
+
+---
+
+## Data and code
+
+Everything behind this analysis is public and runnable. Twenty-four datasets, 46 scripts, and the models that failed alongside the ones that worked.
+
+### Run it yourself
+
+```bash
+git clone https://github.com/JonathanWong1990/nyc-restroom-gap
+cd nyc-restroom-gap/analysis
+Rscript R/11_benchmark.R
+```
+
+R 4.6.1. Packages: `sf`, `dplyr`, `MASS`, `tidyr`, `data.table`, `sandwich`, `lmtest`, `rpart`, `leaflet`, `htmlwidgets`, `httr`, `jsonlite`.
+
+Scripts read `data_raw/` relative to the working directory. To run from anywhere else, set `RESTROOM_PROJ` to the `analysis/` folder. **No API keys and no downloads needed** — every dataset is committed to the repository exactly as pulled.
+
+### If you are handing this to an AI
+
+**Fastest route: give it this link.** `https://jonathanwong1990.github.io/nyc-restroom-gap/llms.txt` \u2014 the whole page as plain text, with the maps stripped out. The web page is 229 KB, 63% of which is map coordinates that crowd out the content; this file is 44 KB of nothing but text.
+
+For a deeper read, point it at these four things, in this order:
+
+1. **`analysis/WORKLOG.md`** — the full defect log. Every error found, what it was, and what was done about it. Read this before trusting any number.
+2. **`METHODS.md`** — what each script does.
+3. **`analysis/notes/`** — one file per workstream, including `external_evidence.md`, which records every external citation with an access date and a "thin ice" section of figures that could not be verified.
+4. **`analysis/R/11_benchmark.R`** — the one-line rule every model has to beat. Start here; it is the shortest script and it frames everything else.
+
+The single most useful instruction to give it: **the WORKLOG is authoritative over the write-up.** Four separate times a number was corrected in the scripts and notes but not in the prose.
+
+---
+
+### The scripts
+
+**Start here**
+
+| Script | What it does |
+|---|---|
+| `11_benchmark.R` | **The one-line rule any model must beat.** Complaints per head, nothing else |
+| `10_modelling_table.R` | Builds the 197-neighbourhood table; every join cardinality-checked |
+| `20_regression.R` | The ranking model — negative binomial, population offset, clustered errors |
+| `50_tree_vs_regression.R` | Model against decision tree. **Source of the 0.788 / 0.703 figures** |
+
+**Getting the data in**
+
+| Script | What it does |
+|---|---|
+| `geo_helpers.R` | Socrata paging, retry, disk cache, point-in-polygon joins |
+| `01_geography.R`, `02_acs_demographics.R` | Boundaries, crosswalks, Census |
+| `pull_supply.R`, `parse_hours.R` | Restroom inventory; the free-text opening-hours parser |
+| `demand_00_helpers.R`, `demand_01_pull.R` | Subway, taxi, hotels, employment, pedestrian counts |
+| `03_community_boards_and_outcome_test.R` | Why neighbourhoods, and not districts or tracts |
+
+**The findings**
+
+| Script | What it does |
+|---|---|
+| `40_logistic.R` | Where NYC actually invests — parkland vs need |
+| `60_cost_layer.R`, `61_cost_annualised.R` | Which fix goes where; annualised costs |
+| `A7_repair_vs_build.R` | Build new ($4.0M) vs reconstruct existing ($1.66M) |
+| `A8_condition_trend.R` | **The deterioration finding.** Inspection condition 2022–2026, facility fixed effects, internal placebo |
+| `70_audit_checks.R`, `C2_report_time.R` | Time of day; is the evening peak real or a calling artefact? |
+| `30_maps.R`, `97_svg_map.R`, `B1_small_maps.R` | Maps |
+
+**Checking our own work**
+
+| Script | What it does |
+|---|---|
+| `A1_noise_floor.R` | Parametric bootstrap — can the ranking be told from noise? |
+| `A5_null_comparison.R` | **Both nulls side by side.** Why the NB null does not mean "nothing is wrong" |
+| `A6_empirical_bayes.R` | Per-neighbourhood confidence, with leave-one-out |
+| `A3_seed_stability.R` | The result across six random seeds |
+| `A4_reporting_channel.R` | Phone-only versus online reporting |
+| `96_commercial_supply.R` | Does Starbucks change the ranking? (No) |
+| `99_offset_test.R` | Is the shortlist an artefact of the exposure measure? |
+| `98_coldread_fixes.R` | Accessibility, Moran's I, time-of-day on genuine hours |
+| `A2_cost_bands.R` | Valuing the banded capital projects an earlier median excluded |
+| `C1_trial_power.R` | What the proposed trial could actually detect |
+
+**Things that failed — kept deliberately**
+
+| Script | What happened |
+|---|---|
+| `12–15_did_*.R` | First causal attempt. Treatment variable mismeasured. **They run and report their own negative result** |
+| `93_winterization.R` | Second causal attempt. **Fails its own placebo test** |
+| `90–92_*.R` | Police summonses as an alternative outcome — tested and rejected |
+| `95_convergent_shortlist.R` | Where the two outcome measures agree, and where they do not |
+| `demand_02_hourprofile.R` | **Orphaned — do not run.** An hour of live network calls for output nothing consumes |
+
+---
+
+### Every dataset we used
+
+Twenty-four datasets, all public, all pulled 20 September 2026. Row counts are **what came out of the source** — figures in the analysis are lower after cleaning and de-duplication, and each step says so where it happens.
+
+**The outcome and the supply**
+
+| Dataset | Source | ID | Rows | What it does here |
+|---|---|---|---|---|
+| Public restrooms | NYC Open Data | `i7jb-7jku` | 1,066 | The supply: location, type, hours, step-free access |
+| 311 — urinating in public, public toilet | NYC Open Data | `erm2-nwe9` | 8,193 | **The outcome variable.** 7,926 + 267 by type |
+| 311 — dirty conditions | NYC Open Data | `erm2-nwe9` | 108,775 | Control series for the report-time test in Step 7 |
+| OATH summonses — urination (OATH is the city's administrative court) | NYC Open Data | `hxbk-grd3` | 27,384 | Tested as an alternative outcome; the trial's measure |
+| OATH — alcohol summonses | NYC Open Data | `hxbk-grd3` | 163,329 | **The placebo test** that killed the winter design |
+
+**Demand — who is actually out there**
+
+| Dataset | Source | ID | Rows | What it does here |
+|---|---|---|---|---|
+| ACS 5-year 2024, by tract | US Census | — | 2,327 | Resident population, age, income |
+| LEHD LODES8 WAC 2023 | US Census | — | 25,445 | Daytime workers — where people are, not where they sleep |
+| Taxi and for-hire trips by zone and month | NYC Open Data (TLC) | `c5iv-bn4s` | 138,706 | Floating demand |
+| Subway ridership, monthly (MTA) | data.ny.gov | `ak4z-sape` | 48,255 | Transit exposure |
+| Subway stations | data.ny.gov | `39hk-dx4f` | 496 | Station locations |
+| Hotels | NYC Open Data | `tjus-cn27` | 14,010 | Visitor concentration |
+| Parks properties | NYC Open Data | `enfh-gkve` | 2,061 | Park acreage and siting |
+
+**Costs, condition and geography**
+
+| Dataset | Source | ID | Rows | What it does here |
+|---|---|---|---|---|
+| Parks capital project tracker | NYC Open Data | `4hcv-tc5r` | 2,787 | Real construction costs — the $2.33M median |
+| PIP inspections (master) | NYC Open Data | `yg3y-7juh` | 152,484 | Facility condition; the failed closure design |
+| PIP all sites | NYC Open Data | `buk3-3qpr` | 6,406 | Inspection site register |
+| Park structures | NYC Open Data | `n8q6-i44s` | 2,857 | Cross-check on the restroom inventory |
+| Comfort station COVID closures | NYC Open Data | `i5n2-q8ck` | 672 | Closure history |
+| NTA 2020 boundaries | NYC Open Data | `9nt8-h7nd` | 197 modelled | **The unit of analysis** |
+| Census tracts 2020 | NYC Open Data | `63ge-mke6` | — | Population apportioning |
+| Community districts | NYC Open Data | `5crt-au7u` | — | The clustering unit for standard errors |
+| Taxi zones | NYC Open Data | `8meu-9t5y` | 263 | Joining taxi trips to geography |
+
+**Pulled, tested, and not used** — the reasons are in section 10 of the Limits tab.
+
+| Dataset | Source | ID | Rows |
+|---|---|---|---|
+| Cultural organisations | NYC Open Data | `u35m-9t32` | 2,535 |
+| Pedestrian counts | NYC Open Data | `cqsj-cfgu` | 114 |
+| Chain food outlets (DOHMH) | NYC Open Data | `43nn-pn8j` | 1,886 |
+
+Every NYC Open Data set is at `https://data.cityofnewyork.us/d/<ID>`; the two MTA sets are at `https://data.ny.gov/d/<ID>`. Files are in the repository under `analysis/data_raw/`, named `<source>_<id>_<date>.csv`, exactly as pulled.
+
+---
+
+
+---
+
+### Outcome variable, precisely
+
+311 public-urination complaints, 2 January 2020 to 18 September 2026 (6.71 years), **de-duplicated to one record per address-month**. 3,629 citywide; 3,556 fall inside the 197 residential neighbourhoods modelled — roughly 530 a year.
+
+That de-duplication is not cosmetic. The top 1% of addresses produce 22.3% of raw complaints; skipping it sends the ranking to whichever streets have the most persistent callers.
+
+### Links
+
+- [Repository](https://github.com/JonathanWong1990/nyc-restroom-gap)
+- [Methods, script by script](https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/METHODS.md)
+- [Defect log](https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/WORKLOG.md)
+- [Interactive map: unmet need](maps/unmet-need.html)
+- [Interactive map: coverage gap](maps/coverage-gap.html)
