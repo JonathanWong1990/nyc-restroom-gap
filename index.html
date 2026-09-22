@@ -1,4 +1,9 @@
 <!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
 <title>The NYC Restroom Gap</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -280,7 +285,9 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
   font-size:11.5px; padding:9px 4px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
-</style>
+.cb{background:#f2f2ef;border:1px solid rgba(0,0,0,.12);border-radius:6px;padding:.85rem 1rem;overflow-x:auto;margin:1rem 0;-webkit-overflow-scrolling:touch}.cb code{background:none;padding:0;white-space:pre;font:500 .8rem/1.6 'IBM Plex Mono',ui-monospace,SFMono-Regular,monospace}@media(prefers-color-scheme:dark){:root:not([data-theme='light']) .cb{background:#1b1d1c;border-color:rgba(255,255,255,.14)}}:root[data-theme='dark'] .cb{background:#1b1d1c;border-color:rgba(255,255,255,.14)}@media(max-width:600px){.cb code{font-size:.74rem}}</style>
+</head>
+<body>
 <div class="wrap">
 <header class="masthead">
   <p class="eyebrow">PMBA6093 · Analytics for Managers · Final project</p>
@@ -475,7 +482,9 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 <h2>Data and code</h2>
 <p>Everything behind this analysis is public and runnable. Twenty datasets, forty-odd scripts, and the models that failed alongside the ones that worked.</p>
 <h3>Run it yourself</h3>
-<p>``<code>bash git clone https://github.com/JonathanWong1990/nyc-restroom-gap cd nyc-restroom-gap/analysis Rscript R/11_benchmark.R </code>``</p>
+<pre class="cb"><code>git clone https://github.com/JonathanWong1990/nyc-restroom-gap
+cd nyc-restroom-gap/analysis
+Rscript R/11_benchmark.R</code></pre>
 <p>R 4.6.1. Packages: <code>sf</code>, <code>dplyr</code>, <code>MASS</code>, <code>tidyr</code>, <code>data.table</code>, <code>sandwich</code>, <code>lmtest</code>, <code>rpart</code>, <code>leaflet</code>, <code>htmlwidgets</code>, <code>httr</code>, <code>jsonlite</code>.</p>
 <p>Scripts read <code>data_raw/</code> relative to the working directory. To run from anywhere else, set <code>RESTROOM_PROJ</code> to the <code>analysis/</code> folder. <strong>No API keys and no downloads needed</strong> — every dataset is committed to the repository exactly as pulled.</p>
 <h3>If you are handing this to an AI</h3>
@@ -550,3 +559,5 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
   set(start, false);
 })();
 </script>
+</body>
+</html>
