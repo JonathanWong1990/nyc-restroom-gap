@@ -12,7 +12,7 @@ Rscript R/11_benchmark.R        # scripts resolve data_raw/ relative to this dir
 ```
 
 R 4.6.1. Packages: `sf`, `dplyr`, `MASS`, `tidyr`, `leaflet`, `htmlwidgets`, `htmltools`,
-`rpart`, `data.table`, `httr`, `jsonlite`.
+`rpart`, `data.table`, `sandwich`, `lmtest`, `httr`, `jsonlite`.
 
 Scripts read `data_raw/` relative to the working directory. To run from elsewhere, set
 `RESTROOM_PROJ` to the `analysis/` directory.

@@ -62,3 +62,42 @@ q <- d[yr>=2023 & cs_structural %in% c("A","U")][, .(n=.N,
         fail=round(mean(cs_structural=="U"),3)), by=.(q=paste0(year(date),"Q",quarter(date)))][order(q)]
 print(q)
 cat("\nA guidance change gives a STEP at one date; decay gives a steady climb.\n")
+
+## ---- WHY WE DO NOT USE THE PARK-WIDE PLACEBO -------------------------------
+## The obvious placebo is park-wide condition: same inspector, same visit, a
+## different outcome. Pooled across all parks it looks flat, which would appear
+## to clear the finding. It does not: the flatness is two opposite movements
+## cancelling. Parks WITHOUT a comfort station improve while parks WITH one get
+## worse, and site condition is not independent of restroom condition anyway.
+## The defensible placebo is the internal one above (litter/graffiti vs structural).
+cat("\n=== PARK-WIDE PLACEBO: flat in aggregate, not flat underneath ===\n")
+mas[, date := as.IDate(date)][, yr := year(date)][, doy := as.integer(format(date,"%j"))]
+has_cs <- unique(ins$inspection_id)
+mas[, has_cs := inspection_id %in% has_cs]
+pw <- mas[doy <= 179 & yr >= 2022 & overall_condition %in% c("A","U")]
+cat("pooled over ALL park inspections:\n")
+print(pw[, .(n=.N, site_fail=round(mean(overall_condition=="U"),4)), by=yr][order(yr)])
+cat("\nsplit by whether the park HAS a comfort station:\n")
+print(pw[, .(n=.N, site_fail=round(mean(overall_condition=="U"),4)),
+         by=.(yr, has_cs)][order(has_cs, yr)])
+cat("\nis site condition independent of restroom condition?\n")
+j <- merge(ins[, .(inspection_id, cs_overall_condition)],
+           mas[, .(inspection_id, overall_condition)], by="inspection_id")
+j <- j[cs_overall_condition %in% c("A","U") & overall_condition %in% c("A","U")]
+cat(sprintf("  P(site fails | restroom fails) = %.3f   P(site fails | restroom ok) = %.3f\n",
+    mean(j[cs_overall_condition=="U"]$overall_condition=="U"),
+    mean(j[cs_overall_condition=="A"]$overall_condition=="U")))
+cat("  -> not independent, so park-wide condition is a contaminated placebo.\n")
+
+## ---- the within-inspector sub-scores, for the seven who rated both years ----
+cat("\n=== SUB-SCORES FOR THE SEVEN INSPECTORS PRESENT IN BOTH 2024 AND 2026 ===\n")
+d7 <- merge(ins, mas[, .(inspection_id, date, inspector)], by="inspection_id")
+d7[, yr := year(as.IDate(date))][, doy := as.integer(format(as.IDate(date),"%j"))]
+d7 <- d7[doy <= 179]
+b7 <- intersect(d7[yr==2024 & cs_structural %in% c("A","U"), unique(inspector)],
+                d7[yr==2026 & cs_structural %in% c("A","U"), unique(inspector)])
+for (c in c("cs_litter","cs_graffiti","cs_amenities","cs_structural")) {
+  s <- d7[inspector %in% b7 & yr %in% c(2024,2026) & get(c) %in% c("A","U"),
+          .(f=round(mean(get(c)=="U"),3)), by=yr][order(yr)]
+  cat(sprintf("%-14s %s\n", sub("cs_","",c), paste(sprintf("%d:%.3f", s$yr, s$f), collapse="  ")))
+}

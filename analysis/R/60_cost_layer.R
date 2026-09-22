@@ -55,7 +55,10 @@ d <- sc |> left_join(geo,  by="nta2020") |> left_join(hrs, by="nta2020") |>
   left_join(cond, by="nta2020")
 
 ## ---- decision rule ---------------------------------------------------------
-CAP <- c(new_build=3793000, modular=1200000, reconstruction=1152500, component=60500, hours=0)
+## Reconstruct rate is A7_repair_vs_build.R's median for reconstructing an existing
+## facility (n=108). It is NOT the component rate: component work is n=5 in the
+## tracker, too thin to price a programme on.
+CAP <- c(new_build=4000000, modular=1200000, reconstruction=1656500, component=60500, hours=0)
 d <- d |> mutate(
   intervention = case_when(
     restrooms == 0 | coverage < 35            ~ "Build new / modular unit",
@@ -65,7 +68,7 @@ d <- d |> mutate(
     TRUE                                       ~ "Monitor / already served"),
   capex = case_when(
     intervention=="Build new / modular unit" ~ CAP["modular"],
-    intervention=="Reconstruct or repair"    ~ CAP["component"],
+    intervention=="Reconstruct or repair"    ~ CAP["reconstruction"],
     intervention=="Extend operating hours"   ~ CAP["hours"],
     TRUE ~ NA_real_),
   excess = pmax(events_311 - pred, 0))

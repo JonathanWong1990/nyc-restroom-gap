@@ -1,6 +1,6 @@
 # 30_maps.R — Session 5 spatial: leaflet coverage + gap maps.
 suppressMessages({library(sf); library(dplyr); library(leaflet); library(htmlwidgets)})
-options(scipen=999); D <- "data_raw"; O <- "outputs"
+options(scipen=999); D <- "data_raw"; O <- "outputs"; dir.create(O, showWarnings=FALSE)
 
 sc  <- read.csv(file.path(D,"model_nta_scored_20260920.csv"))
 nta <- st_read(file.path(D,"nycopendata_9nt8-h7nd_nta2020_20260920.geojson"), quiet=TRUE) |>

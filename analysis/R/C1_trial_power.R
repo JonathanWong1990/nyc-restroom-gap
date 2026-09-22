@@ -46,7 +46,11 @@ o <- o |> filter(!is.na(lat), !is.na(lon))
 osf <- st_as_sf(o, coords=c("lon","lat"), crs=4326) |> st_transform(2263) |>
   st_join(nta, join=st_within) |> st_drop_geometry() |> filter(!is.na(nta2020))
 SUM_YRS <- 3.5
-sm <- osf |> filter(nta2020 %in% hrs$nta2020) |> nrow()
+## De-duplicate to coordinate-month, matching 90_two_signals.R and 91_rebuild_outcome.R.
+## Counting raw rows inflates the event count and overstates the trial's sensitivity.
+osf$ym <- substr(osf$occur_date, 1, 7)
+osf$klat <- round(osf$lat, 5); osf$klon <- round(osf$lon, 5)
+sm <- osf |> filter(nta2020 %in% hrs$nta2020) |> dplyr::distinct(klat, klon, ym) |> nrow()
 cat("\n=== if the trial used SUMMONSES instead of 311 complaints ===\n")
 cat(sprintf("summonses in the ten trial areas: %d over %.1f years = %.0f/yr\n", sm, SUM_YRS, sm/SUM_YRS))
 n_tot <- (sm/SUM_YRS) * 10/12; n_treat <- n_tot/2
