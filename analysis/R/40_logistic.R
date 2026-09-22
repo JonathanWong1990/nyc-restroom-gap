@@ -3,8 +3,13 @@
 suppressMessages({library(sf); library(dplyr)})
 options(scipen=999); set.seed(6093); D <- "data_raw"
 sc  <- read.csv(file.path(D,"model_nta_scored_20260920.csv"))
-nta <- st_read(file.path(D,"nycopendata_9nt8-h7nd_nta2020_20260920.geojson"), quiet=TRUE) |>
-  st_transform(2263) |> select(nta2020)
+## Residential NTAs only (ntatype==0, 197 of 262). Projects landing in a park-type NTA
+## are snapped to the nearest residential one rather than dropped -- otherwise a
+## neighbourhood is recorded as having received nothing because the project sits just
+## over a park boundary.
+nta_all <- st_read(file.path(D,"nycopendata_9nt8-h7nd_nta2020_20260920.geojson"), quiet=TRUE) |>
+  st_transform(2263)
+nta <- nta_all |> filter(ntatype == 0) |> select(nta2020)
 
 ## --- treatment: restroom capital projects -> NTA ---------------------------
 RX <- "restroom|comfort station|bathroom"
@@ -21,7 +26,13 @@ ct <- read.csv(file.path(D,"capitaltracker_4hcv-tc5r_20260920.csv")) |>
   distinct(trackerid, latitude, longitude, .keep_all=TRUE)
 cat("restroom capital projects with coords:", nrow(ct), "\n")
 ctp <- st_as_sf(ct, coords=c("longitude","latitude"), crs=4326) |> st_transform(2263) |>
-  st_join(nta, join=st_within) |> st_drop_geometry() |> filter(!is.na(nta2020))
+  st_join(nta, join=st_within)
+.miss <- is.na(ctp$nta2020)
+if (any(.miss)) {
+  ctp$nta2020[.miss] <- nta$nta2020[st_nearest_feature(ctp[.miss, ], nta)]
+  cat("projects outside the residential set, snapped to nearest:", sum(.miss), "\n")
+}
+ctp <- ctp |> st_drop_geometry()
 proj <- ctp |> count(nta2020, name="n_projects")
 cat("neighbourhoods receiving >=1 project:", nrow(proj), "of 197\n")
 

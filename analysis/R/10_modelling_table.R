@@ -4,8 +4,14 @@ suppressMessages({library(sf); library(dplyr)})
 options(scipen = 999)
 D <- "data_raw"; ok <- function(...) cat("  [ok]", ..., "\n")
 
-nta <- st_read(file.path(D,"nycopendata_9nt8-h7nd_nta2020_20260920.geojson"), quiet=TRUE) |>
-  st_transform(2263) |> select(nta2020, geometry)
+## Only ntatype==0 are residential neighbourhoods (197 of 262); the rest are parks,
+## cemeteries and airports. A point landing in one of those used to be dropped, which
+## silently moved supply out of the neighbourhood it actually serves -- e.g. a restroom
+## in Kissena Park never counted for East Flushing, 106m away. Assign to the nearest
+## residential NTA instead of discarding.
+nta_all <- st_read(file.path(D,"nycopendata_9nt8-h7nd_nta2020_20260920.geojson"), quiet=TRUE) |>
+  st_transform(2263)
+nta <- nta_all |> filter(ntatype == 0) |> select(nta2020, geometry)
 base <- read.csv(file.path(D,"nta_analysis_base_20260920.csv"))
 cat("NTA polygons:", nrow(nta), " base rows:", nrow(base),
     " residential:", sum(base$is_residential), "\n")
@@ -14,6 +20,11 @@ to_nta <- function(df, lon="longitude", lat="latitude"){
   df <- df[!is.na(df[[lon]]) & !is.na(df[[lat]]), ]
   p <- st_as_sf(df, coords=c(lon,lat), crs=4326) |> st_transform(2263)
   j <- st_join(p, nta, join=st_within)
+  miss <- is.na(j$nta2020)
+  if (any(miss)) {
+    j$nta2020[miss] <- nta$nta2020[st_nearest_feature(j[miss, ], nta)]
+    cat("  outside the residential set, snapped to nearest:", sum(miss), "\n")
+  }
   cat("  assigned:", sum(!is.na(j$nta2020)), "/", nrow(j),
       sprintf(" (%.1f%%)\n", 100*mean(!is.na(j$nta2020))))
   j
