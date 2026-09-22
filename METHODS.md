@@ -45,6 +45,9 @@ Scripts read `data_raw/` relative to the working directory. To run from elsewher
 | `98_coldread_fixes.R` | Time-of-day on genuine hours, accessibility, Moran's I |
 | `99_offset_test.R` | Is the shortlist an artifact of the exposure measure? |
 | `A1_noise_floor.R` | **Parametric bootstrap: can the ranking be told apart from noise?** |
+
+`A5_null_comparison.R` — runs the noise floor against BOTH nulls. The negative binomial's overdispersion IS between-area rate variation, so simulating from it does not represent "nothing is wrong"; a Poisson null does. Against Poisson the observed spread is 2.5x chance (p=0.002); against NB the count of extremes matches the estimated spread, i.e. the extremes are a continuum, not a category.
+`A6_empirical_bayes.R` — per-neighbourhood posteriors. The fitted NB is already a Poisson-gamma model, so P(true rate > 1.5x expected) is conjugate. Seven neighbourhoods exceed 0.95, all surviving leave-one-out re-estimation of model and prior. Addresses sparse counts only, not reporting validity.
 | `A2_cost_bands.R` | Valuing the banded capital projects excluded from an earlier median |
 | `A3_seed_stability.R` | The out-of-sample result across six random seeds |
 | `A4_reporting_channel.R` | Reporting-channel correlations, raw vs de-duplicated series |

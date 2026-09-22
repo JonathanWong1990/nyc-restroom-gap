@@ -195,21 +195,21 @@ A ranking built on roughly fifteen events per neighbourhood invites one question
 
 ### Signal against noise
 
-The model estimates an expected count for each neighbourhood and also how much counts naturally scatter around that expectation. That makes a direct test possible. We simulated 500 datasets from the fitted model itself — a synthetic New York in which no neighbourhood has any unmet need beyond what its transit, employment and demographics explain — and asked what a ranking of that world looks like. This is a parametric bootstrap: the model generates fake data under the assumption that there is nothing to find, and you check whether the real data looks different.
+The model estimates an expected count for each neighbourhood and how much counts naturally scatter around it. That makes a direct test possible — but the test depends entirely on what "no unmet need" is taken to mean, and there are two defensible versions.
 
-| Quantity | Expected under no unmet need | Observed |
-|---|---|---|
-| Neighbourhoods scoring 1.5× or above | 33.8 (95% range 27–41) | 29 |
-| Highest single ratio in the city | 3.07 (95th pct 3.92) | 3.82 |
-| Neighbourhoods significant at p<0.05 | 9.9 by chance | 10 |
-| Surviving correction for multiple testing | — | 0 of 197 |
+A negative binomial is a Poisson process whose rate varies between places. Its overdispersion parameter measures exactly that variation, here ±47%. So simulating from the fitted model does **not** produce a world where nothing is wrong; it produces one where places differ by precisely the amount we measured. Both nulls are informative, and they answer different questions.
 
-Read down the table. Our shortlist of 29 neighbourhoods at 1.5× or above is *smaller* than the 33.8 that a noise-only world produces. Brighton Beach's 3.82× sits inside the range you get from taking the maximum of 197 random draws. Ten neighbourhoods clear p < 0.05, and chance alone would deliver 9.9. And once you account for the fact that 197 neighbourhoods are being tested simultaneously — which inflates the chance of a spurious hit, and is standard practice to correct for — not one of them is distinguishable from expectation.
+| Quantity | Poisson null (places do **not** differ) | NB null (places **do** differ) | Observed |
+|---|---|---|---|
+| Neighbourhoods scoring 1.5× or above | 11.9 (95% range 7–18) | 33.8 (95% range 27–41) | **29** |
+| Highest single ratio | 2.25 (95th pct 2.93) | 3.07 (95th pct 3.92) | **3.82** |
+| p(simulated max ≥ observed) | **0.002** | 0.068 | — |
 
-With roughly 530 complaints a year spread across 197 neighbourhoods, about fifteen each over six years, the data does not contain enough signal to name individual places with confidence.
+Against the Poisson null, the spread is far beyond luck: real variation exists, about two and a half times what chance produces. Against the NB null, the *count* of extreme places is roughly what the estimated spread predicts — so the extremes are the top of a continuum, not a distinct category of broken neighbourhoods. The 1.5× threshold is therefore a budget line, not a boundary the data marks.
 
-This does not mean the variation is fake. The model measures real neighbourhood-level scatter well beyond chance, so some places genuinely are worse than their profile predicts. What it means is that we cannot say which ones. A ranking remains the best available ordering if something must be allocated, and it cannot be presented as a list of neighbourhoods proven to be underserved. It is not presented that way here.
+For an individual neighbourhood, the relevant quantity is a posterior rather than a bootstrap. Reading the same fitted model as the Poisson-gamma model it already is gives **seven neighbourhoods above 95% posterior probability** that their true rate exceeds 1.5× expected: East Harlem (North), Astoria (East)–Woodside (North), East Elmhurst, Williamsbridge–Olinville, Brighton Beach, Midtown–Times Square and East Flatbush–Rugby. All seven survive leave-one-out re-estimation of both the model and the prior.
 
+Correcting for testing all 197 places simultaneously, none is a "discovery" in the family-wise sense. That is not a contradiction — multiple-testing correction screens hypotheses, posteriors allocate budgets — but it bounds the claim. The defensible statement is about where to look and where to spend, not about having proven a fact regarding any one place. And all of it addresses thin counts only; none of it touches what the counts measure.
 
 ### Sensitivity to who reports
 
@@ -393,7 +393,7 @@ Decisions taken in the analysis that the group has not signed off, and questions
 
 **What happened to the original index.** The group's earlier proposal scored neighbourhoods with a weighted index whose weights were chosen by hand. This analysis estimates them from data instead, because assigned weights cannot answer the obvious question: move one weight from 0.35 to 0.30 and does the top ten change? What that costs is a tidy slide and an easy explanation. What it buys is coefficients with standard errors and a defence in Q&A. Two things from the original proposal are kept and worth keeping: costing interventions only for a verified shortlist, and mapping each decision-maker to the decision they actually control. If someone wants to defend the original index, a fair hearing beats a quiet replacement.
 
-**Course methods covered.** Regression (Session 4), spatial analysis, fixed effects and difference-in-differences (Session 5), logistic regression and confusion matrix (Session 6), trees and train/test (Session 7), staggered trial design (Session 9). kNN is not applicable here. Two additions are cheap if the group wants them: propensity score matching (Session 8) and a neighbourhood-by-month panel (Session 5).
+**Course methods covered** — checked against the delivered decks, not the printed syllabus, because the two differ. Regression (Session 4); dummy variables and spatial analysis (**Session 5** — its agenda slide reads "Dummy Variables · Spatial Data"); logistic regression and confusion matrix (Session 6); trees and train/test (Session 7); difference-in-differences, natural experiments and matching (**Session 8** — DiD and panel data were moved here from Session 5, and the Session 5 deck shows the schedule being corrected); staggered trial design (Session 9, not yet taught). **Regression discontinuity was never taught** — it appears in the printed syllabus and in none of the seven decks — so it is correctly absent. Still uncovered and cheap: propensity score matching (Session 8), and kNN (Session 7), which earlier notes wrongly called inapplicable.
 
 **Questions for the professor.** Is *"where should the next 1,150 restrooms go, and which need building at all"* the right question for this audience? Is it acceptable to lead with a null causal result as supporting evidence? Does the method mix sit at the right level? And is it acceptable that the strongest recommendation is an experiment to run rather than a site to build, given the effect could not be measured from observational data?
 
