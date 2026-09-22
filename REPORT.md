@@ -130,26 +130,22 @@ The other coefficients behave sensibly. Subway ridership and jobs both predict c
 
 ### Where does the capital actually go?
 
-Ninety-one of the 197 neighbourhoods received a Parks capital restroom project. A logistic regression — a model for yes/no outcomes, reporting odds ratios where 1.0 means no effect — predicts which ones.
+Of the 197 residential neighbourhoods modelled, **105 received a Parks capital restroom project**. (Across all 262 NTAs, 126 did — the extra 21 are places like Crotona Park and Lincoln Terrace Park, which are parks rather than neighbourhoods and sit outside the residential set. That is a small piece of evidence for the finding below.) A logistic regression — a model for yes/no outcomes, reporting odds ratios where 1.0 means no effect — predicts which ones.
 
-| Predictor | Odds ratio | p | Reading |
-|---|---|---|---|
-| Parkland (per doubling of acreage) | 1.34 | 0.005 | predicts |
-| Poverty (per +10 points) | 2.00 | 0.002 | predicts |
-| Subway ridership | 1.13 | 0.016 | predicts |
-| Measured unmet need | 1.52 | 0.108 | not significant |
+| Predictor | Odds ratio | 95% CI | p | Reading |
+|---|---|---|---|---|
+| Poverty (per +10 points) | 2.19 | — | 0.0006 | predicts |
+| Parkland (per doubling of acreage) | 1.49 | 1.12–1.99 | 0.0058 | predicts |
+| Measured unmet need | 1.60 | 0.95–2.69 | 0.078 | **not significant** |
+| Subway ridership | 1.08 | 0.98–1.19 | 0.122 | not significant |
 
-*Logistic regression, n = 197. Out-of-sample accuracy 0.604 against a 0.538 majority-class baseline — better than chance, though not dramatically.*
+*Logistic regression, n = 197. Out-of-sample over 200 splits: accuracy 0.610, precision 0.637, recall 0.631, against a 0.533 majority-class baseline.*
 
-Parkland is estimated precisely. Need is not: its confidence interval runs from 0.92 to 2.57, which means the data are consistent with need mattering substantially and equally consistent with need mattering not at all. We cannot claim the city is blind to need. Two further qualifications apply. Seventy-six percent of these projects began design before 2020, so they could not have responded to complaints filed between 2020 and 2026. And "need" here is itself a model residual, which makes its stated p-value optimistic.
+Parkland and poverty are estimated precisely. Need is not: its interval runs from 0.95 to 2.69, so the data are consistent with need mattering substantially and equally consistent with it mattering not at all. **We cannot claim the city is blind to need** — only that this record does not show it responding to need.
 
-One result cuts against the easy narrative. Poverty doubles the odds of investment. New York is spending in poorer neighbourhoods, so this is not a story about class. It is a story about the category of place that the funding pipeline can reach.
+Three qualifications. Seventy-six percent of these projects began design before 2020, so they could not have responded to complaints filed between 2020 and 2026. "Need" here is itself a model residual, which makes its stated p-value optimistic. And p = 0.078 is **not** a result: it is a non-finding that happens to sit near a conventional threshold, and should not be read as significance at the 10% level.
 
-Midtown–Times Square is the busiest complaint district in Manhattan and has never received a Parks capital restroom project, because Parks capital projects only reach parks and Midtown has almost none.
-
-A note on units, since both appear in this analysis and are labelled at each use: at neighbourhood level the highest de-duplicated complaint count is East Harlem (North) at 99, with Midtown second at 84. At community-district level, Midtown ranks first.
-
-This is an inference drawn from three pieces of evidence rather than a direct measurement: the concentration of supply in parks, the absence of any association between supply and need, and the parkland gradient in the capital pipeline. Park-sited and street-sited facilities were never compared head to head, because there are too few non-park facilities to support that comparison.
+One result cuts against the easy narrative. Poverty roughly doubles the odds of investment per ten points. New York is spending in poorer neighbourhoods, so this is not a story about class. It is a story about the category of place the funding pipeline can reach.
 
 ## 5. Ranking neighbourhoods by unexplained need
 

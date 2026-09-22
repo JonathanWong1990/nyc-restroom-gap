@@ -8,10 +8,17 @@ nta <- st_read(file.path(D,"nycopendata_9nt8-h7nd_nta2020_20260920.geojson"), qu
 
 ## --- treatment: restroom capital projects -> NTA ---------------------------
 RX <- "restroom|comfort station|bathroom"
+## NOTE: dedupe on trackerid+LOCATION, not trackerid alone. The tracker repeats a
+## project across rows (summing raw costs overstates spend 2.4x, hence the dedup
+## convention elsewhere) — but 21 restroom projects genuinely span several parks, e.g.
+## "Citywide Plumbing Systems Reconstruction" covers 10 sites. Deduping on trackerid
+## alone kept 1 site each and dropped 53 of 239 distinct locations (22%), which for a
+## model whose outcome is "did this NTA receive a project" silently deletes positives.
+## This script uses no cost figures, so location is the only thing the dedup affects.
 ct <- read.csv(file.path(D,"capitaltracker_4hcv-tc5r_20260920.csv")) |>
-  distinct(trackerid, .keep_all=TRUE) |>
   filter(grepl(RX, paste(title, summary), ignore.case=TRUE),
-         !is.na(latitude), !is.na(longitude))
+         !is.na(latitude), !is.na(longitude)) |>
+  distinct(trackerid, latitude, longitude, .keep_all=TRUE)
 cat("restroom capital projects with coords:", nrow(ct), "\n")
 ctp <- st_as_sf(ct, coords=c("longitude","latitude"), crs=4326) |> st_transform(2263) |>
   st_join(nta, join=st_within) |> st_drop_geometry() |> filter(!is.na(nta2020))
@@ -43,6 +50,9 @@ co <- summary(m)$coefficients
 out <- data.frame(term=rownames(co), odds_ratio=round(exp(co[,1]),3),
                   p=round(co[,4],4), row.names=NULL)
 print(out[!grepl("Intercept", out$term),], row.names=FALSE)
+ci <- exp(confint.default(m)); cat("\n95% CIs:\n")
+for (v in c("need","l_park","l_sub","poverty_rate")) cat(sprintf("  %-13s OR %8.3f  CI %.2f - %.2f\n", v, exp(coef(m))[v], ci[v,1], ci[v,2]))
+cat(sprintf("  poverty per +10 points: OR %.2f\n", exp(coef(m))["poverty_rate"]^0.1))
 cat("\nnull deviance", round(m$null.deviance,1), " residual deviance", round(m$deviance,1),
     " McFadden R2 =", round(1-m$deviance/m$null.deviance,3), "\n")
 
