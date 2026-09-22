@@ -292,6 +292,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
   <div class="seg" role="group" aria-label="Level of detail">
     <button id="btn-walk" aria-pressed="true">Walkthrough</button>
     <button id="btn-lim" aria-pressed="false">Limits</button>
+    <button id="btn-data" aria-pressed="false">Data &amp; code</button>
   </div>
   <span class="modehint" id="hint" role="status" aria-live="polite">The whole project, step by step — what we did, and where it is weak.</span>
 </div>
@@ -467,6 +468,31 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 <div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Dataset</th><th>Why we dropped it</th></tr></thead><tbody><tr><td>Police summonses — 27,384 records, seven times denser</td><td>Correlates 0.95 with alcohol summonses; maps policing, not need. Against enforcement as a benchmark, a demand model wins in 3% of trials</td></tr><tr><td>Cultural organisations — 429 theatre companies, 403 music bodies, 99 museums</td><td>A thirty-seat Bushwick collective and the Metropolitan Museum each occupy one row. Omits Times Square, the High Line, Central Park</td></tr><tr><td>Pedestrian counts</td><td class="n">114 screenlines for the whole city — too sparse to model on</td></tr><tr><td>Commercial supply — 1,886 chain coffee shops and fast-food outlets</td><td>Tested on the theory that a Starbucks is a toilet in practice. No association with unmet need; ranking unchanged (0.997 agreement)</td></tr></tbody></table></div>
 <h3>What would fix each of these</h3>
 <div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Problem</th><th>Fix</th><th>Effort</th></tr></thead><tbody><tr><td>Ranking not verified on the ground</td><td>Field-check the top ten areas</td><td>Weeks</td></tr><tr><td>No comparison group for served vs unserved</td><td>Propensity score matching</td><td>Half a day</td></tr><tr><td>Six years treated as one snapshot</td><td>Neighbourhood-by-month fixed-effects panel</td><td>A day</td></tr><tr><td>No effect estimate</td><td>Run the trial</td><td>A year</td></tr><tr><td>Reporting bias</td><td>Nothing available. A denser measure of the same behaviour would fix it, and the only one that exists measures policing</td></tr></tbody></table></div>
+<h3>Where the data and code live</h3>
+<p>Every dataset, every script and the reproduction steps are in the <strong>Data &amp; code</strong> tab.</p>
+</div>
+<div id="data" hidden>
+<h2>Data and code</h2>
+<p>Everything behind this analysis is public and runnable. Twenty datasets, forty-odd scripts, and the models that failed alongside the ones that worked.</p>
+<h3>Run it yourself</h3>
+<p>``<code>bash git clone https://github.com/JonathanWong1990/nyc-restroom-gap cd nyc-restroom-gap/analysis Rscript R/11_benchmark.R </code>``</p>
+<p>R 4.6.1. Packages: <code>sf</code>, <code>dplyr</code>, <code>MASS</code>, <code>tidyr</code>, <code>data.table</code>, <code>sandwich</code>, <code>lmtest</code>, <code>rpart</code>, <code>leaflet</code>, <code>htmlwidgets</code>, <code>httr</code>, <code>jsonlite</code>.</p>
+<p>Scripts read <code>data_raw/</code> relative to the working directory. To run from anywhere else, set <code>RESTROOM_PROJ</code> to the <code>analysis/</code> folder. <strong>No API keys and no downloads needed</strong> — every dataset is committed to the repository exactly as pulled.</p>
+<h3>If you are handing this to an AI</h3>
+<p>Point it at these four things, in this order:</p>
+<ol><li><strong><code>analysis/WORKLOG.md</code></strong> — the full defect log. Every error found, what it was, and what was done about it. Read this before trusting any number.</li><li><strong><code>METHODS.md</code></strong> — what each script does.</li><li><strong><code>analysis/notes/</code></strong> — one file per workstream, including <code>external_evidence.md</code>, which records every external citation with an access date and a "thin ice" section of figures that could not be verified.</li><li><strong><code>analysis/R/11_benchmark.R</code></strong> — the one-line rule every model has to beat. Start here; it is the shortest script and it frames everything else.</li></ol>
+<p>The single most useful instruction to give it: <strong>the WORKLOG is authoritative over the write-up.</strong> Four separate times a number was corrected in the scripts and notes but not in the prose.</p>
+<h3>The scripts</h3>
+<p><strong>Start here</strong></p>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Script</th><th>What it does</th></tr></thead><tbody><tr><td><code>11_benchmark.R</code></td><td><strong>The one-line rule any model must beat.</strong> Complaints per head, nothing else</td></tr><tr><td><code>10_modelling_table.R</code></td><td>Builds the 197-neighbourhood table; every join cardinality-checked</td></tr><tr><td><code>20_regression.R</code></td><td>The ranking model — negative binomial, population offset, clustered errors</td></tr><tr><td><code>50_tree_vs_regression.R</code></td><td>Model against decision tree. <strong>Source of the 0.793 / 0.709 figures</strong></td></tr></tbody></table></div>
+<p><strong>Getting the data in</strong></p>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Script</th><th>What it does</th></tr></thead><tbody><tr><td><code>geo_helpers.R</code></td><td>Socrata paging, retry, disk cache, point-in-polygon joins</td></tr><tr><td><code>01_geography.R</code>, <code>02_acs_demographics.R</code></td><td>Boundaries, crosswalks, Census</td></tr><tr><td><code>pull_supply.R</code>, <code>parse_hours.R</code></td><td>Restroom inventory; the free-text opening-hours parser</td></tr><tr><td><code>demand_00_helpers.R</code>, <code>demand_01_pull.R</code></td><td>Subway, taxi, hotels, employment, pedestrian counts</td></tr><tr><td><code>03_community_boards_and_outcome_test.R</code></td><td>Why neighbourhoods, and not districts or tracts</td></tr></tbody></table></div>
+<p><strong>The findings</strong></p>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Script</th><th>What it does</th></tr></thead><tbody><tr><td><code>40_logistic.R</code></td><td>Where NYC actually invests — parkland vs need</td></tr><tr><td><code>60_cost_layer.R</code>, <code>61_cost_annualised.R</code></td><td>Which fix goes where; annualised costs</td></tr><tr><td><code>A7_repair_vs_build.R</code></td><td>Build new ($4.0M) vs reconstruct existing ($1.66M)</td></tr><tr><td><code>A8_condition_trend.R</code></td><td><strong>The deterioration finding.</strong> Inspection condition 2022–2026, facility fixed effects, internal placebo</td></tr><tr><td><code>70_audit_checks.R</code>, <code>C2_report_time.R</code></td><td>Time of day; is the evening peak real or a calling artefact?</td></tr><tr><td><code>30_maps.R</code>, <code>97_svg_map.R</code>, <code>B1_small_maps.R</code></td><td>Maps</td></tr></tbody></table></div>
+<p><strong>Checking our own work</strong></p>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Script</th><th>What it does</th></tr></thead><tbody><tr><td><code>A1_noise_floor.R</code></td><td>Parametric bootstrap — can the ranking be told from noise?</td></tr><tr><td><code>A5_null_comparison.R</code></td><td><strong>Both nulls side by side.</strong> Why the NB null does not mean "nothing is wrong"</td></tr><tr><td><code>A6_empirical_bayes.R</code></td><td>Per-neighbourhood confidence, with leave-one-out</td></tr><tr><td><code>A3_seed_stability.R</code></td><td>The result across six random seeds</td></tr><tr><td><code>A4_reporting_channel.R</code></td><td>Phone-only versus online reporting</td></tr><tr><td><code>96_commercial_supply.R</code></td><td>Does Starbucks change the ranking? (No)</td></tr><tr><td><code>99_offset_test.R</code></td><td>Is the shortlist an artefact of the exposure measure?</td></tr><tr><td><code>98_coldread_fixes.R</code></td><td>Accessibility, Moran's I, time-of-day on genuine hours</td></tr><tr><td><code>A2_cost_bands.R</code></td><td>Valuing the banded capital projects an earlier median excluded</td></tr><tr><td><code>C1_trial_power.R</code></td><td>What the proposed trial could actually detect</td></tr></tbody></table></div>
+<p><strong>Things that failed — kept deliberately</strong></p>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Script</th><th>What happened</th></tr></thead><tbody><tr><td><code>12–15_did_*.R</code></td><td>First causal attempt. Treatment variable mismeasured. <strong>They run and report their own negative result</strong></td></tr><tr><td><code>93_winterization.R</code></td><td>Second causal attempt. <strong>Fails its own placebo test</strong></td></tr><tr><td><code>90–92_*.R</code></td><td>Police summonses as an alternative outcome — tested and rejected</td></tr><tr><td><code>95_convergent_shortlist.R</code></td><td>Where the two outcome measures agree, and where they do not</td></tr><tr><td><code>demand_02_hourprofile.R</code></td><td><strong>Orphaned — do not run.</strong> An hour of live network calls for output nothing consumes</td></tr></tbody></table></div>
 <h3>Every dataset we used</h3>
 <p>Twenty datasets, all public, all pulled 20 September 2026. Row counts are <strong>what came out of the source</strong> — figures in the analysis are lower after cleaning and de-duplication, and each step says so where it happens.</p>
 <p><strong>The outcome and the supply</strong></p>
@@ -478,11 +504,11 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 <p><strong>Pulled, tested, and not used</strong> — the reasons are in section 10 above.</p>
 <div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Dataset</th><th>Source</th><th class="n">ID</th><th class="n">Rows</th></tr></thead><tbody><tr><td>Cultural organisations</td><td>NYC Open Data</td><td class="n"><code>u35m-9t32</code></td><td class="n">2,535</td></tr><tr><td>Pedestrian counts</td><td>NYC Open Data</td><td class="n"><code>cqsj-cfgu</code></td><td class="n">114</td></tr><tr><td>Chain food outlets (DOHMH)</td><td>NYC Open Data</td><td class="n"><code>43nn-pn8j</code></td><td class="n">1,886</td></tr></tbody></table></div>
 <p>Every NYC Open Data set is at <code>https://data.cityofnewyork.us/d/&lt;ID&gt;</code>; the two MTA sets are at <code>https://data.ny.gov/d/&lt;ID&gt;</code>. Files are in the repository under <code>analysis/data_raw/</code>, named <code>&lt;source&gt;_&lt;id&gt;_&lt;date&gt;.csv</code>, exactly as pulled.</p>
-<h3>Sources and reproduction</h3>
-<p>Independent analysis built from primary sources: NYC Open Data, data.ny.gov, US Census ACS and LEHD.</p>
-<p><strong>Outcome variable:</strong> 311 public-urination complaints, 2 January 2020 to 18 September 2026 (6.71 years), de-duplicated to one record per address-month. 3,629 citywide, of which 3,556 fall within the 197 residential neighbourhood tabulation areas modelled — roughly 530 a year inside the modelled areas.</p>
-<p>Everything behind this analysis is published: all scripts, research notes, 60 datasets, reproduction instructions, and interactive maps.</p>
-<ul><li>Repository: https://github.com/JonathanWong1990/nyc-restroom-gap</li><li>Methods, script by script: https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/METHODS.md</li></ul>
+<h3>Outcome variable, precisely</h3>
+<p>311 public-urination complaints, 2 January 2020 to 18 September 2026 (6.71 years), <strong>de-duplicated to one record per address-month</strong>. 3,629 citywide; 3,556 fall inside the 197 residential neighbourhoods modelled — roughly 530 a year.</p>
+<p>That de-duplication is not cosmetic. The top 1% of addresses produce 22.3% of raw complaints; skipping it sends the ranking to whichever streets have the most persistent callers.</p>
+<h3>Links</h3>
+<ul><li>Repository: https://github.com/JonathanWong1990/nyc-restroom-gap</li><li>Methods, script by script: https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/METHODS.md</li><li>Defect log: https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/WORKLOG.md</li><li>Interactive map, unmet need: <code>maps/unmet-need.html</code></li><li>Interactive map, coverage gap: <code>maps/coverage-gap.html</code></li></ul>
 </div>
 <footer>
   Built from primary sources · NYC Open Data · data.ny.gov · US Census ACS &amp; LEHD<br>
@@ -496,12 +522,13 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 </div>
 <script>
 (function(){
-  var ids = {walk:'walk', lim:'lim'};
-  var btns = {walk:'btn-walk', lim:'btn-lim'};
+  var ids = {walk:'walk', lim:'lim', data:'data'};
+  var btns = {walk:'btn-walk', lim:'btn-lim', data:'btn-data'};
   var hint = document.getElementById('hint');
   var hints = {
     walk:'The whole project step by step, with the arithmetic shown.',
-    lim:'Where the analysis is weak, what it cannot claim, and every source.'
+    lim:'Where the analysis is weak and what it cannot claim.',
+    data:'Every dataset and script, and how to run it yourself.'
   };
   function set(v, scroll){
     for (var k in ids) document.getElementById(ids[k]).hidden = (k !== v);

@@ -46,13 +46,13 @@ Scripts read `data_raw/` relative to the working directory. To run from elsewher
 | `99_offset_test.R` | Is the shortlist an artifact of the exposure measure? |
 | `A1_noise_floor.R` | **Parametric bootstrap: can the ranking be told apart from noise?** |
 
-`A5_null_comparison.R` — runs the noise floor against BOTH nulls. The negative binomial's overdispersion IS between-area rate variation, so simulating from it does not represent "nothing is wrong"; a Poisson null does. Against Poisson the observed spread is 2.5x chance (p=0.002); against NB the count of extremes matches the estimated spread, i.e. the extremes are a continuum, not a category.
-`A6_empirical_bayes.R` — per-neighbourhood posteriors. The fitted NB is already a Poisson-gamma model, so P(true rate > 1.5x expected) is conjugate. Seven neighbourhoods exceed 0.95, all surviving leave-one-out re-estimation of model and prior. Addresses sparse counts only, not reporting validity.
 | `A2_cost_bands.R` | Valuing the banded capital projects excluded from an earlier median |
-`A7_repair_vs_build.R` — separates restroom capital projects into build-new vs reconstruct-existing vs component work, valuing banded costs as A2 does. Build new median $4.0M (n=68); reconstruct $1.66M (n=108). Component work is n=5 and too thin to quote.
-`A8_condition_trend.R` — Parks Inspection Program comfort-station condition, 31,768 inspections, matched Jan-Jun window. Failure rate 8.5% (2024) -> 20.1% (2026); facility fixed effects +11.4pp (SE 2.0pp). Internal placebo: litter and graffiti flat while structural triples. Rules out new inspectors and a step-change rule revision.
 | `A3_seed_stability.R` | The out-of-sample result across six random seeds |
 | `A4_reporting_channel.R` | Reporting-channel correlations, raw vs de-duplicated series |
+| `A5_null_comparison.R` | Both nulls side by side. NB overdispersion IS between-area rate variation, so simulating from it is not a no-effect null; Poisson is |
+| `A6_empirical_bayes.R` | Per-neighbourhood posteriors, with leave-one-out. Seven exceed 0.95. Sparse counts only, not reporting validity |
+| `A7_repair_vs_build.R` | Build new ($4.0M, n=68) vs reconstruct existing ($1.66M, n=108). Component work n=5, too thin to quote |
+| `A8_condition_trend.R` | Inspection condition 2022-2026, facility fixed effects, internal placebo (litter flat, structural triples) |
 
 `20_regression.R` prints 0.790 / 0.710 from its own random splits; the site quotes
 `50_tree_vs_regression.R` at 0.793 / 0.709. Same model, different splits, same conclusion.
