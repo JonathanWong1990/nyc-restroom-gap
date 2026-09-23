@@ -146,6 +146,13 @@ S <- list(
   # teammate items that failed verification (never on the site)
   list(id="20-50-per-100k", rx="20 ?[–-] ?50 (restrooms )?per 100", fix="unsourced benchmark; do not use"),
   list(id="0.82%-vs-Paris", rx="0\\.82 ?%|25\\.74", fix="mismatched denominators; do not use"),
+  # 2026-09-23 round-1 review
+  list(id="775-per-excess", rx="\\$775", fix=paste("annualise the excess:", g("cheapest_per_excess_per_year"))),
+  list(id="coverage-unweighted-24%", rx="24 ?%", need="(?i)land|coverage|walk", fix=paste("land-weighted", g("coverage_3pm_landweighted"))),
+  list(id="steady-climb", rx="(?i)steady climb", fix=g("parks_fail_series")),
+  list(id="true-need-posterior", rx="(?i)true need is above", fix="posterior is on the true complaint RATE"),
+  list(id="two-thirds-listed", rx="(?i)two-thirds of listed", fix="641 of the 975 operational"),
+  list(id="three-of-six-phone", rx="(?i)three of the six", need="(?i)phone", fix=sprintf("%s of the six", g("phone_only_drops_among_six"))),
   list(id="30-40M-envelope", rx="\\$30 ?[–-] ?(\\$)?40 ?M", fix="not derived by any analysis; do not use")
 )
 U <- list(   # UNSOURCED / assumption-dependent — warn only

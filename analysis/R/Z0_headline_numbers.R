@@ -208,7 +208,8 @@ add("east_harlem_dedup", c(top5=sum(t5), total=nrow(ehc)), sprintf("%d of %d", s
 a8 <- from_script("A8_condition_trend.R", paste0(
   "list(fr = w[cs_overall_condition %in% c('A','U'), .(f=mean(cs_overall_condition=='U')), by=yr][order(yr)],",
   " acc = w[, .(a=mean(cs_overall_condition=='A')), by=yr][order(yr)],",
-  " fe = ct['yrf2026', c(1,2,4)], n_insp = nrow(d))"))
+  " fe = ct['yrf2026', c(1,2,4)], n_insp = nrow(d),",
+  " nr = w[cs_overall_condition %in% c('A','U'), .N, by=yr][order(yr)])"))  # 2026-09-23 round-1: rated counts
 fr <- setNames(a8$fr$f, a8$fr$yr); ac <- setNames(a8$acc$a, a8$acc$yr)
 add("parks_fail_2024", fr[["2024"]], pct(fr[["2024"]], 1), "share of rated inspections",
     "R/A8_condition_trend.R", "Jan-Jun matched window", nrx(pct(fr[["2024"]], 1)))
@@ -220,6 +221,13 @@ add("parks_fail_fe_2026_vs_2024", a8$fe[[1]], sprintf("+%.1f pp", 100*a8$fe[[1]]
 add("parks_acceptable_2024_2026", c(ac[["2024"]], ac[["2026"]]),
     sprintf("%s -> %s", pct(ac[["2024"]],1), pct(ac[["2026"]],1)), "share of all inspections",
     "R/A8_condition_trend.R", "open AND acceptable")
+## 2026-09-23 round-1: full Jan-Jun series and rated counts (2024 is the LOWEST year; show 2022 too)
+nr <- setNames(a8$nr$N, a8$nr$yr)
+add("parks_fail_series", as.list(fr), paste(sprintf("%s %s", names(fr), pct(fr, 1)), collapse=" / "),
+    "share of rated inspections, Jan-Jun", "R/A8_condition_trend.R", "flat 2022-2024, then a jump in 2025-26")
+add("parks_fail_2022", fr[["2022"]], pct(fr[["2022"]], 1), "share of rated inspections", "R/A8_condition_trend.R", "Jan-Jun")
+add("parks_rated_n_2024_2026", c(nr[["2024"]], nr[["2026"]]), sprintf("%s and %s", comma(nr[["2024"]]), comma(nr[["2026"]])),
+    "rated inspections, Jan-Jun", "R/A8_condition_trend.R")
 add("parks_inspections_n", a8$n_insp, comma(a8$n_insp), "inspections", "R/A8_condition_trend.R", "",
     nrx(comma(a8$n_insp)))
 
@@ -356,6 +364,9 @@ EXT <- list(
   amato_2022 = list(value=list(change_per_week=-12.47, p=0.0002, installations=13), display="-12.47 reports/week (p = 0.0002)",
     unit="311 feces reports per week within 500 m", source="https://pmc.ncbi.nlm.nih.gov/articles/PMC9441075/",
     note="Amato et al., BMC Public Health 2022; San Francisco Pit Stop, 13 new-restroom installations, 2014-2020; not NYC"),
+  amato_2022_hours = list(value=list(change_per_week=12.00, p=0.0016, interventions=3), display="+12.00 reports/week (p = 0.0016)",
+    unit="311 feces reports per week", source="https://pmc.ncbi.nlm.nih.gov/articles/PMC9441075/",
+    note="Amato et al. 2022 Table 1: 3 Pit Stops that expanded service hours (to 24 h). Likely confounded: sites chosen for longer hours were the busiest"),
   privy_by_the_bay_2025 = list(value="effect appears to be small", display="'the effect appears to be small'", unit="quote",
     source="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0327795",
     note="PLOS ONE, 14 Aug 2025, SF 311 waste reports 2009-2022; qualifies Amato 2022"),
@@ -429,6 +440,21 @@ add("pilot_cost_per_planned_open_hour", pv$cost/(pv$units*pv$hours_per_day*365*p
 ## ---- cost logic after the 23 Sep repricing (61) ----
 csd <- read.csv(file.path(dd, "model_shortlist_costed_20260920.csv"))
 csd <- csd[order(csd$per_excess),]
+## 2026-09-23 round-1: 61's per_excess divides an ANNUAL cost by a 6.71-YEAR stock of excess
+## complaints. Annualise the excess over the same window 80_corrections.R uses.
+dts <- as.Date(substr(u$created_date, 1, 10)); YRS <- as.numeric(diff(range(dts, na.rm=TRUE)))/365.25
+csd$per_excess_yr <- csd$annual_cost/(csd$excess/YRS)
+add("outcome_window_years", YRS, sprintf("%.2f", YRS), "years", "data_raw/nyc311_urination_* (80_corrections.R logic)")
+add("cheapest_per_excess_per_year", c(name=csd$ntaname[1], action=csd$intervention[1], per_excess_yr=round(csd$per_excess_yr[1])),
+    sprintf("%s, %s, $%s per excess complaint per year", csd$ntaname[1], csd$intervention[1], comma(csd$per_excess_yr[1])),
+    "USD per excess complaint per year", "R/61_cost_annualised.R -> model_shortlist_costed, excess / window years",
+    "same ranking as per_excess (a constant rescaling)")
+add("cheapest_per_excess_second", c(name=csd$ntaname[2], action=csd$intervention[2], per_excess_yr=round(csd$per_excess_yr[2])),
+    sprintf("%s, %s, $%s", csd$ntaname[2], csd$intervention[2], comma(csd$per_excess_yr[2])), "USD per excess complaint per year",
+    "R/61_cost_annualised.R -> model_shortlist_costed")
+nh <- sum(csd$intervention=="Extend operating hours")
+add("programme_hours_running_cost", nh*XH*365*WAGE, usdM(nh*XH*365*WAGE, 2), "USD per year",
+    "R/61_cost_annualised.R convention", sprintf("%d hours areas x one restroom x %g h x 365 x $%g/h (one facility per area, like-for-like)", nh, XH, WAGE))
 add("cheapest_per_excess_first", c(name=csd$ntaname[1], action=csd$intervention[1], per_excess=round(csd$per_excess[1])),
     sprintf("%s, %s, $%s per excess complaint a year", csd$ntaname[1], csd$intervention[1], comma(csd$per_excess[1])),
     "USD per excess complaint per year", "R/61_cost_annualised.R -> model_shortlist_costed",
@@ -477,11 +503,41 @@ add("complaints_peak_hour", as.integer(names(which.max(tod$h))), sprintf("%02d:0
     "hour of day", "R/70_audit_checks.R", "de-duplicated series; 311 filing time")
 add("complaints_evening_share", sum(tod$h[as.character(18:23)])/tod$n, pct(sum(tod$h[as.character(18:23)])/tod$n),
     "share filed 18:00-23:59", "R/70_audit_checks.R", "de-duplicated series")
-cov <- from_script("B1_small_maps.R", "c(c3=mean(c3), c9=mean(c9))")
+cov <- from_script("B1_small_maps.R", "{ a <- as.numeric(sf::st_area(g0)); c(c3=mean(c3), c9=mean(c9), w3=sum(c3*a)/sum(a), w9=sum(c9*a)/sum(a)) }")
+## 2026-09-23 round-1: land-weighted (share of all residential-NTA land), the figure the site quotes
+add("coverage_3pm_landweighted", cov[["w3"]]/100, sprintf("%.0f%%", cov[["w3"]]), "share of residential NTA land within 5 min of an open restroom",
+    "R/B1_small_maps.R", "land-weighted; genuine-hours facilities only")
+add("coverage_9pm_landweighted", cov[["w9"]]/100, sprintf("%.0f%%", cov[["w9"]]), "share of residential NTA land within 5 min of an open restroom",
+    "R/B1_small_maps.R", "land-weighted; genuine-hours facilities only")
 add("coverage_3pm", cov[["c3"]]/100, sprintf("%.0f%%", cov[["c3"]]), "mean share of NTA land within 5 min of an open restroom",
     "R/B1_small_maps.R", "genuine-hours facilities only (placeholder hours excluded)")
 add("coverage_9pm", cov[["c9"]]/100, sprintf("%.1f%%", cov[["c9"]]), "mean share of NTA land within 5 min of an open restroom",
     "R/B1_small_maps.R", "genuine-hours facilities only (placeholder hours excluded)")
+
+## ---- 2026-09-23 round-1: how the 10 hours areas were classified (60) ----
+six <- eb$name[hi]
+ord <- function(i) paste0(i, ifelse(i %% 100 %in% 11:13, "th", c("th","st","nd","rd",rep("th",6))[i %% 10 + 1]))
+hb <- from_script("60_cost_layer.R", paste0("{ reg <- read.csv(file.path(D,'nycrestrooms_i7jb-7jku_20260920.csv'));",
+  " b <- grepl('Open later seasonally', reg$hours_of_operation, ignore.case=TRUE);",
+  " h <- short$nta2020[short$intervention=='Extend operating hours']; x <- rr2[rr2$nta2020 %in% h,];",
+  " t <- tapply(b[x$facility_id], x$nta2020, all); y <- x[!b[x$facility_id],];",
+  " k <- tapply(seq_len(nrow(y)), y$nta2020, function(i) { m <- median(y$mean_h[i], na.rm=TRUE); (!is.na(m) & m < 9) | sum(y$late[i], na.rm=TRUE)==0 });",
+  " c(areas=length(h), all_placeholder=sum(t), with_real=sum(!t), hold_real=sum(k[h], na.rm=TRUE)) }"))
+add("hours_areas_all_placeholder", hb[["all_placeholder"]], sprintf("%d of %d", hb[["all_placeholder"]], hb[["areas"]]),
+    "hours areas", "R/60_cost_layer.R (rule: median posted day < 9 h, or none open to 22:00)",
+    sprintf("areas where EVERY year-round restroom carries the placeholder; %d rest on at least one genuine posted schedule", hb[["with_real"]]))
+add("hours_areas_hold_on_real_hours", hb[["hold_real"]], sprintf("%d of %d", hb[["hold_real"]], hb[["areas"]]), "hours areas",
+    "R/60_cost_layer.R rule re-applied to genuine-hours restrooms only", "areas still classed 'close early' once placeholder-hours restrooms are dropped")
+add("hours_areas_with_real_hours", hb[["with_real"]], as.character(hb[["with_real"]]), "hours areas", "R/60_cost_layer.R")
+mt <- iv[iv$ntaname=="Midtown-Times Square",]
+add("midtown_classification", c(intervention=mt$intervention, restrooms=mt$restrooms, coverage=round(mt$coverage)),
+    sprintf("%s; %d restrooms; %d%% of land covered", mt$intervention, mt$restrooms, round(mt$coverage)),
+    "", "R/60_cost_layer.R -> model_nta_interventions")
+sx <- iv[match(six, iv$ntaname), c("ntaname","intervention")]
+add("six_actions", setNames(as.list(sx$intervention), sx$ntaname), paste(sprintf("%s: %s", sx$ntaname, sx$intervention), collapse="; "),
+    "", "R/60_cost_layer.R + A6")
+add("astoria_posterior_rank", match("Astoria (East)-Woodside (North)", six), ord(match("Astoria (East)-Woodside (North)", six)),
+    "rank by posterior probability", "R/A6_empirical_bayes.R")
 
 ## ---- reporting bias (A4, 70) and the rejected summons outcome (91) ----
 a4 <- from_script("A4_reporting_channel.R", "cor(per$events, per$online)")
@@ -490,7 +546,13 @@ add("channel_online_cor", a4, sprintf("%.2f", a4), "Pearson r across community b
 ph70 <- from_script("70_audit_checks.R", "as.data.frame(rk[, c('ntaname','rank_all','rank_phone')])")
 prk <- function(n) ph70$rank_phone[ph70$ntaname==n]
 ord <- function(i) paste0(i, ifelse(i %% 100 %in% 11:13, "th", c("th","st","nd","rd",rep("th",6))[i %% 10 + 1]))
-PHN <- c(east_harlem="East Harlem (North)", astoria="Astoria (East)-Woodside (North)", williamsbridge="Williamsbridge-Olinville")
+PHN <- c(east_harlem="East Harlem (North)", astoria="Astoria (East)-Woodside (North)", williamsbridge="Williamsbridge-Olinville",
+         midtown="Midtown-Times Square")  # 2026-09-23 round-1: Midtown added
+add("rank_all_midtown", ph70$rank_all[ph70$ntaname=="Midtown-Times Square"], ord(ph70$rank_all[ph70$ntaname=="Midtown-Times Square"]),
+    "rank of 197, all channels", "R/70_audit_checks.R")
+add("phone_only_drops_among_six", sum(ph70$rank_phone[match(six, ph70$ntaname)] > 25, na.rm=TRUE),
+    as.character(sum(ph70$rank_phone[match(six, ph70$ntaname)] > 25, na.rm=TRUE)), "of the six high-confidence areas",
+    "R/70_audit_checks.R + A6", "fall outside the phone-only top 25")
 for (k in names(PHN)) add(paste0("phone_rank_", k), prk(PHN[[k]]), ord(prk(PHN[[k]])),
       "rank of 197 on phone-only reports", "R/70_audit_checks.R", PHN[[k]])
 sa <- from_script("91_rebuild_outcome.R", "cor(d$summons, d$alcohol, method='spearman')")

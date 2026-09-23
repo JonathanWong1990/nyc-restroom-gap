@@ -26,9 +26,11 @@ Items tagged [Team research] come from teammates' research, checked against the 
 
 - **Local Law 58** (May 2025) sets a target of **2,120** public restrooms by 2035. The City's register lists **975** operational today, so the gap is **1,145**.
 - That is **11.5** restrooms per 100,000 residents today and **25.0** at the target.
-- The City's siting strategy under the law is due on **1 Nov 2026**. [Team research: deadline reported by PIX11, Aug 2026]
-- A **17-unit modular pilot** started in September 2026 ($4M, one year, open 7am–10pm). Its sites were published on 16 Sep: **none in Midtown**, and **4 in Astoria/Woodside**. [Team research: NYC Mayor's Office release, 16 Sep 2026]
-- Earlier laws asked for sites but did not fund them: Local Law 114 of 2022 (find a feasible site in every ZIP code area) and Local Law 92 of 2025 (report on the projects at those sites). [Team research: Local Law 114 of 2022 and Local Law 92 of 2025 texts]
+- The City's siting strategy under the law is due on **1 Nov 2026**.
+- A **17-unit modular pilot** started in September 2026 ($4M, one year, open 7am–10pm). Its sites were published on 16 Sep: **none in Midtown**, and **4 in Astoria/Woodside**.
+- Earlier laws asked for sites but did not fund them: Local Law 114 of 2022 (find a feasible site in every ZIP code area) and Local Law 92 of 2025 (report on the projects at those sites).
+
+Sources for the deadline, the pilot and the earlier laws: PIX11 (Aug 2026), NYC Mayor's Office release (16 Sep 2026), Local Law 114 of 2022 and Local Law 92 of 2025. [Team research: PIX11 Aug 2026; NYC Mayor's Office 16 Sep 2026; LL114 (2022) and LL92 (2025) texts]
 
 **The City has four decisions to make. We answer each one:** *where* to put restrooms, *when* they need to be open, *what to do first*, and *how to measure* the pilot it has already started.
 
@@ -48,9 +50,9 @@ Data cleaning, negative binomial regression, out-of-sample validation
 
 Shaded by observed ÷ expected complaints. Grey means the two match; darker means more complaints than the area's crowds explain.
 
-**The answer: 29 neighbourhoods sit at 1.5× or more of their expected complaints.** Of these, six neighbourhoods clear 0.95 probability that true need is above 1.5×: East Harlem (North), Astoria (East)–Woodside (North), East Elmhurst, Williamsbridge–Olinville, Brighton Beach and Midtown–Times Square. The 1.5× cut-off is a budget line, not a natural boundary. Interactive map <https://jonathanwong1990.github.io/nyc-restroom-gap/maps/unmet-need.html>.
+**The answer: 29 neighbourhoods sit at 1.5× or more of their expected complaints.** Of these, six neighbourhoods clear 0.95 probability that their true complaint rate is above 1.5× expected: East Harlem (North), Astoria (East)–Woodside (North), East Elmhurst, Williamsbridge–Olinville, Brighton Beach and Midtown–Times Square. The 1.5× cut-off is a budget line, not a natural boundary. Interactive map <https://jonathanwong1990.github.io/nyc-restroom-gap/maps/unmet-need.html>.
 
-**Which corner within a neighbourhood?** A station-level screen of 424 subway complexes [Team research: station screen built on MTA ak4z-sape and NYC i7jb-7jku; reproduced from our data] measures the walk from each station to the nearest listed restroom. It works at a finer scale than our model and complements it. The two only partly agree, and that is expected: the screen ranks by ridership, which is the one-line rule our model beats. **Midtown–Times Square is the one place both flag independently.** The pilot has no unit there.
+**Which corner within a neighbourhood?** A station-level screen of 424 subway complexes [Team research: station screen built on MTA ak4z-sape and NYC i7jb-7jku; reproduced from our data] measures the walk from each station to the nearest listed restroom. It works at a finer scale than our model and complements it. The two only partly agree, and that is expected: the screen ranks by ridership, which is the one-line rule our model beats. **Midtown–Times Square is the one high-confidence area the station screen also flags** (it ranks by ridership, so it flags Midtown by construction). By day Midtown is well served; its gap is in the evening (see When). The pilot has no unit there.
 
 **Why the gap exists.** 824 of 1,066 listed restrooms are in parks, and capital money follows parkland rather than need. Midtown, with almost no parkland, has never had a Parks restroom project. Once crowds are accounted for, the number of restrooms in an area does not predict its complaints.
 
@@ -58,7 +60,7 @@ Shaded by observed ÷ expected complaints. Grey means the two match; darker mean
 
 Time-of-day coverage, hours parsing, station-level walking distance
 
-**Complaints peak at 18:00**, and 30% are filed between 6pm and midnight. That is when restrooms close. Counting only restrooms with genuine posted hours, **24%** of the city's land is within a five-minute walk of an open restroom at 3pm, and **3.5%** at 9pm.
+**Complaints are filed most often at 18:00** (filing time, not the time of the incident), and 30% are filed between 6pm and midnight. That is when restrooms close. Counting only restrooms with genuine posted hours, **18%** of residential land is within a five-minute walk of an open restroom at 3pm, and **2%** at 9pm.
 
 [Map: see the web page]
 
@@ -81,7 +83,7 @@ Top 50 hubs, Wednesday, straight-line walk (real routes are longer, so these are
 | 6pm, in-season (park restrooms close 8pm) | 4.0 min | 9 of 50 |
 | **9pm, either season** | **13.7 min** | **43 of 50** |
 
-**Both seasons, stated honestly.** About two-thirds of listed restrooms show the same placeholder hours, "8am-4pm, Open later seasonally", so the true summer closing time is unknown. The 9pm result assumes park restrooms close by 9pm. If they stay open until 10pm, the 9pm figure improves to 5.9 min, with 20 of 50 hubs uncovered.
+**Both seasons, stated honestly.** 641 of the 975 operational restrooms show the same placeholder hours, "8am-4pm, Open later seasonally", so the true summer closing time is unknown. The 9pm result assumes park restrooms close by 9pm. If they stay open until 10pm, the 9pm figure improves to 5.9 min, with 20 of 50 hubs uncovered.
 
 **"Open 24 hours" means a gas station.** The register lists 8 facilities as open 24 hours. All 8 are parkway gas stations or a parkway snack bar. [Team research: checked against NYC Open Data i7jb-7jku]
 
@@ -91,26 +93,23 @@ Top 50 hubs, Wednesday, straight-line walk (real routes are longer, so these are
 
 Panel data, facility fixed effects, placebo test, cost analysis
 
-**The existing stock is deteriorating. This is our strongest result.** NYC Parks inspectors grade every comfort station on a schedule (31,768 inspections). The share rated unacceptable rose from **8.5%** in 2024 to **20.1%** in 2026, comparing the same January–June window each year.
+**The existing stock is deteriorating. This is our strongest result.** NYC Parks inspectors grade every comfort station on a schedule (31,768 inspections). Comparing the same January–June window each year, the share rated unacceptable was 9.4% (2022), 9.0%, 8.5% (2024, the lowest year), 11.3%, and **20.1%** in 2026: flat for three years, then a jump in 2025–26. That is 9.4% → 20.1% since 2022, and 8.5% → 20.1% since 2024 (743 and 693 rated inspections).
 
 - **It is the same buildings getting worse.** With facility fixed effects, 2026 is +11.4 pp above 2024.
 - **It is not stricter inspectors.** The 7 inspectors who rated restrooms in both years marked litter slightly *better* (0.016 → 0.011) while structural failures rose from 0.044 to 0.210. Only the building fabric got worse.
 - **An independent audit agrees.** The City Council's "Good to Go?" audit (Aug–Sep 2025, random sample) found **36 of 337** rooms closed during posted hours, all of them in parks, and **129 of 301** open rooms missing a basic necessity. [Team research: NYC Council Oversight & Investigations, 'Good to Go?' report, Dec 2025]
 - 80 of 736 Parks comfort stations are under long-term closure, 46 of them for repairs.
 
-| Option | Cost | Source |
+| Option, per area (one facility each, like for like) | Cost | Source |
 |---|---|---|
 | Build a new restroom | **$4.0M** | Median of 68 NYC capital projects. DDC's 2026 contract works out at $3.86M per building [Team research: NYC DDC press release, 26 Jun 2026] |
+| Install a modular unit (Portland Loo) | **$1.2M** | NYC Parks' $6M pilot for five Portland Loos |
 | Reconstruct an existing one | **$1.66M** | Median of 108 projects |
-| Modular unit (Portland Loo) | **$1.2M** | NYC Parks' $6M pilot for five Portland Loos |
-| Extend hours: 51 restrooms in 10 areas, 4 more hours a day | **$2.6M a year** | Assumes $35/h staffing; $26.1M over ten years ($22.2M present value at 3%) |
+| Keep one restroom open 4 hours longer | **$51,100 a year** | Assumes $35/h staffing |
 
-**Extending hours is not free.** Taking the cheapest fix that each of the 29 places allows (9 build, 8 reconstruct, 10 extend hours, 2 monitor) costs **$24.1M in capital**, and the extra hours add up to **$2.6M a year** in running cost on top.
+The cheapest fix each of the 29 places allows (9 modular units, 8 reconstructions, 10 longer hours, 2 monitor) costs **$24.1M in capital** plus **$0.51M a year** to run the longer hours. Per excess complaint per year, the cheapest single action is longer hours in East Harlem (North), at $5,199, ahead of a modular unit in Astoria (East)–Woodside (North) at $14,727. An area is classed "close early" when the median posted day of its restrooms is under 9 hours or none is open to 22:00. Every one of the 10 has at least one restroom with real posted hours, and 9 of 10 keep the classification when placeholder-hours restrooms are left out.
 
-**Cheapest per excess complaint.** Measured by annual cost per excess complaint, the cheapest single action is longer hours in East Harlem (North), at $775 a year. Reconstructions no longer top the list; the first is 7th. Two caveats:
-
-- The comparison prices longer hours as one extra attendant per area ($51,100 a year). If every restroom needs its own staffing, modular units in Astoria (East)–Woodside (North) become cheapest, and East Harlem falls to 9th.
-- Hours stay cheapest only while staffing costs less than about $100/h. An earlier version said the ranking did not depend on the wage. That was wrong.
+**Caveat:** the hours cost is an assumption, and hours stay cheapest only while staffing costs less than about $100/h under this one-facility-per-area convention.
 
 **Fix before you build.** The case does not rest on cost per complaint. It rests on three things: the stock is measurably decaying, a reconstruction costs well under half as much as a new build, and a typical restroom capital project takes a median 5.2 years from design to completion. A closed restroom serves nobody, while a reopened one serves whoever is there.
 
@@ -124,9 +123,11 @@ Stage gates, cost-effectiveness metric, randomised staggered trial, power analys
 - **Stage gates.** Verify that a site is really underserved, confirm the unit is open and working, then scale up. Only after that should a site get a permanent building.
 - **Data to require from the operator**, site by site and week by week: open and closed timestamps, uses, faults, time to repair, and cost. Washington DC's pilot law requires monthly reports on use by date and time and on misuse.
 
-**Our trial design, for the hours option.** Extend hours in the 10 areas in a random, staggered order over ten months, with each area compared against its own history. Complaints are too sparse to detect anything short of a 156% change. Public-urination summonses can detect a **37%** change. **Caveat:** summonses track policing. We rejected them for *ranking* places for exactly that reason, and extra opening hours could themselves change patrols. Alcohol summonses serve as the placebo.
+**Design 1: did the 17 pilot units work?** A matched difference-in-differences. Compare complaints and summonses within walking distance of each pilot site with areas of similar rank on our need ratio that have no unit, before and after installation, and use alcohol summonses as the placebo. Astoria (East)–Woodside (North), 2nd in our confidence ranking with 4 pilot units, is the natural test site. This is a design only: no estimate yet.
 
-**What other cities show.** In San Francisco, 13 new Pit Stop restrooms were followed by −12.47 feces reports a week (p = 0.0002; Amato et al., *BMC Public Health*, 2022). A 2025 follow-up covering 2009–2022 found that "the effect appears to be small". [Team research: PLOS ONE, 14 Aug 2025 ('Privy by the Bay')] Neither study is from NYC, so treat them as evidence that an effect is possible, not as a forecast for New York.
+**Design 2: a trial for the hours option.** Extend hours at all 51 restrooms in the 10 areas in a random, staggered order over ten months (the trial's cost: $2.2M for ten months, $2.6M a year), with each area compared against its own history. Complaints are too sparse to detect anything short of a 156% change. Public-urination summonses can detect a **37%** change. **Caveat:** summonses track policing. We rejected them for *ranking* places for exactly that reason, and extra opening hours could themselves change patrols. Alcohol summonses serve as the placebo.
+
+**What other cities show.** In San Francisco, 13 new Pit Stop restrooms were followed by −12.47 feces reports a week (p = 0.0002; Amato et al., *BMC Public Health*, 2022). A 2025 follow-up covering 2009–2022 found that "the effect appears to be small". [Team research: PLOS ONE, 14 Aug 2025 ('Privy by the Bay')] Neither study is from NYC, so treat them as evidence that an effect is possible, not as a forecast for New York. The same 2022 study found that three Pit Stops given longer (24-hour) service hours saw +12.00 reports a week (p = 0.0016), probably because the busiest sites were the ones given longer hours. That is a warning for the hours option, not proof against it.
 
 What other cities do [Team research: peer-city operating models; each link opened 23 Sep 2026]
 
@@ -141,9 +142,9 @@ What other cities do [Team research: peer-city operating models; each link opene
 
 | Who | Do this |
 |---|---|
-| Mayor's Office (LL58 strategy, due 1 Nov) | Site new units using the need ranking, not raw complaints or ridership. Start with the six high-confidence areas, and name Midtown–Times Square explicitly |
+| Mayor's Office (LL58 strategy, due 1 Nov) | Target the six high-confidence areas first, using the need ranking rather than raw complaints or ridership. The action in each follows What first: longer hours in East Harlem, a modular unit in Astoria, reconstruction in East Elmhurst, Williamsbridge and Brighton Beach. Midtown is served by day, so its case is the evening gap |
 | NYC Parks | Reconstruct and reopen closed comfort stations before building new ones, and publish real closing times in place of the placeholder |
-| DOT (plazas and sidewalks) | Put modular units on streets where parks cannot reach, starting in Midtown, and require site-week open-hour data |
+| DOT (plazas and sidewalks) | Site modular units on streets where parks cannot reach, require site-week open-hour data, and add evening access at the busiest hubs (Midtown first) |
 | MTA | Use the hub-by-hour screen to decide which busy stations need an open restroom nearby after 6pm |
 
 ### 6 — How we know it holds up
@@ -163,8 +164,8 @@ This tab collects every weakness in one place, starting with the questions we ha
 
 These are the three hardest objections to our analysis. None has a full answer yet.
 
-1. **The need ratio may partly map street homelessness or nightlife.** The model adjusts for subway riders, jobs, hotels and residents. It has no control for shelters, unsheltered counts, bars or late-night licences. A neighbourhood with many people living on the street, or a busy bar strip, could show a high ratio for reasons a new restroom would only partly fix. We have not yet tested this.
-2. **The confidence figures and the phone-only check point in different directions.** East Harlem (North) and Astoria (East)–Woodside (North) both have a posterior probability above 0.999. Yet if we re-rank using only complaints filed by phone, East Harlem falls to 41st and Astoria to 121st, and Williamsbridge–Olinville falls to 50th. The two results fit together once you see what the posterior assumes: it measures how sure we are *given that complaints measure need*. The phone-only check questions that assumption. The right reading is "very sure there are excess *complaints* here", which is weaker than "very sure there is excess *need*". Of the high-confidence areas checked, Brighton Beach and East Elmhurst hold under both.
+1. **The need ratio may partly map street homelessness or nightlife.** The model adjusts for subway riders, jobs, hotels and residents. It has no control for shelters, unsheltered counts, bars or late-night licences. A neighbourhood with many people living on the street, or a busy bar strip, could show a high ratio for reasons a new restroom would only partly fix. **Next step:** add DHS shelter counts by neighbourhood as a control and re-rank.
+2. **The confidence figures and the phone-only check point in different directions.** East Harlem (North) and Astoria (East)–Woodside (North) both have a posterior probability above 0.999. Yet if we re-rank using only complaints filed by phone, East Harlem falls to 41st, Astoria to 121st, Williamsbridge–Olinville to 50th, and Midtown–Times Square from 17th to 42nd: four of the six. The two results fit together once you see what the posterior assumes: it measures how sure we are *given that complaints measure need*. The phone-only check questions that assumption. The right reading is "very sure there are excess *complaints* here", which is weaker than "very sure there is excess *need*". Of the high-confidence areas checked, Brighton Beach and East Elmhurst hold under both.
 3. **The trial outcome is the one we rejected for ranking.** Across neighbourhoods, urination summonses correlate 0.95 with alcohol summonses, which means they map policing more than need. We therefore did not use them to rank places. In a before-and-after design each area is compared with itself, so constant enforcement cancels out. But if opening restrooms for longer changes patrol patterns, it does not cancel. The alcohol-summons placebo would catch a general shift in patrolling, though not one aimed specifically at restroom areas.
 
 ### 1. The ranking orders places; it does not sort them into categories
@@ -190,16 +191,16 @@ So this project contains no New York effect estimate, and no return-on-investmen
 
 ### 4. The cost comparison depends on assumptions
 
-- The $24.1M capital figure counts extending hours as zero *capital*. Its running cost is $2.6M a year for 51 restrooms, which is $26.1M over ten years undiscounted.
+- Every option is priced for one facility per area, like for like. On that basis the $24.1M capital figure has a running cost of $0.51M a year for the longer hours. The trial is costed separately because it opens all 51 restrooms in its 10 areas: $2.6M a year.
 - The staffing cost ($35/h) and the extra hours per day (4) are assumptions, not sourced figures. Extending hours stops being the cheapest option at about $100/h.
-- The cost-per-complaint ranking prices extending hours as one attendant per area ($51,100 a year). If each restroom needs its own staffing, East Harlem (North) falls from 1st to 9th.
+- If every restroom in an area needed its own extra staffing, East Harlem (North) would fall from 1st to 9th in cost per excess complaint.
 - Installing a unit in all 29 places would cost $34.8M (29 × the $1.2M Parks pilot price). Of course the cheapest-fix mix costs less than that; the comparison is true by construction and is not a finding.
 - The modular price ($1.2M, from NYC Parks' Portland Loo pilot) is for a unit connected to water and sewer. The 2026 pilot's $235k per unit-year is a service contract (units plus cleaning), so the two figures are not comparable.
 
 ### 5. Complaints measure complainers
 
-- Neighbourhood complaint counts correlate 0.31 with the share of reports filed online.
-- On phone-only reports, three of the six high-confidence areas drop sharply (see the open questions above).
+- Across community boards, complaint counts correlate 0.31 with the share of reports filed online.
+- On phone-only reports, four of the six high-confidence areas drop sharply, Midtown–Times Square included (17th → 42nd; see the open questions above).
 - The person who complains and the person who needed a toilet are different people. To some extent we are measuring annoyance.
 - We tested police summonses as an alternative: they are 27,384 records and far denser. They correlate 0.95 with alcohol summonses, so they map enforcement. We kept complaints.
 
@@ -214,7 +215,7 @@ Measured on 311 complaints, the trial could only detect a change of 156%, or 433
 ### 8. The deterioration finding is strong, but not airtight
 
 - **The within-inspector test rests on 7 people.** Standard errors clustered on seven inspectors are unreliable.
-- **A gradual shift in inspector emphasis cannot be ruled out.** A rule change would show up as a step; the data shows a steady climb. New inspectors fail restrooms less often, not more. We found no published change to the inspection method, but that does not prove there was none.
+- **A gradual shift in inspector emphasis cannot be ruled out.** The January–June rate was flat from 2022 to 2024 (9.4%, 9.0%, 8.5%) and then jumped (11.3%, 20.1%), which could fit a change in how inspectors rate as well as real decay. 2024, our comparison year, is the lowest of the five. New inspectors fail restrooms less often, not more. We found no published change to the inspection method, but that does not prove there was none.
 - **Park-wide condition makes a poor placebo.** Parks without a comfort station improved while parks with one got worse, so the citywide average hides two opposite movements. Site condition also moves with restroom condition. We rely instead on the internal placebo: the same inspector on the same visit marked litter as flat while structural failures rose.
 - **2026 is a part year.** Every year is compared on the same January–June window.
 - **It measures condition, not siting.** The siting question still rests on complaints.
