@@ -21,7 +21,7 @@ Authoritative sources, in order (the first outranks this file):
 
 ## Walkthrough
 
-Items tagged [Team research · name] come from the named teammate's research, checked against the primary source before inclusion.
+Items tagged [Team research · name: Example tag. Hover or tap any tag like this to see what the teammate contributed and where it was checked.] come from the named teammate's research, checked against the primary source before inclusion.
 
 ### 0 — The situation
 
@@ -400,7 +400,7 @@ Files are in `analysis/data_raw/`, named `<source>_<id>_<date>.csv`. The outcome
 
 ### Merged from team research
 
-Each item below is tagged [Team research · name] where it appears, naming the teammate whose material contained it. Every one was checked against its primary source before inclusion.
+Each item below is tagged [Team research · name: Example tag. Hover or tap any tag like this to see what the teammate contributed and where it was checked.] where it appears, naming the teammate whose material contained it. Every one was checked against its primary source before inclusion.
 
 | Item | Where | Contributor | Primary source |
 |---|---|---|---|

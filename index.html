@@ -293,7 +293,15 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); colo
 .tag-team{display:inline-block; font-family:var(--f-mono); font-size:10px; font-weight:500; letter-spacing:.06em;
   text-transform:uppercase; line-height:1; padding:3px 7px 2px; border-radius:999px; vertical-align:2px;
   color:var(--team); background:var(--team-soft); border:1px solid color-mix(in srgb, var(--team) 30%, transparent);
-  white-space:nowrap; cursor:help}
+  white-space:nowrap; cursor:pointer}
+.tag-team:focus-visible{outline:2px solid var(--team); outline-offset:2px}
+#tag-tip{position:fixed; z-index:60; max-width:300px; padding:9px 12px; border-radius:6px;
+  background:var(--ink,#1c2a22); color:var(--surface,#fff); font-family:var(--f-body); font-size:13.5px;
+  line-height:1.45; letter-spacing:0; text-transform:none; box-shadow:0 6px 20px rgba(0,0,0,.18);
+  pointer-events:none; opacity:0; transform:translateY(4px); transition:opacity .12s, transform .12s}
+#tag-tip.on{opacity:1; transform:none}
+#tag-tip b{display:block; font-family:var(--f-mono); font-size:10.5px; letter-spacing:.06em;
+  text-transform:uppercase; opacity:.75; margin-bottom:3px; font-weight:500}
 .legend-team{font-size:14.5px; color:var(--ink-2)}
 figure.chart{margin:22px 0; background:#fff; border:1px solid var(--rule); border-radius:4px; padding:10px}
 figure.chart img{width:100%; height:auto; display:block}
@@ -356,7 +364,7 @@ figure.chart a.zoom{display:block}
 </div>
 <div id="walk" hidden>
 <h2>Walkthrough</h2>
-<p class="legend-team">Items tagged <span class="tag-team" title="From team research — legend">Team research · name</span> come from the named teammate's research, checked against the primary source before inclusion.</p>
+<p class="legend-team">Items tagged <span class="tag-team" title="From team research — Example tag. Hover or tap any tag like this to see what the teammate contributed and where it was checked.">Team research · name</span> come from the named teammate's research, checked against the primary source before inclusion.</p>
 
 <h3 id="situation">0 — The situation</h3>
 <ul>
@@ -783,7 +791,7 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
 <p>Files are in <code>analysis/data_raw/</code>, named <code>&lt;source&gt;_&lt;id&gt;_&lt;date&gt;.csv</code>. The outcome is 311 public-urination complaints from 2020 to September 2026, de-duplicated to one per address per month: 3,629 citywide, of which 3,556 fall inside the 197 residential neighbourhoods we model.</p>
 
 <h3 id="team-merged">Merged from team research</h3>
-<p>Each item below is tagged <span class="tag-team" title="From team research — legend">Team research · name</span> where it appears, naming the teammate whose material contained it. Every one was checked against its primary source before inclusion.</p>
+<p>Each item below is tagged <span class="tag-team" title="From team research — Example tag. Hover or tap any tag like this to see what the teammate contributed and where it was checked.">Team research · name</span> where it appears, naming the teammate whose material contained it. Every one was checked against its primary source before inclusion.</p>
 <div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Item</th><th>Where</th><th>Contributor</th><th>Primary source</th></tr></thead><tbody>
 
 <tr><td>Per-100,000 framing (figures are ours)</td><td>Situation</td><td>Shawn (idea)</td><td>ACS 5-year 2024 population; Local Law 58 target</td></tr>
@@ -848,6 +856,38 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
   set(start, false);
   window.addEventListener('hashchange', function(){ var h=norm((location.hash||'').replace('#','')); if (has(h)) set(h, true); });
   document.addEventListener('click', function(ev){ var a=ev.target.closest && ev.target.closest('a[data-tab]'); if (!a) return; var t=a.getAttribute('data-tab'); if (has(t)) { ev.preventDefault(); set(t, true); } });
+})();
+</script>
+<script>
+/* Team-research tags: instant tooltip on hover, toggle on click/tap. Replaces the native
+   title tooltip, which needs a ~1s still hover and never shows on touch screens. */
+(function(){
+  var tip=document.createElement('div'); tip.id='tag-tip'; tip.setAttribute('role','tooltip');
+  document.body.appendChild(tip); var cur=null;
+  document.querySelectorAll('.tag-team[title]').forEach(function(t){
+    var full=t.getAttribute('title'), i=full.indexOf(' — ');
+    t.dataset.who=t.textContent.replace(/^\s*Team research\s*·?\s*/i,'');
+    t.dataset.tip=i>-1?full.slice(i+3):full;
+    t.setAttribute('aria-label',t.textContent+': '+t.dataset.tip);
+    t.removeAttribute('title'); t.setAttribute('tabindex','0');
+  });
+  function show(t){ cur=t; tip.innerHTML='';
+    var b=document.createElement('b'); b.textContent='From team research'+(t.dataset.who?' · '+t.dataset.who:'');
+    tip.appendChild(b); tip.appendChild(document.createTextNode(t.dataset.tip));
+    tip.classList.add('on');
+    var r=t.getBoundingClientRect(), w=tip.offsetWidth, h=tip.offsetHeight, vw=document.documentElement.clientWidth;
+    var x=Math.min(Math.max(8, r.left+r.width/2-w/2), vw-w-8), y=r.top-h-8;
+    if(y<8) y=r.bottom+8;
+    tip.style.left=x+'px'; tip.style.top=y+'px'; }
+  function hide(){ cur=null; tip.classList.remove('on'); }
+  document.addEventListener('mouseover',function(e){ var t=e.target.closest&&e.target.closest('.tag-team'); if(t&&t.dataset.tip) show(t); });
+  document.addEventListener('mouseout',function(e){ var t=e.target.closest&&e.target.closest('.tag-team'); if(t&&t===cur&&!t.contains(e.relatedTarget)) hide(); });
+  document.addEventListener('click',function(e){ var t=e.target.closest&&e.target.closest('.tag-team');
+    if(t&&t.dataset.tip){ if(cur===t&&tip.classList.contains('on')&&e.pointerType!=='mouse') hide(); else show(t); } else hide(); });
+  document.addEventListener('focusin',function(e){ if(e.target.classList&&e.target.classList.contains('tag-team')) show(e.target); });
+  document.addEventListener('focusout',hide);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') hide(); });
+  window.addEventListener('scroll',hide,{passive:true}); window.addEventListener('resize',hide);
 })();
 </script>
 <!-- Pixel toilet mascot: desktop only, hops away from the cursor. Decorative. -->
