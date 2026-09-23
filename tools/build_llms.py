@@ -17,7 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SITE_URL = "https://jonathanwong1990.github.io/nyc-restroom-gap/"
 REPO = "https://github.com/JonathanWong1990/nyc-restroom-gap"
-TABS = [("walk", "Walkthrough"), ("lim", "Limits"), ("data", "Data & code")]
+TABS = [("walk", "Walkthrough"), ("lim", "Limits"), ("data", "Data & code")]  # the archived "original" tab is excluded on purpose
 
 HEADER = """# NYC Restroom Gap — plain-text edition for AI assistants
 
@@ -191,7 +191,8 @@ def tab_html(src, tab):
         sys.exit("tab #%s not found in index.html" % tab)
     # the tab ends where the next top-level tab div or the footer starts
     rest = src[m.end():]
-    end = re.search(r'\n<div id="(walk|lim|data)"|\n<footer', rest)
+    # the archived <section data-archive="true"> tab is a boundary too, and is never extracted
+    end = re.search(r'\n<div id="(walk|lim|data)"|\n<section id="[^"]*" data-archive="true"|\n<footer', rest)
     return rest[: end.start()] if end else rest
 
 

@@ -33,6 +33,17 @@ blank_blocks <- function(x, tag) {       # replace <tag>...</tag> by the same nu
   }
   x
 }
+blank_archive <- function(x) {            # replace <section data-archive="true">...</section> by its newlines
+  rx <- "(?s)<section\\b[^>]*data-archive=\"true\"[^>]*>.*?</section>"
+  m <- gregexpr(rx, x, perl=TRUE)[[1]]
+  if (m[1] == -1) return(x)
+  for (i in rev(seq_along(m))) {
+    s <- substr(x, m[i], m[i] + attr(m, "match.length")[i] - 1)
+    nl <- lengths(regmatches(s, gregexpr("\n", s)))
+    x <- paste0(substr(x, 1, m[i]-1), strrep("\n", nl), substr(x, m[i] + attr(m,"match.length")[i], nchar(x)))
+  }
+  x
+}
 decode <- function(x) {
   for (p in list(c("&nbsp;"," "), c("&amp;","&"), c("&lt;","<"), c("&gt;",">"), c("&times;","×"),
                  c("&minus;","−"), c("&ndash;","–"), c("&mdash;","—"), c("&#8211;","–"),
@@ -44,6 +55,10 @@ decode <- function(x) {
 load_file <- function(f) {
   x <- paste(readLines(file.path(SITE, f), warn=FALSE, encoding="UTF-8"), collapse="\n")
   if (grepl("\\.html$", f)) {
+    # 2026-09-23: the archived 22 Sep walkthrough is kept verbatim for comparison inside
+    # <section ... data-archive="true">. Its superseded figures are intentional, so the whole
+    # section is blanked (line numbers preserved) before any check runs.
+    x <- blank_archive(x)
     for (t in c("svg", "style", "script")) x <- blank_blocks(x, t)
     x <- gsub("<[^>\n]*>", " ", x, perl=TRUE)       # tag -> space, so table cells do not fuse
     x <- gsub(" {2,}", " ", x)
