@@ -1,0 +1,194 @@
+{
+  "script": "R/C2_hub_open_access.R",
+  "built": "2026-09-23",
+  "method": {
+    "distance": "straight line, EPSG:2263; real walking routes ~1/3 longer, so minutes are lower bounds",
+    "walk_speed_m_per_min": 72,
+    "station_set": "424 MTA station complexes with 2025 entries (2 SIR stubs <1,000 entries dropped)",
+    "weighting": "2025 total entries (ak4z-sape monthly)",
+    "hubs": "top 50 complexes by 2025 entries",
+    "open_rule": "open_hour <= h < close_hour, parsed hours (parse_hours.R)",
+    "typical_weekday": "Wednesday",
+    "scenarios": {
+      "off_season": "placeholder '8am-4pm, Open later seasonally' closes 16:00",
+      "in_season": "placeholder closes 20:00 (dusk; see script header for justification)",
+      "in_season_late": "sensitivity only: placeholder closes 22:00 (median of explicit 'Seasonal' Park concessions)"
+    }
+  },
+  "facility_counts": {
+    "operational": 975,
+    "placeholder": 641,
+    "open_24h": 8,
+    "unparseable": 8,
+    "blank_hours": 10,
+    "parsed_explicit": 316,
+    "unparseable_or_blank_treatment": "closed at every hour in hour-specific runs; included in any-hours run"
+  },
+  "evidence_for_in_season_close": {
+    "median_close_park_seasonal_explicit": 22,
+    "median_close_nyc_parks_operated_explicit": 23
+  },
+  "daytime_reproduction_any_hours": {
+    "complexes": 424,
+    "entry_weighted_walk_min": 4.3,
+    "median_walk_min": 4.67,
+    "top50_entry_weighted_walk_min": 3.67,
+    "top50_hubs_none_within_500m": 4,
+    "teammate_targets": {
+      "entry_weighted": 4.29,
+      "median": 4.67,
+      "top50": 3.67,
+      "top50_none_500m": 4
+    }
+  },
+  "headline": {
+    "off_season": {
+      "Wednesday": {
+        "14:00": {
+          "restrooms_open": 954,
+          "top50_entry_weighted_walk_min": 3.7,
+          "top50_hubs_none_within_500m": 4,
+          "all424_entry_weighted_walk_min": 4.3,
+          "all424_complexes_none_within_500m": 87
+        },
+        "18:00": {
+          "restrooms_open": 156,
+          "top50_entry_weighted_walk_min": 6.2,
+          "top50_hubs_none_within_500m": 21,
+          "all424_entry_weighted_walk_min": 12.6,
+          "all424_complexes_none_within_500m": 308
+        },
+        "21:00": {
+          "restrooms_open": 57,
+          "top50_entry_weighted_walk_min": 13.7,
+          "top50_hubs_none_within_500m": 43,
+          "all424_entry_weighted_walk_min": 23.2,
+          "all424_complexes_none_within_500m": 402
+        }
+      },
+      "Saturday": {
+        "14:00": {
+          "restrooms_open": 953,
+          "top50_entry_weighted_walk_min": 3.7,
+          "top50_hubs_none_within_500m": 4,
+          "all424_entry_weighted_walk_min": 4.3,
+          "all424_complexes_none_within_500m": 87
+        },
+        "18:00": {
+          "restrooms_open": 99,
+          "top50_entry_weighted_walk_min": 9,
+          "top50_hubs_none_within_500m": 33,
+          "all424_entry_weighted_walk_min": 16.6,
+          "all424_complexes_none_within_500m": 370
+        },
+        "21:00": {
+          "restrooms_open": 58,
+          "top50_entry_weighted_walk_min": 13.7,
+          "top50_hubs_none_within_500m": 43,
+          "all424_entry_weighted_walk_min": 23.2,
+          "all424_complexes_none_within_500m": 402
+        }
+      }
+    },
+    "in_season": {
+      "Wednesday": {
+        "14:00": {
+          "restrooms_open": 954,
+          "top50_entry_weighted_walk_min": 3.7,
+          "top50_hubs_none_within_500m": 4,
+          "all424_entry_weighted_walk_min": 4.3,
+          "all424_complexes_none_within_500m": 87
+        },
+        "18:00": {
+          "restrooms_open": 797,
+          "top50_entry_weighted_walk_min": 4,
+          "top50_hubs_none_within_500m": 9,
+          "all424_entry_weighted_walk_min": 4.9,
+          "all424_complexes_none_within_500m": 122
+        },
+        "21:00": {
+          "restrooms_open": 57,
+          "top50_entry_weighted_walk_min": 13.7,
+          "top50_hubs_none_within_500m": 43,
+          "all424_entry_weighted_walk_min": 23.2,
+          "all424_complexes_none_within_500m": 402
+        }
+      },
+      "Saturday": {
+        "14:00": {
+          "restrooms_open": 953,
+          "top50_entry_weighted_walk_min": 3.7,
+          "top50_hubs_none_within_500m": 4,
+          "all424_entry_weighted_walk_min": 4.3,
+          "all424_complexes_none_within_500m": 87
+        },
+        "18:00": {
+          "restrooms_open": 740,
+          "top50_entry_weighted_walk_min": 4.3,
+          "top50_hubs_none_within_500m": 12,
+          "all424_entry_weighted_walk_min": 5.1,
+          "all424_complexes_none_within_500m": 133
+        },
+        "21:00": {
+          "restrooms_open": 58,
+          "top50_entry_weighted_walk_min": 13.7,
+          "top50_hubs_none_within_500m": 43,
+          "all424_entry_weighted_walk_min": 23.2,
+          "all424_complexes_none_within_500m": 402
+        }
+      }
+    },
+    "in_season_late": {
+      "Wednesday": {
+        "14:00": {
+          "restrooms_open": 954,
+          "top50_entry_weighted_walk_min": 3.7,
+          "top50_hubs_none_within_500m": 4,
+          "all424_entry_weighted_walk_min": 4.3,
+          "all424_complexes_none_within_500m": 87
+        },
+        "18:00": {
+          "restrooms_open": 797,
+          "top50_entry_weighted_walk_min": 4,
+          "top50_hubs_none_within_500m": 9,
+          "all424_entry_weighted_walk_min": 4.9,
+          "all424_complexes_none_within_500m": 122
+        },
+        "21:00": {
+          "restrooms_open": 698,
+          "top50_entry_weighted_walk_min": 5.9,
+          "top50_hubs_none_within_500m": 20,
+          "all424_entry_weighted_walk_min": 6,
+          "all424_complexes_none_within_500m": 151
+        }
+      },
+      "Saturday": {
+        "14:00": {
+          "restrooms_open": 953,
+          "top50_entry_weighted_walk_min": 3.7,
+          "top50_hubs_none_within_500m": 4,
+          "all424_entry_weighted_walk_min": 4.3,
+          "all424_complexes_none_within_500m": 87
+        },
+        "18:00": {
+          "restrooms_open": 740,
+          "top50_entry_weighted_walk_min": 4.3,
+          "top50_hubs_none_within_500m": 12,
+          "all424_entry_weighted_walk_min": 5.1,
+          "all424_complexes_none_within_500m": 133
+        },
+        "21:00": {
+          "restrooms_open": 699,
+          "top50_entry_weighted_walk_min": 5.9,
+          "top50_hubs_none_within_500m": 20,
+          "all424_entry_weighted_walk_min": 6,
+          "all424_complexes_none_within_500m": 151
+        }
+      }
+    }
+  },
+  "weekday_range_off_season_mon_fri": {
+    "top50_walk_18h": [5.1, 9],
+    "top50_walk_21h": [13.7, 13.7]
+  }
+}

@@ -16,13 +16,14 @@ cat(sprintf("NYC restroom capital projects (n=%d parseable of %d): median $%s, I
   format(round(P25),big.mark=","), format(round(P75),big.mark=",")))
 
 cat("Annualised capital cost (capital recovery factor):\n")
-for(life in c(20,30)) for(r in c(0.02,0.035,0.05))
+# 2026-09-23 fix: central discount rate harmonised to 3% (was 3.5%) to match 61_cost_annualised.R
+for(life in c(20,30)) for(r in c(0.02,0.03,0.05))
   cat(sprintf("  $%s over %d yr @ %.1f%%  =  $%s / year\n",
       format(round(MED),big.mark=","), life, 100*r,
       format(round(crf(MED,life,r)),big.mark=",")))
 
-A <- crf(MED,20,0.035)
-cat(sprintf("\nUsing $%s/yr (median project, 20 yr, 3.5%%) as the annual cost.\n", format(round(A),big.mark=",")))
+A <- crf(MED,20,0.03)  # 2026-09-23 fix: was 0.035
+cat(sprintf("\nUsing $%s/yr (median project, 20 yr, 3%%) as the annual cost.\n", format(round(A),big.mark=",")))
 
 cat("\n--- Break-even expressed in units a decision-maker can judge ---\n")
 for(v in c(50,100,250,500,1000)) cat(sprintf(

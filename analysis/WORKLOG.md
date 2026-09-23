@@ -1,3 +1,5 @@
+> Frozen 21 Sep 2026 — current figures are in outputs/headline_numbers.json and the site.
+
 # WORKLOG — shared ledger. READ FIRST, WRITE LAST.
 
 **Every AI session working in this folder MUST use this file.** It is how parallel

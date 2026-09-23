@@ -58,6 +58,9 @@ d <- sc |> left_join(geo,  by="nta2020") |> left_join(hrs, by="nta2020") |>
 ## Reconstruct rate is A7_repair_vs_build.R's median for reconstructing an existing
 ## facility (n=108). It is NOT the component rate: component work is n=5 in the
 ## tracker, too thin to price a programme on.
+## 2026-09-23 fix: modular $1.2M now SOURCED — NYC Parks' "$6 million pilot" for five Portland
+## Loos (Mayor's Office, 1 Jul 2025) = $1.2M/unit budgeted; reported ~$1.0M/site ($185k unit +
+## ~$815k utilities/site work, amNY). https://www.nyc.gov/mayors-office/news/2025/07/mayor-adams-nyc-parks-commissioner-rodriguez-rosa-continue-we-outside-summer-announcing
 CAP <- c(new_build=4000000, modular=1200000, reconstruction=1656500, component=60500, hours=0)
 d <- d |> mutate(
   intervention = case_when(

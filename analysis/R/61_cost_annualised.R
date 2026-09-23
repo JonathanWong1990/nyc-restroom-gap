@@ -9,22 +9,31 @@ d <- read.csv(file.path(D,"model_nta_interventions_20260920.csv"))
 LIFE_BUILD <- 20; LIFE_REPAIR <- 10; DISC <- 0.03
 WAGE <- 35          # loaded $/hour for an attendant  <-- ASSUMPTION, sensitivity below
 EXTRA_H <- 4        # hours/day added by an "extend hours" intervention <-- ASSUMPTION
-CAP_MOD <- 1200000; CAP_REP <- 60500
+# 2026-09-23 fix: capital rates are no longer retyped here. They are read from the `capex`
+# column that 60_cost_layer.R writes (its CAP vector), so 60 and 61 cannot drift apart.
+# The old CAP_REP <- 60500 was the COMPONENT rate (n=5); "Reconstruct or repair" is priced
+# in 60 at the RECONSTRUCTION median (1,656,500, A7_repair_vs_build.R, n=108).
+cap_for <- function(iv) { v <- unique(d$capex[d$intervention==iv & !is.na(d$capex)])
+  stopifnot(length(v)==1); v }
+CAP_MOD <- cap_for("Build new / modular unit"); CAP_REC <- cap_for("Reconstruct or repair")
+# 2026-09-23 fix: a full reconstruction is a new asset, so it is annualised over the BUILD
+# life (LIFE_BUILD, 20 yr). LIFE_REPAIR (10 yr) is kept for genuine component work only,
+# which no shortlisted area is assigned.
 annualise <- function(capex, life, r=DISC) capex * (r*(1+r)^life)/((1+r)^life - 1)
 
 cat("ASSUMPTIONS\n")
 cat(sprintf("  modular unit CapEx        $%s over %d yr @ %.0f%% -> $%s/yr\n",
     format(CAP_MOD,big.mark=","), LIFE_BUILD, 100*DISC,
     format(round(annualise(CAP_MOD,LIFE_BUILD)),big.mark=",")))
-cat(sprintf("  component repair CapEx    $%s over %d yr @ %.0f%% -> $%s/yr\n",
-    format(CAP_REP,big.mark=","), LIFE_REPAIR, 100*DISC,
-    format(round(annualise(CAP_REP,LIFE_REPAIR)),big.mark=",")))
+cat(sprintf("  reconstruction CapEx      $%s over %d yr @ %.0f%% -> $%s/yr\n",  # 2026-09-23 fix
+    format(CAP_REC,big.mark=","), LIFE_BUILD, 100*DISC,
+    format(round(annualise(CAP_REC,LIFE_BUILD)),big.mark=",")))
 cat(sprintf("  extend hours: %d h/day x 365 x $%d/h -> $%s/yr  [UNSOURCED - assumption]\n\n",
     EXTRA_H, WAGE, format(EXTRA_H*365*WAGE, big.mark=",")))
 
 cost_of <- function(iv, wage=WAGE, extra=EXTRA_H) case_when(
   iv=="Build new / modular unit" ~ annualise(CAP_MOD, LIFE_BUILD),
-  iv=="Reconstruct or repair"    ~ annualise(CAP_REP, LIFE_REPAIR),
+  iv=="Reconstruct or repair"    ~ annualise(CAP_REC, LIFE_BUILD),  # 2026-09-23 fix: was annualise(60500, 10)
   iv=="Extend operating hours"   ~ extra*365*wage,
   TRUE ~ NA_real_)
 

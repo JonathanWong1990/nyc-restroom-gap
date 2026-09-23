@@ -1,3 +1,5 @@
+> Frozen 21 Sep 2026 — current figures are in outputs/headline_numbers.json and the site.
+
 # START HERE — NYC Restroom project, independent rebuild
 **Status date: 2026-09-20.** Read this file completely before touching anything.
 You can be productive in ~5 minutes from this file alone.

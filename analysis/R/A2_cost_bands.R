@@ -28,8 +28,9 @@ cat(sprintf("\n=> published $1,559,000 is the median of the CHEAP HALF.\n"))
 cat(sprintf("   %.0f%% of excluded projects are >= $3M, vs %.0f%% of included ones.\n",
     100*mean(grepl("3 million|5 million|Greater than", ct$totalfunding[!isnum])),
     100*mean(num[isnum] >= 3e6)))
-cat(sprintf("   corrected median: $%s  -> annualised (20yr, 3.5%%) $%s/yr\n",
-    format(round(median(v,na.rm=TRUE)),big.mark=","),
-    format(round(median(v,na.rm=TRUE)*(.035*1.035^20)/(1.035^20-1)),big.mark=",")))
+DISC <- 0.03  # 2026-09-23 fix: central discount rate harmonised to 3% (was 3.5%), as in 61
+cat(sprintf("   corrected median: $%s  -> annualised (20yr, %g%%) $%s/yr\n",
+    format(round(median(v,na.rm=TRUE)),big.mark=","), 100*DISC,
+    format(round(median(v,na.rm=TRUE)*(DISC*(1+DISC)^20)/((1+DISC)^20-1)),big.mark=",")))
 cat(sprintf("   Local Law 58 gap: 1,147 x corrected median = $%.2f billion\n",
     1147*median(v,na.rm=TRUE)/1e9))
