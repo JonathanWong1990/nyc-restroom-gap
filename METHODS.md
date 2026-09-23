@@ -14,6 +14,9 @@ Rscript R/11_benchmark.R        # scripts resolve data_raw/ relative to this dir
 R 4.6.1. Packages: `sf`, `dplyr`, `MASS`, `tidyr`, `leaflet`, `htmlwidgets`, `htmltools`,
 `rpart`, `data.table`, `sandwich`, `lmtest`, `httr`, `jsonlite`.
 
+Every number quoted on the site is rebuilt by `Rscript R/Z0_headline_numbers.R` into
+`outputs/headline_numbers.json`; `Rscript R/Z1_check_site.R` checks the site against it.
+
 Scripts read `data_raw/` relative to the working directory. To run from elsewhere, set
 `RESTROOM_PROJ` to the `analysis/` directory.
 
@@ -33,7 +36,7 @@ Scripts read `data_raw/` relative to the working directory. To run from elsewher
 | `20_regression.R` | The ranking model: negative binomial, offset, clustered errors |
 | `30_maps.R`, `31_coverage_validation.R`, `97_svg_map.R` | Spatial outputs |
 | `40_logistic.R` | Where NYC actually invests |
-| `50_tree_vs_regression.R` | Session 7 comparison — the tree loses, reported as such. **This is the script the site's 0.793 / 0.709 figures come from** |
+| `50_tree_vs_regression.R` | Session 7 comparison — the tree loses, reported as such. **The canonical out-of-sample figures: 0.788 vs 0.703, model wins 96% of 200 splits** |
 | `60_cost_layer.R`, `61_cost_annualised.R` | Intervention assignment; annualised costs and sensitivity |
 | `70_audit_checks.R` | Time-of-day; phone-only reporting-channel test |
 | `80_corrections.R` | Fixes from the first adversarial audit |
@@ -49,12 +52,17 @@ Scripts read `data_raw/` relative to the working directory. To run from elsewher
 | `A3_seed_stability.R` | The out-of-sample result across six random seeds |
 | `A4_reporting_channel.R` | Reporting-channel correlations, raw vs de-duplicated series |
 | `A5_null_comparison.R` | Both nulls side by side. NB overdispersion IS between-area rate variation, so simulating from it is not a no-effect null; Poisson is |
-| `A6_empirical_bayes.R` | Per-neighbourhood posteriors, with leave-one-out. Seven exceed 0.95. Sparse counts only, not reporting validity |
+| `A6_empirical_bayes.R` | Per-neighbourhood posteriors, with leave-one-out. Six exceed 0.95. Sparse counts only, not reporting validity |
 | `A7_repair_vs_build.R` | Build new ($4.0M, n=68) vs reconstruct existing ($1.66M, n=108). Component work n=5, too thin to quote |
-| `A8_condition_trend.R` | Inspection condition 2022–2026, facility fixed effects, internal placebo (litter flat, structural triples) |
+| `A8_condition_trend.R` | Inspection condition 2022–2026, facility fixed effects, internal placebo (same seven inspectors: litter flat, structural 0.044 → 0.210) |
+| `C1_trial_power.R` | What the hours trial could detect (37% on summonses) |
+| `C2_report_time.R` | Is the 18:00 complaint peak real or a calling artefact? |
+| `C2_hub_open_access.R` | Walk from the 50 busiest subway hubs to the nearest restroom *open* at each hour |
+| `B1_small_maps.R` | Small maps; coverage at 3pm vs 9pm |
+| `Z0_headline_numbers.R`, `Z1_check_site.R` | The single numbers file, and the site checker |
 
-`20_regression.R` prints 0.790 / 0.710 from its own random splits; the site quotes
-`50_tree_vs_regression.R` at 0.793 / 0.709. Same model, different splits, same conclusion.
+`20_regression.R` prints 0.786 / 0.704 from its own random splits; the site quotes
+`50_tree_vs_regression.R` at 0.788 / 0.703. Same model, different splits, same conclusion.
 
 ## Notes, audit trail and data
 
@@ -62,8 +70,8 @@ Scripts read `data_raw/` relative to the working directory. To run from elsewher
 `external_evidence.md` carries every external citation with an access date and a "thin ice"
 section of figures that could not be verified and are therefore unused.
 
-`analysis/WORKLOG.md` — the full defect log across three rounds of adversarial review, what
-was fixed, and what was checked and held.
+`analysis/WORKLOG.md` — the defect log as frozen on 21 Sep 2026. Current figures are in
+`outputs/headline_numbers.json` and on the site.
 
 `analysis/data_raw/` — every dataset pulled, named `<source>_<datasetid>_<date>.csv`.
 Principal sources: NYC Open Data (restrooms `i7jb-7jku`, 311 `erm2-nwe9`, OATH summonses
