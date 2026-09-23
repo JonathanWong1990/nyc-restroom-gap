@@ -850,5 +850,51 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
   document.addEventListener('click', function(ev){ var a=ev.target.closest && ev.target.closest('a[data-tab]'); if (!a) return; var t=a.getAttribute('data-tab'); if (has(t)) { ev.preventDefault(); set(t, true); } });
 })();
 </script>
+<!-- Pixel toilet mascot: desktop only, hops away from the cursor. Decorative. -->
+<style>
+#loo{position:fixed; right:36px; bottom:36px; z-index:40; width:80px; height:80px; cursor:pointer;
+  transition:right .45s cubic-bezier(.3,1.6,.5,1), bottom .45s cubic-bezier(.3,1.6,.5,1); display:none}
+#loo svg{width:100%; height:100%; image-rendering:pixelated; animation:loo-bob 2.4s ease-in-out infinite;
+  filter:drop-shadow(0 3px 0 rgba(0,0,0,.12))}
+#loo .shadow{position:absolute; left:18px; right:18px; bottom:-8px; height:5px; border-radius:50%;
+  background:rgba(0,0,0,.12); animation:loo-shadow 2.4s ease-in-out infinite}
+@keyframes loo-bob{0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)}}
+@keyframes loo-shadow{0%,100%{transform:scaleX(1); opacity:1} 50%{transform:scaleX(.8); opacity:.6}}
+@media (min-width:1100px) and (hover:hover) and (pointer:fine){ #loo{display:block} }
+@media (prefers-reduced-motion:reduce){ #loo, #loo svg, #loo .shadow{animation:none; transition:none} }
+</style>
+<div id="loo" aria-hidden="true" title="Please wash your hands"><svg id="loo-svg" viewBox="0 0 16 16" shape-rendering="crispEdges"></svg><div class="shadow"></div></div>
+<script>
+(function(){
+  var art=[
+    "................",
+    "...oooooooooo...",
+    "...owwwwwwwwo...",
+    "...owwwwwwsso...",
+    "...owwwwwwwwo...",
+    "...oooooooooo...",
+    "..oooooooooooo..",
+    "..owwwwwwwwwwo..",
+    "..owbbbbbbbbwo..",
+    "..owwkwwwwkwwo..",
+    "...owpwkkwpwo...",
+    "....owwwwwwo....",
+    ".....owwwwo.....",
+    ".....owwwwo.....",
+    "....oooooooo....",
+    "................"
+  ];
+  var col={o:"#1f3b30", w:"#ffffff", k:"#1f3b30", p:"#f4a7b9", b:"#7cc4e8", s:"#b8c4bd"};
+  var svg=document.getElementById('loo-svg'), ns="http://www.w3.org/2000/svg";
+  art.forEach(function(row,y){ row.split('').forEach(function(c,x){ if(!col[c]) return;
+    var r=document.createElementNS(ns,'rect'); r.setAttribute('x',x); r.setAttribute('y',y);
+    r.setAttribute('width',1); r.setAttribute('height',1); r.setAttribute('fill',col[c]); svg.appendChild(r); }); });
+  var loo=document.getElementById('loo'), spots=[[36,36],[36,260],[36,480],[150,120],[150,380]], i=0;
+  loo.addEventListener('mouseenter', function(){
+    var n; do { n=Math.floor(Math.random()*spots.length); } while(n===i); i=n;
+    loo.style.right=spots[n][0]+'px'; loo.style.bottom=spots[n][1]+'px';
+  });
+})();
+</script>
 </body>
 </html>
