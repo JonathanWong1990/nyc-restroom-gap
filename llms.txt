@@ -49,7 +49,7 @@ Data cleaning, negative binomial regression, out-of-sample validation
 
 [Map: see the web page]
 
-Shaded by observed ÷ expected complaints. Grey means the two match; darker means more complaints than the area's crowds explain.
+Shaded by observed ÷ expected complaints. Grey means the two match; stronger colour means more complaints than the area's crowds explain.
 
 **The answer: 29 neighbourhoods sit at 1.5× or more of their expected complaints.** Of these, six neighbourhoods clear 0.95 probability that their true complaint rate is above 1.5× expected: East Harlem (North), Astoria (East)–Woodside (North), East Elmhurst, Williamsbridge–Olinville, Brighton Beach and Midtown–Times Square. The 1.5× cut-off is a budget line, not a natural boundary. Interactive map <https://jonathanwong1990.github.io/nyc-restroom-gap/maps/unmet-need.html>.
 
