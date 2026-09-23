@@ -6,7 +6,7 @@
 
 Never hand-edit llms.txt: edit index.html and re-run this script.
 SVG maps, <style> and <script> are dropped; tables become pipe tables; headings become
-Markdown headings; "Team research" tags become [Team research: <source>].
+Markdown headings; "Team research · Name" tags become [Team research · Name: <source>].
 """
 import html
 import re
@@ -30,7 +30,8 @@ and lists the open questions.
 Hold onto three things. The ranking ORDERS neighbourhoods; it does not prove any single one
 is underserved. No New York causal effect was measured (two designs failed, one on a
 placebo set in advance), so there is no return-on-investment figure here. Items marked
-[Team research: ...] come from teammates' research, checked against the primary source.
+[Team research · Name: ...] come from the named teammate's research, checked against the
+primary source.
 
 Authoritative sources, in order (the first outranks this file):
 - {repo}/blob/main/analysis/outputs/headline_numbers.json  (every number, with its script)
@@ -85,7 +86,8 @@ class Extract(HTMLParser):
         cls = a.get("class", "") or ""
         if "tag-team" in cls.split():
             t = a.get("title", "")
-            self.tag_title = re.sub(r"^From team research\s*[—-]\s*", "", t)
+            self.tag_title = t.split(" — ", 1)[1] if " — " in t else t
+            self.tag_label = []
             return
         if tag in ("h2", "h3", "p", "figure", "figcaption", "aside", "div", "pre"):
             self.flush()
@@ -126,7 +128,8 @@ class Extract(HTMLParser):
         if self.skip:
             return
         if tag == "span" and self.tag_title is not None:
-            self.emit(" [Team research: %s]" % self.tag_title if self.tag_title != "legend" else " [Team research]")
+            label = re.sub(r"\s+", " ", "".join(self.tag_label)).strip() or "Team research"
+            self.emit(" [%s: %s]" % (label, self.tag_title) if self.tag_title != "legend" else " [%s]" % label)
             self.tag_title = None
             return
         if tag == "h2":
@@ -180,7 +183,10 @@ class Extract(HTMLParser):
                 self.out.append("\n".join(lines))
 
     def handle_data(self, data):
-        if self.skip or self.tag_title is not None:
+        if self.skip:
+            return
+        if self.tag_title is not None:
+            self.tag_label.append(data)
             return
         self.emit(data)
 
