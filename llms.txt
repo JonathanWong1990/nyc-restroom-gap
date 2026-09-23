@@ -75,6 +75,8 @@ The chart below combines two datasets. The team's station layer supplies the 50 
 
 [Chart: Line chart: entry-weighted walk from the 50 busiest subway hubs to the nearest open restroom, by hour of a typical weekday. About 3.7 minutes through the day, rising after 4pm and reaching 13.7 minutes at 9pm.] (img/hub_open_access.png)
 
+<https://jonathanwong1990.github.io/nyc-restroom-gap/img/hub_open_access.png>
+
 Top 50 hubs, Wednesday, straight-line walk (real routes are longer, so these are lower bounds). Script: `R/C2_hub_open_access.R`.
 
 | Top 50 hubs, Wednesday | Average walk | Hubs with no open restroom within 500 m |
