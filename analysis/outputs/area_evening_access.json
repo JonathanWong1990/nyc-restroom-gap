@@ -1,0 +1,969 @@
+{
+  "script": "R/C4_area_evening_access.R",
+  "built": "2026-09-23",
+  "method": {
+    "day": "Wednesday",
+    "hours": [14, 18, 21],
+    "scenarios": {
+      "off_season": "placeholder closes 16:00",
+      "in_season": "placeholder closes 20:00"
+    },
+    "nine_pm_note": "9pm identical in both scenarios (placeholder closes by 20:00)",
+    "distance": "straight line EPSG:2263; walk 72 m/min; lower bounds",
+    "origins": {
+      "stations_in": "complexes inside the NTA polygon; median over stations, mean weighted by 2025 entries",
+      "stations_400": "complexes inside or within 400 m of the NTA (C3 'near')",
+      "hotspots": "C3 DBSCAN hot-spot centroids (eps 150 m, minPts 5, fallback 4); median and mean weighted by complaints",
+      "complaints": "every de-duplicated complaint assigned to the NTA (C3/Z0 recipe, 10_modelling_table NTA rule)",
+      "complaints_evening": "subset filed 18:00-05:59"
+    }
+  },
+  "restrooms_open_wed": {
+    "off_season 14": 954,
+    "off_season 18": 156,
+    "off_season 21": 57,
+    "in_season 14": 954,
+    "in_season 18": 797,
+    "in_season 21": 57
+  },
+  "six": [
+    {
+      "ntaname": "East Harlem (North)",
+      "ratio": 3,
+      "complaints": 100,
+      "thin": false,
+      "stations_in": 2,
+      "stations_400": 9,
+      "hotspots": 5,
+      "restrooms": 8,
+      "restrooms_open_9pm": 0,
+      "median_walk_min": {
+        "stations_in": {
+          "14_off": 5.62,
+          "18_off": 7.04,
+          "18_in": 5.62,
+          "21": 27.8
+        },
+        "stations_400": {
+          "14_off": 3.41,
+          "18_off": 6.36,
+          "18_in": 3.41,
+          "21": 29.76
+        },
+        "hotspots": {
+          "14_off": 3.12,
+          "18_off": 3.12,
+          "18_in": 3.12,
+          "21": 24.25
+        },
+        "complaints": {
+          "14_off": 3.11,
+          "18_off": 3.33,
+          "18_in": 3.11,
+          "21": 24.51
+        },
+        "complaints_evening": {
+          "14_off": 3.11,
+          "18_off": 3.22,
+          "18_in": 3.11,
+          "21": 24.53
+        }
+      },
+      "weighted_mean_walk_min_21": {
+        "stations_in": 27.78,
+        "stations_400": 30.18,
+        "hotspots": 26.16,
+        "complaints": 26.23
+      }
+    },
+    {
+      "ntaname": "Astoria (East)-Woodside (North)",
+      "ratio": 2.82,
+      "complaints": 59,
+      "thin": false,
+      "stations_in": 2,
+      "stations_400": 4,
+      "hotspots": 2,
+      "restrooms": 2,
+      "restrooms_open_9pm": 0,
+      "median_walk_min": {
+        "stations_in": {
+          "14_off": 5.33,
+          "18_off": 31.87,
+          "18_in": 10.21,
+          "21": 50.59
+        },
+        "stations_400": {
+          "14_off": 8.5,
+          "18_off": 31.87,
+          "18_in": 10.15,
+          "21": 49.64
+        },
+        "hotspots": {
+          "14_off": 7.62,
+          "18_off": 47.12,
+          "18_in": 7.62,
+          "21": 47.51
+        },
+        "complaints": {
+          "14_off": 7.5,
+          "18_off": 47.02,
+          "18_in": 7.72,
+          "21": 47.61
+        },
+        "complaints_evening": {
+          "14_off": 7.5,
+          "18_off": 47.02,
+          "18_in": 7.72,
+          "21": 47.61
+        }
+      },
+      "weighted_mean_walk_min_21": {
+        "stations_in": 49.63,
+        "stations_400": 49.04,
+        "hotspots": 48.03,
+        "complaints": 48
+      }
+    },
+    {
+      "ntaname": "East Elmhurst",
+      "ratio": 3.5,
+      "complaints": 36,
+      "thin": false,
+      "stations_in": 0,
+      "stations_400": 0,
+      "hotspots": 1,
+      "restrooms": 7,
+      "restrooms_open_9pm": 2,
+      "median_walk_min": {
+        "stations_in": {
+          "14_off": null,
+          "18_off": null,
+          "18_in": null,
+          "21": null
+        },
+        "stations_400": {
+          "14_off": null,
+          "18_off": null,
+          "18_in": null,
+          "21": null
+        },
+        "hotspots": {
+          "14_off": 1.63,
+          "18_off": 23.59,
+          "18_in": 1.63,
+          "21": 23.59
+        },
+        "complaints": {
+          "14_off": 2.13,
+          "18_off": 23.06,
+          "18_in": 2.13,
+          "21": 23.06
+        },
+        "complaints_evening": {
+          "14_off": 1.79,
+          "18_off": 23.09,
+          "18_in": 2.13,
+          "21": 23.09
+        }
+      },
+      "weighted_mean_walk_min_21": {
+        "stations_in": null,
+        "stations_400": null,
+        "hotspots": 23.59,
+        "complaints": 18.07
+      }
+    },
+    {
+      "ntaname": "Williamsbridge-Olinville",
+      "ratio": 2.97,
+      "complaints": 39,
+      "thin": false,
+      "stations_in": 4,
+      "stations_400": 5,
+      "hotspots": 2,
+      "restrooms": 6,
+      "restrooms_open_9pm": 0,
+      "median_walk_min": {
+        "stations_in": {
+          "14_off": 4.8,
+          "18_off": 12.8,
+          "18_in": 4.8,
+          "21": 30.06
+        },
+        "stations_400": {
+          "14_off": 4.6,
+          "18_off": 11.66,
+          "18_in": 4.6,
+          "21": 28.27
+        },
+        "hotspots": {
+          "14_off": 0.72,
+          "18_off": 14.55,
+          "18_in": 0.72,
+          "21": 36.66
+        },
+        "complaints": {
+          "14_off": 3.51,
+          "18_off": 14.44,
+          "18_in": 3.51,
+          "21": 36.6
+        },
+        "complaints_evening": {
+          "14_off": 0.96,
+          "18_off": 14.5,
+          "18_in": 0.96,
+          "21": 36.6
+        }
+      },
+      "weighted_mean_walk_min_21": {
+        "stations_in": 31.74,
+        "stations_400": 31.01,
+        "hotspots": 35.32,
+        "complaints": 34.63
+      }
+    },
+    {
+      "ntaname": "Brighton Beach",
+      "ratio": 3.85,
+      "complaints": 24,
+      "thin": true,
+      "stations_in": 2,
+      "stations_400": 2,
+      "hotspots": 3,
+      "restrooms": 1,
+      "restrooms_open_9pm": 0,
+      "median_walk_min": {
+        "stations_in": {
+          "14_off": 3.3,
+          "18_off": 22.34,
+          "18_in": 3.41,
+          "21": 22.34
+        },
+        "stations_400": {
+          "14_off": 3.3,
+          "18_off": 22.34,
+          "18_in": 3.41,
+          "21": 22.34
+        },
+        "hotspots": {
+          "14_off": 4.49,
+          "18_off": 25.11,
+          "18_in": 4.49,
+          "21": 25.11
+        },
+        "complaints": {
+          "14_off": 4.94,
+          "18_off": 25.54,
+          "18_in": 4.94,
+          "21": 25.54
+        },
+        "complaints_evening": {
+          "14_off": 3.52,
+          "18_off": 28.22,
+          "18_in": 3.52,
+          "21": 28.22
+        }
+      },
+      "weighted_mean_walk_min_21": {
+        "stations_in": 24.78,
+        "stations_400": 24.78,
+        "hotspots": 23.8,
+        "complaints": 26.03
+      }
+    },
+    {
+      "ntaname": "Midtown-Times Square",
+      "ratio": 1.93,
+      "complaints": 84,
+      "thin": false,
+      "stations_in": 10,
+      "stations_400": 20,
+      "hotspots": 5,
+      "restrooms": 14,
+      "restrooms_open_9pm": 6,
+      "median_walk_min": {
+        "stations_in": {
+          "14_off": 4.88,
+          "18_off": 4.88,
+          "18_in": 4.88,
+          "21": 8.66
+        },
+        "stations_400": {
+          "14_off": 3.34,
+          "18_off": 4.22,
+          "18_in": 3.81,
+          "21": 8.66
+        },
+        "hotspots": {
+          "14_off": 5.36,
+          "18_off": 5.69,
+          "18_in": 5.36,
+          "21": 6.86
+        },
+        "complaints": {
+          "14_off": 4.53,
+          "18_off": 5.42,
+          "18_in": 4.53,
+          "21": 7.93
+        },
+        "complaints_evening": {
+          "14_off": 5.24,
+          "18_off": 5.37,
+          "18_in": 5.37,
+          "21": 9.29
+        }
+      },
+      "weighted_mean_walk_min_21": {
+        "stations_in": 10.07,
+        "stations_400": 8.45,
+        "hotspots": 7.67,
+        "complaints": 7.83
+      }
+    }
+  ],
+  "six_ranked_worst_first_9pm": {
+    "stations_in": "Astoria (East)-Woodside (North) 50.6 > Williamsbridge-Olinville 30.1 > East Harlem (North) 27.8 > Brighton Beach 22.3 > Midtown-Times Square 8.7 > East Elmhurst NA",
+    "stations_400": "Astoria (East)-Woodside (North) 49.6 > East Harlem (North) 29.8 > Williamsbridge-Olinville 28.3 > Brighton Beach 22.3 > Midtown-Times Square 8.7 > East Elmhurst NA",
+    "hotspots": "Astoria (East)-Woodside (North) 47.5 > Williamsbridge-Olinville 36.7 > Brighton Beach 25.1 > East Harlem (North) 24.2 > East Elmhurst 23.6 > Midtown-Times Square 6.9",
+    "complaints": "Astoria (East)-Woodside (North) 47.6 > Williamsbridge-Olinville 36.6 > Brighton Beach 25.5 > East Harlem (North) 24.5 > East Elmhurst 23.1 > Midtown-Times Square 7.9",
+    "complaints_evening": "Astoria (East)-Woodside (North) 47.6 > Williamsbridge-Olinville 36.6 > Brighton Beach 28.2 > East Harlem (North) 24.5 > East Elmhurst 23.1 > Midtown-Times Square 9.3"
+  },
+  "spearman_29_9pm": [
+    {
+      "rho": 0.942,
+      "n": 21,
+      "_row": "stations_400_vs_complaints"
+    },
+    {
+      "rho": 0.963,
+      "n": 19,
+      "_row": "stations_in_vs_complaints"
+    },
+    {
+      "rho": 0.976,
+      "n": 22,
+      "_row": "hotspots_vs_complaints"
+    },
+    {
+      "rho": 0.981,
+      "n": 29,
+      "_row": "complaints_vs_evening"
+    }
+  ],
+  "audit_G5_reproduction": [
+    {
+      "ntaname": "Midtown-Times Square",
+      "a14": 4.9,
+      "a18": 4.9,
+      "a21": 8.7,
+      "stations_in_14": 4.88,
+      "stations_in_18": 4.88,
+      "stations_in_21": 8.66,
+      "stations_400_14": 3.34,
+      "stations_400_18": 4.22,
+      "stations_400_21": 8.66
+    },
+    {
+      "ntaname": "East Harlem (North)",
+      "a14": 5.6,
+      "a18": 7,
+      "a21": 27.8,
+      "stations_in_14": 5.62,
+      "stations_in_18": 7.04,
+      "stations_in_21": 27.8,
+      "stations_400_14": 3.41,
+      "stations_400_18": 6.36,
+      "stations_400_21": 29.76
+    },
+    {
+      "ntaname": "Brighton Beach",
+      "a14": 3.3,
+      "a18": 22.3,
+      "a21": 22.3,
+      "stations_in_14": 3.3,
+      "stations_in_18": 22.34,
+      "stations_in_21": 22.34,
+      "stations_400_14": 3.3,
+      "stations_400_18": 22.34,
+      "stations_400_21": 22.34
+    },
+    {
+      "ntaname": "Williamsbridge-Olinville",
+      "a14": 4.8,
+      "a18": 12.8,
+      "a21": 30.1,
+      "stations_in_14": 4.8,
+      "stations_in_18": 12.8,
+      "stations_in_21": 30.06,
+      "stations_400_14": 4.6,
+      "stations_400_18": 11.66,
+      "stations_400_21": 28.27
+    },
+    {
+      "ntaname": "Astoria (East)-Woodside (North)",
+      "a14": 5.3,
+      "a18": 31.9,
+      "a21": 50.6,
+      "stations_in_14": 5.33,
+      "stations_in_18": 31.87,
+      "stations_in_21": 50.59,
+      "stations_400_14": 8.5,
+      "stations_400_18": 31.87,
+      "stations_400_21": 49.64
+    }
+  ],
+  "counts_29": [
+    {
+      "nta2020": "BK1303",
+      "ntaname": "Brighton Beach",
+      "six": true,
+      "ratio": 3.85,
+      "complaints": 24,
+      "evening_complaints": 10,
+      "thin": true,
+      "stations_in": 2,
+      "stations_400": 2,
+      "hotspots": 3,
+      "hotspot_complaints": 12,
+      "hotspot_params": "eps150_min4 (fallback)",
+      "restrooms": 1,
+      "restrooms_open_14": 1,
+      "restrooms_open_18_off": 0,
+      "restrooms_open_18_in": 0,
+      "restrooms_open_21": 0
+    },
+    {
+      "nta2020": "QN0302",
+      "ntaname": "East Elmhurst",
+      "six": true,
+      "ratio": 3.5,
+      "complaints": 36,
+      "evening_complaints": 19,
+      "thin": false,
+      "stations_in": 0,
+      "stations_400": 0,
+      "hotspots": 1,
+      "hotspot_complaints": 20,
+      "hotspot_params": "eps150_min5",
+      "restrooms": 7,
+      "restrooms_open_14": 7,
+      "restrooms_open_18_off": 2,
+      "restrooms_open_18_in": 4,
+      "restrooms_open_21": 2
+    },
+    {
+      "nta2020": "BK1703",
+      "ntaname": "East Flatbush-Rugby",
+      "six": false,
+      "ratio": 3.11,
+      "complaints": 18,
+      "evening_complaints": 7,
+      "thin": true,
+      "stations_in": 0,
+      "stations_400": 0,
+      "hotspots": 1,
+      "hotspot_complaints": 5,
+      "hotspot_params": "eps150_min5",
+      "restrooms": 4,
+      "restrooms_open_14": 3,
+      "restrooms_open_18_off": 0,
+      "restrooms_open_18_in": 2,
+      "restrooms_open_21": 0
+    },
+    {
+      "nta2020": "MN1102",
+      "ntaname": "East Harlem (North)",
+      "six": true,
+      "ratio": 3,
+      "complaints": 100,
+      "evening_complaints": 35,
+      "thin": false,
+      "stations_in": 2,
+      "stations_400": 9,
+      "hotspots": 5,
+      "hotspot_complaints": 70,
+      "hotspot_params": "eps150_min5",
+      "restrooms": 8,
+      "restrooms_open_14": 8,
+      "restrooms_open_18_off": 1,
+      "restrooms_open_18_in": 8,
+      "restrooms_open_21": 0
+    },
+    {
+      "nta2020": "BX1201",
+      "ntaname": "Williamsbridge-Olinville",
+      "six": true,
+      "ratio": 2.97,
+      "complaints": 39,
+      "evening_complaints": 22,
+      "thin": false,
+      "stations_in": 4,
+      "stations_400": 5,
+      "hotspots": 2,
+      "hotspot_complaints": 26,
+      "hotspot_params": "eps150_min5",
+      "restrooms": 6,
+      "restrooms_open_14": 6,
+      "restrooms_open_18_off": 0,
+      "restrooms_open_18_in": 6,
+      "restrooms_open_21": 0
+    },
+    {
+      "nta2020": "QN0104",
+      "ntaname": "Astoria (East)-Woodside (North)",
+      "six": true,
+      "ratio": 2.82,
+      "complaints": 59,
+      "evening_complaints": 32,
+      "thin": false,
+      "stations_in": 2,
+      "stations_400": 4,
+      "hotspots": 2,
+      "hotspot_complaints": 48,
+      "hotspot_params": "eps150_min5",
+      "restrooms": 2,
+      "restrooms_open_14": 2,
+      "restrooms_open_18_off": 0,
+      "restrooms_open_18_in": 1,
+      "restrooms_open_21": 0
+    },
+    {
+      "nta2020": "SI0202",
+      "ntaname": "New Dorp-Midland Beach",
+      "six": false,
+      "ratio": 2.75,
+      "complaints": 15,
+      "evening_complaints": 4,
+      "thin": true,
+      "stations_in": 0,
+      "stations_400": 0,
+      "hotspots": 0,
+      "hotspot_complaints": 0,
+      "hotspot_params": "none (no cluster at minPts 4)",
+      "restrooms": 4,
+      "restrooms_open_14": 4,
+      "restrooms_open_18_off": 0,
+      "restrooms_open_18_in": 4,
+      "restrooms_open_21": 0
+    },
+    {
+      "nta2020": "BK1002",
+      "ntaname": "Dyker Heights",
+      "six": false,
+      "ratio": 2.47,
+      "complaints": 16,
+      "evening_complaints": 3,
+      "thin": true,
+      "stations_in": 0,
+      "stations_400": 4,
+      "hotspots": 1,
+      "hotspot_complaints": 5,
+      "hotspot_params": "eps150_min5",
+      "restrooms": 5,
+      "restrooms_open_14": 5,
+      "restrooms_open_18_off": 0,
+      "restrooms_open_18_in": 3,
+      "restrooms_open_21": 0
+    },
+    {
+      "nta2020": "BX0201",
+      "ntaname": "Hunts Point",
+      "six": false,
+      "ratio": 2.33,
+      "complaints": 5,
+      "evening_complaints": 1,
+      "thin": true,
+      "stations_in": 0,
+      "stations_400": 6,
+      "hotspots": 0,
+      "hotspot_complaints": 0,
+      "hotspot_params": "none (no cluster at minPts 4)",
+      "restrooms": 3,
+      "restrooms_open_14": 3,
+      "restrooms_open_18_off": 0,
+      "restrooms_open_18_in": 2,
+      "restrooms_open_21": 0
+    },
+    {
+      "nta2020": "BX1203",
+      "ntaname": "Wakefield-Woodlawn",
+      "six": false,
+      "ratio": 2.32,
+      "complaints": 31,
+      "evening_complaints": 11,
+      "thin": false,
+      "stations_in": 3,
+      "stations_400": 4,
+      "hotspots": 1,
+      "hotspot_complaints": 23,
+      "hotspot_params": "eps150_min5",
+      "restrooms": 7,
+      "restrooms_open_14": 7,
+      "restrooms_open_18_off": 4,
+      "restrooms_open_18_in": 7,
+      "restrooms_open_21": 2
+    },
+    {
+      "nta2020": "BK0201",
+      "ntaname": "Brooklyn Heights",
+      "six": false,
+      "ratio": 2.11,
+      "complaints": 24,
+      "evening_complaints": 8,
+      "thin": true,
+      "stations_in": 1,
+      "stations_400": 7,
+      "hotspots": 1,
+      "hotspot_complaints": 9,
+      "hotspot_params": "eps150_min5",
+      "restrooms": 9,
+      "restrooms_open_14": 7,
+      "restrooms_open_18_off": 2,
+      "restrooms_open_18_in": 5,
+      "restrooms_open_21": 2
+    },
+    {
+      "nta2020": "SI0106",
+      "ntaname": "Port Richmond",
+      "six": false,
+      "ratio": 2.09,
+      "complaints": 8,
+      "evening_complaints": 3,
+      "thin": true,
+      "stations_in": 0,
+      "stations_400": 0,
+      "hotspots": 0,
+      "hotspot_complaints": 0,
+      "hotspot_params": "none (no cluster at minPts 4)",
+      "restrooms": 3,
+      "restrooms_open_14": 3,
+      "restrooms_open_18_off": 0,
+      "restrooms_open_18_in": 2,
+      "restrooms_open_21": 0
+    },
+    {
+      "nta2020": "QN0705",
+      "ntaname": "East Flushing",
+      "six": false,
+      "ratio": 2.07,
+      "complaints": 10,
+      "evening_complaints": 5,
+      "thin": true,
+      "stations_in": 0,
+      "stations_400": 0,
+      "hotspots": 0,
+      "hotspot_complaints": 0,
+      "hotspot_params": "none (no cluster at minPts 4)",
+      "restrooms": 2,
+      "restrooms_open_14": 2,
+      "restrooms_open_18_off": 1,
+      "restrooms_open_18_in": 2,
+      "restrooms_open_21": 0
+    },
+    {
+      "nta2020": "QN1401",
+      "ntaname": "Far Rockaway-Bayswater",
+      "six": false,
+      "ratio": 1.98,
+      "complaints": 50,
+      "evening_complaints": 27,
+      "thin": false,
+      "stations_in": 3,
+      "stations_400": 4,
+      "hotspots": 1,
+      "hotspot_complaints": 44,
+      "hotspot_params": "eps150_min5",
+      "restrooms": 8,
+      "restrooms_open_14": 8,
+      "restrooms_open_18_off": 1,
+      "restrooms_open_18_in": 7,
+      "restrooms_open_21": 1
+    },
+    {
+      "nta2020": "BK0703",
+      "ntaname": "Sunset Park (Central)",
+      "six": false,
+      "ratio": 1.97,
+      "complaints": 30,
+      "evening_complaints": 15,
+      "thin": false,
+      "stations_in": 1,
+      "stations_400": 8,
+      "hotspots": 2,
+      "hotspot_complaints": 19,
+      "hotspot_params": "eps150_min5",
+      "restrooms": 1,
+      "restrooms_open_14": 1,
+      "restrooms_open_18_off": 0,
+      "restrooms_open_18_in": 1,
+      "restrooms_open_21": 0
+    },
+    {
+      "nta2020": "QN1206",
+      "ntaname": "Hollis",
+      "six": false,
+      "ratio": 1.96,
+      "complaints": 9,
+      "evening_complaints": 4,
+      "thin": true,
+      "stations_in": 0,
+      "stations_400": 0,
+      "hotspots": 0,
+      "hotspot_complaints": 0,
+      "hotspot_params": "none (no cluster at minPts 4)",
+      "restrooms": 3,
+      "restrooms_open_14": 3,
+      "restrooms_open_18_off": 0,
+      "restrooms_open_18_in": 2,
+      "restrooms_open_21": 0
+    },
+    {
+      "nta2020": "MN0502",
+      "ntaname": "Midtown-Times Square",
+      "six": true,
+      "ratio": 1.93,
+      "complaints": 84,
+      "evening_complaints": 14,
+      "thin": false,
+      "stations_in": 10,
+      "stations_400": 20,
+      "hotspots": 5,
+      "hotspot_complaints": 43,
+      "hotspot_params": "eps150_min5",
+      "restrooms": 14,
+      "restrooms_open_14": 14,
+      "restrooms_open_18_off": 9,
+      "restrooms_open_18_in": 12,
+      "restrooms_open_21": 6
+    },
+    {
+      "nta2020": "MN0301",
+      "ntaname": "Chinatown-Two Bridges",
+      "six": false,
+      "ratio": 1.82,
+      "complaints": 27,
+      "evening_complaints": 5,
+      "thin": true,
+      "stations_in": 1,
+      "stations_400": 6,
+      "hotspots": 2,
+      "hotspot_complaints": 13,
+      "hotspot_params": "eps150_min5",
+      "restrooms": 6,
+      "restrooms_open_14": 6,
+      "restrooms_open_18_off": 1,
+      "restrooms_open_18_in": 6,
+      "restrooms_open_21": 0
+    },
+    {
+      "nta2020": "MN0203",
+      "ntaname": "West Village",
+      "six": false,
+      "ratio": 1.78,
+      "complaints": 60,
+      "evening_complaints": 22,
+      "thin": false,
+      "stations_in": 2,
+      "stations_400": 7,
+      "hotspots": 2,
+      "hotspot_complaints": 52,
+      "hotspot_params": "eps150_min5",
+      "restrooms": 11,
+      "restrooms_open_14": 11,
+      "restrooms_open_18_off": 6,
+      "restrooms_open_18_in": 10,
+      "restrooms_open_21": 4
+    },
+    {
+      "nta2020": "QN0402",
+      "ntaname": "Corona",
+      "six": false,
+      "ratio": 1.75,
+      "complaints": 54,
+      "evening_complaints": 23,
+      "thin": false,
+      "stations_in": 1,
+      "stations_400": 3,
+      "hotspots": 4,
+      "hotspot_complaints": 37,
+      "hotspot_params": "eps150_min5",
+      "restrooms": 7,
+      "restrooms_open_14": 7,
+      "restrooms_open_18_off": 1,
+      "restrooms_open_18_in": 6,
+      "restrooms_open_21": 0
+    },
+    {
+      "nta2020": "MN0102",
+      "ntaname": "Tribeca-Civic Center",
+      "six": false,
+      "ratio": 1.72,
+      "complaints": 58,
+      "evening_complaints": 17,
+      "thin": false,
+      "stations_in": 6,
+      "stations_400": 10,
+      "hotspots": 4,
+      "hotspot_complaints": 42,
+      "hotspot_params": "eps150_min5",
+      "restrooms": 3,
+      "restrooms_open_14": 3,
+      "restrooms_open_18_off": 2,
+      "restrooms_open_18_in": 3,
+      "restrooms_open_21": 1
+    },
+    {
+      "nta2020": "QN1403",
+      "ntaname": "Breezy Point-Belle Harbor-Rockaway Park-Broad Channel",
+      "six": false,
+      "ratio": 1.71,
+      "complaints": 17,
+      "evening_complaints": 6,
+      "thin": true,
+      "stations_in": 3,
+      "stations_400": 4,
+      "hotspots": 2,
+      "hotspot_complaints": 12,
+      "hotspot_params": "eps150_min5",
+      "restrooms": 5,
+      "restrooms_open_14": 5,
+      "restrooms_open_18_off": 0,
+      "restrooms_open_18_in": 4,
+      "restrooms_open_21": 0
+    },
+    {
+      "nta2020": "QN0203",
+      "ntaname": "Woodside",
+      "six": false,
+      "ratio": 1.71,
+      "complaints": 47,
+      "evening_complaints": 23,
+      "thin": false,
+      "stations_in": 4,
+      "stations_400": 6,
+      "hotspots": 3,
+      "hotspot_complaints": 23,
+      "hotspot_params": "eps150_min5",
+      "restrooms": 4,
+      "restrooms_open_14": 4,
+      "restrooms_open_18_off": 0,
+      "restrooms_open_18_in": 3,
+      "restrooms_open_21": 0
+    },
+    {
+      "nta2020": "BK0401",
+      "ntaname": "Bushwick (West)",
+      "six": false,
+      "ratio": 1.68,
+      "complaints": 51,
+      "evening_complaints": 27,
+      "thin": false,
+      "stations_in": 4,
+      "stations_400": 10,
+      "hotspots": 2,
+      "hotspot_complaints": 14,
+      "hotspot_params": "eps150_min5",
+      "restrooms": 4,
+      "restrooms_open_14": 4,
+      "restrooms_open_18_off": 0,
+      "restrooms_open_18_in": 3,
+      "restrooms_open_21": 0
+    },
+    {
+      "nta2020": "BK0204",
+      "ntaname": "Clinton Hill",
+      "six": false,
+      "ratio": 1.67,
+      "complaints": 22,
+      "evening_complaints": 4,
+      "thin": true,
+      "stations_in": 3,
+      "stations_400": 5,
+      "hotspots": 2,
+      "hotspot_complaints": 10,
+      "hotspot_params": "eps150_min5",
+      "restrooms": 5,
+      "restrooms_open_14": 5,
+      "restrooms_open_18_off": 0,
+      "restrooms_open_18_in": 4,
+      "restrooms_open_21": 0
+    },
+    {
+      "nta2020": "SI0101",
+      "ntaname": "St. George-New Brighton",
+      "six": false,
+      "ratio": 1.66,
+      "complaints": 5,
+      "evening_complaints": 2,
+      "thin": true,
+      "stations_in": 0,
+      "stations_400": 0,
+      "hotspots": 0,
+      "hotspot_complaints": 0,
+      "hotspot_params": "none (no cluster at minPts 4)",
+      "restrooms": 2,
+      "restrooms_open_14": 2,
+      "restrooms_open_18_off": 1,
+      "restrooms_open_18_in": 2,
+      "restrooms_open_21": 0
+    },
+    {
+      "nta2020": "SI0102",
+      "ntaname": "Tompkinsville-Stapleton-Clifton-Fox Hills",
+      "six": false,
+      "ratio": 1.65,
+      "complaints": 4,
+      "evening_complaints": 2,
+      "thin": true,
+      "stations_in": 0,
+      "stations_400": 0,
+      "hotspots": 0,
+      "hotspot_complaints": 0,
+      "hotspot_params": "none (no cluster at minPts 4)",
+      "restrooms": 2,
+      "restrooms_open_14": 2,
+      "restrooms_open_18_off": 1,
+      "restrooms_open_18_in": 2,
+      "restrooms_open_21": 0
+    },
+    {
+      "nta2020": "BK0701",
+      "ntaname": "Windsor Terrace-South Slope",
+      "six": false,
+      "ratio": 1.64,
+      "complaints": 14,
+      "evening_complaints": 4,
+      "thin": true,
+      "stations_in": 2,
+      "stations_400": 4,
+      "hotspots": 1,
+      "hotspot_complaints": 4,
+      "hotspot_params": "eps150_min4 (fallback)",
+      "restrooms": 4,
+      "restrooms_open_14": 4,
+      "restrooms_open_18_off": 1,
+      "restrooms_open_18_in": 3,
+      "restrooms_open_21": 1
+    },
+    {
+      "nta2020": "BX0102",
+      "ntaname": "Melrose",
+      "six": false,
+      "ratio": 1.55,
+      "complaints": 16,
+      "evening_complaints": 8,
+      "thin": true,
+      "stations_in": 3,
+      "stations_400": 5,
+      "hotspots": 1,
+      "hotspot_complaints": 7,
+      "hotspot_params": "eps150_min5",
+      "restrooms": 5,
+      "restrooms_open_14": 5,
+      "restrooms_open_18_off": 0,
+      "restrooms_open_18_in": 4,
+      "restrooms_open_21": 0
+    }
+  ]
+}

@@ -347,13 +347,17 @@ EXT <- list(
   council_audit_missing_necessity = list(value=c(129,301), display="129 of 301", unit="open rooms missing a basic necessity",
     source="https://council.nyc.gov/press/wp-content/uploads/sites/56/2025/12/OID_Restrooms-REPORT_121625-v4.pdf", note=""),
   # 2026-09-23 site-merge: hours_per_day and the site list added (verified against the release 23 Sep)
+  # 2026-09-24 final-narrative: the typed 'sites_astoria_woodside = 4' was WRONG (the four Queens
+  # sites are in western Queens; only 1 is in Astoria (East)-Woodside (North), on its boundary).
+  # Site placement is now DERIVED from outputs/pilot_sites.json (R/P1_pilot_sites.R): see pilot_in_*.
   pilot = list(value=list(units=17, cost=4e6, years=1, hours="7am-10pm", hours_per_day=15, sites_published="2026-09-16",
-      sites_midtown=0, sites_astoria_woodside=4),
+      sites_midtown=0),
     display="17 units, $4M, one year, 7am–10pm", unit="",
     source="https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-brings-17-new-public-bathrooms-to-neighborhoods-ac",
     note=paste("Throne Labs via NYCEDC; self-contained units, no hookups; operator cleans and maintains (service contract).",
-      "Queens sites: Astoria Blvd S & 31 St, Northern Blvd & 31 St, Northern Blvd & 54 St, 34 Ave & 64 St (Astoria/Woodside);",
-      "Manhattan: Cooper Sq, Malcolm X Plaza, Delancey & Suffolk, Plaza Alianza Dominicana — none in Midtown")),
+      "Queens sites (western Queens): Astoria Blvd S & 31 St, Northern Blvd & 31 St, Northern Blvd & 54 St, 34 Ave & 64 St;",
+      "Manhattan: Cooper Sq, Malcolm X Plaza, Delancey & Suffolk, Plaza Alianza Dominicana — none in Midtown.",
+      "Which NTA each site falls in is derived (pilot_in_six, pilot_in_29, pilot_neither), not typed here")),
   ## ---- 2026-09-23 site-merge: external facts added for the rewritten site ----
   ll114 = list(value="2022-11-28", display="Local Law 114 of 2022", unit="law",
     source="https://intro.nyc/local-laws/2022-114",
@@ -366,20 +370,27 @@ EXT <- list(
     note="Amato et al., BMC Public Health 2022; San Francisco Pit Stop, 13 new-restroom installations, 2014-2020; not NYC"),
   amato_2022_hours = list(value=list(change_per_week=12.00, p=0.0016, interventions=3), display="+12.00 reports/week (p = 0.0016)",
     unit="311 feces reports per week", source="https://pmc.ncbi.nlm.nih.gov/articles/PMC9441075/",
-    note="Amato et al. 2022 Table 1: 3 Pit Stops that expanded service hours (to 24 h). Likely confounded: sites chosen for longer hours were the busiest"),
+    note=paste("Amato et al. 2022 Table 1: 3 Pit Stops that expanded service hours (to 24 h). The authors call it unexpected and",
+      "do not settle why; site selection (busiest sites got longer hours) is a possible confound, our reading, not the authors'")),
   privy_by_the_bay_2025 = list(value="effect appears to be small", display="'the effect appears to be small'", unit="quote",
     source="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0327795",
     note="PLOS ONE, 14 Aug 2025, SF 311 waste reports 2009-2022; qualifies Amato 2022"),
   restroom_register_last_updated = list(value="2025-06-27", display="27 June 2025", unit="date",
     source="https://data.cityofnewyork.us/d/i7jb-7jku", note="rowsUpdatedAt of the register; the catalogue claims Nov 2025"),
+  # 2026-09-24 final-narrative: peer-city box dissolved (owner decision 4). Tokyo, London and the
+  # Portland Loo duplicate dropped; SF, DC and Paris each support one claim (entries below).
   peer_cities = list(value=list(
       san_francisco="https://sfpublicworks.org/pitstop",
       washington_dc="https://dcpublicrestrooms.org/wp-content/uploads/2023/12/Public-Restroom-Pilot-Program.pdf",
-      paris="https://opendata.paris.fr/explore/dataset/sanisettesparis/",
-      tokyo="https://tokyotoilet.jp/en/maintenance/",
-      london="https://www.cityoflondon.gov.uk/services/streets/clean-streets/public-toilets"),
-    display="SF, DC, Paris, Tokyo, London", unit="links",
-    source="see value", note="each link opened 23 Sep 2026 (DC pilot statute: monthly reports on use by date/time and misuse)"),
+      paris="https://opendata.paris.fr/explore/dataset/sanisettesparis/"),
+    display="SF, DC, Paris", unit="links",
+    source="see value", note="each link opened 23 Sep 2026; Tokyo and London dropped 24 Sep (connected to no claim)"),
+  dc_act_25_172 = list(value="monthly reports on use (by date and time) and misuse", display="D.C. Act 25-172",
+    unit="statute", source="https://dcpublicrestrooms.org/wp-content/uploads/2023/12/Public-Restroom-Pilot-Program.pdf",
+    note="Washington DC public restroom pilot statute: the operator reports use and misuse monthly. Precedent for the operator data spec"),
+  paris_open_toilet_dataset = list(value="sanisettesparis", display="Paris open toilet dataset", unit="dataset",
+    source="https://opendata.paris.fr/explore/dataset/sanisettesparis/",
+    note="one open list of every public toilet with its status (en service / hors service) and opening hours; shows the hours-data gap is fixable"),
   modular_portland_loo = list(value=list(pilot_budget=6e6, units=5, per_unit_budget=1.2e6,
       per_site_reported=1e6, unit_only=185000), display="$6M for 5 units = $1.2M each", unit="",
     source="https://www.nyc.gov/mayors-office/news/2025/07/mayor-adams-nyc-parks-commissioner-rodriguez-rosa-continue-we-outside-summer-announcing",
@@ -597,6 +608,181 @@ for (k in names(DS)) add(paste0("rows_", k), rows_of(DS[[k]]), comma(rows_of(DS[
 add("n_datasets_listed", length(DS), as.character(length(DS)), "datasets", "this block", "raw datasets listed on the Data & code tab")
 nsc <- length(list.files("R", pattern="\\.R$"))
 add("n_scripts", nsc, as.character(nsc), "R scripts", "R/", "count of R/*.R")
+
+## =============================================================================
+## 10. 2026-09-24 final-narrative: tested results behind the rewritten Walkthrough.
+## Every key is READ from a saved output of the script that owns it (no typed numbers):
+##   P1_pilot_sites.R        -> outputs/pilot_sites.json
+##   C4_area_evening_access.R-> outputs/area_evening_access.json
+##   C5_hotspot_table.R      -> outputs/hotspot_table.csv
+##   C3_station_bridge.R     -> outputs/station_bridge.json
+##   T1_mechanism_tests.R + T1_F_pilot_power.R -> outputs/t1_tests.json
+##   E1_peer_city_per_capita.R -> outputs/peer_city_per_capita.json
+## Their 'built' dates are never copied, so this file stays byte-identical across runs.
+## =============================================================================
+rj <- function(f) fromJSON(file.path("outputs", f), simplifyVector=TRUE)
+slug <- function(x) { s <- strsplit(gsub("^_|_$", "", gsub("[^a-z]+", "_", tolower(x))), "_")[[1]]; paste(head(s, 2), collapse="_") }
+ci <- function(e, lo, hi, d=2) sprintf("%.*f [%.*f–%.*f]", d, e, d, lo, d, hi)
+
+## ---- where the 17 pilot units are (P1) ----
+pj <- rj("pilot_sites.json"); ps <- pj$sites; ph1 <- pj$headline
+nsite <- ph1$n_sites
+add("pilot_n_sites", nsite, as.character(nsite), "sites", "R/P1_pilot_sites.R -> outputs/pilot_sites.json",
+    "published names only; exact unit spot inside a park or plaza is not published")
+add("pilot_in_six", sum(ps$in_six), sprintf("%d of %d", sum(ps$in_six), nsite), "pilot sites",
+    "R/P1_pilot_sites.R", sprintf("in one of the six high-confidence areas: %s (on the NTA boundary; Woodside, one of the 29, is across the street)",
+    paste(ps$published_name[ps$in_six], collapse="; ")), paste0(nrx(as.character(sum(ps$in_six))), " of ", nsite))
+add("pilot_in_29", sum(ps$in_29), sprintf("%d of %d", sum(ps$in_29), nsite), "pilot sites",
+    "R/P1_pilot_sites.R", paste("in one of the 29 areas at >= 1.5x (includes the one in the six):", paste(ps$published_name[ps$in_29], collapse="; ")),
+    paste0(nrx(as.character(sum(ps$in_29))), " of ", nsite))
+add("pilot_neither", sum(!ps$in_29), sprintf("%d of %d", sum(!ps$in_29), nsite), "pilot sites",
+    "R/P1_pilot_sites.R", "outside every one of the 29 priority areas", paste0(nrx(as.character(sum(!ps$in_29))), " of ", nsite))
+add("pilot_sites_queens", sum(ps$borough=="Queens"), as.character(sum(ps$borough=="Queens")), "pilot sites",
+    "R/P1_pilot_sites.R", paste("western Queens:", paste(sprintf("%s -> %s", ps$published_name, ps$ntaname)[ps$borough=="Queens"], collapse="; ")))
+mr <- median(ps$ratio_rank)
+add("pilot_median_ratio_rank", mr, sprintf("%s of %d", ord(mr), nrow(sc)), "rank of the site's NTA by need ratio",
+    "R/P1_pilot_sites.R", "median over the 17 sites (1 = highest need ratio)", paste0(nrx(ord(mr)), " of ", nrow(sc)))
+
+## ---- evening access in each priority area (C4) ----
+ea <- rj("area_evening_access.json")
+ow <- ea$restrooms_open_wed
+add("restrooms_open_9pm_wed", ow[["off_season 21"]], as.character(ow[["off_season 21"]]), "operational restrooms open",
+    "R/C4_area_evening_access.R", sprintf("Wednesday 9pm; the same in-season (%d). 6pm: %d off-season, %d in-season; 2pm: %d",
+    ow[["in_season 21"]], ow[["off_season 18"]], ow[["in_season 18"]], ow[["off_season 14"]]),
+    paste0(nrx(as.character(ow[["off_season 21"]])), "(?= (restrooms|are open|open))"))
+stopifnot(ow[["off_season 21"]] == ow[["in_season 21"]])
+six_ea <- ea$six
+w9 <- setNames(sapply(six_ea$median_walk_min$complaints[["21"]], identity), six_ea$ntaname)
+w9 <- sort(w9, decreasing=TRUE)
+add("six_walk_9pm_complaints_min", as.list(round(w9, 1)), paste(sprintf("%s %.1f", names(w9), w9), collapse=" > "),
+    "median straight-line walk (min) from each complaint to the nearest restroom open at 9pm, Wednesday",
+    "R/C4_area_evening_access.R (origin = complaints)", "worst first; 72 m/min, lower bounds; same order from evening-filed complaints")
+for (n in names(w9)) add(paste0("walk_9pm_", slug(n)), w9[[n]], sprintf("%.1f min", w9[[n]]), "minutes",
+    "R/C4_area_evening_access.R", paste(n, "- median walk from complaints to the nearest restroom open at 9pm"),
+    paste0(nrx(sprintf("%.1f", w9[[n]])), "(?= min)"))
+ro9 <- setNames(six_ea$restrooms_open_9pm, six_ea$ntaname)
+add("six_restrooms_open_9pm", as.list(ro9), paste(sprintf("%s %d", names(ro9), ro9), collapse="; "),
+    "restrooms open at 9pm inside each of the six", "R/C4_area_evening_access.R")
+
+## ---- where exactly: the complaint hot-spot table (C5) ----
+ht <- read.csv("outputs/hotspot_table.csv", stringsAsFactors=FALSE)
+for (i in seq_len(nrow(ht))) add(paste0("hotspot_", slug(ht$ntaname[i])),
+    list(place=ht$primary_hotspot[i], complaints=ht$primary_n[i], addresses=ht$primary_distinct_addresses[i],
+         anchoring=ht$anchoring[i], anchored=ht$anchored_hotspots[i], station=ht$nearest_station[i], station_m=ht$station_m[i],
+         listed=ht$nearest_listed_restroom[i], listed_m=ht$listed_m[i], open9_walk_min=ht$open_9pm_walk_min[i],
+         owner=ht$natural_owner[i], flags=ht$thin_flags[i], years=ht$primary_years[i], evening_night=ht$primary_share_evening_night[i]),
+    sprintf("%s: %d complaints (%d addresses); %s, %s hot spots; owner %s%s", ht$primary_hotspot[i], ht$primary_n[i],
+            ht$primary_distinct_addresses[i], ht$anchoring[i], ht$anchored_hotspots[i], ht$natural_owner[i],
+            ifelse(nzchar(ht$thin_flags[i]), paste0("; FLAG ", ht$thin_flags[i]), "")),
+    "", "R/C5_hotspot_table.R -> outputs/hotspot_table.csv", paste(ht$ntaname[i], "- largest hot spot (DBSCAN 150 m / 5)"))
+pk <- ht[grepl("^Parks", ht$natural_owner),]
+add("hotspot_closed_park_restroom_m", setNames(as.list(pk$listed_m), pk$nearest_listed_restroom),
+    paste(sprintf("%s %d m", pk$nearest_listed_restroom, pk$listed_m), collapse="; "), "metres from the largest hot spot",
+    "R/C5_hotspot_table.R", sprintf("listed Parks restrooms beside the largest hot spot, closed at 9pm (%s); share of hot-spot complaints filed 6pm-6am: %s",
+    paste(pk$ntaname, collapse=", "), paste(pct(pk$primary_share_evening_night), collapse=", ")),
+    paste0(nrx(as.character(pk$listed_m)), " ?m"))
+
+## ---- the station screen, tested (C3) ----
+sb <- rj("station_bridge.json"); so <- sb$test3_oos
+tsr <- so[so$ranking=="team_score_rule",]; ent <- so[so$ranking=="entries_only_rule",]
+add("station_screen_oos_spearman", tsr$mean_rho, f3(tsr$mean_rho), "Spearman rho (mean, 200 splits)", "R/C3_station_bridge.R",
+    sprintf("hand-weighted station screen (60 entries / 25 restroom distance / 15 none within 500 m), 424 complexes; worse than the ridership model in %s of splits",
+    pct(1 - tsr$beats_A_share)), nrx(f3(tsr$mean_rho)))
+add("station_ridership_oos_spearman", ent$mean_rho, f3(ent$mean_rho), "Spearman rho (mean, 200 splits)", "R/C3_station_bridge.R",
+    "station ridership alone, no fitting", nrx(f3(ent$mean_rho)))
+add("station_screen_worse_share", 1 - tsr$beats_A_share, pct(1 - tsr$beats_A_share), "share of splits", "R/C3_station_bridge.R",
+    "splits where the screen ranks stations worse than ridership")
+ir <- sb$test3_irr; ib <- ir[ir$outcome=="y_400" & ir$model=="B_plus_dist" & ir$term=="l_drr",]
+id <- ir[ir$outcome=="y_400" & ir$model=="D_ctrl_plus_dist" & ir$term=="l_drr",]
+add("station_distance_irr", c(ib$IRR, ib$lo, ib$hi), ci(ib$IRR, ib$lo, ib$hi), "IRR per doubling of distance to nearest listed restroom",
+    "R/C3_station_bridge.R", sprintf("400 m, NB + ridership + borough; p = %.2f. With catchment population and area: %s, p = %.2f",
+    ib$p, ci(id$IRR, id$lo, id$hi), id$p))
+
+## ---- supply-mechanism tests, complaint timing, cost logic, capital (T1) ----
+t1 <- rj("t1_tests.json")
+ai <- t1$A$irr; ga <- function(s, t) ai[ai$spec==s & ai$term==t,]
+e9 <- ga("A1_open21_in", "l_open21"); pshr <- ga("A2_park_share", "park_share"); c21 <- ga("A3_cov_day_eve", "c21")
+add("supply_tests_open9pm_irr", c(e9$IRR, e9$lo, e9$hi), ci(e9$IRR, e9$lo, e9$hi), "IRR, restrooms open at 9pm in the NTA",
+    "R/T1_mechanism_tests.R (A)", sprintf("p = %.2f; added to the ranking model; CD-clustered CI", e9$p))
+add("supply_tests_park_share_irr", c(pshr$IRR, pshr$lo, pshr$hi), ci(pshr$IRR, pshr$lo, pshr$hi), "IRR, share of restrooms in parks",
+    "R/T1_mechanism_tests.R (A)", sprintf("p = %.2f", pshr$p))
+add("supply_tests_cov9pm_irr", c(c21$IRR, c21$lo, c21$hi), ci(c21$IRR, c21$lo, c21$hi), "IRR per 10 pp of 9pm walk coverage",
+    "R/T1_mechanism_tests.R (A)", sprintf("p = %.2f", c21$p))
+oo <- t1$A$oos
+add("supply_tests_best_oos_gain", max(oo$diff_vs_M0), sprintf("%+.3f", max(oo$diff_vs_M0)), "change in mean OOS Spearman",
+    "R/T1_mechanism_tests.R (A)", sprintf("best of %d supply specifications vs the base model", nrow(oo) - 1))
+bm1 <- t1$B$models[1,]
+add("evening_collapse_or", c(bm1$OR, bm1$lo, bm1$hi), ci(bm1$OR, bm1$lo, bm1$hi), "odds ratio per 10 pp of 3pm-to-9pm coverage lost",
+    "R/T1_mechanism_tests.R (B)", "does a bigger evening collapse mean a more evening-weighted complaint mix? No")
+hr <- t1$B$hourly; rng <- function(x) sprintf("%.1f–%.1f×", min(x), max(x))
+add("urination_vs_dsny_evening", range(hr$relative_to_dirty[hr$hour %in% 18:23]), rng(hr$relative_to_dirty[hr$hour %in% 18:23]),
+    "urination share / DSNY dirty-condition share, 6pm-midnight", "R/T1_mechanism_tests.R (B)",
+    sprintf("evening share %s vs %s for DSNY", pct(t1$B$evening_share, 1), pct(t1$B$evening_share_dirty, 1)))
+add("urination_vs_dsny_overnight", range(hr$relative_to_dirty[hr$hour %in% 0:4]), rng(hr$relative_to_dirty[hr$hour %in% 0:4]),
+    "urination share / DSNY share, midnight-5am", "R/T1_mechanism_tests.R (B)", "overnight, when 8 restrooms are open, is as elevated as the evening")
+be1 <- t1$C$relative_breakeven
+add("hours_breakeven_vs_modular", be1$hours_vs_modular, pct(be1$hours_vs_modular), "share of a modular unit's effect",
+    "R/T1_mechanism_tests.R (C)", "longer hours are cheaper per complaint removed only above this relative effectiveness",
+    paste0(nrx(pct(be1$hours_vs_modular)), "(?= as effective)"))
+add("hours_breakeven_vs_reconstruct", be1$hours_vs_reconstruct, pct(be1$hours_vs_reconstruct), "share of a reconstruction's effect",
+    "R/T1_mechanism_tests.R (C)")
+cA <- t1$C$areas; eh1 <- cA[cA$ntaname=="East Harlem (North)",]
+add("east_harlem_hours_min_effect", eh1$f_to_be_first, pct(eh1$f_to_be_first), "share of the area's excess",
+    "R/T1_mechanism_tests.R (C)", sprintf("East Harlem (North) hours stays first only if it removes this share (%.1f of %.1f excess a year)",
+    eh1$f_to_be_first*eh1$excess_yr, eh1$excess_yr))
+add("median_excess_per_area_year", median(cA$excess_yr), sprintf("%.1f", median(cA$excess_yr)), "excess complaints a year",
+    "R/T1_mechanism_tests.R (C)", sprintf("median over the %d costed areas", nrow(cA)),
+    paste0(nrx(sprintf("%.1f", median(cA$excess_yr))), "(?= excess)"))
+sc25 <- t1$C$scenarios; s25 <- sc25[sc25$hours_effectiveness==0.25,]
+add("hours_25pct_first", s25$first, s25$first, "area ranked first", "R/T1_mechanism_tests.R (C)",
+    "if hours are 25% as effective as a new unit")
+dt <- t1$D$table; drc <- dt[dt$classification=="A7 regex: reconstruct",]; dnb <- dt[dt$classification=="A7 regex: build new",]
+add("capital_years_reconstruct", drc$median, sprintf("%.1f years", drc$median), "median years, design start -> completion",
+    "R/T1_mechanism_tests.R (D) / A7 classification", sprintf("n = %d completed of %d; IQR %.1f–%.1f", drc$n_completed, drc$n_projects, drc$q1, drc$q3),
+    paste0(nrx(sprintf("%.1f", drc$median)), "(?= years)"))
+add("capital_years_build_new", dnb$median, sprintf("%.1f years", dnb$median), "median years, design start -> completion",
+    "R/T1_mechanism_tests.R (D) / A7 classification", sprintf("n = %d completed of %d; IQR %.1f–%.1f; Wilcoxon p = %.1e", dnb$n_completed,
+    dnb$n_projects, dnb$q1, dnb$q3, t1$D$wilcoxon_p), paste0(nrx(sprintf("%.1f", dnb$median))))
+add("capital_years_n", c(reconstruct=drc$n_completed, build_new=dnb$n_completed), sprintf("%d and %d", drc$n_completed, dnb$n_completed),
+    "completed projects", "R/T1_mechanism_tests.R (D)")
+add("capital_years_wilcoxon_p", t1$D$wilcoxon_p, "p < 0.001", "p-value", "R/T1_mechanism_tests.R (D)", sprintf("%.1e", t1$D$wilcoxon_p))
+et <- t1$E$table; g_e <- function(s, t) et[et$spec==s & et$term==t,]
+en <- g_e("E0_as_40", "need"); er <- g_e("E8_plus_rest", "l_rest"); ep <- g_e("E8_plus_rest", "l_park")
+add("capital_need_or", c(en$OR, en$lo, en$hi, en$p), sprintf("%.2f, p = %.3f", en$OR, en$p), "odds ratio",
+    "R/T1_mechanism_tests.R (E) / R/40_logistic.R", sprintf("need never significant: p %.2f–%.2f across %d specifications", min(et$p[et$term=="need"]),
+    max(et$p[et$term=="need"]), sum(et$term=="need")))
+add("capital_restroom_count_or", c(er$OR, er$lo, er$hi, er$p), sprintf("%.2f", er$OR), "odds ratio per log restroom count",
+    "R/T1_mechanism_tests.R (E)", sprintf("p = %.4f; parkland then %.2f, p = %.2f", er$p, ep$OR, ep$p), nrx(sprintf("%.2f", er$OR)))
+ft <- t1$F$table; gf <- function(r, o) ft[ft$radius_m==r & ft$outcome==o,]
+f311 <- gf(400, "c311_7to22"); fsm <- gf(400, "summ_urin")
+add("pilot_mde_311", f311$mde_reduction_pct/100, pct(f311$mde_reduction_pct/100), "smallest detectable reduction",
+    "R/T1_F_pilot_power.R", sprintf("311 filed 7am-10pm within 400 m of the 17 sites: %d events in the pre-year across all 17; %d sites with none",
+    f311$treated_pre, f311$sites_with_zero_pre), paste0(nrx(pct(f311$mde_reduction_pct/100))))
+add("pilot_mde_summons", fsm$mde_reduction_pct/100, pct(fsm$mde_reduction_pct/100), "smallest detectable reduction",
+    "R/T1_F_pilot_power.R", sprintf("urination summonses within 400 m; %s with the alcohol-summons placebo", pct(fsm$ddd_mde_reduction_pct/100)),
+    paste0(nrx(pct(fsm$mde_reduction_pct/100))))
+add("pilot_mde_summons_placebo", fsm$ddd_mde_reduction_pct/100, pct(fsm$ddd_mde_reduction_pct/100), "smallest detectable reduction",
+    "R/T1_F_pilot_power.R", "urination summonses within 400 m, differenced against alcohol summonses (placebo)")
+add("pilot_pre_events_311", f311$treated_pre, as.character(f311$treated_pre), "complaints in a year, all 17 catchments",
+    "R/T1_F_pilot_power.R", "400 m, filed 7am-10pm")
+
+## ---- peer cities, one counting rule (E1) ----
+pc <- rj("peer_city_per_capita.json"); pt <- pc$table; pab <- pt[pt$grade %in% c("A","B"),]
+pab <- pab[order(-pab$per100k_core),]
+add("peer_per100k_core", setNames(as.list(pab$per100k_core), pab$city), paste(sprintf("%s %.1f", pab$city, pab$per100k_core), collapse="; "),
+    "public toilets per 100,000 residents, core rule", "R/E1_peer_city_per_capita.R", pc$rule)
+nyc <- pab[pab$city=="New York City",]; hk <- pab[pab$city=="Hong Kong",]
+add("peer_nyc_per100k", nyc$per100k_core, sprintf("%.1f", nyc$per100k_core), "per 100,000 residents, core rule",
+    "R/E1_peer_city_per_capita.R", sprintf("%d park, plaza and transit restrooms / %s residents; the register-wide restrooms_per_100k_now is NOT comparable",
+    nyc$core, comma(nyc$population)), paste0(nrx(sprintf("%.1f", nyc$per100k_core))))
+add("peer_nyc_rank", pc$nyc_rank_among_AB$per100k_core, sprintf("%d of %d", pc$nyc_rank_among_AB$per100k_core, pc$n_AB), "rank on the core rule",
+    "R/E1_peer_city_per_capita.R", "cities with a usable official list; NYC is within 2-12% of Toronto, Berlin and Hong Kong's FEHD list")
+top3 <- head(pab$per100k_core, 3)
+add("peer_nyc_share_of_top3", nyc$per100k_core/mean(top3), sprintf("%.2f", nyc$per100k_core/mean(top3)), "ratio",
+    "R/E1_peer_city_per_capita.R", sprintf("NYC vs the mean of %s: 'about a third'", paste(head(pab$city, 3), collapse=", ")))
+hkl <- (hk$core + pc$hk_lcsd_approx)/hk$population*1e5
+add("peer_hk_with_park_toilets", hkl, sprintf("%.1f", hkl), "per 100,000 residents", "R/E1_peer_city_per_capita.R",
+    sprintf("FEHD %d + ~%d LCSD park/sports-venue toilets (LegCo 2019, approximate)", hk$core, pc$hk_lcsd_approx))
 
 ## =============================================================================
 ## WRITE

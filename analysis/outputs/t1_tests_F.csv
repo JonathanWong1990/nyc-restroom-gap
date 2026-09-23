@@ -1,0 +1,8 @@
+"test","item","estimate","lo","hi","p","n","note"
+"F","mde_250m_c311_7to22",85.89601427184,NA,NA,NA,17,"smallest detectable reduction at 80% power, alpha .05 (placebo-in-space, 2000 draws); treated pre-year events 8; Poisson floor 80%; rehearsal DiD +0.26"
+"F","mde_250m_c311_all",83.0624449667762,NA,NA,NA,17,"smallest detectable reduction at 80% power, alpha .05 (placebo-in-space, 2000 draws); treated pre-year events 9; Poisson floor 78%; rehearsal DiD +0.50"
+"F","mde_250m_summ_urin",64.0304235375076,NA,NA,NA,17,"smallest detectable reduction at 80% power, alpha .05 (placebo-in-space, 2000 draws); treated pre-year events 65; Poisson floor 43%; rehearsal DiD +0.24; DDD with alcohol placebo 57%"
+"F","mde_400m_c311_7to22",73.1549658562627,NA,NA,NA,17,"smallest detectable reduction at 80% power, alpha .05 (placebo-in-space, 2000 draws); treated pre-year events 20; Poisson floor 64%; rehearsal DiD -0.22"
+"F","mde_400m_c311_all",69.7587399130658,NA,NA,NA,17,"smallest detectable reduction at 80% power, alpha .05 (placebo-in-space, 2000 draws); treated pre-year events 22; Poisson floor 63%; rehearsal DiD +0.08"
+"F","mde_400m_summ_urin",44.169439888363,NA,NA,NA,17,"smallest detectable reduction at 80% power, alpha .05 (placebo-in-space, 2000 draws); treated pre-year events 139; Poisson floor 32%; rehearsal DiD +0.24; DDD with alcohol placebo 40%"
+"F","hours_trial_mde_comparison",37,NA,NA,NA,NA,"published hours-trial MDE (C1_trial_power.R, summons, de-duplicated): 37%"

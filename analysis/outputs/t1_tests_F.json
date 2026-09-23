@@ -1,0 +1,231 @@
+{
+  "F": {
+    "provisional": false,
+    "sites_source": "outputs/pilot_sites.csv",
+    "windows": {
+      "c311": "match Sep23-Aug24, pre Sep24-Aug25, post Sep25-Aug26",
+      "summons": "match Jul23-Jun24, pre Jul24-Jun25, post Jul25-Jun26"
+    },
+    "controls_per_treated": 3,
+    "placebo_draws": 2000,
+    "pool_points": 19122,
+    "table": [
+      {
+        "radius_m": 250,
+        "outcome": "c311_7to22",
+        "treated_pre": 8,
+        "treated_post": 10,
+        "treated_pre_per_site": 0.470588,
+        "sites_with_zero_pre": 11,
+        "controls_pre": 18,
+        "controls_post": 17,
+        "did_rehearsal": 0.263953,
+        "sd_null": 0.699144,
+        "mde_reduction_pct": 85.896014,
+        "mde_increase_pct": 609.019436,
+        "poisson_floor_reduction_pct": 80.448116
+      },
+      {
+        "radius_m": 250,
+        "outcome": "c311_all",
+        "treated_pre": 9,
+        "treated_post": 10,
+        "treated_pre_per_site": 0.529412,
+        "sites_with_zero_pre": 11,
+        "controls_pre": 29,
+        "controls_post": 19,
+        "did_rehearsal": 0.497385,
+        "sd_null": 0.633797,
+        "mde_reduction_pct": 83.062445,
+        "mde_increase_pct": 490.403986,
+        "poisson_floor_reduction_pct": 78.34527
+      },
+      {
+        "radius_m": 250,
+        "outcome": "summ_urin",
+        "treated_pre": 65,
+        "treated_post": 73,
+        "treated_pre_per_site": 3.823529,
+        "sites_with_zero_pre": 5,
+        "controls_pre": 188,
+        "controls_post": 166,
+        "did_rehearsal": 0.238641,
+        "sd_null": 0.364971,
+        "mde_reduction_pct": 64.030424,
+        "mde_increase_pct": 178.012726,
+        "poisson_floor_reduction_pct": 43.067068,
+        "ddd_sd_null": 0.300017,
+        "ddd_mde_reduction_pct": 56.851488
+      },
+      {
+        "radius_m": 400,
+        "outcome": "c311_7to22",
+        "treated_pre": 20,
+        "treated_post": 21,
+        "treated_pre_per_site": 1.176471,
+        "sites_with_zero_pre": 7,
+        "controls_pre": 54,
+        "controls_post": 71,
+        "did_rehearsal": -0.219575,
+        "sd_null": 0.469409,
+        "mde_reduction_pct": 73.154966,
+        "mde_increase_pct": 272.508373,
+        "poisson_floor_reduction_pct": 63.614081
+      },
+      {
+        "radius_m": 400,
+        "outcome": "c311_all",
+        "treated_pre": 22,
+        "treated_post": 21,
+        "treated_pre_per_site": 1.294118,
+        "sites_with_zero_pre": 7,
+        "controls_pre": 59,
+        "controls_post": 52,
+        "did_rehearsal": 0.077499,
+        "sd_null": 0.426888,
+        "mde_reduction_pct": 69.75874,
+        "mde_increase_pct": 230.674052,
+        "poisson_floor_reduction_pct": 63.476766
+      },
+      {
+        "radius_m": 400,
+        "outcome": "summ_urin",
+        "treated_pre": 139,
+        "treated_post": 165,
+        "treated_pre_per_site": 8.176471,
+        "sites_with_zero_pre": 4,
+        "controls_pre": 387,
+        "controls_post": 362,
+        "did_rehearsal": 0.23742,
+        "sd_null": 0.208043,
+        "mde_reduction_pct": 44.16944,
+        "mde_increase_pct": 79.113374,
+        "poisson_floor_reduction_pct": 31.757199,
+        "ddd_sd_null": 0.184913,
+        "ddd_mde_reduction_pct": 40.431876
+      }
+    ],
+    "site_counts_311_7to22": [
+      {
+        "site": "Yankee Stadium",
+        "pre_250": 0,
+        "pre_400": 2,
+        "match_400": 1,
+        "post_400": 1
+      },
+      {
+        "site": "Admiral Farragut Playground",
+        "pre_250": 0,
+        "pre_400": 0,
+        "match_400": 0,
+        "post_400": 0
+      },
+      {
+        "site": "Mapes Park",
+        "pre_250": 0,
+        "pre_400": 0,
+        "match_400": 0,
+        "post_400": 0
+      },
+      {
+        "site": "Monsignor Raul Del Valle Square",
+        "pre_250": 0,
+        "pre_400": 0,
+        "match_400": 1,
+        "post_400": 1
+      },
+      {
+        "site": "Columbus Park",
+        "pre_250": 0,
+        "pre_400": 3,
+        "match_400": 1,
+        "post_400": 3
+      },
+      {
+        "site": "Milestone Park",
+        "pre_250": 3,
+        "pre_400": 3,
+        "match_400": 1,
+        "post_400": 0
+      },
+      {
+        "site": "Fulton Street and Truxton Street",
+        "pre_250": 0,
+        "pre_400": 0,
+        "match_400": 0,
+        "post_400": 0
+      },
+      {
+        "site": "Avenue C Plaza",
+        "pre_250": 1,
+        "pre_400": 1,
+        "match_400": 0,
+        "post_400": 0
+      },
+      {
+        "site": "Astoria Boulevard South and 31st Street",
+        "pre_250": 0,
+        "pre_400": 1,
+        "match_400": 0,
+        "post_400": 2
+      },
+      {
+        "site": "Northern Boulevard and 31st Street",
+        "pre_250": 1,
+        "pre_400": 1,
+        "match_400": 1,
+        "post_400": 0
+      },
+      {
+        "site": "Northern Boulevard and 54th Street",
+        "pre_250": 0,
+        "pre_400": 0,
+        "match_400": 0,
+        "post_400": 0
+      },
+      {
+        "site": "34th Avenue and 64th Street",
+        "pre_250": 0,
+        "pre_400": 0,
+        "match_400": 1,
+        "post_400": 0
+      },
+      {
+        "site": "Cooper Square",
+        "pre_250": 0,
+        "pre_400": 2,
+        "match_400": 3,
+        "post_400": 4
+      },
+      {
+        "site": "Malcolm X Plaza",
+        "pre_250": 1,
+        "pre_400": 1,
+        "match_400": 2,
+        "post_400": 1
+      },
+      {
+        "site": "Delancey Street and Suffolk Street",
+        "pre_250": 1,
+        "pre_400": 2,
+        "match_400": 1,
+        "post_400": 4
+      },
+      {
+        "site": "Plaza Alianza Dominicana",
+        "pre_250": 1,
+        "pre_400": 4,
+        "match_400": 0,
+        "post_400": 5
+      },
+      {
+        "site": "North Shore Esplanade",
+        "pre_250": 0,
+        "pre_400": 0,
+        "match_400": 0,
+        "post_400": 0
+      }
+    ],
+    "hours_trial_mde_pct": 37
+  }
+}

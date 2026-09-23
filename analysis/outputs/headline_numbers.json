@@ -1171,11 +1171,551 @@
       "patterns": []
     },
     "n_scripts": {
-      "value": 49,
-      "display": "49",
+      "value": 56,
+      "display": "56",
       "unit": "R scripts",
       "source": "R/",
       "note": "count of R/*.R",
+      "patterns": []
+    },
+    "pilot_n_sites": {
+      "value": 17,
+      "display": "17",
+      "unit": "sites",
+      "source": "R/P1_pilot_sites.R -> outputs/pilot_sites.json",
+      "note": "published names only; exact unit spot inside a park or plaza is not published",
+      "patterns": []
+    },
+    "pilot_in_six": {
+      "value": 1,
+      "display": "1 of 17",
+      "unit": "pilot sites",
+      "source": "R/P1_pilot_sites.R",
+      "note": "in one of the six high-confidence areas: Northern Boulevard and 54th Street (on the NTA boundary; Woodside, one of the 29, is across the street)",
+      "patterns": "(?<![0-9.,])1(?![0-9]|,[0-9]) of 17"
+    },
+    "pilot_in_29": {
+      "value": 3,
+      "display": "3 of 17",
+      "unit": "pilot sites",
+      "source": "R/P1_pilot_sites.R",
+      "note": "in one of the 29 areas at >= 1.5x (includes the one in the six): Northern Boulevard and 54th Street; 34th Avenue and 64th Street; North Shore Esplanade",
+      "patterns": "(?<![0-9.,])3(?![0-9]|,[0-9]) of 17"
+    },
+    "pilot_neither": {
+      "value": 14,
+      "display": "14 of 17",
+      "unit": "pilot sites",
+      "source": "R/P1_pilot_sites.R",
+      "note": "outside every one of the 29 priority areas",
+      "patterns": "(?<![0-9.,])14(?![0-9]|,[0-9]) of 17"
+    },
+    "pilot_sites_queens": {
+      "value": 4,
+      "display": "4",
+      "unit": "pilot sites",
+      "source": "R/P1_pilot_sites.R",
+      "note": "western Queens: Astoria Boulevard South and 31st Street -> Astoria (Central); Northern Boulevard and 31st Street -> Queensbridge-Ravenswood-Dutch Kills; Northern Boulevard and 54th Street -> Astoria (East)-Woodside (North); 34th Avenue and 64th Street -> Woodside",
+      "patterns": []
+    },
+    "pilot_median_ratio_rank": {
+      "value": 82,
+      "display": "82nd of 197",
+      "unit": "rank of the site's NTA by need ratio",
+      "source": "R/P1_pilot_sites.R",
+      "note": "median over the 17 sites (1 = highest need ratio)",
+      "patterns": "(?<![0-9.,])82nd(?![0-9]|,[0-9]) of 197"
+    },
+    "restrooms_open_9pm_wed": {
+      "value": 57,
+      "display": "57",
+      "unit": "operational restrooms open",
+      "source": "R/C4_area_evening_access.R",
+      "note": "Wednesday 9pm; the same in-season (57). 6pm: 156 off-season, 797 in-season; 2pm: 954",
+      "patterns": "(?<![0-9.,])57(?![0-9]|,[0-9])(?= (restrooms|are open|open))"
+    },
+    "six_walk_9pm_complaints_min": {
+      "value": {
+        "Astoria (East)-Woodside (North)": 47.6,
+        "Williamsbridge-Olinville": 36.6,
+        "Brighton Beach": 25.5,
+        "East Harlem (North)": 24.5,
+        "East Elmhurst": 23.1,
+        "Midtown-Times Square": 7.9
+      },
+      "display": "Astoria (East)-Woodside (North) 47.6 > Williamsbridge-Olinville 36.6 > Brighton Beach 25.5 > East Harlem (North) 24.5 > East Elmhurst 23.1 > Midtown-Times Square 7.9",
+      "unit": "median straight-line walk (min) from each complaint to the nearest restroom open at 9pm, Wednesday",
+      "source": "R/C4_area_evening_access.R (origin = complaints)",
+      "note": "worst first; 72 m/min, lower bounds; same order from evening-filed complaints",
+      "patterns": []
+    },
+    "walk_9pm_astoria_east": {
+      "value": 47.61,
+      "display": "47.6 min",
+      "unit": "minutes",
+      "source": "R/C4_area_evening_access.R",
+      "note": "Astoria (East)-Woodside (North) - median walk from complaints to the nearest restroom open at 9pm",
+      "patterns": "(?<![0-9.,])47\\.6(?![0-9]|,[0-9])(?= min)"
+    },
+    "walk_9pm_williamsbridge_olinville": {
+      "value": 36.6,
+      "display": "36.6 min",
+      "unit": "minutes",
+      "source": "R/C4_area_evening_access.R",
+      "note": "Williamsbridge-Olinville - median walk from complaints to the nearest restroom open at 9pm",
+      "patterns": "(?<![0-9.,])36\\.6(?![0-9]|,[0-9])(?= min)"
+    },
+    "walk_9pm_brighton_beach": {
+      "value": 25.54,
+      "display": "25.5 min",
+      "unit": "minutes",
+      "source": "R/C4_area_evening_access.R",
+      "note": "Brighton Beach - median walk from complaints to the nearest restroom open at 9pm",
+      "patterns": "(?<![0-9.,])25\\.5(?![0-9]|,[0-9])(?= min)"
+    },
+    "walk_9pm_east_harlem": {
+      "value": 24.51,
+      "display": "24.5 min",
+      "unit": "minutes",
+      "source": "R/C4_area_evening_access.R",
+      "note": "East Harlem (North) - median walk from complaints to the nearest restroom open at 9pm",
+      "patterns": "(?<![0-9.,])24\\.5(?![0-9]|,[0-9])(?= min)"
+    },
+    "walk_9pm_east_elmhurst": {
+      "value": 23.06,
+      "display": "23.1 min",
+      "unit": "minutes",
+      "source": "R/C4_area_evening_access.R",
+      "note": "East Elmhurst - median walk from complaints to the nearest restroom open at 9pm",
+      "patterns": "(?<![0-9.,])23\\.1(?![0-9]|,[0-9])(?= min)"
+    },
+    "walk_9pm_midtown_times": {
+      "value": 7.93,
+      "display": "7.9 min",
+      "unit": "minutes",
+      "source": "R/C4_area_evening_access.R",
+      "note": "Midtown-Times Square - median walk from complaints to the nearest restroom open at 9pm",
+      "patterns": "(?<![0-9.,])7\\.9(?![0-9]|,[0-9])(?= min)"
+    },
+    "six_restrooms_open_9pm": {
+      "value": {
+        "East Harlem (North)": 0,
+        "Astoria (East)-Woodside (North)": 0,
+        "East Elmhurst": 2,
+        "Williamsbridge-Olinville": 0,
+        "Brighton Beach": 0,
+        "Midtown-Times Square": 6
+      },
+      "display": "East Harlem (North) 0; Astoria (East)-Woodside (North) 0; East Elmhurst 2; Williamsbridge-Olinville 0; Brighton Beach 0; Midtown-Times Square 6",
+      "unit": "restrooms open at 9pm inside each of the six",
+      "source": "R/C4_area_evening_access.R",
+      "note": "",
+      "patterns": []
+    },
+    "hotspot_east_harlem": {
+      "value": {
+        "place": "E 122 St between 2nd and 3rd Ave",
+        "complaints": 42,
+        "addresses": 22,
+        "anchoring": "mixed",
+        "anchored": "3 of 5",
+        "station": "125 St (4,5,6)",
+        "station_m": 316,
+        "listed": "125th Street Library, NYPL",
+        "listed_m": 226,
+        "open9_walk_min": 24.2,
+        "owner": "DOT (street) / private frontage",
+        "flags": "",
+        "years": "2021-2025",
+        "evening_night": 0.36
+      },
+      "display": "E 122 St between 2nd and 3rd Ave: 42 complaints (22 addresses); mixed, 3 of 5 hot spots; owner DOT (street) / private frontage",
+      "unit": "",
+      "source": "R/C5_hotspot_table.R -> outputs/hotspot_table.csv",
+      "note": "East Harlem (North) - largest hot spot (DBSCAN 150 m / 5)",
+      "patterns": []
+    },
+    "hotspot_astoria_east": {
+      "value": {
+        "place": "28 Ave at 56 Pl, Woodside (North)",
+        "complaints": 36,
+        "addresses": 3,
+        "anchoring": "not anchored",
+        "anchored": "0 of 2",
+        "station": "46 St (M,R)",
+        "station_m": 902,
+        "listed": "Astoria Heights Playground",
+        "listed_m": 547,
+        "open9_walk_min": 47.5,
+        "owner": "DOT (street) / private frontage",
+        "flags": "3 distinct addresses; complaints 2020-2022 only",
+        "years": "2020-2022",
+        "evening_night": 0.58
+      },
+      "display": "28 Ave at 56 Pl, Woodside (North): 36 complaints (3 addresses); not anchored, 0 of 2 hot spots; owner DOT (street) / private frontage; FLAG 3 distinct addresses; complaints 2020-2022 only",
+      "unit": "",
+      "source": "R/C5_hotspot_table.R -> outputs/hotspot_table.csv",
+      "note": "Astoria (East)-Woodside (North) - largest hot spot (DBSCAN 150 m / 5)",
+      "patterns": []
+    },
+    "hotspot_east_elmhurst": {
+      "value": {
+        "place": "25 Ave at 85 St, at Gorman Playground",
+        "complaints": 20,
+        "addresses": 12,
+        "anchoring": "not anchored",
+        "anchored": "0 of 1",
+        "station": "82 St-Jackson Hts (7)",
+        "station_m": 1712,
+        "listed": "Gorman Playground",
+        "listed_m": 126,
+        "open9_walk_min": 23.5,
+        "owner": "Parks (adjacent park/playground)",
+        "flags": "",
+        "years": "2022-2026",
+        "evening_night": 0.65
+      },
+      "display": "25 Ave at 85 St, at Gorman Playground: 20 complaints (12 addresses); not anchored, 0 of 1 hot spots; owner Parks (adjacent park/playground)",
+      "unit": "",
+      "source": "R/C5_hotspot_table.R -> outputs/hotspot_table.csv",
+      "note": "East Elmhurst - largest hot spot (DBSCAN 150 m / 5)",
+      "patterns": []
+    },
+    "hotspot_williamsbridge_olinville": {
+      "value": {
+        "place": "Cruger Ave at Magenta St, by Gun Hill Playground",
+        "complaints": 17,
+        "addresses": 5,
+        "anchoring": "mixed",
+        "anchored": "1 of 2",
+        "station": "Burke Av (2,5)",
+        "station_m": 360,
+        "listed": "Gun Hill Playground",
+        "listed_m": 47,
+        "open9_walk_min": 36.8,
+        "owner": "Parks (adjacent park/playground)",
+        "flags": "",
+        "years": "2022-2026",
+        "evening_night": 0.76
+      },
+      "display": "Cruger Ave at Magenta St, by Gun Hill Playground: 17 complaints (5 addresses); mixed, 1 of 2 hot spots; owner Parks (adjacent park/playground)",
+      "unit": "",
+      "source": "R/C5_hotspot_table.R -> outputs/hotspot_table.csv",
+      "note": "Williamsbridge-Olinville - largest hot spot (DBSCAN 150 m / 5)",
+      "patterns": []
+    },
+    "hotspot_brighton_beach": {
+      "value": {
+        "place": "Ocean Pkwy malls at the Ocean Pkwy (Q) station",
+        "complaints": 4,
+        "addresses": 4,
+        "anchoring": "mixed",
+        "anchored": "2 of 3",
+        "station": "Ocean Pkwy (Q)",
+        "station_m": 22,
+        "listed": "Brighton Beach Library, BPL",
+        "listed_m": 151,
+        "open9_walk_min": 17.9,
+        "owner": "MTA / DOT (station exit, sidewalk)",
+        "flags": "thin area (24 complaints); thin hot spot (4); 4 distinct addresses; clusters found only at minPts 4; complaints 2020-2022 only",
+        "years": "2020-2022",
+        "evening_night": 0.25
+      },
+      "display": "Ocean Pkwy malls at the Ocean Pkwy (Q) station: 4 complaints (4 addresses); mixed, 2 of 3 hot spots; owner MTA / DOT (station exit, sidewalk); FLAG thin area (24 complaints); thin hot spot (4); 4 distinct addresses; clusters found only at minPts 4; complaints 2020-2022 only",
+      "unit": "",
+      "source": "R/C5_hotspot_table.R -> outputs/hotspot_table.csv",
+      "note": "Brighton Beach - largest hot spot (DBSCAN 150 m / 5)",
+      "patterns": []
+    },
+    "hotspot_midtown_times": {
+      "value": {
+        "place": "Central Park South at 57 St / 7 Ave",
+        "complaints": 17,
+        "addresses": 13,
+        "anchoring": "station-anchored",
+        "anchored": "5 of 5",
+        "station": "57 St (M)",
+        "station_m": 128,
+        "listed": "725 Fifth Avenue POPS",
+        "listed_m": 340,
+        "open9_walk_min": 4.7,
+        "owner": "MTA / DOT (station exit, sidewalk)",
+        "flags": "",
+        "years": "2020-2026",
+        "evening_night": 0.12
+      },
+      "display": "Central Park South at 57 St / 7 Ave: 17 complaints (13 addresses); station-anchored, 5 of 5 hot spots; owner MTA / DOT (station exit, sidewalk)",
+      "unit": "",
+      "source": "R/C5_hotspot_table.R -> outputs/hotspot_table.csv",
+      "note": "Midtown-Times Square - largest hot spot (DBSCAN 150 m / 5)",
+      "patterns": []
+    },
+    "hotspot_closed_park_restroom_m": {
+      "value": {
+        "Gorman Playground": 126,
+        "Gun Hill Playground": 47
+      },
+      "display": "Gorman Playground 126 m; Gun Hill Playground 47 m",
+      "unit": "metres from the largest hot spot",
+      "source": "R/C5_hotspot_table.R",
+      "note": "listed Parks restrooms beside the largest hot spot, closed at 9pm (East Elmhurst, Williamsbridge-Olinville); share of hot-spot complaints filed 6pm-6am: 65%, 76%",
+      "patterns": ["(?<![0-9.,])126(?![0-9]|,[0-9]) ?m", "(?<![0-9.,])47(?![0-9]|,[0-9]) ?m"]
+    },
+    "station_screen_oos_spearman": {
+      "value": 0.467385,
+      "display": "0.467",
+      "unit": "Spearman rho (mean, 200 splits)",
+      "source": "R/C3_station_bridge.R",
+      "note": "hand-weighted station screen (60 entries / 25 restroom distance / 15 none within 500 m), 424 complexes; worse than the ridership model in 100% of splits",
+      "patterns": "(?<![0-9.,])0\\.467(?![0-9]|,[0-9])"
+    },
+    "station_ridership_oos_spearman": {
+      "value": 0.62379,
+      "display": "0.624",
+      "unit": "Spearman rho (mean, 200 splits)",
+      "source": "R/C3_station_bridge.R",
+      "note": "station ridership alone, no fitting",
+      "patterns": "(?<![0-9.,])0\\.624(?![0-9]|,[0-9])"
+    },
+    "station_screen_worse_share": {
+      "value": 1,
+      "display": "100%",
+      "unit": "share of splits",
+      "source": "R/C3_station_bridge.R",
+      "note": "splits where the screen ranks stations worse than ridership",
+      "patterns": []
+    },
+    "station_distance_irr": {
+      "value": [0.943934, 0.862072, 1.033569],
+      "display": "0.94 [0.86–1.03]",
+      "unit": "IRR per doubling of distance to nearest listed restroom",
+      "source": "R/C3_station_bridge.R",
+      "note": "400 m, NB + ridership + borough; p = 0.21. With catchment population and area: 0.98 [0.90–1.07], p = 0.71",
+      "patterns": []
+    },
+    "supply_tests_open9pm_irr": {
+      "value": [1.222253, 0.914242, 1.634033],
+      "display": "1.22 [0.91–1.63]",
+      "unit": "IRR, restrooms open at 9pm in the NTA",
+      "source": "R/T1_mechanism_tests.R (A)",
+      "note": "p = 0.18; added to the ranking model; CD-clustered CI",
+      "patterns": []
+    },
+    "supply_tests_park_share_irr": {
+      "value": [0.866596, 0.513157, 1.463468],
+      "display": "0.87 [0.51–1.46]",
+      "unit": "IRR, share of restrooms in parks",
+      "source": "R/T1_mechanism_tests.R (A)",
+      "note": "p = 0.59",
+      "patterns": []
+    },
+    "supply_tests_cov9pm_irr": {
+      "value": [1.070695, 0.976125, 1.174427],
+      "display": "1.07 [0.98–1.17]",
+      "unit": "IRR per 10 pp of 9pm walk coverage",
+      "source": "R/T1_mechanism_tests.R (A)",
+      "note": "p = 0.15",
+      "patterns": []
+    },
+    "supply_tests_best_oos_gain": {
+      "value": 0.003756,
+      "display": "+0.004",
+      "unit": "change in mean OOS Spearman",
+      "source": "R/T1_mechanism_tests.R (A)",
+      "note": "best of 14 supply specifications vs the base model",
+      "patterns": []
+    },
+    "evening_collapse_or": {
+      "value": [0.999651, 0.920896, 1.08514],
+      "display": "1.00 [0.92–1.09]",
+      "unit": "odds ratio per 10 pp of 3pm-to-9pm coverage lost",
+      "source": "R/T1_mechanism_tests.R (B)",
+      "note": "does a bigger evening collapse mean a more evening-weighted complaint mix? No",
+      "patterns": []
+    },
+    "urination_vs_dsny_evening": {
+      "value": [1.439, 1.882],
+      "display": "1.4–1.9×",
+      "unit": "urination share / DSNY dirty-condition share, 6pm-midnight",
+      "source": "R/T1_mechanism_tests.R (B)",
+      "note": "evening share 29.9% vs 18.3% for DSNY",
+      "patterns": []
+    },
+    "urination_vs_dsny_overnight": {
+      "value": [1.431, 2.31],
+      "display": "1.4–2.3×",
+      "unit": "urination share / DSNY share, midnight-5am",
+      "source": "R/T1_mechanism_tests.R (B)",
+      "note": "overnight, when 8 restrooms are open, is as elevated as the evening",
+      "patterns": []
+    },
+    "hours_breakeven_vs_modular": {
+      "value": 0.633532,
+      "display": "63%",
+      "unit": "share of a modular unit's effect",
+      "source": "R/T1_mechanism_tests.R (C)",
+      "note": "longer hours are cheaper per complaint removed only above this relative effectiveness",
+      "patterns": "(?<![0-9.,])63%(?![0-9]|,[0-9])(?= as effective)"
+    },
+    "hours_breakeven_vs_reconstruct": {
+      "value": 0.458943,
+      "display": "46%",
+      "unit": "share of a reconstruction's effect",
+      "source": "R/T1_mechanism_tests.R (C)",
+      "note": "",
+      "patterns": []
+    },
+    "east_harlem_hours_min_effect": {
+      "value": 0.353044,
+      "display": "35%",
+      "unit": "share of the area's excess",
+      "source": "R/T1_mechanism_tests.R (C)",
+      "note": "East Harlem (North) hours stays first only if it removes this share (3.5 of 9.8 excess a year)",
+      "patterns": []
+    },
+    "median_excess_per_area_year": {
+      "value": 1.820156,
+      "display": "1.8",
+      "unit": "excess complaints a year",
+      "source": "R/T1_mechanism_tests.R (C)",
+      "note": "median over the 27 costed areas",
+      "patterns": "(?<![0-9.,])1\\.8(?![0-9]|,[0-9])(?= excess)"
+    },
+    "hours_25pct_first": {
+      "value": "Astoria (East)-Woodside (North)",
+      "display": "Astoria (East)-Woodside (North)",
+      "unit": "area ranked first",
+      "source": "R/T1_mechanism_tests.R (C)",
+      "note": "if hours are 25% as effective as a new unit",
+      "patterns": []
+    },
+    "capital_years_reconstruct": {
+      "value": 4.543463,
+      "display": "4.5 years",
+      "unit": "median years, design start -> completion",
+      "source": "R/T1_mechanism_tests.R (D) / A7 classification",
+      "note": "n = 70 completed of 108; IQR 2.4–5.5",
+      "patterns": "(?<![0-9.,])4\\.5(?![0-9]|,[0-9])(?= years)"
+    },
+    "capital_years_build_new": {
+      "value": 7.4141,
+      "display": "7.4 years",
+      "unit": "median years, design start -> completion",
+      "source": "R/T1_mechanism_tests.R (D) / A7 classification",
+      "note": "n = 38 completed of 68; IQR 5.9–9.3; Wilcoxon p = 2.4e-09",
+      "patterns": "(?<![0-9.,])7\\.4(?![0-9]|,[0-9])"
+    },
+    "capital_years_n": {
+      "value": [70, 38],
+      "display": "70 and 38",
+      "unit": "completed projects",
+      "source": "R/T1_mechanism_tests.R (D)",
+      "note": "",
+      "patterns": []
+    },
+    "capital_years_wilcoxon_p": {
+      "value": 2.40865e-09,
+      "display": "p < 0.001",
+      "unit": "p-value",
+      "source": "R/T1_mechanism_tests.R (D)",
+      "note": "2.4e-09",
+      "patterns": []
+    },
+    "capital_need_or": {
+      "value": [1.627898, 0.952159, 2.783206, 0.074939],
+      "display": "1.63, p = 0.075",
+      "unit": "odds ratio",
+      "source": "R/T1_mechanism_tests.R (E) / R/40_logistic.R",
+      "note": "need never significant: p 0.07–0.19 across 6 specifications",
+      "patterns": []
+    },
+    "capital_restroom_count_or": {
+      "value": [4.720681, 2.085713, 10.684516, 0.000196],
+      "display": "4.72",
+      "unit": "odds ratio per log restroom count",
+      "source": "R/T1_mechanism_tests.R (E)",
+      "note": "p = 0.0002; parkland then 1.24, p = 0.19",
+      "patterns": "(?<![0-9.,])4\\.72(?![0-9]|,[0-9])"
+    },
+    "pilot_mde_311": {
+      "value": 0.73154966,
+      "display": "73%",
+      "unit": "smallest detectable reduction",
+      "source": "R/T1_F_pilot_power.R",
+      "note": "311 filed 7am-10pm within 400 m of the 17 sites: 20 events in the pre-year across all 17; 7 sites with none",
+      "patterns": "(?<![0-9.,])73%(?![0-9]|,[0-9])"
+    },
+    "pilot_mde_summons": {
+      "value": 0.4416944,
+      "display": "44%",
+      "unit": "smallest detectable reduction",
+      "source": "R/T1_F_pilot_power.R",
+      "note": "urination summonses within 400 m; 40% with the alcohol-summons placebo",
+      "patterns": "(?<![0-9.,])44%(?![0-9]|,[0-9])"
+    },
+    "pilot_mde_summons_placebo": {
+      "value": 0.40431876,
+      "display": "40%",
+      "unit": "smallest detectable reduction",
+      "source": "R/T1_F_pilot_power.R",
+      "note": "urination summonses within 400 m, differenced against alcohol summonses (placebo)",
+      "patterns": []
+    },
+    "pilot_pre_events_311": {
+      "value": 20,
+      "display": "20",
+      "unit": "complaints in a year, all 17 catchments",
+      "source": "R/T1_F_pilot_power.R",
+      "note": "400 m, filed 7am-10pm",
+      "patterns": []
+    },
+    "peer_per100k_core": {
+      "value": {
+        "Paris": 27.2,
+        "Zurich": 24.8,
+        "San Francisco": 24.7,
+        "Vancouver": 15.4,
+        "Hong Kong": 10.1,
+        "Toronto": 9.7,
+        "Berlin": 9.2,
+        "New York City": 9
+      },
+      "display": "Paris 27.2; Zurich 24.8; San Francisco 24.7; Vancouver 15.4; Hong Kong 10.1; Toronto 9.7; Berlin 9.2; New York City 9.0",
+      "unit": "public toilets per 100,000 residents, core rule",
+      "source": "R/E1_peer_city_per_capita.R",
+      "note": "CORE = government-operated or contracted, open to all without purchase, dedicated public toilet (street / park / plaza / transit), listed as operating. Civic-building toilets, portables and urinals are in BROAD; access-scheme businesses are counted separately.",
+      "patterns": []
+    },
+    "peer_nyc_per100k": {
+      "value": 9,
+      "display": "9.0",
+      "unit": "per 100,000 residents, core rule",
+      "source": "R/E1_peer_city_per_capita.R",
+      "note": "763 park, plaza and transit restrooms / 8,483,844 residents; the register-wide restrooms_per_100k_now is NOT comparable",
+      "patterns": "(?<![0-9.,])9\\.0(?![0-9]|,[0-9])"
+    },
+    "peer_nyc_rank": {
+      "value": 8,
+      "display": "8 of 8",
+      "unit": "rank on the core rule",
+      "source": "R/E1_peer_city_per_capita.R",
+      "note": "cities with a usable official list; NYC is within 2-12% of Toronto, Berlin and Hong Kong's FEHD list",
+      "patterns": []
+    },
+    "peer_nyc_share_of_top3": {
+      "value": 0.352020860495437,
+      "display": "0.35",
+      "unit": "ratio",
+      "source": "R/E1_peer_city_per_capita.R",
+      "note": "NYC vs the mean of Paris, Zurich, San Francisco: 'about a third'",
+      "patterns": []
+    },
+    "peer_hk_with_park_toilets": {
+      "value": 18.4257721687147,
+      "display": "18.4",
+      "unit": "per 100,000 residents",
+      "source": "R/E1_peer_city_per_capita.R",
+      "note": "FEHD 757 + ~630 LCSD park/sports-venue toilets (LegCo 2019, approximate)",
       "patterns": []
     }
   },
@@ -1244,13 +1784,12 @@
         "hours": "7am-10pm",
         "hours_per_day": 15,
         "sites_published": "2026-09-16",
-        "sites_midtown": 0,
-        "sites_astoria_woodside": 4
+        "sites_midtown": 0
       },
       "display": "17 units, $4M, one year, 7am–10pm",
       "unit": "",
       "source": "https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-brings-17-new-public-bathrooms-to-neighborhoods-ac",
-      "note": "Throne Labs via NYCEDC; self-contained units, no hookups; operator cleans and maintains (service contract). Queens sites: Astoria Blvd S & 31 St, Northern Blvd & 31 St, Northern Blvd & 54 St, 34 Ave & 64 St (Astoria/Woodside); Manhattan: Cooper Sq, Malcolm X Plaza, Delancey & Suffolk, Plaza Alianza Dominicana — none in Midtown"
+      "note": "Throne Labs via NYCEDC; self-contained units, no hookups; operator cleans and maintains (service contract). Queens sites (western Queens): Astoria Blvd S & 31 St, Northern Blvd & 31 St, Northern Blvd & 54 St, 34 Ave & 64 St; Manhattan: Cooper Sq, Malcolm X Plaza, Delancey & Suffolk, Plaza Alianza Dominicana — none in Midtown. Which NTA each site falls in is derived (pilot_in_six, pilot_in_29, pilot_neither), not typed here"
     },
     "ll114": {
       "value": "2022-11-28",
@@ -1286,7 +1825,7 @@
       "display": "+12.00 reports/week (p = 0.0016)",
       "unit": "311 feces reports per week",
       "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9441075/",
-      "note": "Amato et al. 2022 Table 1: 3 Pit Stops that expanded service hours (to 24 h). Likely confounded: sites chosen for longer hours were the busiest"
+      "note": "Amato et al. 2022 Table 1: 3 Pit Stops that expanded service hours (to 24 h). The authors call it unexpected and do not settle why; site selection (busiest sites got longer hours) is a possible confound, our reading, not the authors'"
     },
     "privy_by_the_bay_2025": {
       "value": "effect appears to be small",
@@ -1306,14 +1845,26 @@
       "value": {
         "san_francisco": "https://sfpublicworks.org/pitstop",
         "washington_dc": "https://dcpublicrestrooms.org/wp-content/uploads/2023/12/Public-Restroom-Pilot-Program.pdf",
-        "paris": "https://opendata.paris.fr/explore/dataset/sanisettesparis/",
-        "tokyo": "https://tokyotoilet.jp/en/maintenance/",
-        "london": "https://www.cityoflondon.gov.uk/services/streets/clean-streets/public-toilets"
+        "paris": "https://opendata.paris.fr/explore/dataset/sanisettesparis/"
       },
-      "display": "SF, DC, Paris, Tokyo, London",
+      "display": "SF, DC, Paris",
       "unit": "links",
       "source": "see value",
-      "note": "each link opened 23 Sep 2026 (DC pilot statute: monthly reports on use by date/time and misuse)"
+      "note": "each link opened 23 Sep 2026; Tokyo and London dropped 24 Sep (connected to no claim)"
+    },
+    "dc_act_25_172": {
+      "value": "monthly reports on use (by date and time) and misuse",
+      "display": "D.C. Act 25-172",
+      "unit": "statute",
+      "source": "https://dcpublicrestrooms.org/wp-content/uploads/2023/12/Public-Restroom-Pilot-Program.pdf",
+      "note": "Washington DC public restroom pilot statute: the operator reports use and misuse monthly. Precedent for the operator data spec"
+    },
+    "paris_open_toilet_dataset": {
+      "value": "sanisettesparis",
+      "display": "Paris open toilet dataset",
+      "unit": "dataset",
+      "source": "https://opendata.paris.fr/explore/dataset/sanisettesparis/",
+      "note": "one open list of every public toilet with its status (en service / hors service) and opening hours; shows the hours-data gap is fixable"
     },
     "modular_portland_loo": {
       "value": {

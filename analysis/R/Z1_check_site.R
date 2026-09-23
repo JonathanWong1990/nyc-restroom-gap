@@ -18,7 +18,10 @@ CORE_FILES <- c("index.html", "llms.txt")
 CORE_KEYS  <- c("model_oos_spearman", "benchmark_oos_spearman", "model_beats_benchmark_share",
                 "ntas_ratio_ge_1_5", "posterior_gt_0_95_n", "restrooms_operational", "ll58_gap",
                 "programme_capex_total", "build_new_median", "reconstruct_median",
-                "parks_fail_2026", "trial_mde_summons")
+                "parks_fail_2026", "trial_mde_summons",
+                # 2026-09-24 final-narrative
+                "pilot_in_six", "pilot_in_29", "walk_9pm_astoria_east", "walk_9pm_midtown_times",
+                "capital_years_reconstruct", "capital_years_build_new", "pilot_mde_311", "peer_nyc_per100k")
 J <- fromJSON("outputs/headline_numbers.json", simplifyVector=FALSE)
 
 ## ---- load site text, one element per ORIGINAL line (so file:line is real) ------
@@ -168,7 +171,39 @@ S <- list(
   list(id="true-need-posterior", rx="(?i)true need is above", fix="posterior is on the true complaint RATE"),
   list(id="two-thirds-listed", rx="(?i)two-thirds of listed", fix="641 of the 975 operational"),
   list(id="three-of-six-phone", rx="(?i)three of the six", need="(?i)phone", fix=sprintf("%s of the six", g("phone_only_drops_among_six"))),
-  list(id="30-40M-envelope", rx="\\$30 ?[–-] ?(\\$)?40 ?M", fix="not derived by any analysis; do not use")
+  list(id="30-40M-envelope", rx="\\$30 ?[–-] ?(\\$)?40 ?M", fix="not derived by any analysis; do not use"),
+  # 2026-09-24 final-narrative: claims the tested results retired (Internal_Reviews/final_narrative_outline.md)
+  list(id="4-pilot-units-in-Astoria", rx="(?i)\\b(4|four)\\b[^.]{0,25}\\bin Astoria|Astoria[^.]{0,80}\\b(4|four) pilot (units|sites)",
+       fix=sprintf("pilot: %s in the six, %s in the 29 (%s)", g("pilot_in_six"), g("pilot_in_29"), D$pilot_in_six$note)),
+  list(id="Astoria/Woodside-4-units", rx="Astoria ?/ ?Woodside",
+       fix=sprintf("the %s Queens units are in western Queens; %s is in Astoria (East)–Woodside (North)", g("pilot_sites_queens"), g("pilot_in_six"))),
+  list(id="natural-test-site", rx="(?i)natural test site", fix="the pilot cannot test the ranking; see pilot_mde_311"),
+  list(id="midtown-evening-gap", rx="(?i)Midtown first|(its|Midtown's) (case is the |gap is (in )?the )evening",
+       fix=sprintf("Midtown is the BEST served of the six at 9pm (%s); worst: %s", g("walk_9pm_midtown_times"), g("walk_9pm_astoria_east"))),
+  list(id="station-screen-picks-corner", rx="(?i)picks the corner|complements (our model|it\\b)|finer scale than our model",
+       fix=sprintf("station screen %s vs ridership %s out of sample, worse in %s of splits", g("station_screen_oos_spearman"),
+       g("station_ridership_oos_spearman"), g("station_screen_worse_share"))),
+  list(id="rather-than-need", rx="(?i)rather than need",
+       fix=sprintf("capital follows the existing stock (restroom count OR %s); need %s, never significant", g("capital_restroom_count_or"), g("capital_need_or"))),
+  list(id="when-restrooms-close-causal", rx="(?i)that is when (restrooms|they) close|when demand peaks",
+       fix=sprintf("timing fits closing times AND nightlife: evening %s, overnight %s vs DSNY", g("urination_vs_dsny_evening"), g("urination_vs_dsny_overnight"))),
+  list(id="hours-cheapest-fix", rx="(?i)cheapest (single )?(fix|action)",
+       fix=sprintf("hours are the cheapest option to TEST; cheaper only if >= %s as effective as a modular unit", g("hours_breakeven_vs_modular"))),
+  list(id="zurich-76.5", rx="(?<![0-9.])76\\.5(?![0-9])", fix=sprintf("not reproducible; like-for-like table: %s", g("peer_per100k_core"))),
+  list(id="20-50-range", rx="(?<![0-9$.])20 ?[–-] ?50(?![0-9])", need="(?i)per|100|served|restroom|toilet|standard",
+       fix="unsourced well-served range; do not use"),
+  list(id="worst-peer-city", rx="(?i)\\bworst\\b", need="(?i)per 100|peer|cities|Paris|Toronto|Berlin|Zurich|Hong Kong|San Francisco",
+       fix=sprintf("NYC %s per 100k, %s, but within 2-12%% of Toronto, Berlin and Hong Kong's FEHD list", g("peer_nyc_per100k"), g("peer_nyc_rank"))),
+  list(id="11.5-beside-peers", rx="(?<![0-9.])11\\.5(?![0-9])", need="(?i)per 100|100,000|peer|Paris|Toronto|Berlin|Zurich|Hong Kong|San Francisco",
+       fix=sprintf("like-for-like NYC figure is %s (core rule); 11.5 counts every register type", g("peer_nyc_per100k"))),
+  list(id="93rd-uncaveated", rx="93rd", allow="(?i)park (bathrooms|restrooms)|Trust for Public Land",
+       fix="only as 'a 2019 Comptroller report, using Trust for Public Land 2018 park data'"),
+  list(id="5.2-years-fix-before-build", rx="(?<![0-9.])5\\.2 years",
+       fix=sprintf("by type: reconstruction %s vs new build %s", g("capital_years_reconstruct"), g("capital_years_build_new"))),
+  list(id="not-stricter-inspectors", rx="(?i)it is not stricter inspectors", fix="'It does not look like stricter marking' (7 inspectors; Limits §8)"),
+  list(id="audit-agrees-trend", rx="(?i)independent audit agrees", fix="the Council audit corroborates the LEVEL (36 of 337 locked), not the trend"),
+  list(id="process-narration", rx="(?i)our (hours )?parser|combining the team|the team's (station|research)|we merged|checked against the primary source before inclusion",
+       fix="cold-reader voice: state the finding; attribution only in tag pills and the contributor table")
 )
 U <- list(   # UNSOURCED / assumption-dependent — warn only
   # 2026-09-23 fix: $1.2M is now sourced (NYC Parks $6M / 5 Portland Loos); warn only where the page gives no citation

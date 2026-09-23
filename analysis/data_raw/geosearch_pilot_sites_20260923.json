@@ -1,0 +1,3682 @@
+{
+  "P01": {
+    "query": "Yankee Stadium, Bronx",
+    "response": {
+      "geocoding": {
+        "version": "0.2",
+        "attribution": "http://geosearch.planninglabs.nyc/attribution",
+        "query": {
+          "text": "Yankee Stadium, Bronx",
+          "size": 5,
+          "layers": [
+            "venue",
+            "street",
+            "country",
+            "macroregion",
+            "region",
+            "county",
+            "localadmin",
+            "locality",
+            "borough",
+            "neighbourhood",
+            "continent",
+            "empire",
+            "dependency",
+            "macrocounty",
+            "macrohood",
+            "microhood",
+            "disputed",
+            "postalcode",
+            "ocean",
+            "marinearea"
+          ],
+          "private": false,
+          "lang": {
+            "name": "English",
+            "iso6391": "en",
+            "iso6393": "eng",
+            "via": "default",
+            "defaulted": true
+          },
+          "querySize": 20,
+          "parser": "pelias",
+          "parsed_text": {
+            "subject": "Yankee Stadium",
+            "venue": "Yankee Stadium",
+            "locality": "Bronx",
+            "admin": "Bronx"
+          }
+        },
+        "warnings": [
+          "performance optimization: excluding 'address' layer"
+        ],
+        "engine": {
+          "name": "Pelias",
+          "author": "Mapzen",
+          "version": "1.0"
+        },
+        "timestamp": 1790177349146
+      },
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.926474,
+              40.82882
+            ]
+          },
+          "properties": {
+            "id": "382392",
+            "gid": "nycpad:venue:382392",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "382392",
+            "country_code": "US",
+            "name": "YANKEE STADIUM",
+            "street": "YANKEE STADIUM",
+            "postalcode": "10452",
+            "confidence": 1,
+            "match_type": "exact",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Bronx County",
+            "county_gid": "whosonfirst:county:102083063",
+            "county_a": "BX",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Bronx",
+            "borough_gid": "whosonfirst:borough:421205773",
+            "neighbourhood": "Concourse",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85865669",
+            "label": "YANKEE STADIUM, Bronx, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "2024930001",
+                "bin": "2114490",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.926474,
+              40.82882
+            ]
+          },
+          "properties": {
+            "id": "382391",
+            "gid": "nycpad:venue:382391",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "382391",
+            "country_code": "US",
+            "name": "THE YANKEE STADIUM",
+            "street": "THE YANKEE STADIUM",
+            "postalcode": "10452",
+            "confidence": 1,
+            "match_type": "exact",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Bronx County",
+            "county_gid": "whosonfirst:county:102083063",
+            "county_a": "BX",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Bronx",
+            "borough_gid": "whosonfirst:borough:421205773",
+            "neighbourhood": "Concourse",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85865669",
+            "label": "THE YANKEE STADIUM, Bronx, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "2024930001",
+                "bin": "2114490",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.92779,
+              40.82701
+            ]
+          },
+          "properties": {
+            "id": "382373",
+            "gid": "nycpad:venue:382373",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "382373",
+            "country_code": "US",
+            "name": "OLD YANKEE STADIUM SITE",
+            "street": "OLD YANKEE STADIUM SITE",
+            "postalcode": "10451",
+            "confidence": 1,
+            "match_type": "exact",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Bronx County",
+            "county_gid": "whosonfirst:county:102083063",
+            "county_a": "BX",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Bronx",
+            "borough_gid": "whosonfirst:borough:421205773",
+            "neighbourhood": "Concourse",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85865669",
+            "label": "OLD YANKEE STADIUM SITE, Bronx, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "2024910001",
+                "bin": "2000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -74.01914,
+              40.68874
+            ]
+          },
+          "properties": {
+            "id": "21",
+            "gid": "nycpad:venue:21",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "21",
+            "country_code": "US",
+            "name": "GOVERNORS ISLAND YANKEE PIER",
+            "street": "GOVERNORS ISLAND YANKEE PIER",
+            "postalcode": "10004",
+            "confidence": 1,
+            "match_type": "exact",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "New York County",
+            "county_gid": "whosonfirst:county:102081863",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Manhattan",
+            "borough_gid": "whosonfirst:borough:421205771",
+            "neighbourhood": "Governors Island",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:907131741",
+            "label": "GOVERNORS ISLAND YANKEE PIER, New York, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "1000010010",
+                "bin": "1000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -74.01914,
+              40.68874
+            ]
+          },
+          "properties": {
+            "id": "20",
+            "gid": "nycpad:venue:20",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "20",
+            "country_code": "US",
+            "name": "GOVERNORS IS YANKEE PIER",
+            "street": "GOVERNORS IS YANKEE PIER",
+            "postalcode": "10004",
+            "confidence": 1,
+            "match_type": "exact",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "New York County",
+            "county_gid": "whosonfirst:county:102081863",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Manhattan",
+            "borough_gid": "whosonfirst:borough:421205771",
+            "neighbourhood": "Governors Island",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:907131741",
+            "label": "GOVERNORS IS YANKEE PIER, New York, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "1000010010",
+                "bin": "1000000",
+                "version": "26c"
+              }
+            }
+          }
+        }
+      ],
+      "bbox": [
+        -74.01914,
+        40.68874,
+        -73.926474,
+        40.82882
+      ]
+    }
+  },
+  "P02": {
+    "query": "Admiral Farragut Playground, Bronx",
+    "response": {
+      "geocoding": {
+        "version": "0.2",
+        "attribution": "http://geosearch.planninglabs.nyc/attribution",
+        "query": {
+          "text": "Admiral Farragut Playground, Bronx",
+          "size": 5,
+          "layers": [
+            "venue",
+            "street",
+            "country",
+            "macroregion",
+            "region",
+            "county",
+            "localadmin",
+            "locality",
+            "borough",
+            "neighbourhood",
+            "continent",
+            "empire",
+            "dependency",
+            "macrocounty",
+            "macrohood",
+            "microhood",
+            "disputed",
+            "postalcode",
+            "ocean",
+            "marinearea"
+          ],
+          "private": false,
+          "lang": {
+            "name": "English",
+            "iso6391": "en",
+            "iso6393": "eng",
+            "via": "default",
+            "defaulted": true
+          },
+          "querySize": 20,
+          "parser": "pelias",
+          "parsed_text": {
+            "subject": "Admiral",
+            "locality": "Farragut",
+            "admin": "Farragut Playground, Bronx"
+          }
+        },
+        "warnings": [
+          "performance optimization: excluding 'address' layer"
+        ],
+        "engine": {
+          "name": "Pelias",
+          "author": "Mapzen",
+          "version": "1.0"
+        },
+        "timestamp": 1790177351172
+      },
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.854454,
+              40.807081
+            ]
+          },
+          "properties": {
+            "id": "499319",
+            "gid": "nycpad:venue:499319",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "499319",
+            "country_code": "US",
+            "name": "303 ADMIRAL LANE",
+            "housenumber": "303",
+            "street": "ADMIRAL LANE",
+            "postalcode": "10473",
+            "confidence": 1,
+            "match_type": "exact",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Bronx County",
+            "county_gid": "whosonfirst:county:102083063",
+            "county_a": "BX",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Bronx",
+            "borough_gid": "whosonfirst:borough:421205773",
+            "neighbourhood": "Clason Point",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85865667",
+            "label": "303 ADMIRAL LANE, Bronx, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "2034327501",
+                "bin": "2099266",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.854452,
+              40.807134
+            ]
+          },
+          "properties": {
+            "id": "499321",
+            "gid": "nycpad:venue:499321",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "499321",
+            "country_code": "US",
+            "name": "307 ADMIRAL LANE",
+            "housenumber": "307",
+            "street": "ADMIRAL LANE",
+            "postalcode": "10473",
+            "confidence": 1,
+            "match_type": "exact",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Bronx County",
+            "county_gid": "whosonfirst:county:102083063",
+            "county_a": "BX",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Bronx",
+            "borough_gid": "whosonfirst:borough:421205773",
+            "neighbourhood": "Clason Point",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85865667",
+            "label": "307 ADMIRAL LANE, Bronx, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "2034327501",
+                "bin": "2124249",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.854471,
+              40.80718
+            ]
+          },
+          "properties": {
+            "id": "499322",
+            "gid": "nycpad:venue:499322",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "499322",
+            "country_code": "US",
+            "name": "309 ADMIRAL LANE",
+            "housenumber": "309",
+            "street": "ADMIRAL LANE",
+            "postalcode": "10473",
+            "confidence": 1,
+            "match_type": "exact",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Bronx County",
+            "county_gid": "whosonfirst:county:102083063",
+            "county_a": "BX",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Bronx",
+            "borough_gid": "whosonfirst:borough:421205773",
+            "neighbourhood": "Clason Point",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85865667",
+            "label": "309 ADMIRAL LANE, Bronx, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "2034327501",
+                "bin": "2124250",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.85449,
+              40.807265
+            ]
+          },
+          "properties": {
+            "id": "499326",
+            "gid": "nycpad:venue:499326",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "499326",
+            "country_code": "US",
+            "name": "317 ADMIRAL LANE",
+            "housenumber": "317",
+            "street": "ADMIRAL LANE",
+            "postalcode": "10473",
+            "confidence": 1,
+            "match_type": "exact",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Bronx County",
+            "county_gid": "whosonfirst:county:102083063",
+            "county_a": "BX",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Bronx",
+            "borough_gid": "whosonfirst:borough:421205773",
+            "neighbourhood": "Clason Point",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85865667",
+            "label": "317 ADMIRAL LANE, Bronx, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "2034327501",
+                "bin": "2124252",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.854301,
+              40.806451
+            ]
+          },
+          "properties": {
+            "id": "499333",
+            "gid": "nycpad:venue:499333",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "499333",
+            "country_code": "US",
+            "name": "203 ADMIRAL LANE",
+            "housenumber": "203",
+            "street": "ADMIRAL LANE",
+            "postalcode": "10473",
+            "confidence": 1,
+            "match_type": "exact",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Bronx County",
+            "county_gid": "whosonfirst:county:102083063",
+            "county_a": "BX",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Bronx",
+            "borough_gid": "whosonfirst:borough:421205773",
+            "neighbourhood": "Clason Point",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85865667",
+            "label": "203 ADMIRAL LANE, Bronx, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "2034327501",
+                "bin": "2099267",
+                "version": "26c"
+              }
+            }
+          }
+        }
+      ],
+      "bbox": [
+        -73.85449,
+        40.806451,
+        -73.854301,
+        40.807265
+      ]
+    }
+  },
+  "P03": {
+    "query": "Mapes Park, Bronx",
+    "response": {
+      "geocoding": {
+        "version": "0.2",
+        "attribution": "http://geosearch.planninglabs.nyc/attribution",
+        "query": {
+          "text": "Mapes Park, Bronx",
+          "size": 5,
+          "layers": [
+            "venue",
+            "street",
+            "country",
+            "macroregion",
+            "region",
+            "county",
+            "localadmin",
+            "locality",
+            "borough",
+            "neighbourhood",
+            "continent",
+            "empire",
+            "dependency",
+            "macrocounty",
+            "macrohood",
+            "microhood",
+            "disputed",
+            "postalcode",
+            "ocean",
+            "marinearea"
+          ],
+          "private": false,
+          "lang": {
+            "name": "English",
+            "iso6391": "en",
+            "iso6393": "eng",
+            "via": "default",
+            "defaulted": true
+          },
+          "querySize": 20,
+          "parser": "pelias",
+          "parsed_text": {
+            "subject": "Mapes Park",
+            "street": "Mapes Park",
+            "locality": "Bronx",
+            "admin": "Bronx"
+          }
+        },
+        "warnings": [
+          "performance optimization: excluding 'address' layer"
+        ],
+        "engine": {
+          "name": "Pelias",
+          "author": "Mapzen",
+          "version": "1.0"
+        },
+        "timestamp": 1790177353192
+      },
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.88568,
+              40.84736
+            ]
+          },
+          "properties": {
+            "id": "464543",
+            "gid": "nycpad:venue:464543",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "464543",
+            "country_code": "US",
+            "name": "MAPES BALLFIELD",
+            "street": "MAPES BALLFIELD",
+            "postalcode": "10460",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Bronx County",
+            "county_gid": "whosonfirst:county:102083063",
+            "county_a": "BX",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Bronx",
+            "borough_gid": "whosonfirst:borough:421205773",
+            "neighbourhood": "Belmont",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85865533",
+            "label": "MAPES BALLFIELD, Bronx, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "2031100007",
+                "bin": "2000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.88672,
+              40.84613
+            ]
+          },
+          "properties": {
+            "id": "464471",
+            "gid": "nycpad:venue:464471",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "464471",
+            "country_code": "US",
+            "name": "MAPES POOL",
+            "street": "MAPES POOL",
+            "postalcode": "10457",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Bronx County",
+            "county_gid": "whosonfirst:county:102083063",
+            "county_a": "BX",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Bronx",
+            "borough_gid": "whosonfirst:borough:421205773",
+            "neighbourhood": "Tremont",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85865671",
+            "label": "MAPES POOL, Bronx, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "2031090001",
+                "bin": "2000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.88568,
+              40.84736
+            ]
+          },
+          "properties": {
+            "id": "464544",
+            "gid": "nycpad:venue:464544",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "464544",
+            "country_code": "US",
+            "name": "MAPES BALLFIELDS",
+            "street": "MAPES BALLFIELDS",
+            "postalcode": "10460",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Bronx County",
+            "county_gid": "whosonfirst:county:102083063",
+            "county_a": "BX",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Bronx",
+            "borough_gid": "whosonfirst:borough:421205773",
+            "neighbourhood": "Belmont",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85865533",
+            "label": "MAPES BALLFIELDS, Bronx, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "2031100007",
+                "bin": "2000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.887273,
+              40.844888
+            ]
+          },
+          "properties": {
+            "id": "464266",
+            "gid": "nycpad:venue:464266",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "464266",
+            "country_code": "US",
+            "name": "2005 MAPES AVENUE",
+            "housenumber": "2005",
+            "street": "MAPES AVENUE",
+            "postalcode": "10460",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Bronx County",
+            "county_gid": "whosonfirst:county:102083063",
+            "county_a": "BX",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Bronx",
+            "borough_gid": "whosonfirst:borough:421205773",
+            "neighbourhood": "Tremont",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85865671",
+            "label": "2005 MAPES AVENUE, Bronx, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "2031060028",
+                "bin": "2012934",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.887737,
+              40.844451
+            ]
+          },
+          "properties": {
+            "id": "464271",
+            "gid": "nycpad:venue:464271",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "464271",
+            "country_code": "US",
+            "name": "1977 MAPES AVENUE",
+            "housenumber": "1977",
+            "street": "MAPES AVENUE",
+            "postalcode": "10460",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Bronx County",
+            "county_gid": "whosonfirst:county:102083063",
+            "county_a": "BX",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Bronx",
+            "borough_gid": "whosonfirst:borough:421205773",
+            "neighbourhood": "Tremont",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85865671",
+            "label": "1977 MAPES AVENUE, Bronx, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "2031060040",
+                "bin": "2098629",
+                "version": "26c"
+              }
+            }
+          }
+        }
+      ],
+      "bbox": [
+        -73.887737,
+        40.844451,
+        -73.88568,
+        40.84736
+      ]
+    }
+  },
+  "P04": {
+    "query": "Monsignor Raul Del Valle Square, Bronx",
+    "response": {
+      "geocoding": {
+        "version": "0.2",
+        "attribution": "http://geosearch.planninglabs.nyc/attribution",
+        "query": {
+          "text": "Monsignor Raul Del Valle Square, Bronx",
+          "size": 5,
+          "layers": [
+            "venue",
+            "street",
+            "country",
+            "macroregion",
+            "region",
+            "county",
+            "localadmin",
+            "locality",
+            "borough",
+            "neighbourhood",
+            "continent",
+            "empire",
+            "dependency",
+            "macrocounty",
+            "macrohood",
+            "microhood",
+            "disputed",
+            "postalcode",
+            "ocean",
+            "marinearea"
+          ],
+          "private": false,
+          "lang": {
+            "name": "English",
+            "iso6391": "en",
+            "iso6393": "eng",
+            "via": "default",
+            "defaulted": true
+          },
+          "querySize": 20,
+          "parser": "pelias",
+          "parsed_text": {
+            "subject": "Monsignor Raul Del Valle Square",
+            "street": "Monsignor Raul Del Valle Square",
+            "locality": "Bronx",
+            "admin": "Bronx"
+          }
+        },
+        "warnings": [
+          "performance optimization: excluding 'address' layer"
+        ],
+        "engine": {
+          "name": "Pelias",
+          "author": "Mapzen",
+          "version": "1.0"
+        },
+        "timestamp": 1790177355274
+      },
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.89146,
+              40.82067
+            ]
+          },
+          "properties": {
+            "id": "415193",
+            "gid": "nycpad:venue:415193",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "415193",
+            "country_code": "US",
+            "name": "MONSIGNOR RAUL DEL VALLE SQUARE",
+            "street": "MONSIGNOR RAUL DEL VALLE SQUARE",
+            "postalcode": "10459",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Bronx County",
+            "county_gid": "whosonfirst:county:102083063",
+            "county_a": "BX",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Bronx",
+            "borough_gid": "whosonfirst:borough:421205773",
+            "neighbourhood": "Longwood",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85869443",
+            "label": "MONSIGNOR RAUL DEL VALLE SQUARE, Bronx, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "2027350100",
+                "bin": "2000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.89075,
+              40.82073
+            ]
+          },
+          "properties": {
+            "id": "415954",
+            "gid": "nycpad:venue:415954",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "415954",
+            "country_code": "US",
+            "name": "RAUL DEL VALLE SQUARE",
+            "street": "RAUL DEL VALLE SQUARE",
+            "postalcode": "10459",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Bronx County",
+            "county_gid": "whosonfirst:county:102083063",
+            "county_a": "BX",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Bronx",
+            "borough_gid": "whosonfirst:borough:421205773",
+            "neighbourhood": "Longwood",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85869443",
+            "label": "RAUL DEL VALLE SQUARE, Bronx, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "2027410200",
+                "bin": "2000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.89075,
+              40.82073
+            ]
+          },
+          "properties": {
+            "id": "415950",
+            "gid": "nycpad:venue:415950",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "415950",
+            "country_code": "US",
+            "name": "MSGR RAUL DEL VALLE SQUARE",
+            "street": "MSGR RAUL DEL VALLE SQUARE",
+            "postalcode": "10459",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Bronx County",
+            "county_gid": "whosonfirst:county:102083063",
+            "county_a": "BX",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Bronx",
+            "borough_gid": "whosonfirst:borough:421205773",
+            "neighbourhood": "Longwood",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85869443",
+            "label": "MSGR RAUL DEL VALLE SQUARE, Bronx, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "2027410200",
+                "bin": "2000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.89075,
+              40.82073
+            ]
+          },
+          "properties": {
+            "id": "415940",
+            "gid": "nycpad:venue:415940",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "415940",
+            "country_code": "US",
+            "name": "MONSIGNOR DEL VALLE SQUARE",
+            "street": "MONSIGNOR DEL VALLE SQUARE",
+            "postalcode": "10459",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Bronx County",
+            "county_gid": "whosonfirst:county:102083063",
+            "county_a": "BX",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Bronx",
+            "borough_gid": "whosonfirst:borough:421205773",
+            "neighbourhood": "Longwood",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85869443",
+            "label": "MONSIGNOR DEL VALLE SQUARE, Bronx, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "2027410200",
+                "bin": "2000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.89075,
+              40.82073
+            ]
+          },
+          "properties": {
+            "id": "415942",
+            "gid": "nycpad:venue:415942",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "415942",
+            "country_code": "US",
+            "name": "MONSIGNOR R DEL VALLE SQUARE",
+            "street": "MONSIGNOR R DEL VALLE SQUARE",
+            "postalcode": "10459",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Bronx County",
+            "county_gid": "whosonfirst:county:102083063",
+            "county_a": "BX",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Bronx",
+            "borough_gid": "whosonfirst:borough:421205773",
+            "neighbourhood": "Longwood",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85869443",
+            "label": "MONSIGNOR R DEL VALLE SQUARE, Bronx, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "2027410200",
+                "bin": "2000000",
+                "version": "26c"
+              }
+            }
+          }
+        }
+      ],
+      "bbox": [
+        -73.89146,
+        40.82067,
+        -73.89075,
+        40.82073
+      ]
+    }
+  },
+  "P05": {
+    "query": "Columbus Park, Brooklyn",
+    "response": {
+      "geocoding": {
+        "version": "0.2",
+        "attribution": "http://geosearch.planninglabs.nyc/attribution",
+        "query": {
+          "text": "Columbus Park, Brooklyn",
+          "size": 5,
+          "layers": [
+            "venue",
+            "street",
+            "country",
+            "macroregion",
+            "region",
+            "county",
+            "localadmin",
+            "locality",
+            "borough",
+            "neighbourhood",
+            "continent",
+            "empire",
+            "dependency",
+            "macrocounty",
+            "macrohood",
+            "microhood",
+            "disputed",
+            "postalcode",
+            "ocean",
+            "marinearea"
+          ],
+          "private": false,
+          "lang": {
+            "name": "English",
+            "iso6391": "en",
+            "iso6393": "eng",
+            "via": "default",
+            "defaulted": true
+          },
+          "querySize": 20,
+          "parser": "pelias",
+          "parsed_text": {
+            "subject": "Columbus Park",
+            "street": "Columbus Park",
+            "locality": "Brooklyn",
+            "admin": "Brooklyn"
+          }
+        },
+        "warnings": [
+          "performance optimization: excluding 'address' layer"
+        ],
+        "engine": {
+          "name": "Pelias",
+          "author": "Mapzen",
+          "version": "1.0"
+        },
+        "timestamp": 1790177358254
+      },
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.98997,
+              40.69365
+            ]
+          },
+          "properties": {
+            "id": "714741",
+            "gid": "nycpad:venue:714741",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "714741",
+            "country_code": "US",
+            "name": "COLUMBUS PARK",
+            "street": "COLUMBUS PARK",
+            "postalcode": "11201",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Kings County",
+            "county_gid": "whosonfirst:county:102082361",
+            "county_a": "BK",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Brooklyn",
+            "borough_gid": "whosonfirst:borough:421205765",
+            "neighbourhood": "Downtown Brooklyn",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85869191",
+            "label": "COLUMBUS PARK, Brooklyn, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "3001390001",
+                "bin": "3000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -74,
+              40.71514
+            ]
+          },
+          "properties": {
+            "id": "13200",
+            "gid": "nycpad:venue:13200",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "13200",
+            "country_code": "US",
+            "name": "COLUMBUS PARK",
+            "street": "COLUMBUS PARK",
+            "postalcode": "10013",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "New York County",
+            "county_gid": "whosonfirst:county:102081863",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Manhattan",
+            "borough_gid": "whosonfirst:borough:421205771",
+            "neighbourhood": "Chinatown",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85810885",
+            "label": "COLUMBUS PARK, New York, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "1001650001",
+                "bin": "1000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.98997,
+              40.69365
+            ]
+          },
+          "properties": {
+            "id": "714740",
+            "gid": "nycpad:venue:714740",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "714740",
+            "country_code": "US",
+            "name": "CHRISTOPHER COLUMBUS PARK",
+            "street": "CHRISTOPHER COLUMBUS PARK",
+            "postalcode": "11201",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Kings County",
+            "county_gid": "whosonfirst:county:102082361",
+            "county_a": "BK",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Brooklyn",
+            "borough_gid": "whosonfirst:borough:421205765",
+            "neighbourhood": "Downtown Brooklyn",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85869191",
+            "label": "CHRISTOPHER COLUMBUS PARK, Brooklyn, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "3001390001",
+                "bin": "3000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.98997,
+              40.69365
+            ]
+          },
+          "properties": {
+            "id": "714739",
+            "gid": "nycpad:venue:714739",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "714739",
+            "country_code": "US",
+            "name": "C COLUMBUS PARK",
+            "street": "C COLUMBUS PARK",
+            "postalcode": "11201",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Kings County",
+            "county_gid": "whosonfirst:county:102082361",
+            "county_a": "BK",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Brooklyn",
+            "borough_gid": "whosonfirst:borough:421205765",
+            "neighbourhood": "Downtown Brooklyn",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85869191",
+            "label": "C COLUMBUS PARK, Brooklyn, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "3001390001",
+                "bin": "3000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -74.000058,
+              40.714862
+            ]
+          },
+          "properties": {
+            "id": "13211",
+            "gid": "nycpad:venue:13211",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "13211",
+            "country_code": "US",
+            "name": "COLUMBUS PARK COMFORT STA 1",
+            "street": "COLUMBUS PARK COMFORT STA 1",
+            "postalcode": "10013",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "New York County",
+            "county_gid": "whosonfirst:county:102081863",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Manhattan",
+            "borough_gid": "whosonfirst:borough:421205771",
+            "neighbourhood": "Chinatown",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85810885",
+            "label": "COLUMBUS PARK COMFORT STA 1, New York, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "1001650001",
+                "bin": "1079269",
+                "version": "26c"
+              }
+            }
+          }
+        }
+      ],
+      "bbox": [
+        -74.000058,
+        40.69365,
+        -73.98997,
+        40.71514
+      ]
+    }
+  },
+  "P06": {
+    "query": "Milestone Park, Brooklyn",
+    "response": {
+      "geocoding": {
+        "version": "0.2",
+        "attribution": "http://geosearch.planninglabs.nyc/attribution",
+        "query": {
+          "text": "Milestone Park, Brooklyn",
+          "size": 5,
+          "layers": [
+            "venue",
+            "street",
+            "country",
+            "macroregion",
+            "region",
+            "county",
+            "localadmin",
+            "locality",
+            "borough",
+            "neighbourhood",
+            "continent",
+            "empire",
+            "dependency",
+            "macrocounty",
+            "macrohood",
+            "microhood",
+            "disputed",
+            "postalcode",
+            "ocean",
+            "marinearea"
+          ],
+          "private": false,
+          "lang": {
+            "name": "English",
+            "iso6391": "en",
+            "iso6393": "eng",
+            "via": "default",
+            "defaulted": true
+          },
+          "querySize": 20,
+          "parser": "pelias",
+          "parsed_text": {
+            "subject": "Milestone Park",
+            "street": "Milestone Park",
+            "locality": "Brooklyn",
+            "admin": "Brooklyn"
+          }
+        },
+        "warnings": [
+          "performance optimization: excluding 'address' layer"
+        ],
+        "engine": {
+          "name": "Pelias",
+          "author": "Mapzen",
+          "version": "1.0"
+        },
+        "timestamp": 1790177360356
+      },
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.99949,
+              40.60951
+            ]
+          },
+          "properties": {
+            "id": "1453524",
+            "gid": "nycpad:venue:1453524",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "1453524",
+            "country_code": "US",
+            "name": "MILESTONE PARK",
+            "street": "MILESTONE PARK",
+            "postalcode": "11214",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Kings County",
+            "county_gid": "whosonfirst:county:102082361",
+            "county_a": "BK",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Brooklyn",
+            "borough_gid": "whosonfirst:borough:421205765",
+            "neighbourhood": "Bensonhurst",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85805771",
+            "label": "MILESTONE PARK, Brooklyn, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "3062960001",
+                "bin": "3000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.99426,
+              40.70134
+            ]
+          },
+          "properties": {
+            "id": "722761",
+            "gid": "nycpad:venue:722761",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "722761",
+            "country_code": "US",
+            "name": "HILLSIDE PARK",
+            "street": "HILLSIDE PARK",
+            "postalcode": "11201",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Kings County",
+            "county_gid": "whosonfirst:county:102082361",
+            "county_a": "BK",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Brooklyn",
+            "borough_gid": "whosonfirst:borough:421205765",
+            "neighbourhood": "Brooklyn Heights",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85807925",
+            "label": "HILLSIDE PARK, Brooklyn, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "3002050001",
+                "bin": "3000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.99492,
+              40.70066
+            ]
+          },
+          "properties": {
+            "id": "723279",
+            "gid": "nycpad:venue:723279",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "723279",
+            "country_code": "US",
+            "name": "CHAPIN PARK",
+            "street": "CHAPIN PARK",
+            "postalcode": "11201",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Kings County",
+            "county_gid": "whosonfirst:county:102082361",
+            "county_a": "BK",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Brooklyn",
+            "borough_gid": "whosonfirst:borough:421205765",
+            "neighbourhood": "Brooklyn Heights",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85807925",
+            "label": "CHAPIN PARK, Brooklyn, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "3002140004",
+                "bin": "3000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.98937,
+              40.69823
+            ]
+          },
+          "properties": {
+            "id": "713335",
+            "gid": "nycpad:venue:713335",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "713335",
+            "country_code": "US",
+            "name": "WHITMAN PARK",
+            "street": "WHITMAN PARK",
+            "postalcode": "11201",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Kings County",
+            "county_gid": "whosonfirst:county:102082361",
+            "county_a": "BK",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Brooklyn",
+            "borough_gid": "whosonfirst:borough:421205765",
+            "neighbourhood": "Downtown Brooklyn",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85869191",
+            "label": "WHITMAN PARK, Brooklyn, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "3000850001",
+                "bin": "3000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.99924,
+              40.69234
+            ]
+          },
+          "properties": {
+            "id": "726067",
+            "gid": "nycpad:venue:726067",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "726067",
+            "country_code": "US",
+            "name": "YAUCH PARK",
+            "street": "YAUCH PARK",
+            "postalcode": "11201",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Kings County",
+            "county_gid": "whosonfirst:county:102082361",
+            "county_a": "BK",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Brooklyn",
+            "borough_gid": "whosonfirst:borough:421205765",
+            "neighbourhood": "Brooklyn Heights",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85807925",
+            "label": "YAUCH PARK, Brooklyn, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "3002580001",
+                "bin": "3000000",
+                "version": "26c"
+              }
+            }
+          }
+        }
+      ],
+      "bbox": [
+        -73.99949,
+        40.60951,
+        -73.98937,
+        40.70134
+      ]
+    }
+  },
+  "P07": {
+    "query": "Fulton Street and Truxton Street, Brooklyn",
+    "response": {
+      "geocoding": {
+        "version": "0.2",
+        "attribution": "http://geosearch.planninglabs.nyc/attribution",
+        "query": {
+          "text": "Fulton Street and Truxton Street, Brooklyn",
+          "size": 5,
+          "layers": [
+            "venue",
+            "street",
+            "country",
+            "macroregion",
+            "region",
+            "county",
+            "localadmin",
+            "locality",
+            "borough",
+            "neighbourhood",
+            "continent",
+            "empire",
+            "dependency",
+            "macrocounty",
+            "macrohood",
+            "microhood",
+            "disputed",
+            "postalcode",
+            "ocean",
+            "marinearea"
+          ],
+          "private": false,
+          "lang": {
+            "name": "English",
+            "iso6391": "en",
+            "iso6393": "eng",
+            "via": "default",
+            "defaulted": true
+          },
+          "querySize": 20,
+          "parser": "pelias",
+          "parsed_text": {
+            "subject": "Fulton Street & Truxton Street",
+            "street": "Fulton Street",
+            "cross_street": "Truxton Street",
+            "locality": "Brooklyn",
+            "admin": "Brooklyn"
+          }
+        },
+        "warnings": [
+          "performance optimization: excluding 'address' layer"
+        ],
+        "engine": {
+          "name": "Pelias",
+          "author": "Mapzen",
+          "version": "1.0"
+        },
+        "timestamp": 1790177362398
+      },
+      "type": "FeatureCollection",
+      "features": []
+    }
+  },
+  "P08": {
+    "query": "Avenue C Plaza, Brooklyn",
+    "response": {
+      "geocoding": {
+        "version": "0.2",
+        "attribution": "http://geosearch.planninglabs.nyc/attribution",
+        "query": {
+          "text": "Avenue C Plaza, Brooklyn",
+          "size": 5,
+          "layers": [
+            "venue",
+            "street",
+            "country",
+            "macroregion",
+            "region",
+            "county",
+            "localadmin",
+            "locality",
+            "borough",
+            "neighbourhood",
+            "continent",
+            "empire",
+            "dependency",
+            "macrocounty",
+            "macrohood",
+            "microhood",
+            "disputed",
+            "postalcode",
+            "ocean",
+            "marinearea"
+          ],
+          "private": false,
+          "lang": {
+            "name": "English",
+            "iso6391": "en",
+            "iso6393": "eng",
+            "via": "default",
+            "defaulted": true
+          },
+          "querySize": 20,
+          "parser": "pelias",
+          "parsed_text": {
+            "subject": "Avenue C",
+            "street": "Avenue C",
+            "locality": "Brooklyn",
+            "admin": "Plaza, Brooklyn"
+          }
+        },
+        "warnings": [
+          "performance optimization: excluding 'address' layer"
+        ],
+        "engine": {
+          "name": "Pelias",
+          "author": "Mapzen",
+          "version": "1.0"
+        },
+        "timestamp": 1790177364716
+      },
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.978102,
+              40.640647
+            ]
+          },
+          "properties": {
+            "id": "1319079",
+            "gid": "nycpad:venue:1319079",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "1319079",
+            "country_code": "US",
+            "name": "125 AVENUE C",
+            "housenumber": "125",
+            "street": "AVENUE C",
+            "postalcode": "11218",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Kings County",
+            "county_gid": "whosonfirst:county:102082361",
+            "county_a": "BK",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Brooklyn",
+            "borough_gid": "whosonfirst:borough:421205765",
+            "neighbourhood": "Kensington",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85828101",
+            "label": "125 AVENUE C, Brooklyn, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "3053530047",
+                "bin": "3125262",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.978228,
+              40.64063
+            ]
+          },
+          "properties": {
+            "id": "1319083",
+            "gid": "nycpad:venue:1319083",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "1319083",
+            "country_code": "US",
+            "name": "121 AVENUE C",
+            "housenumber": "121",
+            "street": "AVENUE C",
+            "postalcode": "11218",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Kings County",
+            "county_gid": "whosonfirst:county:102082361",
+            "county_a": "BK",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Brooklyn",
+            "borough_gid": "whosonfirst:borough:421205765",
+            "neighbourhood": "Kensington",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85828101",
+            "label": "121 AVENUE C, Brooklyn, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "3053530049",
+                "bin": "3125264",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.978691,
+              40.640614
+            ]
+          },
+          "properties": {
+            "id": "1319095",
+            "gid": "nycpad:venue:1319095",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "1319095",
+            "country_code": "US",
+            "name": "103 AVENUE C",
+            "housenumber": "103",
+            "street": "AVENUE C",
+            "postalcode": "11218",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Kings County",
+            "county_gid": "whosonfirst:county:102082361",
+            "county_a": "BK",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Brooklyn",
+            "borough_gid": "whosonfirst:borough:421205765",
+            "neighbourhood": "Kensington",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85828101",
+            "label": "103 AVENUE C, Brooklyn, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "3053530054",
+                "bin": "3125269",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.978691,
+              40.640614
+            ]
+          },
+          "properties": {
+            "id": "1319101",
+            "gid": "nycpad:venue:1319101",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "1319101",
+            "country_code": "US",
+            "name": "109 AVENUE C",
+            "housenumber": "109",
+            "street": "AVENUE C",
+            "postalcode": "11218",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Kings County",
+            "county_gid": "whosonfirst:county:102082361",
+            "county_a": "BK",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Brooklyn",
+            "borough_gid": "whosonfirst:borough:421205765",
+            "neighbourhood": "Kensington",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85828101",
+            "label": "109 AVENUE C, Brooklyn, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "3053530054",
+                "bin": "3125269",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.977127,
+              40.640683
+            ]
+          },
+          "properties": {
+            "id": "1319411",
+            "gid": "nycpad:venue:1319411",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "1319411",
+            "country_code": "US",
+            "name": "215 AVENUE C",
+            "housenumber": "215",
+            "street": "AVENUE C",
+            "postalcode": "11218",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Kings County",
+            "county_gid": "whosonfirst:county:102082361",
+            "county_a": "BK",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Brooklyn",
+            "borough_gid": "whosonfirst:borough:421205765",
+            "neighbourhood": "Kensington",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85828101",
+            "label": "215 AVENUE C, Brooklyn, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "3053540043",
+                "bin": "3125332",
+                "version": "26c"
+              }
+            }
+          }
+        }
+      ],
+      "bbox": [
+        -73.978691,
+        40.640614,
+        -73.977127,
+        40.640683
+      ]
+    }
+  },
+  "P09": {
+    "query": "Astoria Boulevard South and 31st Street, Queens",
+    "response": {
+      "geocoding": {
+        "version": "0.2",
+        "attribution": "http://geosearch.planninglabs.nyc/attribution",
+        "query": {
+          "text": "Astoria Boulevard South and 31st Street, Queens",
+          "size": 5,
+          "private": false,
+          "lang": {
+            "name": "English",
+            "iso6391": "en",
+            "iso6393": "eng",
+            "via": "default",
+            "defaulted": true
+          },
+          "querySize": 20,
+          "parser": "pelias",
+          "parsed_text": {
+            "subject": "Astoria Boulevard South & 31st Street",
+            "street": "Astoria Boulevard South",
+            "cross_street": "31st Street",
+            "locality": "Queens",
+            "admin": "Queens"
+          }
+        },
+        "engine": {
+          "name": "Pelias",
+          "author": "Mapzen",
+          "version": "1.0"
+        },
+        "timestamp": 1790177366812
+      },
+      "type": "FeatureCollection",
+      "features": []
+    }
+  },
+  "P10": {
+    "query": "Northern Boulevard and 31st Street, Queens",
+    "response": {
+      "geocoding": {
+        "version": "0.2",
+        "attribution": "http://geosearch.planninglabs.nyc/attribution",
+        "query": {
+          "text": "Northern Boulevard and 31st Street, Queens",
+          "size": 5,
+          "private": false,
+          "lang": {
+            "name": "English",
+            "iso6391": "en",
+            "iso6393": "eng",
+            "via": "default",
+            "defaulted": true
+          },
+          "querySize": 20,
+          "parser": "pelias",
+          "parsed_text": {
+            "subject": "Northern Boulevard & 31st Street",
+            "street": "Northern Boulevard",
+            "cross_street": "31st Street",
+            "locality": "Queens",
+            "admin": "Queens"
+          }
+        },
+        "engine": {
+          "name": "Pelias",
+          "author": "Mapzen",
+          "version": "1.0"
+        },
+        "timestamp": 1790177368894
+      },
+      "type": "FeatureCollection",
+      "features": []
+    }
+  },
+  "P11": {
+    "query": "Northern Boulevard and 54th Street, Queens",
+    "response": {
+      "geocoding": {
+        "version": "0.2",
+        "attribution": "http://geosearch.planninglabs.nyc/attribution",
+        "query": {
+          "text": "Northern Boulevard and 54th Street, Queens",
+          "size": 5,
+          "private": false,
+          "lang": {
+            "name": "English",
+            "iso6391": "en",
+            "iso6393": "eng",
+            "via": "default",
+            "defaulted": true
+          },
+          "querySize": 20,
+          "parser": "pelias",
+          "parsed_text": {
+            "subject": "Northern Boulevard & 54th Street",
+            "street": "Northern Boulevard",
+            "cross_street": "54th Street",
+            "locality": "Queens",
+            "admin": "Queens"
+          }
+        },
+        "engine": {
+          "name": "Pelias",
+          "author": "Mapzen",
+          "version": "1.0"
+        },
+        "timestamp": 1790177371608
+      },
+      "type": "FeatureCollection",
+      "features": []
+    }
+  },
+  "P12": {
+    "query": "34th Avenue and 64th Street, Queens",
+    "response": {
+      "geocoding": {
+        "version": "0.2",
+        "attribution": "http://geosearch.planninglabs.nyc/attribution",
+        "query": {
+          "text": "34th Avenue and 64th Street, Queens",
+          "size": 5,
+          "private": false,
+          "lang": {
+            "name": "English",
+            "iso6391": "en",
+            "iso6393": "eng",
+            "via": "default",
+            "defaulted": true
+          },
+          "querySize": 20,
+          "parser": "pelias",
+          "parsed_text": {
+            "subject": "34th Avenue & 64th Street",
+            "street": "34th Avenue",
+            "cross_street": "64th Street",
+            "locality": "Queens",
+            "admin": "Queens"
+          }
+        },
+        "engine": {
+          "name": "Pelias",
+          "author": "Mapzen",
+          "version": "1.0"
+        },
+        "timestamp": 1790177373683
+      },
+      "type": "FeatureCollection",
+      "features": []
+    }
+  },
+  "P13": {
+    "query": "Cooper Square, Manhattan",
+    "response": {
+      "geocoding": {
+        "version": "0.2",
+        "attribution": "http://geosearch.planninglabs.nyc/attribution",
+        "query": {
+          "text": "Cooper Square, Manhattan",
+          "size": 5,
+          "layers": [
+            "venue",
+            "street",
+            "country",
+            "macroregion",
+            "region",
+            "county",
+            "localadmin",
+            "locality",
+            "borough",
+            "neighbourhood",
+            "continent",
+            "empire",
+            "dependency",
+            "macrocounty",
+            "macrohood",
+            "microhood",
+            "disputed",
+            "postalcode",
+            "ocean",
+            "marinearea"
+          ],
+          "private": false,
+          "lang": {
+            "name": "English",
+            "iso6391": "en",
+            "iso6393": "eng",
+            "via": "default",
+            "defaulted": true
+          },
+          "querySize": 20,
+          "parser": "pelias",
+          "parsed_text": {
+            "subject": "Cooper Square",
+            "street": "Cooper Square",
+            "locality": "Manhattan",
+            "admin": "Manhattan"
+          }
+        },
+        "warnings": [
+          "performance optimization: excluding 'address' layer"
+        ],
+        "engine": {
+          "name": "Pelias",
+          "author": "Mapzen",
+          "version": "1.0"
+        },
+        "timestamp": 1790177375822
+      },
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.991108,
+              40.727312
+            ]
+          },
+          "properties": {
+            "id": "42742",
+            "gid": "nycpad:venue:42742",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "42742",
+            "country_code": "US",
+            "name": "5 COOPER SQUARE",
+            "housenumber": "5",
+            "street": "COOPER SQUARE",
+            "postalcode": "10003",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "New York County",
+            "county_gid": "whosonfirst:county:102081863",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Manhattan",
+            "borough_gid": "whosonfirst:borough:421205771",
+            "neighbourhood": "East Village",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85816887",
+            "label": "5 COOPER SQUARE, New York, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "1004600001",
+                "bin": "1006580",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.99077,
+              40.72782
+            ]
+          },
+          "properties": {
+            "id": "42931",
+            "gid": "nycpad:venue:42931",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "42931",
+            "country_code": "US",
+            "name": "31 COOPER SQUARE",
+            "housenumber": "31",
+            "street": "COOPER SQUARE",
+            "postalcode": "10003",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "New York County",
+            "county_gid": "whosonfirst:county:102081863",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Manhattan",
+            "borough_gid": "whosonfirst:borough:421205771",
+            "neighbourhood": "East Village",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85816887",
+            "label": "31 COOPER SQUARE, New York, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "1004610003",
+                "bin": "1000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.990646,
+              40.728089
+            ]
+          },
+          "properties": {
+            "id": "42943",
+            "gid": "nycpad:venue:42943",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "42943",
+            "country_code": "US",
+            "name": "39 COOPER SQUARE",
+            "housenumber": "39",
+            "street": "COOPER SQUARE",
+            "postalcode": "10003",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "New York County",
+            "county_gid": "whosonfirst:county:102081863",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Manhattan",
+            "borough_gid": "whosonfirst:borough:421205771",
+            "neighbourhood": "East Village",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85816887",
+            "label": "39 COOPER SQUARE, New York, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "1004610006",
+                "bin": "1090311",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.990257,
+              40.728513
+            ]
+          },
+          "properties": {
+            "id": "43067",
+            "gid": "nycpad:venue:43067",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "43067",
+            "country_code": "US",
+            "name": "47 COOPER SQUARE",
+            "housenumber": "47",
+            "street": "COOPER SQUARE",
+            "postalcode": "10003",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "New York County",
+            "county_gid": "whosonfirst:county:102081863",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Manhattan",
+            "borough_gid": "whosonfirst:borough:421205771",
+            "neighbourhood": "East Village",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85816887",
+            "label": "47 COOPER SQUARE, New York, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "1004620001",
+                "bin": "1006642",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.99,
+              40.728943
+            ]
+          },
+          "properties": {
+            "id": "43187",
+            "gid": "nycpad:venue:43187",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "43187",
+            "country_code": "US",
+            "name": "59 COOPER SQUARE",
+            "housenumber": "59",
+            "street": "COOPER SQUARE",
+            "postalcode": "10003",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "New York County",
+            "county_gid": "whosonfirst:county:102081863",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Manhattan",
+            "borough_gid": "whosonfirst:borough:421205771",
+            "neighbourhood": "East Village",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85816887",
+            "label": "59 COOPER SQUARE, New York, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "1004630001",
+                "bin": "1006656",
+                "version": "26c"
+              }
+            }
+          }
+        }
+      ],
+      "bbox": [
+        -73.991108,
+        40.727312,
+        -73.99,
+        40.728943
+      ]
+    }
+  },
+  "P14": {
+    "query": "Malcolm X Plaza, Manhattan",
+    "response": {
+      "geocoding": {
+        "version": "0.2",
+        "attribution": "http://geosearch.planninglabs.nyc/attribution",
+        "query": {
+          "text": "Malcolm X Plaza, Manhattan",
+          "size": 5,
+          "layers": [
+            "venue",
+            "street",
+            "country",
+            "macroregion",
+            "region",
+            "county",
+            "localadmin",
+            "locality",
+            "borough",
+            "neighbourhood",
+            "continent",
+            "empire",
+            "dependency",
+            "macrocounty",
+            "macrohood",
+            "microhood",
+            "disputed",
+            "postalcode",
+            "ocean",
+            "marinearea"
+          ],
+          "private": false,
+          "lang": {
+            "name": "English",
+            "iso6391": "en",
+            "iso6393": "eng",
+            "via": "default",
+            "defaulted": true
+          },
+          "querySize": 20,
+          "parser": "pelias",
+          "parsed_text": {
+            "subject": "Malcolm X Plaza",
+            "street": "Malcolm X Plaza",
+            "locality": "Manhattan",
+            "admin": "Manhattan"
+          }
+        },
+        "warnings": [
+          "performance optimization: excluding 'address' layer"
+        ],
+        "engine": {
+          "name": "Pelias",
+          "author": "Mapzen",
+          "version": "1.0"
+        },
+        "timestamp": 1790177377905
+      },
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.873557,
+              40.767983
+            ]
+          },
+          "properties": {
+            "id": "1946985",
+            "gid": "nycpad:venue:1946985",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "1946985",
+            "country_code": "US",
+            "name": "2312 MALCOLM X PLACE",
+            "housenumber": "2312",
+            "street": "MALCOLM X PLACE",
+            "postalcode": "11369",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Queens County",
+            "county_gid": "whosonfirst:county:102082377",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Queens",
+            "borough_gid": "whosonfirst:borough:421205767",
+            "neighbourhood": "East Elmhurst",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85816259",
+            "label": "2312 MALCOLM X PLACE, East Elmhurst, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "4010900011",
+                "bin": "4023783",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.873524,
+              40.767937
+            ]
+          },
+          "properties": {
+            "id": "1946991",
+            "gid": "nycpad:venue:1946991",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "1946991",
+            "country_code": "US",
+            "name": "2314 MALCOLM X PLACE",
+            "housenumber": "2314",
+            "street": "MALCOLM X PLACE",
+            "postalcode": "11369",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Queens County",
+            "county_gid": "whosonfirst:county:102082377",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Queens",
+            "borough_gid": "whosonfirst:borough:421205767",
+            "neighbourhood": "East Elmhurst",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85816259",
+            "label": "2314 MALCOLM X PLACE, East Elmhurst, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "4010900012",
+                "bin": "4023784",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.873507,
+              40.76784
+            ]
+          },
+          "properties": {
+            "id": "1947003",
+            "gid": "nycpad:venue:1947003",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "1947003",
+            "country_code": "US",
+            "name": "2318 MALCOLM X PLACE",
+            "housenumber": "2318",
+            "street": "MALCOLM X PLACE",
+            "postalcode": "11369",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Queens County",
+            "county_gid": "whosonfirst:county:102082377",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Queens",
+            "borough_gid": "whosonfirst:borough:421205767",
+            "neighbourhood": "East Elmhurst",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85816259",
+            "label": "2318 MALCOLM X PLACE, East Elmhurst, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "4010900014",
+                "bin": "4023786",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.873319,
+              40.766749
+            ]
+          },
+          "properties": {
+            "id": "1947099",
+            "gid": "nycpad:venue:1947099",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "1947099",
+            "country_code": "US",
+            "name": "2358 MALCOLM X PLACE",
+            "housenumber": "2358",
+            "street": "MALCOLM X PLACE",
+            "postalcode": "11369",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Queens County",
+            "county_gid": "whosonfirst:county:102082377",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Queens",
+            "borough_gid": "whosonfirst:borough:421205767",
+            "neighbourhood": "East Elmhurst",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85816259",
+            "label": "2358 MALCOLM X PLACE, East Elmhurst, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "4010900034",
+                "bin": "4023800",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.873056,
+              40.767631
+            ]
+          },
+          "properties": {
+            "id": "1947331",
+            "gid": "nycpad:venue:1947331",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "1947331",
+            "country_code": "US",
+            "name": "2327 MALCOLM X PLACE",
+            "housenumber": "2327",
+            "street": "MALCOLM X PLACE",
+            "postalcode": "11369",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Queens County",
+            "county_gid": "whosonfirst:county:102082377",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Queens",
+            "borough_gid": "whosonfirst:borough:421205767",
+            "neighbourhood": "East Elmhurst",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85816259",
+            "label": "2327 MALCOLM X PLACE, East Elmhurst, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "4010910061",
+                "bin": "4023857",
+                "version": "26c"
+              }
+            }
+          }
+        }
+      ],
+      "bbox": [
+        -73.873557,
+        40.766749,
+        -73.873056,
+        40.767983
+      ]
+    }
+  },
+  "P15": {
+    "query": "Delancey Street and Suffolk Street, Manhattan",
+    "response": {
+      "geocoding": {
+        "version": "0.2",
+        "attribution": "http://geosearch.planninglabs.nyc/attribution",
+        "query": {
+          "text": "Delancey Street and Suffolk Street, Manhattan",
+          "size": 5,
+          "layers": [
+            "venue",
+            "street",
+            "country",
+            "macroregion",
+            "region",
+            "county",
+            "localadmin",
+            "locality",
+            "borough",
+            "neighbourhood",
+            "continent",
+            "empire",
+            "dependency",
+            "macrocounty",
+            "macrohood",
+            "microhood",
+            "disputed",
+            "postalcode",
+            "ocean",
+            "marinearea"
+          ],
+          "private": false,
+          "lang": {
+            "name": "English",
+            "iso6391": "en",
+            "iso6393": "eng",
+            "via": "default",
+            "defaulted": true
+          },
+          "querySize": 20,
+          "parser": "pelias",
+          "parsed_text": {
+            "subject": "Delancey Street & Suffolk Street",
+            "street": "Delancey Street",
+            "cross_street": "Suffolk Street",
+            "locality": "Manhattan",
+            "admin": "Manhattan"
+          }
+        },
+        "warnings": [
+          "performance optimization: excluding 'address' layer"
+        ],
+        "engine": {
+          "name": "Pelias",
+          "author": "Mapzen",
+          "version": "1.0"
+        },
+        "timestamp": 1790177380000
+      },
+      "type": "FeatureCollection",
+      "features": []
+    }
+  },
+  "P16": {
+    "query": "Plaza Alianza Dominicana, Manhattan",
+    "response": {
+      "geocoding": {
+        "version": "0.2",
+        "attribution": "http://geosearch.planninglabs.nyc/attribution",
+        "query": {
+          "text": "Plaza Alianza Dominicana, Manhattan",
+          "size": 5,
+          "layers": [
+            "venue",
+            "street",
+            "country",
+            "macroregion",
+            "region",
+            "county",
+            "localadmin",
+            "locality",
+            "borough",
+            "neighbourhood",
+            "continent",
+            "empire",
+            "dependency",
+            "macrocounty",
+            "macrohood",
+            "microhood",
+            "disputed",
+            "postalcode",
+            "ocean",
+            "marinearea"
+          ],
+          "private": false,
+          "lang": {
+            "name": "English",
+            "iso6391": "en",
+            "iso6393": "eng",
+            "via": "default",
+            "defaulted": true
+          },
+          "querySize": 20,
+          "parser": "pelias",
+          "parsed_text": {
+            "subject": "Plaza Alianza",
+            "street": "Plaza Alianza",
+            "locality": "Manhattan",
+            "admin": "Dominicana, Manhattan"
+          }
+        },
+        "warnings": [
+          "performance optimization: excluding 'address' layer"
+        ],
+        "engine": {
+          "name": "Pelias",
+          "author": "Mapzen",
+          "version": "1.0"
+        },
+        "timestamp": 1790177382055
+      },
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.92931,
+              40.67079
+            ]
+          },
+          "properties": {
+            "id": "869573",
+            "gid": "nycpad:venue:869573",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "869573",
+            "country_code": "US",
+            "name": "STERLING PL REHABS ST JOHNS PL",
+            "street": "STERLING PL REHABS ST JOHNS PL",
+            "postalcode": "11213",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Kings County",
+            "county_gid": "whosonfirst:county:102082361",
+            "county_a": "BK",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Brooklyn",
+            "borough_gid": "whosonfirst:borough:421205765",
+            "neighbourhood": "Crown Heights",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85867069",
+            "label": "STERLING PL REHABS ST JOHNS PL, Brooklyn, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "3013790059",
+                "bin": "3000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.92931,
+              40.67079
+            ]
+          },
+          "properties": {
+            "id": "869571",
+            "gid": "nycpad:venue:869571",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "869571",
+            "country_code": "US",
+            "name": "STERLING PL REHAB (ST JOHNS PL)",
+            "street": "STERLING PL REHAB (ST JOHNS PL)",
+            "postalcode": "11213",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Kings County",
+            "county_gid": "whosonfirst:county:102082361",
+            "county_a": "BK",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Brooklyn",
+            "borough_gid": "whosonfirst:borough:421205765",
+            "neighbourhood": "Crown Heights",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85867069",
+            "label": "STERLING PL REHAB (ST JOHNS PL), Brooklyn, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "3013790059",
+                "bin": "3000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.92931,
+              40.67079
+            ]
+          },
+          "properties": {
+            "id": "869572",
+            "gid": "nycpad:venue:869572",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "869572",
+            "country_code": "US",
+            "name": "STERLING PL REHABS (ST JOHNS PL)",
+            "street": "STERLING PL REHABS (ST JOHNS PL)",
+            "postalcode": "11213",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Kings County",
+            "county_gid": "whosonfirst:county:102082361",
+            "county_a": "BK",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Brooklyn",
+            "borough_gid": "whosonfirst:borough:421205765",
+            "neighbourhood": "Crown Heights",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85867069",
+            "label": "STERLING PL REHABS (ST JOHNS PL), Brooklyn, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "3013790059",
+                "bin": "3000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.99594,
+              40.71486
+            ]
+          },
+          "properties": {
+            "id": "24490",
+            "gid": "nycpad:venue:24490",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "24490",
+            "country_code": "US",
+            "name": "CONFUCIUS PLAZA",
+            "street": "CONFUCIUS PLAZA",
+            "postalcode": "10002",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "New York County",
+            "county_gid": "whosonfirst:county:102081863",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Manhattan",
+            "borough_gid": "whosonfirst:borough:421205771",
+            "neighbourhood": "Chinatown",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85810885",
+            "label": "CONFUCIUS PLAZA, New York, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "1002890001",
+                "bin": "1000000",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -74.00351,
+              40.72727
+            ]
+          },
+          "properties": {
+            "id": "48346",
+            "gid": "nycpad:venue:48346",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "48346",
+            "country_code": "US",
+            "name": "CHARLTON PLAZA",
+            "street": "CHARLTON PLAZA",
+            "postalcode": "10014",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "New York County",
+            "county_gid": "whosonfirst:county:102081863",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Manhattan",
+            "borough_gid": "whosonfirst:borough:421205771",
+            "neighbourhood": "SoHo",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85865687",
+            "label": "CHARLTON PLAZA, New York, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "1005190049",
+                "bin": "1000000",
+                "version": "26c"
+              }
+            }
+          }
+        }
+      ],
+      "bbox": [
+        -74.00351,
+        40.67079,
+        -73.92931,
+        40.72727
+      ]
+    }
+  },
+  "P17": {
+    "query": "North Shore Esplanade, Staten Island",
+    "response": {
+      "geocoding": {
+        "version": "0.2",
+        "attribution": "http://geosearch.planninglabs.nyc/attribution",
+        "query": {
+          "text": "North Shore Esplanade, Staten Island",
+          "size": 5,
+          "layers": [
+            "venue",
+            "street",
+            "country",
+            "macroregion",
+            "region",
+            "county",
+            "localadmin",
+            "locality",
+            "borough",
+            "neighbourhood",
+            "continent",
+            "empire",
+            "dependency",
+            "macrocounty",
+            "macrohood",
+            "microhood",
+            "disputed",
+            "postalcode",
+            "ocean",
+            "marinearea"
+          ],
+          "private": false,
+          "lang": {
+            "name": "English",
+            "iso6391": "en",
+            "iso6393": "eng",
+            "via": "default",
+            "defaulted": true
+          },
+          "querySize": 20,
+          "parser": "pelias",
+          "parsed_text": {
+            "subject": "North Shore",
+            "street": "North Shore",
+            "locality": "Staten Island",
+            "admin": "Esplanade, Staten Island"
+          }
+        },
+        "warnings": [
+          "performance optimization: excluding 'address' layer"
+        ],
+        "engine": {
+          "name": "Pelias",
+          "author": "Mapzen",
+          "version": "1.0"
+        },
+        "timestamp": 1790177384058
+      },
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -74.13103,
+              40.604732
+            ]
+          },
+          "properties": {
+            "id": "4326181",
+            "gid": "nycpad:venue:4326181",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "4326181",
+            "country_code": "US",
+            "name": "SOUTH RICHMOND HS N SHORE ANNEX",
+            "street": "SOUTH RICHMOND HS N SHORE ANNEX",
+            "postalcode": "10314",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Richmond County",
+            "county_gid": "whosonfirst:county:102081779",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Staten Island",
+            "borough_gid": "whosonfirst:borough:421205775",
+            "neighbourhood": "Emerson Hill",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85818021",
+            "label": "SOUTH RICHMOND HS N SHORE ANNEX, Staten Island, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "5007700009",
+                "bin": "5106948",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -74.13103,
+              40.604732
+            ]
+          },
+          "properties": {
+            "id": "4326180",
+            "gid": "nycpad:venue:4326180",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "4326180",
+            "country_code": "US",
+            "name": "SOUTH RICHMOND H S N SHORE ANNEX",
+            "street": "SOUTH RICHMOND H S N SHORE ANNEX",
+            "postalcode": "10314",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Richmond County",
+            "county_gid": "whosonfirst:county:102081779",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Staten Island",
+            "borough_gid": "whosonfirst:borough:421205775",
+            "neighbourhood": "Emerson Hill",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85818021",
+            "label": "SOUTH RICHMOND H S N SHORE ANNEX, Staten Island, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "5007700009",
+                "bin": "5106948",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -74.191554,
+              40.588889
+            ]
+          },
+          "properties": {
+            "id": "4387405",
+            "gid": "nycpad:venue:4387405",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "4387405",
+            "country_code": "US",
+            "name": "141 WEST SHORE EXPRESSWAY NORTH SR",
+            "housenumber": "141",
+            "street": "WEST SHORE EXPRESSWAY NORTH SR",
+            "postalcode": "10314",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Richmond County",
+            "county_gid": "whosonfirst:county:102081779",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Staten Island",
+            "borough_gid": "whosonfirst:borough:421205775",
+            "neighbourhood": "Chelsea",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85810575",
+            "label": "141 WEST SHORE EXPRESSWAY NORTH SR, Staten Island, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "5026380060",
+                "bin": "5134938",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -74.191554,
+              40.588889
+            ]
+          },
+          "properties": {
+            "id": "4387408",
+            "gid": "nycpad:venue:4387408",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "4387408",
+            "country_code": "US",
+            "name": "141 WEST SHORE EXPRESSWAY SR NORTH",
+            "housenumber": "141",
+            "street": "WEST SHORE EXPRESSWAY SR NORTH",
+            "postalcode": "10314",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Richmond County",
+            "county_gid": "whosonfirst:county:102081779",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Staten Island",
+            "borough_gid": "whosonfirst:borough:421205775",
+            "neighbourhood": "Chelsea",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85810575",
+            "label": "141 WEST SHORE EXPRESSWAY SR NORTH, Staten Island, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "5026380060",
+                "bin": "5134938",
+                "version": "26c"
+              }
+            }
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -74.191205,
+              40.587888
+            ]
+          },
+          "properties": {
+            "id": "4387391",
+            "gid": "nycpad:venue:4387391",
+            "layer": "venue",
+            "source": "nycpad",
+            "source_id": "4387391",
+            "country_code": "US",
+            "name": "145 WEST SHORE EXPRESSWAY NORTH SR",
+            "housenumber": "145",
+            "street": "WEST SHORE EXPRESSWAY NORTH SR",
+            "postalcode": "10314",
+            "confidence": 0.8,
+            "match_type": "fallback",
+            "accuracy": "point",
+            "country": "United States",
+            "country_gid": "whosonfirst:country:85633793",
+            "country_a": "USA",
+            "region": "New York",
+            "region_gid": "whosonfirst:region:85688543",
+            "region_a": "NY",
+            "county": "Richmond County",
+            "county_gid": "whosonfirst:county:102081779",
+            "locality": "New York",
+            "locality_gid": "whosonfirst:locality:85977539",
+            "locality_a": "NYC",
+            "borough": "Staten Island",
+            "borough_gid": "whosonfirst:borough:421205775",
+            "neighbourhood": "Chelsea",
+            "neighbourhood_gid": "whosonfirst:neighbourhood:85810575",
+            "label": "145 WEST SHORE EXPRESSWAY NORTH SR, Staten Island, NY, USA",
+            "addendum": {
+              "pad": {
+                "bbl": "5026380050",
+                "bin": "5107392",
+                "version": "26c"
+              }
+            }
+          }
+        }
+      ],
+      "bbox": [
+        -74.191554,
+        40.587888,
+        -74.13103,
+        40.604732
+      ]
+    }
+  }
+}
