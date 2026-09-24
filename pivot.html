@@ -365,7 +365,7 @@ figure.chart a.zoom{display:block}
   <h1>Verify, fix, test</h1>
   <p class="standfirst">New York has set a target of 2,120 public restrooms by 2035 and has 975 today. Public data cannot prove where new ones are needed. It can show that the restrooms the City already has are failing inspection more often, and it can tell Parks where to check first. So: <strong>verify</strong> where complaints point before building, <strong>fix</strong> the stock with targeted checks, and <strong>test</strong> what works with two randomised trials.</p>
   <div class="byline"><span>HKU MBA group project</span><span>Draft for alignment, not final</span><span>Data current to June–September 2026</span><span class="stamp">Drafted 24 September 2026</span></div>
-  <p class="changed"><strong>How this differs from the current version:</strong> the ranking of neighbourhoods moves from the answer to a screen; the inspection record becomes the centre; a tested rule for where to send maintenance checks replaces the costed siting plan; the current version's evening-hours trial and pilot measures are kept; the analysis numbers were re-derived independently; the trial and pilot figures are taken from the current version. The table at the end of the Walkthrough compares the two section by section.</p>
+  <p class="changed">A draft for team discussion. The Walkthrough tells the story; Limits sets out what it cannot show; Data &amp; code lists every technique and script.</p>
 </header>
 <div class="modebar">
   <div class="seg" role="group" aria-label="Level of detail">
@@ -373,61 +373,42 @@ figure.chart a.zoom{display:block}
     <button id="btn-lim" aria-pressed="false">Limits</button>
     <button id="btn-data" aria-pressed="false">Data &amp; code</button>
   </div>
-  <span class="modehint" id="hint" role="status" aria-live="polite">The story in short steps; tags show which methods are from class.</span>
+  <span class="modehint" id="hint" role="status" aria-live="polite">The story, top to bottom.</span>
 </div>
 
 <div id="walk" hidden>
 <h2>Walkthrough</h2>
-<p class="tldr"><strong>The story:</strong> we set out to find where New York should build restrooms → complaints can point to places but can't prove need → the City's own inspections <em>can</em> prove its existing restrooms are failing more often → so we tested which ones to check first → a simple history rule works → two randomised trials (evening hours, targeted checks) would show what actually prevents problems. In short: <strong>verify, fix, test</strong>.</p>
 
-<p><strong>How to read the labels.</strong> Every result carries a tag showing where it comes from:</p>
-<ul class="tagkey">
-<li><span class="mtag in">In class · S5</span> a technique taught in the course (session number), applied by us to the data</li>
-<li><span class="mtag out">Beyond class</span> a data-analytics technique not covered in the course, applied by us</li>
-<li><span class="mtag src">From a source</span> a fact we looked up, not calculated</li>
-</ul>
-<details class="toolkit"><summary><strong>Analytics toolkit used: 11 in-class techniques, 7 beyond class</strong> (click to expand)</summary>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Technique</th><th>Course</th><th>Used in</th></tr></thead><tbody>
-<tr><td>Data cleaning, de-duplication, descriptive statistics</td><td><span class="mtag in">S1–2</span></td><td>1, 2, 3</td></tr>
-<tr><td>Confidence intervals and hypothesis tests</td><td><span class="mtag in">S3</span></td><td>3</td></tr>
-<tr><td>Correlation (rank correlation to score the model)</td><td><span class="mtag in">S4</span></td><td>1</td></tr>
-<tr><td>Panel data with fixed effects</td><td><span class="mtag in">S5</span></td><td>3</td></tr>
-<tr><td>Difference-in-differences (as a placebo test)</td><td><span class="mtag in">S5, S8</span></td><td>3</td></tr>
-<tr><td>Spatial analysis: distance to nearest open restroom</td><td><span class="mtag in">S6</span></td><td>2</td></tr>
-<tr><td>Logistic regression</td><td><span class="mtag in">S6</span></td><td>4</td></tr>
-<tr><td>Precision and recall under a fixed budget</td><td><span class="mtag in">S6</span></td><td>4</td></tr>
-<tr><td>Train / validation / test split</td><td><span class="mtag in">S4, S6–7</span></td><td>1, 4</td></tr>
-<tr><td>Decision (classification) trees</td><td><span class="mtag in">S7</span></td><td>4</td></tr>
-<tr><td>Randomised experiment (A/B test) design</td><td><span class="mtag in">S8–9</span></td><td>6 (two trials)</td></tr>
-<tr><td>Negative binomial regression with a population offset (count model)</td><td><span class="mtag out">Beyond</span></td><td>1</td></tr>
-<tr><td>Empirical Bayes probabilities per neighbourhood</td><td><span class="mtag out">Beyond</span></td><td>1</td></tr>
-<tr><td>Parsing free-text opening hours into hour-by-hour availability</td><td><span class="mtag out">Beyond</span></td><td>2</td></tr>
-<tr><td>Robustness: balanced panel, leave-one-out, sensitivity re-runs</td><td><span class="mtag out">Beyond</span></td><td>1, 3</td></tr>
-<tr><td>Cluster bootstrap confidence intervals</td><td><span class="mtag out">Beyond</span></td><td>4</td></tr>
-<tr><td>Calibration and missing-outcome checks</td><td><span class="mtag out">Beyond</span></td><td>5</td></tr>
-<tr><td>Power analysis (smallest detectable change)</td><td><span class="mtag out">Beyond</span></td><td>6</td></tr>
-</tbody></table></div>
-</details>
-
-<h3 id="situation">0 — Where we started</h3>
+<div class="tldr">
+<p><strong>In one minute</strong></p>
 <ul>
-<li>Local Law 58 of 2025: target of <strong>2,120</strong> public restrooms by 2035. <span class="mtag src">From a source</span></li>
-<li>Siting strategy reportedly due <strong>1 Nov 2026</strong> (PIX11, Aug 2026). <span class="mtag src">From a source</span></li>
-<li>17-unit modular pilot, September 2026: $4M, one year, 7am–10pm. <span class="mtag src">From a source</span></li>
-<li>City register: <strong>975</strong> operational; only <strong>8</strong> open 24h, all highway gas stations or a snack bar. <span class="mtag in">S1–2 · our count</span></li>
+<li><strong>Question:</strong> New York has promised 2,120 public restrooms by 2035 and has 975. Where should it act first?</li>
+<li><strong>Finding 1:</strong> public data can point to places that <em>may</em> need restrooms, but cannot prove it.</li>
+<li><strong>Finding 2:</strong> what the data <em>can</em> show is that the restrooms the City already has are failing inspection more often: one in five this spring, the highest since 2012.</li>
+<li><strong>Finding 3:</strong> a simple rule based on each site's inspection history finds almost twice as many failing restrooms as checking at random.</li>
+<li><strong>Recommendation: verify, fix, test.</strong> Verify candidate sites on the ground before building. Fix the existing stock by sending checks where history points. Test what actually works with randomised trials.</li>
 </ul>
-<p class="bridge">→ First question: <strong>where should new restrooms go?</strong></p>
+</div>
+<p class="note">Tags show where each result comes from: <span class="mtag in">In class · S5</span> a technique from the course (session number) that we applied; <span class="mtag out">Beyond class</span> an analytics technique outside the course that we applied; <span class="mtag src">From a source</span> a fact we looked up rather than calculated.</p>
 
-<h3 id="where">1 — Where is need? Complaints point, but can't prove</h3>
-<p>No dataset records "needed a toilet, found none". Closest signal: <strong>7,926</strong> 311 "Urinating in Public" complaints, 2020–26.</p>
+<h3 id="situation">1 — The problem</h3>
 <ul>
-<li>Top 1% of addresses = <strong>22.3%</strong> of complaints → count each address once a month. <span class="mtag in">S1–2 · cleaning</span></li>
-<li>Predict each of 197 neighbourhoods' expected complaints from riders, workers, hotels, residents; observed ÷ expected = need ratio. <span class="mtag out">Beyond · negative binomial</span></li>
-<li>Tested on unseen neighbourhoods, 200 random 70/30 splits: model <strong>0.79</strong> vs ridership alone <strong>0.70</strong> (rank correlation); model wins <strong>96%</strong>. <span class="mtag in">S4, S6–7 · correlation, train/test</span></li>
-<li>Six areas with 95% probability of ≥1.5× expected complaints. <span class="mtag out">Beyond · empirical Bayes</span></li>
+<li>Local Law 58 (2025) sets a target of <strong>2,120</strong> public restrooms by 2035; the City's siting strategy is reportedly due <strong>1 Nov 2026</strong> (PIX11). <span class="mtag src">From a source</span></li>
+<li>The City's register lists <strong>975</strong> working public restrooms: 656 run by NYC Parks, the rest mainly libraries. Only 8 are open 24 hours, all highway gas stations or a snack bar. The register dates from June 2025, and about 34 restrooms Parks now lists as closed long-term are still counted in it.</li>
+<li>A 17-unit modular pilot started in September 2026: $4M, one year, 7am–10pm. <span class="mtag src">From a source</span></li>
 </ul>
-<p><strong>But complaints measure complainers.</strong> Re-ranked on phone reports only (37% of complaints), 4 of the 6 leave the top 25: <span class="mtag out">Beyond · sensitivity re-run</span></p>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>High-confidence area</th><th class="n">Rank on phone reports only, of 197</th></tr></thead><tbody>
+<p>So the City must decide where to add over 1,100 restrooms. We set out to help answer: <strong>where is the need greatest?</strong></p>
+
+<h3 id="where">2 — Where is need? Complaints can point, but not prove</h3>
+<p>No dataset records "needed a toilet and couldn't find one". The closest signal is 311, the City's complaint line: <strong>7,926</strong> "Urinating in Public" complaints from 2020 to 2026.</p>
+<ul>
+<li><strong>Cleaning.</strong> A few addresses complain repeatedly: the top 1% file 22.3% of all complaints. We count each address once a month. <span class="mtag in">S1–2 · data cleaning</span></li>
+<li><strong>Adjusting for crowds.</strong> Busy places produce more complaints simply because more people pass through. A count model predicts each of 197 neighbourhoods' expected complaints from its subway riders, workers, hotels and residents. Neighbourhoods with far more complaints than expected are the candidates. <span class="mtag out">Beyond class · negative binomial regression</span></li>
+<li><strong>Testing it.</strong> Trained on 70% of neighbourhoods and tested on the unseen 30%, 200 times, the model orders neighbourhoods by complaints better than subway ridership alone (rank correlation 0.79 vs 0.70, where 1 = perfect order), winning 96% of the time. <span class="mtag in">S4, S7 · correlation, train/test</span></li>
+<li><strong>Result.</strong> Six neighbourhoods stand out, each with a 95% probability that complaints run at least 1.5× what their size and traffic predict: East Harlem (North), Astoria (East)–Woodside (North), East Elmhurst, Williamsbridge–Olinville, Brighton Beach, Midtown–Times Square. <span class="mtag out">Beyond class · empirical Bayes</span></li>
+</ul>
+<p><strong>The limit.</strong> Complaints measure who complains, not who needed a toilet, and people who report online are not spread evenly across the city. Using only complaints made by phone (37% of the total), four of the six drop out of the top 25: <span class="mtag out">Beyond class · sensitivity test</span></p>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>High-confidence area</th><th class="n">Rank using phone complaints only, of 197</th></tr></thead><tbody>
 <tr><td>Brighton Beach</td><td class="n">2</td></tr>
 <tr><td>East Elmhurst</td><td class="n">5</td></tr>
 <tr><td>East Harlem (North)</td><td class="n">41</td></tr>
@@ -435,47 +416,105 @@ figure.chart a.zoom{display:block}
 <tr><td>Williamsbridge–Olinville</td><td class="n">50</td></tr>
 <tr><td>Astoria (East)–Woodside (North)</td><td class="n">121</td></tr>
 </tbody></table></div>
-<p>Only 1 of the pilot's 17 units is in any of the six.</p>
-<p class="find"><strong>Takeaway:</strong> the ranking says where to look, not where need is proven.</p>
-<p class="bridge">→ If we can't prove <em>where</em>, can we show <em>when</em> people lack a restroom?</p>
+<p class="find"><strong>Takeaway:</strong> the ranking tells the City where to <em>look</em>, not where need is proven. (Only 1 of the pilot's 17 units sits in any of the six.)</p>
 
-<h3 id="when">2 — When? Access runs out after dark</h3>
-<ul>
-<li><strong>30%</strong> of complaints are filed 6pm–midnight, when most restrooms have closed. <span class="mtag in">S1–2 · descriptive</span></li>
-<li>Opening hours parsed for every restroom, then distance from the 50 busiest subway hubs to the nearest <em>open</em> one, hour by hour. <span class="mtag out">Beyond · hours parsing</span> <span class="mtag in">S6 · spatial</span></li>
-</ul>
+<h3 id="when">3 — When? Access runs out after dark</h3>
+<p>Timing gives a second clue: <strong>30%</strong> of complaints are filed between 6pm and midnight, when most restrooms have closed. We turned every restroom's posted opening hours into hour-by-hour availability, then measured the distance from the 50 busiest subway stations to the nearest <em>open</em> one. <span class="mtag out">Beyond class · parsing opening hours</span> <span class="mtag in">S6 · spatial analysis</span></p>
 <figure class="chart"><a class="zoom" href="img/pivot/N4_hubs_without_open_restroom.png" target="_blank" rel="noopener"><img src="img/pivot/N4_hubs_without_open_restroom.png" alt="Bar chart: of the 50 busiest subway hubs, 4 have no open restroom within 500 m at 2pm, 21 at 6pm, 43 at 9pm" loading="lazy"></a></figure>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Time</th><th class="n">Busiest 50 hubs with no open restroom within 500 m</th></tr></thead><tbody>
-<tr><td>2pm</td><td class="n">4 (none at any hour)</td></tr>
-<tr><td>6pm</td><td class="n">21 on winter hours; 9 if parks stay open to 8pm</td></tr>
-<tr><td><strong>9pm</strong></td><td class="n"><strong>43</strong> if parks close by 8pm; <strong>20</strong> if they stay open to 10pm</td></tr>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Time</th><th class="n">Of the 50 busiest stations, how many have no open restroom within 500 m</th></tr></thead><tbody>
+<tr><td>2pm</td><td class="n">4</td></tr>
+<tr><td>6pm</td><td class="n">21 (9 in summer, if park restrooms stay open to 8pm)</td></tr>
+<tr><td><strong>9pm</strong></td><td class="n"><strong>43</strong> (20 if park restrooms stay open to 10pm)</td></tr>
 </tbody></table></div>
-<p class="note">641 of 975 restrooms post the same placeholder hours ("8am–4pm, open later seasonally"). Distances are straight-line, so real walks are longer.</p>
-<p class="find"><strong>Takeaway:</strong> at night the busiest places have almost nowhere to go. Longer hours use restrooms the City already has.</p>
-<p class="bridge">→ So how are the existing restrooms holding up?</p>
+<p class="note">Most Parks restrooms post only "8am–4pm, open later seasonally", so the evening figures depend on the season. Distances are straight-line; real walks are longer.</p>
+<p class="find"><strong>Takeaway:</strong> after dark, the busiest places have almost nowhere to go.</p>
+<p>Section 3 shows something section 2 could not: at night, restrooms exist on the register but are not usable, and to the public a locked restroom is the same as no restroom. That points to a question the data <em>can</em> answer. Need can't be measured directly, but whether the restrooms already there are working can. <strong>So we turned to the existing restrooms.</strong></p>
 
-<h3 id="turn">3 — The turn: existing restrooms are failing more often</h3>
-<p>Unlike need, failure is recorded directly: Parks inspectors grade every comfort station on a schedule (31,768 ratings).</p>
+<h3 id="turn">4 — Are existing restrooms working? Failure is rising</h3>
+<p>NYC Parks keeps its own list of 736 restrooms (it calls them <em>comfort stations</em>). Inspectors visit them on a schedule and rate each one acceptable or unacceptable; 31,768 ratings are on file. Comparing January–June each year:</p>
 <figure class="chart"><a class="zoom" href="img/pivot/h1_failure_2012_2026.png" target="_blank" rel="noopener"><img src="img/pivot/h1_failure_2012_2026.png" alt="Stacked bar chart of the January–June failure rate of NYC Parks comfort stations, 2012 to 2026: 21.2% in 2012, falling to a low of 8.5% in 2024, then 11.3% in 2025 and 20.1% in 2026" loading="lazy"></a></figure>
 <div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>January–June</th><th class="n">Rated unacceptable</th></tr></thead><tbody>
 <tr><td>2012–14</td><td class="n">21.2%, 17.0%, 20.0%</td></tr>
-<tr><td>2022–24</td><td class="n">9.4%, 9.0%, 8.5% (2024 is the lowest on record)</td></tr>
+<tr><td>2022–24</td><td class="n">9.4%, 9.0%, 8.5% (2024 the lowest on record)</td></tr>
 <tr><td>2025</td><td class="n">11.3%</td></tr>
-<tr><td><strong>2026</strong></td><td class="n"><strong>20.1%</strong>, highest since 2012</td></tr>
+<tr><td><strong>2026</strong></td><td class="n"><strong>20.1%</strong>, the highest since 2012</td></tr>
 </tbody></table></div>
 <ul>
-<li>Rise from 2024: <strong>+11.6 pp</strong>, 95% CI +7.8 to +15.3; a step in January 2026. <span class="mtag in">S3 · CI, hypothesis test</span></li>
+<li><strong>It is a real change.</strong> The rise from 2024 is +11.6 percentage points (95% confidence interval +7.8 to +15.3), arriving as a step in January 2026. <span class="mtag in">S3 · confidence interval</span></li>
+<li><strong>It is the same buildings getting worse.</strong> The 395 restrooms inspected every year from 2022 to 2026 went from 5.9% to 18.1%. Across all restrooms, comparing each with itself gives +11.4 points. <span class="mtag in">S5 · panel data, fixed effects</span></li>
+<li><strong>It is not just tougher inspectors.</strong> Parks <em>without</em> a restroom were rated no worse (10.2% → 9.6%), and most inspectors who rated both kept their park ratings steady while failing far more restrooms. <span class="mtag in">S5, S8 · difference-in-differences as a placebo</span></li>
+<li><strong>What kind of failure:</strong> structural problems roughly tripled while litter stayed flat. About half the rise is restrooms failed with nothing inside rated, most likely found closed or locked.</li>
 </ul>
-<p><strong>We tried to break it:</strong></p>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Could it be…</th><th>Test</th><th>Result</th><th>Method</th></tr></thead><tbody>
-<tr><td>A different mix of restrooms?</td><td>Same 395 restrooms, every year</td><td>5.9% → 18.1% (+11.9 pp)</td><td><span class="mtag out">Beyond · balanced panel</span></td></tr>
-<tr><td>—</td><td>Each building vs itself, all restrooms</td><td>+11.4 pp</td><td><span class="mtag in">S5 · fixed effects</span></td></tr>
-<tr><td>The season?</td><td>Month by month vs 2022–25</td><td>Every 2026 month above the prior high</td><td><span class="mtag in">S1–2</span></td></tr>
-<tr><td>One inspector or borough?</td><td>Drop each in turn</td><td>2026 stays 18.8–21.8% / 17.1–22.3%</td><td><span class="mtag out">Beyond · leave-one-out</span></td></tr>
-<tr><td>Late data entry?</td><td>Entry date vs inspection date</td><td>96–100% same day</td><td><span class="mtag in">S1–2</span></td></tr>
-<tr><td>Tougher inspectors?</td><td>Same inspectors: parks with no restroom vs restrooms</td><td>Parks without a restroom flat to slightly better (10.2% → 9.6%); restrooms up ~2.4×</td><td><span class="mtag in">S5, S8 · DiD placebo</span></td></tr>
+<p class="find"><strong>Takeaway:</strong> need is hard to observe; failure is not. One in five Parks restrooms failed inspection this spring. Whether the cause is wear or closures, a restroom that fails is one the public can't rely on.</p>
+<p class="note"><strong>Open:</strong> we can't rule out that Parks changed its restroom rating rules in January 2026. This is the first question to put to Parks.</p>
+<p>A citywide rise needs a citywide response, but crews are limited. So the practical question is: <strong>where should Parks send them first?</strong></p>
+
+<h3 id="which">5 — Which restrooms to check first? History predicts the next failure</h3>
+<p>We framed it as a decision Parks could make twice a year: <strong>every January and July, choose 20% of its ~680 restroom sites with recent inspection history for an extra maintenance check</strong>, using only information available on that date. Success = how many of the chosen sites fail their next regular inspection. Over the three test half-years, 244 such inspections found an unacceptable restroom.</p>
+<p>To keep the test fair, the methods learned from 2018–2023, were compared on 2024, and only then scored on 2025–mid-2026, data none of them had seen. <span class="mtag in">S4, S7 · train / validation / test</span></p>
+<figure class="chart"><a class="zoom" href="img/pivot/all_eligible_priority_comparison.png" target="_blank" rel="noopener"><img src="img/pivot/all_eligible_priority_comparison.png" alt="Bar chart: recorded failures caught in 411 check slots: random 48.9, last three inspections 79.1, three-year history rule 86.1, logistic regression 88.0" loading="lazy"></a></figure>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>How the 20% are chosen (137 checks per half-year, 411 in total)</th><th class="n">Failures found, out of 244</th></tr></thead><tbody>
+<tr><td>At random (expected)</td><td class="n">49</td></tr>
+<tr><td>Failure share in the last 3 inspections</td><td class="n">79</td></tr>
+<tr><td><strong>Failure share over the last 3 years</strong></td><td class="n"><strong>86</strong></td></tr>
+<tr><td>Logistic regression <span class="mtag in">S6</span></td><td class="n">88</td></tr>
 </tbody></table></div>
-<p>All 8 returning inspectors who rated parks without a restroom in both years (restroom rates shown where they rated at least 20 restrooms in 2026):</p>
+<ul>
+<li><strong>History works:</strong> the 3-year rule finds about 1.8× as many failing restrooms as random checks.</li>
+<li><strong>A model adds little:</strong> logistic regression and the 3-year rule are within noise of each other (−2.3 to +3.3 percentage points of failures found), and decision trees found nothing useful. <span class="mtag out">Beyond class · bootstrap confidence interval</span> <span class="mtag in">S7 · decision trees</span></li>
+<li><strong>Which rule:</strong> on 2024 the last-3-inspections rule looked best; on the unseen test years the 3-year rule matched the model. We recommend piloting the 3-year rule, not declaring it proven.</li>
+<li><strong>It is useful, not precise:</strong> even the best list of 20% catches only about a third of all failures, and about a third of failures (88 of 244) happen at sites with a clean 3-year record.</li>
+<li><strong>Complaints don't help here:</strong> adding nearby 311 complaints to the history barely changes the result (67 → 68 failures found on a matched sample). <span class="mtag in">S6 · model comparison</span></li>
+</ul>
+<p class="find"><strong>Takeaway:</strong> a transparent rule (rank sites by their failure share over the past three years) points crews to failing restrooms almost twice as well as chance, with no model needed. Regular inspections must continue to catch the third that fail without warning.</p>
+<p>This shows the rule <em>finds</em> failing restrooms. It does not yet show that sending crews earlier <em>prevents</em> failures. That needs a test.</p>
+
+<h3 id="measure">6 — How to find out what works <span class="mtag in">S8–9 · A/B test design</span></h3>
+<p><strong>Test 1, targeted checks</strong> (sections 4–5)</p>
+<ul>
+<li>Each half-year, take the high-risk sites and randomly choose which get the extra check and repair first.</li>
+<li>Compare their next regular inspection, rated the same way for both groups, with the sites checked later.</li>
+<li>Log what each check found and fixed, with dates and cost.</li>
+</ul>
+<p><strong>Test 2, longer evening hours</strong> (section 3)</p>
+<ul>
+<li>Start with the park restrooms beside the two largest complaint hot spots, Gun Hill Playground (Williamsbridge) and Gorman Playground (East Elmhurst); then extend to 51 restrooms in 10 of the high-complaint neighbourhoods from section 2 whose restrooms close earliest.</li>
+<li>Roll out in random order over ten months; cost up to $2.2M.</li>
+<li>Complaints are too few to measure the effect, so the outcome is public-urination summonses (police tickets). With these numbers, only a change of 37% or more could be told apart from chance. <span class="mtag out">Beyond class · power analysis</span></li>
+</ul>
+<p>The same thinking applies to the 17-unit pilot: judge it by the hours each unit is found open and working, not by units installed. <span class="tag-team" title="From team research (Steph, Candy) — service measurement framework: cost per verified open hour and operator data spec">Team research · Steph, Candy</span></p>
+<p class="find"><strong>Takeaway:</strong> two randomised tests would show whether targeted checks and longer hours actually change conditions, not just where problems are found.</p>
+
+<h3 id="recommend">7 — Recommendation: verify, fix, test</h3>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th></th><th>Who</th><th>Do this</th></tr></thead><tbody>
+<tr><td><strong>Verify</strong></td><td>Mayor's Office, in the LL58 strategy</td><td>Use the neighbourhood ranking to decide where to look; confirm need on the ground before committing to a new building (median about $4M each)</td></tr>
+<tr><td><strong>Fix</strong></td><td>NYC Parks</td><td>Every January and July, send extra checks to the 20% of sites with the worst 3-year failure record; keep regular inspections everywhere</td></tr>
+<tr><td><strong>Test</strong></td><td>Parks, Mayor's Office, Department of Transportation</td><td>Run both trials in random order; publish verified open hours, closures and repairs</td></tr>
+</tbody></table></div>
+<p><strong>What this does not claim:</strong> that checks or longer hours reduce failures or complaints, or any return on investment. The tests are how the City would find out.</p>
+
+
+</div>
+
+<div id="lim" hidden>
+<h2>Limits and open questions</h2>
+<p>What the analysis cannot show, and the checks behind each finding.</p>
+
+<h3>Open questions</h3>
+<ol>
+<li><strong>Did Parks change its restroom rating rules in January 2026?</strong> The failure rise arrives as a step that month. Inspectors rated parks without a restroom no worse, which rules out a general change in strictness, but not a rule change for restrooms alone. Parks' rating manual, or a direct question to Parks, would settle it.</li>
+<li><strong>What does a failure with nothing inside rated mean?</strong> About half the 2026 rise (5.4 of 11.6 points) is of this kind. "Found closed or locked" is the likely reading but is unconfirmed.</li>
+<li><strong>Do extra checks prevent failures?</strong> The prediction test measures failures that the next regular inspection records. Only the randomised trial in section 6 can show prevention.</li>
+<li><strong>Does the rule beat how Parks targets crews today?</strong> It was compared with random selection, which is a reference point, not Parks' current practice. The next step is to compare it with Parks' own priority lists.</li>
+</ol>
+
+<h3>1. The failure trend</h3>
+<ul>
+<li>2024 (8.5%) is the lowest January–June rate in 22 years of data; 2026 (20.1%) is back at 2012–14 levels. Against all of 2025 (11.6%), 2026 is about 1.7×.</li>
+<li>Robustness: every month of 2026 is above the highest same month of 2022–25; removing any one inspector leaves 2026 at 18.8–21.8%, and any one borough at 17.1–22.3%; 96–100% of inspections are entered the same day.</li>
+<li>Structural failures went from 5.9% to 19.2% across all inspectors. A structural failure now fails the whole restroom less often than in 2018–22 (20–29% vs 44–61%), which fits either more minor defects or a lower bar for marking them.</li>
+</ul>
+<p>Every returning inspector who rated parks without a restroom in both years (restroom rates where they rated at least 20 restrooms in 2026):</p>
 <div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Inspector</th><th class="n">Parks without a restroom, 2024 → 2026</th><th class="n">Restrooms, 2024 → 2026</th></tr></thead><tbody>
 <tr><td>#45</td><td class="n">7.9% → 8.3%</td><td class="n">6.5% → 27.3%</td></tr>
 <tr><td>#62</td><td class="n">7.6% → 8.1%</td><td class="n">6.2% → 21.6%</td></tr>
@@ -486,168 +525,70 @@ figure.chart a.zoom{display:block}
 <tr><td>#43</td><td class="n">6.9% → 9.8%</td><td class="n">11.4% → 7.2%</td></tr>
 <tr><td>#39</td><td class="n">16.7% → 0.0%</td><td class="n">too few restroom ratings</td></tr>
 </tbody></table></div>
-<p class="note">Most returning inspectors rated parks without a restroom about the same while failing far more restrooms; #59 got harsher on both and #43 went the other way. We compare against parks <em>without</em> a restroom on purpose: the all-parks average mixes in parks with one, whose site rating moves with the restroom (14.1% → 17.5%), which is why the current version calls park-wide condition a poor placebo. Neither comparison rules out a restroom-only rating change.</p>
+<p class="note">Most kept their park ratings steady while failing far more restrooms; #59 got harsher on both and #43 went the other way. The comparison uses parks <em>without</em> a restroom because a park's overall rating moves with its restroom (parks with one: 14.1% → 17.5%).</p>
+
+<h3>2. The prediction rule</h3>
 <ul>
-<li>Structural failures ~3× (5.9% → 19.2%); litter flat (2.1% → 2.2%). <span class="mtag in">S1–2</span></li>
-<li>~Half the rise (5.4 of 11.6 pp) = failed with nothing inside rated → possibly <strong>found closed or locked</strong>; the meaning of these ratings needs confirming with Parks. <span class="mtag in">S1–2 · decomposition</span></li>
-<li>80 of 736 comfort stations in long-term closure, 46 for repairs. About 34 of them are still listed as operational in the City's older register (last updated June 2025), so the count of 975 needs updating. <span class="mtag in">S1–2 · our count</span> <span class="mtag out">Beyond · spatial join</span></li>
-<li>Median funding: new build ~$4M vs reconstruction ~$1.4–1.7M (Parks capital tracker). <span class="mtag in">S1–2 · our medians</span></li>
-</ul>
-<p class="note"><strong>Open:</strong> a restroom-only change in rating rules in Jan 2026 can't be ruled out from the data. Ask Parks.</p>
-<p class="find"><strong>Takeaway:</strong> need is hard to observe; failure is not. Protect what exists: it's failing more often. (Reconstruction is funded at under half the cost of a new build, but that prices rebuilding, not the extra checks below.)</p>
-<p class="bridge">→ With limited crews, <strong>which stations should Parks check first?</strong></p>
-
-<h3 id="which">4 — Which ones first? Inspection history predicts the next failure</h3>
-<ul>
-<li>Decision: every Jan and Jul, pick 20% of ~680 sites for an extra check, using only records entered before that date.</li>
-<li>Outcome: rating at the site's next regular inspection.</li>
-<li>Candidates: random, simple history rules, 4 decision trees, 2 logistic regressions. <span class="mtag in">S6 · logistic</span> <span class="mtag in">S7 · trees</span></li>
-</ul>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Stage <span class="mtag in">S4, S6–7 · train/validation/test</span></th><th>Period</th><th class="n">Rated outcomes</th><th class="n">Unacceptable</th></tr></thead><tbody>
-<tr><td>Fit</td><td>2018–2023</td><td class="n">6,579</td><td class="n">777</td></tr>
-<tr><td>Choose</td><td>2024</td><td class="n">1,170</td><td class="n">130</td></tr>
-<tr><td>Test, choice frozen</td><td>2025 and Jan–Jun 2026</td><td class="n">1,685</td><td class="n">244</td></tr>
-</tbody></table></div>
-<figure class="chart"><a class="zoom" href="img/pivot/all_eligible_priority_comparison.png" target="_blank" rel="noopener"><img src="img/pivot/all_eligible_priority_comparison.png" alt="Bar chart: recorded failures caught in 411 check slots: random 48.9, last three inspections 79.1, three-year history rule 86.1, logistic regression 88.0" loading="lazy"></a></figure>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>20% of sites, 411 check slots <span class="mtag in">S6 · precision/recall</span></th><th class="n">Recorded failures caught</th></tr></thead><tbody>
-<tr><td>Random, expected</td><td class="n">48.9</td></tr>
-<tr><td>Failure share, last 3 inspections</td><td class="n">79.1</td></tr>
-<tr><td><strong>Failure share, last 3 years</strong></td><td class="n"><strong>86.1</strong></td></tr>
-<tr><td>Logistic regression</td><td class="n">88.0</td></tr>
-</tbody></table></div>
-<ul>
-<li>History finds <strong>~1.8×</strong> as many failures as random; holds at 10% and 30% budgets.</li>
-<li>Model vs 3-year rule: −2.3 to +3.3 pp: no convincing evidence the model beats the rule. <span class="mtag out">Beyond · cluster bootstrap</span></li>
-<li>Model's result ranges 75–88 across 9 reasonable versions; trees found no useful split.</li>
-<li>"Failed last time" gets ~43% of the gain; the 3-year share gets ~95%.</li>
-<li>The 3-year rule, exactly: <code>(failures + 0.5) ÷ (rated visits + 5)</code> over the previous three years. It was set out before any results, but the benchmark chosen on 2024 was the last-3 rule; the 3-year rule only matched the model in the test years. Treat it as the candidate to pilot, not a proven policy.</li>
-<li>Not yet compared with how Parks actually targets checks today; random is a reference, not current practice.</li>
-<li><strong>88 of 244</strong> failures were at sites with a clean 3-year record: no history list sees those coming.</li>
-<li>Independently rebuilt from raw data without the original code: same numbers, no future data leaking in.</li>
-</ul>
-<p class="note"><strong>Note:</strong> this measures better <em>detection</em> of failures the next inspection would find, not failures <em>prevented</em>.</p>
-<p class="find"><strong>Takeaway:</strong> inspection history concentrates later failures, and a transparent 3-year rule does as well as the model, so pilot the rule, not a model. Next: compare it with Parks' own targeting. Keep regular inspections for the third that arrive without warning.</p>
-<p class="bridge">→ Could anything improve the rule, or undermine it?</p>
-
-<h3 id="rulesout">5 — What doesn't help, and what to watch</h3>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Check</th><th>Result</th><th>Method</th></tr></thead><tbody>
-<tr><td>Add 311 complaints to history? (254 matched slots)</td><td>67 → 68 failures caught; complaints alone 42.7</td><td><span class="mtag in">S6 · model comparison</span></td></tr>
-<tr><td>Are predicted risk levels right?</td><td>2026 H1: expected 12%, actual 20% → refresh each cycle</td><td><span class="mtag out">Beyond · calibration</span></td></tr>
-<tr><td>Missing outcomes?</td><td>18% of site-checks unrated or unvisited, skewed to riskier sites; never counted as passes</td><td><span class="mtag out">Beyond · missing-data check</span></td></tr>
-</tbody></table></div>
-<p class="find"><strong>Takeaway:</strong> complaints measure street behaviour, not restroom condition (closing the loop with section 1). Run the rule on history only, refresh it, and keep regular inspections.</p>
-<p class="bridge">→ What would actually <em>prevent</em> problems, not just find them?</p>
-
-<h3 id="measure">6 — How to find out what works: two randomised tests <span class="mtag in">S8–9 · A/B test</span></h3>
-<p>Nothing here has yet been shown to <em>prevent</em> anything. Two tests would change that. Both roll out in random order, so early and late sites can be compared fairly.</p>
-<p><strong>Test 1: longer evening hours</strong> (the "when" gap, section 2)</p>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Hours trial</th><th>Detail</th></tr></thead><tbody>
-<tr><td>Start</td><td>Gun Hill Playground (Williamsbridge) and Gorman Playground (East Elmhurst): park restrooms beside the largest complaint hot spots in two of the six areas, both listing the generic "8am–4pm" hours</td></tr>
-<tr><td>Then</td><td>All 51 restrooms in the 10 "close-early" areas: neighbourhoods at 1.5× or more of expected complaints whose restrooms' median posted day is under 9 hours, or where none is open to 10pm (defined in the <a href="index.html#first">current version</a>)</td></tr>
-<tr><td>Rollout</td><td>Random, staggered order over ten months</td></tr>
-<tr><td>Cost</td><td>Up to $2.2M for ten months ($2.6M a year), assuming all 51 open longer for the whole period</td></tr>
-<tr><td>Smallest change it can detect: complaints</td><td>156%, too sparse to be useful</td></tr>
-<tr><td>Smallest change it can detect: public-urination summonses <span class="mtag out">Beyond · power analysis</span></td><td><strong>37%</strong>, with alcohol summonses as a placebo to catch changes in policing</td></tr>
-</tbody></table></div>
-<p><strong>Test 2: targeted maintenance checks</strong> (the "fix" finding, sections 3–4)</p>
-<ul>
-<li>Among high-risk sites each half-year, <strong>randomly</strong> choose which get the extra check plus a defined repair response first.</li>
-<li>Outcome: the next <em>regularly scheduled</em> inspection, rated the same way in both groups by inspectors not delivering the extra checks. Closures and downtime would need new, prospective logging.</li>
-<li>Log what each check found and fixed, with dates and cost. Power and crew capacity still need to be set before launch.</li>
-</ul>
-<p><strong>And the 17-unit pilot: judge it on service, not units installed.</strong></p>
-<ul>
-<li>Its impact on complaints is hard to measure: only 20 complaints a year are filed near all 17 sites, so a before-and-after test could only detect a 73% drop (44% on summonses). <span class="mtag out">Beyond · power analysis</span></li>
-<li>Measure cost per <em>verified</em> open hour instead: $42.98 per unit-hour against scheduled hours, which overstates service if units are found closed. <span class="mtag in">S1–2</span> <span class="tag-team" title="From team research (Steph, Candy) — service measurement framework: cost per verified open hour and operator data spec">Team research · Steph, Candy</span></li>
-</ul>
-<p class="find"><strong>Takeaway:</strong> the design to find out whether longer hours and targeted checks actually change conditions, not just where problems are recorded. Duration depends on the power and feasibility checks still to be done.</p>
-
-<h3 id="recommend">7 — Where we landed: verify, fix, test</h3>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Who</th><th>Do this</th><th class="n">Cost</th></tr></thead><tbody>
-<tr><td>NYC Parks</td><td><strong>Fix:</strong> each Jan/Jul, extra checks for the top 20% of sites by 3-year failure share; keep regular inspections; randomise the order and log results</td><td class="n">Not costed: depends on crew capacity (ask Parks)</td></tr>
-<tr><td>Parks, Mayor's Office, DOT</td><td><strong>Test:</strong> run the evening-hours trial, starting at Gun Hill and Gorman Playgrounds; staff to unlock restrooms found closed</td><td class="n">Up to $2.2M for ten months</td></tr>
-<tr><td>Mayor's Office: LL58 strategy, due 1 Nov</td><td><strong>Verify:</strong> use the neighbourhood ranking as a screen; check on the ground before committing ~$4M to a new building</td><td class="n">—</td></tr>
-<tr><td>Pilot operator and all agencies</td><td>Publish verified open hours, closures and repair dates; judge the pilot per verified open hour</td><td class="n">—</td></tr>
-</tbody></table></div>
-<p class="note">Still unproven: whether checks or longer hours prevent failures or complaints, and any return on investment. The two tests are how the City would find out.</p>
-
-<h3 id="compare">8 — Current version vs this draft</h3>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Section</th><th>Current version</th><th>This draft</th></tr></thead><tbody>
-<tr><td>Core claim</td><td>Answers where, when, what first, how to measure the pilot</td><td>Need can't be proven; failure can. Protect the stock; target checks by history</td></tr>
-<tr><td>Where</td><td>Ranking is the answer; 29 areas costed</td><td>Same model, as a screen; phone-only limit up front</td></tr>
-<tr><td>When</td><td>Evening access by area and hub</td><td>Kept; "cheapest" claim dropped</td></tr>
-<tr><td>What first</td><td>"Stock is decaying"; costed options</td><td>"Highest since 2012" after a record low; artefact tests; half the rise likely closures</td></tr>
-<tr><td>New</td><td>—</td><td>Tested rule for where to send checks</td></tr>
-<tr><td>Recommendation</td><td>Costed siting for 29 areas ($24.1M)</td><td>Verify, fix, test: no capital until on-the-ground checks and trial results</td></tr>
-<tr><td>How to measure</td><td>Pilot power; evening-hours trial</td><td>Same hours trial and pilot measures, plus a randomised check order built into the rule</td></tr>
-<tr><td>Methods</td><td>Regression, panel, power, cost analysis</td><td>Adds logistic vs trees vs rules, time-based train/test, bootstrap, calibration, A/B design</td></tr>
-</tbody></table></div>
-
-<h3 id="prof">9 — Questions for the professor</h3>
-<ol>
-<li>In 12 minutes: four linked decisions, each with one tested result, or one decision chain in full depth?</li>
-<li>Is a prediction validated on held-out data, with the effect left to a proposed randomised trial, enough depth, or do you expect an effect estimate?</li>
-<li>When a simple 3-year history rule ties our logistic model, should the rule be the finding, and how much of the model comparison should we show?</li>
-</ol>
-</div>
-
-<div id="lim" hidden>
-<h2>Limits and open questions</h2>
-<p>Every weakness of this draft in one place, starting with the questions that are still open.</p>
-
-<h3>Open questions: not yet resolved</h3>
-<ol>
-<li><strong>Did Parks change how it rates restrooms in January 2026?</strong> The jump arrives as a step that month. The same inspectors rated the rest of the park no worse, which rules out a general change in strictness, but not a restroom-only rule. The PIP rating manual or a question to Parks would settle it.</li>
-<li><strong>Does an extra check prevent anything?</strong> The test measures failures the next regular inspection records anyway. Only the randomised design in section 6 can show prevention.</li>
-<li><strong>How many restrooms are really operational?</strong> A preliminary match finds about 34 of the 80 long-term-closed stations still listed as operational in the June 2025 register, 1 ambiguous, and the rest already outside the 975. This shows the count needs updating; it does not give today's citywide total, which would also need openings and reopenings since then.</li>
-<li><strong>Closed or broken?</strong> About half the 2026 rise is restrooms failed with nothing inside rated. "Found closed" is the likely reading, but it is not confirmed without the rating manual.</li>
-</ol>
-
-<h3>1. The failure jump is real, but its framing matters</h3>
-<ul>
-<li>2024 is the lowest January–June rate in 22 years of data, so "more than doubled since 2024" flatters the change. Against all of 2025 (11.6%), 2026 is about 1.7×.</li>
-<li>2026 is back at 2012–14 levels. It reverses a decade of improvement; it is not unprecedented.</li>
-<li>"Structural failures quadrupled" holds only for the 7 inspectors who rated in both years. Across all inspectors they roughly tripled.</li>
-<li>A structural failure now fails the whole restroom only 20–29% of the time, against 44–61% in 2018–22. That fits either more minor defects or a lower bar for marking them; the data cannot separate the two.</li>
+<li>The 3-year rule, exactly: <code>(failures + 0.5) ÷ (rated visits + 5)</code> over the previous three years, specified before any results were seen. On 2024, a simpler last-3-inspections rule scored best; the 3-year rule matched the model only in the test years, so it is the candidate to pilot rather than a proven policy.</li>
+<li>Ranking quality (AUC) is 0.62–0.66. With a 20% budget, most failures still fall outside the list. Nine reasonable logistic versions range from 75 to 88 failures found.</li>
+<li>43 sites fail in two or more of the three test periods and account for 91 of the 244 failures: much of the gain comes from chronic sites.</li>
+<li>Predicted risk levels ran low in 2026 (12% predicted, 20% observed), so they need refreshing each cycle.</li>
+<li>Of 2,050 site-checks in the test period, 17.8% have no known outcome (324 unrated first visits, 41 no visit), and these lean towards riskier sites. Missing ratings are left out, not treated as passes.</li>
+<li>An independent rebuild from the raw data reproduced the result exactly and found no future information in the predictions.</li>
 </ul>
 
-<h3>2. The prediction is useful but modest</h3>
+<h3>3. Complaints measure complainers</h3>
+<p>The neighbourhood ranking predicts complaints, not need. Four of the six high-confidence areas leave the top 25 on phone complaints alone. It may also partly reflect street homelessness or nightlife, which the model does not include.</p>
+
+<h3>4. Counts and costs</h3>
 <ul>
-<li>Ranking quality (AUC) is 0.62–0.66 in the three test periods. With a 20% budget, most recorded failures still fall outside the list.</li>
-<li>The logistic model's 88 is its best case: nine reasonable specifications range from 75 to 88.</li>
-<li>The three-year rule was not the benchmark chosen on 2024; the last-three rule was. The three-year rule only matched the model in the test years.</li>
-<li>43 sites fail in two or more of the three test periods and account for 91 of the 244 failures, so much of the gain is chronic sites recurring.</li>
-<li>Risk levels were too low in 2026 (12% predicted, 20% observed).</li>
+<li>80 of Parks' 736 comfort stations are under long-term closure (46 for repairs). About 34 of them are still listed as working in the City's register, last updated June 2025, so the 975 needs updating; we have not estimated today's true total.</li>
+<li>Capital costs are funding figures, not final costs: median new build about $4M (partly a "$3–5M" band midpoint; $3.8M on exact-dollar projects), reconstruction $1.4–1.7M. They price rebuilding, not extra checks.</li>
 </ul>
 
-<h3>3. Missing outcomes</h3>
-<p>Of 2,050 eligible test site-periods, 324 had an unrated first visit and 41 had no visit: 17.8% unknown. Unrated visits cluster at higher-risk sites. We report recorded failures only and never count a missing rating as a pass.</p>
-
-<h3>4. Complaints measure complainers</h3>
-<p>The neighbourhood ranking predicts complaints, not need. Four of the six high-confidence areas leave the top 25 on phone reports alone. The ratio may also partly track street homelessness or nightlife, which the model does not control for.</p>
-
-<h3>5. Costs are funding figures, not outturn</h3>
-<p>The $4M new-build median is the midpoint the analysis assigns to the tracker's "$3–5 million" band. On exact-dollar projects only, the medians are $3.8M for a new build and $1.37M for a reconstruction.</p>
-
-<h3>6. The trials are blunt</h3>
+<h3>5. The trials</h3>
 <ul>
-<li>Complaints are too sparse to measure the hours trial (smallest detectable change 156%), so it relies on public-urination summonses (37%). Summonses partly track policing; the alcohol-summons placebo catches general patrol changes, but not a restroom-specific one.</li>
-<li>The maintenance-check trial has no power calculation or crew plan yet.</li>
-<li>The pilot is badly underpowered on complaints: only a 73% drop would be detectable.</li>
+<li>Complaints are too sparse to measure the hours trial (smallest detectable change 156%), so it uses summonses (37%). Summonses partly track policing; alcohol summonses act as a placebo for general patrol changes.</li>
+<li>The hours-trial cost ($2.2M) assumes all 51 restrooms open longer for all ten months. The areas are the high-complaint neighbourhoods whose restrooms' median posted day is under 9 hours, or where none opens to 10pm.</li>
+<li>The check trial has no power calculation or crew plan yet.</li>
+<li>The 17-unit pilot can't be judged on complaints: only 20 a year are filed near all 17 sites, so only a 73% drop would be detectable (44% on summonses). Against scheduled hours it costs $42.98 per unit-hour.</li>
 </ul>
 
-<h3>7. Data dates and coverage</h3>
+<h3>6. Data dates and coverage</h3>
 <ul>
-<li>Inspections end on 28 June 2026. Any list built from them is an illustration, not a current work order.</li>
-<li>Only Parks restrooms are inspected this way; libraries, transit and other operators are not covered.</li>
-<li>The restroom register was last updated in June 2025.</li>
-<li>Whether ratings are edited after entry cannot be tested from a single snapshot of the data.</li>
+<li>Inspections end on 28 June 2026. Only Parks restrooms are inspected this way; library and other restrooms are not covered.</li>
+<li>Evening access uses straight-line distance and posted hours, so real access is worse.</li>
+<li>Whether ratings are edited after entry can't be tested from a single snapshot of the data.</li>
 </ul>
 </div>
 
 <div id="data" hidden>
 <h2>Data and code</h2>
 <p>The draft uses the same cached datasets as the current version. Three groups of scripts sit in <code>analysis/pivot/</code>: the maintenance study, an independent replication of it, and a stress test of the failure trend.</p>
+<h3>Analytics techniques used</h3>
+<details class="toolkit" open><summary><strong>Analytics toolkit used: 11 in-class techniques, 7 beyond class</strong> </summary>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Technique</th><th>Course</th><th>Walkthrough section</th></tr></thead><tbody>
+<tr><td>Data cleaning, de-duplication, descriptive statistics</td><td><span class="mtag in">S1–2</span></td><td>2, 3, 4</td></tr>
+<tr><td>Confidence intervals and hypothesis tests</td><td><span class="mtag in">S3</span></td><td>4</td></tr>
+<tr><td>Correlation (rank correlation to score the model)</td><td><span class="mtag in">S4</span></td><td>2</td></tr>
+<tr><td>Panel data with fixed effects</td><td><span class="mtag in">S5</span></td><td>4</td></tr>
+<tr><td>Difference-in-differences (as a placebo test)</td><td><span class="mtag in">S5, S8</span></td><td>4</td></tr>
+<tr><td>Spatial analysis: distance to nearest open restroom</td><td><span class="mtag in">S6</span></td><td>3</td></tr>
+<tr><td>Logistic regression</td><td><span class="mtag in">S6</span></td><td>5</td></tr>
+<tr><td>Precision and recall under a fixed budget</td><td><span class="mtag in">S6</span></td><td>5</td></tr>
+<tr><td>Train / validation / test split</td><td><span class="mtag in">S4, S6–7</span></td><td>2, 5</td></tr>
+<tr><td>Decision (classification) trees</td><td><span class="mtag in">S7</span></td><td>5</td></tr>
+<tr><td>Randomised experiment (A/B test) design</td><td><span class="mtag in">S8–9</span></td><td>6</td></tr>
+<tr><td>Negative binomial regression with a population offset (count model)</td><td><span class="mtag out">Beyond</span></td><td>2</td></tr>
+<tr><td>Empirical Bayes probabilities per neighbourhood</td><td><span class="mtag out">Beyond</span></td><td>2</td></tr>
+<tr><td>Parsing free-text opening hours into hour-by-hour availability</td><td><span class="mtag out">Beyond</span></td><td>3</td></tr>
+<tr><td>Robustness: balanced panel, leave-one-out, sensitivity re-runs</td><td><span class="mtag out">Beyond</span></td><td>2, 4</td></tr>
+<tr><td>Cluster bootstrap confidence intervals</td><td><span class="mtag out">Beyond</span></td><td>5</td></tr>
+<tr><td>Calibration and missing-outcome checks</td><td><span class="mtag out">Beyond</span></td><td>Limits</td></tr>
+<tr><td>Power analysis (smallest detectable change)</td><td><span class="mtag out">Beyond</span></td><td>6</td></tr>
+</tbody></table></div>
+</details>
+
 <h3>Run it yourself</h3>
 <pre class="cb"><code>git clone https://github.com/JonathanWong1990/nyc-restroom-gap
 cd nyc-restroom-gap/analysis/pivot
@@ -681,6 +622,24 @@ Rscript R/M3_maintenance_verification.R   # QA checks, charts, input checksums</
 <li>Demand: MTA subway ridership <code>ak4z-sape</code>, stations <code>39hk-dx4f</code>; hotels <code>tjus-cn27</code>; jobs (LODES WAC 2023); residents (ACS)</li>
 <li>Costs: Parks capital tracker <code>4hcv-tc5r</code></li>
 </ul>
+
+<h3>Team notes</h3>
+<details class="toolkit teamnotes"><summary><strong>For the team, not part of the story:</strong> how this differs from the current version, and questions for the professor</summary>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Section</th><th>Current version</th><th>This draft</th></tr></thead><tbody>
+<tr><td>Core claim</td><td>Answers where, when, what first, how to measure the pilot</td><td>Need can't be proven; failure can. Verify, fix, test</td></tr>
+<tr><td>Where</td><td>Ranking is the answer; 29 areas costed ($24.1M)</td><td>Same model, as a screen; phone-only limit up front</td></tr>
+<tr><td>When</td><td>Evening access by area and hub</td><td>Kept, as the bridge to existing restrooms</td></tr>
+<tr><td>What first</td><td>Repair; costed options</td><td>Failure trend with robustness tests, then a tested rule for where to send checks</td></tr>
+<tr><td>How to measure</td><td>Pilot power; evening-hours trial</td><td>Same hours trial, plus a randomised check trial</td></tr>
+</tbody></table></div>
+<p><strong>Questions for the professor</strong></p>
+<ol>
+<li>In 12 minutes: several linked decisions, or one decision chain in full depth?</li>
+<li>Is a prediction validated on unseen data, with the effect left to a proposed randomised trial, enough depth, or do you expect an effect estimate?</li>
+<li>When a simple rule ties the logistic model, should the rule be the finding, and how much of the model comparison should we show?</li>
+</ol>
+<p><strong>For Parks:</strong> did restroom rating rules change in January 2026, and what does a failed rating with nothing inside rated mean?</p>
+</details>
 </div>
 </div>
 
@@ -690,7 +649,7 @@ Rscript R/M3_maintenance_verification.R   # QA checks, charts, input checksums</
   var btns = {walk:'btn-walk', lim:'btn-lim', data:'btn-data'};
   var hint = document.getElementById('hint');
   var hints = {
-    walk:'The story in short steps; tags show which methods are from class.',
+    walk:'The story, top to bottom.',
     lim:'Where the analysis is weak and what it cannot claim.',
     data:'Every dataset and script, and how to run it yourself.'
   };
