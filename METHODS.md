@@ -70,8 +70,8 @@ Scripts read `data_raw/` relative to the working directory. To run from elsewher
 `external_evidence.md` carries every external citation with an access date and a "thin ice"
 section of figures that could not be verified and are therefore unused.
 
-`analysis/WORKLOG.md` — the defect log as frozen on 21 Sep 2026. Current figures are in
-`outputs/headline_numbers.json` and on the site.
+`analysis/outputs/headline_numbers.json` — every figure quoted on the site, with the script that
+produced it. The site's Data & code tab lists every script and dataset.
 
 `analysis/data_raw/` — every dataset pulled, named `<source>_<datasetid>_<date>.csv`.
 Principal sources: NYC Open Data (restrooms `i7jb-7jku`, 311 `erm2-nwe9`, OATH summonses

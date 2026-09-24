@@ -1,0 +1,5 @@
+_id,OBJECTID,ID,ADDRESSNUMBERTEXT,ADDRESSSTREET,FRONTINGSTREET,SIDE,FROMSTREET,DIRECTION,SITEID,WARD,BIA,ASSETTYPE,STATUS,BARCODE,SDE_STATE_ID,geometry
+1,1,PW-00002,1681,Lake Shore Blvd E,Lake Shore Blvd E,South,Northern Dancer Blvd,East,APT02,19,None,Standard,Existing,W3200002,,"{""coordinates"": [[-79.3094498094081, 43.6632980406659]], ""type"": ""MultiPoint""}"
+2,2,PW-00003,1275,Lake Shore Blvd W,Lake Shore Blvd W,South,Net Dr,West,APT03,04,None,Standard,Existing,W1400003,,"{""coordinates"": [[-79.4375305244122, 43.6334653707643]], ""type"": ""MultiPoint""}"
+3,3,PW-00001,318,Queens Quay W,Queens Quay W,North,Rees St,West,APT01,10,The Waterfront,Standard,Existing,W2000001,,"{""coordinates"": [[-79.3868628412625, 43.6390125331226]], ""type"": ""MultiPoint""}"
+4,4,PW-00011,1,Strachan Ave,Strachan Ave,East,Fleet St,South,APT04,10,CityPlace and Fort York,Standard,Existing,W1000004,,"{""coordinates"": [[-79.4093814162204, 43.6359758223186]], ""type"": ""MultiPoint""}"

@@ -467,9 +467,9 @@ nh <- sum(csd$intervention=="Extend operating hours")
 add("programme_hours_running_cost", nh*XH*365*WAGE, usdM(nh*XH*365*WAGE, 2), "USD per year",
     "R/61_cost_annualised.R convention", sprintf("%d hours areas x one restroom x %g h x 365 x $%g/h (one facility per area, like-for-like)", nh, XH, WAGE))
 add("cheapest_per_excess_first", c(name=csd$ntaname[1], action=csd$intervention[1], per_excess=round(csd$per_excess[1])),
-    sprintf("%s, %s, $%s per excess complaint a year", csd$ntaname[1], csd$intervention[1], comma(csd$per_excess[1])),
-    "USD per excess complaint per year", "R/61_cost_annualised.R -> model_shortlist_costed",
-    "lowest annual cost per excess complaint in the shortlist")
+    sprintf("%s, %s, $%s a year per excess complaint over the 2020-26 window", csd$ntaname[1], csd$intervention[1], comma(csd$per_excess[1])),
+    "USD a year per excess complaint over the whole 2020-26 window (NOT per excess complaint per year)", "R/61_cost_annualised.R -> model_shortlist_costed",
+    "annual cost divided by the window's total excess; the per-year figure is cheapest_per_excess_per_year")
 add("first_repair_rank", which(csd$intervention=="Reconstruct or repair")[1],
     as.character(which(csd$intervention=="Reconstruct or repair")[1]), "rank", "R/61_cost_annualised.R",
     "rank of the first reconstruction in cost per excess complaint")
@@ -564,6 +564,9 @@ add("rank_all_midtown", ph70$rank_all[ph70$ntaname=="Midtown-Times Square"], ord
 add("phone_only_drops_among_six", sum(ph70$rank_phone[match(six, ph70$ntaname)] > 25, na.rm=TRUE),
     as.character(sum(ph70$rank_phone[match(six, ph70$ntaname)] > 25, na.rm=TRUE)), "of the six high-confidence areas",
     "R/70_audit_checks.R + A6", "fall outside the phone-only top 25")
+surv <- six[ph70$rank_phone[match(six, ph70$ntaname)] <= 25]
+add("phone_only_survivors", surv, paste(surv, collapse="; "), "names", "R/70_audit_checks.R + A6",
+    "high-confidence areas still in the phone-only top 25")
 for (k in names(PHN)) add(paste0("phone_rank_", k), prk(PHN[[k]]), ord(prk(PHN[[k]])),
       "rank of 197 on phone-only reports", "R/70_audit_checks.R", PHN[[k]])
 sa <- from_script("91_rebuild_outcome.R", "cor(d$summons, d$alcohol, method='spearman')")
@@ -618,6 +621,7 @@ add("n_scripts", nsc, as.character(nsc), "R scripts", "R/", "count of R/*.R")
 ##   C3_station_bridge.R     -> outputs/station_bridge.json
 ##   T1_mechanism_tests.R + T1_F_pilot_power.R -> outputs/t1_tests.json
 ##   E1_peer_city_per_capita.R -> outputs/peer_city_per_capita.json
+##   C6_decay_in_priority_areas.R -> outputs/decay_in_priority_areas.json (2026-09-24 fix batch)
 ## Their 'built' dates are never copied, so this file stays byte-identical across runs.
 ## =============================================================================
 rj <- function(f) fromJSON(file.path("outputs", f), simplifyVector=TRUE)
@@ -667,7 +671,7 @@ add("six_restrooms_open_9pm", as.list(ro9), paste(sprintf("%s %d", names(ro9), r
 ## ---- where exactly: the complaint hot-spot table (C5) ----
 ht <- read.csv("outputs/hotspot_table.csv", stringsAsFactors=FALSE)
 for (i in seq_len(nrow(ht))) add(paste0("hotspot_", slug(ht$ntaname[i])),
-    list(place=ht$primary_hotspot[i], complaints=ht$primary_n[i], addresses=ht$primary_distinct_addresses[i],
+    list(place=ht$primary_hotspot[i], area_complaints=ht$nta_complaints[i], complaints=ht$primary_n[i], addresses=ht$primary_distinct_addresses[i],
          anchoring=ht$anchoring[i], anchored=ht$anchored_hotspots[i], station=ht$nearest_station[i], station_m=ht$station_m[i],
          listed=ht$nearest_listed_restroom[i], listed_m=ht$listed_m[i], open9_walk_min=ht$open_9pm_walk_min[i],
          owner=ht$natural_owner[i], flags=ht$thin_flags[i], years=ht$primary_years[i], evening_night=ht$primary_share_evening_night[i]),
@@ -681,6 +685,30 @@ add("hotspot_closed_park_restroom_m", setNames(as.list(pk$listed_m), pk$nearest_
     "R/C5_hotspot_table.R", sprintf("listed Parks restrooms beside the largest hot spot, closed at 9pm (%s); share of hot-spot complaints filed 6pm-6am: %s",
     paste(pk$ntaname, collapse=", "), paste(pct(pk$primary_share_evening_night), collapse=", ")),
     paste0(nrx(as.character(pk$listed_m)), " ?m"))
+
+## ---- 2026-09-24 fix batch: where the decaying / closed stock sits (C6) ----
+c6 <- rj("decay_in_priority_areas.json")
+cd6 <- c6$condition_2026; cl6 <- c6$long_term_closure; rg6 <- c6$register_status
+q <- function(t, k) t[t$priority==k,]
+add("decay_unacceptable_priority_vs_elsewhere",
+    list(in_29=c(q(cd6,"in_29")$with_unacceptable, q(cd6,"in_29")$facilities), elsewhere=c(q(cd6,"elsewhere")$with_unacceptable, q(cd6,"elsewhere")$facilities)),
+    sprintf("%d of %d (%s) in the 29 vs %d of %d (%s) elsewhere", q(cd6,"in_29")$with_unacceptable, q(cd6,"in_29")$facilities, pct(q(cd6,"in_29")$share_facilities),
+            q(cd6,"elsewhere")$with_unacceptable, q(cd6,"elsewhere")$facilities, pct(q(cd6,"elsewhere")$share_facilities)),
+    "inspected comfort stations with >= 1 unacceptable rating, Jan-Jun 2026", "R/C6_decay_in_priority_areas.R",
+    sprintf("inspection-level fail rate %s in the 29 vs %s elsewhere", pct(q(cd6,"in_29")$fail_rate, 1), pct(q(cd6,"elsewhere")$fail_rate, 1)),
+    paste0(q(cd6,"in_29")$with_unacceptable, " of ", q(cd6,"in_29")$facilities))
+add("decay_closed_priority_vs_elsewhere",
+    list(in_29=c(q(cl6,"in_29")$long_term_closed, q(cl6,"in_29")$stations), elsewhere=c(q(cl6,"elsewhere")$long_term_closed, q(cl6,"elsewhere")$stations)),
+    sprintf("%d of %d (%s) in the 29 vs %d of %d (%s) elsewhere", q(cl6,"in_29")$long_term_closed, q(cl6,"in_29")$stations, pct(q(cl6,"in_29")$share_closed),
+            q(cl6,"elsewhere")$long_term_closed, q(cl6,"elsewhere")$stations, pct(q(cl6,"elsewhere")$share_closed)),
+    "Parks comfort stations under long-term closure", "R/C6_decay_in_priority_areas.R",
+    sprintf("%d of the %d in the 29 closed for repairs", q(cl6,"in_29")$closed_for_repairs, q(cl6,"in_29")$long_term_closed),
+    paste0(q(cl6,"in_29")$long_term_closed, " of ", q(cl6,"in_29")$stations))
+add("register_not_operational_priority_vs_elsewhere",
+    list(in_29=c(q(rg6,"in_29")$not_operational, q(rg6,"in_29")$restrooms), elsewhere=c(q(rg6,"elsewhere")$not_operational, q(rg6,"elsewhere")$restrooms)),
+    sprintf("%d of %d (%s) in the 29 vs %d of %d (%s) elsewhere", q(rg6,"in_29")$not_operational, q(rg6,"in_29")$restrooms, pct(q(rg6,"in_29")$share_not_operational),
+            q(rg6,"elsewhere")$not_operational, q(rg6,"elsewhere")$restrooms, pct(q(rg6,"elsewhere")$share_not_operational)),
+    "register restrooms not operational", "R/C6_decay_in_priority_areas.R")
 
 ## ---- the station screen, tested (C3) ----
 sb <- rj("station_bridge.json"); so <- sb$test3_oos
@@ -777,6 +805,10 @@ add("peer_nyc_per100k", nyc$per100k_core, sprintf("%.1f", nyc$per100k_core), "pe
     nyc$core, comma(nyc$population)), paste0(nrx(sprintf("%.1f", nyc$per100k_core))))
 add("peer_nyc_rank", pc$nyc_rank_among_AB$per100k_core, sprintf("%d of %d", pc$nyc_rank_among_AB$per100k_core, pc$n_AB), "rank on the core rule",
     "R/E1_peer_city_per_capita.R", "cities with a usable official list; NYC is within 2-12% of Toronto, Berlin and Hong Kong's FEHD list")
+cl <- pab[pab$city %in% c("Toronto","Berlin","Hong Kong"),]; gp <- cl$per100k_core/nyc$per100k_core - 1
+add("peer_cluster_gap", range(gp), sprintf("%.0f–%.0f%%", 100*min(gp), 100*max(gp)), "above NYC's core rate",
+    "R/E1_peer_city_per_capita.R", "Toronto, Berlin and Hong Kong's FEHD list relative to NYC 9.0",
+    paste0(sprintf("%.0f", 100*min(gp)), " ?[–-] ?", sprintf("%.0f", 100*max(gp)), " ?%"))
 top3 <- head(pab$per100k_core, 3)
 add("peer_nyc_share_of_top3", nyc$per100k_core/mean(top3), sprintf("%.2f", nyc$per100k_core/mean(top3)), "ratio",
     "R/E1_peer_city_per_capita.R", sprintf("NYC vs the mean of %s: 'about a third'", paste(head(pab$city, 3), collapse=", ")))

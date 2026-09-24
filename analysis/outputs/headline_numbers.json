@@ -669,10 +669,10 @@
     },
     "cheapest_per_excess_first": {
       "value": ["East Harlem (North)", "Extend operating hours", "775"],
-      "display": "East Harlem (North), Extend operating hours, $775 per excess complaint a year",
-      "unit": "USD per excess complaint per year",
+      "display": "East Harlem (North), Extend operating hours, $775 a year per excess complaint over the 2020-26 window",
+      "unit": "USD a year per excess complaint over the whole 2020-26 window (NOT per excess complaint per year)",
       "source": "R/61_cost_annualised.R -> model_shortlist_costed",
-      "note": "lowest annual cost per excess complaint in the shortlist",
+      "note": "annual cost divided by the window's total excess; the per-year figure is cheapest_per_excess_per_year",
       "patterns": []
     },
     "first_repair_rank": {
@@ -888,6 +888,14 @@
       "unit": "of the six high-confidence areas",
       "source": "R/70_audit_checks.R + A6",
       "note": "fall outside the phone-only top 25",
+      "patterns": []
+    },
+    "phone_only_survivors": {
+      "value": ["East Elmhurst", "Brighton Beach"],
+      "display": "East Elmhurst; Brighton Beach",
+      "unit": "names",
+      "source": "R/70_audit_checks.R + A6",
+      "note": "high-confidence areas still in the phone-only top 25",
       "patterns": []
     },
     "phone_rank_east_harlem": {
@@ -1171,8 +1179,8 @@
       "patterns": []
     },
     "n_scripts": {
-      "value": 56,
-      "display": "56",
+      "value": 57,
+      "display": "57",
       "unit": "R scripts",
       "source": "R/",
       "note": "count of R/*.R",
@@ -1315,6 +1323,7 @@
     "hotspot_east_harlem": {
       "value": {
         "place": "E 122 St between 2nd and 3rd Ave",
+        "area_complaints": 100,
         "complaints": 42,
         "addresses": 22,
         "anchoring": "mixed",
@@ -1338,6 +1347,7 @@
     "hotspot_astoria_east": {
       "value": {
         "place": "28 Ave at 56 Pl, Woodside (North)",
+        "area_complaints": 59,
         "complaints": 36,
         "addresses": 3,
         "anchoring": "not anchored",
@@ -1361,6 +1371,7 @@
     "hotspot_east_elmhurst": {
       "value": {
         "place": "25 Ave at 85 St, at Gorman Playground",
+        "area_complaints": 36,
         "complaints": 20,
         "addresses": 12,
         "anchoring": "not anchored",
@@ -1384,6 +1395,7 @@
     "hotspot_williamsbridge_olinville": {
       "value": {
         "place": "Cruger Ave at Magenta St, by Gun Hill Playground",
+        "area_complaints": 39,
         "complaints": 17,
         "addresses": 5,
         "anchoring": "mixed",
@@ -1407,6 +1419,7 @@
     "hotspot_brighton_beach": {
       "value": {
         "place": "Ocean Pkwy malls at the Ocean Pkwy (Q) station",
+        "area_complaints": 24,
         "complaints": 4,
         "addresses": 4,
         "anchoring": "mixed",
@@ -1430,6 +1443,7 @@
     "hotspot_midtown_times": {
       "value": {
         "place": "Central Park South at 57 St / 7 Ave",
+        "area_complaints": 84,
         "complaints": 17,
         "addresses": 13,
         "anchoring": "station-anchored",
@@ -1460,6 +1474,39 @@
       "source": "R/C5_hotspot_table.R",
       "note": "listed Parks restrooms beside the largest hot spot, closed at 9pm (East Elmhurst, Williamsbridge-Olinville); share of hot-spot complaints filed 6pm-6am: 65%, 76%",
       "patterns": ["(?<![0-9.,])126(?![0-9]|,[0-9]) ?m", "(?<![0-9.,])47(?![0-9]|,[0-9]) ?m"]
+    },
+    "decay_unacceptable_priority_vs_elsewhere": {
+      "value": {
+        "in_29": [15, 72],
+        "elsewhere": [116, 507]
+      },
+      "display": "15 of 72 (21%) in the 29 vs 116 of 507 (23%) elsewhere",
+      "unit": "inspected comfort stations with >= 1 unacceptable rating, Jan-Jun 2026",
+      "source": "R/C6_decay_in_priority_areas.R",
+      "note": "inspection-level fail rate 17.6% in the 29 vs 20.4% elsewhere",
+      "patterns": "15 of 72"
+    },
+    "decay_closed_priority_vs_elsewhere": {
+      "value": {
+        "in_29": [14, 100],
+        "elsewhere": [66, 636]
+      },
+      "display": "14 of 100 (14%) in the 29 vs 66 of 636 (10%) elsewhere",
+      "unit": "Parks comfort stations under long-term closure",
+      "source": "R/C6_decay_in_priority_areas.R",
+      "note": "6 of the 14 in the 29 closed for repairs",
+      "patterns": "14 of 100"
+    },
+    "register_not_operational_priority_vs_elsewhere": {
+      "value": {
+        "in_29": [10, 155],
+        "elsewhere": [81, 911]
+      },
+      "display": "10 of 155 (6%) in the 29 vs 81 of 911 (9%) elsewhere",
+      "unit": "register restrooms not operational",
+      "source": "R/C6_decay_in_priority_areas.R",
+      "note": "",
+      "patterns": []
     },
     "station_screen_oos_spearman": {
       "value": 0.467385,
@@ -1701,6 +1748,14 @@
       "source": "R/E1_peer_city_per_capita.R",
       "note": "cities with a usable official list; NYC is within 2-12% of Toronto, Berlin and Hong Kong's FEHD list",
       "patterns": []
+    },
+    "peer_cluster_gap": {
+      "value": [0.0222222222222221, 0.122222222222222],
+      "display": "2–12%",
+      "unit": "above NYC's core rate",
+      "source": "R/E1_peer_city_per_capita.R",
+      "note": "Toronto, Berlin and Hong Kong's FEHD list relative to NYC 9.0",
+      "patterns": "2 ?[–-] ?12 ?%"
     },
     "peer_nyc_share_of_top3": {
       "value": 0.352020860495437,

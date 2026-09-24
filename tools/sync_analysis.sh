@@ -5,7 +5,7 @@
 #   tools/sync_analysis.sh --dry-run  # show what would change
 #
 # Copies R/, notes/, outputs/, CONVENTIONS.md, and data_raw/ files that are already tracked
-# in git plus new ones under 20 MB. Never copies WORKLOG.md or 00_START_HERE.md (internal
+# in git plus new ones under 20 MB, plus data_raw/peer_cities/. Never copies WORKLOG.md or 00_START_HERE.md (internal
 # team information) or data_raw/_hourprofile_parts/. Nothing is deleted on the site side.
 set -euo pipefail
 SITE="$(cd "$(dirname "$0")/.." && pwd)"
@@ -29,4 +29,6 @@ sort -u "$LIST" -o "$LIST"
 FILT="$(mktemp)"; while IFS= read -r f; do [[ -f "$SRC/data_raw/$f" ]] && echo "$f"; done < "$LIST" > "$FILT"
 rsync -a $DRY -i --files-from="$FILT" "$SRC/data_raw/" "$DST/data_raw/"
 rm -f "$FILT"
+# peer-city lists (small cached files) so R/E1_peer_city_per_capita.R re-runs from the site copy
+[[ -d "$SRC/data_raw/peer_cities" ]] && rsync -a $DRY -i "${EXC[@]}" "$SRC/data_raw/peer_cities/" "$DST/data_raw/peer_cities/"
 echo "sync done${DRY:+ (dry run)}: $SRC -> $DST"

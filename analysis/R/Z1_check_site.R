@@ -202,6 +202,11 @@ S <- list(
        fix=sprintf("by type: reconstruction %s vs new build %s", g("capital_years_reconstruct"), g("capital_years_build_new"))),
   list(id="not-stricter-inspectors", rx="(?i)it is not stricter inspectors", fix="'It does not look like stricter marking' (7 inspectors; Limits §8)"),
   list(id="audit-agrees-trend", rx="(?i)independent audit agrees", fix="the Council audit corroborates the LEVEL (36 of 337 locked), not the trend"),
+  # 2026-09-24 final-review fix batch
+  list(id="well-supported-hypothesis", rx="(?i)well[- ]supported",
+       fix="'Access is the leading hypothesis. Outside evidence is mixed, and our data cannot confirm it, so it should be tested.'"),
+  list(id="midtown-unit-belongs", rx="(?i)where a unit belongs",
+       fix=sprintf("Midtown: monitor, cause unresolved (best served at 9pm, %s); if a unit is sited, place it at station exits", g("walk_9pm_midtown_times"))),
   list(id="process-narration", rx="(?i)our (hours )?parser|combining the team|the team's (station|research)|we merged|checked against the primary source before inclusion",
        fix="cold-reader voice: state the finding; attribution only in tag pills and the contributor table")
 )

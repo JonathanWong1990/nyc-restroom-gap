@@ -1,0 +1,60 @@
+{
+  "script": "R/C6_decay_in_priority_areas.R",
+  "window": "Jan-Jun 2026 (doy <= 179), rated inspections only (A/U), as A8",
+  "priority_areas": 29,
+  "condition_2026": [
+    {
+      "priority": "in_29",
+      "facilities": 72,
+      "with_unacceptable": 15,
+      "rated": 85,
+      "unacceptable": 15,
+      "share_facilities": 0.208333333333333,
+      "fail_rate": 0.176470588235294
+    },
+    {
+      "priority": "elsewhere",
+      "facilities": 507,
+      "with_unacceptable": 116,
+      "rated": 608,
+      "unacceptable": 124,
+      "share_facilities": 0.22879684418146,
+      "fail_rate": 0.203947368421053
+    }
+  ],
+  "long_term_closure": [
+    {
+      "priority": "in_29",
+      "stations": 100,
+      "long_term_closed": 14,
+      "closed_for_repairs": 6,
+      "share_closed": 0.14
+    },
+    {
+      "priority": "elsewhere",
+      "stations": 636,
+      "long_term_closed": 66,
+      "closed_for_repairs": 40,
+      "share_closed": 0.10377358490566
+    }
+  ],
+  "register_status": [
+    {
+      "priority": "in_29",
+      "restrooms": 155,
+      "not_operational": 10,
+      "share_not_operational": 0.0645161290322581
+    },
+    {
+      "priority": "elsewhere",
+      "restrooms": 911,
+      "not_operational": 81,
+      "share_not_operational": 0.0889132821075741
+    }
+  ],
+  "unplaced": {
+    "inspected_facilities": 0,
+    "pip_stations": 0
+  },
+  "caveat": "A property's point decides its NTA, so a large park that straddles NTAs is counted once; facilities in park NTAs are snapped to the nearest residential NTA (10_modelling_table rule)."
+}
