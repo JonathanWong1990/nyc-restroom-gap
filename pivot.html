@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Fix Before You Build</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+:root{
+  --bg:#F3F5F1; --surface:#FFFFFF; --surface-2:#EAEEE7;
+  --ink:#151E19; --ink-2:#48564D; --muted:#79877D;
+  --rule:#D9DFD5; --rule-strong:#BCC5B7;
+  --accent:#14684A; --accent-soft:#DCEDE4;
+  --alert:#A93A2C; --alert-soft:#F6E2DE;
+  --warn:#8A6A12;
+  --shadow:0 1px 2px rgba(21,30,25,.06),0 8px 24px rgba(21,30,25,.05);
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --q0:#EFF1EC; --q1:#D4DFD2; --q2:#A9C4A8; --q3:#74A379; --q4:#417F54; --q5:#1D5738;
+  --m1:#DCDFD8; --m2:#E8A86B; --m3:#CF7038; --m4:#9E3B18; --m5:#9E3B18; --m6:#9E3B18;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --q0:#2E3630; --q1:#37503F; --q2:#456B51; --q3:#548A66; --q4:#69AC7F; --q5:#88D3A1;
+    --q0:#2E3630; --q1:#37503F; --q2:#456B51; --q3:#548A66; --q4:#69AC7F; --q5:#88D3A1;
+  --m1:#3A423B; --m2:#8A5A2E; --m3:#C4713A; --m4:#E89A63; --m5:#E89A63; --m6:#E89A63;
+    --bg:#101410; --surface:#171D18; --surface-2:#1F261F;
+    --ink:#E9EFE7; --ink-2:#B4BFB4; --muted:#8B978C;
+    --rule:#293129; --rule-strong:#3A443B;
+    --accent:#4FBE8A; --accent-soft:#16301F;
+    --alert:#E0776A; --alert-soft:#33201C;
+    --warn:#D6AC4B;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --q0:#2E3630; --q1:#37503F; --q2:#456B51; --q3:#548A66; --q4:#69AC7F; --q5:#88D3A1;
+  --m1:#3A423B; --m2:#8A5A2E; --m3:#C4713A; --m4:#E89A63; --m5:#E89A63; --m6:#E89A63;
+  --bg:#101410; --surface:#171D18; --surface-2:#1F261F;
+  --ink:#E9EFE7; --ink-2:#B4BFB4; --muted:#8B978C;
+  --rule:#293129; --rule-strong:#3A443B;
+  --accent:#4FBE8A; --accent-soft:#16301F;
+  --alert:#E0776A; --alert-soft:#33201C;
+  --warn:#D6AC4B;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; overflow-x:hidden}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:var(--f-body); font-size:17px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:880px; margin:0 auto; padding-inline:20px; padding-block:0 72px}
+
+/* ---------- header ---------- */
+.masthead{border-bottom:1px solid var(--rule); padding-block:36px 26px; margin-bottom:34px}
+.eyebrow{
+  font-family:var(--f-mono); font-size:11.5px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--muted); margin:0 0 16px
+}
+h1{
+  font-family:var(--f-display); font-weight:700; font-size:clamp(34px,6.4vw,50px);
+  line-height:1.05; letter-spacing:-.022em; margin:0 0 16px; text-wrap:balance;
+}
+.standfirst{font-size:19px; color:var(--ink-2); margin:0 0 22px; max-width:none}
+.byline{
+  font-family:var(--f-mono); font-size:12px; color:var(--muted);
+  display:flex; flex-wrap:wrap; gap:8px 18px; border-top:1px solid var(--rule); padding-top:16px
+}
+
+/* ---------- view toggle ---------- */
+.modebar{
+  min-height:62px;
+  position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
+  background:var(--bg);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--rule);
+  display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+  padding-block:10px; margin-bottom:30px;
+}
+.seg{display:inline-flex; border:1px solid var(--rule-strong); border-radius:7px; overflow:hidden}
+.seg button{-webkit-tap-highlight-color:transparent; touch-action:manipulation;
+  
+  font-family:var(--f-display); font-weight:600; font-size:13px;
+  padding:7px 15px; border:0; background:transparent; color:var(--ink-2); cursor:pointer;
+}
+.seg button+button{border-left:1px solid var(--rule-strong)}
+.seg button[aria-pressed="true"]{background:var(--accent); color:var(--surface)}
+.modehint{font-family:var(--f-mono); font-size:11.5px; color:var(--muted)}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+
+/* ---------- typography ---------- */
+h2{
+  scroll-margin-top:110px;
+  font-family:var(--f-display); font-weight:700; font-size:26px; letter-spacing:-.015em;
+  margin:52px 0 6px; padding-top:22px; border-top:2px solid var(--ink); text-wrap:balance;
+}
+h2 .num{
+  font-family:var(--f-mono); font-size:12px; font-weight:500; color:var(--accent);
+  display:block; letter-spacing:.1em; margin-bottom:8px;
+}
+h3{scroll-margin-top:110px; font-family:var(--f-display); font-weight:600; font-size:18px; margin:30px 0 4px; letter-spacing:-.008em}
+p{margin:12px 0; max-width:none}
+a{color:var(--accent)}
+strong{font-weight:600}
+.lede{font-size:14px; color:var(--muted); max-width:none; margin-top:-4px}
+ul{margin:12px 0; padding-left:20px; max-width:none}
+li{margin:7px 0}
+
+/* ---------- tldr panel ---------- */
+.tldr{
+  background:var(--surface); border:1px solid var(--rule); border-left:4px solid var(--accent);
+  border-radius:4px; padding:26px 26px 22px; box-shadow:var(--shadow); margin-bottom:8px;
+}
+.tldr h2{margin:0 0 14px; padding:0; border:0; font-size:21px}
+.tldr ul{margin:0; padding-left:19px}
+.tldr li{margin:10px 0}
+
+/* ---------- KPI row ---------- */
+.kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1px;
+  background:var(--rule); border:1px solid var(--rule); border-radius:4px; overflow:hidden; margin:26px 0}
+.kpi{background:var(--surface); padding:16px 16px 14px}
+.kpi .v{
+  font-family:var(--f-display); font-weight:700; font-size:26px; line-height:1.1;
+  letter-spacing:-.02em; font-variant-numeric:tabular-nums; display:block;
+}
+.kpi .v.pos{color:var(--accent)} .kpi .v.neg{color:var(--alert)}
+.kpi .k{font-family:var(--f-mono); font-size:10.5px; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--muted); margin-top:7px; display:block; line-height:1.45}
+
+/* ---------- callouts ---------- */
+.call{border-left:3px solid var(--rule-strong); padding:2px 0 2px 18px; margin:22px 0; color:var(--ink-2)}
+.call.key{border-color:var(--accent)}
+.call.warn{border-color:var(--warn)}
+.call .tag{font-family:var(--f-mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--muted); display:block; margin-bottom:5px}
+.pull{font-family:var(--f-display); font-weight:600; font-size:21px; line-height:1.35;
+  letter-spacing:-.012em; color:var(--ink); margin:26px 0; max-width:none; text-wrap:balance}
+
+/* ---------- tables ---------- */
+.tbox:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.tbox{overflow-x:auto; -webkit-overflow-scrolling:touch; margin:20px 0; border:1px solid var(--rule); border-radius:4px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; font-family:var(--f-display); font-size:13.5px}
+th,td{padding:9px 13px; text-align:left; border-bottom:1px solid var(--rule); white-space:nowrap}
+th{font-weight:600; font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--muted);
+  background:var(--surface-2)}
+td.n{text-align:right; font-variant-numeric:tabular-nums; font-family:var(--f-mono); font-size:12.5px}
+td.n strong{font-family:var(--f-mono); font-weight:600}
+th.n{text-align:right}
+tr:last-child td{border-bottom:0}
+td .hi{color:var(--accent); font-weight:600}
+td .lo{color:var(--alert); font-weight:600}
+caption{caption-side:bottom; text-align:left; padding:10px 13px; font-family:var(--f-mono);
+  font-size:11px; color:var(--muted); line-height:1.5}
+
+/* ---------- bar comparison ---------- */
+.bars{margin:22px 0; display:grid; gap:11px}
+.bar{display:grid; grid-template-columns:minmax(118px,auto) 1fr auto; gap:12px; align-items:center}
+.bar .lab{font-family:var(--f-display); font-size:13px; color:var(--ink-2)}
+.bar .track{background:var(--surface-2); border-radius:0 4px 4px 0; height:16px; position:relative}
+.bar .fill{background:var(--accent); height:100%; border-radius:0 4px 4px 0; display:block}
+.bar.base .fill{background:var(--rule-strong)}
+.bar .val{font-family:var(--f-mono); font-size:12.5px; font-variant-numeric:tabular-nums; color:var(--ink)}
+
+/* ---------- walkthrough findings ---------- */
+#walk h3{border-top:1px solid var(--rule); padding-top:20px; margin-top:34px}
+#walk .find{background:var(--accent-soft); border-left:3px solid var(--accent);
+  padding:13px 16px; margin:20px 0; border-radius:0 3px 3px 0; color:var(--ink)}
+#walk .find strong{color:var(--accent)}
+#walk table{font-size:13px}
+:root:not([data-theme="light"]) #walk .find strong, :root[data-theme="dark"] #walk .find strong{color:var(--m6)}
+
+/* ---------- method labels under step headings ---------- */
+#walk h3 + p em:first-child{font-family:var(--f-mono); font-size:11.5px; font-style:normal;
+  letter-spacing:.04em; color:var(--accent); text-transform:uppercase}
+#walk h3 + p:has(em:only-child){margin-top:4px; margin-bottom:14px}
+
+/* ---------- finding callouts ---------- */
+.find{background:var(--accent-soft); border-left:3px solid var(--accent);
+  padding:14px 18px; margin:22px 0; border-radius:0 3px 3px 0; color:var(--ink); max-width:none}
+.find strong{color:var(--accent)}
+:root:not([data-theme="light"]) .find strong,:root[data-theme="dark"] .find strong{color:var(--m4)}
+
+/* ---------- map labels ---------- */
+.mapwrap text.blab{font-family:var(--f-mono); font-size:11px; fill:var(--muted);
+  letter-spacing:.08em; text-anchor:middle; pointer-events:none}
+.mapwrap circle.mark{fill:var(--ink); stroke:var(--surface); stroke-width:2}
+.mapwrap text.mlab{font-family:var(--f-mono); font-size:11.5px; fill:var(--ink); pointer-events:none}
+
+/* ---------- paired small maps ---------- */
+.pair{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:24px 0; max-width:none}
+.pair figure{margin:0; background:var(--surface); border:1px solid var(--rule);
+  border-radius:4px; padding:10px 10px 6px}
+.pair figcaption{font-family:var(--f-mono); font-size:12px; letter-spacing:.05em;
+  text-transform:uppercase; color:var(--ink-2); margin-bottom:7px}
+.pair svg{width:100%; height:auto; display:block}
+.pair path{stroke:var(--surface); stroke-width:.5}
+.sm.need .s1{fill:var(--m1)} .sm.need .s2{fill:var(--m2)} .sm.need .s3{fill:var(--m3)}
+.sm.need .s4{fill:var(--m4)} .sm.need .s5{fill:var(--m5)} .sm.need .s6{fill:var(--m6)}
+.sm.binA .s1{fill:var(--rule)} .sm.binA .s2{fill:var(--m4)}
+.sm.binB .s1{fill:var(--rule)} .sm.binB .s2{fill:var(--q5)}
+.sm.supply .s1{fill:var(--q0)} .sm.supply .s2{fill:var(--q1)} .sm.supply .s3{fill:var(--q2)}
+.sm.supply .s4{fill:var(--q3)} .sm.supply .s5{fill:var(--q4)} .sm.supply .s6{fill:var(--q5)}
+.sm.hours .s1{fill:var(--q0)} .sm.hours .s2{fill:var(--q1)} .sm.hours .s3{fill:var(--q2)}
+.sm.hours .s4{fill:var(--q3)} .sm.hours .s5{fill:var(--q4)} .sm.hours .s6{fill:var(--q5)}
+@media (max-width:640px){ .pair{grid-template-columns:1fr; gap:10px; margin:18px 0}
+  .pair figcaption{font-size:11px} }
+
+/* ---------- map ---------- */
+.mapwrap{margin:22px 0; max-width:none; border:1px solid var(--rule); border-radius:4px; background:var(--surface); padding:14px}
+.mapwrap svg{width:100%; height:auto; display:block}
+.mapwrap path{stroke:var(--surface); stroke-width:.6; cursor:default}
+.mapwrap path:hover{stroke:var(--ink); stroke-width:1.2}
+.pair path:hover{stroke:var(--ink); stroke-width:1.2}
+.b1{fill:var(--m1)} .b2{fill:var(--m2)} .b3{fill:var(--m3)}
+.b4{fill:var(--m4)} .b5{fill:var(--m5)} .b6{fill:var(--m6)}
+.maplegend{display:flex; flex-wrap:wrap; gap:14px; margin-top:12px; align-items:center}
+.maplegend .it{display:flex; align-items:center; gap:6px; font-family:var(--f-mono); font-size:12.5px; color:var(--ink-2)}
+.maplegend .sw{width:16px; height:11px; border-radius:2px; display:inline-block}
+
+/* ---------- misc ---------- */
+.note{font-family:var(--f-body); font-size:14.5px; color:var(--ink-2); line-height:1.58; max-width:none}
+.tag-row{display:flex; flex-wrap:wrap; gap:7px; margin:14px 0}
+.chip{font-family:var(--f-mono); font-size:11px; padding:4px 9px; border-radius:3px;
+  background:var(--surface-2); color:var(--ink-2); border:1px solid var(--rule)}
+.chip.ok{background:var(--accent-soft); color:var(--accent); border-color:transparent}
+.chip.no{background:var(--alert-soft); color:var(--alert); border-color:transparent}
+footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule); color:var(--muted);
+  font-family:var(--f-mono); font-size:11.5px; line-height:1.7}
+/* ---------- phone ---------- */
+@media (max-width:640px){
+  .tbox{position:relative; background:
+    linear-gradient(to right, var(--surface) 30%, transparent) left / 40px 100% no-repeat local,
+    linear-gradient(to left, var(--surface) 30%, transparent) right / 40px 100% no-repeat local,
+    radial-gradient(farthest-side at 0 50%, rgba(0,0,0,.18), transparent) left / 16px 100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.18), transparent) right / 16px 100% no-repeat scroll,
+    var(--surface)}
+  table{font-size:13.5px}
+  body{font-size:16.5px; line-height:1.58}
+  .wrap{padding-inline:16px; padding-block:0 48px}
+  h1{font-size:clamp(28px,8vw,36px)}
+  h2{font-size:21px; margin:38px 0 6px; padding-top:18px}
+  h3{font-size:17px; margin:24px 0 4px}
+  .standfirst{font-size:17px}
+  .lede{font-size:13.5px}
+  .tldr{padding:20px 17px}
+  .tldr h2{font-size:19px}
+  .pull{font-size:18px; margin:20px 0}
+  .bar{grid-template-columns:1fr; gap:3px}
+  .bar .track{height:13px}
+  .bar .lab{font-size:12.5px}
+  /* toggle: let the three buttons breathe, keep them one tap each */
+  .modebar{gap:8px; padding-block:9px; margin-bottom:22px}
+  .seg{width:100%}
+  .seg button{-webkit-tap-highlight-color:transparent; touch-action:manipulation;
+  flex:1 1 0; padding:9px 6px; font-size:12.5px; min-height:40px}
+  .modehint{font-size:11px; line-height:1.4}
+  /* stat tiles: two up, never one orphan on its own row */
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .kpi{padding:13px 12px 11px}
+  .kpi .v{font-size:21px}
+  .kpi .k{font-size:9.5px; letter-spacing:.06em}
+  /* tables scroll horizontally inside their own box, body never does */
+  .tbox{margin:16px -16px; border-radius:0; border-left:0; border-right:0}
+  table{font-size:12.5px}
+  th,td{padding:8px 11px}
+  td.n{font-size:11.5px}
+  caption{padding:9px 16px; font-size:10.5px}
+  .call{padding-left:14px; margin:18px 0}
+  .mapwrap{margin:18px -16px; border-radius:0; border-left:0; border-right:0; padding:10px}
+  .maplegend{gap:9px 11px}
+  .maplegend .it{font-size:11.5px}
+  ul,ol{padding-left:18px}
+  .byline{gap:5px 14px; font-size:11px}
+  footer{font-size:10.5px}
+}
+@media (max-width:380px){
+  .kpis{grid-template-columns:1fr}
+  .seg button{-webkit-tap-highlight-color:transparent; touch-action:manipulation;
+  font-size:11.5px; padding:9px 4px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
+.cb{background:#f2f2ef;border:1px solid rgba(0,0,0,.12);border-radius:6px;padding:.85rem 1rem;overflow-x:auto;margin:1rem 0;-webkit-overflow-scrolling:touch}.cb code{background:none;padding:0;white-space:pre;font:500 .8rem/1.6 'IBM Plex Mono',ui-monospace,SFMono-Regular,monospace}@media(prefers-color-scheme:dark){:root:not([data-theme='light']) .cb{background:#1b1d1c;border-color:rgba(255,255,255,.14)}}:root[data-theme='dark'] .cb{background:#1b1d1c;border-color:rgba(255,255,255,.14)}@media(max-width:600px){.cb code{font-size:.74rem}}body{margin:0}code{overflow-wrap:anywhere}.updated{margin-bottom:.6rem;font-weight:500}.updated a{white-space:nowrap}.byline .stamp{opacity:.75}
+/* ---------- team-research tag (23 Sep 2026) ---------- */
+:root{--team:#5B4A8C; --team-soft:#ECE8F5}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--team:#C3B5EC; --team-soft:#2A2440}}
+:root[data-theme="dark"]{--team:#C3B5EC; --team-soft:#2A2440}
+.tag-team{display:inline-block; font-family:var(--f-mono); font-size:10px; font-weight:500; letter-spacing:.06em;
+  text-transform:uppercase; line-height:1; padding:3px 7px 2px; border-radius:999px; vertical-align:2px;
+  color:var(--team); background:var(--team-soft); border:1px solid color-mix(in srgb, var(--team) 30%, transparent);
+  white-space:nowrap; cursor:pointer}
+.tag-team:focus-visible{outline:2px solid var(--team); outline-offset:2px}
+#tag-tip{position:fixed; z-index:60; max-width:300px; padding:9px 12px; border-radius:6px;
+  background:var(--ink,#1c2a22); color:var(--surface,#fff); font-family:var(--f-body); font-size:13.5px;
+  line-height:1.45; letter-spacing:0; text-transform:none; box-shadow:0 6px 20px rgba(0,0,0,.18);
+  pointer-events:none; opacity:0; transform:translateY(4px); transition:opacity .12s, transform .12s}
+#tag-tip.on{opacity:1; transform:none}
+#tag-tip b{display:block; font-family:var(--f-mono); font-size:10.5px; letter-spacing:.06em;
+  text-transform:uppercase; opacity:.75; margin-bottom:3px; font-weight:500}
+.legend-team{font-size:14.5px; color:var(--ink-2)}
+figure.chart{margin:22px 0; background:#fff; border:1px solid var(--rule); border-radius:4px; padding:10px}
+figure.chart img{width:100%; height:auto; display:block}
+figure.chart figcaption{font-family:var(--f-mono); font-size:11px; color:#555; margin-top:6px; line-height:1.5}
+aside.peer{background:var(--surface); border:1px solid var(--rule); border-left:3px solid var(--team); border-radius:0 4px 4px 0;
+  padding:12px 18px; margin:24px 0; font-size:15px}
+aside.peer .peer-h{font-family:var(--f-display); font-weight:600; margin:0 0 4px}
+aside.peer ul{margin:6px 0}
+.changed{font-family:var(--f-mono); font-size:12px; color:var(--ink-2); margin:14px 0 0}
+@media (max-width:640px){figure.chart{margin:18px -16px; border-radius:0; border-left:0; border-right:0}}
+.archive-note{font-family:var(--f-mono); font-size:12px; color:var(--ink-2); background:var(--surface-2);
+  border:1px solid var(--rule); border-left:3px solid var(--warn); border-radius:0 4px 4px 0; padding:10px 14px; margin:0 0 18px}
+#original h3{border-top:1px solid var(--rule); padding-top:20px; margin-top:34px}
+#original .find{background:var(--accent-soft); border-left:3px solid var(--accent); padding:13px 16px; margin:20px 0; border-radius:0 3px 3px 0; color:var(--ink)}
+#original h3 + p em:first-child{font-family:var(--f-mono); font-size:11.5px; font-style:normal; letter-spacing:.04em; color:var(--accent); text-transform:uppercase}
+.lbl-short{display:none}
+@media (max-width:640px){.lbl-long{display:none}.lbl-short{display:inline}.seg{flex-wrap:wrap}.seg button{flex:1 1 45%}}
+.tab-badge{display:inline-block; margin-left:6px; padding:1px 6px 1px; border-radius:999px; font-family:var(--f-mono);
+  font-size:9px; font-weight:500; letter-spacing:.06em; text-transform:uppercase; vertical-align:1px; line-height:1.5;
+  background:var(--surface-2); color:var(--muted); border:1px solid var(--rule)}
+.seg button[aria-pressed="true"] .tab-badge{background:transparent; color:var(--surface); border-color:currentColor; opacity:.85}
+@media (max-width:420px){.tab-badge{font-size:8px; padding:0 5px; margin-left:5px; letter-spacing:.04em}}
+/* ---------- UX fixes (23 Sep 2026, mobile/desktop check) ---------- */
+:root{--muted:#5E6C62}
+.byline .stamp{opacity:1}
+#walk,#original,#lim,#data{scroll-margin-top:96px}
+figure.chart a.zoom{display:block}
+@media (max-width:640px){
+  h2,h3,#walk,#original,#lim,#data{scroll-margin-top:156px}
+  .modebar{margin-inline:-16px; padding-inline:16px}
+  th,td{white-space:normal; min-width:6.5em; vertical-align:top}
+  td.n{white-space:nowrap; min-width:0}
+  th.n{min-width:5em}
+  td .tag-team{white-space:normal; line-height:1.3}
+  figure.chart a.zoom{position:relative}
+  figure.chart a.zoom::after{content:"Tap to enlarge \2197"; position:absolute; right:6px; bottom:6px;
+    font-family:var(--f-mono); font-size:11px; line-height:1; padding:7px 9px; border-radius:3px;
+    background:rgba(21,30,25,.78); color:#fff}
+}
+/* line length: body text capped for reading; tables, figures, maps and callouts stay full width */
+</style>
+<style>
+.verswitch{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 14px}
+.verswitch a{font:500 13px/1 "IBM Plex Mono",ui-monospace,monospace;padding:7px 11px;border:1px solid currentColor;border-radius:999px;text-decoration:none;opacity:.7}
+.verswitch a[aria-current="page"]{opacity:1;font-weight:600;background:rgba(127,127,127,.14)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="masthead">
+  <nav class="verswitch" aria-label="Site version"><a href="index.html">Current version</a><a href="pivot.html" aria-current="page">Proposed pivot · draft</a></nav>
+  <p class="eyebrow">PMBA6093 · Analytics for Managers · Final project · <strong>proposed direction, for team discussion</strong></p>
+  <h1>Fix before you build</h1>
+  <p class="standfirst">New York has set a target of 2,120 public restrooms by 2035 and has 975 today. Public data cannot prove where new ones are needed. It can show that the restrooms the City already has are failing inspection more often, and it can tell Parks where to check first. This version rebuilds the story around that.</p>
+  <div class="byline"><span>HKU MBA group project</span><span>Draft for alignment, not final</span><span>Data current to June–September 2026</span><span class="stamp">Drafted 24 September 2026</span></div>
+  <p class="changed"><strong>How this differs from the current version:</strong> the ranking of neighbourhoods moves from the answer to a screen; the inspection record becomes the centre; a tested rule for where to send maintenance checks replaces the costed siting plan; every number here was re-derived independently before publishing. The table at the end of the Walkthrough compares the two section by section.</p>
+</header>
+<div class="modebar">
+  <div class="seg" role="group" aria-label="Level of detail">
+    <button id="btn-walk" aria-pressed="true">Walkthrough<span class="tab-badge">Proposed</span></button>
+    <button id="btn-lim" aria-pressed="false">Limits</button>
+    <button id="btn-data" aria-pressed="false">Data &amp; code</button>
+  </div>
+  <span class="modehint" id="hint" role="status" aria-live="polite">The proposed story, section by section.</span>
+</div>
+
+<div id="walk" hidden>
+<h2>Walkthrough</h2>
+
+<h3 id="situation">0 — The situation</h3>
+<ul>
+<li>Local Law 58 of 2025 sets a target of <strong>2,120</strong> public restrooms by 2035. The City's register lists <strong>975</strong> as operational.</li>
+<li>Only <strong>8</strong> are open 24 hours, and all 8 are highway gas stations or a snack bar, not walk-in public toilets.</li>
+<li>The siting strategy under the law is reportedly due on <strong>1 Nov 2026</strong> (PIX11, Aug 2026; no primary document found yet).</li>
+<li>A <strong>17-unit</strong> modular pilot started in September 2026: $4M, one year, open 7am–10pm.</li>
+</ul>
+<p class="find"><strong>The central problem: need cannot be observed, but failure can.</strong> No dataset records "needed a toilet and could not find one". Parks inspectors do record, on a schedule, whether each existing restroom is acceptable. This version builds on what can be observed.</p>
+
+<h3 id="where">1 — Where to look</h3>
+<p class="lede">Data cleaning, negative binomial regression, out-of-sample validation, sensitivity check</p>
+<p><strong>The closest signal of need is 311 "Urinating in Public" complaints: 7,926 from 2020 to 2026.</strong> Raw counts mislead. The top 1% of addresses file 22.3% of them, so each address counts once a month.</p>
+<p>A negative binomial regression then predicts how many complaints each of 197 neighbourhoods should produce from its subway riders, workers, hotels and residents. Observed over expected is the need ratio.</p>
+<ul>
+<li><strong>It beats the simple benchmark.</strong> On neighbourhoods it never saw, the model puts complaint hot spots in the right order better than subway ridership alone: rank correlation 0.79 against 0.70, winning 96% of 200 random 70/30 splits.</li>
+<li><strong>Six neighbourhoods stand out.</strong> For each, there is a 95% probability that complaints run at least 1.5× what size and traffic predict: East Harlem (North), Astoria (East)–Woodside (North), East Elmhurst, Williamsbridge–Olinville, Brighton Beach, Midtown–Times Square.</li>
+</ul>
+<p><strong>But complaints measure complainers.</strong> Re-ranked on phone reports only (37% of complaints), four of the six leave the top 25:</p>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>High-confidence area</th><th class="n">Rank on phone reports only, of 197</th></tr></thead><tbody>
+<tr><td>Brighton Beach</td><td class="n">2</td></tr>
+<tr><td>East Elmhurst</td><td class="n">5</td></tr>
+<tr><td>East Harlem (North)</td><td class="n">41</td></tr>
+<tr><td>Midtown–Times Square</td><td class="n">42</td></tr>
+<tr><td>Williamsbridge–Olinville</td><td class="n">50</td></tr>
+<tr><td>Astoria (East)–Woodside (North)</td><td class="n">121</td></tr>
+</tbody></table></div>
+<p>Only 1 of the pilot's 17 units sits in any of the six.</p>
+<p class="find"><strong>The ranking is a screen, not a verdict.</strong> It tells the City where to send someone to look before committing capital. It does not prove where need is.</p>
+
+<h3 id="when">2 — When</h3>
+<p class="lede">Hours parsing, distance by hour, complaint timing</p>
+<p><strong>Complaints peak at 6pm, and 30% are filed between 6pm and midnight</strong>, when most restrooms have closed.</p>
+<figure class="chart"><a class="zoom" href="img/pivot/N4_hubs_without_open_restroom.png" target="_blank" rel="noopener"><img src="img/pivot/N4_hubs_without_open_restroom.png" alt="Bar chart: of the 50 busiest subway hubs, 4 have no open restroom within 500 m at 2pm, 21 at 6pm, 43 at 9pm" loading="lazy"></a></figure>
+<ul>
+<li>At 2pm, 4 of the 50 busiest subway hubs have no restroom within 500 m. Those 4 have none at any hour.</li>
+<li>At 6pm it is 21 on winter hours, or 9 if park restrooms stay open to 8pm. 641 of 975 restrooms post the same placeholder hours, "8am–4pm, open later seasonally", so the season decides this figure.</li>
+<li>At 9pm it is 43, in either season.</li>
+</ul>
+<p class="note"><strong>Caveat:</strong> distances are straight-line, so real walks are longer.</p>
+<p class="find"><strong>Longer evening hours use restrooms the City already has.</strong> We do not claim they are the cheapest option: that depends on how staffing is costed.</p>
+
+<h3 id="turn">3 — The turn: the restrooms New York has are failing more often</h3>
+<p class="lede">Panel data, facility fixed effects, balanced panel, difference-in-differences placebo</p>
+<p><strong>One in five Parks restrooms was rated unacceptable in January–June 2026, the highest rate since 2012.</strong> Parks inspectors grade comfort stations on a schedule; 31,768 restroom ratings are on file.</p>
+<figure class="chart"><a class="zoom" href="img/pivot/h1_failure_2012_2026.png" target="_blank" rel="noopener"><img src="img/pivot/h1_failure_2012_2026.png" alt="Stacked bar chart of the January–June failure rate of NYC Parks comfort stations, 2012 to 2026: 21.2% in 2012, falling to a low of 8.5% in 2024, then 11.3% in 2025 and 20.1% in 2026" loading="lazy"></a></figure>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>January–June</th><th class="n">Rated unacceptable</th></tr></thead><tbody>
+<tr><td>2012–14</td><td class="n">21.2%, 17.0%, 20.0%</td></tr>
+<tr><td>2022–24</td><td class="n">9.4%, 9.0%, 8.5% (the lowest on record)</td></tr>
+<tr><td>2025</td><td class="n">11.3%</td></tr>
+<tr><td><strong>2026</strong></td><td class="n"><strong>20.1%</strong></td></tr>
+</tbody></table></div>
+<p>The rise from 2024 is +11.6 percentage points (95% CI +7.8 to +15.3). It arrived as a step in January 2026, not a slow slide.</p>
+<p><strong>It survives every artefact test we could run:</strong></p>
+<ul>
+<li><strong>Same buildings.</strong> The 395 restrooms inspected in the first half of every year from 2022 to 2026 go from 5.9% to 18.1%. With facility fixed effects, 2026 is +11.4 pp above 2024.</li>
+<li><strong>Not the season.</strong> Every month of 2026 is above the highest same-month rate of 2022–25.</li>
+<li><strong>Not one inspector or borough.</strong> Remove any one inspector and 2026 stays at 18.8–21.8%; remove any one borough and it stays at 17.1–22.3%.</li>
+<li><strong>Not late data entry.</strong> 96–100% of inspections are entered the same day.</li>
+</ul>
+<p><strong>Tougher grading does not explain it.</strong> The same inspectors, in the same months, rated parks without restrooms no worse, while their restroom failure rates tripled or quadrupled:</p>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Inspector</th><th class="n">Parks without a restroom, 2024 → 2026</th><th class="n">Restrooms, 2024 → 2026</th></tr></thead><tbody>
+<tr><td>#45</td><td class="n">7.9% → 8.3%</td><td class="n">6.5% → 27.3%</td></tr>
+<tr><td>#62</td><td class="n">7.6% → 8.1%</td><td class="n">6.2% → 21.6%</td></tr>
+<tr><td>#31</td><td class="n">12.0% → 12.4%</td><td class="n">7.1% → 23.5%</td></tr>
+<tr><td>All parks without a restroom</td><td class="n">10.2% → 9.6%</td><td class="n">—</td></tr>
+</tbody></table></div>
+<p>Within restrooms, structural failures roughly tripled (5.9% → 19.2%) while litter stayed flat (2.1% → 2.2%).</p>
+<p><strong>About half the rise is restrooms failed with nothing inside rated</strong>, 5.4 of the 11.6 points. That most likely means found closed or locked. A locked restroom is an hours and staffing problem as much as a repair one.</p>
+<ul>
+<li>80 of 736 Parks comfort stations are under long-term closure, 46 of them for repairs.</li>
+<li>In the Parks capital tracker, the median new restroom is funded at about $4M and the median reconstruction at about $1.4–1.7M, depending on how price bands are counted. That is roughly two and a half reconstructions for one new build.</li>
+</ul>
+<p class="find"><strong>Protect the stock before adding to it.</strong> Every station kept open or brought back serves people now, at well under half the cost of building new. The practical question becomes: with limited crews, which stations should be checked first?</p>
+<p class="note"><strong>Caveat:</strong> a restroom-specific change in rating guidance in January 2026 cannot be ruled out from the data. Worth asking Parks.</p>
+
+<h3 id="which">4 — Which stations to check first</h3>
+<p class="lede">Train / validation / test split in time, logistic regression, classification trees, rule benchmarks, cluster bootstrap</p>
+<p><strong>The decision:</strong> every January and July, which 20% of about 680 inspected sites get an extra maintenance check? Each list uses only records entered before that date.</p>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Stage</th><th>Period</th><th class="n">Rated outcomes</th><th class="n">Unacceptable</th></tr></thead><tbody>
+<tr><td>Fit the models</td><td>2018–2023</td><td class="n">6,579</td><td class="n">777</td></tr>
+<tr><td>Choose between them</td><td>2024</td><td class="n">1,170</td><td class="n">130</td></tr>
+<tr><td>Test, choice frozen</td><td>2025 and Jan–Jun 2026</td><td class="n">1,685</td><td class="n">244</td></tr>
+</tbody></table></div>
+<p>The outcome is the rating at the site's next regular inspection. The candidates were random selection, simple history rules, four shallow classification trees and two logistic regressions.</p>
+<figure class="chart"><a class="zoom" href="img/pivot/all_eligible_priority_comparison.png" target="_blank" rel="noopener"><img src="img/pivot/all_eligible_priority_comparison.png" alt="Bar chart: recorded failures caught in 411 check slots: random 48.9, last three inspections 79.1, three-year history rule 86.1, logistic regression 88.0" loading="lazy"></a></figure>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Method, 20% of sites, 411 check slots over three half-years</th><th class="n">Recorded failures caught</th></tr></thead><tbody>
+<tr><td>Random selection, expected</td><td class="n">48.9</td></tr>
+<tr><td>Failure share in the last three inspections</td><td class="n">79.1</td></tr>
+<tr><td><strong>Failure share over the last three years</strong></td><td class="n"><strong>86.1</strong></td></tr>
+<tr><td>Logistic regression, chosen on 2024</td><td class="n">88.0</td></tr>
+</tbody></table></div>
+<ul>
+<li><strong>History works.</strong> Targeting by inspection history finds about 1.8 times as many recorded failures as chance. It holds at a 10% and a 30% budget.</li>
+<li><strong>The model adds nothing reliable.</strong> Against the three-year rule, the difference is −2.3 to +3.3 points (parent-park cluster bootstrap). Across nine reasonable logistic specifications the count ranges from 75 to 88. The trees found no useful split.</li>
+<li><strong>The rule matters.</strong> "Failed last time" captures only about 43% of the model's gain over random; the three-year failure share captures about 95%.</li>
+<li><strong>A third of failures cannot be predicted from history.</strong> 88 of the 244 failures were at sites with a clean three-year record; no history-based list beats random there.</li>
+</ul>
+<p class="note"><strong>What this measures:</strong> failures the regular inspection would have recorded anyway. It shows better detection, not failures prevented. Section 6 sets out how to measure prevention.</p>
+<p class="find"><strong>Use a transparent three-year rule, not a model.</strong> A spreadsheet can run it every January and July. Keep the regular inspections, because a third of failures arrive without warning.</p>
+
+<h3 id="rulesout">5 — What the tests rule out</h3>
+<p class="lede">Incremental predictive value, calibration, missing-data bias</p>
+<ul>
+<li><strong>Complaints do not help target maintenance.</strong> On a matched subset (254 check slots), inspection history catches 67 failures; adding nearby 311 complaints catches 68; complaints alone, 42.7. Complaints measure street behaviour, not restroom condition.</li>
+<li><strong>The risk levels drift.</strong> Frozen after 2024, the model expected 12% of sites to fail their next check in January–June 2026; 20% did. The ranking still worked, but levels must be refreshed every cycle.</li>
+<li><strong>Some outcomes are unknown.</strong> 18% of eligible site-checks had no rating or no visit, and those skew towards riskier sites. Missing ratings were never counted as passes.</li>
+</ul>
+<figure class="chart"><a class="zoom" href="img/pivot/N5_complaints_add_nothing.png" target="_blank" rel="noopener"><img src="img/pivot/N5_complaints_add_nothing.png" alt="Bar chart: failures caught with history only 67, history plus complaints 68, complaints only 42.7, on 254 slots" loading="lazy"></a></figure>
+
+<h3 id="measure">6 — How to measure whether it works</h3>
+<p class="lede">Randomised experiment (A/B test), power, service metrics</p>
+<p><strong>No New York data yet links a check or a repair to a better next rating.</strong> The cleanest way to find out is an experiment built into the rule:</p>
+<ul>
+<li>Among the high-risk sites each half-year, randomly choose which get the extra check first.</li>
+<li>Compare their next rating and days closed with the sites checked later.</li>
+<li>Log what each check found and what was fixed, with dates.</li>
+</ul>
+<p>The same logging lets the 17-unit pilot be judged on service: the hours each unit is found open and working, not the units installed.</p>
+<p class="find"><strong>This turns a prediction into evidence.</strong> After a year, the City would know whether targeted checks prevent failures, not just find them.</p>
+
+<h3 id="recommend">7 — What we recommend</h3>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Who</th><th>Do this</th></tr></thead><tbody>
+<tr><td>NYC Parks</td><td>Every January and July, send extra checks to the top 20% of sites by three-year failure share. Keep the regular inspections. Randomise the order among high-risk sites and log the results</td></tr>
+<tr><td>Parks, Mayor's Office, DOT</td><td>Extend evening hours near the busiest hubs, where 43 of 50 have nothing open within 500 m at 9pm, and staff to unlock restrooms found closed</td></tr>
+<tr><td>Mayor's Office: LL58 strategy</td><td>Use the neighbourhood ranking as a screen. Verify on the ground before committing about $4M to a new building</td></tr>
+<tr><td>All agencies</td><td>Publish verified open hours, closures and repair dates, so both the checks and the pilot can be judged</td></tr>
+</tbody></table></div>
+
+<h3 id="compare">8 — Current version and this draft, section by section</h3>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Section</th><th>Current version</th><th>This draft</th></tr></thead><tbody>
+<tr><td>Core claim</td><td>Answers the City's four decisions: where, when, what first, how to measure the pilot</td><td>Need can't be proven; failure can. Protect the stock, and target checks by history</td></tr>
+<tr><td>Where</td><td>The ranking is the answer; 29 areas costed</td><td>Same model, presented as a screen, with the phone-only limit up front</td></tr>
+<tr><td>When</td><td>Evening access by area and hub</td><td>Kept; "cheapest" claim dropped</td></tr>
+<tr><td>What first</td><td>"Stock is decaying"; repair as service quality; costed options for 29 areas</td><td>"Highest since 2012", after a record low; artefact tests and a stronger placebo; half the rise is likely closures</td></tr>
+<tr><td>New</td><td>—</td><td>A tested rule for where to send checks: history catches 1.8× random; a model adds nothing</td></tr>
+<tr><td>How to measure</td><td>Pilot power and an evening-hours trial</td><td>A randomised check order built into the rule; pilot judged on service</td></tr>
+<tr><td>Course methods</td><td>Regression, panel, power analysis, cost analysis</td><td>Adds train / validation / test in time, logistic vs trees vs rules, bootstrap, calibration, A/B design</td></tr>
+</tbody></table></div>
+
+<h3 id="prof">9 — Questions for the professor</h3>
+<ol>
+<li>Is a result of "better detection, not proven prevention", plus an experiment design, an acceptable main finding?</li>
+<li>Is it a strength or a weakness that a simple rule matches the logistic model?</li>
+<li>Should the complaint-based ranking stay in the presentation as a limit and a screen, or be cut to make room?</li>
+<li>How much method detail does a 12-minute talk need: the time split and the bootstrap, or just the result?</li>
+</ol>
+</div>
+
+<div id="lim" hidden>
+<h2>Limits and open questions</h2>
+<p>Every weakness of this draft in one place, starting with the questions that are still open.</p>
+
+<h3>Open questions: not yet resolved</h3>
+<ol>
+<li><strong>Did Parks change how it rates restrooms in January 2026?</strong> The jump arrives as a step that month. The same inspectors rated the rest of the park no worse, which rules out a general change in strictness, but not a restroom-only rule. The PIP rating manual or a question to Parks would settle it.</li>
+<li><strong>Does an extra check prevent anything?</strong> The test measures failures the next regular inspection records anyway. Only the randomised design in section 6 can show prevention.</li>
+<li><strong>Do reopened stations count towards 2,120?</strong> It is not yet checked whether the 80 long-term closed stations sit inside or outside the 975 listed as operational.</li>
+<li><strong>Closed or broken?</strong> About half the 2026 rise is restrooms failed with nothing inside rated. "Found closed" is the likely reading, but it is not confirmed without the rating manual.</li>
+</ol>
+
+<h3>1. The failure jump is real, but its framing matters</h3>
+<ul>
+<li>2024 is the lowest January–June rate in 22 years of data, so "more than doubled since 2024" flatters the change. Against all of 2025 (11.6%), 2026 is about 1.7×.</li>
+<li>2026 is back at 2012–14 levels. It reverses a decade of improvement; it is not unprecedented.</li>
+<li>"Structural failures quadrupled" holds only for the 7 inspectors who rated in both years. Across all inspectors they roughly tripled.</li>
+<li>A structural failure now fails the whole restroom only 20–29% of the time, against 44–61% in 2018–22. That fits either more minor defects or a lower bar for marking them; the data cannot separate the two.</li>
+</ul>
+
+<h3>2. The prediction is useful but modest</h3>
+<ul>
+<li>Ranking quality (AUC) is 0.62–0.66 in the three test periods. With a 20% budget, most recorded failures still fall outside the list.</li>
+<li>The logistic model's 88 is its best case: nine reasonable specifications range from 75 to 88.</li>
+<li>The three-year rule was not the benchmark chosen on 2024; the last-three rule was. The three-year rule only matched the model in the test years.</li>
+<li>43 sites fail in two or more of the three test periods and account for 91 of the 244 failures, so much of the gain is chronic sites recurring.</li>
+<li>Risk levels were too low in 2026 (12% predicted, 20% observed).</li>
+</ul>
+
+<h3>3. Missing outcomes</h3>
+<p>Of 2,050 eligible test site-periods, 324 had an unrated first visit and 41 had no visit: 17.8% unknown. Unrated visits cluster at higher-risk sites. We report recorded failures only and never count a missing rating as a pass.</p>
+
+<h3>4. Complaints measure complainers</h3>
+<p>The neighbourhood ranking predicts complaints, not need. Four of the six high-confidence areas leave the top 25 on phone reports alone. The ratio may also partly track street homelessness or nightlife, which the model does not control for.</p>
+
+<h3>5. Costs are funding figures, not outturn</h3>
+<p>The $4M new-build median is the midpoint the analysis assigns to the tracker's "$3–5 million" band. On exact-dollar projects only, the medians are $3.8M for a new build and $1.37M for a reconstruction.</p>
+
+<h3>6. Data dates and coverage</h3>
+<ul>
+<li>Inspections end on 28 June 2026. Any list built from them is an illustration, not a current work order.</li>
+<li>Only Parks restrooms are inspected this way; libraries, transit and other operators are not covered.</li>
+<li>The restroom register was last updated in June 2025.</li>
+<li>Whether ratings are edited after entry cannot be tested from a single snapshot of the data.</li>
+</ul>
+</div>
+
+<div id="data" hidden>
+<h2>Data and code</h2>
+<p>The draft uses the same cached datasets as the current version. Three groups of scripts sit in <code>analysis/pivot/</code>: the maintenance study, an independent replication of it, and a stress test of the failure trend.</p>
+<h3>Run it yourself</h3>
+<pre class="cb"><code>git clone https://github.com/JonathanWong1990/nyc-restroom-gap
+cd nyc-restroom-gap/analysis/pivot
+Rscript R/M1_maintenance_feasibility.R
+Rscript R/M2_maintenance_context.R
+Rscript R/M3_maintenance_verification.R   # QA checks, charts, input checksums</code></pre>
+<p>The M scripts read <code>analysis/data_raw/</code> and write to <code>analysis/pivot/outputs/</code>. The check scripts were run against the project's working folders and may need their paths adjusted.</p>
+
+<h3>The maintenance study</h3>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>File</th><th>What it does</th></tr></thead><tbody>
+<tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/pivot/maintenance_pivot_protocol.md"><code>maintenance_pivot_protocol.md</code></a></td><td><strong>The design, written before any result was seen.</strong> Start here</td></tr>
+<tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/pivot/R/M1_maintenance_feasibility.R"><code>M1_maintenance_feasibility.R</code></a></td><td>Builds the site-by-half-year panel; fits, chooses on 2024 and tests on 2025–26</td></tr>
+<tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/pivot/R/M2_maintenance_context.R"><code>M2_maintenance_context.R</code></a></td><td>The complaint extension and the nearby-restroom context</td></tr>
+<tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/pivot/R/M3_maintenance_verification.R"><code>M3_maintenance_verification.R</code></a></td><td>Assertions on dates, keys and arithmetic; the charts</td></tr>
+<tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/pivot/maintenance_pivot_findings.md"><code>maintenance_pivot_findings.md</code></a></td><td>Full results and limits</td></tr>
+<tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/tree/main/analysis/pivot/outputs"><code>outputs/</code></a></td><td>Every result table, including all budgets, not just 20%</td></tr>
+</tbody></table></div>
+
+<h3>Independent checks</h3>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>File</th><th>Verdict</th></tr></thead><tbody>
+<tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/pivot/checks/replication_report.md"><code>replication_report.md</code></a> + <code>R1</code>–<code>R6</code></td><td><strong>Replicates.</strong> Rebuilt from the raw inspection files without the study's code; 48.9 / 79.1 / 86.1 / 88 reproduced; no future information leaks in</td></tr>
+<tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/pivot/checks/trend_report.md"><code>trend_report.md</code></a> + <code>T1</code>–<code>T5</code></td><td><strong>Holds, with caveats.</strong> Season, sample, inspector, borough, entry lag and time of day tested</td></tr>
+<tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/pivot/checks/number_audit.md"><code>number_audit.md</code></a> + <code>audit_*.R</code></td><td>Every figure in the draft story re-derived; two corrected (8 open 24h; structural failures triple, not quadruple)</td></tr>
+</tbody></table></div>
+
+<h3>Datasets used</h3>
+<ul>
+<li>NYC Parks Inspection Program: inspections <code>mp8v-wjtf</code>, inspection master <code>yg3y-7juh</code>, sites <code>buk3-3qpr</code>, comfort stations <code>9byw-znpj</code></li>
+<li>Park structures <code>n8q6-i44s</code>; public restroom register <code>i7jb-7jku</code></li>
+<li>311 service requests <code>erm2-nwe9</code>, "Urinating in Public"</li>
+</ul>
+</div>
+</div>
+
+<script>
+(function(){
+  var ids = {walk:'walk', lim:'lim', data:'data'};
+  var btns = {walk:'btn-walk', lim:'btn-lim', data:'btn-data'};
+  var hint = document.getElementById('hint');
+  var hints = {
+    walk:'The proposed story, section by section.',
+    lim:'Where the analysis is weak and what it cannot claim.',
+    data:'Every dataset and script, and how to run it yourself.'
+  };
+  function set(v, scroll){
+    for (var k in ids) document.getElementById(ids[k]).hidden = (k !== v);
+    for (var b in btns) document.getElementById(btns[b]).setAttribute('aria-pressed', String(b === v));
+    hint.textContent = hints[v];
+    try { if (history.replaceState) history.replaceState(null, '', '#' + v); } catch(e) {}
+    try { localStorage.setItem('restroom-pivot-view', v); } catch(e) {}
+    if (scroll) {
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'});
+    }
+  }
+  Object.keys(btns).forEach(function(k){
+    document.getElementById(btns[k]).addEventListener('click', function(){ set(k, true); });
+  });
+  var alias = {limits:'lim', orig:'original', 'original-walkthrough':'original', code:'data'};
+  var has = function(k){ return Object.prototype.hasOwnProperty.call(btns, k); };
+  var norm = function(k){ return alias[k] || k; };
+  var start = null;
+  try { var h = norm((location.hash || '').replace('#','')); if (has(h)) start = h; } catch(e) {}
+  if (start === null) { try { var s = localStorage.getItem('restroom-pivot-view'); if (s && has(s)) start = s; } catch(e) {} }
+  if (start === null) start = 'walk';
+  set(start, false);
+  window.addEventListener('hashchange', function(){ var h=norm((location.hash||'').replace('#','')); if (has(h)) set(h, true); });
+  document.addEventListener('click', function(ev){ var a=ev.target.closest && ev.target.closest('a[data-tab]'); if (!a) return; var t=a.getAttribute('data-tab'); if (has(t)) { ev.preventDefault(); set(t, true); } });
+})();
+</script>
+<!-- Pixel toilet mascot: desktop only, hops away from the cursor. Decorative. -->
+<style>
+#loo{position:fixed; right:36px; bottom:36px; z-index:40; width:80px; height:80px; cursor:pointer;
+  transition:right .45s cubic-bezier(.3,1.6,.5,1), bottom .45s cubic-bezier(.3,1.6,.5,1); display:none}
+#loo svg{width:100%; height:100%; image-rendering:pixelated; animation:loo-bob 2.4s ease-in-out infinite;
+  filter:drop-shadow(0 3px 0 rgba(0,0,0,.12))}
+#loo .shadow{position:absolute; left:18px; right:18px; bottom:-8px; height:5px; border-radius:50%;
+  background:rgba(0,0,0,.12); animation:loo-shadow 2.4s ease-in-out infinite}
+@keyframes loo-bob{0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)}}
+@keyframes loo-shadow{0%,100%{transform:scaleX(1); opacity:1} 50%{transform:scaleX(.8); opacity:.6}}
+@media (min-width:1100px) and (hover:hover) and (pointer:fine){ #loo{display:block} }
+@media (prefers-reduced-motion:reduce){ #loo, #loo svg, #loo .shadow{animation:none; transition:none} }
+</style>
+<div id="loo" aria-hidden="true" title="Please wash your hands"><svg id="loo-svg" viewBox="0 0 16 16" shape-rendering="crispEdges"></svg><div class="shadow"></div></div>
+<script>
+(function(){
+  var art=[
+    "................",
+    "...oooooooooo...",
+    "...owwwwwwwwo...",
+    "...owwwwwwsso...",
+    "...owwwwwwwwo...",
+    "...oooooooooo...",
+    "..oooooooooooo..",
+    "..owwwwwwwwwwo..",
+    "..owbbbbbbbbwo..",
+    "..owwkwwwwkwwo..",
+    "...owpwkkwpwo...",
+    "....owwwwwwo....",
+    ".....owwwwo.....",
+    ".....owwwwo.....",
+    "....oooooooo....",
+    "................"
+  ];
+  var col={o:"#1f3b30", w:"#ffffff", k:"#1f3b30", p:"#f4a7b9", b:"#7cc4e8", s:"#b8c4bd"};
+  var svg=document.getElementById('loo-svg'), ns="http://www.w3.org/2000/svg";
+  art.forEach(function(row,y){ row.split('').forEach(function(c,x){ if(!col[c]) return;
+    var r=document.createElementNS(ns,'rect'); r.setAttribute('x',x); r.setAttribute('y',y);
+    r.setAttribute('width',1); r.setAttribute('height',1); r.setAttribute('fill',col[c]); svg.appendChild(r); }); });
+  var loo=document.getElementById('loo'), spots=[[36,36],[36,260],[36,480],[150,120],[150,380]], i=0;
+  loo.addEventListener('mouseenter', function(){
+    var n; do { n=Math.floor(Math.random()*spots.length); } while(n===i); i=n;
+    loo.style.right=spots[n][0]+'px'; loo.style.bottom=spots[n][1]+'px';
+  });
+})();
+</script>
+</body>
+</html>

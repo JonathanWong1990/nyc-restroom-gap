@@ -1,0 +1,3 @@
+2024 visits entered on/after 2025-01-01: 0 
+2023 visits entered in 2024: 0 
+any-U-prior-3y rule: sites 901  fails 156  20% frac yield 71.14594 

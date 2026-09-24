@@ -1,0 +1,173 @@
+
+===== Data checks =====
+    stage     n rated     U unrated novisit
+   <char> <int> <int> <int>   <int>   <int>
+1:  train  8031  6579   777     941     511
+2: select  1364  1170   130     166      28
+3:   test  2050  1685   244     324      41
+Distinct props in rated test sample: 644  parent parks: 516 
+
+===== 2024 selection stage, all-eligible 20% =====
+            P     n     k     U   random  s_lastU  s_last3 s_smooth3 lg_their
+       <IDat> <int> <num> <int>    <num>    <num>    <num>     <num>    <num>
+1: 2024-01-01   678   136    52 10.43068 15.14760 18.70625  13.46667       17
+2: 2024-07-01   686   138    78 15.69096 17.98095 20.49655  22.86957       21
+3:       <NA>  1364   274   130 26.12164 33.12855 39.20280  36.33623       38
+   lg_mine
+     <num>
+1:      17
+2:      24
+3:      41
+
+===== HEADLINE: test 2025-2026H1, all-eligible, 20% =====
+            P     n     k     U   random  s_lastU  s_last3 s_smooth3 lg_their
+       <IDat> <int> <num> <int>    <num>    <num>    <num>     <num>    <num>
+1: 2025-01-01   685   137    70 14.00000 16.49158 19.38608  21.15789     19.0
+2: 2025-07-01   683   137    68 13.63982 20.28235 25.31056  27.40000     26.5
+3: 2026-01-01   682   137   106 21.29326 28.80717 34.75484  37.50000     39.0
+4:       <NA>  2050   411   244 48.93308 65.58110 79.45147  86.05789     84.5
+   lg_mine
+     <num>
+1:      18
+2:      23
+3:      39
+4:      80
+
+===== 10% and 30% =====
+        P     n     k     U   random  s_lastU  s_last3 s_smooth3 lg_their
+   <IDat> <int> <num> <int>    <num>    <num>    <num>     <num>    <num>
+1:   <NA>  2050   207   244 24.64513 38.17561 46.25418  42.65967 43.33333
+   lg_mine
+     <num>
+1:      50
+        P     n     k     U   random  s_lastU  s_last3 s_smooth3 lg_their
+   <IDat> <int> <num> <int>    <num>    <num>    <num>     <num>    <num>
+1:   <NA>  2050   616   244 73.32322 87.89273 111.5863   111.948      109
+   lg_mine
+     <num>
+1:     114
+
+===== Conditional (rated-only universe) 20% =====
+        P     n     k     U   random  s_lastU  s_last3 s_smooth3 lg_their
+   <IDat> <int> <num> <int>    <num>    <num>    <num>     <num>    <num>
+1:   <NA>  1685   338   244 48.91785 68.25124 85.54891   92.1697       95
+   lg_mine
+     <num>
+1:      88
+
+===== Cluster-bootstrap 95% CIs (captured failures, pooled 3 periods, 20%) =====
+                  2.5%        50%    97.5%
+lg_vs_rand   21.680131 35.9306557 51.33067
+lg_vs_sm    -12.932951 -0.1188057 13.13144
+sm_vs_lastU   7.601651 19.5146085 32.16436
+sm_vs_rand   22.374433 36.0335830 49.92109
+
+===== ST1 leakage =====
+             P n_before entered_late late_props_in_panel visits_on_P
+        <IDat>    <int>        <int>               <int>       <int>
+ 1: 2018-01-01    15635            0                   0           0
+ 2: 2018-07-01    16421            0                   0           0
+ 3: 2019-01-01    17208            0                   0           0
+ 4: 2019-07-01    18001            0                   0           0
+ 5: 2020-01-01    18814            0                   0           0
+ 6: 2020-07-01    19371            0                   0           9
+ 7: 2021-01-01    20219            0                   0           0
+ 8: 2021-07-01    21034            0                   0           9
+ 9: 2022-01-01    21869            0                   0           0
+10: 2022-07-01    22701            0                   0           5
+11: 2023-01-01    23515            0                   0           0
+12: 2023-07-01    24353            0                   0           0
+13: 2024-01-01    25225            0                   0           0
+14: 2024-07-01    26097            0                   0           4
+15: 2025-01-01    26951            0                   0           0
+16: 2025-07-01    27824            0                   0           2
+17: 2026-01-01    28680            0                   0           0
+Max entry lag (days) among 2015+ visits: 6 
+Rows where last_d >= P (should be 0): 0 ; rows where out_d < P (should be 0): 0 
+Eligible rows with no prior visit (should be 0): 0 
+
+===== ST2 timing of first visit vs risk =====
+   risk_q     n     novisit    unrated med_days_to_visit visits_in_half
+   <fctr> <int>       <num>      <num>             <num>          <num>
+1:     Q1   270 0.003703704 0.02962963                95       1.081481
+2:     Q2   573 0.001745201 0.09424084                54       1.307155
+3:     Q3   443 0.058690745 0.28442438                82       1.106095
+4:     Q4   349 0.005730659 0.12607450                55       1.277937
+5:     Q5   415 0.026506024 0.22168675                71       1.190361
+   failrate_first
+            <num>
+1:     0.08812261
+2:     0.09073359
+3:     0.12714777
+4:     0.16501650
+5:     0.27884615
+Spearman(smooth3, days_to_visit): -0.041 
+   visit_month_in_half     n  failrate
+                 <num> <int>     <num>
+1:                   1   362 0.1408840
+2:                   2   332 0.1777108
+3:                   3   398 0.1206030
+4:                   4   392 0.1428571
+5:                   5   165 0.1393939
+6:                   6    36 0.1944444
+Outcome = any U in half-year:
+        P     n     k     U   random  s_lastU  s_last3 s_smooth3 lg_their
+   <IDat> <int> <num> <int>    <num>    <num>    <num>     <num>    <num>
+1:   <NA>  2050   411   295 59.16298 79.62535 91.87285  94.05789     99.5
+   lg_mine
+     <num>
+1:      94
+Outcome = last rated visit in half-year is U:
+        P     n     k     U   random  s_lastU  s_last3 s_smooth3 lg_their
+   <IDat> <int> <num> <int>    <num>    <num>    <num>     <num>    <num>
+1:   <NA>  2050   411   255 51.14773 66.43701 78.00509  77.26842     85.5
+   lg_mine
+     <num>
+1:      76
+
+===== ST4 chronic sites =====
+s_lastU    captured=65.6  distinct props among captured=196  props captured in 2+ periods=43  in all 3=5
+s_last3    captured=79.5  distinct props among captured=84  props captured in 2+ periods=23  in all 3=3
+s_smooth3  captured=86.1  distinct props among captured=76  props captured in 2+ periods=12  in all 3=2
+lg_their   captured=84.5  distinct props among captured=65  props captured in 2+ periods=17  in all 3=3
+lg_mine    captured=80.0  distinct props among captured=66  props captured in 2+ periods=11  in all 3=3
+All test failures:  244  from distinct props:  196 ; props failing in 2+ periods:  43 
+   fails last_rated_U any_U_prior3y
+   <int>        <int>         <int>
+1:   244           51           156
+
+Universe: last rated visit = A (new-failure detection)
+            P     n     k     U   random  s_last3 s_smooth3 lg_their lg_mine
+       <IDat> <int> <num> <int>    <num>    <num>     <num>    <num>   <num>
+1: 2025-01-01   594   119    58 11.61953 15.60649  18.46377       14      17
+2: 2025-07-01   595   119    52 10.40000 19.67901  18.63768       19      20
+3: 2026-01-01   586   118    83 16.71331 26.95798  26.30645       25      28
+4:       <NA>  1775   356   193 38.73284 62.24349  63.40790       58      65
+       n rated     U fail_rate_rated
+   <int> <int> <int>           <num>
+1:  1775  1484   193       0.1300539
+Universe: last rated = A AND no U in prior 3y
+            P     n     k     U    random   s_last3 s_smooth3 lg_their lg_mine
+       <IDat> <int> <num> <int>     <num>     <num>     <num>    <num>   <num>
+1: 2025-01-01   385    77    25  5.000000  6.784946  6.000000      9.2       8
+2: 2025-07-01   383    77    19  3.819843  3.619048  1.172414      2.0       2
+3: 2026-01-01   381    77    44  8.892388  8.519894  5.240000      4.0       3
+4:       <NA>  1149   231    88 17.712232 18.923888 12.412414     15.2      13
+
+===== ST5 'failed last time' rule =====
+            P sites_last_U slots20 U_among_lastU rated_lastU U_total
+       <IDat>        <int>   <num>         <int>       <int>   <int>
+1: 2025-01-01           91     137            12          60      70
+2: 2025-07-01           88     137            16          70      68
+3: 2026-01-01           96     137            23          71     106
+Uncapped 'failed last time' list: slots = 275  captured = 51  precision among rated = 0.254  vs base rated rate = 0.145 
+        P     n     k     U   random s_lastU s_lastU_then_sm s_smooth3 lg_their
+   <IDat> <int> <num> <int>    <num>   <num>           <num>     <num>    <num>
+1:   <NA>  2050   411   244 48.93308 65.5811        75.62882  86.05789     84.5
+
+===== AUC (rated test) =====
+            P s_lastU s_last3 s_smooth3 lg_their lg_mine
+       <IDat>   <num>   <num>     <num>    <num>   <num>
+1: 2025-01-01   0.536   0.576     0.645    0.624   0.664
+2: 2025-07-01   0.568   0.643     0.656    0.656   0.679
+3: 2026-01-01   0.551   0.623     0.636    0.650   0.646

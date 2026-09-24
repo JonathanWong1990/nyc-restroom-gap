@@ -1,0 +1,5 @@
+QA PASS
+Selected model: logistic_basic
+Selected baseline: last_three
+No outcome-based model reselection during verification.
+Both rated-cohort and all-eligible selection denominators reported.

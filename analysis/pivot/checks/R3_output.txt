@@ -1,0 +1,40 @@
+Rows where borough from prop_id != borough from sites table: 0 
+
+Rule benchmarks (test, all-eligible 20%): last3 within 3y window = 79.05877 ; last3 all history = 79.45147 ; smooth3 = 86.05789 
+
+Logistic specification sensitivity (known failures captured of 411 slots):
+                  spec sel2024_precision_rated test_all_eligible_20  test_10
+                <char>                   <num>                <num>    <num>
+1:         their_exact                  0.1913             88.00000 46.00000
+2:   their_linear_days                  0.1913             86.00000 43.00000
+3:    their_boro_sites                  0.1913             88.00000 46.00000
+4: their_last3_allhist                  0.1850             88.16667 44.00000
+5:          no_borough                  0.1962             79.00000 47.00000
+6:        plus_smooth3                  0.1775             81.50000 50.00000
+7:        smooth3_only                  0.1614             86.05789 42.65967
+8:      history_counts                  0.1564             75.00000 45.00000
+9:          my_R2_spec                  0.1775             80.00000 50.00000
+   test_30
+     <num>
+1: 112.000
+2: 109.500
+3: 112.000
+4: 111.000
+5: 109.000
+6: 114.000
+7: 111.948
+8: 110.000
+9: 114.000
+last_U   captured=65.6 | from sites last-rated U=51.0 | any U in prior 3y=59.0 | no U in prior 3y=6.6 | props w/ full-weight captured fail=43
+last3w   captured=79.1 | from sites last-rated U=41.0 | any U in prior 3y=79.1 | no U in prior 3y=0.0 | props w/ full-weight captured fail=27
+smooth3  captured=86.1 | from sites last-rated U=38.0 | any U in prior 3y=86.1 | no U in prior 3y=0.0 | props w/ full-weight captured fail=69
+lg       captured=88.0 | from sites last-rated U=48.0 | any U in prior 3y=88.0 | no U in prior 3y=0.0 | props w/ full-weight captured fail=70
+Test failures total 244; at sites with any U in prior 3y: 156 ; eligible site-periods with any prior-3y U: 901 of 2050 
+Failure rate (rated) by prior-3y U count:
+      u3     n  rate
+   <num> <int> <num>
+1:     0   939 0.094
+2:     1   485 0.177
+3:     2   204 0.260
+4:     3    57 0.298
+Props failing in >=2 test periods: 43 accounting for 91 of 244 failures

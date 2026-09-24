@@ -1,0 +1,14 @@
+       rand   lastU       l3       sm    lg
+      <num>   <num>    <num>    <num> <num>
+1: 48.93308 65.5811 79.05877 86.05789    88
+   lg_minus_sm lg_minus_l3 sm_minus_rand lg_minus_rand lastU_minus_rand   stat
+         <num>       <num>         <num>         <num>            <num> <char>
+1:   -10.58466   0.5787768      22.37443      23.46422         5.649268   2.5%
+2:     1.91342   7.8045458      36.03358      38.12516        16.777377    50%
+3:    13.73363  15.3265867      49.92109      53.06800        28.035092  97.5%
+As percentage points of 411 slots:
+   lg_minus_sm lg_minus_l3 sm_minus_rand lg_minus_rand lastU_minus_rand   stat
+         <num>       <num>         <num>         <num>            <num> <char>
+1:        -2.6         0.1           5.4           5.7              1.4   2.5%
+2:         0.5         1.9           8.8           9.3              4.1    50%
+3:         3.3         3.7          12.1          12.9              6.8  97.5%

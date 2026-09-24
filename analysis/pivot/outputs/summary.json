@@ -1,0 +1,369 @@
+{
+  "protocol": "Maintenance_Pivot_Feasibility/notes/maintenance_pivot_protocol.md",
+  "raw": {
+    "raw_rows": 31768,
+    "raw_visits": 31159,
+    "raw_properties": 961,
+    "last_date": "2026-06-28"
+  },
+  "unit": "Inspection property / half-year, aggregated comfort-station outcomes",
+  "development": {
+    "n": 6579,
+    "failures": 777
+  },
+  "validation": {
+    "n": 1170,
+    "failures": 130
+  },
+  "test": {
+    "n": 1685,
+    "failures": 244,
+    "sites": 644,
+    "parents": 516
+  },
+  "chosen_model": "logistic_basic",
+  "chosen_baseline": "last_three",
+  "test_20pct": [
+    {
+      "period": "2025H1",
+      "n": 553,
+      "failures": 70,
+      "k": 111,
+      "hits": 14.0506,
+      "precision": 0.1266,
+      "recall": 0.2007,
+      "random_hits": 14.0506,
+      "lift": 1,
+      "auc": 0.5,
+      "brier": 0.1107,
+      "mean_score": 0.117,
+      "rate": 0.1266,
+      "model": "random",
+      "budget": "20pct"
+    },
+    {
+      "period": "2025H2",
+      "n": 607,
+      "failures": 68,
+      "k": 122,
+      "hits": 13.6672,
+      "precision": 0.112,
+      "recall": 0.201,
+      "random_hits": 13.6672,
+      "lift": 1,
+      "auc": 0.5,
+      "brier": 0.0995,
+      "mean_score": 0.117,
+      "rate": 0.112,
+      "model": "random",
+      "budget": "20pct"
+    },
+    {
+      "period": "2026H1",
+      "n": 525,
+      "failures": 106,
+      "k": 105,
+      "hits": 21.2,
+      "precision": 0.2019,
+      "recall": 0.2,
+      "random_hits": 21.2,
+      "lift": 1,
+      "auc": 0.5,
+      "brier": 0.1683,
+      "mean_score": 0.117,
+      "rate": 0.2019,
+      "model": "random",
+      "budget": "20pct"
+    },
+    {
+      "period": "2025H1",
+      "n": 553,
+      "failures": 70,
+      "k": 111,
+      "hits": 19.7719,
+      "precision": 0.1781,
+      "recall": 0.2825,
+      "random_hits": 14.0506,
+      "lift": 1.4072,
+      "auc": 0.5563,
+      "brier": 0.1303,
+      "mean_score": 0.0928,
+      "rate": 0.1266,
+      "model": "last_three",
+      "budget": "20pct"
+    },
+    {
+      "period": "2025H2",
+      "n": 607,
+      "failures": 68,
+      "k": 122,
+      "hits": 26.8986,
+      "precision": 0.2205,
+      "recall": 0.3956,
+      "random_hits": 13.6672,
+      "lift": 1.9681,
+      "auc": 0.6439,
+      "brier": 0.1112,
+      "mean_score": 0.1068,
+      "rate": 0.112,
+      "model": "last_three",
+      "budget": "20pct"
+    },
+    {
+      "period": "2026H1",
+      "n": 525,
+      "failures": 106,
+      "k": 105,
+      "hits": 37.0678,
+      "precision": 0.353,
+      "recall": 0.3497,
+      "random_hits": 21.2,
+      "lift": 1.7485,
+      "auc": 0.6232,
+      "brier": 0.1694,
+      "mean_score": 0.1149,
+      "rate": 0.2019,
+      "model": "last_three",
+      "budget": "20pct"
+    },
+    {
+      "period": "2025H1",
+      "n": 553,
+      "failures": 70,
+      "k": 111,
+      "hits": 22,
+      "precision": 0.1982,
+      "recall": 0.3143,
+      "random_hits": 14.0506,
+      "lift": 1.5658,
+      "auc": 0.6146,
+      "brier": 0.1084,
+      "mean_score": 0.1123,
+      "rate": 0.1266,
+      "model": "logistic_basic",
+      "budget": "20pct"
+    },
+    {
+      "period": "2025H2",
+      "n": 607,
+      "failures": 68,
+      "k": 122,
+      "hits": 29,
+      "precision": 0.2377,
+      "recall": 0.4265,
+      "random_hits": 13.6672,
+      "lift": 2.1219,
+      "auc": 0.6578,
+      "brier": 0.0953,
+      "mean_score": 0.1117,
+      "rate": 0.112,
+      "model": "logistic_basic",
+      "budget": "20pct"
+    },
+    {
+      "period": "2026H1",
+      "n": 525,
+      "failures": 106,
+      "k": 105,
+      "hits": 41,
+      "precision": 0.3905,
+      "recall": 0.3868,
+      "random_hits": 21.2,
+      "lift": 1.934,
+      "auc": 0.6427,
+      "brier": 0.1604,
+      "mean_score": 0.1169,
+      "rate": 0.2019,
+      "model": "logistic_basic",
+      "budget": "20pct"
+    }
+  ],
+  "confidence_intervals": [
+    {
+      "variable": "delta_vs_rule",
+      "mean": 0.0225,
+      "lower": 0.0026,
+      "upper": 0.0436
+    },
+    {
+      "variable": "delta_vs_random",
+      "mean": 0.1268,
+      "lower": 0.0839,
+      "upper": 0.172
+    },
+    {
+      "variable": "model_precision",
+      "mean": 0.2738,
+      "lower": 0.2212,
+      "upper": 0.3275
+    },
+    {
+      "variable": "baseline_precision",
+      "mean": 0.2513,
+      "lower": 0.2065,
+      "upper": 0.2962
+    },
+    {
+      "variable": "auc",
+      "mean": 0.6397,
+      "lower": 0.5964,
+      "upper": 0.6845
+    }
+  ],
+  "coverage": [
+    {
+      "year": 2018,
+      "period": "2018H1",
+      "eligible": 646,
+      "followed": 612,
+      "rated": 526,
+      "unknown": 86,
+      "failed": 87
+    },
+    {
+      "year": 2018,
+      "period": "2018H2",
+      "eligible": 651,
+      "followed": 621,
+      "rated": 580,
+      "unknown": 41,
+      "failed": 70
+    },
+    {
+      "year": 2019,
+      "period": "2019H1",
+      "eligible": 661,
+      "followed": 626,
+      "rated": 527,
+      "unknown": 99,
+      "failed": 58
+    },
+    {
+      "year": 2019,
+      "period": "2019H2",
+      "eligible": 663,
+      "followed": 629,
+      "rated": 588,
+      "unknown": 41,
+      "failed": 65
+    },
+    {
+      "year": 2020,
+      "period": "2020H1",
+      "eligible": 664,
+      "followed": 482,
+      "rated": 400,
+      "unknown": 82,
+      "failed": 51
+    },
+    {
+      "year": 2020,
+      "period": "2020H2",
+      "eligible": 669,
+      "followed": 642,
+      "rated": 581,
+      "unknown": 61,
+      "failed": 94
+    },
+    {
+      "year": 2021,
+      "period": "2021H1",
+      "eligible": 677,
+      "followed": 641,
+      "rated": 521,
+      "unknown": 120,
+      "failed": 73
+    },
+    {
+      "year": 2021,
+      "period": "2021H2",
+      "eligible": 677,
+      "followed": 643,
+      "rated": 584,
+      "unknown": 59,
+      "failed": 56
+    },
+    {
+      "year": 2022,
+      "period": "2022H1",
+      "eligible": 679,
+      "followed": 649,
+      "rated": 537,
+      "unknown": 112,
+      "failed": 55
+    },
+    {
+      "year": 2022,
+      "period": "2022H2",
+      "eligible": 683,
+      "followed": 656,
+      "rated": 589,
+      "unknown": 67,
+      "failed": 67
+    },
+    {
+      "year": 2023,
+      "period": "2023H1",
+      "eligible": 682,
+      "followed": 661,
+      "rated": 543,
+      "unknown": 118,
+      "failed": 50
+    },
+    {
+      "year": 2023,
+      "period": "2023H2",
+      "eligible": 679,
+      "followed": 658,
+      "rated": 603,
+      "unknown": 55,
+      "failed": 51
+    },
+    {
+      "year": 2024,
+      "period": "2024H1",
+      "eligible": 678,
+      "followed": 666,
+      "rated": 556,
+      "unknown": 110,
+      "failed": 52
+    },
+    {
+      "year": 2024,
+      "period": "2024H2",
+      "eligible": 686,
+      "followed": 670,
+      "rated": 614,
+      "unknown": 56,
+      "failed": 78
+    },
+    {
+      "year": 2025,
+      "period": "2025H1",
+      "eligible": 685,
+      "followed": 670,
+      "rated": 553,
+      "unknown": 117,
+      "failed": 70
+    },
+    {
+      "year": 2025,
+      "period": "2025H2",
+      "eligible": 683,
+      "followed": 670,
+      "rated": 607,
+      "unknown": 63,
+      "failed": 68
+    },
+    {
+      "year": 2026,
+      "period": "2026H1",
+      "eligible": 682,
+      "followed": 669,
+      "rated": 525,
+      "unknown": 144,
+      "failed": 106
+    }
+  ],
+  "limits": ["Outcome only observed at first follow-up inspection; unknown and unvisited sites excluded from performance", "2026 data end 28 June; not 30 June", "Performance is detection under historical practice, not treatment effectiveness", "Probability calibration may drift; current ranking is an illustrative July snapshot, not current verified condition"]
+}

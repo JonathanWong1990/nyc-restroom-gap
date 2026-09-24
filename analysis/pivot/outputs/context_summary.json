@@ -1,0 +1,15 @@
+{
+  "complaint_extension_rows": 4760,
+  "train": 3493,
+  "test": 1267,
+  "spatial": [
+    {
+      "eligible": 682,
+      "single_structure": 531,
+      "unambiguous_register": 514,
+      "listed_operational": 487,
+      "no_listed_alternative400": 282
+    }
+  ],
+  "notes": ["Exploratory extension, same held-out periods as M1", "Geometry is the cached current footprint, restricted to known pre-2020 structures for complaint tests", "400m straight-line proximity is not walking access; posted hours and closures are not verified", "Do not equate no listed alternative with no actual alternative or quantify loss of population coverage"]
+}
