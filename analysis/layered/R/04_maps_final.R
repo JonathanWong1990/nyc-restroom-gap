@@ -26,11 +26,11 @@ pil <- st_as_sf(pl, coords = c("lon", "lat"), crs = 4326, remove = FALSE) |> st_
 
 # colour-blind-safe categorical set, validated all-pairs (dataviz validate_palette.js --pairs all: CVD dE >= 13, normal >= 16)
 ACT <- c("BUILD" = "#c0392b", "BUILD, VERIFY FIRST" = "#eba99f", "FIX" = "#2a78d6", "EXTEND HOURS" = "#eda100", "LOOK ELSEWHERE" = "#4a3aa7")
-DESC <- c("BUILD" = "Build: daytime gap, stronger complaint signal",
-          "BUILD, VERIFY FIRST" = "Build, verify first: daytime gap, weaker complaint signal",
-          "FIX" = "Fix: repairing or reopening restores 10+ points of coverage",
-          "EXTEND HOURS" = "Extend hours: covered by day, not at 9pm",
-          "LOOK ELSEWHERE" = "Look elsewhere: evening gap that longer park hours would not close")
+DESC <- c("BUILD" = "Build: daytime gap,\nstronger complaint signal",
+          "BUILD, VERIFY FIRST" = "Build, verify first: daytime gap,\nweaker complaint signal",
+          "FIX" = "Fix: repair or reopening restores\n10+ points of coverage",
+          "EXTEND HOURS" = "Extend hours: covered by day,\nnot at 9pm",
+          "LOOK ELSEWHERE" = "Look elsewhere: evening gap that\nlonger park hours would not close")
 cnt <- table(factor(d29$primary_action, levels = names(ACT)))
 lab <- setNames(sprintf("%s (%d)", DESC, cnt), names(ACT))
 d29$primary_action <- factor(d29$primary_action, levels = names(ACT))
@@ -42,20 +42,21 @@ p <- ggplot() +
   geom_sf(data = nta_all, fill = "#e9e9e7", colour = "white", linewidth = 0.15) +
   geom_sf(data = d29, aes(fill = primary_action), colour = "white", linewidth = 0.25) +
   geom_sf(data = six, fill = NA, colour = "black", linewidth = 0.7) +
-  geom_sf(data = pil, aes(shape = "City pilot site (17)"), size = 1.6, colour = "#222222", fill = "white", stroke = 0.4) +
-  geom_label(data = lab_six, aes(x = x, y = y, label = ntaname), size = 2.1, linewidth = 0, fill = alpha("white", 0.8),
+  geom_sf(data = pil, aes(shape = "City pilot site (17)"), size = 2.4, colour = "#222222", fill = "white", stroke = 0.5) +
+  geom_label(data = lab_six, aes(x = x, y = y, label = ntaname), size = 3.1, linewidth = 0, fill = alpha("white", 0.8),
                 label.padding = unit(0.08, "lines"), colour = "#111111") +
-  scale_fill_manual(values = ACT, labels = lab, drop = FALSE, name = "Primary action (the 29 NTAs with\ncomplaints >= 1.5x expected)") +
+  scale_fill_manual(values = ACT, labels = lab, drop = FALSE, name = "The 29 neighbourhoods with\ncomplaints >= 1.5x expected") +
   scale_shape_manual(values = c("City pilot site (17)" = 24), name = NULL) +
   guides(fill = guide_legend(order = 1, override.aes = list(colour = NA)), shape = guide_legend(order = 2)) +
-  labs(title = "The 29 high-complaint neighbourhoods: which access gap each has, and what to check first",
-       subtitle = "Black outline = the six with a 95%-certain complaint excess. Build is split at the natural break in complaint-signal strength. Grey = other NTAs.",
-       caption = paste("Wednesday, posted hours, 500 m straight line to a listed-operational restroom (register dated June 2025). Order: fix what exists, then build, then extend hours;",
-                       "\nthresholds in README. Complaints are a screen, not proof of need.")) +
+  labs(title = "The 29 high-complaint neighbourhoods:\nwhich access gap each has, and what to check first",
+       subtitle = "Black outline = the six with a 95%-certain complaint excess.\nBuild is split at the natural break in complaint-signal strength.",
+       caption = paste("Wednesday, posted hours, 500 m straight line to a listed-operational restroom (register dated June 2025).",
+                       "\nOrder: fix what exists, then build, then extend hours. Complaints are a screen, not proof of need.")) +
   theme_void(base_size = 9) +
-  theme(plot.title = element_text(face = "bold", size = 13), plot.subtitle = element_text(size = 8.5, colour = "grey30"),
-        plot.caption = element_text(size = 7, colour = "grey40", hjust = 0), legend.position = c(0.02, 0.98),
-        legend.justification = c(0, 1), legend.text = element_text(size = 7.5), legend.title = element_text(size = 8, face = "bold"),
+  theme(plot.title = element_text(face = "bold", size = 17), plot.subtitle = element_text(size = 12, colour = "grey30"),
+        plot.caption = element_text(size = 9, colour = "grey40", hjust = 0), legend.position = c(0.01, 0.99),
+        legend.justification = c(0, 1), legend.text = element_text(size = 11.5), legend.title = element_text(size = 12, face = "bold"),
+        legend.key.size = unit(0.55, "cm"), legend.key.spacing.y = unit(0.18, "cm"),
         legend.background = element_rect(fill = alpha("white", 0.85), colour = NA),
         plot.background = element_rect(fill = "white", colour = NA), plot.margin = margin(8, 8, 8, 8))
 ggsave(file.path(OUT, "diagnosis_map_final.png"), p, width = 9, height = 9.5, dpi = 160)
@@ -131,7 +132,10 @@ m <- leaflet(options = leafletOptions(preferCanvas = TRUE)) |>
                    group = "Build sites (any-location diagnostic)") |>
   addCircleMarkers(data = pil_ll, radius = 6, color = "#ffffff", fillColor = "#111111", fillOpacity = 1, weight = 2, label = ~sprintf("Pilot %s: %s (%s, %s)", site_id, published_name, ntaname, primary_action),
              group = "City pilot sites (17)") |>
-  addLegend("bottomright", colors = unname(ACT), labels = unname(lab), title = "The 29: primary action", opacity = 0.8) |>
+  addControl(html = paste0("<div style='font:14px/1.35 system-ui,sans-serif;max-width:320px'><b>The 29 high-complaint neighbourhoods</b><br>",
+                           "Click an area for every layer's value. Toggle build sites and pilot sites top right.<br>",
+                           "<a href='../index.html#map'>&larr; Back to the walkthrough</a></div>"), position = "topleft") |>
+  addLegend("bottomright", colors = unname(ACT), labels = gsub("\\n", " ", unname(lab)), title = "The 29: primary action", opacity = 0.8) |>
   addLayersControl(overlayGroups = c("The 29 high-complaint NTAs", "Other residential NTAs", "Build sites (prototype candidates)",
                                      "Build sites (any-location diagnostic)", "City pilot sites (17)"),
                    options = layersControlOptions(collapsed = FALSE)) |>
