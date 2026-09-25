@@ -26,11 +26,11 @@ pil <- st_as_sf(pl, coords = c("lon", "lat"), crs = 4326, remove = FALSE) |> st_
 
 # colour-blind-safe categorical set, validated all-pairs (dataviz validate_palette.js --pairs all: CVD dE >= 13, normal >= 16)
 ACT <- c("BUILD" = "#c0392b", "BUILD, VERIFY FIRST" = "#eba99f", "FIX" = "#2a78d6", "EXTEND HOURS" = "#eda100", "LOOK ELSEWHERE" = "#4a3aa7")
-DESC <- c("BUILD" = "Build: daytime gap,\nstronger complaint signal",
-          "BUILD, VERIFY FIRST" = "Build, verify first: daytime gap,\nweaker complaint signal",
-          "FIX" = "Fix: repair or reopening restores\n10+ points of coverage",
-          "EXTEND HOURS" = "Extend hours: covered by day,\nnot at 9pm",
-          "LOOK ELSEWHERE" = "Look elsewhere: evening gap that\nlonger park hours would not close")
+DESC <- c("BUILD" = "Priority build area: daytime gap,\nstronger complaint signal",
+          "BUILD, VERIFY FIRST" = "Verify-demand area: daytime gap,\nweaker complaint signal",
+          "FIX" = "Repair or reopen: restores 10+\npoints of coverage",
+          "EXTEND HOURS" = "Longer-hours area: covered by day,\nnot at 9pm",
+          "LOOK ELSEWHERE" = "Assess separately: evening gap that\nlonger park hours would not close")
 cnt <- table(factor(d29$primary_action, levels = names(ACT)))
 lab <- setNames(sprintf("%s (%d)", DESC, cnt), names(ACT))
 d29$primary_action <- factor(d29$primary_action, levels = names(ACT))
@@ -49,9 +49,9 @@ p <- ggplot() +
   scale_shape_manual(values = c("City pilot site (17)" = 24), name = NULL) +
   guides(fill = guide_legend(order = 1, override.aes = list(colour = NA)), shape = guide_legend(order = 2)) +
   labs(title = "The 29 high-complaint neighbourhoods:\nwhich access gap each has, and what to check first",
-       subtitle = "Black outline = the six with a 95%-certain complaint excess.\nBuild is split at the natural break in complaint-signal strength.",
+       subtitle = "Black outline = the clearest cases (95% likely complaints exceed 1.5x expected).\nThe two daytime-gap groups are split at the natural break in complaint-signal strength.",
        caption = paste("Wednesday, posted hours, 500 m straight line to a listed-operational restroom (register dated June 2025).",
-                       "\nOrder: fix what exists, then build, then extend hours. Complaints are a screen, not proof of need.")) +
+                       "\nOrder: repair what exists, then new sites, then longer hours. Complaints are a screen, not proof of need.")) +
   theme_void(base_size = 9) +
   theme(plot.title = element_text(face = "bold", size = 17), plot.subtitle = element_text(size = 12, colour = "grey30"),
         plot.caption = element_text(size = 9, colour = "grey40", hjust = 0), legend.position = c(0.01, 0.99),
