@@ -61,11 +61,23 @@ Busy places always generate more complaints, so the signal is an area filing mor
 
 We treat the 29 as a wide net, not a verdict: complaints also reflect who chooses to report, and the list shifts between years and when only phone reports are counted. The next three layers decide what each of the 29 needs.
 
+[Chart: Map of New York highlighting the 29 high-complaint neighbourhoods, with the six clearest cases in dark blue and labelled] (img/layered/step1_screen.png)
+
+<https://jonathanwong1990.github.io/nyc-restroom-gap/img/layered/step1_screen.png>
+
+Step 1 of 4. The 29 neighbourhoods to examine; the six clearest cases are darkest.
+
 ### 3 — Layer 2: in 13 of the 29, most residents have no restroom nearby even by day
 
 **13** of the 29 have a **daytime gap**: 40% or more of their residents have no restroom open within 500 m even at 2pm. A daytime gap is common in lower-density areas: **77** of all 197 neighbourhoods have one, mostly in Staten Island and eastern Queens.
 
 We call an area's **coverage** the share of its residents with a restroom open within **500 m**, about a 7-minute walk; changes in coverage are given in percentage points (points). Citywide, **72%** of residents are covered at 2pm. S6 · spatial analysis
+
+[Chart: Map: 13 of the 29 neighbourhoods in red have a daytime gap; 16 are covered by day; 64 other neighbourhoods with a daytime gap shown in pale pink] (img/layered/step2_daytime.png)
+
+<https://jonathanwong1990.github.io/nyc-restroom-gap/img/layered/step2_daytime.png>
+
+Step 2 of 4. Red: 13 of the 29 have no restroom nearby even by day. Pale pink: daytime gaps outside the 29, which have no complaint signal.
 
 ### 4 — Layer 3: at night, even the busiest places have almost nowhere to go
 
@@ -82,6 +94,12 @@ The 9pm station figure is 20 if park restrooms stay open to 10pm.
 - Complaints lean to the evening: 30% of public-urination complaints are filed between 6pm and midnight, against 18% of another 311 type, dirty streets. S1–2 · descriptive comparison
 - 641 park restrooms post only standard hours ("8am–4pm, open later seasonally"). In an uncosted comparison, keeping these existing restrooms open to 10pm would add **57 points** of coverage for residents at 9pm; 100 new restrooms would add 27 points.
 - **13** of the 29 are **longer-hours areas**: residents are covered by day but not at 9pm, and longer park hours would recover most of that evening gap.
+
+[Chart: Map: 15 of the 29 in amber are covered by day but not at 9pm, where longer park hours would close most of the gap; Midtown in purple, where they would not] (img/layered/step3_evening.png)
+
+<https://jonathanwong1990.github.io/nyc-restroom-gap/img/layered/step3_evening.png>
+
+Step 3 of 4. Amber: covered by day, not at 9pm, and longer park hours would recover at least half the gap. Purple: Midtown, where they would not.
 
 ### 5 — Layer 4: one in five restroom inspections found the restroom unacceptable
 
@@ -100,6 +118,12 @@ Parks keeps its own inspection list of 736 restrooms (it calls them comfort stat
 - In **3** of the 29, repairing or reopening restrooms that already exist would restore 10 or more points of coverage. In Brighton Beach, reopening 4 long-closed restrooms would take coverage from 48% to 81%.
 
 **Repairs also need a way to target inspections.** Ranking sites by their failure share over the past three years finds a failing restroom in about 1 in 5 extra checks, against 1 in 8 at random, on 2025–26 data the rule never saw. A logistic regression did no better and a decision tree did worse, so the simple rule is enough. S6–7 · logistic, tree, train/test
+
+[Chart: Map: Brighton Beach, East Harlem (North) and Corona in blue, where repairing or reopening existing restrooms restores 10 or more points of coverage] (img/layered/step4_repair.png)
+
+<https://jonathanwong1990.github.io/nyc-restroom-gap/img/layered/step4_repair.png>
+
+Step 4 of 4. Blue: repairing or reopening restrooms that already exist would restore 10+ points of coverage, so repair comes first. The next map puts all four steps together.
 
 ### 6 — Each neighbourhood gets one action, using what exists first
 

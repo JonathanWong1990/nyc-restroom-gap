@@ -409,10 +409,12 @@ figure.chart a.zoom{display:block}
 </ul>
 <p>We treat the 29 as a wide net, not a verdict: complaints also reflect who chooses to report, and the list shifts between years and when only phone reports are counted. The next three layers decide what each of the 29 needs.</p>
 
+<figure class="chart"><a class="zoom" href="img/layered/step1_screen.png" target="_blank" rel="noopener"><img src="img/layered/step1_screen.png" alt="Map of New York highlighting the 29 high-complaint neighbourhoods, with the six clearest cases in dark blue and labelled" loading="lazy"></a><figcaption>Step 1 of 4. The 29 neighbourhoods to examine; the six clearest cases are darkest.</figcaption></figure>
 <h3 id="missing">3 — Layer 2: in 13 of the 29, most residents have no restroom nearby even by day</h3>
 <p><strong>13</strong> of the 29 have a <strong>daytime gap</strong>: 40% or more of their residents have no restroom open within 500 m even at 2pm. A daytime gap is common in lower-density areas: <strong>77</strong> of all 197 neighbourhoods have one, mostly in Staten Island and eastern Queens.</p>
 <p>We call an area's <strong>coverage</strong> the share of its residents with a restroom open within <strong>500 m</strong>, about a 7-minute walk; changes in coverage are given in percentage points (points). Citywide, <strong>72%</strong> of residents are covered at 2pm. <span class="mtag in">S6 · spatial analysis</span></p>
 
+<figure class="chart"><a class="zoom" href="img/layered/step2_daytime.png" target="_blank" rel="noopener"><img src="img/layered/step2_daytime.png" alt="Map: 13 of the 29 neighbourhoods in red have a daytime gap; 16 are covered by day; 64 other neighbourhoods with a daytime gap shown in pale pink" loading="lazy"></a><figcaption>Step 2 of 4. Red: 13 of the 29 have no restroom nearby even by day. Pale pink: daytime gaps outside the 29, which have no complaint signal.</figcaption></figure>
 <h3 id="closed">4 — Layer 3: at night, even the busiest places have almost nowhere to go</h3>
 <p>Of 975 listed restrooms, 954 are open at 2pm on a weekday and only <strong>57 restrooms</strong> at 9pm. We turned each restroom's posted hours into hour-by-hour availability. <span class="mtag out">Beyond class · parsing opening hours</span></p>
 <div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Weekday</th><th class="n">2pm</th><th class="n">9pm</th></tr></thead><tbody>
@@ -427,6 +429,7 @@ figure.chart a.zoom{display:block}
 <li><strong>13</strong> of the 29 are <strong>longer-hours areas</strong>: residents are covered by day but not at 9pm, and longer park hours would recover most of that evening gap.</li>
 </ul>
 
+<figure class="chart"><a class="zoom" href="img/layered/step3_evening.png" target="_blank" rel="noopener"><img src="img/layered/step3_evening.png" alt="Map: 15 of the 29 in amber are covered by day but not at 9pm, where longer park hours would close most of the gap; Midtown in purple, where they would not" loading="lazy"></a><figcaption>Step 3 of 4. Amber: covered by day, not at 9pm, and longer park hours would recover at least half the gap. Purple: Midtown, where they would not.</figcaption></figure>
 <h3 id="broken">5 — Layer 4: one in five restroom inspections found the restroom unacceptable</h3>
 <p>In January–June 2026, one in five inspections of Parks restrooms found them unacceptable, back to levels last seen in 2012–14.</p>
 <p>Parks keeps its own inspection list of 736 restrooms (it calls them comfort stations), including closed ones; the City's register counts 656 working Parks restrooms. Inspectors rate each one acceptable or unacceptable on a schedule: 25,912 ratings are on file.</p>
@@ -440,6 +443,7 @@ figure.chart a.zoom{display:block}
 </ul>
 <p><strong>Repairs also need a way to target inspections.</strong> Ranking sites by their failure share over the past three years finds a failing restroom in about 1 in 5 extra checks, against 1 in 8 at random, on 2025–26 data the rule never saw. A logistic regression did no better and a decision tree did worse, so the simple rule is enough. <span class="mtag in">S6–7 · logistic, tree, train/test</span></p>
 
+<figure class="chart"><a class="zoom" href="img/layered/step4_repair.png" target="_blank" rel="noopener"><img src="img/layered/step4_repair.png" alt="Map: Brighton Beach, East Harlem (North) and Corona in blue, where repairing or reopening existing restrooms restores 10 or more points of coverage" loading="lazy"></a><figcaption>Step 4 of 4. Blue: repairing or reopening restrooms that already exist would restore 10+ points of coverage, so repair comes first. The next map puts all four steps together.</figcaption></figure>
 <h3 id="map">6 — Each neighbourhood gets one action, using what exists first</h3>
 <p>Where repairing or reopening existing restrooms closes the gap, repair first. Where a daytime gap remains, assess new sites. Where the gap opens only at night, test longer hours. Where none of these fits, assess the area separately.</p>
 <figure class="chart"><a class="zoom" href="img/layered/diagnosis_map_final.png" target="_blank" rel="noopener"><img src="img/layered/diagnosis_map_final.png" alt="Map of New York's 29 high-complaint neighbourhoods coloured by action: 6 build with a stronger signal, 6 build after verifying demand, 3 repair, 13 extend hours, 1 assess separately" loading="lazy"></a></figure>
