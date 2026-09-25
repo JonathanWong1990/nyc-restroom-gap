@@ -1,0 +1,43 @@
+ntaname,boroname,nta2020,candidate_set,rank,cand_id,cand_type,lat,lon,site_in_nta,new_residents_covered,new_busy_street_m,new_subway_entries,L2_after
+Sunset Park (Central),Brooklyn,BK0703,prototype candidates (Parks/plaza/busy street),1,1600,park,40.646337,-74.002526,Sunset Park (Central),1771,0,0,0.432
+Sunset Park (Central),Brooklyn,BK0703,prototype candidates (Parks/plaza/busy street),2,1517,park,40.632828,-74.013164,Dyker Heights,998,0,0,0.4096
+Sunset Park (Central),Brooklyn,BK0703,prototype candidates (Parks/plaza/busy street),3,1615,park,40.649038,-74.0043,Sunset Park (Central),716,0,0,0.3935
+Dyker Heights,Brooklyn,BK1002,prototype candidates (Parks/plaza/busy street),1,1367,park,40.616618,-74.020251,Dyker Heights,1368,0,0,0.3985
+Brighton Beach,Brooklyn,BK1303,prototype candidates (Parks/plaza/busy street),1,677,park,40.582845,-73.965318,Brighton Beach,6121,0,0,0.3006
+Astoria (East)-Woodside (North),Queens,QN0104,prototype candidates (Parks/plaza/busy street),1,2811,park,40.759767,-73.911933,Astoria (East)-Woodside (North),1183,0,1913413,0.4144
+East Flushing,Queens,QN0705,prototype candidates (Parks/plaza/busy street),1,2605,park,40.748837,-73.808932,East Flushing,1691,0,0,0.6014
+East Flushing,Queens,QN0705,prototype candidates (Parks/plaza/busy street),2,2566,park,40.747503,-73.819593,Queensboro Hill,890,0,0,0.5725
+Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,Queens,QN1403,prototype candidates (Parks/plaza/busy street),1,522,park,40.57464,-73.84486,Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,3042,0,0,0.5782
+Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,Queens,QN1403,prototype candidates (Parks/plaza/busy street),2,427,park,40.5706,-73.853727,Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,1447,0,0,0.5221
+Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,Queens,QN1403,prototype candidates (Parks/plaza/busy street),3,381,park,40.567907,-73.860818,Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,719,0,0,0.4942
+Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,Queens,QN1403,prototype candidates (Parks/plaza/busy street),4,1295,park,40.611078,-73.821734,Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,609,0,0,0.4706
+Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,Queens,QN1403,prototype candidates (Parks/plaza/busy street),5,954,park,40.594872,-73.823549,Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,328,0,0,0.4579
+Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,Queens,QN1403,prototype candidates (Parks/plaza/busy street),6,554,park,40.575984,-73.839543,Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,298,0,0,0.4464
+Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,Queens,QN1403,prototype candidates (Parks/plaza/busy street),7,456,park,40.571946,-73.850181,Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,230,0,0,0.4374
+Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,Queens,QN1403,prototype candidates (Parks/plaza/busy street),8,1274,park,40.609727,-73.821737,Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,94,0,0,0.4338
+Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,Queens,QN1403,prototype candidates (Parks/plaza/busy street),9,400,park,40.569253,-73.857272,Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,90,0,0,0.4303
+St. George-New Brighton,Staten Island,SI0101,prototype candidates (Parks/plaza/busy street),1,1555,park,40.639548,-74.089414,St. George-New Brighton,4156,0,0,0.2931
+Port Richmond,Staten Island,SI0106,prototype candidates (Parks/plaza/busy street),1,1559,park,40.640854,-74.13552,Port Richmond,1254,0,0,0.5246
+Port Richmond,Staten Island,SI0106,prototype candidates (Parks/plaza/busy street),2,1466,park,40.627362,-74.121309,Westerleigh-Castleton Corners,912,0,0,0.4803
+Port Richmond,Staten Island,SI0106,prototype candidates (Parks/plaza/busy street),3,1530,park,40.636819,-74.119553,Port Richmond,502,0,0,0.4559
+New Dorp-Midland Beach,Staten Island,SI0202,prototype candidates (Parks/plaza/busy street),1,544,park,40.576051,-74.101729,New Dorp-Midland Beach,1710,0,0,0.5314
+New Dorp-Midland Beach,Staten Island,SI0202,prototype candidates (Parks/plaza/busy street),2,318,park,40.562546,-74.098166,New Dorp-Midland Beach,584,0,0,0.5113
+New Dorp-Midland Beach,Staten Island,SI0202,prototype candidates (Parks/plaza/busy street),3,576,park,40.577419,-74.080473,New Dorp-Midland Beach,436,0,0,0.4963
+New Dorp-Midland Beach,Staten Island,SI0202,prototype candidates (Parks/plaza/busy street),4,444,park,40.57201,-74.087552,New Dorp-Midland Beach,430,0,0,0.4816
+New Dorp-Midland Beach,Staten Island,SI0202,prototype candidates (Parks/plaza/busy street),5,545,park,40.576054,-74.098186,New Dorp-Midland Beach,262,0,0,0.4726
+New Dorp-Midland Beach,Staten Island,SI0202,prototype candidates (Parks/plaza/busy street),6,504,park,40.574714,-74.084012,New Dorp-Midland Beach,175,0,0,0.4666
+Sunset Park (Central),Brooklyn,BK0703,diagnostic: any residential grid point,1,,street grid point (unverified),40.640258,-74.008732,Sunset Park (Central),17291,0,0,0.0832
+Dyker Heights,Brooklyn,BK1002,diagnostic: any residential grid point,1,,street grid point (unverified),40.624049,-74.005185,Dyker Heights,11151,0,0,0.1486
+Brighton Beach,Brooklyn,BK1303,diagnostic: any residential grid point,1,,street grid point (unverified),40.580816,-73.959118,Brighton Beach,11521,0,0,0.11
+East Flatbush-Rugby,Brooklyn,BK1703,diagnostic: any residential grid point,1,,street grid point (unverified),40.655097,-73.932468,East Flatbush-Rugby,10403,0,0,0.3073
+Wakefield-Woodlawn,Bronx,BX1203,diagnostic: any residential grid point,1,,street grid point (unverified),40.896797,-73.844999,Wakefield-Woodlawn,10386,0,0,0.3294
+Astoria (East)-Woodside (North),Queens,QN0104,diagnostic: any residential grid point,1,,street grid point (unverified),40.755038,-73.909275,Astoria (East)-Woodside (North),7321,0,1913413,0.2476
+East Flushing,Queens,QN0705,diagnostic: any residential grid point,1,,street grid point (unverified),40.756273,-73.813352,East Flushing,8623,0,0,0.3761
+Hollis,Queens,QN1206,diagnostic: any residential grid point,1,,street grid point (unverified),40.712965,-73.767318,Hollis,6198,0,0,0.1746
+Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,Queens,QN1403,diagnostic: any residential grid point,1,,street grid point (unverified),40.578021,-73.84751,Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,6458,0,0,0.4457
+Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,Queens,QN1403,diagnostic: any residential grid point,2,,street grid point (unverified),40.573982,-73.858148,Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,3321,0,0,0.3169
+St. George-New Brighton,Staten Island,SI0101,diagnostic: any residential grid point,1,,street grid point (unverified),40.638875,-74.086753,St. George-New Brighton,5186,0,0,0.2441
+Tompkinsville-Stapleton-Clifton-Fox Hills,Staten Island,SI0102,diagnostic: any residential grid point,1,,street grid point (unverified),40.633478,-74.077881,Tompkinsville-Stapleton-Clifton-Fox Hills,4070,0,0,0.1786
+Port Richmond,Staten Island,SI0106,diagnostic: any residential grid point,1,,street grid point (unverified),40.632068,-74.139935,Port Richmond,5624,0,0,0.3122
+New Dorp-Midland Beach,Staten Island,SI0202,diagnostic: any residential grid point,1,,street grid point (unverified),40.575368,-74.1097,New Dorp-Midland Beach,5054,0,0,0.4165
+New Dorp-Midland Beach,Staten Island,SI0202,diagnostic: any residential grid point,2,,street grid point (unverified),40.569958,-74.116777,New Dorp-Midland Beach,3477,0,0,0.297

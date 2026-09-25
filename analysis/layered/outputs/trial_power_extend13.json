@@ -1,0 +1,12 @@
+{
+  "areas": 13,
+  "summonses_dedup": 844,
+  "detectable_drop": 0.326,
+  "detectable_rise": 0.485,
+  "restrooms_all": 69,
+  "restrooms_parks": 43,
+  "cost_10mo_6h_parks": 2746625,
+  "cost_10mo_6h_all": 4407375,
+  "cost_10mo_4h_parks": 1831083.3333,
+  "cost_10mo_4h_all": 2938250
+}

@@ -1,0 +1,601 @@
+objective,config,rank,cand_id,type,lat,lon,nta_raw,nta,new_demand_covered,unit,cum_share_covered,ntaname,ntaname_raw,primary
+workers,base_14,1,4548,busy_street,40.748551183143,-73.9384100322353,QN0201,QN0201,23063.4,jobs,0.80941,Long Island City-Hunters Point,Long Island City-Hunters Point,TRUE
+workers,base_14,2,5079,busy_street,40.736032388034,-73.9767440717727,MN0601,MN0601,20557.7,jobs,0.81389,Stuyvesant Town-Peter Cooper Village,Stuyvesant Town-Peter Cooper Village,TRUE
+workers,base_14,3,1966,plaza,40.6922623366413,-73.9883309332676,BK0202,BK0202,12003.6,jobs,0.81651,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,TRUE
+workers,base_14,4,2170,park,40.7219796388327,-74.0060798353914,MN0102,MN0102,11464.1,jobs,0.81901,Tribeca-Civic Center,Tribeca-Civic Center,TRUE
+workers,base_14,5,2460,busy_street,40.7449427209189,-73.9972018185959,MN0401,MN0401,9180.4,jobs,0.82101,Chelsea-Hudson Yards,Chelsea-Hudson Yards,TRUE
+workers,base_14,6,677,park,40.5828446800131,-73.9653177971745,BK1303,BK1303,8850.6,jobs,0.82294,Brighton Beach,Brighton Beach,TRUE
+workers,base_14,7,2038,park,40.701717554444,-74.013177471255,MN0101,MN0101,8371.6,jobs,0.82477,Financial District-Battery Park City,Financial District-Battery Park City,TRUE
+workers,base_14,8,3047,busy_street,40.7800527472296,-73.9527763675885,MN0803,MN0803,7983.3,jobs,0.82651,Upper East Side-Yorkville,Upper East Side-Yorkville,TRUE
+workers,base_14,9,2792,busy_street,40.7583329634124,-73.8355506248997,QN0707,QN0707,7281.6,jobs,0.8281,Flushing-Willets Point,Flushing-Willets Point,TRUE
+workers,base_14,10,1146,park,40.6044548674445,-73.95821742955,BK1501,BK1501,6889,jobs,0.8296,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,TRUE
+workers,base_14,11,2468,busy_street,40.7449254244924,-73.9368170655035,QN0202,QN0202,6867.8,jobs,0.8311,Sunnyside,Sunnyside,TRUE
+workers,base_14,12,5788,plaza,40.6405663526277,-73.9790936698526,BK1203,BK1203,6166.1,jobs,0.83244,Kensington,Kensington,TRUE
+workers,base_14,13,2915,park,40.7692511417261,-73.9652207233097,MN0802,MN0802,4947,jobs,0.83352,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,TRUE
+workers,base_14,14,2007,park,40.6990104027369,-73.9617077681764,BK0103,BK0103,4648.5,jobs,0.83454,South Williamsburg,South Williamsburg,TRUE
+workers,base_14,15,1456,park,40.6260712081025,-73.9706139129399,BK1204,BK1204,4452.9,jobs,0.83551,Mapleton-Midwood (West),Mapleton-Midwood (West),TRUE
+workers,base_14,16,4450,busy_street,40.7428294171262,-73.9520968228047,QN0201,QN0201,4091.9,jobs,0.8364,Long Island City-Hunters Point,Long Island City-Hunters Point,TRUE
+workers,base_14,17,5747,plaza,40.7438176546144,-73.9242631274706,QN0202,QN0202,3993.6,jobs,0.83727,Sunnyside,Sunnyside,TRUE
+workers,base_14,18,1828,park,40.6706504131589,-73.9936568470251,BK0601,BK0601,3817.8,jobs,0.8381,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,TRUE
+workers,base_14,19,1487,park,40.6287601813371,-73.9386999721515,BK1801,BK1801,3603.6,jobs,0.83889,Flatlands,Flatlands,TRUE
+workers,base_14,20,2986,park,40.7745420033064,-73.8355105968625,QN0701,QN0701,3393.8,jobs,0.83963,College Point,College Point,TRUE
+workers,base_14,21,1368,park,40.6166152784635,-73.9688454674985,BK1204,BK1204,3176.3,jobs,0.84032,Mapleton-Midwood (West),Mapleton-Midwood (West),TRUE
+workers,base_14,22,1851,park,40.6719528130059,-73.8943082823989,BK0502,BK0502,3100.9,jobs,0.841,East New York (North),East New York (North),TRUE
+workers,base_14,23,2167,park,40.7205445219904,-73.8604991167455,QN0601,QN0601,3048.1,jobs,0.84166,Rego Park,Rego Park,TRUE
+workers,base_14,24,1540,park,40.6368618932366,-73.9333730906266,BK1702,BK1702,3036,jobs,0.84233,East Flatbush-Farragut,East Flatbush-Farragut,TRUE
+workers,base_14,25,4485,busy_street,40.6324211116248,-73.947222460207,BK1401,BK1401,2756,jobs,0.84293,Flatbush,Flatbush,TRUE
+workers,base_14,26,823,park,40.5895986054387,-73.9653142894677,BK1301,BK1301,2743.1,jobs,0.84353,Gravesend (South),Gravesend (South),TRUE
+workers,base_14,27,4482,busy_street,40.7489312639797,-73.8715987219991,QN0301,QN0301,2503.9,jobs,0.84407,Jackson Heights,Jackson Heights,TRUE
+workers,base_14,28,1531,park,40.6368361140687,-74.1018219443742,SI0104,SI0104,2234,jobs,0.84456,West New Brighton-Silver Lake-Grymes Hill,West New Brighton-Silver Lake-Grymes Hill,TRUE
+workers,base_14,29,2432,plaza,40.743575625361,-73.9385943320688,QN0201,QN0201,2114.2,jobs,0.84502,Long Island City-Hunters Point,Long Island City-Hunters Point,TRUE
+workers,base_14,30,1663,park,40.6528391727439,-73.759546922648,QN1306,QN1306,2081.3,jobs,0.84547,Springfield Gardens (South)-Brookville,Springfield Gardens (South)-Brookville,TRUE
+workers,base_14,31,3853,park,40.863747740644,-73.8815490912227,BX2791,BX0603,2078.1,jobs,0.84593,Belmont,Bronx Park,TRUE
+workers,base_14,32,2057,park,40.7030579020734,-73.9492810954172,BK0103,BK0103,2024.1,jobs,0.84637,South Williamsburg,South Williamsburg,TRUE
+workers,base_14,33,4121,park,40.8785412651185,-73.8299145219054,BX1004,BX1004,1966,jobs,0.8468,Co-op City,Co-op City,TRUE
+workers,base_14,34,1372,park,40.617826899804,-74.1815618677191,SI0204,SI0204,1898.2,jobs,0.84721,New Springville-Willowbrook-Bulls Head-Travis,New Springville-Willowbrook-Bulls Head-Travis,TRUE
+workers,base_14,35,3557,park,40.8420842509149,-73.8389008288821,BX1161,BX1002,1893.1,jobs,0.84762,Throgs Neck-Schuylerville,Hutchinson Metro Center,TRUE
+workers,base_14,36,2932,park,40.770536967912,-73.872831346627,QN0302,QN0302,1849.3,jobs,0.84803,East Elmhurst,East Elmhurst,TRUE
+workers,base_14,37,5770,plaza,40.6989011941679,-73.9186715423202,BK0401,BK0401,1724,jobs,0.8484,Bushwick (West),Bushwick (West),TRUE
+workers,base_14,38,1646,park,40.6516735507151,-73.8766049976492,BK0504,BK0504,1715.1,jobs,0.84878,Spring Creek-Starrett City,Spring Creek-Starrett City,TRUE
+workers,base_14,39,1517,park,40.6328281067644,-74.0131638683988,BK1002,BK1002,1612.8,jobs,0.84913,Dyker Heights,Dyker Heights,TRUE
+workers,base_14,40,3058,busy_street,40.7814098523096,-73.9723223535686,MN0702,MN0702,1594.1,jobs,0.84948,Upper West Side (Central),Upper West Side (Central),TRUE
+workers,base_14,41,767,park,40.5868753101211,-74.0787121133605,SI0201,SI0201,1590.4,jobs,0.84982,Grasmere-Arrochar-South Beach-Dongan Hills,Grasmere-Arrochar-South Beach-Dongan Hills,TRUE
+workers,base_14,42,1850,park,40.6719620993503,-73.9049527492079,BK1602,BK1602,1579.1,jobs,0.85017,Brownsville,Brownsville,TRUE
+workers,base_14,43,2602,park,40.7488725466263,-73.8320217173721,QN0707,QN0707,1564.6,jobs,0.85051,Flushing-Willets Point,Flushing-Willets Point,TRUE
+workers,base_14,44,2865,park,40.7637459059927,-73.842643367347,QN0707,QN0707,1536.2,jobs,0.85084,Flushing-Willets Point,Flushing-Willets Point,TRUE
+workers,base_14,45,1022,park,40.5989045740416,-74.1885989809715,SI0204,SI0204,1423.7,jobs,0.85116,New Springville-Willowbrook-Bulls Head-Travis,New Springville-Willowbrook-Bulls Head-Travis,TRUE
+workers,base_14,46,4620,busy_street,40.6999581408724,-73.9076383352567,QN0502,QN0502,1409.6,jobs,0.85146,Ridgewood,Ridgewood,TRUE
+workers,base_14,47,2850,park,40.7622796893958,-73.7733637574157,QN1102,QN1102,1389,jobs,0.85177,Bayside,Bayside,TRUE
+workers,base_14,48,4436,park,40.9096862137748,-73.8957106235065,BX2691,BX0803,1378.5,jobs,0.85207,Riverdale-Spuyten Duyvil,Van Cortlandt Park,TRUE
+workers,base_14,49,1258,park,40.6097165744558,-74.1850846678792,SI0204,SI0204,1364.4,jobs,0.85236,New Springville-Willowbrook-Bulls Head-Travis,New Springville-Willowbrook-Bulls Head-Travis,TRUE
+workers,base_14,50,534,park,40.575984301464,-74.1601897287556,SI0203,SI0203,1345.4,jobs,0.85266,Todt Hill-Emerson Hill-Lighthouse Hill-Manor Heights,Todt Hill-Emerson Hill-Lighthouse Hill-Manor Heights,TRUE
+workers,base_14,51,706,park,40.584179304732,-73.9298821536677,BK1891,BK1503,1319.4,jobs,0.85295,Sheepshead Bay-Manhattan Beach-Gerritsen Beach,Marine Park-Plumb Island,TRUE
+workers,base_14,52,1337,park,40.6151020715081,-74.1957350328327,SI0204,SI0204,1305,jobs,0.85323,New Springville-Willowbrook-Bulls Head-Travis,New Springville-Willowbrook-Bulls Head-Travis,TRUE
+workers,base_14,53,2145,park,40.7177998424248,-73.8285494255402,QN8191,QN0602,1293.3,jobs,0.85351,Forest Hills,Flushing Meadows-Corona Park,TRUE
+workers,base_14,54,4753,busy_street,40.8160835200761,-73.9177176780063,BX0102,BX0102,1290.5,jobs,0.85379,Melrose,Melrose,TRUE
+workers,base_14,55,5774,plaza,40.7175086124401,-73.9490382646825,BK0102,BK0102,1263.2,jobs,0.85407,Williamsburg,Williamsburg,TRUE
+workers,base_14,56,2728,busy_street,40.7557487454635,-74.0043066070067,MN0401,MN0401,1219.2,jobs,0.85433,Chelsea-Hudson Yards,Chelsea-Hudson Yards,TRUE
+workers,base_14,57,3485,park,40.82728142945,-73.8851704511452,BX0303,BX0303,1205.1,jobs,0.8546,Crotona Park East,Crotona Park East,TRUE
+workers,base_14,58,3432,park,40.817765912226,-73.8354037601026,BX1091,BX0903,1199.2,jobs,0.85486,Castle Hill-Unionport,Ferry Point Park-St. Raymond Cemetery,TRUE
+workers,base_14,59,5769,plaza,40.7017906234497,-73.8809394344356,QN0503,QN0503,1198.9,jobs,0.85512,Glendale,Glendale,TRUE
+workers,base_14,60,1494,park,40.6299695517995,-74.1904597359521,SI0204,SI0204,1197.6,jobs,0.85538,New Springville-Willowbrook-Bulls Head-Travis,New Springville-Willowbrook-Bulls Head-Travis,TRUE
+workers,base_14,61,4120,park,40.8786001798003,-73.8761838475042,BX0703,BX0703,1124.5,jobs,0.85563,Norwood,Norwood,TRUE
+workers,base_14,62,1883,park,40.6772872141681,-73.8357504732196,QN1001,QN1001,1121.9,jobs,0.85587,South Ozone Park,South Ozone Park,TRUE
+workers,base_14,63,3261,busy_street,40.7976067389515,-73.9403219200684,MN1102,MN1102,1110,jobs,0.85611,East Harlem (North),East Harlem (North),TRUE
+workers,base_14,64,5786,plaza,40.6685438224385,-73.9194385586936,BK1601,BK1601,1096.7,jobs,0.85635,Ocean Hill,Ocean Hill,TRUE
+workers,base_14,65,3020,park,40.7772460289697,-73.8372808045296,QN0701,QN0701,1095.6,jobs,0.85659,College Point,College Point,TRUE
+workers,base_14,66,1872,park,40.6746692869623,-73.9120454993635,BK1601,BK1601,1068.7,jobs,0.85682,Ocean Hill,Ocean Hill,TRUE
+workers,base_14,67,1195,park,40.6069974002204,-74.1957112710379,SI0204,SI0204,1067.8,jobs,0.85706,New Springville-Willowbrook-Bulls Head-Travis,New Springville-Willowbrook-Bulls Head-Travis,TRUE
+workers,base_14,68,917,park,40.5935564945414,-74.1513718895594,SI0204,SI0204,1063.2,jobs,0.85729,New Springville-Willowbrook-Bulls Head-Travis,New Springville-Willowbrook-Bulls Head-Travis,TRUE
+workers,base_14,69,1611,park,40.6474172084465,-73.7506992958902,QN1306,QN1306,1058.8,jobs,0.85752,Springfield Gardens (South)-Brookville,Springfield Gardens (South)-Brookville,TRUE
+workers,base_14,70,521,park,40.5747362637195,-73.954693026037,BK1303,BK1303,1056,jobs,0.85775,Brighton Beach,Brighton Beach,TRUE
+workers,base_14,71,3151,park,40.7881432515307,-73.9261129996467,MN1191,MN1102,1050.9,jobs,0.85798,East Harlem (North),Randall's Island,TRUE
+workers,base_14,72,1527,park,40.6354928453324,-74.092954341522,SI0104,SI0104,1035.6,jobs,0.85821,West New Brighton-Silver Lake-Grymes Hill,West New Brighton-Silver Lake-Grymes Hill,TRUE
+workers,base_14,73,3521,park,40.8381325380236,-73.9473996095316,MN1201,MN1201,991.7,jobs,0.85842,Washington Heights (South),Washington Heights (South),TRUE
+workers,base_14,74,2535,park,40.7459620811324,-73.7236896721425,QN1302,QN1302,976.7,jobs,0.85864,Bellerose,Bellerose,TRUE
+workers,base_14,75,3849,busy_street,40.8637787835165,-73.9171329816422,MN1203,MN1203,976.1,jobs,0.85885,Inwood,Inwood,TRUE
+workers,base_14,76,1186,park,40.6057860931426,-73.9209978548612,BK1891,BK1802,961.6,jobs,0.85906,Marine Park-Mill Basin-Bergen Beach,Marine Park-Plumb Island,TRUE
+workers,base_14,77,1892,park,40.6801049878848,-73.9847844691038,BK0601,BK0601,951.9,jobs,0.85927,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,TRUE
+workers,base_14,78,1213,park,40.6071593124178,-73.9670775230166,BK1501,BK1501,926.2,jobs,0.85947,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,TRUE
+workers,base_14,79,4481,busy_street,40.7483441812487,-73.8771703539944,QN0401,QN0401,918.8,jobs,0.85967,Elmhurst,Elmhurst,TRUE
+workers,base_14,80,1921,park,40.6854502471451,-73.8836402527524,BK0571,BK0501,915.4,jobs,0.85987,Cypress Hills,Highland Park-Cypress Hills Cemeteries (South),TRUE
+workers,base_14,81,3349,park,40.8110534356614,-73.8674205657611,BX0991,BX0201,902.3,jobs,0.86006,Hunts Point,Soundview Park,TRUE
+workers,base_14,82,1597,park,40.6449270663398,-73.8837109220044,BK0504,BK0504,895.7,jobs,0.86026,Spring Creek-Starrett City,Spring Creek-Starrett City,TRUE
+workers,base_14,83,1235,park,40.6083824274144,-74.174446609591,SI0204,SI0204,891,jobs,0.86045,New Springville-Willowbrook-Bulls Head-Travis,New Springville-Willowbrook-Bulls Head-Travis,TRUE
+workers,base_14,84,2767,park,40.7570802464015,-73.9332528429085,QN0105,QN0105,885.8,jobs,0.86065,Queensbridge-Ravenswood-Dutch Kills,Queensbridge-Ravenswood-Dutch Kills,TRUE
+workers,base_14,85,1847,park,40.6720013331999,-74.0025271192115,BK0601,BK0601,874.5,jobs,0.86084,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,TRUE
+workers,base_14,86,3410,park,40.8164662924864,-73.8762994479665,BX0991,BX0201,871.4,jobs,0.86103,Hunts Point,Soundview Park,TRUE
+workers,base_14,87,1367,park,40.6166177164185,-74.0202511044608,BK1091,BK1002,855.5,jobs,0.86121,Dyker Heights,Dyker Beach Park,TRUE
+workers,base_14,88,1819,park,40.6692964966719,-73.9723688770802,BK5591,BK0602,846.5,jobs,0.8614,Park Slope,Prospect Park,TRUE
+workers,base_14,89,2888,park,40.7665394384894,-73.9403497582929,QN0105,QN0105,843.7,jobs,0.86158,Queensbridge-Ravenswood-Dutch Kills,Queensbridge-Ravenswood-Dutch Kills,TRUE
+workers,base_14,90,3193,park,40.79210427511,-73.8372444886264,QN0701,QN0701,827.9,jobs,0.86176,College Point,College Point,TRUE
+workers,base_14,91,4509,busy_street,40.7095079325865,-74.0123869459279,MN0101,MN0101,816.2,jobs,0.86194,Financial District-Battery Park City,Financial District-Battery Park City,TRUE
+workers,base_14,92,1615,park,40.6490381116742,-74.0042997189662,BK0703,BK0703,800.2,jobs,0.86212,Sunset Park (Central),Sunset Park (Central),TRUE
+workers,base_14,93,3560,park,40.8435214516398,-73.9224941812756,BX0403,BX0403,789.5,jobs,0.86229,Mount Eden-Claremont (West),Mount Eden-Claremont (West),TRUE
+workers,base_14,94,1422,park,40.6232956455944,-74.133711456483,SI0105,SI0105,774,jobs,0.86246,Westerleigh-Castleton Corners,Westerleigh-Castleton Corners,TRUE
+workers,base_14,95,987,park,40.5975419420825,-74.1956835562346,SI0204,SI0204,771.2,jobs,0.86263,New Springville-Willowbrook-Bulls Head-Travis,New Springville-Willowbrook-Bulls Head-Travis,TRUE
+workers,base_14,96,4118,park,40.8786093828795,-73.8850818034525,BX0702,BX0702,765.2,jobs,0.86279,Bedford Park,Bedford Park,TRUE
+workers,base_14,97,3738,park,40.8569269378374,-73.8281907806961,BX2891,BX1003,750.3,jobs,0.86296,Pelham Bay-Country Club-City Island,Pelham Bay Park,TRUE
+workers,base_14,98,1433,park,40.6245917692599,-74.1744889756191,SI0107,SI0107,742,jobs,0.86312,Mariner's Harbor-Arlington-Graniteville,Mariner's Harbor-Arlington-Graniteville,TRUE
+workers,base_14,99,5812,plaza,40.6428587857153,-73.978508041687,BK1203,BK1203,739.4,jobs,0.86328,Kensington,Kensington,TRUE
+workers,base_14,100,2564,park,40.7475084965149,-73.8231446851901,QN0706,QN0706,708.7,jobs,0.86343,Queensboro Hill,Queensboro Hill,TRUE
+workers,base_21_off,1,5257,busy_street,40.7514092892401,-73.9895451127273,MN0502,MN0502,231116.9,jobs,0.26631,Midtown-Times Square,Midtown-Times Square,TRUE
+workers,base_21_off,2,5477,busy_street,40.7596544643983,-73.9856966770626,MN0502,MN0502,126278.4,jobs,0.29385,Midtown-Times Square,Midtown-Times Square,TRUE
+workers,base_21_off,3,5126,busy_street,40.7442992321939,-73.9883078643637,MN0501,MN0501,106940.7,jobs,0.31717,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,TRUE
+workers,base_21_off,4,4538,busy_street,40.7105128774075,-74.0125339800248,MN0101,MN0101,94681,jobs,0.33782,Financial District-Battery Park City,Financial District-Battery Park City,TRUE
+workers,base_21_off,5,4591,busy_street,40.7151458077994,-74.0031053421674,MN0102,MN0102,66456.1,jobs,0.35232,Tribeca-Civic Center,Tribeca-Civic Center,TRUE
+workers,base_21_off,6,4749,busy_street,40.726307130959,-74.0019730767867,MN0201,MN0201,54367.3,jobs,0.36417,SoHo-Little Italy-Hudson Square,SoHo-Little Italy-Hudson Square,TRUE
+workers,base_21_off,7,5251,busy_street,40.7550506509016,-73.9981832855887,MN0401,MN0401,51982.3,jobs,0.37551,Chelsea-Hudson Yards,Chelsea-Hudson Yards,TRUE
+workers,base_21_off,8,4702,busy_street,40.70351267218,-74.0115952884624,MN0101,MN0101,45843.7,jobs,0.38551,Financial District-Battery Park City,Financial District-Battery Park City,TRUE
+workers,base_21_off,9,4511,busy_street,40.7377358068794,-73.9784840041426,MN0602,MN0602,45802.5,jobs,0.3955,Gramercy,Gramercy,TRUE
+workers,base_21_off,10,5784,plaza,40.6924213860155,-73.9887676627547,BK0202,BK0202,43723.6,jobs,0.40503,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,TRUE
+workers,base_21_off,11,4986,busy_street,40.7413556860862,-73.9985716427943,MN0401,MN0401,42239.5,jobs,0.41425,Chelsea-Hudson Yards,Chelsea-Hudson Yards,TRUE
+workers,base_21_off,12,5018,busy_street,40.7668061749345,-73.9567258572299,MN0801,MN0801,41537.8,jobs,0.42331,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,TRUE
+workers,base_21_off,13,4680,busy_street,40.7211352744127,-73.994281469248,MN0201,MN0201,41083.1,jobs,0.43227,SoHo-Little Italy-Hudson Square,SoHo-Little Italy-Hudson Square,TRUE
+workers,base_21_off,14,3313,park,40.8070698075313,-73.9580902405184,MN0901,MN0901,36878.8,jobs,0.44031,Morningside Heights,Morningside Heights,TRUE
+workers,base_21_off,15,4757,busy_street,40.7467758578806,-73.9826829402675,MN0501,MN0501,34825.7,jobs,0.4479,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,TRUE
+workers,base_21_off,16,5551,busy_street,40.7644126426364,-73.9833759995751,MN0502,MN0502,32363.9,jobs,0.45496,Midtown-Times Square,Midtown-Times Square,TRUE
+workers,base_21_off,17,5516,busy_street,40.7293663833296,-73.9961922574639,MN0202,MN0202,30770.8,jobs,0.46167,Greenwich Village,Greenwich Village,TRUE
+workers,base_21_off,18,4548,busy_street,40.748551183143,-73.9384100322353,QN0201,QN0201,26842,jobs,0.46753,Long Island City-Hunters Point,Long Island City-Hunters Point,TRUE
+workers,base_21_off,19,2588,busy_street,40.7489912710977,-73.9705596919278,MN0603,MN0603,26058.2,jobs,0.47321,Murray Hill-Kips Bay,Murray Hill-Kips Bay,TRUE
+workers,base_21_off,20,3177,park,40.7908594748187,-73.9545459497944,MN6491,MN1101,24450.5,jobs,0.47854,East Harlem (South),Central Park,TRUE
+workers,base_21_off,21,4558,busy_street,40.8415828784251,-73.9394043506966,MN1201,MN1201,19902.2,jobs,0.48288,Washington Heights (South),Washington Heights (South),TRUE
+workers,base_21_off,22,4744,busy_street,40.7579836231925,-73.8349817733911,QN0707,QN0707,19767.7,jobs,0.4872,Flushing-Willets Point,Flushing-Willets Point,TRUE
+workers,base_21_off,23,5337,busy_street,40.7765523533837,-73.9556383185925,MN0802,MN0802,19662.3,jobs,0.49148,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,TRUE
+workers,base_21_off,24,4703,busy_street,40.6856760427306,-73.9786340923784,BK0202,BK0202,19513.7,jobs,0.49574,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,TRUE
+workers,base_21_off,25,5328,busy_street,40.7643695285918,-73.9645266778505,MN0802,MN0802,18217.2,jobs,0.49971,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,TRUE
+workers,base_21_off,26,2170,park,40.7219796388327,-74.0060798353914,MN0102,MN0102,17026.1,jobs,0.50343,Tribeca-Civic Center,Tribeca-Civic Center,TRUE
+workers,base_21_off,27,5116,busy_street,40.7474480633327,-73.9996314082386,MN0401,MN0401,16940.2,jobs,0.50712,Chelsea-Hudson Yards,Chelsea-Hudson Yards,TRUE
+workers,base_21_off,28,5408,busy_street,40.7575322772074,-73.9905013837212,MN0402,MN0402,16638.3,jobs,0.51075,Hell's Kitchen,Hell's Kitchen,TRUE
+workers,base_21_off,29,5788,plaza,40.6405663526277,-73.9790936698526,BK1203,BK1203,15857.4,jobs,0.51421,Kensington,Kensington,TRUE
+workers,base_21_off,30,5371,busy_street,40.8157909557605,-73.9181332928657,BX0102,BX0102,15678.8,jobs,0.51763,Melrose,Melrose,TRUE
+workers,base_21_off,31,4510,busy_street,40.7146113512816,-73.9909439870635,MN0301,MN0301,14563.1,jobs,0.5208,Chinatown-Two Bridges,Chinatown-Two Bridges,TRUE
+workers,base_21_off,32,5164,busy_street,40.7826321512495,-73.9482758821239,MN0803,MN0803,14173.4,jobs,0.5239,Upper East Side-Yorkville,Upper East Side-Yorkville,TRUE
+workers,base_21_off,33,4192,park,40.8840105121933,-73.883292728143,BX2691,BX0703,13767.3,jobs,0.5269,Norwood,Van Cortlandt Park,TRUE
+workers,base_21_off,34,5024,busy_street,40.7290690609284,-73.9842144772889,MN0303,MN0303,13658.7,jobs,0.52988,East Village,East Village,TRUE
+workers,base_21_off,35,4765,busy_street,40.7821119507178,-73.9809370301192,MN0702,MN0702,13407,jobs,0.5328,Upper West Side (Central),Upper West Side (Central),TRUE
+workers,base_21_off,36,5755,plaza,40.7339271356802,-73.9995103182048,MN0203,MN0203,13217.9,jobs,0.53568,West Village,West Village,TRUE
+workers,base_21_off,37,2057,park,40.7030579020734,-73.9492810954172,BK0103,BK0103,12733.8,jobs,0.53846,South Williamsburg,South Williamsburg,TRUE
+workers,base_21_off,38,1539,park,40.636881193494,-74.0007526427602,BK1201,BK1201,12561.5,jobs,0.5412,Sunset Park (East)-Borough Park (West),Sunset Park (East)-Borough Park (West),TRUE
+workers,base_21_off,39,5773,plaza,40.7104182486811,-73.9636729684403,BK0102,BK0102,12098.8,jobs,0.54384,Williamsburg,Williamsburg,TRUE
+workers,base_21_off,40,2058,park,40.7030442705256,-73.9244324118141,BK0401,BK0401,11800.5,jobs,0.54641,Bushwick (West),Bushwick (West),TRUE
+workers,base_21_off,41,4693,busy_street,40.7892327826637,-73.9738856374922,MN0702,MN0702,11179.8,jobs,0.54885,Upper West Side (Central),Upper West Side (Central),TRUE
+workers,base_21_off,42,5765,plaza,40.8607742905546,-73.8911262345609,BX0603,BX0603,10893,jobs,0.55123,Belmont,Belmont,TRUE
+workers,base_21_off,43,4541,busy_street,40.7008424841029,-73.9867854323379,BK0202,BK0202,10750.8,jobs,0.55357,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,TRUE
+workers,base_21_off,44,1146,park,40.6044548674445,-73.95821742955,BK1501,BK1501,10697.2,jobs,0.5559,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,TRUE
+workers,base_21_off,45,4971,busy_street,40.8500041013773,-73.9353596173978,MN1202,MN1202,10649.6,jobs,0.55823,Washington Heights (North),Washington Heights (North),TRUE
+workers,base_21_off,46,4450,busy_street,40.7428294171262,-73.9520968228047,QN0201,QN0201,10542.8,jobs,0.56053,Long Island City-Hunters Point,Long Island City-Hunters Point,TRUE
+workers,base_21_off,47,5343,busy_street,40.7422784643516,-73.9806348186713,MN0603,MN0603,10443.6,jobs,0.5628,Murray Hill-Kips Bay,Murray Hill-Kips Bay,TRUE
+workers,base_21_off,48,1989,park,40.6976659702559,-73.9972038028346,BK0201,BK0201,10442.3,jobs,0.56508,Brooklyn Heights,Brooklyn Heights,TRUE
+workers,base_21_off,49,5747,plaza,40.7438176546144,-73.9242631274706,QN0202,QN0202,10302.2,jobs,0.56733,Sunnyside,Sunnyside,TRUE
+workers,base_21_off,50,677,park,40.5828446800131,-73.9653177971745,BK1303,BK1303,10133.6,jobs,0.56954,Brighton Beach,Brighton Beach,TRUE
+workers,base_21_off,51,4486,busy_street,40.7468282315024,-73.8915908878595,QN0401,QN0401,10080.6,jobs,0.57174,Elmhurst,Elmhurst,TRUE
+workers,base_21_off,52,5803,plaza,40.7502244807548,-73.9482825581027,QN0201,QN0201,9855.7,jobs,0.57389,Long Island City-Hunters Point,Long Island City-Hunters Point,TRUE
+workers,base_21_off,53,5756,plaza,40.7603744360827,-73.8278926582156,QN0707,QN0707,9680.4,jobs,0.576,Flushing-Willets Point,Flushing-Willets Point,TRUE
+workers,base_21_off,54,4832,busy_street,40.8080849785935,-73.9462225717756,MN1001,MN1001,9582.2,jobs,0.57809,Harlem (South),Harlem (South),TRUE
+workers,base_21_off,55,4674,busy_street,40.7031504243494,-73.8008608168805,QN1201,QN1201,9248.6,jobs,0.5801,Jamaica,Jamaica,TRUE
+workers,base_21_off,56,4519,busy_street,40.732600860968,-73.868085694408,QN0601,QN0601,9188.8,jobs,0.58211,Rego Park,Rego Park,TRUE
+workers,base_21_off,57,1456,park,40.6260712081025,-73.9706139129399,BK1204,BK1204,9136.2,jobs,0.5841,Mapleton-Midwood (West),Mapleton-Midwood (West),TRUE
+workers,base_21_off,58,2152,park,40.7191558376425,-73.8320966145697,QN8191,QN0602,8191.7,jobs,0.58589,Forest Hills,Flushing Meadows-Corona Park,TRUE
+workers,base_21_off,59,5771,plaza,40.7035569677633,-73.9409026440129,BK0104,BK0104,7979.1,jobs,0.58763,East Williamsburg,East Williamsburg,TRUE
+workers,base_21_off,60,4545,busy_street,40.7089888105076,-74.0023253724447,MN0101,MN0101,7913.7,jobs,0.58935,Financial District-Battery Park City,Financial District-Battery Park City,TRUE
+workers,base_21_off,61,1969,park,40.692255323419,-73.9581624092115,BK0301,BK0301,7693.3,jobs,0.59103,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),TRUE
+workers,base_21_off,62,5304,busy_street,40.8020826804929,-73.9369986039709,MN1102,MN1102,7667.4,jobs,0.5927,East Harlem (North),East Harlem (North),TRUE
+workers,base_21_off,63,4759,busy_street,40.7713405009496,-73.9534180392442,MN0801,MN0801,7463.4,jobs,0.59433,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,TRUE
+workers,base_21_off,64,4472,busy_street,40.763171751166,-73.9891797062544,MN0402,MN0402,7382.6,jobs,0.59594,Hell's Kitchen,Hell's Kitchen,TRUE
+workers,base_21_off,65,2729,busy_street,40.7557487981764,-74.0025302964217,MN0401,MN0401,7103.3,jobs,0.59749,Chelsea-Hudson Yards,Chelsea-Hudson Yards,TRUE
+workers,base_21_off,66,5374,busy_street,40.7159836544779,-73.96078111747,BK0102,BK0102,7087.1,jobs,0.59904,Williamsburg,Williamsburg,TRUE
+workers,base_21_off,67,3220,park,40.7949143095808,-73.9616526045292,MN6491,MN0703,6958.3,jobs,0.60055,Upper West Side-Manhattan Valley,Central Park,TRUE
+workers,base_21_off,68,2468,busy_street,40.7449254244924,-73.9368170655035,QN0202,QN0202,6867.8,jobs,0.60205,Sunnyside,Sunnyside,TRUE
+workers,base_21_off,69,3457,park,40.8219119306382,-73.9260755050997,BX0401,BX0401,6843.1,jobs,0.60354,Concourse-Concourse Village,Concourse-Concourse Village,TRUE
+workers,base_21_off,70,4645,busy_street,40.7211402888093,-73.9868667447112,MN0302,MN0302,6782.4,jobs,0.60502,Lower East Side,Lower East Side,TRUE
+workers,base_21_off,71,4636,busy_street,40.8078277499988,-73.964028044259,MN0901,MN0901,6648,jobs,0.60647,Morningside Heights,Morningside Heights,TRUE
+workers,base_21_off,72,2767,park,40.7570802464015,-73.9332528429085,QN0105,QN0105,6631.8,jobs,0.60792,Queensbridge-Ravenswood-Dutch Kills,Queensbridge-Ravenswood-Dutch Kills,TRUE
+workers,base_21_off,73,3227,park,40.7949087020259,-73.9474337620585,MN1101,MN1101,6524.4,jobs,0.60934,East Harlem (South),East Harlem (South),TRUE
+workers,base_21_off,74,2467,park,40.7449389927154,-73.9705614826229,MN0603,MN0603,6421.8,jobs,0.61074,Murray Hill-Kips Bay,Murray Hill-Kips Bay,TRUE
+workers,base_21_off,75,5634,busy_street,40.783147303272,-73.9592404148794,MN6491,MN0802,6244.6,jobs,0.61211,Upper East Side-Carnegie Hill,Central Park,TRUE
+workers,base_21_off,76,2007,park,40.6990104027369,-73.9617077681764,BK0103,BK0103,6226.9,jobs,0.61346,South Williamsburg,South Williamsburg,TRUE
+workers,base_21_off,77,1065,park,40.6004067982802,-73.9723973863191,BK1501,BK1501,5978.9,jobs,0.61477,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,TRUE
+workers,base_21_off,78,2133,park,40.7152247594886,-74.0167306029459,MN0101,MN0101,5927.5,jobs,0.61606,Financial District-Battery Park City,Financial District-Battery Park City,TRUE
+workers,base_21_off,79,5811,plaza,40.6841823635824,-73.9683411317398,BK0204,BK0204,5923.1,jobs,0.61735,Clinton Hill,Clinton Hill,TRUE
+workers,base_21_off,80,5677,busy_street,40.670083826734,-73.9855448026092,BK0602,BK0602,5916.8,jobs,0.61864,Park Slope,Park Slope,TRUE
+workers,base_21_off,81,5667,busy_street,40.6779953842044,-73.979387659693,BK0602,BK0602,5891,jobs,0.61993,Park Slope,Park Slope,TRUE
+workers,base_21_off,82,1717,park,40.658479987139,-73.9439938252229,BK0902,BK0902,5848.3,jobs,0.6212,Prospect Lefferts Gardens-Wingate,Prospect Lefferts Gardens-Wingate,TRUE
+workers,base_21_off,83,4640,busy_street,40.8157382964349,-73.9582596167728,MN0902,MN0902,5659,jobs,0.62244,Manhattanville-West Harlem,Manhattanville-West Harlem,TRUE
+workers,base_21_off,84,2205,park,40.7259318412181,-73.8480592114833,QN0602,QN0602,5463.5,jobs,0.62363,Forest Hills,Forest Hills,TRUE
+workers,base_21_off,85,3580,park,40.8462019147189,-73.8958101540783,BX0602,BX0602,5407.8,jobs,0.62481,Tremont,Tremont,TRUE
+workers,base_21_off,86,1517,park,40.6328281067644,-74.0131638683988,BK1002,BK1002,5316.5,jobs,0.62597,Dyker Heights,Dyker Heights,TRUE
+workers,base_21_off,87,1608,park,40.6476873351458,-74.004299631917,BK0703,BK0703,5267,jobs,0.62712,Sunset Park (Central),Sunset Park (Central),TRUE
+workers,base_21_off,88,1430,park,40.6233723984504,-73.9847974022064,BK1204,BK1204,5109.8,jobs,0.62823,Mapleton-Midwood (West),Mapleton-Midwood (West),TRUE
+workers,base_21_off,89,4877,busy_street,40.8260974401112,-73.9496605030829,MN0903,MN0903,5106.4,jobs,0.62934,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,TRUE
+workers,base_21_off,90,4096,park,40.8772494503523,-73.8761863628551,BX0703,BX0703,4966.1,jobs,0.63043,Norwood,Norwood,TRUE
+workers,base_21_off,91,2992,busy_street,40.776009376986,-73.9865394068978,MN0701,MN0701,4927.8,jobs,0.6315,Upper West Side-Lincoln Square,Upper West Side-Lincoln Square,TRUE
+workers,base_21_off,92,2355,park,40.7394989312659,-73.9030805272488,QN0203,QN0203,4854.8,jobs,0.63256,Woodside,Woodside,TRUE
+workers,base_21_off,93,3489,park,40.828663309315,-73.9225114886473,BX0401,BX0401,4796.9,jobs,0.63361,Concourse-Concourse Village,Concourse-Concourse Village,TRUE
+workers,base_21_off,94,1548,park,40.6382295102749,-74.0238040278259,BK1001,BK1001,4764.2,jobs,0.63465,Bay Ridge,Bay Ridge,TRUE
+workers,base_21_off,95,3380,park,40.8138147711685,-73.9385295254976,MN1002,MN1002,4760.9,jobs,0.63569,Harlem (North),Harlem (North),TRUE
+workers,base_21_off,96,4746,busy_street,40.7363220242821,-73.8769931114701,QN0401,QN0401,4677.5,jobs,0.63671,Elmhurst,Elmhurst,TRUE
+workers,base_21_off,97,5782,plaza,40.6901395013143,-73.9830233184446,BK0202,BK0202,4673.4,jobs,0.63772,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,TRUE
+workers,base_21_off,98,4777,busy_street,40.7928505183366,-73.9730938374148,MN0702,MN0702,4669.6,jobs,0.63874,Upper West Side (Central),Upper West Side (Central),TRUE
+workers,base_21_off,99,4555,busy_street,40.8807365359065,-73.9034983246234,BX0802,BX0802,4554.1,jobs,0.63974,Kingsbridge-Marble Hill,Kingsbridge-Marble Hill,TRUE
+workers,base_21_off,100,2603,park,40.7488619665526,-73.8249172225999,QN0706,QN0706,4518.8,jobs,0.64072,Queensboro Hill,Queensboro Hill,TRUE
+workers,base_21_in,1,5257,busy_street,40.7514092892401,-73.9895451127273,MN0502,MN0502,231116.9,jobs,0.26631,Midtown-Times Square,Midtown-Times Square,FALSE
+workers,base_21_in,2,5477,busy_street,40.7596544643983,-73.9856966770626,MN0502,MN0502,126278.4,jobs,0.29385,Midtown-Times Square,Midtown-Times Square,FALSE
+workers,base_21_in,3,5126,busy_street,40.7442992321939,-73.9883078643637,MN0501,MN0501,106940.7,jobs,0.31717,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+workers,base_21_in,4,4538,busy_street,40.7105128774075,-74.0125339800248,MN0101,MN0101,94681,jobs,0.33782,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+workers,base_21_in,5,4591,busy_street,40.7151458077994,-74.0031053421674,MN0102,MN0102,66456.1,jobs,0.35232,Tribeca-Civic Center,Tribeca-Civic Center,FALSE
+workers,base_21_in,6,4749,busy_street,40.726307130959,-74.0019730767867,MN0201,MN0201,54367.3,jobs,0.36417,SoHo-Little Italy-Hudson Square,SoHo-Little Italy-Hudson Square,FALSE
+workers,base_21_in,7,5251,busy_street,40.7550506509016,-73.9981832855887,MN0401,MN0401,51982.3,jobs,0.37551,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+workers,base_21_in,8,4702,busy_street,40.70351267218,-74.0115952884624,MN0101,MN0101,45843.7,jobs,0.38551,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+workers,base_21_in,9,4511,busy_street,40.7377358068794,-73.9784840041426,MN0602,MN0602,45802.5,jobs,0.3955,Gramercy,Gramercy,FALSE
+workers,base_21_in,10,5784,plaza,40.6924213860155,-73.9887676627547,BK0202,BK0202,43723.6,jobs,0.40503,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+workers,base_21_in,11,4986,busy_street,40.7413556860862,-73.9985716427943,MN0401,MN0401,42239.5,jobs,0.41425,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+workers,base_21_in,12,5018,busy_street,40.7668061749345,-73.9567258572299,MN0801,MN0801,41537.8,jobs,0.42331,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,FALSE
+workers,base_21_in,13,4680,busy_street,40.7211352744127,-73.994281469248,MN0201,MN0201,41083.1,jobs,0.43227,SoHo-Little Italy-Hudson Square,SoHo-Little Italy-Hudson Square,FALSE
+workers,base_21_in,14,3313,park,40.8070698075313,-73.9580902405184,MN0901,MN0901,36878.8,jobs,0.44031,Morningside Heights,Morningside Heights,FALSE
+workers,base_21_in,15,4757,busy_street,40.7467758578806,-73.9826829402675,MN0501,MN0501,34825.7,jobs,0.4479,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+workers,base_21_in,16,5551,busy_street,40.7644126426364,-73.9833759995751,MN0502,MN0502,32363.9,jobs,0.45496,Midtown-Times Square,Midtown-Times Square,FALSE
+workers,base_21_in,17,5516,busy_street,40.7293663833296,-73.9961922574639,MN0202,MN0202,30770.8,jobs,0.46167,Greenwich Village,Greenwich Village,FALSE
+workers,base_21_in,18,4548,busy_street,40.748551183143,-73.9384100322353,QN0201,QN0201,26842,jobs,0.46753,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+workers,base_21_in,19,2588,busy_street,40.7489912710977,-73.9705596919278,MN0603,MN0603,26058.2,jobs,0.47321,Murray Hill-Kips Bay,Murray Hill-Kips Bay,FALSE
+workers,base_21_in,20,3177,park,40.7908594748187,-73.9545459497944,MN6491,MN1101,24450.5,jobs,0.47854,East Harlem (South),Central Park,FALSE
+workers,base_21_in,21,4558,busy_street,40.8415828784251,-73.9394043506966,MN1201,MN1201,19902.2,jobs,0.48288,Washington Heights (South),Washington Heights (South),FALSE
+workers,base_21_in,22,4744,busy_street,40.7579836231925,-73.8349817733911,QN0707,QN0707,19767.7,jobs,0.4872,Flushing-Willets Point,Flushing-Willets Point,FALSE
+workers,base_21_in,23,5337,busy_street,40.7765523533837,-73.9556383185925,MN0802,MN0802,19662.3,jobs,0.49148,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+workers,base_21_in,24,4703,busy_street,40.6856760427306,-73.9786340923784,BK0202,BK0202,19513.7,jobs,0.49574,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+workers,base_21_in,25,5328,busy_street,40.7643695285918,-73.9645266778505,MN0802,MN0802,18217.2,jobs,0.49971,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+workers,base_21_in,26,2170,park,40.7219796388327,-74.0060798353914,MN0102,MN0102,17026.1,jobs,0.50343,Tribeca-Civic Center,Tribeca-Civic Center,FALSE
+workers,base_21_in,27,5116,busy_street,40.7474480633327,-73.9996314082386,MN0401,MN0401,16940.2,jobs,0.50712,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+workers,base_21_in,28,5408,busy_street,40.7575322772074,-73.9905013837212,MN0402,MN0402,16638.3,jobs,0.51075,Hell's Kitchen,Hell's Kitchen,FALSE
+workers,base_21_in,29,5788,plaza,40.6405663526277,-73.9790936698526,BK1203,BK1203,15857.4,jobs,0.51421,Kensington,Kensington,FALSE
+workers,base_21_in,30,5371,busy_street,40.8157909557605,-73.9181332928657,BX0102,BX0102,15678.8,jobs,0.51763,Melrose,Melrose,FALSE
+workers,base_21_in,31,4510,busy_street,40.7146113512816,-73.9909439870635,MN0301,MN0301,14563.1,jobs,0.5208,Chinatown-Two Bridges,Chinatown-Two Bridges,FALSE
+workers,base_21_in,32,5164,busy_street,40.7826321512495,-73.9482758821239,MN0803,MN0803,14173.4,jobs,0.5239,Upper East Side-Yorkville,Upper East Side-Yorkville,FALSE
+workers,base_21_in,33,4192,park,40.8840105121933,-73.883292728143,BX2691,BX0703,13767.3,jobs,0.5269,Norwood,Van Cortlandt Park,FALSE
+workers,base_21_in,34,5024,busy_street,40.7290690609284,-73.9842144772889,MN0303,MN0303,13658.7,jobs,0.52988,East Village,East Village,FALSE
+workers,base_21_in,35,4765,busy_street,40.7821119507178,-73.9809370301192,MN0702,MN0702,13407,jobs,0.5328,Upper West Side (Central),Upper West Side (Central),FALSE
+workers,base_21_in,36,5755,plaza,40.7339271356802,-73.9995103182048,MN0203,MN0203,13217.9,jobs,0.53568,West Village,West Village,FALSE
+workers,base_21_in,37,2057,park,40.7030579020734,-73.9492810954172,BK0103,BK0103,12733.8,jobs,0.53846,South Williamsburg,South Williamsburg,FALSE
+workers,base_21_in,38,1539,park,40.636881193494,-74.0007526427602,BK1201,BK1201,12561.5,jobs,0.5412,Sunset Park (East)-Borough Park (West),Sunset Park (East)-Borough Park (West),FALSE
+workers,base_21_in,39,5773,plaza,40.7104182486811,-73.9636729684403,BK0102,BK0102,12098.8,jobs,0.54384,Williamsburg,Williamsburg,FALSE
+workers,base_21_in,40,2058,park,40.7030442705256,-73.9244324118141,BK0401,BK0401,11800.5,jobs,0.54641,Bushwick (West),Bushwick (West),FALSE
+workers,base_21_in,41,4693,busy_street,40.7892327826637,-73.9738856374922,MN0702,MN0702,11179.8,jobs,0.54885,Upper West Side (Central),Upper West Side (Central),FALSE
+workers,base_21_in,42,5765,plaza,40.8607742905546,-73.8911262345609,BX0603,BX0603,10893,jobs,0.55123,Belmont,Belmont,FALSE
+workers,base_21_in,43,4541,busy_street,40.7008424841029,-73.9867854323379,BK0202,BK0202,10750.8,jobs,0.55357,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+workers,base_21_in,44,1146,park,40.6044548674445,-73.95821742955,BK1501,BK1501,10697.2,jobs,0.5559,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,FALSE
+workers,base_21_in,45,4971,busy_street,40.8500041013773,-73.9353596173978,MN1202,MN1202,10649.6,jobs,0.55823,Washington Heights (North),Washington Heights (North),FALSE
+workers,base_21_in,46,4450,busy_street,40.7428294171262,-73.9520968228047,QN0201,QN0201,10542.8,jobs,0.56053,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+workers,base_21_in,47,5343,busy_street,40.7422784643516,-73.9806348186713,MN0603,MN0603,10443.6,jobs,0.5628,Murray Hill-Kips Bay,Murray Hill-Kips Bay,FALSE
+workers,base_21_in,48,1989,park,40.6976659702559,-73.9972038028346,BK0201,BK0201,10442.3,jobs,0.56508,Brooklyn Heights,Brooklyn Heights,FALSE
+workers,base_21_in,49,5747,plaza,40.7438176546144,-73.9242631274706,QN0202,QN0202,10302.2,jobs,0.56733,Sunnyside,Sunnyside,FALSE
+workers,base_21_in,50,677,park,40.5828446800131,-73.9653177971745,BK1303,BK1303,10133.6,jobs,0.56954,Brighton Beach,Brighton Beach,FALSE
+workers,base_21_in,51,4486,busy_street,40.7468282315024,-73.8915908878595,QN0401,QN0401,10080.6,jobs,0.57174,Elmhurst,Elmhurst,FALSE
+workers,base_21_in,52,5803,plaza,40.7502244807548,-73.9482825581027,QN0201,QN0201,9855.7,jobs,0.57389,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+workers,base_21_in,53,5756,plaza,40.7603744360827,-73.8278926582156,QN0707,QN0707,9680.4,jobs,0.576,Flushing-Willets Point,Flushing-Willets Point,FALSE
+workers,base_21_in,54,4832,busy_street,40.8080849785935,-73.9462225717756,MN1001,MN1001,9582.2,jobs,0.57809,Harlem (South),Harlem (South),FALSE
+workers,base_21_in,55,4674,busy_street,40.7031504243494,-73.8008608168805,QN1201,QN1201,9248.6,jobs,0.5801,Jamaica,Jamaica,FALSE
+workers,base_21_in,56,4519,busy_street,40.732600860968,-73.868085694408,QN0601,QN0601,9188.8,jobs,0.58211,Rego Park,Rego Park,FALSE
+workers,base_21_in,57,1456,park,40.6260712081025,-73.9706139129399,BK1204,BK1204,9136.2,jobs,0.5841,Mapleton-Midwood (West),Mapleton-Midwood (West),FALSE
+workers,base_21_in,58,2152,park,40.7191558376425,-73.8320966145697,QN8191,QN0602,8191.7,jobs,0.58589,Forest Hills,Flushing Meadows-Corona Park,FALSE
+workers,base_21_in,59,5771,plaza,40.7035569677633,-73.9409026440129,BK0104,BK0104,7979.1,jobs,0.58763,East Williamsburg,East Williamsburg,FALSE
+workers,base_21_in,60,4545,busy_street,40.7089888105076,-74.0023253724447,MN0101,MN0101,7913.7,jobs,0.58935,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+workers,base_21_in,61,1969,park,40.692255323419,-73.9581624092115,BK0301,BK0301,7693.3,jobs,0.59103,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),FALSE
+workers,base_21_in,62,5304,busy_street,40.8020826804929,-73.9369986039709,MN1102,MN1102,7667.4,jobs,0.5927,East Harlem (North),East Harlem (North),FALSE
+workers,base_21_in,63,4759,busy_street,40.7713405009496,-73.9534180392442,MN0801,MN0801,7463.4,jobs,0.59433,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,FALSE
+workers,base_21_in,64,4472,busy_street,40.763171751166,-73.9891797062544,MN0402,MN0402,7382.6,jobs,0.59594,Hell's Kitchen,Hell's Kitchen,FALSE
+workers,base_21_in,65,2729,busy_street,40.7557487981764,-74.0025302964217,MN0401,MN0401,7103.3,jobs,0.59749,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+workers,base_21_in,66,5374,busy_street,40.7159836544779,-73.96078111747,BK0102,BK0102,7087.1,jobs,0.59904,Williamsburg,Williamsburg,FALSE
+workers,base_21_in,67,3220,park,40.7949143095808,-73.9616526045292,MN6491,MN0703,6958.3,jobs,0.60055,Upper West Side-Manhattan Valley,Central Park,FALSE
+workers,base_21_in,68,2468,busy_street,40.7449254244924,-73.9368170655035,QN0202,QN0202,6867.8,jobs,0.60205,Sunnyside,Sunnyside,FALSE
+workers,base_21_in,69,3457,park,40.8219119306382,-73.9260755050997,BX0401,BX0401,6843.1,jobs,0.60354,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+workers,base_21_in,70,4645,busy_street,40.7211402888093,-73.9868667447112,MN0302,MN0302,6782.4,jobs,0.60502,Lower East Side,Lower East Side,FALSE
+workers,base_21_in,71,4636,busy_street,40.8078277499988,-73.964028044259,MN0901,MN0901,6648,jobs,0.60647,Morningside Heights,Morningside Heights,FALSE
+workers,base_21_in,72,2767,park,40.7570802464015,-73.9332528429085,QN0105,QN0105,6631.8,jobs,0.60792,Queensbridge-Ravenswood-Dutch Kills,Queensbridge-Ravenswood-Dutch Kills,FALSE
+workers,base_21_in,73,3227,park,40.7949087020259,-73.9474337620585,MN1101,MN1101,6524.4,jobs,0.60934,East Harlem (South),East Harlem (South),FALSE
+workers,base_21_in,74,2467,park,40.7449389927154,-73.9705614826229,MN0603,MN0603,6421.8,jobs,0.61074,Murray Hill-Kips Bay,Murray Hill-Kips Bay,FALSE
+workers,base_21_in,75,5634,busy_street,40.783147303272,-73.9592404148794,MN6491,MN0802,6244.6,jobs,0.61211,Upper East Side-Carnegie Hill,Central Park,FALSE
+workers,base_21_in,76,2007,park,40.6990104027369,-73.9617077681764,BK0103,BK0103,6226.9,jobs,0.61346,South Williamsburg,South Williamsburg,FALSE
+workers,base_21_in,77,1065,park,40.6004067982802,-73.9723973863191,BK1501,BK1501,5978.9,jobs,0.61477,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,FALSE
+workers,base_21_in,78,2133,park,40.7152247594886,-74.0167306029459,MN0101,MN0101,5927.5,jobs,0.61606,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+workers,base_21_in,79,5811,plaza,40.6841823635824,-73.9683411317398,BK0204,BK0204,5923.1,jobs,0.61735,Clinton Hill,Clinton Hill,FALSE
+workers,base_21_in,80,5677,busy_street,40.670083826734,-73.9855448026092,BK0602,BK0602,5916.8,jobs,0.61864,Park Slope,Park Slope,FALSE
+workers,base_21_in,81,5667,busy_street,40.6779953842044,-73.979387659693,BK0602,BK0602,5891,jobs,0.61993,Park Slope,Park Slope,FALSE
+workers,base_21_in,82,1717,park,40.658479987139,-73.9439938252229,BK0902,BK0902,5848.3,jobs,0.6212,Prospect Lefferts Gardens-Wingate,Prospect Lefferts Gardens-Wingate,FALSE
+workers,base_21_in,83,4640,busy_street,40.8157382964349,-73.9582596167728,MN0902,MN0902,5659,jobs,0.62244,Manhattanville-West Harlem,Manhattanville-West Harlem,FALSE
+workers,base_21_in,84,2205,park,40.7259318412181,-73.8480592114833,QN0602,QN0602,5463.5,jobs,0.62363,Forest Hills,Forest Hills,FALSE
+workers,base_21_in,85,3580,park,40.8462019147189,-73.8958101540783,BX0602,BX0602,5407.8,jobs,0.62481,Tremont,Tremont,FALSE
+workers,base_21_in,86,1517,park,40.6328281067644,-74.0131638683988,BK1002,BK1002,5316.5,jobs,0.62597,Dyker Heights,Dyker Heights,FALSE
+workers,base_21_in,87,1608,park,40.6476873351458,-74.004299631917,BK0703,BK0703,5267,jobs,0.62712,Sunset Park (Central),Sunset Park (Central),FALSE
+workers,base_21_in,88,1430,park,40.6233723984504,-73.9847974022064,BK1204,BK1204,5109.8,jobs,0.62823,Mapleton-Midwood (West),Mapleton-Midwood (West),FALSE
+workers,base_21_in,89,4877,busy_street,40.8260974401112,-73.9496605030829,MN0903,MN0903,5106.4,jobs,0.62934,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,FALSE
+workers,base_21_in,90,4096,park,40.8772494503523,-73.8761863628551,BX0703,BX0703,4966.1,jobs,0.63043,Norwood,Norwood,FALSE
+workers,base_21_in,91,2992,busy_street,40.776009376986,-73.9865394068978,MN0701,MN0701,4927.8,jobs,0.6315,Upper West Side-Lincoln Square,Upper West Side-Lincoln Square,FALSE
+workers,base_21_in,92,2355,park,40.7394989312659,-73.9030805272488,QN0203,QN0203,4854.8,jobs,0.63256,Woodside,Woodside,FALSE
+workers,base_21_in,93,3489,park,40.828663309315,-73.9225114886473,BX0401,BX0401,4796.9,jobs,0.63361,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+workers,base_21_in,94,1548,park,40.6382295102749,-74.0238040278259,BK1001,BK1001,4764.2,jobs,0.63465,Bay Ridge,Bay Ridge,FALSE
+workers,base_21_in,95,3380,park,40.8138147711685,-73.9385295254976,MN1002,MN1002,4760.9,jobs,0.63569,Harlem (North),Harlem (North),FALSE
+workers,base_21_in,96,4746,busy_street,40.7363220242821,-73.8769931114701,QN0401,QN0401,4677.5,jobs,0.63671,Elmhurst,Elmhurst,FALSE
+workers,base_21_in,97,5782,plaza,40.6901395013143,-73.9830233184446,BK0202,BK0202,4673.4,jobs,0.63772,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+workers,base_21_in,98,4777,busy_street,40.7928505183366,-73.9730938374148,MN0702,MN0702,4669.6,jobs,0.63874,Upper West Side (Central),Upper West Side (Central),FALSE
+workers,base_21_in,99,4555,busy_street,40.8807365359065,-73.9034983246234,BX0802,BX0802,4554.1,jobs,0.63974,Kingsbridge-Marble Hill,Kingsbridge-Marble Hill,FALSE
+workers,base_21_in,100,2603,park,40.7488619665526,-73.8249172225999,QN0706,QN0706,4518.8,jobs,0.64072,Queensboro Hill,Queensboro Hill,FALSE
+workers,strict_14,1,4548,busy_street,40.748551183143,-73.9384100322353,QN0201,QN0201,23356.5,jobs,0.79502,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+workers,strict_14,2,5079,busy_street,40.736032388034,-73.9767440717727,MN0601,MN0601,20557.7,jobs,0.7995,Stuyvesant Town-Peter Cooper Village,Stuyvesant Town-Peter Cooper Village,FALSE
+workers,strict_14,3,1966,plaza,40.6922623366413,-73.9883309332676,BK0202,BK0202,12003.6,jobs,0.80212,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+workers,strict_14,4,2170,park,40.7219796388327,-74.0060798353914,MN0102,MN0102,11464.1,jobs,0.80462,Tribeca-Civic Center,Tribeca-Civic Center,FALSE
+workers,strict_14,5,5804,plaza,40.7455216333217,-73.9467061260528,QN0201,QN0201,10256.3,jobs,0.80685,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+workers,strict_14,6,2460,busy_street,40.7449427209189,-73.9972018185959,MN0401,MN0401,9180.4,jobs,0.80886,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+workers,strict_14,7,677,park,40.5828446800131,-73.9653177971745,BK1303,BK1303,8850.6,jobs,0.81079,Brighton Beach,Brighton Beach,FALSE
+workers,strict_14,8,2038,park,40.701717554444,-74.013177471255,MN0101,MN0101,8371.6,jobs,0.81261,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+workers,strict_14,9,3047,busy_street,40.7800527472296,-73.9527763675885,MN0803,MN0803,7983.3,jobs,0.81435,Upper East Side-Yorkville,Upper East Side-Yorkville,FALSE
+workers,strict_14,10,2792,busy_street,40.7583329634124,-73.8355506248997,QN0707,QN0707,7281.6,jobs,0.81594,Flushing-Willets Point,Flushing-Willets Point,FALSE
+workers,strict_14,11,1146,park,40.6044548674445,-73.95821742955,BK1501,BK1501,7188.8,jobs,0.81751,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,FALSE
+workers,strict_14,12,2468,busy_street,40.7449254244924,-73.9368170655035,QN0202,QN0202,6847.7,jobs,0.819,Sunnyside,Sunnyside,FALSE
+workers,strict_14,13,5788,plaza,40.6405663526277,-73.9790936698526,BK1203,BK1203,6166.1,jobs,0.82035,Kensington,Kensington,FALSE
+workers,strict_14,14,2915,park,40.7692511417261,-73.9652207233097,MN0802,MN0802,4947,jobs,0.82143,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+workers,strict_14,15,2007,park,40.6990104027369,-73.9617077681764,BK0103,BK0103,4648.5,jobs,0.82244,South Williamsburg,South Williamsburg,FALSE
+workers,strict_14,16,1456,park,40.6260712081025,-73.9706139129399,BK1204,BK1204,4452.9,jobs,0.82341,Mapleton-Midwood (West),Mapleton-Midwood (West),FALSE
+workers,strict_14,17,5747,plaza,40.7438176546144,-73.9242631274706,QN0202,QN0202,3993.6,jobs,0.82428,Sunnyside,Sunnyside,FALSE
+workers,strict_14,18,1828,park,40.6706504131589,-73.9936568470251,BK0601,BK0601,3817.8,jobs,0.82512,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,FALSE
+workers,strict_14,19,1487,park,40.6287601813371,-73.9386999721515,BK1801,BK1801,3603.6,jobs,0.8259,Flatlands,Flatlands,FALSE
+workers,strict_14,20,2986,park,40.7745420033064,-73.8355105968625,QN0701,QN0701,3393.8,jobs,0.82664,College Point,College Point,FALSE
+workers,strict_14,21,5318,busy_street,40.7980484886143,-73.9399465275427,MN1102,MN1102,3291.2,jobs,0.82736,East Harlem (North),East Harlem (North),FALSE
+workers,strict_14,22,2057,park,40.7030579020734,-73.9492810954172,BK0103,BK0103,3214.7,jobs,0.82806,South Williamsburg,South Williamsburg,FALSE
+workers,strict_14,23,1368,park,40.6166152784635,-73.9688454674985,BK1204,BK1204,3176.3,jobs,0.82875,Mapleton-Midwood (West),Mapleton-Midwood (West),FALSE
+workers,strict_14,24,2932,park,40.770536967912,-73.872831346627,QN0302,QN0302,3101,jobs,0.82943,East Elmhurst,East Elmhurst,FALSE
+workers,strict_14,25,1851,park,40.6719528130059,-73.8943082823989,BK0502,BK0502,3100.9,jobs,0.83011,East New York (North),East New York (North),FALSE
+workers,strict_14,26,4450,busy_street,40.7428294171262,-73.9520968228047,QN0201,QN0201,3092.3,jobs,0.83078,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+workers,strict_14,27,1540,park,40.6368618932366,-73.9333730906266,BK1702,BK1702,3057.9,jobs,0.83145,East Flatbush-Farragut,East Flatbush-Farragut,FALSE
+workers,strict_14,28,2167,park,40.7205445219904,-73.8604991167455,QN0601,QN0601,3048.1,jobs,0.83211,Rego Park,Rego Park,FALSE
+workers,strict_14,29,5772,plaza,40.7173489718443,-73.9523272305288,BK0102,BK0102,2828.4,jobs,0.83273,Williamsburg,Williamsburg,FALSE
+workers,strict_14,30,4485,busy_street,40.6324211116248,-73.947222460207,BK1401,BK1401,2756,jobs,0.83333,Flatbush,Flatbush,FALSE
+workers,strict_14,31,823,park,40.5895986054387,-73.9653142894677,BK1301,BK1301,2743.1,jobs,0.83393,Gravesend (South),Gravesend (South),FALSE
+workers,strict_14,32,5757,plaza,40.7539773520908,-73.8888707484324,QN0301,QN0301,2615,jobs,0.8345,Jackson Heights,Jackson Heights,FALSE
+workers,strict_14,33,4482,busy_street,40.7489312639797,-73.8715987219991,QN0301,QN0301,2503.9,jobs,0.83504,Jackson Heights,Jackson Heights,FALSE
+workers,strict_14,34,4726,busy_street,40.7148928108985,-74.0022709228952,MN0102,MN0102,2457.1,jobs,0.83558,Tribeca-Civic Center,Tribeca-Civic Center,FALSE
+workers,strict_14,35,1531,park,40.6368361140687,-74.1018219443742,SI0104,SI0104,2234,jobs,0.83607,West New Brighton-Silver Lake-Grymes Hill,West New Brighton-Silver Lake-Grymes Hill,FALSE
+workers,strict_14,36,1663,park,40.6528391727439,-73.759546922648,QN1306,QN1306,2081.3,jobs,0.83652,Springfield Gardens (South)-Brookville,Springfield Gardens (South)-Brookville,FALSE
+workers,strict_14,37,3853,park,40.863747740644,-73.8815490912227,BX2791,BX0603,2078.1,jobs,0.83698,Belmont,Bronx Park,FALSE
+workers,strict_14,38,4121,park,40.8785412651185,-73.8299145219054,BX1004,BX1004,1966,jobs,0.8374,Co-op City,Co-op City,FALSE
+workers,strict_14,39,1372,park,40.617826899804,-74.1815618677191,SI0204,SI0204,1898.2,jobs,0.83782,New Springville-Willowbrook-Bulls Head-Travis,New Springville-Willowbrook-Bulls Head-Travis,FALSE
+workers,strict_14,40,3557,park,40.8420842509149,-73.8389008288821,BX1161,BX1002,1893.1,jobs,0.83823,Throgs Neck-Schuylerville,Hutchinson Metro Center,FALSE
+workers,strict_14,41,2086,park,40.7057523034649,-73.9350792155216,BK0104,BK0104,1766.7,jobs,0.83862,East Williamsburg,East Williamsburg,FALSE
+workers,strict_14,42,5770,plaza,40.6989011941679,-73.9186715423202,BK0401,BK0401,1724,jobs,0.83899,Bushwick (West),Bushwick (West),FALSE
+workers,strict_14,43,1646,park,40.6516735507151,-73.8766049976492,BK0504,BK0504,1715.1,jobs,0.83937,Spring Creek-Starrett City,Spring Creek-Starrett City,FALSE
+workers,strict_14,44,2107,park,40.7084202545761,-73.8907003599998,QN0502,QN0502,1695.7,jobs,0.83974,Ridgewood,Ridgewood,FALSE
+workers,strict_14,45,1517,park,40.6328281067644,-74.0131638683988,BK1002,BK1002,1612.8,jobs,0.84009,Dyker Heights,Dyker Heights,FALSE
+workers,strict_14,46,3058,busy_street,40.7814098523096,-73.9723223535686,MN0702,MN0702,1594.1,jobs,0.84044,Upper West Side (Central),Upper West Side (Central),FALSE
+workers,strict_14,47,767,park,40.5868753101211,-74.0787121133605,SI0201,SI0201,1590.4,jobs,0.84078,Grasmere-Arrochar-South Beach-Dongan Hills,Grasmere-Arrochar-South Beach-Dongan Hills,FALSE
+workers,strict_14,48,1850,park,40.6719620993503,-73.9049527492079,BK1602,BK1602,1579.1,jobs,0.84113,Brownsville,Brownsville,FALSE
+workers,strict_14,49,885,park,40.5922926374981,-73.9458213005,BK1503,BK1503,1573.2,jobs,0.84147,Sheepshead Bay-Manhattan Beach-Gerritsen Beach,Sheepshead Bay-Manhattan Beach-Gerritsen Beach,FALSE
+workers,strict_14,50,2602,park,40.7488725466263,-73.8320217173721,QN0707,QN0707,1564.6,jobs,0.84181,Flushing-Willets Point,Flushing-Willets Point,FALSE
+workers,strict_14,51,2865,park,40.7637459059927,-73.842643367347,QN0707,QN0707,1536.2,jobs,0.84215,Flushing-Willets Point,Flushing-Willets Point,FALSE
+workers,strict_14,52,2432,plaza,40.743575625361,-73.9385943320688,QN0201,QN0201,1447.8,jobs,0.84246,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+workers,strict_14,53,1022,park,40.5989045740416,-74.1885989809715,SI0204,SI0204,1423.7,jobs,0.84277,New Springville-Willowbrook-Bulls Head-Travis,New Springville-Willowbrook-Bulls Head-Travis,FALSE
+workers,strict_14,54,4620,busy_street,40.6999581408724,-73.9076383352567,QN0502,QN0502,1409.6,jobs,0.84308,Ridgewood,Ridgewood,FALSE
+workers,strict_14,55,2850,park,40.7622796893958,-73.7733637574157,QN1102,QN1102,1389,jobs,0.84338,Bayside,Bayside,FALSE
+workers,strict_14,56,5780,plaza,40.6792785164562,-73.8632620266311,QN1002,QN1002,1381.4,jobs,0.84368,Ozone Park,Ozone Park,FALSE
+workers,strict_14,57,4436,park,40.9096862137748,-73.8957106235065,BX2691,BX0803,1378.5,jobs,0.84398,Riverdale-Spuyten Duyvil,Van Cortlandt Park,FALSE
+workers,strict_14,58,1258,park,40.6097165744558,-74.1850846678792,SI0204,SI0204,1364.4,jobs,0.84428,New Springville-Willowbrook-Bulls Head-Travis,New Springville-Willowbrook-Bulls Head-Travis,FALSE
+workers,strict_14,59,5803,plaza,40.7502244807548,-73.9482825581027,QN0201,QN0201,1359.7,jobs,0.84458,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+workers,strict_14,60,534,park,40.575984301464,-74.1601897287556,SI0203,SI0203,1345.4,jobs,0.84487,Todt Hill-Emerson Hill-Lighthouse Hill-Manor Heights,Todt Hill-Emerson Hill-Lighthouse Hill-Manor Heights,FALSE
+workers,strict_14,61,5769,plaza,40.7017906234497,-73.8809394344356,QN0503,QN0503,1334.9,jobs,0.84516,Glendale,Glendale,FALSE
+workers,strict_14,62,706,park,40.584179304732,-73.9298821536677,BK1891,BK1503,1319.4,jobs,0.84545,Sheepshead Bay-Manhattan Beach-Gerritsen Beach,Marine Park-Plumb Island,FALSE
+workers,strict_14,63,1337,park,40.6151020715081,-74.1957350328327,SI0204,SI0204,1305,jobs,0.84574,New Springville-Willowbrook-Bulls Head-Travis,New Springville-Willowbrook-Bulls Head-Travis,FALSE
+workers,strict_14,64,2145,park,40.7177998424248,-73.8285494255402,QN8191,QN0602,1293.3,jobs,0.84602,Forest Hills,Flushing Meadows-Corona Park,FALSE
+workers,strict_14,65,1872,park,40.6746692869623,-73.9120454993635,BK1601,BK1601,1291.6,jobs,0.8463,Ocean Hill,Ocean Hill,FALSE
+workers,strict_14,66,4753,busy_street,40.8160835200761,-73.9177176780063,BX0102,BX0102,1290.5,jobs,0.84658,Melrose,Melrose,FALSE
+workers,strict_14,67,2728,busy_street,40.7557487454635,-74.0043066070067,MN0401,MN0401,1219.2,jobs,0.84685,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+workers,strict_14,68,3485,park,40.82728142945,-73.8851704511452,BX0303,BX0303,1205.1,jobs,0.84711,Crotona Park East,Crotona Park East,FALSE
+workers,strict_14,69,3432,park,40.817765912226,-73.8354037601026,BX1091,BX0903,1199.2,jobs,0.84737,Castle Hill-Unionport,Ferry Point Park-St. Raymond Cemetery,FALSE
+workers,strict_14,70,1494,park,40.6299695517995,-74.1904597359521,SI0204,SI0204,1197.6,jobs,0.84763,New Springville-Willowbrook-Bulls Head-Travis,New Springville-Willowbrook-Bulls Head-Travis,FALSE
+workers,strict_14,71,1899,park,40.6798868212683,-73.775418063879,QN1204,QN1204,1189.3,jobs,0.84789,Springfield Gardens (North)-Rochdale Village,Springfield Gardens (North)-Rochdale Village,FALSE
+workers,strict_14,72,1661,park,40.6530403430957,-73.8925646668349,BK1803,BK1803,1176.6,jobs,0.84815,Canarsie,Canarsie,FALSE
+workers,strict_14,73,4120,park,40.8786001798003,-73.8761838475042,BX0703,BX0703,1151.5,jobs,0.8484,Norwood,Norwood,FALSE
+workers,strict_14,74,1883,park,40.6772872141681,-73.8357504732196,QN1001,QN1001,1121.9,jobs,0.84864,South Ozone Park,South Ozone Park,FALSE
+workers,strict_14,75,5786,plaza,40.6685438224385,-73.9194385586936,BK1601,BK1601,1096.7,jobs,0.84888,Ocean Hill,Ocean Hill,FALSE
+workers,strict_14,76,3020,park,40.7772460289697,-73.8372808045296,QN0701,QN0701,1095.6,jobs,0.84912,College Point,College Point,FALSE
+workers,strict_14,77,1195,park,40.6069974002204,-74.1957112710379,SI0204,SI0204,1067.8,jobs,0.84936,New Springville-Willowbrook-Bulls Head-Travis,New Springville-Willowbrook-Bulls Head-Travis,FALSE
+workers,strict_14,78,917,park,40.5935564945414,-74.1513718895594,SI0204,SI0204,1063.2,jobs,0.84959,New Springville-Willowbrook-Bulls Head-Travis,New Springville-Willowbrook-Bulls Head-Travis,FALSE
+workers,strict_14,79,1611,park,40.6474172084465,-73.7506992958902,QN1306,QN1306,1058.8,jobs,0.84982,Springfield Gardens (South)-Brookville,Springfield Gardens (South)-Brookville,FALSE
+workers,strict_14,80,521,park,40.5747362637195,-73.954693026037,BK1303,BK1303,1056,jobs,0.85005,Brighton Beach,Brighton Beach,FALSE
+workers,strict_14,81,3151,park,40.7881432515307,-73.9261129996467,MN1191,MN1102,1050.9,jobs,0.85028,East Harlem (North),Randall's Island,FALSE
+workers,strict_14,82,3227,park,40.7949087020259,-73.9474337620585,MN1101,MN1101,1048,jobs,0.85051,East Harlem (South),East Harlem (South),FALSE
+workers,strict_14,83,1527,park,40.6354928453324,-74.092954341522,SI0104,SI0104,1035.6,jobs,0.85073,West New Brighton-Silver Lake-Grymes Hill,West New Brighton-Silver Lake-Grymes Hill,FALSE
+workers,strict_14,84,3521,park,40.8381325380236,-73.9473996095316,MN1201,MN1201,991.7,jobs,0.85095,Washington Heights (South),Washington Heights (South),FALSE
+workers,strict_14,85,2535,park,40.7459620811324,-73.7236896721425,QN1302,QN1302,976.7,jobs,0.85116,Bellerose,Bellerose,FALSE
+workers,strict_14,86,3849,busy_street,40.8637787835165,-73.9171329816422,MN1203,MN1203,976.1,jobs,0.85137,Inwood,Inwood,FALSE
+workers,strict_14,87,1186,park,40.6057860931426,-73.9209978548612,BK1891,BK1802,961.6,jobs,0.85158,Marine Park-Mill Basin-Bergen Beach,Marine Park-Plumb Island,FALSE
+workers,strict_14,88,1892,park,40.6801049878848,-73.9847844691038,BK0601,BK0601,951.9,jobs,0.85179,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,FALSE
+workers,strict_14,89,5774,plaza,40.7175086124401,-73.9490382646825,BK0102,BK0102,942.9,jobs,0.852,Williamsburg,Williamsburg,FALSE
+workers,strict_14,90,1213,park,40.6071593124178,-73.9670775230166,BK1501,BK1501,926.2,jobs,0.8522,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,FALSE
+workers,strict_14,91,4481,busy_street,40.7483441812487,-73.8771703539944,QN0401,QN0401,918.8,jobs,0.8524,Elmhurst,Elmhurst,FALSE
+workers,strict_14,92,1921,park,40.6854502471451,-73.8836402527524,BK0571,BK0501,915.4,jobs,0.8526,Cypress Hills,Highland Park-Cypress Hills Cemeteries (South),FALSE
+workers,strict_14,93,3349,park,40.8110534356614,-73.8674205657611,BX0991,BX0201,902.3,jobs,0.8528,Hunts Point,Soundview Park,FALSE
+workers,strict_14,94,3136,park,40.7868025235964,-73.9438858832058,MN1101,MN1101,900,jobs,0.85299,East Harlem (South),East Harlem (South),FALSE
+workers,strict_14,95,1597,park,40.6449270663398,-73.8837109220044,BK0504,BK0504,895.7,jobs,0.85319,Spring Creek-Starrett City,Spring Creek-Starrett City,FALSE
+workers,strict_14,96,1235,park,40.6083824274144,-74.174446609591,SI0204,SI0204,891,jobs,0.85338,New Springville-Willowbrook-Bulls Head-Travis,New Springville-Willowbrook-Bulls Head-Travis,FALSE
+workers,strict_14,97,2767,park,40.7570802464015,-73.9332528429085,QN0105,QN0105,885.8,jobs,0.85358,Queensbridge-Ravenswood-Dutch Kills,Queensbridge-Ravenswood-Dutch Kills,FALSE
+workers,strict_14,98,1847,park,40.6720013331999,-74.0025271192115,BK0601,BK0601,874.5,jobs,0.85377,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,FALSE
+workers,strict_14,99,3410,park,40.8164662924864,-73.8762994479665,BX0991,BX0201,871.4,jobs,0.85396,Hunts Point,Soundview Park,FALSE
+workers,strict_14,100,2120,park,40.710879635216,-73.739811208073,QN1303,QN1303,868.1,jobs,0.85415,Queens Village,Queens Village,FALSE
+workers,strict_21_off,1,5257,busy_street,40.7514092892401,-73.9895451127273,MN0502,MN0502,231116.9,jobs,0.26631,Midtown-Times Square,Midtown-Times Square,FALSE
+workers,strict_21_off,2,5477,busy_street,40.7596544643983,-73.9856966770626,MN0502,MN0502,126278.4,jobs,0.29385,Midtown-Times Square,Midtown-Times Square,FALSE
+workers,strict_21_off,3,5126,busy_street,40.7442992321939,-73.9883078643637,MN0501,MN0501,106940.7,jobs,0.31717,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+workers,strict_21_off,4,4538,busy_street,40.7105128774075,-74.0125339800248,MN0101,MN0101,94681,jobs,0.33782,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+workers,strict_21_off,5,4591,busy_street,40.7151458077994,-74.0031053421674,MN0102,MN0102,66456.1,jobs,0.35232,Tribeca-Civic Center,Tribeca-Civic Center,FALSE
+workers,strict_21_off,6,4749,busy_street,40.726307130959,-74.0019730767867,MN0201,MN0201,54367.3,jobs,0.36417,SoHo-Little Italy-Hudson Square,SoHo-Little Italy-Hudson Square,FALSE
+workers,strict_21_off,7,5251,busy_street,40.7550506509016,-73.9981832855887,MN0401,MN0401,51982.3,jobs,0.37551,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+workers,strict_21_off,8,4702,busy_street,40.70351267218,-74.0115952884624,MN0101,MN0101,45843.7,jobs,0.38551,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+workers,strict_21_off,9,4511,busy_street,40.7377358068794,-73.9784840041426,MN0602,MN0602,45802.5,jobs,0.3955,Gramercy,Gramercy,FALSE
+workers,strict_21_off,10,5784,plaza,40.6924213860155,-73.9887676627547,BK0202,BK0202,43723.6,jobs,0.40503,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+workers,strict_21_off,11,4986,busy_street,40.7413556860862,-73.9985716427943,MN0401,MN0401,42239.5,jobs,0.41425,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+workers,strict_21_off,12,5018,busy_street,40.7668061749345,-73.9567258572299,MN0801,MN0801,41537.8,jobs,0.42331,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,FALSE
+workers,strict_21_off,13,4680,busy_street,40.7211352744127,-73.994281469248,MN0201,MN0201,41083.1,jobs,0.43227,SoHo-Little Italy-Hudson Square,SoHo-Little Italy-Hudson Square,FALSE
+workers,strict_21_off,14,3313,park,40.8070698075313,-73.9580902405184,MN0901,MN0901,36878.8,jobs,0.44031,Morningside Heights,Morningside Heights,FALSE
+workers,strict_21_off,15,4757,busy_street,40.7467758578806,-73.9826829402675,MN0501,MN0501,34825.7,jobs,0.4479,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+workers,strict_21_off,16,5551,busy_street,40.7644126426364,-73.9833759995751,MN0502,MN0502,32363.9,jobs,0.45496,Midtown-Times Square,Midtown-Times Square,FALSE
+workers,strict_21_off,17,5516,busy_street,40.7293663833296,-73.9961922574639,MN0202,MN0202,30770.8,jobs,0.46167,Greenwich Village,Greenwich Village,FALSE
+workers,strict_21_off,18,4548,busy_street,40.748551183143,-73.9384100322353,QN0201,QN0201,26842,jobs,0.46753,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+workers,strict_21_off,19,2588,busy_street,40.7489912710977,-73.9705596919278,MN0603,MN0603,26058.2,jobs,0.47321,Murray Hill-Kips Bay,Murray Hill-Kips Bay,FALSE
+workers,strict_21_off,20,3177,park,40.7908594748187,-73.9545459497944,MN6491,MN1101,24450.5,jobs,0.47854,East Harlem (South),Central Park,FALSE
+workers,strict_21_off,21,4558,busy_street,40.8415828784251,-73.9394043506966,MN1201,MN1201,19902.2,jobs,0.48288,Washington Heights (South),Washington Heights (South),FALSE
+workers,strict_21_off,22,4744,busy_street,40.7579836231925,-73.8349817733911,QN0707,QN0707,19767.7,jobs,0.4872,Flushing-Willets Point,Flushing-Willets Point,FALSE
+workers,strict_21_off,23,5337,busy_street,40.7765523533837,-73.9556383185925,MN0802,MN0802,19662.3,jobs,0.49148,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+workers,strict_21_off,24,4703,busy_street,40.6856760427306,-73.9786340923784,BK0202,BK0202,19513.7,jobs,0.49574,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+workers,strict_21_off,25,5328,busy_street,40.7643695285918,-73.9645266778505,MN0802,MN0802,18217.2,jobs,0.49971,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+workers,strict_21_off,26,2170,park,40.7219796388327,-74.0060798353914,MN0102,MN0102,17026.1,jobs,0.50343,Tribeca-Civic Center,Tribeca-Civic Center,FALSE
+workers,strict_21_off,27,5116,busy_street,40.7474480633327,-73.9996314082386,MN0401,MN0401,16940.2,jobs,0.50712,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+workers,strict_21_off,28,5408,busy_street,40.7575322772074,-73.9905013837212,MN0402,MN0402,16638.3,jobs,0.51075,Hell's Kitchen,Hell's Kitchen,FALSE
+workers,strict_21_off,29,5788,plaza,40.6405663526277,-73.9790936698526,BK1203,BK1203,15857.4,jobs,0.51421,Kensington,Kensington,FALSE
+workers,strict_21_off,30,5371,busy_street,40.8157909557605,-73.9181332928657,BX0102,BX0102,15678.8,jobs,0.51763,Melrose,Melrose,FALSE
+workers,strict_21_off,31,4510,busy_street,40.7146113512816,-73.9909439870635,MN0301,MN0301,14563.1,jobs,0.5208,Chinatown-Two Bridges,Chinatown-Two Bridges,FALSE
+workers,strict_21_off,32,5164,busy_street,40.7826321512495,-73.9482758821239,MN0803,MN0803,14173.4,jobs,0.5239,Upper East Side-Yorkville,Upper East Side-Yorkville,FALSE
+workers,strict_21_off,33,4192,park,40.8840105121933,-73.883292728143,BX2691,BX0703,13767.3,jobs,0.5269,Norwood,Van Cortlandt Park,FALSE
+workers,strict_21_off,34,5024,busy_street,40.7290690609284,-73.9842144772889,MN0303,MN0303,13658.7,jobs,0.52988,East Village,East Village,FALSE
+workers,strict_21_off,35,4765,busy_street,40.7821119507178,-73.9809370301192,MN0702,MN0702,13407,jobs,0.5328,Upper West Side (Central),Upper West Side (Central),FALSE
+workers,strict_21_off,36,5755,plaza,40.7339271356802,-73.9995103182048,MN0203,MN0203,13217.9,jobs,0.53568,West Village,West Village,FALSE
+workers,strict_21_off,37,2057,park,40.7030579020734,-73.9492810954172,BK0103,BK0103,12733.8,jobs,0.53846,South Williamsburg,South Williamsburg,FALSE
+workers,strict_21_off,38,1539,park,40.636881193494,-74.0007526427602,BK1201,BK1201,12561.5,jobs,0.5412,Sunset Park (East)-Borough Park (West),Sunset Park (East)-Borough Park (West),FALSE
+workers,strict_21_off,39,5773,plaza,40.7104182486811,-73.9636729684403,BK0102,BK0102,12098.8,jobs,0.54384,Williamsburg,Williamsburg,FALSE
+workers,strict_21_off,40,2058,park,40.7030442705256,-73.9244324118141,BK0401,BK0401,11800.5,jobs,0.54641,Bushwick (West),Bushwick (West),FALSE
+workers,strict_21_off,41,4693,busy_street,40.7892327826637,-73.9738856374922,MN0702,MN0702,11179.8,jobs,0.54885,Upper West Side (Central),Upper West Side (Central),FALSE
+workers,strict_21_off,42,5765,plaza,40.8607742905546,-73.8911262345609,BX0603,BX0603,10893,jobs,0.55123,Belmont,Belmont,FALSE
+workers,strict_21_off,43,4541,busy_street,40.7008424841029,-73.9867854323379,BK0202,BK0202,10750.8,jobs,0.55357,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+workers,strict_21_off,44,1146,park,40.6044548674445,-73.95821742955,BK1501,BK1501,10697.2,jobs,0.5559,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,FALSE
+workers,strict_21_off,45,4971,busy_street,40.8500041013773,-73.9353596173978,MN1202,MN1202,10649.6,jobs,0.55823,Washington Heights (North),Washington Heights (North),FALSE
+workers,strict_21_off,46,4450,busy_street,40.7428294171262,-73.9520968228047,QN0201,QN0201,10542.8,jobs,0.56053,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+workers,strict_21_off,47,5343,busy_street,40.7422784643516,-73.9806348186713,MN0603,MN0603,10443.6,jobs,0.5628,Murray Hill-Kips Bay,Murray Hill-Kips Bay,FALSE
+workers,strict_21_off,48,1989,park,40.6976659702559,-73.9972038028346,BK0201,BK0201,10442.3,jobs,0.56508,Brooklyn Heights,Brooklyn Heights,FALSE
+workers,strict_21_off,49,5747,plaza,40.7438176546144,-73.9242631274706,QN0202,QN0202,10302.2,jobs,0.56733,Sunnyside,Sunnyside,FALSE
+workers,strict_21_off,50,677,park,40.5828446800131,-73.9653177971745,BK1303,BK1303,10133.6,jobs,0.56954,Brighton Beach,Brighton Beach,FALSE
+workers,strict_21_off,51,4486,busy_street,40.7468282315024,-73.8915908878595,QN0401,QN0401,10080.6,jobs,0.57174,Elmhurst,Elmhurst,FALSE
+workers,strict_21_off,52,5803,plaza,40.7502244807548,-73.9482825581027,QN0201,QN0201,9855.7,jobs,0.57389,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+workers,strict_21_off,53,5756,plaza,40.7603744360827,-73.8278926582156,QN0707,QN0707,9680.4,jobs,0.576,Flushing-Willets Point,Flushing-Willets Point,FALSE
+workers,strict_21_off,54,4832,busy_street,40.8080849785935,-73.9462225717756,MN1001,MN1001,9582.2,jobs,0.57809,Harlem (South),Harlem (South),FALSE
+workers,strict_21_off,55,4674,busy_street,40.7031504243494,-73.8008608168805,QN1201,QN1201,9248.6,jobs,0.5801,Jamaica,Jamaica,FALSE
+workers,strict_21_off,56,4519,busy_street,40.732600860968,-73.868085694408,QN0601,QN0601,9188.8,jobs,0.58211,Rego Park,Rego Park,FALSE
+workers,strict_21_off,57,1456,park,40.6260712081025,-73.9706139129399,BK1204,BK1204,9136.2,jobs,0.5841,Mapleton-Midwood (West),Mapleton-Midwood (West),FALSE
+workers,strict_21_off,58,2152,park,40.7191558376425,-73.8320966145697,QN8191,QN0602,8191.7,jobs,0.58589,Forest Hills,Flushing Meadows-Corona Park,FALSE
+workers,strict_21_off,59,5771,plaza,40.7035569677633,-73.9409026440129,BK0104,BK0104,7979.1,jobs,0.58763,East Williamsburg,East Williamsburg,FALSE
+workers,strict_21_off,60,4545,busy_street,40.7089888105076,-74.0023253724447,MN0101,MN0101,7913.7,jobs,0.58935,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+workers,strict_21_off,61,1969,park,40.692255323419,-73.9581624092115,BK0301,BK0301,7693.3,jobs,0.59103,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),FALSE
+workers,strict_21_off,62,5304,busy_street,40.8020826804929,-73.9369986039709,MN1102,MN1102,7667.4,jobs,0.5927,East Harlem (North),East Harlem (North),FALSE
+workers,strict_21_off,63,4759,busy_street,40.7713405009496,-73.9534180392442,MN0801,MN0801,7463.4,jobs,0.59433,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,FALSE
+workers,strict_21_off,64,4472,busy_street,40.763171751166,-73.9891797062544,MN0402,MN0402,7382.6,jobs,0.59594,Hell's Kitchen,Hell's Kitchen,FALSE
+workers,strict_21_off,65,2729,busy_street,40.7557487981764,-74.0025302964217,MN0401,MN0401,7103.3,jobs,0.59749,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+workers,strict_21_off,66,5374,busy_street,40.7159836544779,-73.96078111747,BK0102,BK0102,7087.1,jobs,0.59904,Williamsburg,Williamsburg,FALSE
+workers,strict_21_off,67,3220,park,40.7949143095808,-73.9616526045292,MN6491,MN0703,6958.3,jobs,0.60055,Upper West Side-Manhattan Valley,Central Park,FALSE
+workers,strict_21_off,68,2468,busy_street,40.7449254244924,-73.9368170655035,QN0202,QN0202,6867.8,jobs,0.60205,Sunnyside,Sunnyside,FALSE
+workers,strict_21_off,69,3457,park,40.8219119306382,-73.9260755050997,BX0401,BX0401,6843.1,jobs,0.60354,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+workers,strict_21_off,70,4645,busy_street,40.7211402888093,-73.9868667447112,MN0302,MN0302,6782.4,jobs,0.60502,Lower East Side,Lower East Side,FALSE
+workers,strict_21_off,71,4636,busy_street,40.8078277499988,-73.964028044259,MN0901,MN0901,6648,jobs,0.60647,Morningside Heights,Morningside Heights,FALSE
+workers,strict_21_off,72,2767,park,40.7570802464015,-73.9332528429085,QN0105,QN0105,6631.8,jobs,0.60792,Queensbridge-Ravenswood-Dutch Kills,Queensbridge-Ravenswood-Dutch Kills,FALSE
+workers,strict_21_off,73,3227,park,40.7949087020259,-73.9474337620585,MN1101,MN1101,6524.4,jobs,0.60934,East Harlem (South),East Harlem (South),FALSE
+workers,strict_21_off,74,2467,park,40.7449389927154,-73.9705614826229,MN0603,MN0603,6421.8,jobs,0.61074,Murray Hill-Kips Bay,Murray Hill-Kips Bay,FALSE
+workers,strict_21_off,75,5634,busy_street,40.783147303272,-73.9592404148794,MN6491,MN0802,6244.6,jobs,0.61211,Upper East Side-Carnegie Hill,Central Park,FALSE
+workers,strict_21_off,76,2007,park,40.6990104027369,-73.9617077681764,BK0103,BK0103,6226.9,jobs,0.61346,South Williamsburg,South Williamsburg,FALSE
+workers,strict_21_off,77,1065,park,40.6004067982802,-73.9723973863191,BK1501,BK1501,5978.9,jobs,0.61477,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,FALSE
+workers,strict_21_off,78,2133,park,40.7152247594886,-74.0167306029459,MN0101,MN0101,5927.5,jobs,0.61606,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+workers,strict_21_off,79,5811,plaza,40.6841823635824,-73.9683411317398,BK0204,BK0204,5923.1,jobs,0.61735,Clinton Hill,Clinton Hill,FALSE
+workers,strict_21_off,80,5677,busy_street,40.670083826734,-73.9855448026092,BK0602,BK0602,5916.8,jobs,0.61864,Park Slope,Park Slope,FALSE
+workers,strict_21_off,81,5667,busy_street,40.6779953842044,-73.979387659693,BK0602,BK0602,5891,jobs,0.61993,Park Slope,Park Slope,FALSE
+workers,strict_21_off,82,1717,park,40.658479987139,-73.9439938252229,BK0902,BK0902,5848.3,jobs,0.6212,Prospect Lefferts Gardens-Wingate,Prospect Lefferts Gardens-Wingate,FALSE
+workers,strict_21_off,83,4640,busy_street,40.8157382964349,-73.9582596167728,MN0902,MN0902,5659,jobs,0.62244,Manhattanville-West Harlem,Manhattanville-West Harlem,FALSE
+workers,strict_21_off,84,2205,park,40.7259318412181,-73.8480592114833,QN0602,QN0602,5463.5,jobs,0.62363,Forest Hills,Forest Hills,FALSE
+workers,strict_21_off,85,3580,park,40.8462019147189,-73.8958101540783,BX0602,BX0602,5407.8,jobs,0.62481,Tremont,Tremont,FALSE
+workers,strict_21_off,86,1517,park,40.6328281067644,-74.0131638683988,BK1002,BK1002,5316.5,jobs,0.62597,Dyker Heights,Dyker Heights,FALSE
+workers,strict_21_off,87,1608,park,40.6476873351458,-74.004299631917,BK0703,BK0703,5267,jobs,0.62712,Sunset Park (Central),Sunset Park (Central),FALSE
+workers,strict_21_off,88,1430,park,40.6233723984504,-73.9847974022064,BK1204,BK1204,5109.8,jobs,0.62823,Mapleton-Midwood (West),Mapleton-Midwood (West),FALSE
+workers,strict_21_off,89,4877,busy_street,40.8260974401112,-73.9496605030829,MN0903,MN0903,5106.4,jobs,0.62934,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,FALSE
+workers,strict_21_off,90,4096,park,40.8772494503523,-73.8761863628551,BX0703,BX0703,4966.1,jobs,0.63043,Norwood,Norwood,FALSE
+workers,strict_21_off,91,2992,busy_street,40.776009376986,-73.9865394068978,MN0701,MN0701,4927.8,jobs,0.6315,Upper West Side-Lincoln Square,Upper West Side-Lincoln Square,FALSE
+workers,strict_21_off,92,2355,park,40.7394989312659,-73.9030805272488,QN0203,QN0203,4854.8,jobs,0.63256,Woodside,Woodside,FALSE
+workers,strict_21_off,93,3489,park,40.828663309315,-73.9225114886473,BX0401,BX0401,4796.9,jobs,0.63361,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+workers,strict_21_off,94,1548,park,40.6382295102749,-74.0238040278259,BK1001,BK1001,4764.2,jobs,0.63465,Bay Ridge,Bay Ridge,FALSE
+workers,strict_21_off,95,3380,park,40.8138147711685,-73.9385295254976,MN1002,MN1002,4760.9,jobs,0.63569,Harlem (North),Harlem (North),FALSE
+workers,strict_21_off,96,4746,busy_street,40.7363220242821,-73.8769931114701,QN0401,QN0401,4677.5,jobs,0.63671,Elmhurst,Elmhurst,FALSE
+workers,strict_21_off,97,5782,plaza,40.6901395013143,-73.9830233184446,BK0202,BK0202,4673.4,jobs,0.63772,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+workers,strict_21_off,98,4777,busy_street,40.7928505183366,-73.9730938374148,MN0702,MN0702,4669.6,jobs,0.63874,Upper West Side (Central),Upper West Side (Central),FALSE
+workers,strict_21_off,99,4555,busy_street,40.8807365359065,-73.9034983246234,BX0802,BX0802,4554.1,jobs,0.63974,Kingsbridge-Marble Hill,Kingsbridge-Marble Hill,FALSE
+workers,strict_21_off,100,2603,park,40.7488619665526,-73.8249172225999,QN0706,QN0706,4518.8,jobs,0.64072,Queensboro Hill,Queensboro Hill,FALSE
+workers,strict_21_in,1,5257,busy_street,40.7514092892401,-73.9895451127273,MN0502,MN0502,231116.9,jobs,0.26631,Midtown-Times Square,Midtown-Times Square,FALSE
+workers,strict_21_in,2,5477,busy_street,40.7596544643983,-73.9856966770626,MN0502,MN0502,126278.4,jobs,0.29385,Midtown-Times Square,Midtown-Times Square,FALSE
+workers,strict_21_in,3,5126,busy_street,40.7442992321939,-73.9883078643637,MN0501,MN0501,106940.7,jobs,0.31717,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+workers,strict_21_in,4,4538,busy_street,40.7105128774075,-74.0125339800248,MN0101,MN0101,94681,jobs,0.33782,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+workers,strict_21_in,5,4591,busy_street,40.7151458077994,-74.0031053421674,MN0102,MN0102,66456.1,jobs,0.35232,Tribeca-Civic Center,Tribeca-Civic Center,FALSE
+workers,strict_21_in,6,4749,busy_street,40.726307130959,-74.0019730767867,MN0201,MN0201,54367.3,jobs,0.36417,SoHo-Little Italy-Hudson Square,SoHo-Little Italy-Hudson Square,FALSE
+workers,strict_21_in,7,5251,busy_street,40.7550506509016,-73.9981832855887,MN0401,MN0401,51982.3,jobs,0.37551,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+workers,strict_21_in,8,4702,busy_street,40.70351267218,-74.0115952884624,MN0101,MN0101,45843.7,jobs,0.38551,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+workers,strict_21_in,9,4511,busy_street,40.7377358068794,-73.9784840041426,MN0602,MN0602,45802.5,jobs,0.3955,Gramercy,Gramercy,FALSE
+workers,strict_21_in,10,5784,plaza,40.6924213860155,-73.9887676627547,BK0202,BK0202,43723.6,jobs,0.40503,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+workers,strict_21_in,11,4986,busy_street,40.7413556860862,-73.9985716427943,MN0401,MN0401,42239.5,jobs,0.41425,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+workers,strict_21_in,12,5018,busy_street,40.7668061749345,-73.9567258572299,MN0801,MN0801,41537.8,jobs,0.42331,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,FALSE
+workers,strict_21_in,13,4680,busy_street,40.7211352744127,-73.994281469248,MN0201,MN0201,41083.1,jobs,0.43227,SoHo-Little Italy-Hudson Square,SoHo-Little Italy-Hudson Square,FALSE
+workers,strict_21_in,14,3313,park,40.8070698075313,-73.9580902405184,MN0901,MN0901,36878.8,jobs,0.44031,Morningside Heights,Morningside Heights,FALSE
+workers,strict_21_in,15,4757,busy_street,40.7467758578806,-73.9826829402675,MN0501,MN0501,34825.7,jobs,0.4479,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+workers,strict_21_in,16,5551,busy_street,40.7644126426364,-73.9833759995751,MN0502,MN0502,32363.9,jobs,0.45496,Midtown-Times Square,Midtown-Times Square,FALSE
+workers,strict_21_in,17,5516,busy_street,40.7293663833296,-73.9961922574639,MN0202,MN0202,30770.8,jobs,0.46167,Greenwich Village,Greenwich Village,FALSE
+workers,strict_21_in,18,4548,busy_street,40.748551183143,-73.9384100322353,QN0201,QN0201,26842,jobs,0.46753,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+workers,strict_21_in,19,2588,busy_street,40.7489912710977,-73.9705596919278,MN0603,MN0603,26058.2,jobs,0.47321,Murray Hill-Kips Bay,Murray Hill-Kips Bay,FALSE
+workers,strict_21_in,20,3177,park,40.7908594748187,-73.9545459497944,MN6491,MN1101,24450.5,jobs,0.47854,East Harlem (South),Central Park,FALSE
+workers,strict_21_in,21,4558,busy_street,40.8415828784251,-73.9394043506966,MN1201,MN1201,19902.2,jobs,0.48288,Washington Heights (South),Washington Heights (South),FALSE
+workers,strict_21_in,22,4744,busy_street,40.7579836231925,-73.8349817733911,QN0707,QN0707,19767.7,jobs,0.4872,Flushing-Willets Point,Flushing-Willets Point,FALSE
+workers,strict_21_in,23,5337,busy_street,40.7765523533837,-73.9556383185925,MN0802,MN0802,19662.3,jobs,0.49148,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+workers,strict_21_in,24,4703,busy_street,40.6856760427306,-73.9786340923784,BK0202,BK0202,19513.7,jobs,0.49574,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+workers,strict_21_in,25,5328,busy_street,40.7643695285918,-73.9645266778505,MN0802,MN0802,18217.2,jobs,0.49971,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+workers,strict_21_in,26,2170,park,40.7219796388327,-74.0060798353914,MN0102,MN0102,17026.1,jobs,0.50343,Tribeca-Civic Center,Tribeca-Civic Center,FALSE
+workers,strict_21_in,27,5116,busy_street,40.7474480633327,-73.9996314082386,MN0401,MN0401,16940.2,jobs,0.50712,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+workers,strict_21_in,28,5408,busy_street,40.7575322772074,-73.9905013837212,MN0402,MN0402,16638.3,jobs,0.51075,Hell's Kitchen,Hell's Kitchen,FALSE
+workers,strict_21_in,29,5788,plaza,40.6405663526277,-73.9790936698526,BK1203,BK1203,15857.4,jobs,0.51421,Kensington,Kensington,FALSE
+workers,strict_21_in,30,5371,busy_street,40.8157909557605,-73.9181332928657,BX0102,BX0102,15678.8,jobs,0.51763,Melrose,Melrose,FALSE
+workers,strict_21_in,31,4510,busy_street,40.7146113512816,-73.9909439870635,MN0301,MN0301,14563.1,jobs,0.5208,Chinatown-Two Bridges,Chinatown-Two Bridges,FALSE
+workers,strict_21_in,32,5164,busy_street,40.7826321512495,-73.9482758821239,MN0803,MN0803,14173.4,jobs,0.5239,Upper East Side-Yorkville,Upper East Side-Yorkville,FALSE
+workers,strict_21_in,33,4192,park,40.8840105121933,-73.883292728143,BX2691,BX0703,13767.3,jobs,0.5269,Norwood,Van Cortlandt Park,FALSE
+workers,strict_21_in,34,5024,busy_street,40.7290690609284,-73.9842144772889,MN0303,MN0303,13658.7,jobs,0.52988,East Village,East Village,FALSE
+workers,strict_21_in,35,4765,busy_street,40.7821119507178,-73.9809370301192,MN0702,MN0702,13407,jobs,0.5328,Upper West Side (Central),Upper West Side (Central),FALSE
+workers,strict_21_in,36,5755,plaza,40.7339271356802,-73.9995103182048,MN0203,MN0203,13217.9,jobs,0.53568,West Village,West Village,FALSE
+workers,strict_21_in,37,2057,park,40.7030579020734,-73.9492810954172,BK0103,BK0103,12733.8,jobs,0.53846,South Williamsburg,South Williamsburg,FALSE
+workers,strict_21_in,38,1539,park,40.636881193494,-74.0007526427602,BK1201,BK1201,12561.5,jobs,0.5412,Sunset Park (East)-Borough Park (West),Sunset Park (East)-Borough Park (West),FALSE
+workers,strict_21_in,39,5773,plaza,40.7104182486811,-73.9636729684403,BK0102,BK0102,12098.8,jobs,0.54384,Williamsburg,Williamsburg,FALSE
+workers,strict_21_in,40,2058,park,40.7030442705256,-73.9244324118141,BK0401,BK0401,11800.5,jobs,0.54641,Bushwick (West),Bushwick (West),FALSE
+workers,strict_21_in,41,4693,busy_street,40.7892327826637,-73.9738856374922,MN0702,MN0702,11179.8,jobs,0.54885,Upper West Side (Central),Upper West Side (Central),FALSE
+workers,strict_21_in,42,5765,plaza,40.8607742905546,-73.8911262345609,BX0603,BX0603,10893,jobs,0.55123,Belmont,Belmont,FALSE
+workers,strict_21_in,43,4541,busy_street,40.7008424841029,-73.9867854323379,BK0202,BK0202,10750.8,jobs,0.55357,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+workers,strict_21_in,44,1146,park,40.6044548674445,-73.95821742955,BK1501,BK1501,10697.2,jobs,0.5559,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,FALSE
+workers,strict_21_in,45,4971,busy_street,40.8500041013773,-73.9353596173978,MN1202,MN1202,10649.6,jobs,0.55823,Washington Heights (North),Washington Heights (North),FALSE
+workers,strict_21_in,46,4450,busy_street,40.7428294171262,-73.9520968228047,QN0201,QN0201,10542.8,jobs,0.56053,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+workers,strict_21_in,47,5343,busy_street,40.7422784643516,-73.9806348186713,MN0603,MN0603,10443.6,jobs,0.5628,Murray Hill-Kips Bay,Murray Hill-Kips Bay,FALSE
+workers,strict_21_in,48,1989,park,40.6976659702559,-73.9972038028346,BK0201,BK0201,10442.3,jobs,0.56508,Brooklyn Heights,Brooklyn Heights,FALSE
+workers,strict_21_in,49,5747,plaza,40.7438176546144,-73.9242631274706,QN0202,QN0202,10302.2,jobs,0.56733,Sunnyside,Sunnyside,FALSE
+workers,strict_21_in,50,677,park,40.5828446800131,-73.9653177971745,BK1303,BK1303,10133.6,jobs,0.56954,Brighton Beach,Brighton Beach,FALSE
+workers,strict_21_in,51,4486,busy_street,40.7468282315024,-73.8915908878595,QN0401,QN0401,10080.6,jobs,0.57174,Elmhurst,Elmhurst,FALSE
+workers,strict_21_in,52,5803,plaza,40.7502244807548,-73.9482825581027,QN0201,QN0201,9855.7,jobs,0.57389,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+workers,strict_21_in,53,5756,plaza,40.7603744360827,-73.8278926582156,QN0707,QN0707,9680.4,jobs,0.576,Flushing-Willets Point,Flushing-Willets Point,FALSE
+workers,strict_21_in,54,4832,busy_street,40.8080849785935,-73.9462225717756,MN1001,MN1001,9582.2,jobs,0.57809,Harlem (South),Harlem (South),FALSE
+workers,strict_21_in,55,4674,busy_street,40.7031504243494,-73.8008608168805,QN1201,QN1201,9248.6,jobs,0.5801,Jamaica,Jamaica,FALSE
+workers,strict_21_in,56,4519,busy_street,40.732600860968,-73.868085694408,QN0601,QN0601,9188.8,jobs,0.58211,Rego Park,Rego Park,FALSE
+workers,strict_21_in,57,1456,park,40.6260712081025,-73.9706139129399,BK1204,BK1204,9136.2,jobs,0.5841,Mapleton-Midwood (West),Mapleton-Midwood (West),FALSE
+workers,strict_21_in,58,2152,park,40.7191558376425,-73.8320966145697,QN8191,QN0602,8191.7,jobs,0.58589,Forest Hills,Flushing Meadows-Corona Park,FALSE
+workers,strict_21_in,59,5771,plaza,40.7035569677633,-73.9409026440129,BK0104,BK0104,7979.1,jobs,0.58763,East Williamsburg,East Williamsburg,FALSE
+workers,strict_21_in,60,4545,busy_street,40.7089888105076,-74.0023253724447,MN0101,MN0101,7913.7,jobs,0.58935,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+workers,strict_21_in,61,1969,park,40.692255323419,-73.9581624092115,BK0301,BK0301,7693.3,jobs,0.59103,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),FALSE
+workers,strict_21_in,62,5304,busy_street,40.8020826804929,-73.9369986039709,MN1102,MN1102,7667.4,jobs,0.5927,East Harlem (North),East Harlem (North),FALSE
+workers,strict_21_in,63,4759,busy_street,40.7713405009496,-73.9534180392442,MN0801,MN0801,7463.4,jobs,0.59433,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,FALSE
+workers,strict_21_in,64,4472,busy_street,40.763171751166,-73.9891797062544,MN0402,MN0402,7382.6,jobs,0.59594,Hell's Kitchen,Hell's Kitchen,FALSE
+workers,strict_21_in,65,2729,busy_street,40.7557487981764,-74.0025302964217,MN0401,MN0401,7103.3,jobs,0.59749,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+workers,strict_21_in,66,5374,busy_street,40.7159836544779,-73.96078111747,BK0102,BK0102,7087.1,jobs,0.59904,Williamsburg,Williamsburg,FALSE
+workers,strict_21_in,67,3220,park,40.7949143095808,-73.9616526045292,MN6491,MN0703,6958.3,jobs,0.60055,Upper West Side-Manhattan Valley,Central Park,FALSE
+workers,strict_21_in,68,2468,busy_street,40.7449254244924,-73.9368170655035,QN0202,QN0202,6867.8,jobs,0.60205,Sunnyside,Sunnyside,FALSE
+workers,strict_21_in,69,3457,park,40.8219119306382,-73.9260755050997,BX0401,BX0401,6843.1,jobs,0.60354,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+workers,strict_21_in,70,4645,busy_street,40.7211402888093,-73.9868667447112,MN0302,MN0302,6782.4,jobs,0.60502,Lower East Side,Lower East Side,FALSE
+workers,strict_21_in,71,4636,busy_street,40.8078277499988,-73.964028044259,MN0901,MN0901,6648,jobs,0.60647,Morningside Heights,Morningside Heights,FALSE
+workers,strict_21_in,72,2767,park,40.7570802464015,-73.9332528429085,QN0105,QN0105,6631.8,jobs,0.60792,Queensbridge-Ravenswood-Dutch Kills,Queensbridge-Ravenswood-Dutch Kills,FALSE
+workers,strict_21_in,73,3227,park,40.7949087020259,-73.9474337620585,MN1101,MN1101,6524.4,jobs,0.60934,East Harlem (South),East Harlem (South),FALSE
+workers,strict_21_in,74,2467,park,40.7449389927154,-73.9705614826229,MN0603,MN0603,6421.8,jobs,0.61074,Murray Hill-Kips Bay,Murray Hill-Kips Bay,FALSE
+workers,strict_21_in,75,5634,busy_street,40.783147303272,-73.9592404148794,MN6491,MN0802,6244.6,jobs,0.61211,Upper East Side-Carnegie Hill,Central Park,FALSE
+workers,strict_21_in,76,2007,park,40.6990104027369,-73.9617077681764,BK0103,BK0103,6226.9,jobs,0.61346,South Williamsburg,South Williamsburg,FALSE
+workers,strict_21_in,77,1065,park,40.6004067982802,-73.9723973863191,BK1501,BK1501,5978.9,jobs,0.61477,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,FALSE
+workers,strict_21_in,78,2133,park,40.7152247594886,-74.0167306029459,MN0101,MN0101,5927.5,jobs,0.61606,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+workers,strict_21_in,79,5811,plaza,40.6841823635824,-73.9683411317398,BK0204,BK0204,5923.1,jobs,0.61735,Clinton Hill,Clinton Hill,FALSE
+workers,strict_21_in,80,5677,busy_street,40.670083826734,-73.9855448026092,BK0602,BK0602,5916.8,jobs,0.61864,Park Slope,Park Slope,FALSE
+workers,strict_21_in,81,5667,busy_street,40.6779953842044,-73.979387659693,BK0602,BK0602,5891,jobs,0.61993,Park Slope,Park Slope,FALSE
+workers,strict_21_in,82,1717,park,40.658479987139,-73.9439938252229,BK0902,BK0902,5848.3,jobs,0.6212,Prospect Lefferts Gardens-Wingate,Prospect Lefferts Gardens-Wingate,FALSE
+workers,strict_21_in,83,4640,busy_street,40.8157382964349,-73.9582596167728,MN0902,MN0902,5659,jobs,0.62244,Manhattanville-West Harlem,Manhattanville-West Harlem,FALSE
+workers,strict_21_in,84,2205,park,40.7259318412181,-73.8480592114833,QN0602,QN0602,5463.5,jobs,0.62363,Forest Hills,Forest Hills,FALSE
+workers,strict_21_in,85,3580,park,40.8462019147189,-73.8958101540783,BX0602,BX0602,5407.8,jobs,0.62481,Tremont,Tremont,FALSE
+workers,strict_21_in,86,1517,park,40.6328281067644,-74.0131638683988,BK1002,BK1002,5316.5,jobs,0.62597,Dyker Heights,Dyker Heights,FALSE
+workers,strict_21_in,87,1608,park,40.6476873351458,-74.004299631917,BK0703,BK0703,5267,jobs,0.62712,Sunset Park (Central),Sunset Park (Central),FALSE
+workers,strict_21_in,88,1430,park,40.6233723984504,-73.9847974022064,BK1204,BK1204,5109.8,jobs,0.62823,Mapleton-Midwood (West),Mapleton-Midwood (West),FALSE
+workers,strict_21_in,89,4877,busy_street,40.8260974401112,-73.9496605030829,MN0903,MN0903,5106.4,jobs,0.62934,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,FALSE
+workers,strict_21_in,90,4096,park,40.8772494503523,-73.8761863628551,BX0703,BX0703,4966.1,jobs,0.63043,Norwood,Norwood,FALSE
+workers,strict_21_in,91,2992,busy_street,40.776009376986,-73.9865394068978,MN0701,MN0701,4927.8,jobs,0.6315,Upper West Side-Lincoln Square,Upper West Side-Lincoln Square,FALSE
+workers,strict_21_in,92,2355,park,40.7394989312659,-73.9030805272488,QN0203,QN0203,4854.8,jobs,0.63256,Woodside,Woodside,FALSE
+workers,strict_21_in,93,3489,park,40.828663309315,-73.9225114886473,BX0401,BX0401,4796.9,jobs,0.63361,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+workers,strict_21_in,94,1548,park,40.6382295102749,-74.0238040278259,BK1001,BK1001,4764.2,jobs,0.63465,Bay Ridge,Bay Ridge,FALSE
+workers,strict_21_in,95,3380,park,40.8138147711685,-73.9385295254976,MN1002,MN1002,4760.9,jobs,0.63569,Harlem (North),Harlem (North),FALSE
+workers,strict_21_in,96,4746,busy_street,40.7363220242821,-73.8769931114701,QN0401,QN0401,4677.5,jobs,0.63671,Elmhurst,Elmhurst,FALSE
+workers,strict_21_in,97,5782,plaza,40.6901395013143,-73.9830233184446,BK0202,BK0202,4673.4,jobs,0.63772,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+workers,strict_21_in,98,4777,busy_street,40.7928505183366,-73.9730938374148,MN0702,MN0702,4669.6,jobs,0.63874,Upper West Side (Central),Upper West Side (Central),FALSE
+workers,strict_21_in,99,4555,busy_street,40.8807365359065,-73.9034983246234,BX0802,BX0802,4554.1,jobs,0.63974,Kingsbridge-Marble Hill,Kingsbridge-Marble Hill,FALSE
+workers,strict_21_in,100,2603,park,40.7488619665526,-73.8249172225999,QN0706,QN0706,4518.8,jobs,0.64072,Queensboro Hill,Queensboro Hill,FALSE

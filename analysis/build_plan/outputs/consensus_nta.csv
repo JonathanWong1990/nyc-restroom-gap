@@ -1,0 +1,151 @@
+nta,runs_primary,sites_primary,runs_all,sites_all,rank,ntaname,boroname,ntatype,residents_base_14,residents_base_21_off,streets_base_14,streets_base_21_off,subway_base_14,subway_base_21_off,workers_base_14,workers_base_21_off,resid_ratio,ratio_rank,events_311,high_complaint_six
+MN0802,8,19,12,24,1,Upper East Side-Carnegie Hill,Manhattan,0,1,3,1,6,2,2,1,3,0.796,115,35,FALSE
+BK0602,8,18,11,22,2,Park Slope,Brooklyn,0,2,3,1,4,1,4,1,2,0.955,80,27,FALSE
+MN0702,8,18,11,21,3,Upper West Side (Central),Manhattan,0,1,2,1,5,1,4,1,3,0.791,116,71,FALSE
+QN0401,8,18,12,25,4,Elmhurst,Queens,0,2,3,1,4,1,4,1,2,1.205,54,77,FALSE
+MN0401,7,18,10,22,5,Chelsea-Hudson Yards,Manhattan,0,1,2,1,5,0,3,2,4,0.682,135,64,FALSE
+QN0201,7,15,11,26,6,Long Island City-Hunters Point,Queens,0,1,0,2,2,2,2,3,3,0.48,170,18,FALSE
+MN1102,7,12,11,18,7,East Harlem (North),Manhattan,0,1,2,0,3,1,2,2,1,2.996,4,99,TRUE
+QN0707,7,10,9,14,8,Flushing-Willets Point,Queens,0,1,1,1,1,0,1,3,2,0.426,174,14,FALSE
+MN1203,7,8,11,13,9,Inwood,Manhattan,0,1,1,1,1,2,1,1,0,1.014,76,17,FALSE
+QN0502,7,7,11,13,10,Ridgewood,Queens,0,1,1,1,1,1,1,1,0,1.047,71,39,FALSE
+BK0202,6,13,8,15,11,Downtown Brooklyn-DUMBO-Boerum Hill,Brooklyn,0,1,2,0,2,0,3,1,4,1.367,36,45,FALSE
+BK0102,6,8,9,13,12,Williamsburg,Brooklyn,0,1,2,0,1,0,1,1,2,0.582,155,32,FALSE
+MN1201,6,8,8,10,13,Washington Heights (South),Manhattan,0,1,2,0,2,0,1,1,1,0.677,136,28,FALSE
+MN0803,6,6,9,9,14,Upper East Side-Yorkville,Manhattan,0,1,1,1,1,0,0,1,1,0.912,92,44,FALSE
+MN0101,5,12,6,13,15,Financial District-Battery Park City,Manhattan,0,0,1,0,3,0,2,2,4,0.553,162,63,FALSE
+MN0502,5,10,7,12,16,Midtown-Times Square,Manhattan,0,0,0,1,3,1,2,0,3,1.929,17,84,TRUE
+BK1501,5,9,8,14,17,Gravesend (East)-Homecrest,Brooklyn,0,3,0,0,0,1,1,2,2,0.626,147,9,FALSE
+BK0103,5,8,8,13,18,South Williamsburg,Brooklyn,0,2,1,0,0,0,1,2,2,0.232,189,4,FALSE
+QN0202,5,8,7,11,19,Sunnyside,Queens,0,0,1,0,0,1,2,2,2,0.931,86,33,FALSE
+BK0301,5,7,6,8,20,Bedford-Stuyvesant (West),Brooklyn,0,0,2,0,1,1,2,0,1,1.236,48,56,FALSE
+BK1203,5,7,7,10,21,Kensington,Brooklyn,0,2,1,0,0,0,1,2,1,1.108,64,17,FALSE
+MN0102,5,7,7,10,22,Tribeca-Civic Center,Manhattan,0,1,0,0,2,1,0,1,2,1.721,21,58,FALSE
+MN0801,5,7,6,8,23,Upper East Side-Lenox Hill-Roosevelt Island,Manhattan,0,0,1,1,2,0,1,0,2,0.631,144,47,FALSE
+QN0602,5,7,7,9,24,Forest Hills,Queens,0,0,2,0,0,1,1,1,2,0.67,138,30,FALSE
+BX0703,5,6,7,8,25,Norwood,Bronx,0,1,1,0,0,0,1,1,2,0.304,184,4,FALSE
+BX0102,5,5,7,7,26,Melrose,Bronx,0,1,0,0,1,0,1,1,1,1.554,29,16,FALSE
+BX0401,4,9,4,9,27,Concourse-Concourse Village,Bronx,0,0,3,0,2,0,2,0,2,0.899,96,16,FALSE
+MN0901,4,9,4,9,28,Morningside Heights,Manhattan,0,0,2,0,3,0,2,0,2,0.599,151,19,FALSE
+BK1204,4,7,7,12,29,Mapleton-Midwood (West),Brooklyn,0,2,0,0,0,1,0,2,2,0.556,161,6,FALSE
+MN0903,4,7,4,7,30,Hamilton Heights-Sugar Hill,Manhattan,0,0,2,0,2,0,2,0,1,0.799,114,25,FALSE
+BX0802,4,6,4,6,31,Kingsbridge-Marble Hill,Bronx,0,0,1,0,2,0,2,0,1,1.441,33,7,FALSE
+MN0202,4,6,4,6,32,Greenwich Village,Manhattan,0,0,1,0,2,0,2,0,1,1.236,47,45,FALSE
+MN0303,4,6,4,6,33,East Village,Manhattan,0,0,2,0,2,0,1,0,1,0.735,126,42,FALSE
+MN1001,4,6,4,6,34,Harlem (South),Manhattan,0,0,2,0,1,0,2,0,1,0.763,123,30,FALSE
+MN1202,4,6,4,6,35,Washington Heights (North),Manhattan,0,0,2,0,1,0,2,0,1,0.645,141,31,FALSE
+QN0105,4,6,6,8,36,Queensbridge-Ravenswood-Dutch Kills,Queens,0,0,0,0,0,1,2,2,1,0.299,185,7,FALSE
+BK0902,4,5,4,5,37,Prospect Lefferts Gardens-Wingate,Brooklyn,0,0,2,0,1,0,1,0,1,1.189,56,17,FALSE
+BK1002,4,5,5,6,38,Dyker Heights,Brooklyn,0,1,0,0,0,0,1,2,1,2.475,8,16,FALSE
+BK1401,4,5,6,7,39,Flatbush,Brooklyn,0,1,0,0,1,0,2,1,0,0.659,140,17,FALSE
+QN1002,4,5,7,10,40,Ozone Park,Queens,0,2,1,0,0,1,1,0,0,0.951,81,10,FALSE
+BK0401,4,4,5,5,41,Bushwick (West),Brooklyn,0,0,1,0,0,0,1,1,1,1.682,24,51,FALSE
+BK0703,4,4,5,5,42,Sunset Park (Central),Brooklyn,0,1,1,0,0,0,0,1,1,1.969,15,30,FALSE
+BX0903,4,4,5,5,43,Castle Hill-Unionport,Bronx,0,0,1,0,1,0,1,1,0,0.93,87,8,FALSE
+MN0301,4,4,4,4,44,Chinatown-Two Bridges,Manhattan,0,0,1,0,1,0,1,0,1,1.816,18,27,FALSE
+MN0302,4,4,4,4,45,Lower East Side,Manhattan,0,0,1,0,1,0,1,0,1,0.862,100,25,FALSE
+MN0601,4,4,7,8,46,Stuyvesant Town-Peter Cooper Village,Manhattan,0,1,0,1,1,0,0,1,0,0.663,139,4,FALSE
+QN0601,4,4,6,6,47,Rego Park,Queens,0,1,1,0,0,0,0,1,1,0.51,168,6,FALSE
+MN0501,3,8,3,8,48,Midtown South-Flatiron-Union Square,Manhattan,0,0,0,0,5,0,1,0,2,0.697,131,42,FALSE
+BK0601,3,6,6,11,49,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Brooklyn,0,2,0,0,0,1,0,3,0,1.226,49,45,FALSE
+BK1303,3,5,5,8,50,Brighton Beach,Brooklyn,0,2,0,0,0,0,0,2,1,3.848,1,24,TRUE
+BK1601,3,5,6,10,51,Ocean Hill,Brooklyn,0,2,1,0,0,0,0,2,0,0.568,158,8,FALSE
+MN0201,3,5,3,5,52,SoHo-Little Italy-Hudson Square,Manhattan,0,0,0,0,1,0,2,0,2,1.024,75,26,FALSE
+MN1002,3,5,4,6,53,Harlem (North),Manhattan,0,0,2,0,0,0,2,0,1,0.839,110,43,FALSE
+QN0402,3,5,3,5,54,Corona,Queens,0,0,1,0,2,0,2,0,0,1.75,20,54,FALSE
+BK0503,3,4,5,7,55,East New York-New Lots,Brooklyn,0,2,0,0,0,1,1,0,0,0.289,186,5,FALSE
+BK0901,3,4,4,5,56,Crown Heights (South),Brooklyn,0,0,1,0,0,1,2,0,0,0.525,166,11,FALSE
+BX0501,3,4,4,5,57,University Heights (South)-Morris Heights,Bronx,0,1,2,0,0,0,1,0,0,0.373,178,4,FALSE
+BX0503,3,4,3,4,58,Fordham Heights,Bronx,0,0,1,0,2,0,1,0,0,0.724,127,6,FALSE
+MN0402,3,4,3,4,59,Hell's Kitchen,Manhattan,0,0,1,0,1,0,0,0,2,0.9,95,56,FALSE
+MN0602,3,4,3,4,60,Gramercy,Manhattan,0,0,1,0,2,0,0,0,1,1.262,45,34,FALSE
+MN0701,3,4,3,4,61,Upper West Side-Lincoln Square,Manhattan,0,0,1,0,2,0,0,0,1,0.627,145,40,FALSE
+MN1101,3,4,6,8,62,East Harlem (South),Manhattan,0,0,1,0,0,0,1,0,2,0.324,181,12,FALSE
+QN0301,3,4,5,7,63,Jackson Heights,Queens,0,0,2,0,1,0,0,1,0,1.288,43,58,FALSE
+BK0204,3,3,3,3,64,Clinton Hill,Brooklyn,0,0,1,0,0,0,1,0,1,1.667,25,22,FALSE
+BK0502,3,3,6,8,65,East New York (North),Brooklyn,0,1,0,0,0,1,0,1,0,0.604,150,9,FALSE
+BK1101,3,3,3,3,66,Bensonhurst,Brooklyn,0,0,1,0,1,0,1,0,0,1.011,77,32,FALSE
+BK1602,3,3,5,5,67,Brownsville,Brooklyn,0,0,1,0,0,1,0,1,0,0.561,159,10,FALSE
+BK1702,3,3,4,4,68,East Flatbush-Farragut,Brooklyn,0,1,1,0,0,0,0,1,0,1.071,69,9,FALSE
+BX0403,3,3,4,4,69,Mount Eden-Claremont (West),Bronx,0,1,0,0,1,0,0,1,0,0.638,143,6,FALSE
+BX0603,3,3,5,5,70,Belmont,Bronx,0,1,0,0,0,0,0,1,1,1.029,74,6,FALSE
+BX1002,3,3,5,5,71,Throgs Neck-Schuylerville,Bronx,0,1,0,0,0,1,0,1,0,0.408,176,3,FALSE
+QN0203,3,3,4,4,72,Woodside,Queens,0,0,0,0,0,1,1,0,1,1.706,23,47,FALSE
+QN0706,3,3,3,3,73,Queensboro Hill,Queens,0,0,1,0,0,0,0,1,1,0.689,132,3,FALSE
+QN1201,3,3,3,3,74,Jamaica,Queens,0,0,0,0,1,0,1,0,1,1.179,58,49,FALSE
+SI0204,2,10,3,18,75,New Springville-Willowbrook-Bulls Head-Travis,Staten Island,0,1,0,0,0,0,0,9,0,0.808,111,8,FALSE
+MN0603,2,5,2,5,76,Murray Hill-Kips Bay,Manhattan,0,0,2,0,0,0,0,0,3,0.861,101,32,FALSE
+BK0302,2,4,2,4,77,Bedford-Stuyvesant (East),Brooklyn,0,0,3,0,0,0,1,0,0,0.684,134,25,FALSE
+BK0504,2,4,4,7,78,Spring Creek-Starrett City,Brooklyn,0,2,0,0,0,0,0,2,0,0.627,146,1,FALSE
+BX0202,2,4,2,4,79,Longwood,Bronx,0,0,2,0,0,0,2,0,0,0.852,106,8,FALSE
+SI0203,2,4,4,6,80,Todt Hill-Emerson Hill-Lighthouse Hill-Manor Heights,Staten Island,0,3,0,0,0,0,0,1,0,0.926,88,4,FALSE
+BK1302,2,3,3,4,81,Coney Island-Sea Gate,Brooklyn,0,1,0,0,0,0,2,0,0,0.783,119,8,FALSE
+BK1801,2,3,4,6,82,Flatlands,Brooklyn,0,2,0,0,0,0,0,1,0,0.753,125,10,FALSE
+BX0803,2,3,4,5,83,Riverdale-Spuyten Duyvil,Bronx,0,2,0,0,0,0,0,1,0,1.432,34,9,FALSE
+BX1004,2,3,4,6,84,Co-op City,Bronx,0,2,0,0,0,0,0,1,0,0,194,0,FALSE
+QN1102,2,3,4,5,85,Bayside,Queens,0,2,0,0,0,0,0,1,0,0.786,117,8,FALSE
+QN1306,2,3,4,6,86,Springfield Gardens (South)-Brookville,Queens,0,1,0,0,0,0,0,2,0,0.803,113,8,FALSE
+SI0104,2,3,3,5,87,West New Brighton-Silver Lake-Grymes Hill,Staten Island,0,1,0,0,0,0,0,2,0,0.408,177,3,FALSE
+SI0107,2,3,3,5,88,Mariner's Harbor-Arlington-Graniteville,Staten Island,0,2,0,0,0,0,0,1,0,1.133,62,6,FALSE
+BK0104,2,2,4,4,89,East Williamsburg,Brooklyn,0,0,0,0,0,0,1,0,1,1.19,55,29,FALSE
+BK0201,2,2,3,3,90,Brooklyn Heights,Brooklyn,0,0,0,0,0,1,0,0,1,2.112,11,24,FALSE
+BK0402,2,2,3,3,91,Bushwick (East),Brooklyn,0,1,1,0,0,0,0,0,0,1.366,37,29,FALSE
+BK0802,2,2,3,3,92,Crown Heights (North),Brooklyn,0,0,1,0,0,1,0,0,0,0.905,93,28,FALSE
+BK1201,2,2,2,2,93,Sunset Park (East)-Borough Park (West),Brooklyn,0,0,1,0,0,0,0,0,1,0.539,164,5,FALSE
+BK1301,2,2,4,4,94,Gravesend (South),Brooklyn,0,1,0,0,0,0,0,1,0,0.591,153,4,FALSE
+BK1503,2,2,4,5,95,Sheepshead Bay-Manhattan Beach-Gerritsen Beach,Brooklyn,0,1,0,0,0,0,0,1,0,0.474,171,10,FALSE
+BK1802,2,2,3,3,96,Marine Park-Mill Basin-Bergen Beach,Brooklyn,0,1,0,0,0,0,0,1,0,0.806,112,6,FALSE
+BX0101,2,2,2,2,97,Mott Haven-Port Morris,Bronx,0,0,1,0,0,0,1,0,0,0.626,148,10,FALSE
+BX0303,2,2,4,4,98,Crotona Park East,Bronx,0,1,0,0,0,0,0,1,0,0.76,124,5,FALSE
+BX0601,2,2,3,3,99,West Farms,Bronx,0,0,1,0,0,0,1,0,0,0.338,180,1,FALSE
+BX0602,2,2,2,2,100,Tremont,Bronx,0,0,0,0,1,0,0,0,1,0.946,82,5,FALSE
+BX0701,2,2,3,3,101,University Heights (North)-Fordham,Bronx,0,0,1,0,0,0,1,0,0,0.917,89,9,FALSE
+BX0702,2,2,3,3,102,Bedford Park,Bronx,0,0,0,0,0,1,0,1,0,0.776,120,9,FALSE
+BX0901,2,2,2,2,103,Soundview-Bruckner-Bronx River,Bronx,0,0,1,0,0,0,1,0,0,1.293,42,20,FALSE
+MN0203,2,2,2,2,104,West Village,Manhattan,0,0,1,0,0,0,0,0,1,1.783,19,60,FALSE
+MN0703,2,2,2,2,105,Upper West Side-Manhattan Valley,Manhattan,0,0,0,0,1,0,0,0,1,0.887,99,26,FALSE
+MN0902,2,2,2,2,106,Manhattanville-West Harlem,Manhattan,0,0,1,0,0,0,0,0,1,1.378,35,14,FALSE
+QN0101,2,2,3,3,107,Astoria (North)-Ditmars-Steinway,Queens,0,1,0,0,0,0,1,0,0,0.895,97,25,FALSE
+QN0503,2,2,4,4,108,Glendale,Queens,0,1,0,0,0,0,0,1,0,1.35,39,13,FALSE
+QN0905,2,2,4,4,109,Woodhaven,Queens,0,0,1,0,1,0,0,0,0,0.197,191,3,FALSE
+QN1001,2,2,4,4,110,South Ozone Park,Queens,0,1,0,0,0,0,0,1,0,1.043,72,40,FALSE
+QN1401,2,2,4,4,111,Far Rockaway-Bayswater,Queens,0,1,0,0,0,1,0,0,0,1.979,14,50,FALSE
+SI0105,2,2,3,3,112,Westerleigh-Castleton Corners,Staten Island,0,1,0,0,0,0,0,1,0,0.895,98,5,FALSE
+SI0201,2,2,4,4,113,Grasmere-Arrochar-South Beach-Dongan Hills,Staten Island,0,1,0,0,0,0,0,1,0,1.293,41,8,FALSE
+QN0701,1,3,2,5,114,College Point,Queens,0,0,0,0,0,0,0,3,0,0.108,192,1,FALSE
+BX0201,1,2,2,4,115,Hunts Point,Bronx,0,0,0,0,0,0,0,2,0,2.328,9,5,FALSE
+BX0902,1,2,2,3,116,Soundview-Clason Point,Bronx,0,2,0,0,0,0,0,0,0,1.45,32,6,FALSE
+BX1202,1,2,2,4,117,Eastchester-Edenwald-Baychester,Bronx,0,0,0,0,0,2,0,0,0,0.597,152,8,FALSE
+MN0604,1,2,1,2,118,East Midtown-Turtle Bay,Manhattan,0,0,0,0,2,0,0,0,0,0.857,103,37,FALSE
+QN1307,1,2,2,4,119,Rosedale,Queens,0,2,0,0,0,0,0,0,0,0.842,109,6,FALSE
+QN1402,1,2,3,5,120,Rockaway Beach-Arverne-Edgemere,Queens,0,2,0,0,0,0,0,0,0,0.527,165,7,FALSE
+SI0302,1,2,2,4,121,Great Kills-Eltingville,Staten Island,0,2,0,0,0,0,0,0,0,0.703,130,7,FALSE
+SI0303,1,2,2,4,122,Arden Heights-Rossville,Staten Island,0,2,0,0,0,0,0,0,0,0,194,0,FALSE
+BK0101,1,1,1,1,123,Greenpoint,Brooklyn,0,0,0,0,0,0,1,0,0,0.855,104,21,FALSE
+BK0203,1,1,1,1,124,Fort Greene,Brooklyn,0,0,0,0,1,0,0,0,0,1.253,46,17,FALSE
+BK0501,1,1,2,2,125,Cypress Hills,Brooklyn,0,0,0,0,0,0,0,1,0,1.491,30,20,FALSE
+BK0505,1,1,2,2,126,East New York-City Line,Brooklyn,0,0,1,0,0,0,0,0,0,0.274,188,4,FALSE
+BK0801,1,1,1,1,127,Prospect Heights,Brooklyn,0,0,0,0,1,0,0,0,0,0.676,137,6,FALSE
+BK1001,1,1,1,1,128,Bay Ridge,Brooklyn,0,0,0,0,0,0,0,0,1,0.774,121,24,FALSE
+BK1102,1,1,1,1,129,Bath Beach,Brooklyn,0,0,1,0,0,0,0,0,0,0.461,172,2,FALSE
+BK1803,1,1,3,4,130,Canarsie,Brooklyn,0,1,0,0,0,0,0,0,0,0.638,142,13,FALSE
+BX0301,1,1,1,1,131,Morrisania,Bronx,0,0,1,0,0,0,0,0,0,0.858,102,5,FALSE
+BX0402,1,1,1,1,132,Highbridge,Bronx,0,0,0,0,0,0,1,0,0,1.218,52,6,FALSE
+BX0502,1,1,1,1,133,Mount Hope,Bronx,0,0,1,0,0,0,0,0,0,0.546,163,7,FALSE
+BX0904,1,1,1,1,134,Parkchester,Bronx,0,0,1,0,0,0,0,0,0,1.073,68,4,FALSE
+BX1003,1,1,1,1,135,Pelham Bay-Country Club-City Island,Bronx,0,0,0,0,0,0,0,1,0,1.139,60,7,FALSE
+QN0104,1,1,2,2,136,Astoria (East)-Woodside (North),Queens,0,0,0,0,0,1,0,0,0,2.815,6,57,TRUE
+QN0302,1,1,2,2,137,East Elmhurst,Queens,0,0,0,0,0,0,0,1,0,3.499,2,36,TRUE
+QN0703,1,1,2,2,138,Bay Terrace-Clearview,Queens,0,1,0,0,0,0,0,0,0,0.605,149,2,FALSE
+QN0901,1,1,1,1,139,Kew Gardens,Queens,0,1,0,0,0,0,0,0,0,1.08,67,11,FALSE
+QN0902,1,1,1,1,140,Richmond Hill,Queens,0,1,0,0,0,0,0,0,0,0.711,129,10,FALSE
+QN1202,1,1,2,3,141,South Jamaica,Queens,0,1,0,0,0,0,0,0,0,1.117,63,13,FALSE
+QN1204,1,1,3,3,142,Springfield Gardens (North)-Rochdale Village,Queens,0,1,0,0,0,0,0,0,0,0.915,90,9,FALSE
+QN1205,1,1,2,3,143,St. Albans,Queens,0,1,0,0,0,0,0,0,0,0.36,179,5,FALSE
+QN1302,1,1,2,2,144,Bellerose,Queens,0,0,0,0,0,0,0,1,0,0.519,167,3,FALSE
+QN1303,1,1,3,4,145,Queens Village,Queens,0,1,0,0,0,0,0,0,0,0.996,78,14,FALSE
+QN1403,1,1,2,2,146,Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,Queens,0,1,0,0,0,0,0,0,0,1.712,22,15,FALSE
+SI0101,1,1,2,2,147,St. George-New Brighton,Staten Island,0,1,0,0,0,0,0,0,0,1.658,26,5,FALSE
+SI0304,1,1,1,1,148,Annadale-Huguenot-Prince's Bay-Woodrow,Staten Island,0,1,0,0,0,0,0,0,0,0.686,133,5,FALSE
+QN0504,0,0,1,1,149,Middle Village,Queens,0,,,,,,,,,0.938,84,6,FALSE
+QN0804,0,0,1,1,150,Jamaica Estates-Holliswood,Queens,0,,,,,,,,,1.477,31,8,FALSE

@@ -1,0 +1,19 @@
+GAP,FIX_PP,radius,n_FIX,n_BUILD,n_EXTEND,n_VERIFY,n_changed,changed
+0.3,5,400,7,13,7,2,9,East Elmhurst: EXTEND HOURS->VERIFY; East Flatbush-Rugby: BUILD->FIX; Williamsbridge-Olinville: EXTEND HOURS->BUILD; Astoria (East)-Woodside (North): BUILD->FIX; Far Rockaway-Bayswater: EXTEND HOURS->FIX; Hollis: BUILD->FIX; Woodside: EXTEND HOURS->BUILD; Bushwick (West): EXTEND HOURS->BUILD; Windsor Terrace-South Slope: EXTEND HOURS->BUILD
+0.3,5,500,7,10,11,1,5,East Flatbush-Rugby: BUILD->FIX; Astoria (East)-Woodside (North): BUILD->FIX; Far Rockaway-Bayswater: EXTEND HOURS->FIX; Hollis: BUILD->FIX; Woodside: EXTEND HOURS->BUILD
+0.3,10,400,3,17,7,2,6,East Elmhurst: EXTEND HOURS->VERIFY; Williamsbridge-Olinville: EXTEND HOURS->BUILD; Far Rockaway-Bayswater: EXTEND HOURS->BUILD; Woodside: EXTEND HOURS->BUILD; Bushwick (West): EXTEND HOURS->BUILD; Windsor Terrace-South Slope: EXTEND HOURS->BUILD
+0.3,10,500,3,13,12,1,1,Woodside: EXTEND HOURS->BUILD
+0.3,15,400,3,17,7,2,6,East Elmhurst: EXTEND HOURS->VERIFY; Williamsbridge-Olinville: EXTEND HOURS->BUILD; Far Rockaway-Bayswater: EXTEND HOURS->BUILD; Woodside: EXTEND HOURS->BUILD; Bushwick (West): EXTEND HOURS->BUILD; Windsor Terrace-South Slope: EXTEND HOURS->BUILD
+0.3,15,500,3,13,12,1,1,Woodside: EXTEND HOURS->BUILD
+0.4,5,400,7,11,9,2,7,East Elmhurst: EXTEND HOURS->VERIFY; East Flatbush-Rugby: BUILD->FIX; Astoria (East)-Woodside (North): BUILD->FIX; Far Rockaway-Bayswater: EXTEND HOURS->FIX; Hollis: BUILD->FIX; Woodside: EXTEND HOURS->BUILD; Windsor Terrace-South Slope: EXTEND HOURS->BUILD
+0.4,5,500,7,9,12,1,4,East Flatbush-Rugby: BUILD->FIX; Astoria (East)-Woodside (North): BUILD->FIX; Far Rockaway-Bayswater: EXTEND HOURS->FIX; Hollis: BUILD->FIX
+0.4,10,400,3,15,9,2,4,East Elmhurst: EXTEND HOURS->VERIFY; Far Rockaway-Bayswater: EXTEND HOURS->BUILD; Woodside: EXTEND HOURS->BUILD; Windsor Terrace-South Slope: EXTEND HOURS->BUILD
+0.4,10,500,3,12,13,1,0,""
+0.4,15,400,3,15,9,2,4,East Elmhurst: EXTEND HOURS->VERIFY; Far Rockaway-Bayswater: EXTEND HOURS->BUILD; Woodside: EXTEND HOURS->BUILD; Windsor Terrace-South Slope: EXTEND HOURS->BUILD
+0.4,15,500,3,12,13,1,0,""
+0.5,5,400,7,9,10,3,6,East Elmhurst: EXTEND HOURS->VERIFY; East Flatbush-Rugby: BUILD->FIX; Astoria (East)-Woodside (North): BUILD->FIX; Far Rockaway-Bayswater: EXTEND HOURS->FIX; Hollis: BUILD->FIX; Windsor Terrace-South Slope: EXTEND HOURS->VERIFY
+0.5,5,500,7,5,15,2,9,East Flatbush-Rugby: BUILD->FIX; Astoria (East)-Woodside (North): BUILD->FIX; Dyker Heights: BUILD->EXTEND HOURS; Far Rockaway-Bayswater: EXTEND HOURS->FIX; Sunset Park (Central): BUILD->EXTEND HOURS; Hollis: BUILD->FIX; West Village: EXTEND HOURS->VERIFY; St. George-New Brighton: BUILD->EXTEND HOURS; Tompkinsville-Stapleton-Clifton-Fox Hills: BUILD->EXTEND HOURS
+0.5,10,400,3,12,10,4,3,East Elmhurst: EXTEND HOURS->VERIFY; Far Rockaway-Bayswater: EXTEND HOURS->VERIFY; Windsor Terrace-South Slope: EXTEND HOURS->VERIFY
+0.5,10,500,3,6,18,2,7,Astoria (East)-Woodside (North): BUILD->EXTEND HOURS; Dyker Heights: BUILD->EXTEND HOURS; Sunset Park (Central): BUILD->EXTEND HOURS; Hollis: BUILD->EXTEND HOURS; West Village: EXTEND HOURS->VERIFY; St. George-New Brighton: BUILD->EXTEND HOURS; Tompkinsville-Stapleton-Clifton-Fox Hills: BUILD->EXTEND HOURS
+0.5,15,400,3,12,10,4,3,East Elmhurst: EXTEND HOURS->VERIFY; Far Rockaway-Bayswater: EXTEND HOURS->VERIFY; Windsor Terrace-South Slope: EXTEND HOURS->VERIFY
+0.5,15,500,3,6,18,2,7,Astoria (East)-Woodside (North): BUILD->EXTEND HOURS; Dyker Heights: BUILD->EXTEND HOURS; Sunset Park (Central): BUILD->EXTEND HOURS; Hollis: BUILD->EXTEND HOURS; West Village: EXTEND HOURS->VERIFY; St. George-New Brighton: BUILD->EXTEND HOURS; Tompkinsville-Stapleton-Clifton-Fox Hills: BUILD->EXTEND HOURS

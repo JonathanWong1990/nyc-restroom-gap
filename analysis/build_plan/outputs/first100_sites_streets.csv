@@ -1,0 +1,419 @@
+objective,config,rank,cand_id,type,lat,lon,nta_raw,nta,new_demand_covered,unit,cum_share_covered,ntaname,ntaname_raw,primary
+streets,base_14,1,2460,busy_street,40.7449427209189,-73.9972018185959,MN0401,MN0401,1006.6,metres of Global/Regional street,0.97781,Chelsea-Hudson Yards,Chelsea-Hudson Yards,TRUE
+streets,base_14,2,3047,busy_street,40.7800527472296,-73.9527763675885,MN0803,MN0803,645.7,metres of Global/Regional street,0.98301,Upper East Side-Yorkville,Upper East Side-Yorkville,TRUE
+streets,base_14,3,4465,busy_street,40.747550877024,-73.941233795429,QN0201,QN0201,442.3,metres of Global/Regional street,0.98658,Long Island City-Hunters Point,Long Island City-Hunters Point,TRUE
+streets,base_14,4,3024,busy_street,40.778708759638,-73.974100399437,MN6491,MN0702,356,metres of Global/Regional street,0.98945,Upper West Side (Central),Central Park,TRUE
+streets,base_14,5,2792,busy_street,40.7583329634124,-73.8355506248997,QN0707,QN0707,324.7,metres of Global/Regional street,0.99207,Flushing-Willets Point,Flushing-Willets Point,TRUE
+streets,base_14,6,2274,busy_street,40.7327829966276,-73.9741182499541,MN0601,MN0601,233.1,metres of Global/Regional street,0.99395,Stuyvesant Town-Peter Cooper Village,Stuyvesant Town-Peter Cooper Village,TRUE
+streets,base_14,7,3825,park,40.8624305503872,-73.9206929831947,MN1203,MN1203,197.8,metres of Global/Regional street,0.99554,Inwood,Inwood,TRUE
+streets,base_14,8,2886,busy_street,40.7665478989968,-73.9598923386423,MN0801,MN0801,130.2,metres of Global/Regional street,0.99659,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,TRUE
+streets,base_14,9,4620,busy_street,40.6999581408724,-73.9076383352567,QN0502,QN0502,112.9,metres of Global/Regional street,0.9975,Ridgewood,Ridgewood,TRUE
+streets,base_14,10,4481,busy_street,40.7483441812487,-73.8771703539944,QN0401,QN0401,102.6,metres of Global/Regional street,0.99833,Elmhurst,Elmhurst,TRUE
+streets,base_14,11,3065,park,40.7814049014424,-73.9563293991289,MN0802,MN0802,80.4,metres of Global/Regional street,0.99898,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,TRUE
+streets,base_14,12,2652,busy_street,40.7516962645829,-73.9918729273254,MN0502,MN0502,45.7,metres of Global/Regional street,0.99934,Midtown-Times Square,Midtown-Times Square,TRUE
+streets,base_14,13,4450,busy_street,40.7428294171262,-73.9520968228047,QN0201,QN0201,41.8,metres of Global/Regional street,0.99968,Long Island City-Hunters Point,Long Island City-Hunters Point,TRUE
+streets,base_14,14,1797,busy_street,40.6665976765615,-73.9883354231752,BK0602,BK0602,39.7,metres of Global/Regional street,1,Park Slope,Park Slope,TRUE
+streets,base_21_off,1,5230,busy_street,40.7494274010324,-73.9889557265449,MN0501,MN0501,8856.8,metres of Global/Regional street,0.42209,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,TRUE
+streets,base_21_off,2,5453,busy_street,40.7582206561444,-73.9861203763044,MN0502,MN0502,6029.7,metres of Global/Regional street,0.4707,Midtown-Times Square,Midtown-Times Square,TRUE
+streets,base_21_off,3,2373,busy_street,40.7408904399811,-73.9972019887838,MN0401,MN0401,4863.6,metres of Global/Regional street,0.50991,Chelsea-Hudson Yards,Chelsea-Hudson Yards,TRUE
+streets,base_21_off,4,5237,busy_street,40.7542035103667,-73.9982402203635,MN0401,MN0401,4359.7,metres of Global/Regional street,0.54506,Chelsea-Hudson Yards,Chelsea-Hudson Yards,TRUE
+streets,base_21_off,5,5127,busy_street,40.7427178330155,-73.9845529150955,MN0501,MN0501,4049,metres of Global/Regional street,0.5777,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,TRUE
+streets,base_21_off,6,4728,busy_street,40.7513776275137,-73.9679991397946,MN0604,MN0604,3458.7,metres of Global/Regional street,0.60558,East Midtown-Turtle Bay,East Midtown-Turtle Bay,TRUE
+streets,base_21_off,7,4869,busy_street,40.768709763858,-73.9581497676934,MN0801,MN0801,3436.3,metres of Global/Regional street,0.63329,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,TRUE
+streets,base_21_off,8,5158,busy_street,40.7288906326846,-73.9874606972625,MN0303,MN0303,3033.4,metres of Global/Regional street,0.65774,East Village,East Village,TRUE
+streets,base_21_off,9,5073,busy_street,40.7455935917511,-73.9991963544557,MN0401,MN0401,2751.9,metres of Global/Regional street,0.67993,Chelsea-Hudson Yards,Chelsea-Hudson Yards,TRUE
+streets,base_21_off,10,5551,busy_street,40.7644126426364,-73.9833759995751,MN0502,MN0502,2602.3,metres of Global/Regional street,0.70091,Midtown-Times Square,Midtown-Times Square,TRUE
+streets,base_21_off,11,4846,busy_street,40.8089890055223,-73.9483661313527,MN1001,MN1001,2095.8,metres of Global/Regional street,0.7178,Harlem (South),Harlem (South),TRUE
+streets,base_21_off,12,5005,busy_street,40.7342648464624,-73.9802925822532,MN0602,MN0602,2062.4,metres of Global/Regional street,0.73443,Gramercy,Gramercy,TRUE
+streets,base_21_off,13,5353,busy_street,40.7810698722249,-73.9523481270369,MN0802,MN0802,1566.6,metres of Global/Regional street,0.74706,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,TRUE
+streets,base_21_off,14,5328,busy_street,40.7643695285918,-73.9645266778505,MN0802,MN0802,1556.2,metres of Global/Regional street,0.75961,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,TRUE
+streets,base_21_off,15,4782,busy_street,40.8046850327862,-73.9381561247829,MN1102,MN1102,1551,metres of Global/Regional street,0.77211,East Harlem (North),East Harlem (North),TRUE
+streets,base_21_off,16,4449,busy_street,40.7779745475914,-73.9820388789491,MN0701,MN0701,1192.4,metres of Global/Regional street,0.78173,Upper West Side-Lincoln Square,Upper West Side-Lincoln Square,TRUE
+streets,base_21_off,17,4930,busy_street,40.8276612685608,-73.9254356003128,BX0401,BX0401,1102.6,metres of Global/Regional street,0.79061,Concourse-Concourse Village,Concourse-Concourse Village,TRUE
+streets,base_21_off,18,1908,busy_street,40.6841561438418,-73.9776859305546,BK0602,BK0602,1073.5,metres of Global/Regional street,0.79927,Park Slope,Park Slope,TRUE
+streets,base_21_off,19,5683,busy_street,40.6694775585133,-73.9860498417633,BK0602,BK0602,1030.3,metres of Global/Regional street,0.80758,Park Slope,Park Slope,TRUE
+streets,base_21_off,20,3083,busy_street,40.7827569458248,-73.9598825749694,MN6491,MN0802,1012.2,metres of Global/Regional street,0.81574,Upper East Side-Carnegie Hill,Central Park,TRUE
+streets,base_21_off,21,5148,busy_street,40.7239013559935,-73.9911131512437,MN0303,MN0303,1007.1,metres of Global/Regional street,0.82386,East Village,East Village,TRUE
+streets,base_21_off,22,2469,park,40.7448471094735,-73.8515681179523,QN8191,QN0402,973.8,metres of Global/Regional street,0.83171,Corona,Flushing Meadows-Corona Park,TRUE
+streets,base_21_off,23,2969,busy_street,40.7733010411006,-73.9581114924369,MN0802,MN0802,957.9,metres of Global/Regional street,0.83943,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,TRUE
+streets,base_21_off,24,4968,busy_street,40.8503077645828,-73.93620768488,MN1202,MN1202,953.9,metres of Global/Regional street,0.84712,Washington Heights (North),Washington Heights (North),TRUE
+streets,base_21_off,25,3474,busy_street,40.8259766624817,-73.9491874044159,MN0903,MN0903,931.3,metres of Global/Regional street,0.85463,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,TRUE
+streets,base_21_off,26,5668,busy_street,40.6760953909799,-73.9806745275023,BK0602,BK0602,796.4,metres of Global/Regional street,0.86105,Park Slope,Park Slope,TRUE
+streets,base_21_off,27,4559,busy_street,40.7310850774407,-73.9740119322706,MN0601,MN0601,752.4,metres of Global/Regional street,0.86711,Stuyvesant Town-Peter Cooper Village,Stuyvesant Town-Peter Cooper Village,TRUE
+streets,base_21_off,28,3897,busy_street,40.86648275096,-73.9206881505606,MN1203,MN1203,728.6,metres of Global/Regional street,0.87299,Inwood,Inwood,TRUE
+streets,base_21_off,29,4590,busy_street,40.7144697190934,-74.0025126625625,MN0102,MN0102,712.5,metres of Global/Regional street,0.87873,Tribeca-Civic Center,Tribeca-Civic Center,TRUE
+streets,base_21_off,30,2958,busy_street,40.7733082292371,-73.9900935108406,MN0701,MN0701,711.2,metres of Global/Regional street,0.88447,Upper West Side-Lincoln Square,Upper West Side-Lincoln Square,TRUE
+streets,base_21_off,31,4549,busy_street,40.8368670645311,-73.9428237890987,MN1201,MN1201,664.5,metres of Global/Regional street,0.88982,Washington Heights (South),Washington Heights (South),TRUE
+streets,base_21_off,32,2733,busy_street,40.7557482338075,-73.9883198117896,MN0502,MN0502,659.8,metres of Global/Regional street,0.89514,Midtown-Times Square,Midtown-Times Square,TRUE
+streets,base_21_off,33,3803,busy_street,40.8610600074381,-73.8957868767213,BX0503,BX0503,635.2,metres of Global/Regional street,0.90026,Fordham Heights,Fordham Heights,TRUE
+streets,base_21_off,34,4560,busy_street,40.7073120048234,-74.0109654812078,MN0101,MN0101,629.5,metres of Global/Regional street,0.90534,Financial District-Battery Park City,Financial District-Battery Park City,TRUE
+streets,base_21_off,35,4465,busy_street,40.747550877024,-73.941233795429,QN0201,QN0201,565.9,metres of Global/Regional street,0.9099,Long Island City-Hunters Point,Long Island City-Hunters Point,TRUE
+streets,base_21_off,36,4757,busy_street,40.7467758578806,-73.9826829402675,MN0501,MN0501,551.1,metres of Global/Regional street,0.91434,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,TRUE
+streets,base_21_off,37,4998,busy_street,40.7401035410571,-73.9937879927297,MN0501,MN0501,533.9,metres of Global/Regional street,0.91865,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,TRUE
+streets,base_21_off,38,1972,park,40.693613272232,-73.9901053520317,BK0202,BK0202,528,metres of Global/Regional street,0.9229,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,TRUE
+streets,base_21_off,39,2240,park,40.7300843462384,-73.9972024425171,MN0202,MN0202,520,metres of Global/Regional street,0.9271,Greenwich Village,Greenwich Village,TRUE
+streets,base_21_off,40,3261,busy_street,40.7976067389515,-73.9403219200684,MN1102,MN1102,489.6,metres of Global/Regional street,0.93104,East Harlem (North),East Harlem (North),TRUE
+streets,base_21_off,41,3076,park,40.7827610178614,-73.9740988232092,MN0702,MN0702,488.8,metres of Global/Regional street,0.93498,Upper West Side (Central),Upper West Side (Central),TRUE
+streets,base_21_off,42,2140,busy_street,40.7165703689492,-73.9616976796627,BK0102,BK0102,481.2,metres of Global/Regional street,0.93886,Williamsburg,Williamsburg,TRUE
+streets,base_21_off,43,4537,busy_street,40.7571803173314,-73.9993825394371,MN0401,MN0401,476.5,metres of Global/Regional street,0.94271,Chelsea-Hudson Yards,Chelsea-Hudson Yards,TRUE
+streets,base_21_off,44,4713,busy_street,40.7657790906661,-73.9698133685489,MN0802,MN0802,437.4,metres of Global/Regional street,0.94623,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,TRUE
+streets,base_21_off,45,3341,park,40.8111213874158,-73.9563099006141,MN0901,MN0901,435.3,metres of Global/Regional street,0.94974,Morningside Heights,Morningside Heights,TRUE
+streets,base_21_off,46,1848,park,40.6719966412188,-73.9670455181105,BK5591,BK0801,416,metres of Global/Regional street,0.95309,Prospect Heights,Prospect Park,TRUE
+streets,base_21_off,47,2792,busy_street,40.7583329634124,-73.8355506248997,QN0707,QN0707,367.2,metres of Global/Regional street,0.95606,Flushing-Willets Point,Flushing-Willets Point,TRUE
+streets,base_21_off,48,1945,busy_street,40.6895588673487,-73.9759095751782,BK0203,BK0203,334.4,metres of Global/Regional street,0.95875,Fort Greene,Fort Greene,TRUE
+streets,base_21_off,49,4932,busy_street,40.8252846196172,-73.9175375047576,BX0401,BX0401,293.5,metres of Global/Regional street,0.96112,Concourse-Concourse Village,Concourse-Concourse Village,TRUE
+streets,base_21_off,50,4749,busy_street,40.726307130959,-74.0019730767867,MN0201,MN0201,291.8,metres of Global/Regional street,0.96347,SoHo-Little Italy-Hudson Square,SoHo-Little Italy-Hudson Square,TRUE
+streets,base_21_off,51,2052,busy_street,40.7015509899994,-73.8037430284442,QN1201,QN1201,265.9,metres of Global/Regional street,0.96561,Jamaica,Jamaica,TRUE
+streets,base_21_off,52,3146,park,40.7881605574991,-73.9616564944948,MN6491,MN0702,254.7,metres of Global/Regional street,0.96767,Upper West Side (Central),Central Park,TRUE
+streets,base_21_off,53,1894,busy_street,40.6800940278118,-73.9475242647205,BK0301,BK0301,215.1,metres of Global/Regional street,0.9694,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),TRUE
+streets,base_21_off,54,4622,busy_street,40.7377940266935,-73.8771889966868,QN0401,QN0401,204,metres of Global/Regional street,0.97105,Elmhurst,Elmhurst,TRUE
+streets,base_21_off,55,4753,busy_street,40.8160835200761,-73.9177176780063,BX0102,BX0102,197.3,metres of Global/Regional street,0.97264,Melrose,Melrose,TRUE
+streets,base_21_off,56,1774,park,40.6638941995719,-73.9759188440767,BK5591,BK0602,190.2,metres of Global/Regional street,0.97417,Park Slope,Prospect Park,TRUE
+streets,base_21_off,57,3128,busy_street,40.7868136592845,-73.9758743860859,MN0702,MN0702,181.3,metres of Global/Regional street,0.97563,Upper West Side (Central),Upper West Side (Central),TRUE
+streets,base_21_off,58,2115,park,40.7111735028053,-73.9936529907817,MN0301,MN0301,179,metres of Global/Regional street,0.97707,Chinatown-Two Bridges,Chinatown-Two Bridges,TRUE
+streets,base_21_off,59,3287,busy_street,40.8016540404121,-73.9314306112344,MN1102,MN1102,157.3,metres of Global/Regional street,0.97834,East Harlem (North),East Harlem (North),TRUE
+streets,base_21_off,60,2056,plaza,40.7030684847853,-73.988329041746,BK0202,BK0202,142.6,metres of Global/Regional street,0.97949,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,TRUE
+streets,base_21_off,61,5145,busy_street,40.7475560405913,-73.9921988290847,MN0501,MN0501,131.9,metres of Global/Regional street,0.98056,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,TRUE
+streets,base_21_off,62,1518,busy_street,40.6328169026273,-73.9475614400077,BK1401,BK1401,130.8,metres of Global/Regional street,0.98161,Flatbush,Flatbush,TRUE
+streets,base_21_off,63,5474,busy_street,40.7606928940168,-73.9900521447103,MN0402,MN0402,123.9,metres of Global/Regional street,0.98261,Hell's Kitchen,Hell's Kitchen,TRUE
+streets,base_21_off,64,3302,park,40.8057224443223,-73.9687569551757,MN0901,MN0901,123.7,metres of Global/Regional street,0.98361,Morningside Heights,Morningside Heights,TRUE
+streets,base_21_off,65,3567,park,40.8448671899487,-73.9153778491354,BX0403,BX0403,123.6,metres of Global/Regional street,0.9846,Mount Eden-Claremont (West),Mount Eden-Claremont (West),TRUE
+streets,base_21_off,66,2110,busy_street,40.7098223466143,-74.0114039867334,MN0101,MN0101,122.4,metres of Global/Regional street,0.98559,Financial District-Battery Park City,Financial District-Battery Park City,TRUE
+streets,base_21_off,67,3015,park,40.7773556670196,-73.9652164903785,MN6491,MN0802,121,metres of Global/Regional street,0.98657,Upper East Side-Carnegie Hill,Central Park,TRUE
+streets,base_21_off,68,4620,busy_street,40.6999581408724,-73.9076383352567,QN0502,QN0502,112.9,metres of Global/Regional street,0.98748,Ridgewood,Ridgewood,TRUE
+streets,base_21_off,69,2037,park,40.7017173375601,-74.0149523421523,MN0191,MN0101,104.1,metres of Global/Regional street,0.98832,Financial District-Battery Park City,The Battery-Governors Island-Ellis Island-Liberty Island,TRUE
+streets,base_21_off,70,4481,busy_street,40.7483441812487,-73.8771703539944,QN0401,QN0401,102.6,metres of Global/Regional street,0.98914,Elmhurst,Elmhurst,TRUE
+streets,base_21_off,71,4227,park,40.886725486858,-73.8975264548355,BX2691,BX0802,93.1,metres of Global/Regional street,0.98989,Kingsbridge-Marble Hill,Van Cortlandt Park,TRUE
+streets,base_21_off,72,5019,busy_street,40.7661810947395,-73.9571840489196,MN0801,MN0801,91.3,metres of Global/Regional street,0.99063,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,TRUE
+streets,base_21_off,73,2257,busy_street,40.731435140359,-74.000753710725,MN0202,MN0202,88.7,metres of Global/Regional street,0.99134,Greenwich Village,Greenwich Village,TRUE
+streets,base_21_off,74,4618,busy_street,40.824341589971,-73.9454894242784,MN0903,MN0903,88.7,metres of Global/Regional street,0.99206,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,TRUE
+streets,base_21_off,75,5069,busy_street,40.7467912159204,-74.0020364782488,MN0401,MN0401,82.1,metres of Global/Regional street,0.99272,Chelsea-Hudson Yards,Chelsea-Hudson Yards,TRUE
+streets,base_21_off,76,3095,park,40.7841104485175,-73.9687670963164,MN6491,MN0702,81.6,metres of Global/Regional street,0.99338,Upper West Side (Central),Central Park,TRUE
+streets,base_21_off,77,1212,busy_street,40.6071639998755,-74.0025246649104,BK1101,BK1101,81.6,metres of Global/Regional street,0.99404,Bensonhurst,Bensonhurst,TRUE
+streets,base_21_off,78,1702,park,40.6571370573766,-73.9635054886371,BK5591,BK0902,81.2,metres of Global/Regional street,0.99469,Prospect Lefferts Gardens-Wingate,Prospect Park,TRUE
+streets,base_21_off,79,2170,park,40.7219796388327,-74.0060798353914,MN0102,MN0102,71.4,metres of Global/Regional street,0.99527,Tribeca-Civic Center,Tribeca-Civic Center,TRUE
+streets,base_21_off,80,4581,busy_street,40.7393535731733,-73.9843735812404,MN0602,MN0602,67.5,metres of Global/Regional street,0.99581,Gramercy,Gramercy,TRUE
+streets,base_21_off,81,4496,busy_street,40.832756316725,-73.8613299044454,BX0903,BX0903,66.6,metres of Global/Regional street,0.99635,Castle Hill-Unionport,Castle Hill-Unionport,TRUE
+streets,base_21_off,82,4633,busy_street,40.8769496892075,-73.9063277619809,BX0802,BX0802,61.6,metres of Global/Regional street,0.99685,Kingsbridge-Marble Hill,Kingsbridge-Marble Hill,TRUE
+streets,base_21_off,83,3708,busy_street,40.8556617661245,-73.9011322755351,BX0503,BX0503,55.4,metres of Global/Regional street,0.99729,Fordham Heights,Fordham Heights,TRUE
+streets,base_21_off,84,4450,busy_street,40.7428294171262,-73.9520968228047,QN0201,QN0201,48.5,metres of Global/Regional street,0.99768,Long Island City-Hunters Point,Long Island City-Hunters Point,TRUE
+streets,base_21_off,85,4480,busy_street,40.7415690618691,-73.880640765414,QN0401,QN0401,43,metres of Global/Regional street,0.99803,Elmhurst,Elmhurst,TRUE
+streets,base_21_off,86,3066,busy_street,40.7814019886226,-73.949221420249,MN0803,MN0803,43,metres of Global/Regional street,0.99838,Upper East Side-Yorkville,Upper East Side-Yorkville,TRUE
+streets,base_21_off,87,5486,busy_street,40.7522544090319,-73.9681860710659,MN0604,MN0604,41.3,metres of Global/Regional street,0.99871,East Midtown-Turtle Bay,East Midtown-Turtle Bay,TRUE
+streets,base_21_off,88,4515,busy_street,40.8017795085951,-73.9678380441958,MN0703,MN0703,31.3,metres of Global/Regional street,0.99896,Upper West Side-Manhattan Valley,Upper West Side-Manhattan Valley,TRUE
+streets,base_21_off,89,2551,park,40.7475923536208,-73.8906360924161,QN0301,QN0301,27.2,metres of Global/Regional street,0.99918,Jackson Heights,Jackson Heights,TRUE
+streets,base_21_off,90,3569,park,40.844851177111,-73.895812269686,BX0602,BX0602,18.3,metres of Global/Regional street,0.99933,Tremont,Tremont,TRUE
+streets,base_21_off,91,4495,busy_street,40.7334778853017,-73.8703138822588,QN0401,QN0401,17.3,metres of Global/Regional street,0.99947,Elmhurst,Elmhurst,TRUE
+streets,base_21_off,92,1961,park,40.6908188633637,-73.8534629759294,QN0905,QN0905,16.2,metres of Global/Regional street,0.9996,Woodhaven,Woodhaven,TRUE
+streets,base_21_off,93,3394,park,40.8151755224457,-73.9616409298952,MN0901,MN0901,12.1,metres of Global/Regional street,0.9997,Morningside Heights,Morningside Heights,TRUE
+streets,base_21_off,94,3541,park,40.8408276676634,-73.9349473997712,MN1291,MN1201,10.6,metres of Global/Regional street,0.99978,Washington Heights (South),Highbridge Park,TRUE
+streets,base_21_off,95,4645,busy_street,40.7211402888093,-73.9868667447112,MN0302,MN0302,10.6,metres of Global/Regional street,0.99987,Lower East Side,Lower East Side,TRUE
+streets,base_21_off,96,2506,park,40.746197867349,-73.8515651084599,QN8191,QN0402,10.4,metres of Global/Regional street,0.99995,Corona,Flushing Meadows-Corona Park,TRUE
+streets,base_21_off,97,4693,busy_street,40.7892327826637,-73.9738856374922,MN0702,MN0702,6,metres of Global/Regional street,1,Upper West Side (Central),Upper West Side (Central),TRUE
+streets,base_21_in,1,5230,busy_street,40.7494274010324,-73.9889557265449,MN0501,MN0501,8856.8,metres of Global/Regional street,0.42209,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+streets,base_21_in,2,5453,busy_street,40.7582206561444,-73.9861203763044,MN0502,MN0502,6029.7,metres of Global/Regional street,0.4707,Midtown-Times Square,Midtown-Times Square,FALSE
+streets,base_21_in,3,2373,busy_street,40.7408904399811,-73.9972019887838,MN0401,MN0401,4863.6,metres of Global/Regional street,0.50991,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+streets,base_21_in,4,5237,busy_street,40.7542035103667,-73.9982402203635,MN0401,MN0401,4359.7,metres of Global/Regional street,0.54506,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+streets,base_21_in,5,5127,busy_street,40.7427178330155,-73.9845529150955,MN0501,MN0501,4049,metres of Global/Regional street,0.5777,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+streets,base_21_in,6,4728,busy_street,40.7513776275137,-73.9679991397946,MN0604,MN0604,3458.7,metres of Global/Regional street,0.60558,East Midtown-Turtle Bay,East Midtown-Turtle Bay,FALSE
+streets,base_21_in,7,4869,busy_street,40.768709763858,-73.9581497676934,MN0801,MN0801,3436.3,metres of Global/Regional street,0.63329,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,FALSE
+streets,base_21_in,8,5158,busy_street,40.7288906326846,-73.9874606972625,MN0303,MN0303,3033.4,metres of Global/Regional street,0.65774,East Village,East Village,FALSE
+streets,base_21_in,9,5073,busy_street,40.7455935917511,-73.9991963544557,MN0401,MN0401,2751.9,metres of Global/Regional street,0.67993,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+streets,base_21_in,10,5551,busy_street,40.7644126426364,-73.9833759995751,MN0502,MN0502,2602.3,metres of Global/Regional street,0.70091,Midtown-Times Square,Midtown-Times Square,FALSE
+streets,base_21_in,11,4846,busy_street,40.8089890055223,-73.9483661313527,MN1001,MN1001,2095.8,metres of Global/Regional street,0.7178,Harlem (South),Harlem (South),FALSE
+streets,base_21_in,12,5005,busy_street,40.7342648464624,-73.9802925822532,MN0602,MN0602,2062.4,metres of Global/Regional street,0.73443,Gramercy,Gramercy,FALSE
+streets,base_21_in,13,5353,busy_street,40.7810698722249,-73.9523481270369,MN0802,MN0802,1566.6,metres of Global/Regional street,0.74706,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+streets,base_21_in,14,5328,busy_street,40.7643695285918,-73.9645266778505,MN0802,MN0802,1556.2,metres of Global/Regional street,0.75961,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+streets,base_21_in,15,4782,busy_street,40.8046850327862,-73.9381561247829,MN1102,MN1102,1551,metres of Global/Regional street,0.77211,East Harlem (North),East Harlem (North),FALSE
+streets,base_21_in,16,4449,busy_street,40.7779745475914,-73.9820388789491,MN0701,MN0701,1192.4,metres of Global/Regional street,0.78173,Upper West Side-Lincoln Square,Upper West Side-Lincoln Square,FALSE
+streets,base_21_in,17,4930,busy_street,40.8276612685608,-73.9254356003128,BX0401,BX0401,1102.6,metres of Global/Regional street,0.79061,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+streets,base_21_in,18,1908,busy_street,40.6841561438418,-73.9776859305546,BK0602,BK0602,1073.5,metres of Global/Regional street,0.79927,Park Slope,Park Slope,FALSE
+streets,base_21_in,19,5683,busy_street,40.6694775585133,-73.9860498417633,BK0602,BK0602,1030.3,metres of Global/Regional street,0.80758,Park Slope,Park Slope,FALSE
+streets,base_21_in,20,3083,busy_street,40.7827569458248,-73.9598825749694,MN6491,MN0802,1012.2,metres of Global/Regional street,0.81574,Upper East Side-Carnegie Hill,Central Park,FALSE
+streets,base_21_in,21,5148,busy_street,40.7239013559935,-73.9911131512437,MN0303,MN0303,1007.1,metres of Global/Regional street,0.82386,East Village,East Village,FALSE
+streets,base_21_in,22,2469,park,40.7448471094735,-73.8515681179523,QN8191,QN0402,973.8,metres of Global/Regional street,0.83171,Corona,Flushing Meadows-Corona Park,FALSE
+streets,base_21_in,23,2969,busy_street,40.7733010411006,-73.9581114924369,MN0802,MN0802,957.9,metres of Global/Regional street,0.83943,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+streets,base_21_in,24,4968,busy_street,40.8503077645828,-73.93620768488,MN1202,MN1202,953.9,metres of Global/Regional street,0.84712,Washington Heights (North),Washington Heights (North),FALSE
+streets,base_21_in,25,3474,busy_street,40.8259766624817,-73.9491874044159,MN0903,MN0903,931.3,metres of Global/Regional street,0.85463,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,FALSE
+streets,base_21_in,26,5668,busy_street,40.6760953909799,-73.9806745275023,BK0602,BK0602,796.4,metres of Global/Regional street,0.86105,Park Slope,Park Slope,FALSE
+streets,base_21_in,27,4559,busy_street,40.7310850774407,-73.9740119322706,MN0601,MN0601,752.4,metres of Global/Regional street,0.86711,Stuyvesant Town-Peter Cooper Village,Stuyvesant Town-Peter Cooper Village,FALSE
+streets,base_21_in,28,3897,busy_street,40.86648275096,-73.9206881505606,MN1203,MN1203,728.6,metres of Global/Regional street,0.87299,Inwood,Inwood,FALSE
+streets,base_21_in,29,4590,busy_street,40.7144697190934,-74.0025126625625,MN0102,MN0102,712.5,metres of Global/Regional street,0.87873,Tribeca-Civic Center,Tribeca-Civic Center,FALSE
+streets,base_21_in,30,2958,busy_street,40.7733082292371,-73.9900935108406,MN0701,MN0701,711.2,metres of Global/Regional street,0.88447,Upper West Side-Lincoln Square,Upper West Side-Lincoln Square,FALSE
+streets,base_21_in,31,4549,busy_street,40.8368670645311,-73.9428237890987,MN1201,MN1201,664.5,metres of Global/Regional street,0.88982,Washington Heights (South),Washington Heights (South),FALSE
+streets,base_21_in,32,2733,busy_street,40.7557482338075,-73.9883198117896,MN0502,MN0502,659.8,metres of Global/Regional street,0.89514,Midtown-Times Square,Midtown-Times Square,FALSE
+streets,base_21_in,33,3803,busy_street,40.8610600074381,-73.8957868767213,BX0503,BX0503,635.2,metres of Global/Regional street,0.90026,Fordham Heights,Fordham Heights,FALSE
+streets,base_21_in,34,4560,busy_street,40.7073120048234,-74.0109654812078,MN0101,MN0101,629.5,metres of Global/Regional street,0.90534,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+streets,base_21_in,35,4465,busy_street,40.747550877024,-73.941233795429,QN0201,QN0201,565.9,metres of Global/Regional street,0.9099,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+streets,base_21_in,36,4757,busy_street,40.7467758578806,-73.9826829402675,MN0501,MN0501,551.1,metres of Global/Regional street,0.91434,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+streets,base_21_in,37,4998,busy_street,40.7401035410571,-73.9937879927297,MN0501,MN0501,533.9,metres of Global/Regional street,0.91865,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+streets,base_21_in,38,1972,park,40.693613272232,-73.9901053520317,BK0202,BK0202,528,metres of Global/Regional street,0.9229,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+streets,base_21_in,39,2240,park,40.7300843462384,-73.9972024425171,MN0202,MN0202,520,metres of Global/Regional street,0.9271,Greenwich Village,Greenwich Village,FALSE
+streets,base_21_in,40,3261,busy_street,40.7976067389515,-73.9403219200684,MN1102,MN1102,489.6,metres of Global/Regional street,0.93104,East Harlem (North),East Harlem (North),FALSE
+streets,base_21_in,41,3076,park,40.7827610178614,-73.9740988232092,MN0702,MN0702,488.8,metres of Global/Regional street,0.93498,Upper West Side (Central),Upper West Side (Central),FALSE
+streets,base_21_in,42,2140,busy_street,40.7165703689492,-73.9616976796627,BK0102,BK0102,481.2,metres of Global/Regional street,0.93886,Williamsburg,Williamsburg,FALSE
+streets,base_21_in,43,4537,busy_street,40.7571803173314,-73.9993825394371,MN0401,MN0401,476.5,metres of Global/Regional street,0.94271,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+streets,base_21_in,44,4713,busy_street,40.7657790906661,-73.9698133685489,MN0802,MN0802,437.4,metres of Global/Regional street,0.94623,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+streets,base_21_in,45,3341,park,40.8111213874158,-73.9563099006141,MN0901,MN0901,435.3,metres of Global/Regional street,0.94974,Morningside Heights,Morningside Heights,FALSE
+streets,base_21_in,46,1848,park,40.6719966412188,-73.9670455181105,BK5591,BK0801,416,metres of Global/Regional street,0.95309,Prospect Heights,Prospect Park,FALSE
+streets,base_21_in,47,2792,busy_street,40.7583329634124,-73.8355506248997,QN0707,QN0707,367.2,metres of Global/Regional street,0.95606,Flushing-Willets Point,Flushing-Willets Point,FALSE
+streets,base_21_in,48,1945,busy_street,40.6895588673487,-73.9759095751782,BK0203,BK0203,334.4,metres of Global/Regional street,0.95875,Fort Greene,Fort Greene,FALSE
+streets,base_21_in,49,4932,busy_street,40.8252846196172,-73.9175375047576,BX0401,BX0401,293.5,metres of Global/Regional street,0.96112,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+streets,base_21_in,50,4749,busy_street,40.726307130959,-74.0019730767867,MN0201,MN0201,291.8,metres of Global/Regional street,0.96347,SoHo-Little Italy-Hudson Square,SoHo-Little Italy-Hudson Square,FALSE
+streets,base_21_in,51,2052,busy_street,40.7015509899994,-73.8037430284442,QN1201,QN1201,265.9,metres of Global/Regional street,0.96561,Jamaica,Jamaica,FALSE
+streets,base_21_in,52,3146,park,40.7881605574991,-73.9616564944948,MN6491,MN0702,254.7,metres of Global/Regional street,0.96767,Upper West Side (Central),Central Park,FALSE
+streets,base_21_in,53,1894,busy_street,40.6800940278118,-73.9475242647205,BK0301,BK0301,215.1,metres of Global/Regional street,0.9694,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),FALSE
+streets,base_21_in,54,4622,busy_street,40.7377940266935,-73.8771889966868,QN0401,QN0401,204,metres of Global/Regional street,0.97105,Elmhurst,Elmhurst,FALSE
+streets,base_21_in,55,4753,busy_street,40.8160835200761,-73.9177176780063,BX0102,BX0102,197.3,metres of Global/Regional street,0.97264,Melrose,Melrose,FALSE
+streets,base_21_in,56,1774,park,40.6638941995719,-73.9759188440767,BK5591,BK0602,190.2,metres of Global/Regional street,0.97417,Park Slope,Prospect Park,FALSE
+streets,base_21_in,57,3128,busy_street,40.7868136592845,-73.9758743860859,MN0702,MN0702,181.3,metres of Global/Regional street,0.97563,Upper West Side (Central),Upper West Side (Central),FALSE
+streets,base_21_in,58,2115,park,40.7111735028053,-73.9936529907817,MN0301,MN0301,179,metres of Global/Regional street,0.97707,Chinatown-Two Bridges,Chinatown-Two Bridges,FALSE
+streets,base_21_in,59,3287,busy_street,40.8016540404121,-73.9314306112344,MN1102,MN1102,157.3,metres of Global/Regional street,0.97834,East Harlem (North),East Harlem (North),FALSE
+streets,base_21_in,60,2056,plaza,40.7030684847853,-73.988329041746,BK0202,BK0202,142.6,metres of Global/Regional street,0.97949,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+streets,base_21_in,61,5145,busy_street,40.7475560405913,-73.9921988290847,MN0501,MN0501,131.9,metres of Global/Regional street,0.98056,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+streets,base_21_in,62,1518,busy_street,40.6328169026273,-73.9475614400077,BK1401,BK1401,130.8,metres of Global/Regional street,0.98161,Flatbush,Flatbush,FALSE
+streets,base_21_in,63,5474,busy_street,40.7606928940168,-73.9900521447103,MN0402,MN0402,123.9,metres of Global/Regional street,0.98261,Hell's Kitchen,Hell's Kitchen,FALSE
+streets,base_21_in,64,3302,park,40.8057224443223,-73.9687569551757,MN0901,MN0901,123.7,metres of Global/Regional street,0.98361,Morningside Heights,Morningside Heights,FALSE
+streets,base_21_in,65,3567,park,40.8448671899487,-73.9153778491354,BX0403,BX0403,123.6,metres of Global/Regional street,0.9846,Mount Eden-Claremont (West),Mount Eden-Claremont (West),FALSE
+streets,base_21_in,66,2110,busy_street,40.7098223466143,-74.0114039867334,MN0101,MN0101,122.4,metres of Global/Regional street,0.98559,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+streets,base_21_in,67,3015,park,40.7773556670196,-73.9652164903785,MN6491,MN0802,121,metres of Global/Regional street,0.98657,Upper East Side-Carnegie Hill,Central Park,FALSE
+streets,base_21_in,68,4620,busy_street,40.6999581408724,-73.9076383352567,QN0502,QN0502,112.9,metres of Global/Regional street,0.98748,Ridgewood,Ridgewood,FALSE
+streets,base_21_in,69,2037,park,40.7017173375601,-74.0149523421523,MN0191,MN0101,104.1,metres of Global/Regional street,0.98832,Financial District-Battery Park City,The Battery-Governors Island-Ellis Island-Liberty Island,FALSE
+streets,base_21_in,70,4481,busy_street,40.7483441812487,-73.8771703539944,QN0401,QN0401,102.6,metres of Global/Regional street,0.98914,Elmhurst,Elmhurst,FALSE
+streets,base_21_in,71,4227,park,40.886725486858,-73.8975264548355,BX2691,BX0802,93.1,metres of Global/Regional street,0.98989,Kingsbridge-Marble Hill,Van Cortlandt Park,FALSE
+streets,base_21_in,72,5019,busy_street,40.7661810947395,-73.9571840489196,MN0801,MN0801,91.3,metres of Global/Regional street,0.99063,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,FALSE
+streets,base_21_in,73,2257,busy_street,40.731435140359,-74.000753710725,MN0202,MN0202,88.7,metres of Global/Regional street,0.99134,Greenwich Village,Greenwich Village,FALSE
+streets,base_21_in,74,4618,busy_street,40.824341589971,-73.9454894242784,MN0903,MN0903,88.7,metres of Global/Regional street,0.99206,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,FALSE
+streets,base_21_in,75,5069,busy_street,40.7467912159204,-74.0020364782488,MN0401,MN0401,82.1,metres of Global/Regional street,0.99272,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+streets,base_21_in,76,3095,park,40.7841104485175,-73.9687670963164,MN6491,MN0702,81.6,metres of Global/Regional street,0.99338,Upper West Side (Central),Central Park,FALSE
+streets,base_21_in,77,1212,busy_street,40.6071639998755,-74.0025246649104,BK1101,BK1101,81.6,metres of Global/Regional street,0.99404,Bensonhurst,Bensonhurst,FALSE
+streets,base_21_in,78,1702,park,40.6571370573766,-73.9635054886371,BK5591,BK0902,81.2,metres of Global/Regional street,0.99469,Prospect Lefferts Gardens-Wingate,Prospect Park,FALSE
+streets,base_21_in,79,2170,park,40.7219796388327,-74.0060798353914,MN0102,MN0102,71.4,metres of Global/Regional street,0.99527,Tribeca-Civic Center,Tribeca-Civic Center,FALSE
+streets,base_21_in,80,4581,busy_street,40.7393535731733,-73.9843735812404,MN0602,MN0602,67.5,metres of Global/Regional street,0.99581,Gramercy,Gramercy,FALSE
+streets,base_21_in,81,4496,busy_street,40.832756316725,-73.8613299044454,BX0903,BX0903,66.6,metres of Global/Regional street,0.99635,Castle Hill-Unionport,Castle Hill-Unionport,FALSE
+streets,base_21_in,82,4633,busy_street,40.8769496892075,-73.9063277619809,BX0802,BX0802,61.6,metres of Global/Regional street,0.99685,Kingsbridge-Marble Hill,Kingsbridge-Marble Hill,FALSE
+streets,base_21_in,83,3708,busy_street,40.8556617661245,-73.9011322755351,BX0503,BX0503,55.4,metres of Global/Regional street,0.99729,Fordham Heights,Fordham Heights,FALSE
+streets,base_21_in,84,4450,busy_street,40.7428294171262,-73.9520968228047,QN0201,QN0201,48.5,metres of Global/Regional street,0.99768,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+streets,base_21_in,85,4480,busy_street,40.7415690618691,-73.880640765414,QN0401,QN0401,43,metres of Global/Regional street,0.99803,Elmhurst,Elmhurst,FALSE
+streets,base_21_in,86,3066,busy_street,40.7814019886226,-73.949221420249,MN0803,MN0803,43,metres of Global/Regional street,0.99838,Upper East Side-Yorkville,Upper East Side-Yorkville,FALSE
+streets,base_21_in,87,5486,busy_street,40.7522544090319,-73.9681860710659,MN0604,MN0604,41.3,metres of Global/Regional street,0.99871,East Midtown-Turtle Bay,East Midtown-Turtle Bay,FALSE
+streets,base_21_in,88,4515,busy_street,40.8017795085951,-73.9678380441958,MN0703,MN0703,31.3,metres of Global/Regional street,0.99896,Upper West Side-Manhattan Valley,Upper West Side-Manhattan Valley,FALSE
+streets,base_21_in,89,2551,park,40.7475923536208,-73.8906360924161,QN0301,QN0301,27.2,metres of Global/Regional street,0.99918,Jackson Heights,Jackson Heights,FALSE
+streets,base_21_in,90,3569,park,40.844851177111,-73.895812269686,BX0602,BX0602,18.3,metres of Global/Regional street,0.99933,Tremont,Tremont,FALSE
+streets,base_21_in,91,4495,busy_street,40.7334778853017,-73.8703138822588,QN0401,QN0401,17.3,metres of Global/Regional street,0.99947,Elmhurst,Elmhurst,FALSE
+streets,base_21_in,92,1961,park,40.6908188633637,-73.8534629759294,QN0905,QN0905,16.2,metres of Global/Regional street,0.9996,Woodhaven,Woodhaven,FALSE
+streets,base_21_in,93,3394,park,40.8151755224457,-73.9616409298952,MN0901,MN0901,12.1,metres of Global/Regional street,0.9997,Morningside Heights,Morningside Heights,FALSE
+streets,base_21_in,94,3541,park,40.8408276676634,-73.9349473997712,MN1291,MN1201,10.6,metres of Global/Regional street,0.99978,Washington Heights (South),Highbridge Park,FALSE
+streets,base_21_in,95,4645,busy_street,40.7211402888093,-73.9868667447112,MN0302,MN0302,10.6,metres of Global/Regional street,0.99987,Lower East Side,Lower East Side,FALSE
+streets,base_21_in,96,2506,park,40.746197867349,-73.8515651084599,QN8191,QN0402,10.4,metres of Global/Regional street,0.99995,Corona,Flushing Meadows-Corona Park,FALSE
+streets,base_21_in,97,4693,busy_street,40.7892327826637,-73.9738856374922,MN0702,MN0702,6,metres of Global/Regional street,1,Upper West Side (Central),Upper West Side (Central),FALSE
+streets,strict_14,1,2460,busy_street,40.7449427209189,-73.9972018185959,MN0401,MN0401,1006.6,metres of Global/Regional street,0.97071,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+streets,strict_14,2,3047,busy_street,40.7800527472296,-73.9527763675885,MN0803,MN0803,645.7,metres of Global/Regional street,0.97592,Upper East Side-Yorkville,Upper East Side-Yorkville,FALSE
+streets,strict_14,3,4465,busy_street,40.747550877024,-73.941233795429,QN0201,QN0201,565.9,metres of Global/Regional street,0.98048,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+streets,strict_14,4,3261,busy_street,40.7976067389515,-73.9403219200684,MN1102,MN1102,489.6,metres of Global/Regional street,0.98443,East Harlem (North),East Harlem (North),FALSE
+streets,strict_14,5,4559,busy_street,40.7310850774407,-73.9740119322706,MN0601,MN0601,383.7,metres of Global/Regional street,0.98752,Stuyvesant Town-Peter Cooper Village,Stuyvesant Town-Peter Cooper Village,FALSE
+streets,strict_14,6,3024,busy_street,40.778708759638,-73.974100399437,MN6491,MN0702,356,metres of Global/Regional street,0.99039,Upper West Side (Central),Central Park,FALSE
+streets,strict_14,7,2792,busy_street,40.7583329634124,-73.8355506248997,QN0707,QN0707,324.7,metres of Global/Regional street,0.99301,Flushing-Willets Point,Flushing-Willets Point,FALSE
+streets,strict_14,8,3825,park,40.8624305503872,-73.9206929831947,MN1203,MN1203,197.8,metres of Global/Regional street,0.9946,Inwood,Inwood,FALSE
+streets,strict_14,9,2886,busy_street,40.7665478989968,-73.9598923386423,MN0801,MN0801,130.2,metres of Global/Regional street,0.99565,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,FALSE
+streets,strict_14,10,4620,busy_street,40.6999581408724,-73.9076383352567,QN0502,QN0502,112.9,metres of Global/Regional street,0.99656,Ridgewood,Ridgewood,FALSE
+streets,strict_14,11,2296,busy_street,40.7354849058834,-73.9758929709076,MN0601,MN0601,109.6,metres of Global/Regional street,0.99745,Stuyvesant Town-Peter Cooper Village,Stuyvesant Town-Peter Cooper Village,FALSE
+streets,strict_14,12,4481,busy_street,40.7483441812487,-73.8771703539944,QN0401,QN0401,102.6,metres of Global/Regional street,0.99827,Elmhurst,Elmhurst,FALSE
+streets,strict_14,13,3065,park,40.7814049014424,-73.9563293991289,MN0802,MN0802,80.4,metres of Global/Regional street,0.99892,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+streets,strict_14,14,4450,busy_street,40.7428294171262,-73.9520968228047,QN0201,QN0201,48.5,metres of Global/Regional street,0.99931,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+streets,strict_14,15,2652,busy_street,40.7516962645829,-73.9918729273254,MN0502,MN0502,45.7,metres of Global/Regional street,0.99968,Midtown-Times Square,Midtown-Times Square,FALSE
+streets,strict_14,16,1797,busy_street,40.6665976765615,-73.9883354231752,BK0602,BK0602,39.7,metres of Global/Regional street,1,Park Slope,Park Slope,FALSE
+streets,strict_21_off,1,5230,busy_street,40.7494274010324,-73.9889557265449,MN0501,MN0501,8856.8,metres of Global/Regional street,0.42209,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+streets,strict_21_off,2,5453,busy_street,40.7582206561444,-73.9861203763044,MN0502,MN0502,6029.7,metres of Global/Regional street,0.4707,Midtown-Times Square,Midtown-Times Square,FALSE
+streets,strict_21_off,3,2373,busy_street,40.7408904399811,-73.9972019887838,MN0401,MN0401,4863.6,metres of Global/Regional street,0.50991,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+streets,strict_21_off,4,5237,busy_street,40.7542035103667,-73.9982402203635,MN0401,MN0401,4359.7,metres of Global/Regional street,0.54506,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+streets,strict_21_off,5,5127,busy_street,40.7427178330155,-73.9845529150955,MN0501,MN0501,4049,metres of Global/Regional street,0.5777,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+streets,strict_21_off,6,4728,busy_street,40.7513776275137,-73.9679991397946,MN0604,MN0604,3458.7,metres of Global/Regional street,0.60558,East Midtown-Turtle Bay,East Midtown-Turtle Bay,FALSE
+streets,strict_21_off,7,4869,busy_street,40.768709763858,-73.9581497676934,MN0801,MN0801,3436.3,metres of Global/Regional street,0.63329,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,FALSE
+streets,strict_21_off,8,5158,busy_street,40.7288906326846,-73.9874606972625,MN0303,MN0303,3033.4,metres of Global/Regional street,0.65774,East Village,East Village,FALSE
+streets,strict_21_off,9,5073,busy_street,40.7455935917511,-73.9991963544557,MN0401,MN0401,2751.9,metres of Global/Regional street,0.67993,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+streets,strict_21_off,10,5551,busy_street,40.7644126426364,-73.9833759995751,MN0502,MN0502,2602.3,metres of Global/Regional street,0.70091,Midtown-Times Square,Midtown-Times Square,FALSE
+streets,strict_21_off,11,4846,busy_street,40.8089890055223,-73.9483661313527,MN1001,MN1001,2095.8,metres of Global/Regional street,0.7178,Harlem (South),Harlem (South),FALSE
+streets,strict_21_off,12,5005,busy_street,40.7342648464624,-73.9802925822532,MN0602,MN0602,2062.4,metres of Global/Regional street,0.73443,Gramercy,Gramercy,FALSE
+streets,strict_21_off,13,5353,busy_street,40.7810698722249,-73.9523481270369,MN0802,MN0802,1566.6,metres of Global/Regional street,0.74706,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+streets,strict_21_off,14,5328,busy_street,40.7643695285918,-73.9645266778505,MN0802,MN0802,1556.2,metres of Global/Regional street,0.75961,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+streets,strict_21_off,15,4782,busy_street,40.8046850327862,-73.9381561247829,MN1102,MN1102,1551,metres of Global/Regional street,0.77211,East Harlem (North),East Harlem (North),FALSE
+streets,strict_21_off,16,4449,busy_street,40.7779745475914,-73.9820388789491,MN0701,MN0701,1192.4,metres of Global/Regional street,0.78173,Upper West Side-Lincoln Square,Upper West Side-Lincoln Square,FALSE
+streets,strict_21_off,17,4930,busy_street,40.8276612685608,-73.9254356003128,BX0401,BX0401,1102.6,metres of Global/Regional street,0.79061,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+streets,strict_21_off,18,1908,busy_street,40.6841561438418,-73.9776859305546,BK0602,BK0602,1073.5,metres of Global/Regional street,0.79927,Park Slope,Park Slope,FALSE
+streets,strict_21_off,19,5683,busy_street,40.6694775585133,-73.9860498417633,BK0602,BK0602,1030.3,metres of Global/Regional street,0.80758,Park Slope,Park Slope,FALSE
+streets,strict_21_off,20,3083,busy_street,40.7827569458248,-73.9598825749694,MN6491,MN0802,1012.2,metres of Global/Regional street,0.81574,Upper East Side-Carnegie Hill,Central Park,FALSE
+streets,strict_21_off,21,5148,busy_street,40.7239013559935,-73.9911131512437,MN0303,MN0303,1007.1,metres of Global/Regional street,0.82386,East Village,East Village,FALSE
+streets,strict_21_off,22,2469,park,40.7448471094735,-73.8515681179523,QN8191,QN0402,973.8,metres of Global/Regional street,0.83171,Corona,Flushing Meadows-Corona Park,FALSE
+streets,strict_21_off,23,2969,busy_street,40.7733010411006,-73.9581114924369,MN0802,MN0802,957.9,metres of Global/Regional street,0.83943,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+streets,strict_21_off,24,4968,busy_street,40.8503077645828,-73.93620768488,MN1202,MN1202,953.9,metres of Global/Regional street,0.84712,Washington Heights (North),Washington Heights (North),FALSE
+streets,strict_21_off,25,3474,busy_street,40.8259766624817,-73.9491874044159,MN0903,MN0903,931.3,metres of Global/Regional street,0.85463,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,FALSE
+streets,strict_21_off,26,5668,busy_street,40.6760953909799,-73.9806745275023,BK0602,BK0602,796.4,metres of Global/Regional street,0.86105,Park Slope,Park Slope,FALSE
+streets,strict_21_off,27,4559,busy_street,40.7310850774407,-73.9740119322706,MN0601,MN0601,752.4,metres of Global/Regional street,0.86711,Stuyvesant Town-Peter Cooper Village,Stuyvesant Town-Peter Cooper Village,FALSE
+streets,strict_21_off,28,3897,busy_street,40.86648275096,-73.9206881505606,MN1203,MN1203,728.6,metres of Global/Regional street,0.87299,Inwood,Inwood,FALSE
+streets,strict_21_off,29,4590,busy_street,40.7144697190934,-74.0025126625625,MN0102,MN0102,712.5,metres of Global/Regional street,0.87873,Tribeca-Civic Center,Tribeca-Civic Center,FALSE
+streets,strict_21_off,30,2958,busy_street,40.7733082292371,-73.9900935108406,MN0701,MN0701,711.2,metres of Global/Regional street,0.88447,Upper West Side-Lincoln Square,Upper West Side-Lincoln Square,FALSE
+streets,strict_21_off,31,4549,busy_street,40.8368670645311,-73.9428237890987,MN1201,MN1201,664.5,metres of Global/Regional street,0.88982,Washington Heights (South),Washington Heights (South),FALSE
+streets,strict_21_off,32,2733,busy_street,40.7557482338075,-73.9883198117896,MN0502,MN0502,659.8,metres of Global/Regional street,0.89514,Midtown-Times Square,Midtown-Times Square,FALSE
+streets,strict_21_off,33,3803,busy_street,40.8610600074381,-73.8957868767213,BX0503,BX0503,635.2,metres of Global/Regional street,0.90026,Fordham Heights,Fordham Heights,FALSE
+streets,strict_21_off,34,4560,busy_street,40.7073120048234,-74.0109654812078,MN0101,MN0101,629.5,metres of Global/Regional street,0.90534,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+streets,strict_21_off,35,4465,busy_street,40.747550877024,-73.941233795429,QN0201,QN0201,565.9,metres of Global/Regional street,0.9099,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+streets,strict_21_off,36,4757,busy_street,40.7467758578806,-73.9826829402675,MN0501,MN0501,551.1,metres of Global/Regional street,0.91434,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+streets,strict_21_off,37,4998,busy_street,40.7401035410571,-73.9937879927297,MN0501,MN0501,533.9,metres of Global/Regional street,0.91865,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+streets,strict_21_off,38,1972,park,40.693613272232,-73.9901053520317,BK0202,BK0202,528,metres of Global/Regional street,0.9229,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+streets,strict_21_off,39,2240,park,40.7300843462384,-73.9972024425171,MN0202,MN0202,520,metres of Global/Regional street,0.9271,Greenwich Village,Greenwich Village,FALSE
+streets,strict_21_off,40,3261,busy_street,40.7976067389515,-73.9403219200684,MN1102,MN1102,489.6,metres of Global/Regional street,0.93104,East Harlem (North),East Harlem (North),FALSE
+streets,strict_21_off,41,3076,park,40.7827610178614,-73.9740988232092,MN0702,MN0702,488.8,metres of Global/Regional street,0.93498,Upper West Side (Central),Upper West Side (Central),FALSE
+streets,strict_21_off,42,2140,busy_street,40.7165703689492,-73.9616976796627,BK0102,BK0102,481.2,metres of Global/Regional street,0.93886,Williamsburg,Williamsburg,FALSE
+streets,strict_21_off,43,4537,busy_street,40.7571803173314,-73.9993825394371,MN0401,MN0401,476.5,metres of Global/Regional street,0.94271,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+streets,strict_21_off,44,4713,busy_street,40.7657790906661,-73.9698133685489,MN0802,MN0802,437.4,metres of Global/Regional street,0.94623,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+streets,strict_21_off,45,3341,park,40.8111213874158,-73.9563099006141,MN0901,MN0901,435.3,metres of Global/Regional street,0.94974,Morningside Heights,Morningside Heights,FALSE
+streets,strict_21_off,46,1848,park,40.6719966412188,-73.9670455181105,BK5591,BK0801,416,metres of Global/Regional street,0.95309,Prospect Heights,Prospect Park,FALSE
+streets,strict_21_off,47,2792,busy_street,40.7583329634124,-73.8355506248997,QN0707,QN0707,367.2,metres of Global/Regional street,0.95606,Flushing-Willets Point,Flushing-Willets Point,FALSE
+streets,strict_21_off,48,1945,busy_street,40.6895588673487,-73.9759095751782,BK0203,BK0203,334.4,metres of Global/Regional street,0.95875,Fort Greene,Fort Greene,FALSE
+streets,strict_21_off,49,4932,busy_street,40.8252846196172,-73.9175375047576,BX0401,BX0401,293.5,metres of Global/Regional street,0.96112,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+streets,strict_21_off,50,4749,busy_street,40.726307130959,-74.0019730767867,MN0201,MN0201,291.8,metres of Global/Regional street,0.96347,SoHo-Little Italy-Hudson Square,SoHo-Little Italy-Hudson Square,FALSE
+streets,strict_21_off,51,2052,busy_street,40.7015509899994,-73.8037430284442,QN1201,QN1201,265.9,metres of Global/Regional street,0.96561,Jamaica,Jamaica,FALSE
+streets,strict_21_off,52,3146,park,40.7881605574991,-73.9616564944948,MN6491,MN0702,254.7,metres of Global/Regional street,0.96767,Upper West Side (Central),Central Park,FALSE
+streets,strict_21_off,53,1894,busy_street,40.6800940278118,-73.9475242647205,BK0301,BK0301,215.1,metres of Global/Regional street,0.9694,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),FALSE
+streets,strict_21_off,54,4622,busy_street,40.7377940266935,-73.8771889966868,QN0401,QN0401,204,metres of Global/Regional street,0.97105,Elmhurst,Elmhurst,FALSE
+streets,strict_21_off,55,4753,busy_street,40.8160835200761,-73.9177176780063,BX0102,BX0102,197.3,metres of Global/Regional street,0.97264,Melrose,Melrose,FALSE
+streets,strict_21_off,56,1774,park,40.6638941995719,-73.9759188440767,BK5591,BK0602,190.2,metres of Global/Regional street,0.97417,Park Slope,Prospect Park,FALSE
+streets,strict_21_off,57,3128,busy_street,40.7868136592845,-73.9758743860859,MN0702,MN0702,181.3,metres of Global/Regional street,0.97563,Upper West Side (Central),Upper West Side (Central),FALSE
+streets,strict_21_off,58,2115,park,40.7111735028053,-73.9936529907817,MN0301,MN0301,179,metres of Global/Regional street,0.97707,Chinatown-Two Bridges,Chinatown-Two Bridges,FALSE
+streets,strict_21_off,59,3287,busy_street,40.8016540404121,-73.9314306112344,MN1102,MN1102,157.3,metres of Global/Regional street,0.97834,East Harlem (North),East Harlem (North),FALSE
+streets,strict_21_off,60,2056,plaza,40.7030684847853,-73.988329041746,BK0202,BK0202,142.6,metres of Global/Regional street,0.97949,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+streets,strict_21_off,61,5145,busy_street,40.7475560405913,-73.9921988290847,MN0501,MN0501,131.9,metres of Global/Regional street,0.98056,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+streets,strict_21_off,62,1518,busy_street,40.6328169026273,-73.9475614400077,BK1401,BK1401,130.8,metres of Global/Regional street,0.98161,Flatbush,Flatbush,FALSE
+streets,strict_21_off,63,5474,busy_street,40.7606928940168,-73.9900521447103,MN0402,MN0402,123.9,metres of Global/Regional street,0.98261,Hell's Kitchen,Hell's Kitchen,FALSE
+streets,strict_21_off,64,3302,park,40.8057224443223,-73.9687569551757,MN0901,MN0901,123.7,metres of Global/Regional street,0.98361,Morningside Heights,Morningside Heights,FALSE
+streets,strict_21_off,65,3567,park,40.8448671899487,-73.9153778491354,BX0403,BX0403,123.6,metres of Global/Regional street,0.9846,Mount Eden-Claremont (West),Mount Eden-Claremont (West),FALSE
+streets,strict_21_off,66,2110,busy_street,40.7098223466143,-74.0114039867334,MN0101,MN0101,122.4,metres of Global/Regional street,0.98559,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+streets,strict_21_off,67,3015,park,40.7773556670196,-73.9652164903785,MN6491,MN0802,121,metres of Global/Regional street,0.98657,Upper East Side-Carnegie Hill,Central Park,FALSE
+streets,strict_21_off,68,4620,busy_street,40.6999581408724,-73.9076383352567,QN0502,QN0502,112.9,metres of Global/Regional street,0.98748,Ridgewood,Ridgewood,FALSE
+streets,strict_21_off,69,2037,park,40.7017173375601,-74.0149523421523,MN0191,MN0101,104.1,metres of Global/Regional street,0.98832,Financial District-Battery Park City,The Battery-Governors Island-Ellis Island-Liberty Island,FALSE
+streets,strict_21_off,70,4481,busy_street,40.7483441812487,-73.8771703539944,QN0401,QN0401,102.6,metres of Global/Regional street,0.98914,Elmhurst,Elmhurst,FALSE
+streets,strict_21_off,71,4227,park,40.886725486858,-73.8975264548355,BX2691,BX0802,93.1,metres of Global/Regional street,0.98989,Kingsbridge-Marble Hill,Van Cortlandt Park,FALSE
+streets,strict_21_off,72,5019,busy_street,40.7661810947395,-73.9571840489196,MN0801,MN0801,91.3,metres of Global/Regional street,0.99063,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,FALSE
+streets,strict_21_off,73,2257,busy_street,40.731435140359,-74.000753710725,MN0202,MN0202,88.7,metres of Global/Regional street,0.99134,Greenwich Village,Greenwich Village,FALSE
+streets,strict_21_off,74,4618,busy_street,40.824341589971,-73.9454894242784,MN0903,MN0903,88.7,metres of Global/Regional street,0.99206,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,FALSE
+streets,strict_21_off,75,5069,busy_street,40.7467912159204,-74.0020364782488,MN0401,MN0401,82.1,metres of Global/Regional street,0.99272,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+streets,strict_21_off,76,3095,park,40.7841104485175,-73.9687670963164,MN6491,MN0702,81.6,metres of Global/Regional street,0.99338,Upper West Side (Central),Central Park,FALSE
+streets,strict_21_off,77,1212,busy_street,40.6071639998755,-74.0025246649104,BK1101,BK1101,81.6,metres of Global/Regional street,0.99404,Bensonhurst,Bensonhurst,FALSE
+streets,strict_21_off,78,1702,park,40.6571370573766,-73.9635054886371,BK5591,BK0902,81.2,metres of Global/Regional street,0.99469,Prospect Lefferts Gardens-Wingate,Prospect Park,FALSE
+streets,strict_21_off,79,2170,park,40.7219796388327,-74.0060798353914,MN0102,MN0102,71.4,metres of Global/Regional street,0.99527,Tribeca-Civic Center,Tribeca-Civic Center,FALSE
+streets,strict_21_off,80,4581,busy_street,40.7393535731733,-73.9843735812404,MN0602,MN0602,67.5,metres of Global/Regional street,0.99581,Gramercy,Gramercy,FALSE
+streets,strict_21_off,81,4496,busy_street,40.832756316725,-73.8613299044454,BX0903,BX0903,66.6,metres of Global/Regional street,0.99635,Castle Hill-Unionport,Castle Hill-Unionport,FALSE
+streets,strict_21_off,82,4633,busy_street,40.8769496892075,-73.9063277619809,BX0802,BX0802,61.6,metres of Global/Regional street,0.99685,Kingsbridge-Marble Hill,Kingsbridge-Marble Hill,FALSE
+streets,strict_21_off,83,3708,busy_street,40.8556617661245,-73.9011322755351,BX0503,BX0503,55.4,metres of Global/Regional street,0.99729,Fordham Heights,Fordham Heights,FALSE
+streets,strict_21_off,84,4450,busy_street,40.7428294171262,-73.9520968228047,QN0201,QN0201,48.5,metres of Global/Regional street,0.99768,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+streets,strict_21_off,85,4480,busy_street,40.7415690618691,-73.880640765414,QN0401,QN0401,43,metres of Global/Regional street,0.99803,Elmhurst,Elmhurst,FALSE
+streets,strict_21_off,86,3066,busy_street,40.7814019886226,-73.949221420249,MN0803,MN0803,43,metres of Global/Regional street,0.99838,Upper East Side-Yorkville,Upper East Side-Yorkville,FALSE
+streets,strict_21_off,87,5486,busy_street,40.7522544090319,-73.9681860710659,MN0604,MN0604,41.3,metres of Global/Regional street,0.99871,East Midtown-Turtle Bay,East Midtown-Turtle Bay,FALSE
+streets,strict_21_off,88,4515,busy_street,40.8017795085951,-73.9678380441958,MN0703,MN0703,31.3,metres of Global/Regional street,0.99896,Upper West Side-Manhattan Valley,Upper West Side-Manhattan Valley,FALSE
+streets,strict_21_off,89,2551,park,40.7475923536208,-73.8906360924161,QN0301,QN0301,27.2,metres of Global/Regional street,0.99918,Jackson Heights,Jackson Heights,FALSE
+streets,strict_21_off,90,3569,park,40.844851177111,-73.895812269686,BX0602,BX0602,18.3,metres of Global/Regional street,0.99933,Tremont,Tremont,FALSE
+streets,strict_21_off,91,4495,busy_street,40.7334778853017,-73.8703138822588,QN0401,QN0401,17.3,metres of Global/Regional street,0.99947,Elmhurst,Elmhurst,FALSE
+streets,strict_21_off,92,1961,park,40.6908188633637,-73.8534629759294,QN0905,QN0905,16.2,metres of Global/Regional street,0.9996,Woodhaven,Woodhaven,FALSE
+streets,strict_21_off,93,3394,park,40.8151755224457,-73.9616409298952,MN0901,MN0901,12.1,metres of Global/Regional street,0.9997,Morningside Heights,Morningside Heights,FALSE
+streets,strict_21_off,94,3541,park,40.8408276676634,-73.9349473997712,MN1291,MN1201,10.6,metres of Global/Regional street,0.99978,Washington Heights (South),Highbridge Park,FALSE
+streets,strict_21_off,95,4645,busy_street,40.7211402888093,-73.9868667447112,MN0302,MN0302,10.6,metres of Global/Regional street,0.99987,Lower East Side,Lower East Side,FALSE
+streets,strict_21_off,96,2506,park,40.746197867349,-73.8515651084599,QN8191,QN0402,10.4,metres of Global/Regional street,0.99995,Corona,Flushing Meadows-Corona Park,FALSE
+streets,strict_21_off,97,4693,busy_street,40.7892327826637,-73.9738856374922,MN0702,MN0702,6,metres of Global/Regional street,1,Upper West Side (Central),Upper West Side (Central),FALSE
+streets,strict_21_in,1,5230,busy_street,40.7494274010324,-73.9889557265449,MN0501,MN0501,8856.8,metres of Global/Regional street,0.42209,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+streets,strict_21_in,2,5453,busy_street,40.7582206561444,-73.9861203763044,MN0502,MN0502,6029.7,metres of Global/Regional street,0.4707,Midtown-Times Square,Midtown-Times Square,FALSE
+streets,strict_21_in,3,2373,busy_street,40.7408904399811,-73.9972019887838,MN0401,MN0401,4863.6,metres of Global/Regional street,0.50991,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+streets,strict_21_in,4,5237,busy_street,40.7542035103667,-73.9982402203635,MN0401,MN0401,4359.7,metres of Global/Regional street,0.54506,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+streets,strict_21_in,5,5127,busy_street,40.7427178330155,-73.9845529150955,MN0501,MN0501,4049,metres of Global/Regional street,0.5777,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+streets,strict_21_in,6,4728,busy_street,40.7513776275137,-73.9679991397946,MN0604,MN0604,3458.7,metres of Global/Regional street,0.60558,East Midtown-Turtle Bay,East Midtown-Turtle Bay,FALSE
+streets,strict_21_in,7,4869,busy_street,40.768709763858,-73.9581497676934,MN0801,MN0801,3436.3,metres of Global/Regional street,0.63329,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,FALSE
+streets,strict_21_in,8,5158,busy_street,40.7288906326846,-73.9874606972625,MN0303,MN0303,3033.4,metres of Global/Regional street,0.65774,East Village,East Village,FALSE
+streets,strict_21_in,9,5073,busy_street,40.7455935917511,-73.9991963544557,MN0401,MN0401,2751.9,metres of Global/Regional street,0.67993,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+streets,strict_21_in,10,5551,busy_street,40.7644126426364,-73.9833759995751,MN0502,MN0502,2602.3,metres of Global/Regional street,0.70091,Midtown-Times Square,Midtown-Times Square,FALSE
+streets,strict_21_in,11,4846,busy_street,40.8089890055223,-73.9483661313527,MN1001,MN1001,2095.8,metres of Global/Regional street,0.7178,Harlem (South),Harlem (South),FALSE
+streets,strict_21_in,12,5005,busy_street,40.7342648464624,-73.9802925822532,MN0602,MN0602,2062.4,metres of Global/Regional street,0.73443,Gramercy,Gramercy,FALSE
+streets,strict_21_in,13,5353,busy_street,40.7810698722249,-73.9523481270369,MN0802,MN0802,1566.6,metres of Global/Regional street,0.74706,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+streets,strict_21_in,14,5328,busy_street,40.7643695285918,-73.9645266778505,MN0802,MN0802,1556.2,metres of Global/Regional street,0.75961,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+streets,strict_21_in,15,4782,busy_street,40.8046850327862,-73.9381561247829,MN1102,MN1102,1551,metres of Global/Regional street,0.77211,East Harlem (North),East Harlem (North),FALSE
+streets,strict_21_in,16,4449,busy_street,40.7779745475914,-73.9820388789491,MN0701,MN0701,1192.4,metres of Global/Regional street,0.78173,Upper West Side-Lincoln Square,Upper West Side-Lincoln Square,FALSE
+streets,strict_21_in,17,4930,busy_street,40.8276612685608,-73.9254356003128,BX0401,BX0401,1102.6,metres of Global/Regional street,0.79061,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+streets,strict_21_in,18,1908,busy_street,40.6841561438418,-73.9776859305546,BK0602,BK0602,1073.5,metres of Global/Regional street,0.79927,Park Slope,Park Slope,FALSE
+streets,strict_21_in,19,5683,busy_street,40.6694775585133,-73.9860498417633,BK0602,BK0602,1030.3,metres of Global/Regional street,0.80758,Park Slope,Park Slope,FALSE
+streets,strict_21_in,20,3083,busy_street,40.7827569458248,-73.9598825749694,MN6491,MN0802,1012.2,metres of Global/Regional street,0.81574,Upper East Side-Carnegie Hill,Central Park,FALSE
+streets,strict_21_in,21,5148,busy_street,40.7239013559935,-73.9911131512437,MN0303,MN0303,1007.1,metres of Global/Regional street,0.82386,East Village,East Village,FALSE
+streets,strict_21_in,22,2469,park,40.7448471094735,-73.8515681179523,QN8191,QN0402,973.8,metres of Global/Regional street,0.83171,Corona,Flushing Meadows-Corona Park,FALSE
+streets,strict_21_in,23,2969,busy_street,40.7733010411006,-73.9581114924369,MN0802,MN0802,957.9,metres of Global/Regional street,0.83943,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+streets,strict_21_in,24,4968,busy_street,40.8503077645828,-73.93620768488,MN1202,MN1202,953.9,metres of Global/Regional street,0.84712,Washington Heights (North),Washington Heights (North),FALSE
+streets,strict_21_in,25,3474,busy_street,40.8259766624817,-73.9491874044159,MN0903,MN0903,931.3,metres of Global/Regional street,0.85463,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,FALSE
+streets,strict_21_in,26,5668,busy_street,40.6760953909799,-73.9806745275023,BK0602,BK0602,796.4,metres of Global/Regional street,0.86105,Park Slope,Park Slope,FALSE
+streets,strict_21_in,27,4559,busy_street,40.7310850774407,-73.9740119322706,MN0601,MN0601,752.4,metres of Global/Regional street,0.86711,Stuyvesant Town-Peter Cooper Village,Stuyvesant Town-Peter Cooper Village,FALSE
+streets,strict_21_in,28,3897,busy_street,40.86648275096,-73.9206881505606,MN1203,MN1203,728.6,metres of Global/Regional street,0.87299,Inwood,Inwood,FALSE
+streets,strict_21_in,29,4590,busy_street,40.7144697190934,-74.0025126625625,MN0102,MN0102,712.5,metres of Global/Regional street,0.87873,Tribeca-Civic Center,Tribeca-Civic Center,FALSE
+streets,strict_21_in,30,2958,busy_street,40.7733082292371,-73.9900935108406,MN0701,MN0701,711.2,metres of Global/Regional street,0.88447,Upper West Side-Lincoln Square,Upper West Side-Lincoln Square,FALSE
+streets,strict_21_in,31,4549,busy_street,40.8368670645311,-73.9428237890987,MN1201,MN1201,664.5,metres of Global/Regional street,0.88982,Washington Heights (South),Washington Heights (South),FALSE
+streets,strict_21_in,32,2733,busy_street,40.7557482338075,-73.9883198117896,MN0502,MN0502,659.8,metres of Global/Regional street,0.89514,Midtown-Times Square,Midtown-Times Square,FALSE
+streets,strict_21_in,33,3803,busy_street,40.8610600074381,-73.8957868767213,BX0503,BX0503,635.2,metres of Global/Regional street,0.90026,Fordham Heights,Fordham Heights,FALSE
+streets,strict_21_in,34,4560,busy_street,40.7073120048234,-74.0109654812078,MN0101,MN0101,629.5,metres of Global/Regional street,0.90534,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+streets,strict_21_in,35,4465,busy_street,40.747550877024,-73.941233795429,QN0201,QN0201,565.9,metres of Global/Regional street,0.9099,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+streets,strict_21_in,36,4757,busy_street,40.7467758578806,-73.9826829402675,MN0501,MN0501,551.1,metres of Global/Regional street,0.91434,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+streets,strict_21_in,37,4998,busy_street,40.7401035410571,-73.9937879927297,MN0501,MN0501,533.9,metres of Global/Regional street,0.91865,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+streets,strict_21_in,38,1972,park,40.693613272232,-73.9901053520317,BK0202,BK0202,528,metres of Global/Regional street,0.9229,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+streets,strict_21_in,39,2240,park,40.7300843462384,-73.9972024425171,MN0202,MN0202,520,metres of Global/Regional street,0.9271,Greenwich Village,Greenwich Village,FALSE
+streets,strict_21_in,40,3261,busy_street,40.7976067389515,-73.9403219200684,MN1102,MN1102,489.6,metres of Global/Regional street,0.93104,East Harlem (North),East Harlem (North),FALSE
+streets,strict_21_in,41,3076,park,40.7827610178614,-73.9740988232092,MN0702,MN0702,488.8,metres of Global/Regional street,0.93498,Upper West Side (Central),Upper West Side (Central),FALSE
+streets,strict_21_in,42,2140,busy_street,40.7165703689492,-73.9616976796627,BK0102,BK0102,481.2,metres of Global/Regional street,0.93886,Williamsburg,Williamsburg,FALSE
+streets,strict_21_in,43,4537,busy_street,40.7571803173314,-73.9993825394371,MN0401,MN0401,476.5,metres of Global/Regional street,0.94271,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+streets,strict_21_in,44,4713,busy_street,40.7657790906661,-73.9698133685489,MN0802,MN0802,437.4,metres of Global/Regional street,0.94623,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+streets,strict_21_in,45,3341,park,40.8111213874158,-73.9563099006141,MN0901,MN0901,435.3,metres of Global/Regional street,0.94974,Morningside Heights,Morningside Heights,FALSE
+streets,strict_21_in,46,1848,park,40.6719966412188,-73.9670455181105,BK5591,BK0801,416,metres of Global/Regional street,0.95309,Prospect Heights,Prospect Park,FALSE
+streets,strict_21_in,47,2792,busy_street,40.7583329634124,-73.8355506248997,QN0707,QN0707,367.2,metres of Global/Regional street,0.95606,Flushing-Willets Point,Flushing-Willets Point,FALSE
+streets,strict_21_in,48,1945,busy_street,40.6895588673487,-73.9759095751782,BK0203,BK0203,334.4,metres of Global/Regional street,0.95875,Fort Greene,Fort Greene,FALSE
+streets,strict_21_in,49,4932,busy_street,40.8252846196172,-73.9175375047576,BX0401,BX0401,293.5,metres of Global/Regional street,0.96112,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+streets,strict_21_in,50,4749,busy_street,40.726307130959,-74.0019730767867,MN0201,MN0201,291.8,metres of Global/Regional street,0.96347,SoHo-Little Italy-Hudson Square,SoHo-Little Italy-Hudson Square,FALSE
+streets,strict_21_in,51,2052,busy_street,40.7015509899994,-73.8037430284442,QN1201,QN1201,265.9,metres of Global/Regional street,0.96561,Jamaica,Jamaica,FALSE
+streets,strict_21_in,52,3146,park,40.7881605574991,-73.9616564944948,MN6491,MN0702,254.7,metres of Global/Regional street,0.96767,Upper West Side (Central),Central Park,FALSE
+streets,strict_21_in,53,1894,busy_street,40.6800940278118,-73.9475242647205,BK0301,BK0301,215.1,metres of Global/Regional street,0.9694,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),FALSE
+streets,strict_21_in,54,4622,busy_street,40.7377940266935,-73.8771889966868,QN0401,QN0401,204,metres of Global/Regional street,0.97105,Elmhurst,Elmhurst,FALSE
+streets,strict_21_in,55,4753,busy_street,40.8160835200761,-73.9177176780063,BX0102,BX0102,197.3,metres of Global/Regional street,0.97264,Melrose,Melrose,FALSE
+streets,strict_21_in,56,1774,park,40.6638941995719,-73.9759188440767,BK5591,BK0602,190.2,metres of Global/Regional street,0.97417,Park Slope,Prospect Park,FALSE
+streets,strict_21_in,57,3128,busy_street,40.7868136592845,-73.9758743860859,MN0702,MN0702,181.3,metres of Global/Regional street,0.97563,Upper West Side (Central),Upper West Side (Central),FALSE
+streets,strict_21_in,58,2115,park,40.7111735028053,-73.9936529907817,MN0301,MN0301,179,metres of Global/Regional street,0.97707,Chinatown-Two Bridges,Chinatown-Two Bridges,FALSE
+streets,strict_21_in,59,3287,busy_street,40.8016540404121,-73.9314306112344,MN1102,MN1102,157.3,metres of Global/Regional street,0.97834,East Harlem (North),East Harlem (North),FALSE
+streets,strict_21_in,60,2056,plaza,40.7030684847853,-73.988329041746,BK0202,BK0202,142.6,metres of Global/Regional street,0.97949,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+streets,strict_21_in,61,5145,busy_street,40.7475560405913,-73.9921988290847,MN0501,MN0501,131.9,metres of Global/Regional street,0.98056,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+streets,strict_21_in,62,1518,busy_street,40.6328169026273,-73.9475614400077,BK1401,BK1401,130.8,metres of Global/Regional street,0.98161,Flatbush,Flatbush,FALSE
+streets,strict_21_in,63,5474,busy_street,40.7606928940168,-73.9900521447103,MN0402,MN0402,123.9,metres of Global/Regional street,0.98261,Hell's Kitchen,Hell's Kitchen,FALSE
+streets,strict_21_in,64,3302,park,40.8057224443223,-73.9687569551757,MN0901,MN0901,123.7,metres of Global/Regional street,0.98361,Morningside Heights,Morningside Heights,FALSE
+streets,strict_21_in,65,3567,park,40.8448671899487,-73.9153778491354,BX0403,BX0403,123.6,metres of Global/Regional street,0.9846,Mount Eden-Claremont (West),Mount Eden-Claremont (West),FALSE
+streets,strict_21_in,66,2110,busy_street,40.7098223466143,-74.0114039867334,MN0101,MN0101,122.4,metres of Global/Regional street,0.98559,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+streets,strict_21_in,67,3015,park,40.7773556670196,-73.9652164903785,MN6491,MN0802,121,metres of Global/Regional street,0.98657,Upper East Side-Carnegie Hill,Central Park,FALSE
+streets,strict_21_in,68,4620,busy_street,40.6999581408724,-73.9076383352567,QN0502,QN0502,112.9,metres of Global/Regional street,0.98748,Ridgewood,Ridgewood,FALSE
+streets,strict_21_in,69,2037,park,40.7017173375601,-74.0149523421523,MN0191,MN0101,104.1,metres of Global/Regional street,0.98832,Financial District-Battery Park City,The Battery-Governors Island-Ellis Island-Liberty Island,FALSE
+streets,strict_21_in,70,4481,busy_street,40.7483441812487,-73.8771703539944,QN0401,QN0401,102.6,metres of Global/Regional street,0.98914,Elmhurst,Elmhurst,FALSE
+streets,strict_21_in,71,4227,park,40.886725486858,-73.8975264548355,BX2691,BX0802,93.1,metres of Global/Regional street,0.98989,Kingsbridge-Marble Hill,Van Cortlandt Park,FALSE
+streets,strict_21_in,72,5019,busy_street,40.7661810947395,-73.9571840489196,MN0801,MN0801,91.3,metres of Global/Regional street,0.99063,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,FALSE
+streets,strict_21_in,73,2257,busy_street,40.731435140359,-74.000753710725,MN0202,MN0202,88.7,metres of Global/Regional street,0.99134,Greenwich Village,Greenwich Village,FALSE
+streets,strict_21_in,74,4618,busy_street,40.824341589971,-73.9454894242784,MN0903,MN0903,88.7,metres of Global/Regional street,0.99206,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,FALSE
+streets,strict_21_in,75,5069,busy_street,40.7467912159204,-74.0020364782488,MN0401,MN0401,82.1,metres of Global/Regional street,0.99272,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+streets,strict_21_in,76,3095,park,40.7841104485175,-73.9687670963164,MN6491,MN0702,81.6,metres of Global/Regional street,0.99338,Upper West Side (Central),Central Park,FALSE
+streets,strict_21_in,77,1212,busy_street,40.6071639998755,-74.0025246649104,BK1101,BK1101,81.6,metres of Global/Regional street,0.99404,Bensonhurst,Bensonhurst,FALSE
+streets,strict_21_in,78,1702,park,40.6571370573766,-73.9635054886371,BK5591,BK0902,81.2,metres of Global/Regional street,0.99469,Prospect Lefferts Gardens-Wingate,Prospect Park,FALSE
+streets,strict_21_in,79,2170,park,40.7219796388327,-74.0060798353914,MN0102,MN0102,71.4,metres of Global/Regional street,0.99527,Tribeca-Civic Center,Tribeca-Civic Center,FALSE
+streets,strict_21_in,80,4581,busy_street,40.7393535731733,-73.9843735812404,MN0602,MN0602,67.5,metres of Global/Regional street,0.99581,Gramercy,Gramercy,FALSE
+streets,strict_21_in,81,4496,busy_street,40.832756316725,-73.8613299044454,BX0903,BX0903,66.6,metres of Global/Regional street,0.99635,Castle Hill-Unionport,Castle Hill-Unionport,FALSE
+streets,strict_21_in,82,4633,busy_street,40.8769496892075,-73.9063277619809,BX0802,BX0802,61.6,metres of Global/Regional street,0.99685,Kingsbridge-Marble Hill,Kingsbridge-Marble Hill,FALSE
+streets,strict_21_in,83,3708,busy_street,40.8556617661245,-73.9011322755351,BX0503,BX0503,55.4,metres of Global/Regional street,0.99729,Fordham Heights,Fordham Heights,FALSE
+streets,strict_21_in,84,4450,busy_street,40.7428294171262,-73.9520968228047,QN0201,QN0201,48.5,metres of Global/Regional street,0.99768,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+streets,strict_21_in,85,4480,busy_street,40.7415690618691,-73.880640765414,QN0401,QN0401,43,metres of Global/Regional street,0.99803,Elmhurst,Elmhurst,FALSE
+streets,strict_21_in,86,3066,busy_street,40.7814019886226,-73.949221420249,MN0803,MN0803,43,metres of Global/Regional street,0.99838,Upper East Side-Yorkville,Upper East Side-Yorkville,FALSE
+streets,strict_21_in,87,5486,busy_street,40.7522544090319,-73.9681860710659,MN0604,MN0604,41.3,metres of Global/Regional street,0.99871,East Midtown-Turtle Bay,East Midtown-Turtle Bay,FALSE
+streets,strict_21_in,88,4515,busy_street,40.8017795085951,-73.9678380441958,MN0703,MN0703,31.3,metres of Global/Regional street,0.99896,Upper West Side-Manhattan Valley,Upper West Side-Manhattan Valley,FALSE
+streets,strict_21_in,89,2551,park,40.7475923536208,-73.8906360924161,QN0301,QN0301,27.2,metres of Global/Regional street,0.99918,Jackson Heights,Jackson Heights,FALSE
+streets,strict_21_in,90,3569,park,40.844851177111,-73.895812269686,BX0602,BX0602,18.3,metres of Global/Regional street,0.99933,Tremont,Tremont,FALSE
+streets,strict_21_in,91,4495,busy_street,40.7334778853017,-73.8703138822588,QN0401,QN0401,17.3,metres of Global/Regional street,0.99947,Elmhurst,Elmhurst,FALSE
+streets,strict_21_in,92,1961,park,40.6908188633637,-73.8534629759294,QN0905,QN0905,16.2,metres of Global/Regional street,0.9996,Woodhaven,Woodhaven,FALSE
+streets,strict_21_in,93,3394,park,40.8151755224457,-73.9616409298952,MN0901,MN0901,12.1,metres of Global/Regional street,0.9997,Morningside Heights,Morningside Heights,FALSE
+streets,strict_21_in,94,3541,park,40.8408276676634,-73.9349473997712,MN1291,MN1201,10.6,metres of Global/Regional street,0.99978,Washington Heights (South),Highbridge Park,FALSE
+streets,strict_21_in,95,4645,busy_street,40.7211402888093,-73.9868667447112,MN0302,MN0302,10.6,metres of Global/Regional street,0.99987,Lower East Side,Lower East Side,FALSE
+streets,strict_21_in,96,2506,park,40.746197867349,-73.8515651084599,QN8191,QN0402,10.4,metres of Global/Regional street,0.99995,Corona,Flushing Meadows-Corona Park,FALSE
+streets,strict_21_in,97,4693,busy_street,40.7892327826637,-73.9738856374922,MN0702,MN0702,6,metres of Global/Regional street,1,Upper West Side (Central),Upper West Side (Central),FALSE

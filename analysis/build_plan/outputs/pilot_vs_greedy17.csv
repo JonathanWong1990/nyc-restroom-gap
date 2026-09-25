@@ -1,0 +1,9 @@
+objective,config,unit,existing_share,pilot17_new_covered,pilot17_share_pts,greedy17_new_covered,greedy17_share_pts,pilot_as_pct_of_greedy
+residents,base_14,residents,0.7237,49323,0.58,196125,2.31,25.1
+residents,base_21_off,residents,0.0439,272971,3.22,611608,7.21,44.6
+workers,base_14,jobs,0.8044,40732,0.89,150813,3.29,27
+workers,base_21_off,jobs,0.2159,173853,3.79,1126892,24.58,15.4
+subway,base_14,2025 subway entries,0.8736,9167758,0.71,88656826,6.82,10.3
+subway,base_21_off,2025 subway entries,0.1274,88496690,6.81,491699115,37.85,18
+streets,base_14,metres of Global/Regional street,0.9697,47,0.04,3759,3.03,1.3
+streets,base_21_off,metres of Global/Regional street,0.3507,4723,3.81,54568,43.99,8.7

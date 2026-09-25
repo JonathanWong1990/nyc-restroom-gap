@@ -1,0 +1,477 @@
+objective,config,rank,cand_id,type,lat,lon,nta_raw,nta,new_demand_covered,unit,cum_share_covered,ntaname,ntaname_raw,primary
+subway,base_14,1,3000,busy_street,40.77600188924,-73.9563329424437,MN0802,MN0802,17663785,2025 subway entries,0.88717,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,TRUE
+subway,base_14,2,2589,busy_street,40.7489229040637,-73.8710964756144,QN0401,QN0401,11461377,2025 subway entries,0.896,Elmhurst,Elmhurst,TRUE
+subway,base_14,3,2822,busy_street,40.7611503233114,-73.981213045798,MN0502,MN0502,8768081,2025 subway entries,0.90274,Midtown-Times Square,Midtown-Times Square,TRUE
+subway,base_14,4,4464,busy_street,40.7479021742119,-73.9414631236608,QN0201,QN0201,7764783,2025 subway entries,0.90872,Long Island City-Hunters Point,Long Island City-Hunters Point,TRUE
+subway,base_14,5,2863,busy_street,40.7638481194045,-73.9652235446915,MN0802,MN0802,5391266,2025 subway entries,0.91287,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,TRUE
+subway,base_14,6,2145,park,40.7177998424248,-73.8285494255402,QN8191,QN0602,5251436,2025 subway entries,0.91691,Forest Hills,Flushing Meadows-Corona Park,TRUE
+subway,base_14,7,2170,park,40.7219796388327,-74.0060798353914,MN0102,MN0102,4371789,2025 subway entries,0.92028,Tribeca-Civic Center,Tribeca-Civic Center,TRUE
+subway,base_14,8,1894,busy_street,40.6800940278118,-73.9475242647205,BK0301,BK0301,4317977,2025 subway entries,0.9236,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),TRUE
+subway,base_14,9,2505,park,40.7462570894761,-73.9083988711812,QN0203,QN0203,4172109,2025 subway entries,0.92681,Woodside,Woodside,TRUE
+subway,base_14,10,1813,park,40.667943251081,-73.9634995760989,BK5591,BK0901,3743258,2025 subway entries,0.92969,Crown Heights (South),Prospect Park,TRUE
+subway,base_14,11,3010,park,40.7773580063405,-73.9741009248037,MN6491,MN0702,3484039,2025 subway entries,0.93238,Upper West Side (Central),Central Park,TRUE
+subway,base_14,12,3261,busy_street,40.7976067389515,-73.9403219200684,MN1102,MN1102,3141079,2025 subway entries,0.93479,East Harlem (North),East Harlem (North),TRUE
+subway,base_14,13,2468,busy_street,40.7449254244924,-73.9368170655035,QN0202,QN0202,2239622,2025 subway entries,0.93652,Sunnyside,Sunnyside,TRUE
+subway,base_14,14,2811,park,40.7597674364971,-73.9119331286145,QN0104,QN0104,1913413,2025 subway entries,0.93799,Astoria (East)-Woodside (North),Astoria (East)-Woodside (North),TRUE
+subway,base_14,15,1965,busy_street,40.6922625028985,-73.9901055524859,BK0201,BK0201,1873248,2025 subway entries,0.93943,Brooklyn Heights,Brooklyn Heights,TRUE
+subway,base_14,16,1767,park,40.6625021703902,-73.8996447426726,BK0503,BK0503,1605090,2025 subway entries,0.94067,East New York-New Lots,East New York-New Lots,TRUE
+subway,base_14,17,4118,park,40.8786093828795,-73.8850818034525,BX0702,BX0702,1494474,2025 subway entries,0.94182,Bedford Park,Bedford Park,TRUE
+subway,base_14,18,1797,busy_street,40.6665976765615,-73.9883354231752,BK0602,BK0602,1432173,2025 subway entries,0.94292,Park Slope,Park Slope,TRUE
+subway,base_14,19,3825,park,40.8624305503872,-73.9206929831947,MN1203,MN1203,1387238,2025 subway entries,0.94399,Inwood,Inwood,TRUE
+subway,base_14,20,1850,park,40.6719620993503,-73.9049527492079,BK1602,BK1602,1242833,2025 subway entries,0.94494,Brownsville,Brownsville,TRUE
+subway,base_14,21,1851,park,40.6719528130059,-73.8943082823989,BK0502,BK0502,1235880,2025 subway entries,0.9459,East New York (North),East New York (North),TRUE
+subway,base_14,22,4450,busy_street,40.7428294171262,-73.9520968228047,QN0201,QN0201,1076479,2025 subway entries,0.94672,Long Island City-Hunters Point,Long Island City-Hunters Point,TRUE
+subway,base_14,23,1828,park,40.6706504131589,-73.9936568470251,BK0601,BK0601,1065545,2025 subway entries,0.94754,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,TRUE
+subway,base_14,24,1863,park,40.6733384958366,-73.9439813479368,BK0802,BK0802,1018975,2025 subway entries,0.94833,Crown Heights (North),Crown Heights (North),TRUE
+subway,base_14,25,2767,park,40.7570802464015,-73.9332528429085,QN0105,QN0105,972281,2025 subway entries,0.94908,Queensbridge-Ravenswood-Dutch Kills,Queensbridge-Ravenswood-Dutch Kills,TRUE
+subway,base_14,26,2107,park,40.7084202545761,-73.8907003599998,QN0502,QN0502,910963,2025 subway entries,0.94978,Ridgewood,Ridgewood,TRUE
+subway,base_14,27,4239,park,40.8866533731782,-73.8352332018717,BX1202,BX1202,819651,2025 subway entries,0.95041,Eastchester-Edenwald-Baychester,Eastchester-Edenwald-Baychester,TRUE
+subway,base_14,28,4051,park,40.8745018489469,-73.838822285829,BX1202,BX1202,556745,2025 subway entries,0.95084,Eastchester-Edenwald-Baychester,Eastchester-Edenwald-Baychester,TRUE
+subway,base_14,29,3944,park,40.8691829796356,-73.9189055885127,MN1203,MN1203,537826,2025 subway entries,0.95125,Inwood,Inwood,TRUE
+subway,base_14,30,1065,park,40.6004067982802,-73.9723973863191,BK1501,BK1501,436382,2025 subway entries,0.95159,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,TRUE
+subway,base_14,31,3557,park,40.8420842509149,-73.8389008288821,BX1161,BX1002,428827,2025 subway entries,0.95192,Throgs Neck-Schuylerville,Hutchinson Metro Center,TRUE
+subway,base_14,32,1456,park,40.6260712081025,-73.9706139129399,BK1204,BK1204,347315,2025 subway entries,0.95218,Mapleton-Midwood (West),Mapleton-Midwood (West),TRUE
+subway,base_14,33,1050,park,40.5988227848354,-73.7668300181818,QN1401,QN1401,200222,2025 subway entries,0.95234,Far Rockaway-Bayswater,Far Rockaway-Bayswater,TRUE
+subway,base_14,34,1840,park,40.6705383738095,-73.8393151815259,QN1002,QN1002,173199,2025 subway entries,0.95247,Ozone Park,Ozone Park,TRUE
+subway,base_21_off,1,2653,busy_street,40.751696125568,-73.9900967248109,MN0502,MN0502,113510922,2025 subway entries,0.21476,Midtown-Times Square,Midtown-Times Square,TRUE
+subway,base_21_off,2,4528,busy_street,40.7116045860899,-74.0074283549764,MN0101,MN0101,50956894,2025 subway entries,0.25398,Financial District-Battery Park City,Financial District-Battery Park City,TRUE
+subway,base_21_off,3,2373,busy_street,40.7408904399811,-73.9972019887838,MN0401,MN0401,35302291,2025 subway entries,0.28115,Chelsea-Hudson Yards,Chelsea-Hudson Yards,TRUE
+subway,base_21_off,4,2822,busy_street,40.7611503233114,-73.981213045798,MN0502,MN0502,33050116,2025 subway entries,0.30659,Midtown-Times Square,Midtown-Times Square,TRUE
+subway,base_21_off,5,5516,busy_street,40.7293663833296,-73.9961922574639,MN0202,MN0202,31277093,2025 subway entries,0.33067,Greenwich Village,Greenwich Village,TRUE
+subway,base_21_off,6,5340,busy_street,40.781697191941,-73.9518906210548,MN0802,MN0802,26195929,2025 subway entries,0.35083,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,TRUE
+subway,base_21_off,7,1925,park,40.6868583184267,-73.9812339772172,BK0202,BK0202,23639674,2025 subway entries,0.36903,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,TRUE
+subway,base_21_off,8,2155,park,40.7206287484435,-73.9918767157757,MN0302,MN0302,22790835,2025 subway entries,0.38657,Lower East Side,Lower East Side,TRUE
+subway,base_21_off,9,2863,busy_street,40.7638481194045,-73.9652235446915,MN0802,MN0802,22117273,2025 subway entries,0.40359,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,TRUE
+subway,base_21_off,10,2429,busy_street,40.7435912090329,-73.9865459566476,MN0501,MN0501,19314940,2025 subway entries,0.41846,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,TRUE
+subway,base_21_off,11,2070,park,40.7044188727104,-74.0149529480973,MN0191,MN0101,19209574,2025 subway entries,0.43324,Financial District-Battery Park City,The Battery-Governors Island-Ellis Island-Liberty Island,TRUE
+subway,base_21_off,12,1982,park,40.6963144503055,-73.9865554969484,BK0202,BK0202,17920868,2025 subway entries,0.44704,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,TRUE
+subway,base_21_off,13,4647,busy_street,40.7198789690867,-74.0014742237075,MN0201,MN0201,16532340,2025 subway entries,0.45976,SoHo-Little Italy-Hudson Square,SoHo-Little Italy-Hudson Square,TRUE
+subway,base_21_off,14,4486,busy_street,40.7468282315024,-73.8915908878595,QN0401,QN0401,16060789,2025 subway entries,0.47213,Elmhurst,Elmhurst,TRUE
+subway,base_21_off,15,2792,busy_street,40.7583329634124,-73.8355506248997,QN0707,QN0707,15017678,2025 subway entries,0.48368,Flushing-Willets Point,Flushing-Willets Point,TRUE
+subway,base_21_off,16,5772,plaza,40.7173489718443,-73.9523272305288,BK0102,BK0102,14582348,2025 subway entries,0.49491,Williamsburg,Williamsburg,TRUE
+subway,base_21_off,17,2916,busy_street,40.7692494095462,-73.9598907116935,MN0801,MN0801,14219551,2025 subway entries,0.50585,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,TRUE
+subway,base_21_off,18,4464,busy_street,40.7479021742119,-73.9414631236608,QN0201,QN0201,14208738,2025 subway entries,0.51679,Long Island City-Hunters Point,Long Island City-Hunters Point,TRUE
+subway,base_21_off,19,2052,busy_street,40.7015509899994,-73.8037430284442,QN1201,QN1201,14202255,2025 subway entries,0.52772,Jamaica,Jamaica,TRUE
+subway,base_21_off,20,3056,park,40.7814116437447,-73.9812073291229,MN0702,MN0702,13983141,2025 subway entries,0.53848,Upper West Side (Central),Upper West Side (Central),TRUE
+subway,base_21_off,21,4715,busy_street,40.7905267187683,-73.9747935980245,MN0702,MN0702,13185520,2025 subway entries,0.54863,Upper West Side (Central),Upper West Side (Central),TRUE
+subway,base_21_off,22,2589,busy_street,40.7489229040637,-73.8710964756144,QN0401,QN0401,11461377,2025 subway entries,0.55746,Elmhurst,Elmhurst,TRUE
+subway,base_21_off,23,4749,busy_street,40.726307130959,-74.0019730767867,MN0201,MN0201,10983874,2025 subway entries,0.56591,SoHo-Little Italy-Hudson Square,SoHo-Little Italy-Hudson Square,TRUE
+subway,base_21_off,24,3328,busy_street,40.8097669300053,-73.9474220271308,MN1002,MN1002,9687632,2025 subway entries,0.57337,Harlem (North),Harlem (North),TRUE
+subway,base_21_off,25,2226,busy_street,40.7287326106119,-73.9847733660605,MN0303,MN0303,9224266,2025 subway entries,0.58047,East Village,East Village,TRUE
+subway,base_21_off,26,4484,busy_street,40.734721758144,-73.8744617309733,QN0401,QN0401,9056441,2025 subway entries,0.58744,Elmhurst,Elmhurst,TRUE
+subway,base_21_off,27,4549,busy_street,40.8368670645311,-73.9428237890987,MN1201,MN1201,8806501,2025 subway entries,0.59422,Washington Heights (South),Washington Heights (South),TRUE
+subway,base_21_off,28,2460,busy_street,40.7449427209189,-73.9972018185959,MN0401,MN0401,8427272,2025 subway entries,0.6007,Chelsea-Hudson Yards,Chelsea-Hudson Yards,TRUE
+subway,base_21_off,29,3466,busy_street,40.8246242976567,-73.9456321381,MN0903,MN0903,7458113,2025 subway entries,0.60644,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,TRUE
+subway,base_21_off,30,3852,park,40.863763067962,-73.8975618377762,BX0701,BX0701,7241326,2025 subway entries,0.61202,University Heights (North)-Fordham,University Heights (North)-Fordham,TRUE
+subway,base_21_off,31,3623,busy_street,40.8502838244722,-73.9367169872585,MN1202,MN1202,7034997,2025 subway entries,0.61743,Washington Heights (North),Washington Heights (North),TRUE
+subway,base_21_off,32,2705,busy_street,40.7543980655359,-74.0007539705455,MN0401,MN0401,6753333,2025 subway entries,0.62263,Chelsea-Hudson Yards,Chelsea-Hudson Yards,TRUE
+subway,base_21_off,33,4620,busy_street,40.6999581408724,-73.9076383352567,QN0502,QN0502,6348452,2025 subway entries,0.62752,Ridgewood,Ridgewood,TRUE
+subway,base_21_off,34,3470,park,40.8246122633098,-73.9242943556638,BX0401,BX0401,6323559,2025 subway entries,0.63238,Concourse-Concourse Village,Concourse-Concourse Village,TRUE
+subway,base_21_off,35,3060,park,40.7814089439262,-73.9687683634961,MN6491,MN0702,6187760,2025 subway entries,0.63715,Upper West Side (Central),Central Park,TRUE
+subway,base_21_off,36,5781,plaza,40.6805026169928,-73.9461607933123,BK0301,BK0301,5963572,2025 subway entries,0.64174,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),TRUE
+subway,base_21_off,37,2663,park,40.7515985934848,-73.8497768718987,QN8191,QN0402,5958200,2025 subway entries,0.64632,Corona,Flushing Meadows-Corona Park,TRUE
+subway,base_21_off,38,2377,park,40.7408644744448,-73.9226136019012,QN0202,QN0202,5935513,2025 subway entries,0.65089,Sunnyside,Sunnyside,TRUE
+subway,base_21_off,39,3297,park,40.8043613866848,-73.9420934723071,MN1102,MN1102,5914319,2025 subway entries,0.65544,East Harlem (North),East Harlem (North),TRUE
+subway,base_21_off,40,4450,busy_street,40.7428294171262,-73.9520968228047,QN0201,QN0201,5886234,2025 subway entries,0.65997,Long Island City-Hunters Point,Long Island City-Hunters Point,TRUE
+subway,base_21_off,41,2005,park,40.699016347253,-73.9901045501336,BK0202,BK0202,5595355,2025 subway entries,0.66428,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,TRUE
+subway,base_21_off,42,3261,busy_street,40.7976067389515,-73.9403219200684,MN1102,MN1102,5577323,2025 subway entries,0.66857,East Harlem (North),East Harlem (North),TRUE
+subway,base_21_off,43,2590,park,40.7489126231824,-73.862215843678,QN0402,QN0402,5569769,2025 subway entries,0.67286,Corona,Corona,TRUE
+subway,base_21_off,44,2505,park,40.7462570894761,-73.9083988711812,QN0203,QN0203,5426306,2025 subway entries,0.67704,Woodside,Woodside,TRUE
+subway,base_21_off,45,1805,park,40.6665757499952,-73.9280216008615,BK0891,BK0901,5424987,2025 subway entries,0.68121,Crown Heights (South),Lincoln Terrace Park,TRUE
+subway,base_21_off,46,4732,busy_street,40.6737413030972,-73.9695829431963,BK0602,BK0602,5301789,2025 subway entries,0.68529,Park Slope,Park Slope,TRUE
+subway,base_21_off,47,2145,park,40.7177998424248,-73.8285494255402,QN8191,QN0602,5251436,2025 subway entries,0.68934,Forest Hills,Flushing Meadows-Corona Park,TRUE
+subway,base_21_off,48,1859,park,40.673351127739,-73.9847860099127,BK0602,BK0602,5168156,2025 subway entries,0.69331,Park Slope,Park Slope,TRUE
+subway,base_21_off,49,3258,park,40.7976139110538,-73.9563187657334,MN6491,MN1001,4771177,2025 subway entries,0.69699,Harlem (South),Central Park,TRUE
+subway,base_21_off,50,1672,park,40.6544360558908,-73.9652805793462,BK5591,BK1401,4581730,2025 subway entries,0.70051,Flatbush,Prospect Park,TRUE
+subway,base_21_off,51,1146,park,40.6044548674445,-73.95821742955,BK1501,BK1501,4503120,2025 subway entries,0.70398,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,TRUE
+subway,base_21_off,52,1755,park,40.6625437830523,-73.9776931602506,BK5591,BK0602,4481029,2025 subway entries,0.70743,Park Slope,Prospect Park,TRUE
+subway,base_21_off,53,476,park,40.5733925811065,-73.979494394309,BK1302,BK1302,4437882,2025 subway entries,0.71084,Coney Island-Sea Gate,Coney Island-Sea Gate,TRUE
+subway,base_21_off,54,4753,busy_street,40.8160835200761,-73.9177176780063,BX0102,BX0102,4326279,2025 subway entries,0.71417,Melrose,Melrose,TRUE
+subway,base_21_off,55,1518,busy_street,40.6328169026273,-73.9475614400077,BK1401,BK1401,4169321,2025 subway entries,0.71738,Flatbush,Flatbush,TRUE
+subway,base_21_off,56,5735,plaza,40.8208991381832,-73.8907894584669,BX0202,BX0202,3939151,2025 subway entries,0.72042,Longwood,Longwood,TRUE
+subway,base_21_off,57,2086,park,40.7057523034649,-73.9350792155216,BK0104,BK0104,3917557,2025 subway entries,0.72343,East Williamsburg,East Williamsburg,TRUE
+subway,base_21_off,58,2115,park,40.7111735028053,-73.9936529907817,MN0301,MN0301,3851534,2025 subway entries,0.7264,Chinatown-Two Bridges,Chinatown-Two Bridges,TRUE
+subway,base_21_off,59,1813,park,40.667943251081,-73.9634995760989,BK5591,BK0901,3743258,2025 subway entries,0.72928,Crown Heights (South),Prospect Park,TRUE
+subway,base_21_off,60,3507,park,40.8340674557403,-73.9242835968176,BX0491,BX0402,3686433,2025 subway entries,0.73211,Highbridge,Yankee Stadium-Macombs Dam Park,TRUE
+subway,base_21_off,61,1969,park,40.692255323419,-73.9581624092115,BK0301,BK0301,3585044,2025 subway entries,0.73487,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),TRUE
+subway,base_21_off,62,1896,park,40.6800834714474,-73.9280070215296,BK0302,BK0302,3565894,2025 subway entries,0.73762,Bedford-Stuyvesant (East),Bedford-Stuyvesant (East),TRUE
+subway,base_21_off,63,3302,park,40.8057224443223,-73.9687569551757,MN0901,MN0901,3442824,2025 subway entries,0.74027,Morningside Heights,Morningside Heights,TRUE
+subway,base_21_off,64,3731,park,40.8570300024959,-73.9242574554553,MN1291,MN1202,3422465,2025 subway entries,0.7429,Washington Heights (North),Highbridge Park,TRUE
+subway,base_21_off,65,3942,park,40.8691866075502,-73.9242436086015,MN1292,MN1203,3417854,2025 subway entries,0.74553,Inwood,Inwood Hill Park,TRUE
+subway,base_21_off,66,5811,plaza,40.6841823635824,-73.9683411317398,BK0204,BK0204,3324443,2025 subway entries,0.74809,Clinton Hill,Clinton Hill,TRUE
+subway,base_21_off,67,2257,busy_street,40.731435140359,-74.000753710725,MN0202,MN0202,3310724,2025 subway entries,0.75064,Greenwich Village,Greenwich Village,TRUE
+subway,base_21_off,68,4480,busy_street,40.7415690618691,-73.880640765414,QN0401,QN0401,3256579,2025 subway entries,0.75315,Elmhurst,Elmhurst,TRUE
+subway,base_21_off,69,515,park,40.5747399639263,-73.9653220054863,BK1302,BK1302,3242354,2025 subway entries,0.75564,Coney Island-Sea Gate,Coney Island-Sea Gate,TRUE
+subway,base_21_off,70,3664,park,40.8529689478804,-73.9118097259773,BX0501,BX0501,3189989,2025 subway entries,0.7581,University Heights (South)-Morris Heights,University Heights (South)-Morris Heights,TRUE
+subway,base_21_off,71,3549,park,40.840781526478,-73.8780328179911,BX0601,BX0601,3128901,2025 subway entries,0.76051,West Farms,West Farms,TRUE
+subway,base_21_off,72,5788,plaza,40.6405663526277,-73.9790936698526,BK1203,BK1203,3104224,2025 subway entries,0.7629,Kensington,Kensington,TRUE
+subway,base_21_off,73,4093,park,40.8772793702512,-73.9082183641601,BX0802,BX0802,3075104,2025 subway entries,0.76526,Kingsbridge-Marble Hill,Kingsbridge-Marble Hill,TRUE
+subway,base_21_off,74,2057,park,40.7030579020734,-73.9492810954172,BK0103,BK0103,2995714,2025 subway entries,0.76757,South Williamsburg,South Williamsburg,TRUE
+subway,base_21_off,75,1510,park,40.6314773278375,-74.0131636019568,BK1002,BK1002,2951046,2025 subway entries,0.76984,Dyker Heights,Dyker Heights,TRUE
+subway,base_21_off,76,3345,park,40.8111036389958,-73.9225319328509,BX0101,BX0101,2937784,2025 subway entries,0.7721,Mott Haven-Port Morris,Mott Haven-Port Morris,TRUE
+subway,base_21_off,77,4192,park,40.8840105121933,-73.883292728143,BX2691,BX0703,2921198,2025 subway entries,0.77435,Norwood,Van Cortlandt Park,TRUE
+subway,base_21_off,78,3227,park,40.7949087020259,-73.9474337620585,MN1101,MN1101,2915996,2025 subway entries,0.77659,East Harlem (South),East Harlem (South),TRUE
+subway,base_21_off,79,1767,park,40.6625021703902,-73.8996447426726,BK0503,BK0503,2834580,2025 subway entries,0.77878,East New York-New Lots,East New York-New Lots,TRUE
+subway,base_21_off,80,4496,busy_street,40.832756316725,-73.8613299044454,BX0903,BX0903,2834403,2025 subway entries,0.78096,Castle Hill-Unionport,Castle Hill-Unionport,TRUE
+subway,base_21_off,81,2228,park,40.7287260084194,-73.9581395119893,BK0101,BK0101,2797497,2025 subway entries,0.78311,Greenpoint,Greenpoint,TRUE
+subway,base_21_off,82,3465,park,40.8246281466634,-73.9545228828312,MN0903,MN0903,2784625,2025 subway entries,0.78525,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,TRUE
+subway,base_21_off,83,5807,plaza,40.8293086221803,-73.8743116048064,BX0901,BX0901,2734657,2025 subway entries,0.78736,Soundview-Bruckner-Bronx River,Soundview-Bruckner-Bronx River,TRUE
+subway,base_21_off,84,3380,park,40.8138147711685,-73.9385295254976,MN1002,MN1002,2693604,2025 subway entries,0.78943,Harlem (North),Harlem (North),TRUE
+subway,base_21_off,85,3442,park,40.8191886959103,-73.897630452602,BX0202,BX0202,2673909,2025 subway entries,0.79149,Longwood,Longwood,TRUE
+subway,base_21_off,86,1212,busy_street,40.6071639998755,-74.0025246649104,BK1101,BK1101,2642501,2025 subway entries,0.79352,Bensonhurst,Bensonhurst,TRUE
+subway,base_21_off,87,2950,park,40.7719281842296,-73.917247275947,QN0101,QN0101,2633399,2025 subway entries,0.79555,Astoria (North)-Ditmars-Steinway,Astoria (North)-Ditmars-Steinway,TRUE
+subway,base_21_off,88,2058,park,40.7030442705256,-73.9244324118141,BK0401,BK0401,2613770,2025 subway entries,0.79756,Bushwick (West),Bushwick (West),TRUE
+subway,base_21_off,89,2767,park,40.7570802464015,-73.9332528429085,QN0105,QN0105,2602417,2025 subway entries,0.79957,Queensbridge-Ravenswood-Dutch Kills,Queensbridge-Ravenswood-Dutch Kills,TRUE
+subway,base_21_off,90,3457,park,40.8219119306382,-73.9260755050997,BX0401,BX0401,2599147,2025 subway entries,0.80157,Concourse-Concourse Village,Concourse-Concourse Village,TRUE
+subway,base_21_off,91,1715,park,40.6584883814255,-73.9652784702879,BK5591,BK0902,2528547,2025 subway entries,0.80351,Prospect Lefferts Gardens-Wingate,Prospect Park,TRUE
+subway,base_21_off,92,1908,busy_street,40.6841561438418,-73.9776859305546,BK0602,BK0602,2515574,2025 subway entries,0.80545,Park Slope,Park Slope,TRUE
+subway,base_21_off,93,4227,park,40.886725486858,-73.8975264548355,BX2691,BX0802,2411831,2025 subway entries,0.80731,Kingsbridge-Marble Hill,Van Cortlandt Park,TRUE
+subway,base_21_off,94,3143,park,40.7881622079538,-73.966988020097,MN6491,MN0702,2286376,2025 subway entries,0.80907,Upper West Side (Central),Central Park,TRUE
+subway,base_21_off,95,5744,plaza,40.7986300701382,-73.9525053922077,MN1001,MN1001,2284589,2025 subway entries,0.81082,Harlem (South),Harlem (South),TRUE
+subway,base_21_off,96,2765,park,40.7570884002756,-73.9492399551511,QN0105,QN0105,2278718,2025 subway entries,0.81258,Queensbridge-Ravenswood-Dutch Kills,Queensbridge-Ravenswood-Dutch Kills,TRUE
+subway,base_21_off,97,2468,busy_street,40.7449254244924,-73.9368170655035,QN0202,QN0202,2239622,2025 subway entries,0.8143,Sunnyside,Sunnyside,TRUE
+subway,base_21_off,98,3708,busy_street,40.8556617661245,-73.9011322755351,BX0503,BX0503,2161924,2025 subway entries,0.81597,Fordham Heights,Fordham Heights,TRUE
+subway,base_21_off,99,5780,plaza,40.6792785164562,-73.8632620266311,QN1002,QN1002,2149479,2025 subway entries,0.81762,Ozone Park,Ozone Park,TRUE
+subway,base_21_off,100,3393,park,40.8151761002334,-73.9634188264665,MN0901,MN0901,2115489,2025 subway entries,0.81925,Morningside Heights,Morningside Heights,TRUE
+subway,base_21_in,1,2653,busy_street,40.751696125568,-73.9900967248109,MN0502,MN0502,113510922,2025 subway entries,0.21476,Midtown-Times Square,Midtown-Times Square,FALSE
+subway,base_21_in,2,4528,busy_street,40.7116045860899,-74.0074283549764,MN0101,MN0101,50956894,2025 subway entries,0.25398,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+subway,base_21_in,3,2373,busy_street,40.7408904399811,-73.9972019887838,MN0401,MN0401,35302291,2025 subway entries,0.28115,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+subway,base_21_in,4,2822,busy_street,40.7611503233114,-73.981213045798,MN0502,MN0502,33050116,2025 subway entries,0.30659,Midtown-Times Square,Midtown-Times Square,FALSE
+subway,base_21_in,5,5516,busy_street,40.7293663833296,-73.9961922574639,MN0202,MN0202,31277093,2025 subway entries,0.33067,Greenwich Village,Greenwich Village,FALSE
+subway,base_21_in,6,5340,busy_street,40.781697191941,-73.9518906210548,MN0802,MN0802,26195929,2025 subway entries,0.35083,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+subway,base_21_in,7,1925,park,40.6868583184267,-73.9812339772172,BK0202,BK0202,23639674,2025 subway entries,0.36903,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+subway,base_21_in,8,2155,park,40.7206287484435,-73.9918767157757,MN0302,MN0302,22790835,2025 subway entries,0.38657,Lower East Side,Lower East Side,FALSE
+subway,base_21_in,9,2863,busy_street,40.7638481194045,-73.9652235446915,MN0802,MN0802,22117273,2025 subway entries,0.40359,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+subway,base_21_in,10,2429,busy_street,40.7435912090329,-73.9865459566476,MN0501,MN0501,19314940,2025 subway entries,0.41846,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+subway,base_21_in,11,2070,park,40.7044188727104,-74.0149529480973,MN0191,MN0101,19209574,2025 subway entries,0.43324,Financial District-Battery Park City,The Battery-Governors Island-Ellis Island-Liberty Island,FALSE
+subway,base_21_in,12,1982,park,40.6963144503055,-73.9865554969484,BK0202,BK0202,17920868,2025 subway entries,0.44704,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+subway,base_21_in,13,4647,busy_street,40.7198789690867,-74.0014742237075,MN0201,MN0201,16532340,2025 subway entries,0.45976,SoHo-Little Italy-Hudson Square,SoHo-Little Italy-Hudson Square,FALSE
+subway,base_21_in,14,4486,busy_street,40.7468282315024,-73.8915908878595,QN0401,QN0401,16060789,2025 subway entries,0.47213,Elmhurst,Elmhurst,FALSE
+subway,base_21_in,15,2792,busy_street,40.7583329634124,-73.8355506248997,QN0707,QN0707,15017678,2025 subway entries,0.48368,Flushing-Willets Point,Flushing-Willets Point,FALSE
+subway,base_21_in,16,5772,plaza,40.7173489718443,-73.9523272305288,BK0102,BK0102,14582348,2025 subway entries,0.49491,Williamsburg,Williamsburg,FALSE
+subway,base_21_in,17,2916,busy_street,40.7692494095462,-73.9598907116935,MN0801,MN0801,14219551,2025 subway entries,0.50585,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,FALSE
+subway,base_21_in,18,4464,busy_street,40.7479021742119,-73.9414631236608,QN0201,QN0201,14208738,2025 subway entries,0.51679,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+subway,base_21_in,19,2052,busy_street,40.7015509899994,-73.8037430284442,QN1201,QN1201,14202255,2025 subway entries,0.52772,Jamaica,Jamaica,FALSE
+subway,base_21_in,20,3056,park,40.7814116437447,-73.9812073291229,MN0702,MN0702,13983141,2025 subway entries,0.53848,Upper West Side (Central),Upper West Side (Central),FALSE
+subway,base_21_in,21,4715,busy_street,40.7905267187683,-73.9747935980245,MN0702,MN0702,13185520,2025 subway entries,0.54863,Upper West Side (Central),Upper West Side (Central),FALSE
+subway,base_21_in,22,2589,busy_street,40.7489229040637,-73.8710964756144,QN0401,QN0401,11461377,2025 subway entries,0.55746,Elmhurst,Elmhurst,FALSE
+subway,base_21_in,23,4749,busy_street,40.726307130959,-74.0019730767867,MN0201,MN0201,10983874,2025 subway entries,0.56591,SoHo-Little Italy-Hudson Square,SoHo-Little Italy-Hudson Square,FALSE
+subway,base_21_in,24,3328,busy_street,40.8097669300053,-73.9474220271308,MN1002,MN1002,9687632,2025 subway entries,0.57337,Harlem (North),Harlem (North),FALSE
+subway,base_21_in,25,2226,busy_street,40.7287326106119,-73.9847733660605,MN0303,MN0303,9224266,2025 subway entries,0.58047,East Village,East Village,FALSE
+subway,base_21_in,26,4484,busy_street,40.734721758144,-73.8744617309733,QN0401,QN0401,9056441,2025 subway entries,0.58744,Elmhurst,Elmhurst,FALSE
+subway,base_21_in,27,4549,busy_street,40.8368670645311,-73.9428237890987,MN1201,MN1201,8806501,2025 subway entries,0.59422,Washington Heights (South),Washington Heights (South),FALSE
+subway,base_21_in,28,2460,busy_street,40.7449427209189,-73.9972018185959,MN0401,MN0401,8427272,2025 subway entries,0.6007,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+subway,base_21_in,29,3466,busy_street,40.8246242976567,-73.9456321381,MN0903,MN0903,7458113,2025 subway entries,0.60644,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,FALSE
+subway,base_21_in,30,3852,park,40.863763067962,-73.8975618377762,BX0701,BX0701,7241326,2025 subway entries,0.61202,University Heights (North)-Fordham,University Heights (North)-Fordham,FALSE
+subway,base_21_in,31,3623,busy_street,40.8502838244722,-73.9367169872585,MN1202,MN1202,7034997,2025 subway entries,0.61743,Washington Heights (North),Washington Heights (North),FALSE
+subway,base_21_in,32,2705,busy_street,40.7543980655359,-74.0007539705455,MN0401,MN0401,6753333,2025 subway entries,0.62263,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+subway,base_21_in,33,4620,busy_street,40.6999581408724,-73.9076383352567,QN0502,QN0502,6348452,2025 subway entries,0.62752,Ridgewood,Ridgewood,FALSE
+subway,base_21_in,34,3470,park,40.8246122633098,-73.9242943556638,BX0401,BX0401,6323559,2025 subway entries,0.63238,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+subway,base_21_in,35,3060,park,40.7814089439262,-73.9687683634961,MN6491,MN0702,6187760,2025 subway entries,0.63715,Upper West Side (Central),Central Park,FALSE
+subway,base_21_in,36,5781,plaza,40.6805026169928,-73.9461607933123,BK0301,BK0301,5963572,2025 subway entries,0.64174,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),FALSE
+subway,base_21_in,37,2663,park,40.7515985934848,-73.8497768718987,QN8191,QN0402,5958200,2025 subway entries,0.64632,Corona,Flushing Meadows-Corona Park,FALSE
+subway,base_21_in,38,2377,park,40.7408644744448,-73.9226136019012,QN0202,QN0202,5935513,2025 subway entries,0.65089,Sunnyside,Sunnyside,FALSE
+subway,base_21_in,39,3297,park,40.8043613866848,-73.9420934723071,MN1102,MN1102,5914319,2025 subway entries,0.65544,East Harlem (North),East Harlem (North),FALSE
+subway,base_21_in,40,4450,busy_street,40.7428294171262,-73.9520968228047,QN0201,QN0201,5886234,2025 subway entries,0.65997,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+subway,base_21_in,41,2005,park,40.699016347253,-73.9901045501336,BK0202,BK0202,5595355,2025 subway entries,0.66428,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+subway,base_21_in,42,3261,busy_street,40.7976067389515,-73.9403219200684,MN1102,MN1102,5577323,2025 subway entries,0.66857,East Harlem (North),East Harlem (North),FALSE
+subway,base_21_in,43,2590,park,40.7489126231824,-73.862215843678,QN0402,QN0402,5569769,2025 subway entries,0.67286,Corona,Corona,FALSE
+subway,base_21_in,44,2505,park,40.7462570894761,-73.9083988711812,QN0203,QN0203,5426306,2025 subway entries,0.67704,Woodside,Woodside,FALSE
+subway,base_21_in,45,1805,park,40.6665757499952,-73.9280216008615,BK0891,BK0901,5424987,2025 subway entries,0.68121,Crown Heights (South),Lincoln Terrace Park,FALSE
+subway,base_21_in,46,4732,busy_street,40.6737413030972,-73.9695829431963,BK0602,BK0602,5301789,2025 subway entries,0.68529,Park Slope,Park Slope,FALSE
+subway,base_21_in,47,2145,park,40.7177998424248,-73.8285494255402,QN8191,QN0602,5251436,2025 subway entries,0.68934,Forest Hills,Flushing Meadows-Corona Park,FALSE
+subway,base_21_in,48,1859,park,40.673351127739,-73.9847860099127,BK0602,BK0602,5168156,2025 subway entries,0.69331,Park Slope,Park Slope,FALSE
+subway,base_21_in,49,3258,park,40.7976139110538,-73.9563187657334,MN6491,MN1001,4771177,2025 subway entries,0.69699,Harlem (South),Central Park,FALSE
+subway,base_21_in,50,1672,park,40.6544360558908,-73.9652805793462,BK5591,BK1401,4581730,2025 subway entries,0.70051,Flatbush,Prospect Park,FALSE
+subway,base_21_in,51,1146,park,40.6044548674445,-73.95821742955,BK1501,BK1501,4503120,2025 subway entries,0.70398,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,FALSE
+subway,base_21_in,52,1755,park,40.6625437830523,-73.9776931602506,BK5591,BK0602,4481029,2025 subway entries,0.70743,Park Slope,Prospect Park,FALSE
+subway,base_21_in,53,476,park,40.5733925811065,-73.979494394309,BK1302,BK1302,4437882,2025 subway entries,0.71084,Coney Island-Sea Gate,Coney Island-Sea Gate,FALSE
+subway,base_21_in,54,4753,busy_street,40.8160835200761,-73.9177176780063,BX0102,BX0102,4326279,2025 subway entries,0.71417,Melrose,Melrose,FALSE
+subway,base_21_in,55,1518,busy_street,40.6328169026273,-73.9475614400077,BK1401,BK1401,4169321,2025 subway entries,0.71738,Flatbush,Flatbush,FALSE
+subway,base_21_in,56,5735,plaza,40.8208991381832,-73.8907894584669,BX0202,BX0202,3939151,2025 subway entries,0.72042,Longwood,Longwood,FALSE
+subway,base_21_in,57,2086,park,40.7057523034649,-73.9350792155216,BK0104,BK0104,3917557,2025 subway entries,0.72343,East Williamsburg,East Williamsburg,FALSE
+subway,base_21_in,58,2115,park,40.7111735028053,-73.9936529907817,MN0301,MN0301,3851534,2025 subway entries,0.7264,Chinatown-Two Bridges,Chinatown-Two Bridges,FALSE
+subway,base_21_in,59,1813,park,40.667943251081,-73.9634995760989,BK5591,BK0901,3743258,2025 subway entries,0.72928,Crown Heights (South),Prospect Park,FALSE
+subway,base_21_in,60,3507,park,40.8340674557403,-73.9242835968176,BX0491,BX0402,3686433,2025 subway entries,0.73211,Highbridge,Yankee Stadium-Macombs Dam Park,FALSE
+subway,base_21_in,61,1969,park,40.692255323419,-73.9581624092115,BK0301,BK0301,3585044,2025 subway entries,0.73487,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),FALSE
+subway,base_21_in,62,1896,park,40.6800834714474,-73.9280070215296,BK0302,BK0302,3565894,2025 subway entries,0.73762,Bedford-Stuyvesant (East),Bedford-Stuyvesant (East),FALSE
+subway,base_21_in,63,3302,park,40.8057224443223,-73.9687569551757,MN0901,MN0901,3442824,2025 subway entries,0.74027,Morningside Heights,Morningside Heights,FALSE
+subway,base_21_in,64,3731,park,40.8570300024959,-73.9242574554553,MN1291,MN1202,3422465,2025 subway entries,0.7429,Washington Heights (North),Highbridge Park,FALSE
+subway,base_21_in,65,3942,park,40.8691866075502,-73.9242436086015,MN1292,MN1203,3417854,2025 subway entries,0.74553,Inwood,Inwood Hill Park,FALSE
+subway,base_21_in,66,5811,plaza,40.6841823635824,-73.9683411317398,BK0204,BK0204,3324443,2025 subway entries,0.74809,Clinton Hill,Clinton Hill,FALSE
+subway,base_21_in,67,2257,busy_street,40.731435140359,-74.000753710725,MN0202,MN0202,3310724,2025 subway entries,0.75064,Greenwich Village,Greenwich Village,FALSE
+subway,base_21_in,68,4480,busy_street,40.7415690618691,-73.880640765414,QN0401,QN0401,3256579,2025 subway entries,0.75315,Elmhurst,Elmhurst,FALSE
+subway,base_21_in,69,515,park,40.5747399639263,-73.9653220054863,BK1302,BK1302,3242354,2025 subway entries,0.75564,Coney Island-Sea Gate,Coney Island-Sea Gate,FALSE
+subway,base_21_in,70,3664,park,40.8529689478804,-73.9118097259773,BX0501,BX0501,3189989,2025 subway entries,0.7581,University Heights (South)-Morris Heights,University Heights (South)-Morris Heights,FALSE
+subway,base_21_in,71,3549,park,40.840781526478,-73.8780328179911,BX0601,BX0601,3128901,2025 subway entries,0.76051,West Farms,West Farms,FALSE
+subway,base_21_in,72,5788,plaza,40.6405663526277,-73.9790936698526,BK1203,BK1203,3104224,2025 subway entries,0.7629,Kensington,Kensington,FALSE
+subway,base_21_in,73,4093,park,40.8772793702512,-73.9082183641601,BX0802,BX0802,3075104,2025 subway entries,0.76526,Kingsbridge-Marble Hill,Kingsbridge-Marble Hill,FALSE
+subway,base_21_in,74,2057,park,40.7030579020734,-73.9492810954172,BK0103,BK0103,2995714,2025 subway entries,0.76757,South Williamsburg,South Williamsburg,FALSE
+subway,base_21_in,75,1510,park,40.6314773278375,-74.0131636019568,BK1002,BK1002,2951046,2025 subway entries,0.76984,Dyker Heights,Dyker Heights,FALSE
+subway,base_21_in,76,3345,park,40.8111036389958,-73.9225319328509,BX0101,BX0101,2937784,2025 subway entries,0.7721,Mott Haven-Port Morris,Mott Haven-Port Morris,FALSE
+subway,base_21_in,77,4192,park,40.8840105121933,-73.883292728143,BX2691,BX0703,2921198,2025 subway entries,0.77435,Norwood,Van Cortlandt Park,FALSE
+subway,base_21_in,78,3227,park,40.7949087020259,-73.9474337620585,MN1101,MN1101,2915996,2025 subway entries,0.77659,East Harlem (South),East Harlem (South),FALSE
+subway,base_21_in,79,1767,park,40.6625021703902,-73.8996447426726,BK0503,BK0503,2834580,2025 subway entries,0.77878,East New York-New Lots,East New York-New Lots,FALSE
+subway,base_21_in,80,4496,busy_street,40.832756316725,-73.8613299044454,BX0903,BX0903,2834403,2025 subway entries,0.78096,Castle Hill-Unionport,Castle Hill-Unionport,FALSE
+subway,base_21_in,81,2228,park,40.7287260084194,-73.9581395119893,BK0101,BK0101,2797497,2025 subway entries,0.78311,Greenpoint,Greenpoint,FALSE
+subway,base_21_in,82,3465,park,40.8246281466634,-73.9545228828312,MN0903,MN0903,2784625,2025 subway entries,0.78525,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,FALSE
+subway,base_21_in,83,5807,plaza,40.8293086221803,-73.8743116048064,BX0901,BX0901,2734657,2025 subway entries,0.78736,Soundview-Bruckner-Bronx River,Soundview-Bruckner-Bronx River,FALSE
+subway,base_21_in,84,3380,park,40.8138147711685,-73.9385295254976,MN1002,MN1002,2693604,2025 subway entries,0.78943,Harlem (North),Harlem (North),FALSE
+subway,base_21_in,85,3442,park,40.8191886959103,-73.897630452602,BX0202,BX0202,2673909,2025 subway entries,0.79149,Longwood,Longwood,FALSE
+subway,base_21_in,86,1212,busy_street,40.6071639998755,-74.0025246649104,BK1101,BK1101,2642501,2025 subway entries,0.79352,Bensonhurst,Bensonhurst,FALSE
+subway,base_21_in,87,2950,park,40.7719281842296,-73.917247275947,QN0101,QN0101,2633399,2025 subway entries,0.79555,Astoria (North)-Ditmars-Steinway,Astoria (North)-Ditmars-Steinway,FALSE
+subway,base_21_in,88,2058,park,40.7030442705256,-73.9244324118141,BK0401,BK0401,2613770,2025 subway entries,0.79756,Bushwick (West),Bushwick (West),FALSE
+subway,base_21_in,89,2767,park,40.7570802464015,-73.9332528429085,QN0105,QN0105,2602417,2025 subway entries,0.79957,Queensbridge-Ravenswood-Dutch Kills,Queensbridge-Ravenswood-Dutch Kills,FALSE
+subway,base_21_in,90,3457,park,40.8219119306382,-73.9260755050997,BX0401,BX0401,2599147,2025 subway entries,0.80157,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+subway,base_21_in,91,1715,park,40.6584883814255,-73.9652784702879,BK5591,BK0902,2528547,2025 subway entries,0.80351,Prospect Lefferts Gardens-Wingate,Prospect Park,FALSE
+subway,base_21_in,92,1908,busy_street,40.6841561438418,-73.9776859305546,BK0602,BK0602,2515574,2025 subway entries,0.80545,Park Slope,Park Slope,FALSE
+subway,base_21_in,93,4227,park,40.886725486858,-73.8975264548355,BX2691,BX0802,2411831,2025 subway entries,0.80731,Kingsbridge-Marble Hill,Van Cortlandt Park,FALSE
+subway,base_21_in,94,3143,park,40.7881622079538,-73.966988020097,MN6491,MN0702,2286376,2025 subway entries,0.80907,Upper West Side (Central),Central Park,FALSE
+subway,base_21_in,95,5744,plaza,40.7986300701382,-73.9525053922077,MN1001,MN1001,2284589,2025 subway entries,0.81082,Harlem (South),Harlem (South),FALSE
+subway,base_21_in,96,2765,park,40.7570884002756,-73.9492399551511,QN0105,QN0105,2278718,2025 subway entries,0.81258,Queensbridge-Ravenswood-Dutch Kills,Queensbridge-Ravenswood-Dutch Kills,FALSE
+subway,base_21_in,97,2468,busy_street,40.7449254244924,-73.9368170655035,QN0202,QN0202,2239622,2025 subway entries,0.8143,Sunnyside,Sunnyside,FALSE
+subway,base_21_in,98,3708,busy_street,40.8556617661245,-73.9011322755351,BX0503,BX0503,2161924,2025 subway entries,0.81597,Fordham Heights,Fordham Heights,FALSE
+subway,base_21_in,99,5780,plaza,40.6792785164562,-73.8632620266311,QN1002,QN1002,2149479,2025 subway entries,0.81762,Ozone Park,Ozone Park,FALSE
+subway,base_21_in,100,3393,park,40.8151761002334,-73.9634188264665,MN0901,MN0901,2115489,2025 subway entries,0.81925,Morningside Heights,Morningside Heights,FALSE
+subway,strict_14,1,3000,busy_street,40.77600188924,-73.9563329424437,MN0802,MN0802,17663785,2025 subway entries,0.85831,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+subway,strict_14,2,5772,plaza,40.7173489718443,-73.9523272305288,BK0102,BK0102,14582348,2025 subway entries,0.86953,Williamsburg,Williamsburg,FALSE
+subway,strict_14,3,4464,busy_street,40.7479021742119,-73.9414631236608,QN0201,QN0201,14208738,2025 subway entries,0.88047,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+subway,strict_14,4,2589,busy_street,40.7489229040637,-73.8710964756144,QN0401,QN0401,11461377,2025 subway entries,0.88929,Elmhurst,Elmhurst,FALSE
+subway,strict_14,5,2822,busy_street,40.7611503233114,-73.981213045798,MN0502,MN0502,8768081,2025 subway entries,0.89604,Midtown-Times Square,Midtown-Times Square,FALSE
+subway,strict_14,6,3261,busy_street,40.7976067389515,-73.9403219200684,MN1102,MN1102,5577323,2025 subway entries,0.90033,East Harlem (North),East Harlem (North),FALSE
+subway,strict_14,7,2863,busy_street,40.7638481194045,-73.9652235446915,MN0802,MN0802,5391266,2025 subway entries,0.90448,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+subway,strict_14,8,2145,park,40.7177998424248,-73.8285494255402,QN8191,QN0602,5251436,2025 subway entries,0.90852,Forest Hills,Flushing Meadows-Corona Park,FALSE
+subway,strict_14,9,2170,park,40.7219796388327,-74.0060798353914,MN0102,MN0102,4371789,2025 subway entries,0.91189,Tribeca-Civic Center,Tribeca-Civic Center,FALSE
+subway,strict_14,10,1894,busy_street,40.6800940278118,-73.9475242647205,BK0301,BK0301,4317977,2025 subway entries,0.91521,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),FALSE
+subway,strict_14,11,2505,park,40.7462570894761,-73.9083988711812,QN0203,QN0203,4172109,2025 subway entries,0.91842,Woodside,Woodside,FALSE
+subway,strict_14,12,1813,park,40.667943251081,-73.9634995760989,BK5591,BK0901,3743258,2025 subway entries,0.9213,Crown Heights (South),Prospect Park,FALSE
+subway,strict_14,13,3010,park,40.7773580063405,-73.9741009248037,MN6491,MN0702,3484039,2025 subway entries,0.92398,Upper West Side (Central),Central Park,FALSE
+subway,strict_14,14,3227,park,40.7949087020259,-73.9474337620585,MN1101,MN1101,2915996,2025 subway entries,0.92623,East Harlem (South),East Harlem (South),FALSE
+subway,strict_14,15,2468,busy_street,40.7449254244924,-73.9368170655035,QN0202,QN0202,2239622,2025 subway entries,0.92795,Sunnyside,Sunnyside,FALSE
+subway,strict_14,16,2811,park,40.7597674364971,-73.9119331286145,QN0104,QN0104,1913413,2025 subway entries,0.92943,Astoria (East)-Woodside (North),Astoria (East)-Woodside (North),FALSE
+subway,strict_14,17,1965,busy_street,40.6922625028985,-73.9901055524859,BK0201,BK0201,1873248,2025 subway entries,0.93087,Brooklyn Heights,Brooklyn Heights,FALSE
+subway,strict_14,18,1767,park,40.6625021703902,-73.8996447426726,BK0503,BK0503,1605090,2025 subway entries,0.9321,East New York-New Lots,East New York-New Lots,FALSE
+subway,strict_14,19,4450,busy_street,40.7428294171262,-73.9520968228047,QN0201,QN0201,1577536,2025 subway entries,0.93332,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+subway,strict_14,20,4118,park,40.8786093828795,-73.8850818034525,BX0702,BX0702,1494474,2025 subway entries,0.93447,Bedford Park,Bedford Park,FALSE
+subway,strict_14,21,1797,busy_street,40.6665976765615,-73.9883354231752,BK0602,BK0602,1432173,2025 subway entries,0.93557,Park Slope,Park Slope,FALSE
+subway,strict_14,22,3825,park,40.8624305503872,-73.9206929831947,MN1203,MN1203,1387238,2025 subway entries,0.93664,Inwood,Inwood,FALSE
+subway,strict_14,23,1872,park,40.6746692869623,-73.9120454993635,BK1601,BK1601,1271955,2025 subway entries,0.93762,Ocean Hill,Ocean Hill,FALSE
+subway,strict_14,24,1850,park,40.6719620993503,-73.9049527492079,BK1602,BK1602,1242833,2025 subway entries,0.93857,Brownsville,Brownsville,FALSE
+subway,strict_14,25,1851,park,40.6719528130059,-73.8943082823989,BK0502,BK0502,1235880,2025 subway entries,0.93952,East New York (North),East New York (North),FALSE
+subway,strict_14,26,2057,park,40.7030579020734,-73.9492810954172,BK0103,BK0103,1190734,2025 subway entries,0.94044,South Williamsburg,South Williamsburg,FALSE
+subway,strict_14,27,5780,plaza,40.6792785164562,-73.8632620266311,QN1002,QN1002,1176926,2025 subway entries,0.94135,Ozone Park,Ozone Park,FALSE
+subway,strict_14,28,1961,park,40.6908188633637,-73.8534629759294,QN0905,QN0905,1118208,2025 subway entries,0.94221,Woodhaven,Woodhaven,FALSE
+subway,strict_14,29,1828,park,40.6706504131589,-73.9936568470251,BK0601,BK0601,1065545,2025 subway entries,0.94303,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,FALSE
+subway,strict_14,30,1863,park,40.6733384958366,-73.9439813479368,BK0802,BK0802,1018975,2025 subway entries,0.94381,Crown Heights (North),Crown Heights (North),FALSE
+subway,strict_14,31,2767,park,40.7570802464015,-73.9332528429085,QN0105,QN0105,972281,2025 subway entries,0.94456,Queensbridge-Ravenswood-Dutch Kills,Queensbridge-Ravenswood-Dutch Kills,FALSE
+subway,strict_14,32,2107,park,40.7084202545761,-73.8907003599998,QN0502,QN0502,910963,2025 subway entries,0.94526,Ridgewood,Ridgewood,FALSE
+subway,strict_14,33,4239,park,40.8866533731782,-73.8352332018717,BX1202,BX1202,819651,2025 subway entries,0.94589,Eastchester-Edenwald-Baychester,Eastchester-Edenwald-Baychester,FALSE
+subway,strict_14,34,1873,park,40.6746385795265,-73.8783366601211,BK0502,BK0502,591249,2025 subway entries,0.94635,East New York (North),East New York (North),FALSE
+subway,strict_14,35,4051,park,40.8745018489469,-73.838822285829,BX1202,BX1202,556745,2025 subway entries,0.94678,Eastchester-Edenwald-Baychester,Eastchester-Edenwald-Baychester,FALSE
+subway,strict_14,36,3944,park,40.8691829796356,-73.9189055885127,MN1203,MN1203,537826,2025 subway entries,0.94719,Inwood,Inwood,FALSE
+subway,strict_14,37,1065,park,40.6004067982802,-73.9723973863191,BK1501,BK1501,436382,2025 subway entries,0.94753,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,FALSE
+subway,strict_14,38,3557,park,40.8420842509149,-73.8389008288821,BX1161,BX1002,428827,2025 subway entries,0.94786,Throgs Neck-Schuylerville,Hutchinson Metro Center,FALSE
+subway,strict_14,39,1456,park,40.6260712081025,-73.9706139129399,BK1204,BK1204,347315,2025 subway entries,0.94812,Mapleton-Midwood (West),Mapleton-Midwood (West),FALSE
+subway,strict_14,40,1050,park,40.5988227848354,-73.7668300181818,QN1401,QN1401,306304,2025 subway entries,0.94836,Far Rockaway-Bayswater,Far Rockaway-Bayswater,FALSE
+subway,strict_14,41,1840,park,40.6705383738095,-73.8393151815259,QN1002,QN1002,173199,2025 subway entries,0.94849,Ozone Park,Ozone Park,FALSE
+subway,strict_14,42,859,park,40.5907459957096,-73.7810336387917,QN1402,QN1402,99061,2025 subway entries,0.94857,Rockaway Beach-Arverne-Edgemere,Rockaway Beach-Arverne-Edgemere,FALSE
+subway,strict_21_off,1,2653,busy_street,40.751696125568,-73.9900967248109,MN0502,MN0502,113510922,2025 subway entries,0.21476,Midtown-Times Square,Midtown-Times Square,FALSE
+subway,strict_21_off,2,4528,busy_street,40.7116045860899,-74.0074283549764,MN0101,MN0101,50956894,2025 subway entries,0.25398,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+subway,strict_21_off,3,2373,busy_street,40.7408904399811,-73.9972019887838,MN0401,MN0401,35302291,2025 subway entries,0.28115,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+subway,strict_21_off,4,2822,busy_street,40.7611503233114,-73.981213045798,MN0502,MN0502,33050116,2025 subway entries,0.30659,Midtown-Times Square,Midtown-Times Square,FALSE
+subway,strict_21_off,5,5516,busy_street,40.7293663833296,-73.9961922574639,MN0202,MN0202,31277093,2025 subway entries,0.33067,Greenwich Village,Greenwich Village,FALSE
+subway,strict_21_off,6,5340,busy_street,40.781697191941,-73.9518906210548,MN0802,MN0802,26195929,2025 subway entries,0.35083,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+subway,strict_21_off,7,1925,park,40.6868583184267,-73.9812339772172,BK0202,BK0202,23639674,2025 subway entries,0.36903,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+subway,strict_21_off,8,2155,park,40.7206287484435,-73.9918767157757,MN0302,MN0302,22790835,2025 subway entries,0.38657,Lower East Side,Lower East Side,FALSE
+subway,strict_21_off,9,2863,busy_street,40.7638481194045,-73.9652235446915,MN0802,MN0802,22117273,2025 subway entries,0.40359,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+subway,strict_21_off,10,2429,busy_street,40.7435912090329,-73.9865459566476,MN0501,MN0501,19314940,2025 subway entries,0.41846,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+subway,strict_21_off,11,2070,park,40.7044188727104,-74.0149529480973,MN0191,MN0101,19209574,2025 subway entries,0.43324,Financial District-Battery Park City,The Battery-Governors Island-Ellis Island-Liberty Island,FALSE
+subway,strict_21_off,12,1982,park,40.6963144503055,-73.9865554969484,BK0202,BK0202,17920868,2025 subway entries,0.44704,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+subway,strict_21_off,13,4647,busy_street,40.7198789690867,-74.0014742237075,MN0201,MN0201,16532340,2025 subway entries,0.45976,SoHo-Little Italy-Hudson Square,SoHo-Little Italy-Hudson Square,FALSE
+subway,strict_21_off,14,4486,busy_street,40.7468282315024,-73.8915908878595,QN0401,QN0401,16060789,2025 subway entries,0.47213,Elmhurst,Elmhurst,FALSE
+subway,strict_21_off,15,2792,busy_street,40.7583329634124,-73.8355506248997,QN0707,QN0707,15017678,2025 subway entries,0.48368,Flushing-Willets Point,Flushing-Willets Point,FALSE
+subway,strict_21_off,16,5772,plaza,40.7173489718443,-73.9523272305288,BK0102,BK0102,14582348,2025 subway entries,0.49491,Williamsburg,Williamsburg,FALSE
+subway,strict_21_off,17,2916,busy_street,40.7692494095462,-73.9598907116935,MN0801,MN0801,14219551,2025 subway entries,0.50585,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,FALSE
+subway,strict_21_off,18,4464,busy_street,40.7479021742119,-73.9414631236608,QN0201,QN0201,14208738,2025 subway entries,0.51679,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+subway,strict_21_off,19,2052,busy_street,40.7015509899994,-73.8037430284442,QN1201,QN1201,14202255,2025 subway entries,0.52772,Jamaica,Jamaica,FALSE
+subway,strict_21_off,20,3056,park,40.7814116437447,-73.9812073291229,MN0702,MN0702,13983141,2025 subway entries,0.53848,Upper West Side (Central),Upper West Side (Central),FALSE
+subway,strict_21_off,21,4715,busy_street,40.7905267187683,-73.9747935980245,MN0702,MN0702,13185520,2025 subway entries,0.54863,Upper West Side (Central),Upper West Side (Central),FALSE
+subway,strict_21_off,22,2589,busy_street,40.7489229040637,-73.8710964756144,QN0401,QN0401,11461377,2025 subway entries,0.55746,Elmhurst,Elmhurst,FALSE
+subway,strict_21_off,23,4749,busy_street,40.726307130959,-74.0019730767867,MN0201,MN0201,10983874,2025 subway entries,0.56591,SoHo-Little Italy-Hudson Square,SoHo-Little Italy-Hudson Square,FALSE
+subway,strict_21_off,24,3328,busy_street,40.8097669300053,-73.9474220271308,MN1002,MN1002,9687632,2025 subway entries,0.57337,Harlem (North),Harlem (North),FALSE
+subway,strict_21_off,25,2226,busy_street,40.7287326106119,-73.9847733660605,MN0303,MN0303,9224266,2025 subway entries,0.58047,East Village,East Village,FALSE
+subway,strict_21_off,26,4484,busy_street,40.734721758144,-73.8744617309733,QN0401,QN0401,9056441,2025 subway entries,0.58744,Elmhurst,Elmhurst,FALSE
+subway,strict_21_off,27,4549,busy_street,40.8368670645311,-73.9428237890987,MN1201,MN1201,8806501,2025 subway entries,0.59422,Washington Heights (South),Washington Heights (South),FALSE
+subway,strict_21_off,28,2460,busy_street,40.7449427209189,-73.9972018185959,MN0401,MN0401,8427272,2025 subway entries,0.6007,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+subway,strict_21_off,29,3466,busy_street,40.8246242976567,-73.9456321381,MN0903,MN0903,7458113,2025 subway entries,0.60644,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,FALSE
+subway,strict_21_off,30,3852,park,40.863763067962,-73.8975618377762,BX0701,BX0701,7241326,2025 subway entries,0.61202,University Heights (North)-Fordham,University Heights (North)-Fordham,FALSE
+subway,strict_21_off,31,3623,busy_street,40.8502838244722,-73.9367169872585,MN1202,MN1202,7034997,2025 subway entries,0.61743,Washington Heights (North),Washington Heights (North),FALSE
+subway,strict_21_off,32,2705,busy_street,40.7543980655359,-74.0007539705455,MN0401,MN0401,6753333,2025 subway entries,0.62263,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+subway,strict_21_off,33,4620,busy_street,40.6999581408724,-73.9076383352567,QN0502,QN0502,6348452,2025 subway entries,0.62752,Ridgewood,Ridgewood,FALSE
+subway,strict_21_off,34,3470,park,40.8246122633098,-73.9242943556638,BX0401,BX0401,6323559,2025 subway entries,0.63238,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+subway,strict_21_off,35,3060,park,40.7814089439262,-73.9687683634961,MN6491,MN0702,6187760,2025 subway entries,0.63715,Upper West Side (Central),Central Park,FALSE
+subway,strict_21_off,36,5781,plaza,40.6805026169928,-73.9461607933123,BK0301,BK0301,5963572,2025 subway entries,0.64174,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),FALSE
+subway,strict_21_off,37,2663,park,40.7515985934848,-73.8497768718987,QN8191,QN0402,5958200,2025 subway entries,0.64632,Corona,Flushing Meadows-Corona Park,FALSE
+subway,strict_21_off,38,2377,park,40.7408644744448,-73.9226136019012,QN0202,QN0202,5935513,2025 subway entries,0.65089,Sunnyside,Sunnyside,FALSE
+subway,strict_21_off,39,3297,park,40.8043613866848,-73.9420934723071,MN1102,MN1102,5914319,2025 subway entries,0.65544,East Harlem (North),East Harlem (North),FALSE
+subway,strict_21_off,40,4450,busy_street,40.7428294171262,-73.9520968228047,QN0201,QN0201,5886234,2025 subway entries,0.65997,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+subway,strict_21_off,41,2005,park,40.699016347253,-73.9901045501336,BK0202,BK0202,5595355,2025 subway entries,0.66428,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+subway,strict_21_off,42,3261,busy_street,40.7976067389515,-73.9403219200684,MN1102,MN1102,5577323,2025 subway entries,0.66857,East Harlem (North),East Harlem (North),FALSE
+subway,strict_21_off,43,2590,park,40.7489126231824,-73.862215843678,QN0402,QN0402,5569769,2025 subway entries,0.67286,Corona,Corona,FALSE
+subway,strict_21_off,44,2505,park,40.7462570894761,-73.9083988711812,QN0203,QN0203,5426306,2025 subway entries,0.67704,Woodside,Woodside,FALSE
+subway,strict_21_off,45,1805,park,40.6665757499952,-73.9280216008615,BK0891,BK0901,5424987,2025 subway entries,0.68121,Crown Heights (South),Lincoln Terrace Park,FALSE
+subway,strict_21_off,46,4732,busy_street,40.6737413030972,-73.9695829431963,BK0602,BK0602,5301789,2025 subway entries,0.68529,Park Slope,Park Slope,FALSE
+subway,strict_21_off,47,2145,park,40.7177998424248,-73.8285494255402,QN8191,QN0602,5251436,2025 subway entries,0.68934,Forest Hills,Flushing Meadows-Corona Park,FALSE
+subway,strict_21_off,48,1859,park,40.673351127739,-73.9847860099127,BK0602,BK0602,5168156,2025 subway entries,0.69331,Park Slope,Park Slope,FALSE
+subway,strict_21_off,49,3258,park,40.7976139110538,-73.9563187657334,MN6491,MN1001,4771177,2025 subway entries,0.69699,Harlem (South),Central Park,FALSE
+subway,strict_21_off,50,1672,park,40.6544360558908,-73.9652805793462,BK5591,BK1401,4581730,2025 subway entries,0.70051,Flatbush,Prospect Park,FALSE
+subway,strict_21_off,51,1146,park,40.6044548674445,-73.95821742955,BK1501,BK1501,4503120,2025 subway entries,0.70398,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,FALSE
+subway,strict_21_off,52,1755,park,40.6625437830523,-73.9776931602506,BK5591,BK0602,4481029,2025 subway entries,0.70743,Park Slope,Prospect Park,FALSE
+subway,strict_21_off,53,476,park,40.5733925811065,-73.979494394309,BK1302,BK1302,4437882,2025 subway entries,0.71084,Coney Island-Sea Gate,Coney Island-Sea Gate,FALSE
+subway,strict_21_off,54,4753,busy_street,40.8160835200761,-73.9177176780063,BX0102,BX0102,4326279,2025 subway entries,0.71417,Melrose,Melrose,FALSE
+subway,strict_21_off,55,1518,busy_street,40.6328169026273,-73.9475614400077,BK1401,BK1401,4169321,2025 subway entries,0.71738,Flatbush,Flatbush,FALSE
+subway,strict_21_off,56,5735,plaza,40.8208991381832,-73.8907894584669,BX0202,BX0202,3939151,2025 subway entries,0.72042,Longwood,Longwood,FALSE
+subway,strict_21_off,57,2086,park,40.7057523034649,-73.9350792155216,BK0104,BK0104,3917557,2025 subway entries,0.72343,East Williamsburg,East Williamsburg,FALSE
+subway,strict_21_off,58,2115,park,40.7111735028053,-73.9936529907817,MN0301,MN0301,3851534,2025 subway entries,0.7264,Chinatown-Two Bridges,Chinatown-Two Bridges,FALSE
+subway,strict_21_off,59,1813,park,40.667943251081,-73.9634995760989,BK5591,BK0901,3743258,2025 subway entries,0.72928,Crown Heights (South),Prospect Park,FALSE
+subway,strict_21_off,60,3507,park,40.8340674557403,-73.9242835968176,BX0491,BX0402,3686433,2025 subway entries,0.73211,Highbridge,Yankee Stadium-Macombs Dam Park,FALSE
+subway,strict_21_off,61,1969,park,40.692255323419,-73.9581624092115,BK0301,BK0301,3585044,2025 subway entries,0.73487,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),FALSE
+subway,strict_21_off,62,1896,park,40.6800834714474,-73.9280070215296,BK0302,BK0302,3565894,2025 subway entries,0.73762,Bedford-Stuyvesant (East),Bedford-Stuyvesant (East),FALSE
+subway,strict_21_off,63,3302,park,40.8057224443223,-73.9687569551757,MN0901,MN0901,3442824,2025 subway entries,0.74027,Morningside Heights,Morningside Heights,FALSE
+subway,strict_21_off,64,3731,park,40.8570300024959,-73.9242574554553,MN1291,MN1202,3422465,2025 subway entries,0.7429,Washington Heights (North),Highbridge Park,FALSE
+subway,strict_21_off,65,3942,park,40.8691866075502,-73.9242436086015,MN1292,MN1203,3417854,2025 subway entries,0.74553,Inwood,Inwood Hill Park,FALSE
+subway,strict_21_off,66,5811,plaza,40.6841823635824,-73.9683411317398,BK0204,BK0204,3324443,2025 subway entries,0.74809,Clinton Hill,Clinton Hill,FALSE
+subway,strict_21_off,67,2257,busy_street,40.731435140359,-74.000753710725,MN0202,MN0202,3310724,2025 subway entries,0.75064,Greenwich Village,Greenwich Village,FALSE
+subway,strict_21_off,68,4480,busy_street,40.7415690618691,-73.880640765414,QN0401,QN0401,3256579,2025 subway entries,0.75315,Elmhurst,Elmhurst,FALSE
+subway,strict_21_off,69,515,park,40.5747399639263,-73.9653220054863,BK1302,BK1302,3242354,2025 subway entries,0.75564,Coney Island-Sea Gate,Coney Island-Sea Gate,FALSE
+subway,strict_21_off,70,3664,park,40.8529689478804,-73.9118097259773,BX0501,BX0501,3189989,2025 subway entries,0.7581,University Heights (South)-Morris Heights,University Heights (South)-Morris Heights,FALSE
+subway,strict_21_off,71,3549,park,40.840781526478,-73.8780328179911,BX0601,BX0601,3128901,2025 subway entries,0.76051,West Farms,West Farms,FALSE
+subway,strict_21_off,72,5788,plaza,40.6405663526277,-73.9790936698526,BK1203,BK1203,3104224,2025 subway entries,0.7629,Kensington,Kensington,FALSE
+subway,strict_21_off,73,4093,park,40.8772793702512,-73.9082183641601,BX0802,BX0802,3075104,2025 subway entries,0.76526,Kingsbridge-Marble Hill,Kingsbridge-Marble Hill,FALSE
+subway,strict_21_off,74,2057,park,40.7030579020734,-73.9492810954172,BK0103,BK0103,2995714,2025 subway entries,0.76757,South Williamsburg,South Williamsburg,FALSE
+subway,strict_21_off,75,1510,park,40.6314773278375,-74.0131636019568,BK1002,BK1002,2951046,2025 subway entries,0.76984,Dyker Heights,Dyker Heights,FALSE
+subway,strict_21_off,76,3345,park,40.8111036389958,-73.9225319328509,BX0101,BX0101,2937784,2025 subway entries,0.7721,Mott Haven-Port Morris,Mott Haven-Port Morris,FALSE
+subway,strict_21_off,77,4192,park,40.8840105121933,-73.883292728143,BX2691,BX0703,2921198,2025 subway entries,0.77435,Norwood,Van Cortlandt Park,FALSE
+subway,strict_21_off,78,3227,park,40.7949087020259,-73.9474337620585,MN1101,MN1101,2915996,2025 subway entries,0.77659,East Harlem (South),East Harlem (South),FALSE
+subway,strict_21_off,79,1767,park,40.6625021703902,-73.8996447426726,BK0503,BK0503,2834580,2025 subway entries,0.77878,East New York-New Lots,East New York-New Lots,FALSE
+subway,strict_21_off,80,4496,busy_street,40.832756316725,-73.8613299044454,BX0903,BX0903,2834403,2025 subway entries,0.78096,Castle Hill-Unionport,Castle Hill-Unionport,FALSE
+subway,strict_21_off,81,2228,park,40.7287260084194,-73.9581395119893,BK0101,BK0101,2797497,2025 subway entries,0.78311,Greenpoint,Greenpoint,FALSE
+subway,strict_21_off,82,3465,park,40.8246281466634,-73.9545228828312,MN0903,MN0903,2784625,2025 subway entries,0.78525,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,FALSE
+subway,strict_21_off,83,5807,plaza,40.8293086221803,-73.8743116048064,BX0901,BX0901,2734657,2025 subway entries,0.78736,Soundview-Bruckner-Bronx River,Soundview-Bruckner-Bronx River,FALSE
+subway,strict_21_off,84,3380,park,40.8138147711685,-73.9385295254976,MN1002,MN1002,2693604,2025 subway entries,0.78943,Harlem (North),Harlem (North),FALSE
+subway,strict_21_off,85,3442,park,40.8191886959103,-73.897630452602,BX0202,BX0202,2673909,2025 subway entries,0.79149,Longwood,Longwood,FALSE
+subway,strict_21_off,86,1212,busy_street,40.6071639998755,-74.0025246649104,BK1101,BK1101,2642501,2025 subway entries,0.79352,Bensonhurst,Bensonhurst,FALSE
+subway,strict_21_off,87,2950,park,40.7719281842296,-73.917247275947,QN0101,QN0101,2633399,2025 subway entries,0.79555,Astoria (North)-Ditmars-Steinway,Astoria (North)-Ditmars-Steinway,FALSE
+subway,strict_21_off,88,2058,park,40.7030442705256,-73.9244324118141,BK0401,BK0401,2613770,2025 subway entries,0.79756,Bushwick (West),Bushwick (West),FALSE
+subway,strict_21_off,89,2767,park,40.7570802464015,-73.9332528429085,QN0105,QN0105,2602417,2025 subway entries,0.79957,Queensbridge-Ravenswood-Dutch Kills,Queensbridge-Ravenswood-Dutch Kills,FALSE
+subway,strict_21_off,90,3457,park,40.8219119306382,-73.9260755050997,BX0401,BX0401,2599147,2025 subway entries,0.80157,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+subway,strict_21_off,91,1715,park,40.6584883814255,-73.9652784702879,BK5591,BK0902,2528547,2025 subway entries,0.80351,Prospect Lefferts Gardens-Wingate,Prospect Park,FALSE
+subway,strict_21_off,92,1908,busy_street,40.6841561438418,-73.9776859305546,BK0602,BK0602,2515574,2025 subway entries,0.80545,Park Slope,Park Slope,FALSE
+subway,strict_21_off,93,4227,park,40.886725486858,-73.8975264548355,BX2691,BX0802,2411831,2025 subway entries,0.80731,Kingsbridge-Marble Hill,Van Cortlandt Park,FALSE
+subway,strict_21_off,94,3143,park,40.7881622079538,-73.966988020097,MN6491,MN0702,2286376,2025 subway entries,0.80907,Upper West Side (Central),Central Park,FALSE
+subway,strict_21_off,95,5744,plaza,40.7986300701382,-73.9525053922077,MN1001,MN1001,2284589,2025 subway entries,0.81082,Harlem (South),Harlem (South),FALSE
+subway,strict_21_off,96,2765,park,40.7570884002756,-73.9492399551511,QN0105,QN0105,2278718,2025 subway entries,0.81258,Queensbridge-Ravenswood-Dutch Kills,Queensbridge-Ravenswood-Dutch Kills,FALSE
+subway,strict_21_off,97,2468,busy_street,40.7449254244924,-73.9368170655035,QN0202,QN0202,2239622,2025 subway entries,0.8143,Sunnyside,Sunnyside,FALSE
+subway,strict_21_off,98,3708,busy_street,40.8556617661245,-73.9011322755351,BX0503,BX0503,2161924,2025 subway entries,0.81597,Fordham Heights,Fordham Heights,FALSE
+subway,strict_21_off,99,5780,plaza,40.6792785164562,-73.8632620266311,QN1002,QN1002,2149479,2025 subway entries,0.81762,Ozone Park,Ozone Park,FALSE
+subway,strict_21_off,100,3393,park,40.8151761002334,-73.9634188264665,MN0901,MN0901,2115489,2025 subway entries,0.81925,Morningside Heights,Morningside Heights,FALSE
+subway,strict_21_in,1,2653,busy_street,40.751696125568,-73.9900967248109,MN0502,MN0502,113510922,2025 subway entries,0.21476,Midtown-Times Square,Midtown-Times Square,FALSE
+subway,strict_21_in,2,4528,busy_street,40.7116045860899,-74.0074283549764,MN0101,MN0101,50956894,2025 subway entries,0.25398,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+subway,strict_21_in,3,2373,busy_street,40.7408904399811,-73.9972019887838,MN0401,MN0401,35302291,2025 subway entries,0.28115,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+subway,strict_21_in,4,2822,busy_street,40.7611503233114,-73.981213045798,MN0502,MN0502,33050116,2025 subway entries,0.30659,Midtown-Times Square,Midtown-Times Square,FALSE
+subway,strict_21_in,5,5516,busy_street,40.7293663833296,-73.9961922574639,MN0202,MN0202,31277093,2025 subway entries,0.33067,Greenwich Village,Greenwich Village,FALSE
+subway,strict_21_in,6,5340,busy_street,40.781697191941,-73.9518906210548,MN0802,MN0802,26195929,2025 subway entries,0.35083,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+subway,strict_21_in,7,1925,park,40.6868583184267,-73.9812339772172,BK0202,BK0202,23639674,2025 subway entries,0.36903,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+subway,strict_21_in,8,2155,park,40.7206287484435,-73.9918767157757,MN0302,MN0302,22790835,2025 subway entries,0.38657,Lower East Side,Lower East Side,FALSE
+subway,strict_21_in,9,2863,busy_street,40.7638481194045,-73.9652235446915,MN0802,MN0802,22117273,2025 subway entries,0.40359,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+subway,strict_21_in,10,2429,busy_street,40.7435912090329,-73.9865459566476,MN0501,MN0501,19314940,2025 subway entries,0.41846,Midtown South-Flatiron-Union Square,Midtown South-Flatiron-Union Square,FALSE
+subway,strict_21_in,11,2070,park,40.7044188727104,-74.0149529480973,MN0191,MN0101,19209574,2025 subway entries,0.43324,Financial District-Battery Park City,The Battery-Governors Island-Ellis Island-Liberty Island,FALSE
+subway,strict_21_in,12,1982,park,40.6963144503055,-73.9865554969484,BK0202,BK0202,17920868,2025 subway entries,0.44704,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+subway,strict_21_in,13,4647,busy_street,40.7198789690867,-74.0014742237075,MN0201,MN0201,16532340,2025 subway entries,0.45976,SoHo-Little Italy-Hudson Square,SoHo-Little Italy-Hudson Square,FALSE
+subway,strict_21_in,14,4486,busy_street,40.7468282315024,-73.8915908878595,QN0401,QN0401,16060789,2025 subway entries,0.47213,Elmhurst,Elmhurst,FALSE
+subway,strict_21_in,15,2792,busy_street,40.7583329634124,-73.8355506248997,QN0707,QN0707,15017678,2025 subway entries,0.48368,Flushing-Willets Point,Flushing-Willets Point,FALSE
+subway,strict_21_in,16,5772,plaza,40.7173489718443,-73.9523272305288,BK0102,BK0102,14582348,2025 subway entries,0.49491,Williamsburg,Williamsburg,FALSE
+subway,strict_21_in,17,2916,busy_street,40.7692494095462,-73.9598907116935,MN0801,MN0801,14219551,2025 subway entries,0.50585,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,FALSE
+subway,strict_21_in,18,4464,busy_street,40.7479021742119,-73.9414631236608,QN0201,QN0201,14208738,2025 subway entries,0.51679,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+subway,strict_21_in,19,2052,busy_street,40.7015509899994,-73.8037430284442,QN1201,QN1201,14202255,2025 subway entries,0.52772,Jamaica,Jamaica,FALSE
+subway,strict_21_in,20,3056,park,40.7814116437447,-73.9812073291229,MN0702,MN0702,13983141,2025 subway entries,0.53848,Upper West Side (Central),Upper West Side (Central),FALSE
+subway,strict_21_in,21,4715,busy_street,40.7905267187683,-73.9747935980245,MN0702,MN0702,13185520,2025 subway entries,0.54863,Upper West Side (Central),Upper West Side (Central),FALSE
+subway,strict_21_in,22,2589,busy_street,40.7489229040637,-73.8710964756144,QN0401,QN0401,11461377,2025 subway entries,0.55746,Elmhurst,Elmhurst,FALSE
+subway,strict_21_in,23,4749,busy_street,40.726307130959,-74.0019730767867,MN0201,MN0201,10983874,2025 subway entries,0.56591,SoHo-Little Italy-Hudson Square,SoHo-Little Italy-Hudson Square,FALSE
+subway,strict_21_in,24,3328,busy_street,40.8097669300053,-73.9474220271308,MN1002,MN1002,9687632,2025 subway entries,0.57337,Harlem (North),Harlem (North),FALSE
+subway,strict_21_in,25,2226,busy_street,40.7287326106119,-73.9847733660605,MN0303,MN0303,9224266,2025 subway entries,0.58047,East Village,East Village,FALSE
+subway,strict_21_in,26,4484,busy_street,40.734721758144,-73.8744617309733,QN0401,QN0401,9056441,2025 subway entries,0.58744,Elmhurst,Elmhurst,FALSE
+subway,strict_21_in,27,4549,busy_street,40.8368670645311,-73.9428237890987,MN1201,MN1201,8806501,2025 subway entries,0.59422,Washington Heights (South),Washington Heights (South),FALSE
+subway,strict_21_in,28,2460,busy_street,40.7449427209189,-73.9972018185959,MN0401,MN0401,8427272,2025 subway entries,0.6007,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+subway,strict_21_in,29,3466,busy_street,40.8246242976567,-73.9456321381,MN0903,MN0903,7458113,2025 subway entries,0.60644,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,FALSE
+subway,strict_21_in,30,3852,park,40.863763067962,-73.8975618377762,BX0701,BX0701,7241326,2025 subway entries,0.61202,University Heights (North)-Fordham,University Heights (North)-Fordham,FALSE
+subway,strict_21_in,31,3623,busy_street,40.8502838244722,-73.9367169872585,MN1202,MN1202,7034997,2025 subway entries,0.61743,Washington Heights (North),Washington Heights (North),FALSE
+subway,strict_21_in,32,2705,busy_street,40.7543980655359,-74.0007539705455,MN0401,MN0401,6753333,2025 subway entries,0.62263,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+subway,strict_21_in,33,4620,busy_street,40.6999581408724,-73.9076383352567,QN0502,QN0502,6348452,2025 subway entries,0.62752,Ridgewood,Ridgewood,FALSE
+subway,strict_21_in,34,3470,park,40.8246122633098,-73.9242943556638,BX0401,BX0401,6323559,2025 subway entries,0.63238,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+subway,strict_21_in,35,3060,park,40.7814089439262,-73.9687683634961,MN6491,MN0702,6187760,2025 subway entries,0.63715,Upper West Side (Central),Central Park,FALSE
+subway,strict_21_in,36,5781,plaza,40.6805026169928,-73.9461607933123,BK0301,BK0301,5963572,2025 subway entries,0.64174,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),FALSE
+subway,strict_21_in,37,2663,park,40.7515985934848,-73.8497768718987,QN8191,QN0402,5958200,2025 subway entries,0.64632,Corona,Flushing Meadows-Corona Park,FALSE
+subway,strict_21_in,38,2377,park,40.7408644744448,-73.9226136019012,QN0202,QN0202,5935513,2025 subway entries,0.65089,Sunnyside,Sunnyside,FALSE
+subway,strict_21_in,39,3297,park,40.8043613866848,-73.9420934723071,MN1102,MN1102,5914319,2025 subway entries,0.65544,East Harlem (North),East Harlem (North),FALSE
+subway,strict_21_in,40,4450,busy_street,40.7428294171262,-73.9520968228047,QN0201,QN0201,5886234,2025 subway entries,0.65997,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+subway,strict_21_in,41,2005,park,40.699016347253,-73.9901045501336,BK0202,BK0202,5595355,2025 subway entries,0.66428,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+subway,strict_21_in,42,3261,busy_street,40.7976067389515,-73.9403219200684,MN1102,MN1102,5577323,2025 subway entries,0.66857,East Harlem (North),East Harlem (North),FALSE
+subway,strict_21_in,43,2590,park,40.7489126231824,-73.862215843678,QN0402,QN0402,5569769,2025 subway entries,0.67286,Corona,Corona,FALSE
+subway,strict_21_in,44,2505,park,40.7462570894761,-73.9083988711812,QN0203,QN0203,5426306,2025 subway entries,0.67704,Woodside,Woodside,FALSE
+subway,strict_21_in,45,1805,park,40.6665757499952,-73.9280216008615,BK0891,BK0901,5424987,2025 subway entries,0.68121,Crown Heights (South),Lincoln Terrace Park,FALSE
+subway,strict_21_in,46,4732,busy_street,40.6737413030972,-73.9695829431963,BK0602,BK0602,5301789,2025 subway entries,0.68529,Park Slope,Park Slope,FALSE
+subway,strict_21_in,47,2145,park,40.7177998424248,-73.8285494255402,QN8191,QN0602,5251436,2025 subway entries,0.68934,Forest Hills,Flushing Meadows-Corona Park,FALSE
+subway,strict_21_in,48,1859,park,40.673351127739,-73.9847860099127,BK0602,BK0602,5168156,2025 subway entries,0.69331,Park Slope,Park Slope,FALSE
+subway,strict_21_in,49,3258,park,40.7976139110538,-73.9563187657334,MN6491,MN1001,4771177,2025 subway entries,0.69699,Harlem (South),Central Park,FALSE
+subway,strict_21_in,50,1672,park,40.6544360558908,-73.9652805793462,BK5591,BK1401,4581730,2025 subway entries,0.70051,Flatbush,Prospect Park,FALSE
+subway,strict_21_in,51,1146,park,40.6044548674445,-73.95821742955,BK1501,BK1501,4503120,2025 subway entries,0.70398,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,FALSE
+subway,strict_21_in,52,1755,park,40.6625437830523,-73.9776931602506,BK5591,BK0602,4481029,2025 subway entries,0.70743,Park Slope,Prospect Park,FALSE
+subway,strict_21_in,53,476,park,40.5733925811065,-73.979494394309,BK1302,BK1302,4437882,2025 subway entries,0.71084,Coney Island-Sea Gate,Coney Island-Sea Gate,FALSE
+subway,strict_21_in,54,4753,busy_street,40.8160835200761,-73.9177176780063,BX0102,BX0102,4326279,2025 subway entries,0.71417,Melrose,Melrose,FALSE
+subway,strict_21_in,55,1518,busy_street,40.6328169026273,-73.9475614400077,BK1401,BK1401,4169321,2025 subway entries,0.71738,Flatbush,Flatbush,FALSE
+subway,strict_21_in,56,5735,plaza,40.8208991381832,-73.8907894584669,BX0202,BX0202,3939151,2025 subway entries,0.72042,Longwood,Longwood,FALSE
+subway,strict_21_in,57,2086,park,40.7057523034649,-73.9350792155216,BK0104,BK0104,3917557,2025 subway entries,0.72343,East Williamsburg,East Williamsburg,FALSE
+subway,strict_21_in,58,2115,park,40.7111735028053,-73.9936529907817,MN0301,MN0301,3851534,2025 subway entries,0.7264,Chinatown-Two Bridges,Chinatown-Two Bridges,FALSE
+subway,strict_21_in,59,1813,park,40.667943251081,-73.9634995760989,BK5591,BK0901,3743258,2025 subway entries,0.72928,Crown Heights (South),Prospect Park,FALSE
+subway,strict_21_in,60,3507,park,40.8340674557403,-73.9242835968176,BX0491,BX0402,3686433,2025 subway entries,0.73211,Highbridge,Yankee Stadium-Macombs Dam Park,FALSE
+subway,strict_21_in,61,1969,park,40.692255323419,-73.9581624092115,BK0301,BK0301,3585044,2025 subway entries,0.73487,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),FALSE
+subway,strict_21_in,62,1896,park,40.6800834714474,-73.9280070215296,BK0302,BK0302,3565894,2025 subway entries,0.73762,Bedford-Stuyvesant (East),Bedford-Stuyvesant (East),FALSE
+subway,strict_21_in,63,3302,park,40.8057224443223,-73.9687569551757,MN0901,MN0901,3442824,2025 subway entries,0.74027,Morningside Heights,Morningside Heights,FALSE
+subway,strict_21_in,64,3731,park,40.8570300024959,-73.9242574554553,MN1291,MN1202,3422465,2025 subway entries,0.7429,Washington Heights (North),Highbridge Park,FALSE
+subway,strict_21_in,65,3942,park,40.8691866075502,-73.9242436086015,MN1292,MN1203,3417854,2025 subway entries,0.74553,Inwood,Inwood Hill Park,FALSE
+subway,strict_21_in,66,5811,plaza,40.6841823635824,-73.9683411317398,BK0204,BK0204,3324443,2025 subway entries,0.74809,Clinton Hill,Clinton Hill,FALSE
+subway,strict_21_in,67,2257,busy_street,40.731435140359,-74.000753710725,MN0202,MN0202,3310724,2025 subway entries,0.75064,Greenwich Village,Greenwich Village,FALSE
+subway,strict_21_in,68,4480,busy_street,40.7415690618691,-73.880640765414,QN0401,QN0401,3256579,2025 subway entries,0.75315,Elmhurst,Elmhurst,FALSE
+subway,strict_21_in,69,515,park,40.5747399639263,-73.9653220054863,BK1302,BK1302,3242354,2025 subway entries,0.75564,Coney Island-Sea Gate,Coney Island-Sea Gate,FALSE
+subway,strict_21_in,70,3664,park,40.8529689478804,-73.9118097259773,BX0501,BX0501,3189989,2025 subway entries,0.7581,University Heights (South)-Morris Heights,University Heights (South)-Morris Heights,FALSE
+subway,strict_21_in,71,3549,park,40.840781526478,-73.8780328179911,BX0601,BX0601,3128901,2025 subway entries,0.76051,West Farms,West Farms,FALSE
+subway,strict_21_in,72,5788,plaza,40.6405663526277,-73.9790936698526,BK1203,BK1203,3104224,2025 subway entries,0.7629,Kensington,Kensington,FALSE
+subway,strict_21_in,73,4093,park,40.8772793702512,-73.9082183641601,BX0802,BX0802,3075104,2025 subway entries,0.76526,Kingsbridge-Marble Hill,Kingsbridge-Marble Hill,FALSE
+subway,strict_21_in,74,2057,park,40.7030579020734,-73.9492810954172,BK0103,BK0103,2995714,2025 subway entries,0.76757,South Williamsburg,South Williamsburg,FALSE
+subway,strict_21_in,75,1510,park,40.6314773278375,-74.0131636019568,BK1002,BK1002,2951046,2025 subway entries,0.76984,Dyker Heights,Dyker Heights,FALSE
+subway,strict_21_in,76,3345,park,40.8111036389958,-73.9225319328509,BX0101,BX0101,2937784,2025 subway entries,0.7721,Mott Haven-Port Morris,Mott Haven-Port Morris,FALSE
+subway,strict_21_in,77,4192,park,40.8840105121933,-73.883292728143,BX2691,BX0703,2921198,2025 subway entries,0.77435,Norwood,Van Cortlandt Park,FALSE
+subway,strict_21_in,78,3227,park,40.7949087020259,-73.9474337620585,MN1101,MN1101,2915996,2025 subway entries,0.77659,East Harlem (South),East Harlem (South),FALSE
+subway,strict_21_in,79,1767,park,40.6625021703902,-73.8996447426726,BK0503,BK0503,2834580,2025 subway entries,0.77878,East New York-New Lots,East New York-New Lots,FALSE
+subway,strict_21_in,80,4496,busy_street,40.832756316725,-73.8613299044454,BX0903,BX0903,2834403,2025 subway entries,0.78096,Castle Hill-Unionport,Castle Hill-Unionport,FALSE
+subway,strict_21_in,81,2228,park,40.7287260084194,-73.9581395119893,BK0101,BK0101,2797497,2025 subway entries,0.78311,Greenpoint,Greenpoint,FALSE
+subway,strict_21_in,82,3465,park,40.8246281466634,-73.9545228828312,MN0903,MN0903,2784625,2025 subway entries,0.78525,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,FALSE
+subway,strict_21_in,83,5807,plaza,40.8293086221803,-73.8743116048064,BX0901,BX0901,2734657,2025 subway entries,0.78736,Soundview-Bruckner-Bronx River,Soundview-Bruckner-Bronx River,FALSE
+subway,strict_21_in,84,3380,park,40.8138147711685,-73.9385295254976,MN1002,MN1002,2693604,2025 subway entries,0.78943,Harlem (North),Harlem (North),FALSE
+subway,strict_21_in,85,3442,park,40.8191886959103,-73.897630452602,BX0202,BX0202,2673909,2025 subway entries,0.79149,Longwood,Longwood,FALSE
+subway,strict_21_in,86,1212,busy_street,40.6071639998755,-74.0025246649104,BK1101,BK1101,2642501,2025 subway entries,0.79352,Bensonhurst,Bensonhurst,FALSE
+subway,strict_21_in,87,2950,park,40.7719281842296,-73.917247275947,QN0101,QN0101,2633399,2025 subway entries,0.79555,Astoria (North)-Ditmars-Steinway,Astoria (North)-Ditmars-Steinway,FALSE
+subway,strict_21_in,88,2058,park,40.7030442705256,-73.9244324118141,BK0401,BK0401,2613770,2025 subway entries,0.79756,Bushwick (West),Bushwick (West),FALSE
+subway,strict_21_in,89,2767,park,40.7570802464015,-73.9332528429085,QN0105,QN0105,2602417,2025 subway entries,0.79957,Queensbridge-Ravenswood-Dutch Kills,Queensbridge-Ravenswood-Dutch Kills,FALSE
+subway,strict_21_in,90,3457,park,40.8219119306382,-73.9260755050997,BX0401,BX0401,2599147,2025 subway entries,0.80157,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+subway,strict_21_in,91,1715,park,40.6584883814255,-73.9652784702879,BK5591,BK0902,2528547,2025 subway entries,0.80351,Prospect Lefferts Gardens-Wingate,Prospect Park,FALSE
+subway,strict_21_in,92,1908,busy_street,40.6841561438418,-73.9776859305546,BK0602,BK0602,2515574,2025 subway entries,0.80545,Park Slope,Park Slope,FALSE
+subway,strict_21_in,93,4227,park,40.886725486858,-73.8975264548355,BX2691,BX0802,2411831,2025 subway entries,0.80731,Kingsbridge-Marble Hill,Van Cortlandt Park,FALSE
+subway,strict_21_in,94,3143,park,40.7881622079538,-73.966988020097,MN6491,MN0702,2286376,2025 subway entries,0.80907,Upper West Side (Central),Central Park,FALSE
+subway,strict_21_in,95,5744,plaza,40.7986300701382,-73.9525053922077,MN1001,MN1001,2284589,2025 subway entries,0.81082,Harlem (South),Harlem (South),FALSE
+subway,strict_21_in,96,2765,park,40.7570884002756,-73.9492399551511,QN0105,QN0105,2278718,2025 subway entries,0.81258,Queensbridge-Ravenswood-Dutch Kills,Queensbridge-Ravenswood-Dutch Kills,FALSE
+subway,strict_21_in,97,2468,busy_street,40.7449254244924,-73.9368170655035,QN0202,QN0202,2239622,2025 subway entries,0.8143,Sunnyside,Sunnyside,FALSE
+subway,strict_21_in,98,3708,busy_street,40.8556617661245,-73.9011322755351,BX0503,BX0503,2161924,2025 subway entries,0.81597,Fordham Heights,Fordham Heights,FALSE
+subway,strict_21_in,99,5780,plaza,40.6792785164562,-73.8632620266311,QN1002,QN1002,2149479,2025 subway entries,0.81762,Ozone Park,Ozone Park,FALSE
+subway,strict_21_in,100,3393,park,40.8151761002334,-73.9634188264665,MN0901,MN0901,2115489,2025 subway entries,0.81925,Morningside Heights,Morningside Heights,FALSE

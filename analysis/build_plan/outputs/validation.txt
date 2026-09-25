@@ -1,0 +1,73 @@
+VALIDATION -- complaint route used ONLY as a check, never to choose sites
+Consensus score = number of the 8 primary runs (4 demand objectives x {Wed 2pm, Wed 9pm off-season}, base supply,
+500 m) in which the NTA (snapped to a residential 2020 NTA) receives >=1 of that run's first 100 greedy sites.
+Tie-break: total first-100 sites across the 8 runs. (9pm runs are identical under in-season 20:00 and strict supply.)
+
+NTAs receiving any first-100 site in >=1 primary run: 150 of 197 residential NTAs
+NTAs chosen in >=4 of 8 runs: 47; in all 8 runs: 4
+
+Top-20 consensus NTAs:
+ rank                              ntaname  boroname runs_primary sites_primary
+    1        Upper East Side-Carnegie Hill Manhattan            8            19
+    2                           Park Slope  Brooklyn            8            18
+    3            Upper West Side (Central) Manhattan            8            18
+    4                             Elmhurst    Queens            8            18
+    5                 Chelsea-Hudson Yards Manhattan            7            18
+    6       Long Island City-Hunters Point    Queens            7            15
+    7                  East Harlem (North) Manhattan            7            12
+    8               Flushing-Willets Point    Queens            7            10
+    9                               Inwood Manhattan            7             8
+   10                            Ridgewood    Queens            7             7
+   11  Downtown Brooklyn-DUMBO-Boerum Hill  Brooklyn            6            13
+   12                         Williamsburg  Brooklyn            6             8
+   13           Washington Heights (South) Manhattan            6             8
+   14            Upper East Side-Yorkville Manhattan            6             6
+   15 Financial District-Battery Park City Manhattan            5            12
+   16                 Midtown-Times Square Manhattan            5            10
+   17           Gravesend (East)-Homecrest  Brooklyn            5             9
+   18                   South Williamsburg  Brooklyn            5             8
+   19                            Sunnyside    Queens            5             8
+   20            Bedford-Stuyvesant (West)  Brooklyn            5             7
+ resid_ratio ratio_rank high_complaint_six
+       0.796        115              FALSE
+       0.955         80              FALSE
+       0.791        116              FALSE
+       1.205         54              FALSE
+       0.682        135              FALSE
+       0.480        170              FALSE
+       2.996          4               TRUE
+       0.426        174              FALSE
+       1.014         76              FALSE
+       1.047         71              FALSE
+       1.367         36              FALSE
+       0.582        155              FALSE
+       0.677        136              FALSE
+       0.912         92              FALSE
+       0.553        162              FALSE
+       1.929         17               TRUE
+       0.626        147              FALSE
+       0.232        189              FALSE
+       0.931         86              FALSE
+       1.236         48              FALSE
+
+1) The six high-complaint NTAs (A6 posterior P(RR>1.5)>0.95):
+                         ntaname rank runs_primary sites_primary
+             East Harlem (North)    7            7            12
+ Astoria (East)-Woodside (North)  136            1             1
+                   East Elmhurst  137            1             1
+        Williamsbridge-Olinville   NA            0             0
+                  Brighton Beach   50            3             5
+            Midtown-Times Square   16            5            10
+   In consensus top 20: 2 of 6 (random 20-of-197 draw would give 0.61 on average)
+   Chosen in >=4 of 8 runs: 2 of 6
+
+2) Model residual ratio (model_nta_scored_20260920.csv, 197 NTAs):
+   Spearman(runs_primary, resid_ratio) = -0.039; Spearman(sites_primary, resid_ratio) = -0.074
+   Top-20 consensus NTAs with resid_ratio >= 1.5 (the 29): 2 of 20 (random expectation 2.9)
+   Median resid_ratio: top-20 consensus 0.85 vs all 197 0.89
+
+3) Radius sensitivity (top-20 consensus overlap with 500 m): 400 m: 15/20; 500 m: 20/20; 750 m: 8/20
+
+Reading: the consensus is built from where people/workers/riders/busy streets lack an open restroom within
+500 m. Complaints measure reported nuisance, which also reflects reporting behaviour. Agreement is
+corroboration, disagreement is not an error in either -- they answer different questions.

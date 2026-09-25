@@ -816,6 +816,37 @@ hkl <- (hk$core + pc$hk_lcsd_approx)/hk$population*1e5
 add("peer_hk_with_park_toilets", hkl, sprintf("%.1f", hkl), "per 100,000 residents", "R/E1_peer_city_per_capita.R",
     sprintf("FEHD %d + ~%d LCSD park/sports-venue toilets (LegCo 2019, approximate)", hk$core, pc$hk_lcsd_approx))
 
+## ---- 2026-09-25 layered walkthrough (Build_Plan/layered, Build_Plan/prototype, Pedestrian_Demand_Test) ----
+BP <- file.path(dirname(normalizePath(".")), "Build_Plan")
+dg <- read.csv(file.path(BP, "layered/outputs/diagnosis_29_final.csv"))
+stopifnot(nrow(dg) == 29)
+lf <- readRDS(file.path(BP, "layered/cache/layers_final.rds"))$L
+fh <- read.csv(file.path(BP, "prototype/outputs/fix_hours_vs_build.csv"))
+tp <- fromJSON(file.path(BP, "layered/outputs/trial_power_extend13.json"))
+p3 <- read.csv(file.path(dirname(normalizePath(".")), "Pedestrian_Demand_Test/outputs/P3_street_evening_access.csv"))
+cnt <- function(a) sum(dg$display_action == a)
+add("layered_fix_n", cnt("FIX"), as.character(cnt("FIX")), "NTAs", "Build_Plan/layered/R/03_final_rule.R")
+add("layered_build_stronger_n", cnt("BUILD"), as.character(cnt("BUILD")), "NTAs", "Build_Plan/layered/R/03_final_rule.R", "BUILD with EB P(ratio>1.5) >= 0.75 (natural break 0.52/0.80)")
+add("layered_build_verify_first_n", cnt("BUILD, VERIFY FIRST"), as.character(cnt("BUILD, VERIFY FIRST")), "NTAs", "Build_Plan/layered/R/03_final_rule.R")
+add("layered_extend_n", cnt("EXTEND HOURS"), as.character(cnt("EXTEND HOURS")), "NTAs", "Build_Plan/layered/R/03_final_rule.R")
+add("layered_daytime_gap_in_29", sum(dg$L2_residents >= 0.4), as.character(sum(dg$L2_residents >= 0.4)), "NTAs", "Build_Plan/layered/R/01_layers.R", "of the 29, >=40% of residents with no restroom within 500 m at 2pm")
+add("citywide_daytime_gap_ntas", sum(lf$L2_residents >= 0.4), as.character(sum(lf$L2_residents >= 0.4)), "NTAs of 197", "Build_Plan/layered/R/01_layers.R",
+    patterns = nrx(as.character(sum(lf$L2_residents >= 0.4))))
+g57 <- fh$gain_extend_all641_placeholder_to_22_pts[fh$objective == "residents" & fh$hour == 21]
+g27 <- fh$gain_first100_new_builds_pts[fh$objective == "residents" & fh$hour == 21]
+add("extend641_gain_9pm_residents_pts", g57, sprintf("%.0f points", g57), "percentage points", "Build_Plan/prototype/R/02_greedy.R", patterns = nrx(sprintf("%.0f points", g57)))
+add("build100_gain_9pm_residents_pts", g27, sprintf("%.0f", g27), "percentage points", "Build_Plan/prototype/R/02_greedy.R")
+sb <- dg[dg$display_action == "BUILD", ]
+add("build_sites_stronger_anyloc", sum(sb$anyloc_sites), sprintf("about %d units", sum(sb$anyloc_sites)), "sites", "Build_Plan/layered/R/01_layers.R",
+    "unrestricted grid points; brings each area below 40% uncovered, not to zero", patterns = nrx(sprintf("about %d", sum(sb$anyloc_sites))))
+add("trial13_detectable_drop", tp$detectable_drop, sprintf("%.0f%%", 100 * tp$detectable_drop), "share", "Build_Plan/layered/R/05_trial_power.R",
+    patterns = nrx(sprintf("%.0f%%", 100 * tp$detectable_drop)))
+add("trial13_cost_6h_parks", tp$cost_10mo_6h_parks, sprintf("$%.2fM", tp$cost_10mo_6h_parks / 1e6), "USD, 10 months", "Build_Plan/layered/R/05_trial_power.R",
+    patterns = nrx(sprintf("$%.2fM", tp$cost_10mo_6h_parks / 1e6)))
+add("trial13_cost_6h_all", tp$cost_10mo_6h_all, sprintf("$%.2fM", tp$cost_10mo_6h_all / 1e6), "USD, 10 months", "Build_Plan/layered/R/05_trial_power.R")
+s9 <- p3$share_no_open_500m[p3$streets == "Global + Regional" & p3$scenario == "off_season" & p3$hour == 21]
+add("busy_streets_no_open_9pm", s9, sprintf("%.0f%%", 100 * s9), "share of street length", "Pedestrian_Demand_Test/R/P3_street_evening_access.R", "de-duplicated DOT file")
+
 ## =============================================================================
 ## WRITE
 ## =============================================================================

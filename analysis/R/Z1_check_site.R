@@ -15,13 +15,13 @@ FILES <- c("index.html", "llms.txt", "REPORT.md", "METHODS.md", "README.md")
 # 2026-09-23 site-merge: REPORT.md is now a short pointer to the site, so it is no longer a
 # core content file (it is still scanned for stale values).
 CORE_FILES <- c("index.html", "llms.txt")
-CORE_KEYS  <- c("model_oos_spearman", "benchmark_oos_spearman", "model_beats_benchmark_share",
-                "ntas_ratio_ge_1_5", "posterior_gt_0_95_n", "restrooms_operational", "ll58_gap",
-                "programme_capex_total", "build_new_median", "reconstruct_median",
-                "parks_fail_2026", "trial_mde_summons",
-                # 2026-09-24 final-narrative
-                "pilot_in_six", "pilot_in_29", "walk_9pm_astoria_east", "walk_9pm_midtown_times",
-                "capital_years_reconstruct", "capital_years_build_new", "pilot_mde_311", "peer_nyc_per100k")
+# 2026-09-25 layered walkthrough: the core set follows the new story. Figures from the old narrative
+# (29-area costing, walk minutes by area, reconstruction durations, peer table, 3-decimal Spearman) now live
+# only in the archived Merged tab, which is skipped. Still scanned everywhere for stale values.
+CORE_KEYS  <- c("model_beats_benchmark_share", "ntas_ratio_ge_1_5", "restrooms_operational", "ll58_gap",
+                "parks_fail_2026", "pilot_in_29",
+                "citywide_daytime_gap_ntas", "extend641_gain_9pm_residents_pts", "build_sites_stronger_anyloc",
+                "trial13_detectable_drop", "trial13_cost_6h_parks", "busy_streets_no_open_9pm")
 J <- fromJSON("outputs/headline_numbers.json", simplifyVector=FALSE)
 
 ## ---- load site text, one element per ORIGINAL line (so file:line is real) ------

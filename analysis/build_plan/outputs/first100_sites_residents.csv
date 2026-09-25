@@ -1,0 +1,601 @@
+objective,config,rank,cand_id,type,lat,lon,nta_raw,nta,new_demand_covered,unit,cum_share_covered,ntaname,ntaname_raw,primary
+residents,base_14,1,4553,busy_street,40.7484276257905,-73.8763656664433,QN0401,QN0401,24411.7,residents,0.72658,Elmhurst,Elmhurst,TRUE
+residents,base_14,2,3047,busy_street,40.7800527472296,-73.9527763675885,MN0803,MN0803,22487,residents,0.72923,Upper East Side-Yorkville,Upper East Side-Yorkville,TRUE
+residents,base_14,3,5786,plaza,40.6685438224385,-73.9194385586936,BK1601,BK1601,13957.6,residents,0.73088,Ocean Hill,Ocean Hill,TRUE
+residents,base_14,4,5788,plaza,40.6405663526277,-73.9790936698526,BK1203,BK1203,11782.4,residents,0.73227,Kensington,Kensington,TRUE
+residents,base_14,5,4121,park,40.8785412651185,-73.8299145219054,BX1004,BX1004,11655.9,residents,0.73364,Co-op City,Co-op City,TRUE
+residents,base_14,6,1487,park,40.6287601813371,-73.9386999721515,BK1801,BK1801,10569.3,residents,0.73488,Flatlands,Flatlands,TRUE
+residents,base_14,7,3521,park,40.8381325380236,-73.9473996095316,MN1201,MN1201,10526.2,residents,0.73613,Washington Heights (South),Washington Heights (South),TRUE
+residents,base_14,8,823,park,40.5895986054387,-73.9653142894677,BK1301,BK1301,10500.3,residents,0.73736,Gravesend (South),Gravesend (South),TRUE
+residents,base_14,9,4643,busy_street,40.7330642820808,-73.9745339352951,MN0601,MN0601,10284.8,residents,0.73858,Stuyvesant Town-Peter Cooper Village,Stuyvesant Town-Peter Cooper Village,TRUE
+residents,base_14,10,4548,busy_street,40.748551183143,-73.9384100322353,QN0201,QN0201,9884.5,residents,0.73974,Long Island City-Hunters Point,Long Island City-Hunters Point,TRUE
+residents,base_14,11,2007,park,40.6990104027369,-73.9617077681764,BK0103,BK0103,9671.2,residents,0.74088,South Williamsburg,South Williamsburg,TRUE
+residents,base_14,12,1146,park,40.6044548674445,-73.95821742955,BK1501,BK1501,9006.9,residents,0.74194,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,TRUE
+residents,base_14,13,677,park,40.5828446800131,-73.9653177971745,BK1303,BK1303,8967.4,residents,0.743,Brighton Beach,Brighton Beach,TRUE
+residents,base_14,14,5791,plaza,40.6997298033889,-73.9114377373611,BK0402,BK0402,8816.2,residents,0.74404,Bushwick (East),Bushwick (East),TRUE
+residents,base_14,15,1767,park,40.6625021703902,-73.8996447426726,BK0503,BK0503,8709.3,residents,0.74507,East New York-New Lots,East New York-New Lots,TRUE
+residents,base_14,16,3560,park,40.8435214516398,-73.9224941812756,BX0403,BX0403,7655.5,residents,0.74597,Mount Eden-Claremont (West),Mount Eden-Claremont (West),TRUE
+residents,base_14,17,2589,busy_street,40.7489229040637,-73.8710964756144,QN0401,QN0401,7239,residents,0.74682,Elmhurst,Elmhurst,TRUE
+residents,base_14,18,5780,plaza,40.6792785164562,-73.8632620266311,QN1002,QN1002,7184.6,residents,0.74767,Ozone Park,Ozone Park,TRUE
+residents,base_14,19,3485,park,40.82728142945,-73.8851704511452,BX0303,BX0303,6690.6,residents,0.74846,Crotona Park East,Crotona Park East,TRUE
+residents,base_14,20,1600,park,40.6463366110394,-74.0025261471469,BK0703,BK0703,6605.3,residents,0.74923,Sunset Park (Central),Sunset Park (Central),TRUE
+residents,base_14,21,1851,park,40.6719528130059,-73.8943082823989,BK0502,BK0502,6591.4,residents,0.75001,East New York (North),East New York (North),TRUE
+residents,base_14,22,3333,park,40.8096899313057,-73.8567567674393,BX0902,BX0902,6468.3,residents,0.75077,Soundview-Clason Point,Soundview-Clason Point,TRUE
+residents,base_14,23,1456,park,40.6260712081025,-73.9706139129399,BK1204,BK1204,6307.5,residents,0.75152,Mapleton-Midwood (West),Mapleton-Midwood (West),TRUE
+residents,base_14,24,1872,park,40.6746692869623,-73.9120454993635,BK1601,BK1601,6230,residents,0.75225,Ocean Hill,Ocean Hill,TRUE
+residents,base_14,25,3875,park,40.8651002863064,-73.8833259151356,BX2791,BX0603,6174.1,residents,0.75298,Belmont,Bronx Park,TRUE
+residents,base_14,26,1457,park,40.6260465712656,-73.9192010134108,BK1801,BK1801,6130.5,residents,0.7537,Flatlands,Flatlands,TRUE
+residents,base_14,27,2167,park,40.7205445219904,-73.8604991167455,QN0601,QN0601,6005.5,residents,0.75441,Rego Park,Rego Park,TRUE
+residents,base_14,28,1667,park,40.6527886596618,-73.7364906092305,QN1307,QN1307,5898,residents,0.75511,Rosedale,Rosedale,TRUE
+residents,base_14,29,2460,busy_street,40.7449427209189,-73.9972018185959,MN0401,MN0401,5675.6,residents,0.75577,Chelsea-Hudson Yards,Chelsea-Hudson Yards,TRUE
+residents,base_14,30,1866,park,40.6732588627222,-73.8535015576475,QN1002,QN1002,5651.8,residents,0.75644,Ozone Park,Ozone Park,TRUE
+residents,base_14,31,1975,park,40.693430927129,-73.7948936550773,QN1202,QN1202,5628.6,residents,0.7571,South Jamaica,South Jamaica,TRUE
+residents,base_14,32,2057,park,40.7030579020734,-73.9492810954172,BK0103,BK0103,5516.1,residents,0.75775,South Williamsburg,South Williamsburg,TRUE
+residents,base_14,33,1828,park,40.6706504131589,-73.9936568470251,BK0601,BK0601,5500,residents,0.7584,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,TRUE
+residents,base_14,34,1537,park,40.6368464350724,-74.0894099340552,SI0101,SI0101,5451.4,residents,0.75904,St. George-New Brighton,St. George-New Brighton,TRUE
+residents,base_14,35,3261,busy_street,40.7976067389515,-73.9403219200684,MN1102,MN1102,5328.8,residents,0.75967,East Harlem (North),East Harlem (North),TRUE
+residents,base_14,36,3664,park,40.8529689478804,-73.9118097259773,BX0501,BX0501,5312.7,residents,0.7603,University Heights (South)-Morris Heights,University Heights (South)-Morris Heights,TRUE
+residents,base_14,37,1597,park,40.6449270663398,-73.8837109220044,BK0504,BK0504,5048.6,residents,0.76089,Spring Creek-Starrett City,Spring Creek-Starrett City,TRUE
+residents,base_14,38,1550,park,40.6381866538042,-73.8979081285165,BK1803,BK1803,4949.4,residents,0.76148,Canarsie,Canarsie,TRUE
+residents,base_14,39,1966,plaza,40.6922623366413,-73.9883309332676,BK0202,BK0202,4722.6,residents,0.76203,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,TRUE
+residents,base_14,40,222,park,40.5529976164968,-74.1760729309348,SI0302,SI0302,4486.7,residents,0.76256,Great Kills-Eltingville,Great Kills-Eltingville,TRUE
+residents,base_14,41,3068,park,40.7813847180032,-73.9190125186009,QN0191,QN0101,4384.9,residents,0.76308,Astoria (North)-Ditmars-Steinway,Astoria Park,TRUE
+residents,base_14,42,3786,park,40.8596203321791,-73.8228465575787,BX2891,BX1004,4360.9,residents,0.76359,Co-op City,Pelham Bay Park,TRUE
+residents,base_14,43,1738,park,40.6611933389526,-73.9794674045851,BK5591,BK0602,4355.5,residents,0.76411,Park Slope,Prospect Park,TRUE
+residents,base_14,44,209,park,40.5516271554575,-74.1884655345915,SI0303,SI0303,4271.5,residents,0.76461,Arden Heights-Rossville,Arden Heights-Rossville,TRUE
+residents,base_14,45,5774,plaza,40.7175086124401,-73.9490382646825,BK0102,BK0102,4246.3,residents,0.76511,Williamsburg,Williamsburg,TRUE
+residents,base_14,46,5779,plaza,40.6663001326476,-73.88310942966,BK0503,BK0503,4221.7,residents,0.76561,East New York-New Lots,East New York-New Lots,TRUE
+residents,base_14,47,4096,park,40.8772494503523,-73.8761863628551,BX0703,BX0703,4192.8,residents,0.7661,Norwood,Norwood,TRUE
+residents,base_14,48,1842,park,40.6703486484317,-73.7364212329694,QN1307,QN1307,4126,residents,0.76659,Rosedale,Rosedale,TRUE
+residents,base_14,49,5769,plaza,40.7017906234497,-73.8809394344356,QN0503,QN0503,4112,residents,0.76707,Glendale,Glendale,TRUE
+residents,base_14,50,4485,busy_street,40.6324211116248,-73.947222460207,BK1401,BK1401,4037,residents,0.76755,Flatbush,Flatbush,TRUE
+residents,base_14,51,1422,park,40.6232956455944,-74.133711456483,SI0105,SI0105,3824.8,residents,0.768,Westerleigh-Castleton Corners,Westerleigh-Castleton Corners,TRUE
+residents,base_14,52,1709,park,40.6568648574391,-73.7471166200398,QN1306,QN1306,3823,residents,0.76845,Springfield Gardens (South)-Brookville,Springfield Gardens (South)-Brookville,TRUE
+residents,base_14,53,1819,park,40.6692964966719,-73.9723688770802,BK5591,BK0602,3744.9,residents,0.76889,Park Slope,Prospect Park,TRUE
+residents,base_14,54,1144,park,40.6044354946844,-74.0787328161083,SI0201,SI0201,3717.9,residents,0.76933,Grasmere-Arrochar-South Beach-Dongan Hills,Grasmere-Arrochar-South Beach-Dongan Hills,TRUE
+residents,base_14,55,1007,park,40.5977033102334,-73.9653100792828,BK1501,BK1501,3700.2,residents,0.76977,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,TRUE
+residents,base_14,56,3108,park,40.7839348175982,-73.7963919300302,QN0703,QN0703,3690.9,residents,0.7702,Bay Terrace-Clearview,Bay Terrace-Clearview,TRUE
+residents,base_14,57,5748,plaza,40.6960961377266,-73.7702371421294,QN1205,QN1205,3674.3,residents,0.77064,St. Albans,St. Albans,TRUE
+residents,base_14,58,5768,plaza,40.7006653020617,-73.8993810720746,QN0502,QN0502,3640.2,residents,0.77106,Ridgewood,Ridgewood,TRUE
+residents,base_14,59,3849,busy_street,40.8637787835165,-73.9171329816422,MN1203,MN1203,3637.4,residents,0.77149,Inwood,Inwood,TRUE
+residents,base_14,60,1434,park,40.6246220891198,-74.1532151684351,SI0107,SI0107,3623.3,residents,0.77192,Mariner's Harbor-Arlington-Graniteville,Mariner's Harbor-Arlington-Graniteville,TRUE
+residents,base_14,61,4320,park,40.8975430621129,-73.9117505849918,BX0803,BX0803,3512.4,residents,0.77233,Riverdale-Spuyten Duyvil,Riverdale-Spuyten Duyvil,TRUE
+residents,base_14,62,649,park,40.5814990486522,-74.0042953708211,BK1302,BK1302,3336.9,residents,0.77273,Coney Island-Sea Gate,Coney Island-Sea Gate,TRUE
+residents,base_14,63,895,park,40.5921383631084,-73.8040645964911,QN1402,QN1402,3318.1,residents,0.77312,Rockaway Beach-Arverne-Edgemere,Rockaway Beach-Arverne-Edgemere,TRUE
+residents,base_14,64,2915,park,40.7692511417261,-73.9652207233097,MN0802,MN0802,3307.8,residents,0.77351,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,TRUE
+residents,base_14,65,281,park,40.5583839774105,-74.1867135277736,SI0303,SI0303,3263.7,residents,0.77389,Arden Heights-Rossville,Arden Heights-Rossville,TRUE
+residents,base_14,66,5812,plaza,40.6428587857153,-73.978508041687,BK1203,BK1203,3262.9,residents,0.77428,Kensington,Kensington,TRUE
+residents,base_14,67,1172,park,40.6057248590266,-74.1425378717397,SI0203,SI0203,3113.3,residents,0.77465,Todt Hill-Emerson Hill-Lighthouse Hill-Manor Heights,Todt Hill-Emerson Hill-Lighthouse Hill-Manor Heights,TRUE
+residents,base_14,68,1368,park,40.6166152784635,-73.9688454674985,BK1204,BK1204,3083.5,residents,0.77501,Mapleton-Midwood (West),Mapleton-Midwood (West),TRUE
+residents,base_14,69,316,park,40.562488458306,-74.1513014943346,SI0302,SI0302,3061.2,residents,0.77537,Great Kills-Eltingville,Great Kills-Eltingville,TRUE
+residents,base_14,70,1883,park,40.6772872141681,-73.8357504732196,QN1001,QN1001,3048.2,residents,0.77573,South Ozone Park,South Ozone Park,TRUE
+residents,base_14,71,522,park,40.5746404435892,-73.8448603735313,QN1403,QN1403,3041.7,residents,0.77609,Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,TRUE
+residents,base_14,72,2747,park,40.7555007941216,-73.7609526498934,QN1102,QN1102,3014.3,residents,0.77644,Bayside,Bayside,TRUE
+residents,base_14,73,5766,plaza,40.6370303089316,-74.1536886036659,SI0107,SI0107,2986.6,residents,0.77679,Mariner's Harbor-Arlington-Graniteville,Mariner's Harbor-Arlington-Graniteville,TRUE
+residents,base_14,74,4753,busy_street,40.8160835200761,-73.9177176780063,BX0102,BX0102,2941.1,residents,0.77714,Melrose,Melrose,TRUE
+residents,base_14,75,655,park,40.5827525512969,-74.149575690138,SI0203,SI0203,2902,residents,0.77748,Todt Hill-Emerson Hill-Lighthouse Hill-Manor Heights,Todt Hill-Emerson Hill-Lighthouse Hill-Manor Heights,TRUE
+residents,base_14,76,3421,park,40.8163994480278,-73.8247395431154,BX1091,BX1002,2885.7,residents,0.77782,Throgs Neck-Schuylerville,Ferry Point Park-St. Raymond Cemetery,TRUE
+residents,base_14,77,1691,park,40.6557277630584,-73.8783711478452,BK0504,BK0504,2868.7,residents,0.77816,Spring Creek-Starrett City,Spring Creek-Starrett City,TRUE
+residents,base_14,78,877,park,40.5921861645081,-74.1655444835054,SI0291,SI0204,2868.3,residents,0.7785,New Springville-Willowbrook-Bulls Head-Travis,Freshkills Park (North),TRUE
+residents,base_14,79,2121,park,40.71085506958,-73.7291605696641,QN1303,QN1303,2856.1,residents,0.77884,Queens Village,Queens Village,TRUE
+residents,base_14,80,3057,park,40.7814102653993,-73.9740993486398,MN0702,MN0702,2848,residents,0.77917,Upper West Side (Central),Upper West Side (Central),TRUE
+residents,base_14,81,2019,park,40.6989165632135,-73.8481207805128,QN8291,QN0902,2821,residents,0.7795,Richmond Hill,Forest Park,TRUE
+residents,base_14,82,1044,park,40.5988736440857,-73.7934119810545,QN1402,QN1402,2816.2,residents,0.77984,Rockaway Beach-Arverne-Edgemere,Rockaway Beach-Arverne-Edgemere,TRUE
+residents,base_14,83,3371,park,40.8123800332615,-73.8478618547054,BX0902,BX0902,2799.6,residents,0.78017,Soundview-Clason Point,Soundview-Clason Point,TRUE
+residents,base_14,84,2170,park,40.7219796388327,-74.0060798353914,MN0102,MN0102,2760.3,residents,0.78049,Tribeca-Civic Center,Tribeca-Civic Center,TRUE
+residents,base_14,85,1540,park,40.6368618932366,-73.9333730906266,BK1702,BK1702,2756.8,residents,0.78082,East Flatbush-Farragut,East Flatbush-Farragut,TRUE
+residents,base_14,86,2850,park,40.7622796893958,-73.7733637574157,QN1102,QN1102,2738.2,residents,0.78114,Bayside,Bayside,TRUE
+residents,base_14,87,1218,park,40.6071404069532,-73.9263133238857,BK1891,BK1802,2731.1,residents,0.78146,Marine Park-Mill Basin-Bergen Beach,Marine Park-Plumb Island,TRUE
+residents,base_14,88,1002,park,40.5976328651033,-74.1318879593625,SI0203,SI0203,2695.8,residents,0.78178,Todt Hill-Emerson Hill-Lighthouse Hill-Manor Heights,Todt Hill-Emerson Hill-Lighthouse Hill-Manor Heights,TRUE
+residents,base_14,89,1887,park,40.6771676298181,-73.7665561026746,QN1204,QN1204,2648.5,residents,0.78209,Springfield Gardens (North)-Rochdale Village,Springfield Gardens (North)-Rochdale Village,TRUE
+residents,base_14,90,706,park,40.584179304732,-73.9298821536677,BK1891,BK1503,2633.5,residents,0.7824,Sheepshead Bay-Manhattan Beach-Gerritsen Beach,Marine Park-Plumb Island,TRUE
+residents,base_14,91,5767,plaza,40.6032700217594,-73.7534978702666,QN1401,QN1401,2628.8,residents,0.78271,Far Rockaway-Bayswater,Far Rockaway-Bayswater,TRUE
+residents,base_14,92,2602,park,40.7488725466263,-73.8320217173721,QN0707,QN0707,2615.7,residents,0.78302,Flushing-Willets Point,Flushing-Willets Point,TRUE
+residents,base_14,93,1499,park,40.6300939097652,-74.0876279205867,SI0104,SI0104,2605.4,residents,0.78333,West New Brighton-Silver Lake-Grymes Hill,West New Brighton-Silver Lake-Grymes Hill,TRUE
+residents,base_14,94,1367,park,40.6166177164185,-74.0202511044608,BK1091,BK1002,2583.1,residents,0.78363,Dyker Heights,Dyker Beach Park,TRUE
+residents,base_14,95,521,park,40.5747362637195,-73.954693026037,BK1303,BK1303,2570.6,residents,0.78393,Brighton Beach,Brighton Beach,TRUE
+residents,base_14,96,184,park,40.5408266179417,-74.1848938716232,SI0304,SI0304,2570.5,residents,0.78424,Annadale-Huguenot-Prince's Bay-Woodrow,Annadale-Huguenot-Prince's Bay-Woodrow,TRUE
+residents,base_14,97,1213,park,40.6071593124178,-73.9670775230166,BK1501,BK1501,2548.9,residents,0.78454,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,TRUE
+residents,base_14,98,4436,park,40.9096862137748,-73.8957106235065,BX2691,BX0803,2547,residents,0.78484,Riverdale-Spuyten Duyvil,Van Cortlandt Park,TRUE
+residents,base_14,99,1847,park,40.6720013331999,-74.0025271192115,BK0601,BK0601,2545.1,residents,0.78514,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,TRUE
+residents,base_14,100,2104,park,40.7070091031014,-73.8392272693072,QN8291,QN0901,2535.3,residents,0.78544,Kew Gardens,Forest Park,TRUE
+residents,base_21_off,1,4759,busy_street,40.7713405009496,-73.9534180392442,MN0801,MN0801,51568.1,residents,0.04996,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,TRUE
+residents,base_21_off,2,5152,busy_street,40.7801229069296,-73.9501085543462,MN0803,MN0803,51326.1,residents,0.05601,Upper East Side-Yorkville,Upper East Side-Yorkville,TRUE
+residents,base_21_off,3,4777,busy_street,40.7928505183366,-73.9730938374148,MN0702,MN0702,42278,residents,0.06099,Upper West Side (Central),Upper West Side (Central),TRUE
+residents,base_21_off,4,4718,busy_street,40.8362450229344,-73.9432830063395,MN1201,MN1201,38087.7,residents,0.06548,Washington Heights (South),Washington Heights (South),TRUE
+residents,base_21_off,5,4481,busy_street,40.7483441812487,-73.8771703539944,QN0401,QN0401,36664.8,residents,0.0698,Elmhurst,Elmhurst,TRUE
+residents,base_21_off,6,4789,busy_street,40.779046892449,-73.9826609927539,MN0701,MN0701,36661.8,residents,0.07412,Upper West Side-Lincoln Square,Upper West Side-Lincoln Square,TRUE
+residents,base_21_off,7,5342,busy_street,40.7428961805384,-73.9801844904458,MN0603,MN0603,36347.4,residents,0.07841,Murray Hill-Kips Bay,Murray Hill-Kips Bay,TRUE
+residents,base_21_off,8,5763,plaza,40.8460919509619,-73.9380791899281,MN1201,MN1201,36291.5,residents,0.08269,Washington Heights (South),Washington Heights (South),TRUE
+residents,base_21_off,9,4628,busy_street,40.8603916424727,-73.8982585114392,BX0503,BX0503,36236.5,residents,0.08696,Fordham Heights,Fordham Heights,TRUE
+residents,base_21_off,10,5010,busy_street,40.7320936790649,-73.9818856074845,MN0602,MN0602,33967.2,residents,0.09096,Gramercy,Gramercy,TRUE
+residents,base_21_off,11,4476,busy_street,40.7861031312844,-73.9782958689175,MN0702,MN0702,32831.8,residents,0.09483,Upper West Side (Central),Upper West Side (Central),TRUE
+residents,base_21_off,12,4877,busy_street,40.8260974401112,-73.9496605030829,MN0903,MN0903,31918.3,residents,0.09859,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,TRUE
+residents,base_21_off,13,4510,busy_street,40.7146113512816,-73.9909439870635,MN0301,MN0301,31454.1,residents,0.1023,Chinatown-Two Bridges,Chinatown-Two Bridges,TRUE
+residents,base_21_off,14,5315,busy_street,40.7956030008089,-73.9417317482178,MN1102,MN1102,29269.3,residents,0.10575,East Harlem (North),East Harlem (North),TRUE
+residents,base_21_off,15,4750,busy_street,40.7242443243247,-73.9877308098145,MN0303,MN0303,28979.7,residents,0.10917,East Village,East Village,TRUE
+residents,base_21_off,16,4518,busy_street,40.8479564675068,-73.9121680487971,BX0501,BX0501,28968.7,residents,0.11258,University Heights (South)-Morris Heights,University Heights (South)-Morris Heights,TRUE
+residents,base_21_off,17,3509,park,40.8340572378934,-73.9100563917639,BX0401,BX0401,28757.3,residents,0.11597,Concourse-Concourse Village,Concourse-Concourse Village,TRUE
+residents,base_21_off,18,5075,busy_street,40.7449952632357,-73.9977761191913,MN0401,MN0401,28416.9,residents,0.11932,Chelsea-Hudson Yards,Chelsea-Hudson Yards,TRUE
+residents,base_21_off,19,3292,park,40.8030181975161,-73.9598703636912,MN0901,MN0901,27127.5,residents,0.12252,Morningside Heights,Morningside Heights,TRUE
+residents,base_21_off,20,4551,busy_street,40.866278211539,-73.9203037841477,MN1203,MN1203,27004.8,residents,0.1257,Inwood,Inwood,TRUE
+residents,base_21_off,21,3481,park,40.8273231446815,-73.940295267877,MN0903,MN0903,26785.9,residents,0.12886,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,TRUE
+residents,base_21_off,22,4480,busy_street,40.7415690618691,-73.880640765414,QN0401,QN0401,26436.9,residents,0.13197,Elmhurst,Elmhurst,TRUE
+residents,base_21_off,23,2793,park,40.7583172554217,-73.824892369163,QN0707,QN0707,26210.8,residents,0.13506,Flushing-Willets Point,Flushing-Willets Point,TRUE
+residents,base_21_off,24,4472,busy_street,40.763171751166,-73.9891797062544,MN0402,MN0402,26168.6,residents,0.13815,Hell's Kitchen,Hell's Kitchen,TRUE
+residents,base_21_off,25,4846,busy_street,40.8089890055223,-73.9483661313527,MN1001,MN1001,25854.4,residents,0.1412,Harlem (South),Harlem (South),TRUE
+residents,base_21_off,26,5516,busy_street,40.7293663833296,-73.9961922574639,MN0202,MN0202,25523.3,residents,0.1442,Greenwich Village,Greenwich Village,TRUE
+residents,base_21_off,27,5758,plaza,40.7496441677116,-73.8623283265327,QN0402,QN0402,25455.1,residents,0.14721,Corona,Corona,TRUE
+residents,base_21_off,28,4932,busy_street,40.8252846196172,-73.9175375047576,BX0401,BX0401,25453.4,residents,0.15021,Concourse-Concourse Village,Concourse-Concourse Village,TRUE
+residents,base_21_off,29,2146,park,40.719276739532,-73.9812248492455,MN0302,MN0302,25452.8,residents,0.15321,Lower East Side,Lower East Side,TRUE
+residents,base_21_off,30,3624,park,40.850258822289,-73.9011403063497,BX0502,BX0502,25215.8,residents,0.15618,Mount Hope,Mount Hope,TRUE
+residents,base_21_off,31,5331,busy_street,40.7668717807458,-73.9626993254812,MN0802,MN0802,24937.6,residents,0.15912,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,TRUE
+residents,base_21_off,32,3440,park,40.8192167887844,-73.9367465304543,MN1002,MN1002,24598,residents,0.16202,Harlem (North),Harlem (North),TRUE
+residents,base_21_off,33,3136,park,40.7868025235964,-73.9438858832058,MN1101,MN1101,23966.1,residents,0.16484,East Harlem (South),East Harlem (South),TRUE
+residents,base_21_off,34,2057,park,40.7030579020734,-73.9492810954172,BK0103,BK0103,23586.4,residents,0.16762,South Williamsburg,South Williamsburg,TRUE
+residents,base_21_off,35,5746,plaza,40.7431795726067,-73.9187094906736,QN0202,QN0202,22853.4,residents,0.17032,Sunnyside,Sunnyside,TRUE
+residents,base_21_off,36,5807,plaza,40.8293086221803,-73.8743116048064,BX0901,BX0901,22853.3,residents,0.17301,Soundview-Bruckner-Bronx River,Soundview-Bruckner-Bronx River,TRUE
+residents,base_21_off,37,1974,park,40.6935991778785,-73.9421896700454,BK0302,BK0302,22837.2,residents,0.1757,Bedford-Stuyvesant (East),Bedford-Stuyvesant (East),TRUE
+residents,base_21_off,38,1814,park,40.6679265231229,-73.9280201431941,BK0891,BK0901,22297.1,residents,0.17833,Crown Heights (South),Lincoln Terrace Park,TRUE
+residents,base_21_off,39,5791,plaza,40.6997298033889,-73.9114377373611,BK0402,BK0402,22227.8,residents,0.18095,Bushwick (East),Bushwick (East),TRUE
+residents,base_21_off,40,4486,busy_street,40.7468282315024,-73.8915908878595,QN0401,QN0401,21913.7,residents,0.18353,Elmhurst,Elmhurst,TRUE
+residents,base_21_off,41,4631,busy_street,40.8652784187165,-73.8949871905491,BX0701,BX0701,21777.6,residents,0.1861,University Heights (North)-Fordham,University Heights (North)-Fordham,TRUE
+residents,base_21_off,42,3508,park,40.8340662744891,-73.922505195952,BX0491,BX0401,21742.9,residents,0.18866,Concourse-Concourse Village,Yankee Stadium-Macombs Dam Park,TRUE
+residents,base_21_off,43,4640,busy_street,40.8157382964349,-73.9582596167728,MN0902,MN0902,21721.8,residents,0.19122,Manhattanville-West Harlem,Manhattanville-West Harlem,TRUE
+residents,base_21_off,44,3329,park,40.8097504491468,-73.9189780028059,BX0101,BX0101,21628.6,residents,0.19377,Mott Haven-Port Morris,Mott Haven-Port Morris,TRUE
+residents,base_21_off,45,4095,park,40.8772513458118,-73.8779659176936,BX0703,BX0703,21424.9,residents,0.1963,Norwood,Norwood,TRUE
+residents,base_21_off,46,4538,busy_street,40.7105128774075,-74.0125339800248,MN0101,MN0101,21338,residents,0.19881,Financial District-Battery Park City,Financial District-Battery Park City,TRUE
+residents,base_21_off,47,5787,plaza,40.6551410186391,-73.9616167080478,BK0902,BK0902,21154.3,residents,0.20131,Prospect Lefferts Gardens-Wingate,Prospect Lefferts Gardens-Wingate,TRUE
+residents,base_21_off,48,3707,park,40.855669045856,-73.9100271656752,BX0501,BX0501,21024.4,residents,0.20378,University Heights (South)-Morris Heights,University Heights (South)-Morris Heights,TRUE
+residents,base_21_off,49,2262,park,40.7313395165968,-73.8515982061658,QN0602,QN0602,20805.3,residents,0.20624,Forest Hills,Forest Hills,TRUE
+residents,base_21_off,50,2768,park,40.7570351781685,-73.8781861636394,QN0301,QN0301,20786.3,residents,0.20869,Jackson Heights,Jackson Heights,TRUE
+residents,base_21_off,51,5812,plaza,40.6428587857153,-73.978508041687,BK1203,BK1203,20632.1,residents,0.21112,Kensington,Kensington,TRUE
+residents,base_21_off,52,5782,plaza,40.6901395013143,-73.9830233184446,BK0202,BK0202,20596.2,residents,0.21355,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,TRUE
+residents,base_21_off,53,4968,busy_street,40.8503077645828,-73.93620768488,MN1202,MN1202,20510,residents,0.21596,Washington Heights (North),Washington Heights (North),TRUE
+residents,base_21_off,54,3442,park,40.8191886959103,-73.897630452602,BX0202,BX0202,20365.5,residents,0.21836,Longwood,Longwood,TRUE
+residents,base_21_off,55,5734,plaza,40.6686693148695,-73.9075968122155,BK1602,BK1602,20191.5,residents,0.22074,Brownsville,Brownsville,TRUE
+residents,base_21_off,56,4633,busy_street,40.8769496892075,-73.9063277619809,BX0802,BX0802,20182,residents,0.22312,Kingsbridge-Marble Hill,Kingsbridge-Marble Hill,TRUE
+residents,base_21_off,57,4496,busy_street,40.832756316725,-73.8613299044454,BX0903,BX0903,19904.6,residents,0.22547,Castle Hill-Unionport,Castle Hill-Unionport,TRUE
+residents,base_21_off,58,5773,plaza,40.7104182486811,-73.9636729684403,BK0102,BK0102,19698.4,residents,0.22779,Williamsburg,Williamsburg,TRUE
+residents,base_21_off,59,1600,park,40.6463366110394,-74.0025261471469,BK0703,BK0703,19552.7,residents,0.2301,Sunset Park (Central),Sunset Park (Central),TRUE
+residents,base_21_off,60,5681,busy_street,40.6767306723137,-73.9802458549263,BK0602,BK0602,19243.6,residents,0.23236,Park Slope,Park Slope,TRUE
+residents,base_21_off,61,1969,park,40.692255323419,-73.9581624092115,BK0301,BK0301,19138.8,residents,0.23462,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),TRUE
+residents,base_21_off,62,3562,park,40.8434867093009,-73.8815851682271,BX0601,BX0601,19030.2,residents,0.23686,West Farms,West Farms,TRUE
+residents,base_21_off,63,3462,park,40.8232484758741,-73.9065147747252,BX0301,BX0301,19002.9,residents,0.2391,Morrisania,Morrisania,TRUE
+residents,base_21_off,64,5811,plaza,40.6841823635824,-73.9683411317398,BK0204,BK0204,18597.1,residents,0.24129,Clinton Hill,Clinton Hill,TRUE
+residents,base_21_off,65,1864,park,40.6733376183354,-73.9422072326221,BK0802,BK0802,18424.2,residents,0.24347,Crown Heights (North),Crown Heights (North),TRUE
+residents,base_21_off,66,1915,park,40.6854962881019,-73.9457455739138,BK0301,BK0301,18300.3,residents,0.24562,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),TRUE
+residents,base_21_off,67,5744,plaza,40.7986300701382,-73.9525053922077,MN1001,MN1001,18290.9,residents,0.24778,Harlem (South),Harlem (South),TRUE
+residents,base_21_off,68,4898,busy_street,40.7282039057077,-73.9750753545496,MN0303,MN0303,18254.3,residents,0.24993,East Village,East Village,TRUE
+residents,base_21_off,69,3538,park,40.839401770775,-73.853135699952,BX0904,BX0904,18163.9,residents,0.25207,Parkchester,Parkchester,TRUE
+residents,base_21_off,70,3663,park,40.8529789491553,-73.9260409764917,MN1291,MN1202,18023.2,residents,0.2542,Washington Heights (North),Highbridge Park,TRUE
+residents,base_21_off,71,5757,plaza,40.7539773520908,-73.8888707484324,QN0301,QN0301,17799.7,residents,0.25629,Jackson Heights,Jackson Heights,TRUE
+residents,base_21_off,72,1897,park,40.6800800178776,-73.922684138182,BK0302,BK0302,17565,residents,0.25837,Bedford-Stuyvesant (East),Bedford-Stuyvesant (East),TRUE
+residents,base_21_off,73,1539,park,40.636881193494,-74.0007526427602,BK1201,BK1201,17333.1,residents,0.26041,Sunset Park (East)-Borough Park (West),Sunset Park (East)-Borough Park (West),TRUE
+residents,base_21_off,74,3120,park,40.7854550140232,-73.9509954325943,MN0802,MN0802,17189.6,residents,0.26243,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,TRUE
+residents,base_21_off,75,1900,park,40.6814394512313,-73.9368772163761,BK0302,BK0302,17069.7,residents,0.26445,Bedford-Stuyvesant (East),Bedford-Stuyvesant (East),TRUE
+residents,base_21_off,76,5661,busy_street,40.6658679280278,-73.9890609870852,BK0602,BK0602,17065.3,residents,0.26646,Park Slope,Park Slope,TRUE
+residents,base_21_off,77,5303,busy_street,40.8027100406908,-73.9365398672982,MN1102,MN1102,17007.8,residents,0.26846,East Harlem (North),East Harlem (North),TRUE
+residents,base_21_off,78,4641,busy_street,40.6747929072643,-73.9698704451899,BK0602,BK0602,16921.9,residents,0.27046,Park Slope,Park Slope,TRUE
+residents,base_21_off,79,4519,busy_street,40.732600860968,-73.868085694408,QN0601,QN0601,16538.1,residents,0.27241,Rego Park,Rego Park,TRUE
+residents,base_21_off,80,1549,park,40.6382200154578,-73.9475571940695,BK1702,BK1702,16519.3,residents,0.27435,East Flatbush-Farragut,East Flatbush-Farragut,TRUE
+residents,base_21_off,81,1764,park,40.6625305281947,-73.9404427671039,BK0902,BK0902,16462.7,residents,0.27629,Prospect Lefferts Gardens-Wingate,Prospect Lefferts Gardens-Wingate,TRUE
+residents,base_21_off,82,4636,busy_street,40.8078277499988,-73.964028044259,MN0901,MN0901,16301.3,residents,0.27822,Morningside Heights,Morningside Heights,TRUE
+residents,base_21_off,83,2326,busy_street,40.738188947523,-73.9989779446772,MN0203,MN0203,16270.4,residents,0.28013,West Village,West Village,TRUE
+residents,base_21_off,84,2205,park,40.7259318412181,-73.8480592114833,QN0602,QN0602,16202.8,residents,0.28204,Forest Hills,Forest Hills,TRUE
+residents,base_21_off,85,5780,plaza,40.6792785164562,-73.8632620266311,QN1002,QN1002,15947.2,residents,0.28392,Ozone Park,Ozone Park,TRUE
+residents,base_21_off,86,5802,plaza,40.7142226040355,-73.9548736641623,BK0102,BK0102,15871.2,residents,0.28579,Williamsburg,Williamsburg,TRUE
+residents,base_21_off,87,5337,busy_street,40.7765523533837,-73.9556383185925,MN0802,MN0802,15830.3,residents,0.28766,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,TRUE
+residents,base_21_off,88,4539,busy_street,40.7483537568098,-73.9708015340031,MN0603,MN0603,15785.4,residents,0.28952,Murray Hill-Kips Bay,Murray Hill-Kips Bay,TRUE
+residents,base_21_off,89,3471,park,40.8245884558901,-73.8940658465271,BX0202,BX0202,15783.1,residents,0.29138,Longwood,Longwood,TRUE
+residents,base_21_off,90,5770,plaza,40.6989011941679,-73.9186715423202,BK0401,BK0401,15694.9,residents,0.29323,Bushwick (West),Bushwick (West),TRUE
+residents,base_21_off,91,5786,plaza,40.6685438224385,-73.9194385586936,BK1601,BK1601,15685.4,residents,0.29508,Ocean Hill,Ocean Hill,TRUE
+residents,base_21_off,92,5768,plaza,40.7006653020617,-73.8993810720746,QN0502,QN0502,15593.3,residents,0.29692,Ridgewood,Ridgewood,TRUE
+residents,base_21_off,93,5269,busy_street,40.7549920699815,-73.9942108061168,MN0401,MN0401,15509.1,residents,0.29875,Chelsea-Hudson Yards,Chelsea-Hudson Yards,TRUE
+residents,base_21_off,94,4490,busy_street,40.6926246145978,-73.9908235254632,BK0202,BK0202,15413.1,residents,0.30056,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,TRUE
+residents,base_21_off,95,4523,busy_street,40.6926746364766,-73.8564098659616,QN0905,QN0905,15254.8,residents,0.30236,Woodhaven,Woodhaven,TRUE
+residents,base_21_off,96,4583,busy_street,40.6074837280315,-74.0030236853982,BK1102,BK1102,15231.2,residents,0.30416,Bath Beach,Bath Beach,TRUE
+residents,base_21_off,97,1835,park,40.6705785425555,-73.8712478896804,BK0505,BK0505,15156,residents,0.30594,East New York-City Line,East New York-City Line,TRUE
+residents,base_21_off,98,3380,park,40.8138147711685,-73.9385295254976,MN1002,MN1002,14976.4,residents,0.30771,Harlem (North),Harlem (North),TRUE
+residents,base_21_off,99,1244,park,40.6085140257174,-73.9865731788009,BK1101,BK1101,14961.6,residents,0.30947,Bensonhurst,Bensonhurst,TRUE
+residents,base_21_off,100,2642,park,40.7502100093522,-73.8231375131908,QN0706,QN0706,14904,residents,0.31123,Queensboro Hill,Queensboro Hill,TRUE
+residents,base_21_in,1,4759,busy_street,40.7713405009496,-73.9534180392442,MN0801,MN0801,51568.1,residents,0.04996,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,FALSE
+residents,base_21_in,2,5152,busy_street,40.7801229069296,-73.9501085543462,MN0803,MN0803,51326.1,residents,0.05601,Upper East Side-Yorkville,Upper East Side-Yorkville,FALSE
+residents,base_21_in,3,4777,busy_street,40.7928505183366,-73.9730938374148,MN0702,MN0702,42278,residents,0.06099,Upper West Side (Central),Upper West Side (Central),FALSE
+residents,base_21_in,4,4718,busy_street,40.8362450229344,-73.9432830063395,MN1201,MN1201,38087.7,residents,0.06548,Washington Heights (South),Washington Heights (South),FALSE
+residents,base_21_in,5,4481,busy_street,40.7483441812487,-73.8771703539944,QN0401,QN0401,36664.8,residents,0.0698,Elmhurst,Elmhurst,FALSE
+residents,base_21_in,6,4789,busy_street,40.779046892449,-73.9826609927539,MN0701,MN0701,36661.8,residents,0.07412,Upper West Side-Lincoln Square,Upper West Side-Lincoln Square,FALSE
+residents,base_21_in,7,5342,busy_street,40.7428961805384,-73.9801844904458,MN0603,MN0603,36347.4,residents,0.07841,Murray Hill-Kips Bay,Murray Hill-Kips Bay,FALSE
+residents,base_21_in,8,5763,plaza,40.8460919509619,-73.9380791899281,MN1201,MN1201,36291.5,residents,0.08269,Washington Heights (South),Washington Heights (South),FALSE
+residents,base_21_in,9,4628,busy_street,40.8603916424727,-73.8982585114392,BX0503,BX0503,36236.5,residents,0.08696,Fordham Heights,Fordham Heights,FALSE
+residents,base_21_in,10,5010,busy_street,40.7320936790649,-73.9818856074845,MN0602,MN0602,33967.2,residents,0.09096,Gramercy,Gramercy,FALSE
+residents,base_21_in,11,4476,busy_street,40.7861031312844,-73.9782958689175,MN0702,MN0702,32831.8,residents,0.09483,Upper West Side (Central),Upper West Side (Central),FALSE
+residents,base_21_in,12,4877,busy_street,40.8260974401112,-73.9496605030829,MN0903,MN0903,31918.3,residents,0.09859,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,FALSE
+residents,base_21_in,13,4510,busy_street,40.7146113512816,-73.9909439870635,MN0301,MN0301,31454.1,residents,0.1023,Chinatown-Two Bridges,Chinatown-Two Bridges,FALSE
+residents,base_21_in,14,5315,busy_street,40.7956030008089,-73.9417317482178,MN1102,MN1102,29269.3,residents,0.10575,East Harlem (North),East Harlem (North),FALSE
+residents,base_21_in,15,4750,busy_street,40.7242443243247,-73.9877308098145,MN0303,MN0303,28979.7,residents,0.10917,East Village,East Village,FALSE
+residents,base_21_in,16,4518,busy_street,40.8479564675068,-73.9121680487971,BX0501,BX0501,28968.7,residents,0.11258,University Heights (South)-Morris Heights,University Heights (South)-Morris Heights,FALSE
+residents,base_21_in,17,3509,park,40.8340572378934,-73.9100563917639,BX0401,BX0401,28757.3,residents,0.11597,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+residents,base_21_in,18,5075,busy_street,40.7449952632357,-73.9977761191913,MN0401,MN0401,28416.9,residents,0.11932,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+residents,base_21_in,19,3292,park,40.8030181975161,-73.9598703636912,MN0901,MN0901,27127.5,residents,0.12252,Morningside Heights,Morningside Heights,FALSE
+residents,base_21_in,20,4551,busy_street,40.866278211539,-73.9203037841477,MN1203,MN1203,27004.8,residents,0.1257,Inwood,Inwood,FALSE
+residents,base_21_in,21,3481,park,40.8273231446815,-73.940295267877,MN0903,MN0903,26785.9,residents,0.12886,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,FALSE
+residents,base_21_in,22,4480,busy_street,40.7415690618691,-73.880640765414,QN0401,QN0401,26436.9,residents,0.13197,Elmhurst,Elmhurst,FALSE
+residents,base_21_in,23,2793,park,40.7583172554217,-73.824892369163,QN0707,QN0707,26210.8,residents,0.13506,Flushing-Willets Point,Flushing-Willets Point,FALSE
+residents,base_21_in,24,4472,busy_street,40.763171751166,-73.9891797062544,MN0402,MN0402,26168.6,residents,0.13815,Hell's Kitchen,Hell's Kitchen,FALSE
+residents,base_21_in,25,4846,busy_street,40.8089890055223,-73.9483661313527,MN1001,MN1001,25854.4,residents,0.1412,Harlem (South),Harlem (South),FALSE
+residents,base_21_in,26,5516,busy_street,40.7293663833296,-73.9961922574639,MN0202,MN0202,25523.3,residents,0.1442,Greenwich Village,Greenwich Village,FALSE
+residents,base_21_in,27,5758,plaza,40.7496441677116,-73.8623283265327,QN0402,QN0402,25455.1,residents,0.14721,Corona,Corona,FALSE
+residents,base_21_in,28,4932,busy_street,40.8252846196172,-73.9175375047576,BX0401,BX0401,25453.4,residents,0.15021,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+residents,base_21_in,29,2146,park,40.719276739532,-73.9812248492455,MN0302,MN0302,25452.8,residents,0.15321,Lower East Side,Lower East Side,FALSE
+residents,base_21_in,30,3624,park,40.850258822289,-73.9011403063497,BX0502,BX0502,25215.8,residents,0.15618,Mount Hope,Mount Hope,FALSE
+residents,base_21_in,31,5331,busy_street,40.7668717807458,-73.9626993254812,MN0802,MN0802,24937.6,residents,0.15912,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+residents,base_21_in,32,3440,park,40.8192167887844,-73.9367465304543,MN1002,MN1002,24598,residents,0.16202,Harlem (North),Harlem (North),FALSE
+residents,base_21_in,33,3136,park,40.7868025235964,-73.9438858832058,MN1101,MN1101,23966.1,residents,0.16484,East Harlem (South),East Harlem (South),FALSE
+residents,base_21_in,34,2057,park,40.7030579020734,-73.9492810954172,BK0103,BK0103,23586.4,residents,0.16762,South Williamsburg,South Williamsburg,FALSE
+residents,base_21_in,35,5746,plaza,40.7431795726067,-73.9187094906736,QN0202,QN0202,22853.4,residents,0.17032,Sunnyside,Sunnyside,FALSE
+residents,base_21_in,36,5807,plaza,40.8293086221803,-73.8743116048064,BX0901,BX0901,22853.3,residents,0.17301,Soundview-Bruckner-Bronx River,Soundview-Bruckner-Bronx River,FALSE
+residents,base_21_in,37,1974,park,40.6935991778785,-73.9421896700454,BK0302,BK0302,22837.2,residents,0.1757,Bedford-Stuyvesant (East),Bedford-Stuyvesant (East),FALSE
+residents,base_21_in,38,1814,park,40.6679265231229,-73.9280201431941,BK0891,BK0901,22297.1,residents,0.17833,Crown Heights (South),Lincoln Terrace Park,FALSE
+residents,base_21_in,39,5791,plaza,40.6997298033889,-73.9114377373611,BK0402,BK0402,22227.8,residents,0.18095,Bushwick (East),Bushwick (East),FALSE
+residents,base_21_in,40,4486,busy_street,40.7468282315024,-73.8915908878595,QN0401,QN0401,21913.7,residents,0.18353,Elmhurst,Elmhurst,FALSE
+residents,base_21_in,41,4631,busy_street,40.8652784187165,-73.8949871905491,BX0701,BX0701,21777.6,residents,0.1861,University Heights (North)-Fordham,University Heights (North)-Fordham,FALSE
+residents,base_21_in,42,3508,park,40.8340662744891,-73.922505195952,BX0491,BX0401,21742.9,residents,0.18866,Concourse-Concourse Village,Yankee Stadium-Macombs Dam Park,FALSE
+residents,base_21_in,43,4640,busy_street,40.8157382964349,-73.9582596167728,MN0902,MN0902,21721.8,residents,0.19122,Manhattanville-West Harlem,Manhattanville-West Harlem,FALSE
+residents,base_21_in,44,3329,park,40.8097504491468,-73.9189780028059,BX0101,BX0101,21628.6,residents,0.19377,Mott Haven-Port Morris,Mott Haven-Port Morris,FALSE
+residents,base_21_in,45,4095,park,40.8772513458118,-73.8779659176936,BX0703,BX0703,21424.9,residents,0.1963,Norwood,Norwood,FALSE
+residents,base_21_in,46,4538,busy_street,40.7105128774075,-74.0125339800248,MN0101,MN0101,21338,residents,0.19881,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+residents,base_21_in,47,5787,plaza,40.6551410186391,-73.9616167080478,BK0902,BK0902,21154.3,residents,0.20131,Prospect Lefferts Gardens-Wingate,Prospect Lefferts Gardens-Wingate,FALSE
+residents,base_21_in,48,3707,park,40.855669045856,-73.9100271656752,BX0501,BX0501,21024.4,residents,0.20378,University Heights (South)-Morris Heights,University Heights (South)-Morris Heights,FALSE
+residents,base_21_in,49,2262,park,40.7313395165968,-73.8515982061658,QN0602,QN0602,20805.3,residents,0.20624,Forest Hills,Forest Hills,FALSE
+residents,base_21_in,50,2768,park,40.7570351781685,-73.8781861636394,QN0301,QN0301,20786.3,residents,0.20869,Jackson Heights,Jackson Heights,FALSE
+residents,base_21_in,51,5812,plaza,40.6428587857153,-73.978508041687,BK1203,BK1203,20632.1,residents,0.21112,Kensington,Kensington,FALSE
+residents,base_21_in,52,5782,plaza,40.6901395013143,-73.9830233184446,BK0202,BK0202,20596.2,residents,0.21355,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+residents,base_21_in,53,4968,busy_street,40.8503077645828,-73.93620768488,MN1202,MN1202,20510,residents,0.21596,Washington Heights (North),Washington Heights (North),FALSE
+residents,base_21_in,54,3442,park,40.8191886959103,-73.897630452602,BX0202,BX0202,20365.5,residents,0.21836,Longwood,Longwood,FALSE
+residents,base_21_in,55,5734,plaza,40.6686693148695,-73.9075968122155,BK1602,BK1602,20191.5,residents,0.22074,Brownsville,Brownsville,FALSE
+residents,base_21_in,56,4633,busy_street,40.8769496892075,-73.9063277619809,BX0802,BX0802,20182,residents,0.22312,Kingsbridge-Marble Hill,Kingsbridge-Marble Hill,FALSE
+residents,base_21_in,57,4496,busy_street,40.832756316725,-73.8613299044454,BX0903,BX0903,19904.6,residents,0.22547,Castle Hill-Unionport,Castle Hill-Unionport,FALSE
+residents,base_21_in,58,5773,plaza,40.7104182486811,-73.9636729684403,BK0102,BK0102,19698.4,residents,0.22779,Williamsburg,Williamsburg,FALSE
+residents,base_21_in,59,1600,park,40.6463366110394,-74.0025261471469,BK0703,BK0703,19552.7,residents,0.2301,Sunset Park (Central),Sunset Park (Central),FALSE
+residents,base_21_in,60,5681,busy_street,40.6767306723137,-73.9802458549263,BK0602,BK0602,19243.6,residents,0.23236,Park Slope,Park Slope,FALSE
+residents,base_21_in,61,1969,park,40.692255323419,-73.9581624092115,BK0301,BK0301,19138.8,residents,0.23462,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),FALSE
+residents,base_21_in,62,3562,park,40.8434867093009,-73.8815851682271,BX0601,BX0601,19030.2,residents,0.23686,West Farms,West Farms,FALSE
+residents,base_21_in,63,3462,park,40.8232484758741,-73.9065147747252,BX0301,BX0301,19002.9,residents,0.2391,Morrisania,Morrisania,FALSE
+residents,base_21_in,64,5811,plaza,40.6841823635824,-73.9683411317398,BK0204,BK0204,18597.1,residents,0.24129,Clinton Hill,Clinton Hill,FALSE
+residents,base_21_in,65,1864,park,40.6733376183354,-73.9422072326221,BK0802,BK0802,18424.2,residents,0.24347,Crown Heights (North),Crown Heights (North),FALSE
+residents,base_21_in,66,1915,park,40.6854962881019,-73.9457455739138,BK0301,BK0301,18300.3,residents,0.24562,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),FALSE
+residents,base_21_in,67,5744,plaza,40.7986300701382,-73.9525053922077,MN1001,MN1001,18290.9,residents,0.24778,Harlem (South),Harlem (South),FALSE
+residents,base_21_in,68,4898,busy_street,40.7282039057077,-73.9750753545496,MN0303,MN0303,18254.3,residents,0.24993,East Village,East Village,FALSE
+residents,base_21_in,69,3538,park,40.839401770775,-73.853135699952,BX0904,BX0904,18163.9,residents,0.25207,Parkchester,Parkchester,FALSE
+residents,base_21_in,70,3663,park,40.8529789491553,-73.9260409764917,MN1291,MN1202,18023.2,residents,0.2542,Washington Heights (North),Highbridge Park,FALSE
+residents,base_21_in,71,5757,plaza,40.7539773520908,-73.8888707484324,QN0301,QN0301,17799.7,residents,0.25629,Jackson Heights,Jackson Heights,FALSE
+residents,base_21_in,72,1897,park,40.6800800178776,-73.922684138182,BK0302,BK0302,17565,residents,0.25837,Bedford-Stuyvesant (East),Bedford-Stuyvesant (East),FALSE
+residents,base_21_in,73,1539,park,40.636881193494,-74.0007526427602,BK1201,BK1201,17333.1,residents,0.26041,Sunset Park (East)-Borough Park (West),Sunset Park (East)-Borough Park (West),FALSE
+residents,base_21_in,74,3120,park,40.7854550140232,-73.9509954325943,MN0802,MN0802,17189.6,residents,0.26243,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+residents,base_21_in,75,1900,park,40.6814394512313,-73.9368772163761,BK0302,BK0302,17069.7,residents,0.26445,Bedford-Stuyvesant (East),Bedford-Stuyvesant (East),FALSE
+residents,base_21_in,76,5661,busy_street,40.6658679280278,-73.9890609870852,BK0602,BK0602,17065.3,residents,0.26646,Park Slope,Park Slope,FALSE
+residents,base_21_in,77,5303,busy_street,40.8027100406908,-73.9365398672982,MN1102,MN1102,17007.8,residents,0.26846,East Harlem (North),East Harlem (North),FALSE
+residents,base_21_in,78,4641,busy_street,40.6747929072643,-73.9698704451899,BK0602,BK0602,16921.9,residents,0.27046,Park Slope,Park Slope,FALSE
+residents,base_21_in,79,4519,busy_street,40.732600860968,-73.868085694408,QN0601,QN0601,16538.1,residents,0.27241,Rego Park,Rego Park,FALSE
+residents,base_21_in,80,1549,park,40.6382200154578,-73.9475571940695,BK1702,BK1702,16519.3,residents,0.27435,East Flatbush-Farragut,East Flatbush-Farragut,FALSE
+residents,base_21_in,81,1764,park,40.6625305281947,-73.9404427671039,BK0902,BK0902,16462.7,residents,0.27629,Prospect Lefferts Gardens-Wingate,Prospect Lefferts Gardens-Wingate,FALSE
+residents,base_21_in,82,4636,busy_street,40.8078277499988,-73.964028044259,MN0901,MN0901,16301.3,residents,0.27822,Morningside Heights,Morningside Heights,FALSE
+residents,base_21_in,83,2326,busy_street,40.738188947523,-73.9989779446772,MN0203,MN0203,16270.4,residents,0.28013,West Village,West Village,FALSE
+residents,base_21_in,84,2205,park,40.7259318412181,-73.8480592114833,QN0602,QN0602,16202.8,residents,0.28204,Forest Hills,Forest Hills,FALSE
+residents,base_21_in,85,5780,plaza,40.6792785164562,-73.8632620266311,QN1002,QN1002,15947.2,residents,0.28392,Ozone Park,Ozone Park,FALSE
+residents,base_21_in,86,5802,plaza,40.7142226040355,-73.9548736641623,BK0102,BK0102,15871.2,residents,0.28579,Williamsburg,Williamsburg,FALSE
+residents,base_21_in,87,5337,busy_street,40.7765523533837,-73.9556383185925,MN0802,MN0802,15830.3,residents,0.28766,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+residents,base_21_in,88,4539,busy_street,40.7483537568098,-73.9708015340031,MN0603,MN0603,15785.4,residents,0.28952,Murray Hill-Kips Bay,Murray Hill-Kips Bay,FALSE
+residents,base_21_in,89,3471,park,40.8245884558901,-73.8940658465271,BX0202,BX0202,15783.1,residents,0.29138,Longwood,Longwood,FALSE
+residents,base_21_in,90,5770,plaza,40.6989011941679,-73.9186715423202,BK0401,BK0401,15694.9,residents,0.29323,Bushwick (West),Bushwick (West),FALSE
+residents,base_21_in,91,5786,plaza,40.6685438224385,-73.9194385586936,BK1601,BK1601,15685.4,residents,0.29508,Ocean Hill,Ocean Hill,FALSE
+residents,base_21_in,92,5768,plaza,40.7006653020617,-73.8993810720746,QN0502,QN0502,15593.3,residents,0.29692,Ridgewood,Ridgewood,FALSE
+residents,base_21_in,93,5269,busy_street,40.7549920699815,-73.9942108061168,MN0401,MN0401,15509.1,residents,0.29875,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+residents,base_21_in,94,4490,busy_street,40.6926246145978,-73.9908235254632,BK0202,BK0202,15413.1,residents,0.30056,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+residents,base_21_in,95,4523,busy_street,40.6926746364766,-73.8564098659616,QN0905,QN0905,15254.8,residents,0.30236,Woodhaven,Woodhaven,FALSE
+residents,base_21_in,96,4583,busy_street,40.6074837280315,-74.0030236853982,BK1102,BK1102,15231.2,residents,0.30416,Bath Beach,Bath Beach,FALSE
+residents,base_21_in,97,1835,park,40.6705785425555,-73.8712478896804,BK0505,BK0505,15156,residents,0.30594,East New York-City Line,East New York-City Line,FALSE
+residents,base_21_in,98,3380,park,40.8138147711685,-73.9385295254976,MN1002,MN1002,14976.4,residents,0.30771,Harlem (North),Harlem (North),FALSE
+residents,base_21_in,99,1244,park,40.6085140257174,-73.9865731788009,BK1101,BK1101,14961.6,residents,0.30947,Bensonhurst,Bensonhurst,FALSE
+residents,base_21_in,100,2642,park,40.7502100093522,-73.8231375131908,QN0706,QN0706,14904,residents,0.31123,Queensboro Hill,Queensboro Hill,FALSE
+residents,strict_14,1,4553,busy_street,40.7484276257905,-73.8763656664433,QN0401,QN0401,24411.7,residents,0.69313,Elmhurst,Elmhurst,FALSE
+residents,strict_14,2,3047,busy_street,40.7800527472296,-73.9527763675885,MN0803,MN0803,22487,residents,0.69578,Upper East Side-Yorkville,Upper East Side-Yorkville,FALSE
+residents,strict_14,3,5314,busy_street,40.795835859902,-73.9415612968133,MN1102,MN1102,17203,residents,0.69781,East Harlem (North),East Harlem (North),FALSE
+residents,strict_14,4,5786,plaza,40.6685438224385,-73.9194385586936,BK1601,BK1601,13957.6,residents,0.69945,Ocean Hill,Ocean Hill,FALSE
+residents,strict_14,5,5788,plaza,40.6405663526277,-73.9790936698526,BK1203,BK1203,11782.4,residents,0.70084,Kensington,Kensington,FALSE
+residents,strict_14,6,5780,plaza,40.6792785164562,-73.8632620266311,QN1002,QN1002,11773.6,residents,0.70223,Ozone Park,Ozone Park,FALSE
+residents,strict_14,7,4121,park,40.8785412651185,-73.8299145219054,BX1004,BX1004,11655.9,residents,0.7036,Co-op City,Co-op City,FALSE
+residents,strict_14,8,4559,busy_street,40.7310850774407,-73.9740119322706,MN0601,MN0601,11416.9,residents,0.70495,Stuyvesant Town-Peter Cooper Village,Stuyvesant Town-Peter Cooper Village,FALSE
+residents,strict_14,9,5757,plaza,40.7539773520908,-73.8888707484324,QN0301,QN0301,11086.6,residents,0.70625,Jackson Heights,Jackson Heights,FALSE
+residents,strict_14,10,1487,park,40.6287601813371,-73.9386999721515,BK1801,BK1801,10569.3,residents,0.7075,Flatlands,Flatlands,FALSE
+residents,strict_14,11,3521,park,40.8381325380236,-73.9473996095316,MN1201,MN1201,10526.2,residents,0.70874,Washington Heights (South),Washington Heights (South),FALSE
+residents,strict_14,12,823,park,40.5895986054387,-73.9653142894677,BK1301,BK1301,10500.3,residents,0.70998,Gravesend (South),Gravesend (South),FALSE
+residents,strict_14,13,4546,busy_street,40.7481721032931,-73.9394554961464,QN0201,QN0201,10116,residents,0.71117,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+residents,strict_14,14,1146,park,40.6044548674445,-73.95821742955,BK1501,BK1501,10053.5,residents,0.71236,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,FALSE
+residents,strict_14,15,1807,park,40.6665159585156,-73.8623860501534,BK0505,BK0505,9994.5,residents,0.71353,East New York-City Line,East New York-City Line,FALSE
+residents,strict_14,16,2057,park,40.7030579020734,-73.9492810954172,BK0103,BK0103,9676.9,residents,0.71467,South Williamsburg,South Williamsburg,FALSE
+residents,strict_14,17,2007,park,40.6990104027369,-73.9617077681764,BK0103,BK0103,9671.2,residents,0.71581,South Williamsburg,South Williamsburg,FALSE
+residents,strict_14,18,677,park,40.5828446800131,-73.9653177971745,BK1303,BK1303,8967.4,residents,0.71687,Brighton Beach,Brighton Beach,FALSE
+residents,strict_14,19,5791,plaza,40.6997298033889,-73.9114377373611,BK0402,BK0402,8816.2,residents,0.71791,Bushwick (East),Bushwick (East),FALSE
+residents,strict_14,20,1767,park,40.6625021703902,-73.8996447426726,BK0503,BK0503,8709.3,residents,0.71894,East New York-New Lots,East New York-New Lots,FALSE
+residents,strict_14,21,3560,park,40.8435214516398,-73.9224941812756,BX0403,BX0403,7655.5,residents,0.71984,Mount Eden-Claremont (West),Mount Eden-Claremont (West),FALSE
+residents,strict_14,22,885,park,40.5922926374981,-73.9458213005,BK1503,BK1503,7505.8,residents,0.72072,Sheepshead Bay-Manhattan Beach-Gerritsen Beach,Sheepshead Bay-Manhattan Beach-Gerritsen Beach,FALSE
+residents,strict_14,23,2589,busy_street,40.7489229040637,-73.8710964756144,QN0401,QN0401,7239,residents,0.72158,Elmhurst,Elmhurst,FALSE
+residents,strict_14,24,1872,park,40.6746692869623,-73.9120454993635,BK1601,BK1601,7181.3,residents,0.72242,Ocean Hill,Ocean Hill,FALSE
+residents,strict_14,25,5772,plaza,40.7173489718443,-73.9523272305288,BK0102,BK0102,6709.7,residents,0.72321,Williamsburg,Williamsburg,FALSE
+residents,strict_14,26,3485,park,40.82728142945,-73.8851704511452,BX0303,BX0303,6690.6,residents,0.724,Crotona Park East,Crotona Park East,FALSE
+residents,strict_14,27,1600,park,40.6463366110394,-74.0025261471469,BK0703,BK0703,6605.3,residents,0.72478,Sunset Park (Central),Sunset Park (Central),FALSE
+residents,strict_14,28,1851,park,40.6719528130059,-73.8943082823989,BK0502,BK0502,6591.4,residents,0.72556,East New York (North),East New York (North),FALSE
+residents,strict_14,29,3333,park,40.8096899313057,-73.8567567674393,BX0902,BX0902,6468.3,residents,0.72632,Soundview-Clason Point,Soundview-Clason Point,FALSE
+residents,strict_14,30,3068,park,40.7813847180032,-73.9190125186009,QN0191,QN0101,6341.9,residents,0.72707,Astoria (North)-Ditmars-Steinway,Astoria Park,FALSE
+residents,strict_14,31,1456,park,40.6260712081025,-73.9706139129399,BK1204,BK1204,6307.5,residents,0.72781,Mapleton-Midwood (West),Mapleton-Midwood (West),FALSE
+residents,strict_14,32,2120,park,40.710879635216,-73.739811208073,QN1303,QN1303,6216.7,residents,0.72855,Queens Village,Queens Village,FALSE
+residents,strict_14,33,3875,park,40.8651002863064,-73.8833259151356,BX2791,BX0603,6174.1,residents,0.72927,Belmont,Bronx Park,FALSE
+residents,strict_14,34,1457,park,40.6260465712656,-73.9192010134108,BK1801,BK1801,6130.5,residents,0.73,Flatlands,Flatlands,FALSE
+residents,strict_14,35,1961,park,40.6908188633637,-73.8534629759294,QN0905,QN0905,6012.5,residents,0.7307,Woodhaven,Woodhaven,FALSE
+residents,strict_14,36,2167,park,40.7205445219904,-73.8604991167455,QN0601,QN0601,6005.5,residents,0.73141,Rego Park,Rego Park,FALSE
+residents,strict_14,37,1865,park,40.6732611080875,-73.8552756688087,QN1002,QN1002,5984.5,residents,0.73212,Ozone Park,Ozone Park,FALSE
+residents,strict_14,38,1667,park,40.6527886596618,-73.7364906092305,QN1307,QN1307,5898,residents,0.73281,Rosedale,Rosedale,FALSE
+residents,strict_14,39,2460,busy_street,40.7449427209189,-73.9972018185959,MN0401,MN0401,5675.6,residents,0.73348,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+residents,strict_14,40,1975,park,40.693430927129,-73.7948936550773,QN1202,QN1202,5628.6,residents,0.73415,South Jamaica,South Jamaica,FALSE
+residents,strict_14,41,1828,park,40.6706504131589,-73.9936568470251,BK0601,BK0601,5500,residents,0.73479,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,FALSE
+residents,strict_14,42,1537,park,40.6368464350724,-74.0894099340552,SI0101,SI0101,5451.4,residents,0.73544,St. George-New Brighton,St. George-New Brighton,FALSE
+residents,strict_14,43,5804,plaza,40.7455216333217,-73.9467061260528,QN0201,QN0201,5417.1,residents,0.73607,Long Island City-Hunters Point,Long Island City-Hunters Point,FALSE
+residents,strict_14,44,3136,park,40.7868025235964,-73.9438858832058,MN1101,MN1101,5356.1,residents,0.73671,East Harlem (South),East Harlem (South),FALSE
+residents,strict_14,45,1970,park,40.6920539840235,-73.7807009396624,QN1202,QN1202,5350,residents,0.73734,South Jamaica,South Jamaica,FALSE
+residents,strict_14,46,3664,park,40.8529689478804,-73.9118097259773,BX0501,BX0501,5312.7,residents,0.73796,University Heights (South)-Morris Heights,University Heights (South)-Morris Heights,FALSE
+residents,strict_14,47,2107,park,40.7084202545761,-73.8907003599998,QN0502,QN0502,5167.3,residents,0.73857,Ridgewood,Ridgewood,FALSE
+residents,strict_14,48,1597,park,40.6449270663398,-73.8837109220044,BK0504,BK0504,5048.6,residents,0.73917,Spring Creek-Starrett City,Spring Creek-Starrett City,FALSE
+residents,strict_14,49,1550,park,40.6381866538042,-73.8979081285165,BK1803,BK1803,4949.4,residents,0.73975,Canarsie,Canarsie,FALSE
+residents,strict_14,50,1899,park,40.6798868212683,-73.775418063879,QN1204,QN1204,4893.1,residents,0.74033,Springfield Gardens (North)-Rochdale Village,Springfield Gardens (North)-Rochdale Village,FALSE
+residents,strict_14,51,1966,plaza,40.6922623366413,-73.9883309332676,BK0202,BK0202,4722.6,residents,0.74088,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+residents,strict_14,52,3516,park,40.8367754484175,-73.9349513620316,MN1291,MN1002,4679,residents,0.74144,Harlem (North),Highbridge Park,FALSE
+residents,strict_14,53,5769,plaza,40.7017906234497,-73.8809394344356,QN0503,QN0503,4583.8,residents,0.74198,Glendale,Glendale,FALSE
+residents,strict_14,54,1050,park,40.5988227848354,-73.7668300181818,QN1401,QN1401,4510.2,residents,0.74251,Far Rockaway-Bayswater,Far Rockaway-Bayswater,FALSE
+residents,strict_14,55,222,park,40.5529976164968,-74.1760729309348,SI0302,SI0302,4486.7,residents,0.74304,Great Kills-Eltingville,Great Kills-Eltingville,FALSE
+residents,strict_14,56,3786,park,40.8596203321791,-73.8228465575787,BX2891,BX1004,4360.9,residents,0.74355,Co-op City,Pelham Bay Park,FALSE
+residents,strict_14,57,1738,park,40.6611933389526,-73.9794674045851,BK5591,BK0602,4355.5,residents,0.74406,Park Slope,Prospect Park,FALSE
+residents,strict_14,58,5748,plaza,40.6960961377266,-73.7702371421294,QN1205,QN1205,4289.8,residents,0.74457,St. Albans,St. Albans,FALSE
+residents,strict_14,59,209,park,40.5516271554575,-74.1884655345915,SI0303,SI0303,4271.5,residents,0.74507,Arden Heights-Rossville,Arden Heights-Rossville,FALSE
+residents,strict_14,60,5779,plaza,40.6663001326476,-73.88310942966,BK0503,BK0503,4221.7,residents,0.74557,East New York-New Lots,East New York-New Lots,FALSE
+residents,strict_14,61,4096,park,40.8772494503523,-73.8761863628551,BX0703,BX0703,4194.8,residents,0.74606,Norwood,Norwood,FALSE
+residents,strict_14,62,1873,park,40.6746385795265,-73.8783366601211,BK0502,BK0502,4168.7,residents,0.74656,East New York (North),East New York (North),FALSE
+residents,strict_14,63,898,park,40.5920865232166,-73.7757133550789,QN1402,QN1402,4139.1,residents,0.74704,Rockaway Beach-Arverne-Edgemere,Rockaway Beach-Arverne-Edgemere,FALSE
+residents,strict_14,64,2161,park,40.7205701733267,-73.8835789365537,QN0504,QN0504,4135,residents,0.74753,Middle Village,Middle Village,FALSE
+residents,strict_14,65,1842,park,40.6703486484317,-73.7364212329694,QN1307,QN1307,4126,residents,0.74802,Rosedale,Rosedale,FALSE
+residents,strict_14,66,5768,plaza,40.7006653020617,-73.8993810720746,QN0502,QN0502,4103.4,residents,0.7485,Ridgewood,Ridgewood,FALSE
+residents,strict_14,67,4485,busy_street,40.6324211116248,-73.947222460207,BK1401,BK1401,4037,residents,0.74898,Flatbush,Flatbush,FALSE
+residents,strict_14,68,2275,park,40.7327157666409,-73.872903526537,QN0401,QN0401,3958.7,residents,0.74944,Elmhurst,Elmhurst,FALSE
+residents,strict_14,69,1422,park,40.6232956455944,-74.133711456483,SI0105,SI0105,3824.8,residents,0.74989,Westerleigh-Castleton Corners,Westerleigh-Castleton Corners,FALSE
+residents,strict_14,70,1709,park,40.6568648574391,-73.7471166200398,QN1306,QN1306,3823,residents,0.75035,Springfield Gardens (South)-Brookville,Springfield Gardens (South)-Brookville,FALSE
+residents,strict_14,71,1819,park,40.6692964966719,-73.9723688770802,BK5591,BK0602,3744.9,residents,0.75079,Park Slope,Prospect Park,FALSE
+residents,strict_14,72,1144,park,40.6044354946844,-74.0787328161083,SI0201,SI0201,3717.9,residents,0.75122,Grasmere-Arrochar-South Beach-Dongan Hills,Grasmere-Arrochar-South Beach-Dongan Hills,FALSE
+residents,strict_14,73,1007,park,40.5977033102334,-73.9653100792828,BK1501,BK1501,3700.2,residents,0.75166,Gravesend (East)-Homecrest,Gravesend (East)-Homecrest,FALSE
+residents,strict_14,74,3108,park,40.7839348175982,-73.7963919300302,QN0703,QN0703,3690.9,residents,0.7521,Bay Terrace-Clearview,Bay Terrace-Clearview,FALSE
+residents,strict_14,75,2085,park,40.7057586405286,-73.9475040617684,BK0104,BK0104,3674.6,residents,0.75253,East Williamsburg,East Williamsburg,FALSE
+residents,strict_14,76,3849,busy_street,40.8637787835165,-73.9171329816422,MN1203,MN1203,3637.4,residents,0.75296,Inwood,Inwood,FALSE
+residents,strict_14,77,1434,park,40.6246220891198,-74.1532151684351,SI0107,SI0107,3623.3,residents,0.75339,Mariner's Harbor-Arlington-Graniteville,Mariner's Harbor-Arlington-Graniteville,FALSE
+residents,strict_14,78,1661,park,40.6530403430957,-73.8925646668349,BK1803,BK1803,3567.5,residents,0.75381,Canarsie,Canarsie,FALSE
+residents,strict_14,79,4320,park,40.8975430621129,-73.9117505849918,BX0803,BX0803,3512.4,residents,0.75422,Riverdale-Spuyten Duyvil,Riverdale-Spuyten Duyvil,FALSE
+residents,strict_14,80,5774,plaza,40.7175086124401,-73.9490382646825,BK0102,BK0102,3363.7,residents,0.75462,Williamsburg,Williamsburg,FALSE
+residents,strict_14,81,649,park,40.5814990486522,-74.0042953708211,BK1302,BK1302,3336.9,residents,0.75501,Coney Island-Sea Gate,Coney Island-Sea Gate,FALSE
+residents,strict_14,82,3574,park,40.8448259973858,-73.8709106384058,BX0601,BX0601,3320.1,residents,0.7554,West Farms,West Farms,FALSE
+residents,strict_14,83,895,park,40.5921383631084,-73.8040645964911,QN1402,QN1402,3318.1,residents,0.75579,Rockaway Beach-Arverne-Edgemere,Rockaway Beach-Arverne-Edgemere,FALSE
+residents,strict_14,84,2915,park,40.7692511417261,-73.9652207233097,MN0802,MN0802,3307.8,residents,0.75618,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+residents,strict_14,85,281,park,40.5583839774105,-74.1867135277736,SI0303,SI0303,3263.7,residents,0.75657,Arden Heights-Rossville,Arden Heights-Rossville,FALSE
+residents,strict_14,86,5812,plaza,40.6428587857153,-73.978508041687,BK1203,BK1203,3262.9,residents,0.75695,Kensington,Kensington,FALSE
+residents,strict_14,87,1936,park,40.6866265812034,-73.7682974633172,QN1205,QN1205,3209.2,residents,0.75733,St. Albans,St. Albans,FALSE
+residents,strict_14,88,2243,park,40.7300272920521,-73.8853380406794,QN0401,QN0401,3175.7,residents,0.7577,Elmhurst,Elmhurst,FALSE
+residents,strict_14,89,2121,park,40.71085506958,-73.7291605696641,QN1303,QN1303,3157.6,residents,0.75808,Queens Village,Queens Village,FALSE
+residents,strict_14,90,1172,park,40.6057248590266,-74.1425378717397,SI0203,SI0203,3113.3,residents,0.75844,Todt Hill-Emerson Hill-Lighthouse Hill-Manor Heights,Todt Hill-Emerson Hill-Lighthouse Hill-Manor Heights,FALSE
+residents,strict_14,91,4631,busy_street,40.8652784187165,-73.8949871905491,BX0701,BX0701,3110.8,residents,0.75881,University Heights (North)-Fordham,University Heights (North)-Fordham,FALSE
+residents,strict_14,92,1368,park,40.6166152784635,-73.9688454674985,BK1204,BK1204,3083.5,residents,0.75917,Mapleton-Midwood (West),Mapleton-Midwood (West),FALSE
+residents,strict_14,93,316,park,40.562488458306,-74.1513014943346,SI0302,SI0302,3061.2,residents,0.75953,Great Kills-Eltingville,Great Kills-Eltingville,FALSE
+residents,strict_14,94,1883,park,40.6772872141681,-73.8357504732196,QN1001,QN1001,3048.2,residents,0.75989,South Ozone Park,South Ozone Park,FALSE
+residents,strict_14,95,522,park,40.5746404435892,-73.8448603735313,QN1403,QN1403,3041.7,residents,0.76025,Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,FALSE
+residents,strict_14,96,5291,busy_street,40.7989407360797,-73.9392856680395,MN1102,MN1102,3018.3,residents,0.76061,East Harlem (North),East Harlem (North),FALSE
+residents,strict_14,97,2747,park,40.7555007941216,-73.7609526498934,QN1102,QN1102,3014.3,residents,0.76096,Bayside,Bayside,FALSE
+residents,strict_14,98,5766,plaza,40.6370303089316,-74.1536886036659,SI0107,SI0107,2986.6,residents,0.76131,Mariner's Harbor-Arlington-Graniteville,Mariner's Harbor-Arlington-Graniteville,FALSE
+residents,strict_14,99,4753,busy_street,40.8160835200761,-73.9177176780063,BX0102,BX0102,2941.1,residents,0.76166,Melrose,Melrose,FALSE
+residents,strict_14,100,2223,park,40.727134927004,-73.7610544023031,QN0891,QN0804,2935.8,residents,0.76201,Jamaica Estates-Holliswood,Cunningham Park,FALSE
+residents,strict_21_off,1,4759,busy_street,40.7713405009496,-73.9534180392442,MN0801,MN0801,51568.1,residents,0.04996,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,FALSE
+residents,strict_21_off,2,5152,busy_street,40.7801229069296,-73.9501085543462,MN0803,MN0803,51326.1,residents,0.05601,Upper East Side-Yorkville,Upper East Side-Yorkville,FALSE
+residents,strict_21_off,3,4777,busy_street,40.7928505183366,-73.9730938374148,MN0702,MN0702,42278,residents,0.06099,Upper West Side (Central),Upper West Side (Central),FALSE
+residents,strict_21_off,4,4718,busy_street,40.8362450229344,-73.9432830063395,MN1201,MN1201,38087.7,residents,0.06548,Washington Heights (South),Washington Heights (South),FALSE
+residents,strict_21_off,5,4481,busy_street,40.7483441812487,-73.8771703539944,QN0401,QN0401,36664.8,residents,0.0698,Elmhurst,Elmhurst,FALSE
+residents,strict_21_off,6,4789,busy_street,40.779046892449,-73.9826609927539,MN0701,MN0701,36661.8,residents,0.07412,Upper West Side-Lincoln Square,Upper West Side-Lincoln Square,FALSE
+residents,strict_21_off,7,5342,busy_street,40.7428961805384,-73.9801844904458,MN0603,MN0603,36347.4,residents,0.07841,Murray Hill-Kips Bay,Murray Hill-Kips Bay,FALSE
+residents,strict_21_off,8,5763,plaza,40.8460919509619,-73.9380791899281,MN1201,MN1201,36291.5,residents,0.08269,Washington Heights (South),Washington Heights (South),FALSE
+residents,strict_21_off,9,4628,busy_street,40.8603916424727,-73.8982585114392,BX0503,BX0503,36236.5,residents,0.08696,Fordham Heights,Fordham Heights,FALSE
+residents,strict_21_off,10,5010,busy_street,40.7320936790649,-73.9818856074845,MN0602,MN0602,33967.2,residents,0.09096,Gramercy,Gramercy,FALSE
+residents,strict_21_off,11,4476,busy_street,40.7861031312844,-73.9782958689175,MN0702,MN0702,32831.8,residents,0.09483,Upper West Side (Central),Upper West Side (Central),FALSE
+residents,strict_21_off,12,4877,busy_street,40.8260974401112,-73.9496605030829,MN0903,MN0903,31918.3,residents,0.09859,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,FALSE
+residents,strict_21_off,13,4510,busy_street,40.7146113512816,-73.9909439870635,MN0301,MN0301,31454.1,residents,0.1023,Chinatown-Two Bridges,Chinatown-Two Bridges,FALSE
+residents,strict_21_off,14,5315,busy_street,40.7956030008089,-73.9417317482178,MN1102,MN1102,29269.3,residents,0.10575,East Harlem (North),East Harlem (North),FALSE
+residents,strict_21_off,15,4750,busy_street,40.7242443243247,-73.9877308098145,MN0303,MN0303,28979.7,residents,0.10917,East Village,East Village,FALSE
+residents,strict_21_off,16,4518,busy_street,40.8479564675068,-73.9121680487971,BX0501,BX0501,28968.7,residents,0.11258,University Heights (South)-Morris Heights,University Heights (South)-Morris Heights,FALSE
+residents,strict_21_off,17,3509,park,40.8340572378934,-73.9100563917639,BX0401,BX0401,28757.3,residents,0.11597,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+residents,strict_21_off,18,5075,busy_street,40.7449952632357,-73.9977761191913,MN0401,MN0401,28416.9,residents,0.11932,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+residents,strict_21_off,19,3292,park,40.8030181975161,-73.9598703636912,MN0901,MN0901,27127.5,residents,0.12252,Morningside Heights,Morningside Heights,FALSE
+residents,strict_21_off,20,4551,busy_street,40.866278211539,-73.9203037841477,MN1203,MN1203,27004.8,residents,0.1257,Inwood,Inwood,FALSE
+residents,strict_21_off,21,3481,park,40.8273231446815,-73.940295267877,MN0903,MN0903,26785.9,residents,0.12886,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,FALSE
+residents,strict_21_off,22,4480,busy_street,40.7415690618691,-73.880640765414,QN0401,QN0401,26436.9,residents,0.13197,Elmhurst,Elmhurst,FALSE
+residents,strict_21_off,23,2793,park,40.7583172554217,-73.824892369163,QN0707,QN0707,26210.8,residents,0.13506,Flushing-Willets Point,Flushing-Willets Point,FALSE
+residents,strict_21_off,24,4472,busy_street,40.763171751166,-73.9891797062544,MN0402,MN0402,26168.6,residents,0.13815,Hell's Kitchen,Hell's Kitchen,FALSE
+residents,strict_21_off,25,4846,busy_street,40.8089890055223,-73.9483661313527,MN1001,MN1001,25854.4,residents,0.1412,Harlem (South),Harlem (South),FALSE
+residents,strict_21_off,26,5516,busy_street,40.7293663833296,-73.9961922574639,MN0202,MN0202,25523.3,residents,0.1442,Greenwich Village,Greenwich Village,FALSE
+residents,strict_21_off,27,5758,plaza,40.7496441677116,-73.8623283265327,QN0402,QN0402,25455.1,residents,0.14721,Corona,Corona,FALSE
+residents,strict_21_off,28,4932,busy_street,40.8252846196172,-73.9175375047576,BX0401,BX0401,25453.4,residents,0.15021,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+residents,strict_21_off,29,2146,park,40.719276739532,-73.9812248492455,MN0302,MN0302,25452.8,residents,0.15321,Lower East Side,Lower East Side,FALSE
+residents,strict_21_off,30,3624,park,40.850258822289,-73.9011403063497,BX0502,BX0502,25215.8,residents,0.15618,Mount Hope,Mount Hope,FALSE
+residents,strict_21_off,31,5331,busy_street,40.7668717807458,-73.9626993254812,MN0802,MN0802,24937.6,residents,0.15912,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+residents,strict_21_off,32,3440,park,40.8192167887844,-73.9367465304543,MN1002,MN1002,24598,residents,0.16202,Harlem (North),Harlem (North),FALSE
+residents,strict_21_off,33,3136,park,40.7868025235964,-73.9438858832058,MN1101,MN1101,23966.1,residents,0.16484,East Harlem (South),East Harlem (South),FALSE
+residents,strict_21_off,34,2057,park,40.7030579020734,-73.9492810954172,BK0103,BK0103,23586.4,residents,0.16762,South Williamsburg,South Williamsburg,FALSE
+residents,strict_21_off,35,5746,plaza,40.7431795726067,-73.9187094906736,QN0202,QN0202,22853.4,residents,0.17032,Sunnyside,Sunnyside,FALSE
+residents,strict_21_off,36,5807,plaza,40.8293086221803,-73.8743116048064,BX0901,BX0901,22853.3,residents,0.17301,Soundview-Bruckner-Bronx River,Soundview-Bruckner-Bronx River,FALSE
+residents,strict_21_off,37,1974,park,40.6935991778785,-73.9421896700454,BK0302,BK0302,22837.2,residents,0.1757,Bedford-Stuyvesant (East),Bedford-Stuyvesant (East),FALSE
+residents,strict_21_off,38,1814,park,40.6679265231229,-73.9280201431941,BK0891,BK0901,22297.1,residents,0.17833,Crown Heights (South),Lincoln Terrace Park,FALSE
+residents,strict_21_off,39,5791,plaza,40.6997298033889,-73.9114377373611,BK0402,BK0402,22227.8,residents,0.18095,Bushwick (East),Bushwick (East),FALSE
+residents,strict_21_off,40,4486,busy_street,40.7468282315024,-73.8915908878595,QN0401,QN0401,21913.7,residents,0.18353,Elmhurst,Elmhurst,FALSE
+residents,strict_21_off,41,4631,busy_street,40.8652784187165,-73.8949871905491,BX0701,BX0701,21777.6,residents,0.1861,University Heights (North)-Fordham,University Heights (North)-Fordham,FALSE
+residents,strict_21_off,42,3508,park,40.8340662744891,-73.922505195952,BX0491,BX0401,21742.9,residents,0.18866,Concourse-Concourse Village,Yankee Stadium-Macombs Dam Park,FALSE
+residents,strict_21_off,43,4640,busy_street,40.8157382964349,-73.9582596167728,MN0902,MN0902,21721.8,residents,0.19122,Manhattanville-West Harlem,Manhattanville-West Harlem,FALSE
+residents,strict_21_off,44,3329,park,40.8097504491468,-73.9189780028059,BX0101,BX0101,21628.6,residents,0.19377,Mott Haven-Port Morris,Mott Haven-Port Morris,FALSE
+residents,strict_21_off,45,4095,park,40.8772513458118,-73.8779659176936,BX0703,BX0703,21424.9,residents,0.1963,Norwood,Norwood,FALSE
+residents,strict_21_off,46,4538,busy_street,40.7105128774075,-74.0125339800248,MN0101,MN0101,21338,residents,0.19881,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+residents,strict_21_off,47,5787,plaza,40.6551410186391,-73.9616167080478,BK0902,BK0902,21154.3,residents,0.20131,Prospect Lefferts Gardens-Wingate,Prospect Lefferts Gardens-Wingate,FALSE
+residents,strict_21_off,48,3707,park,40.855669045856,-73.9100271656752,BX0501,BX0501,21024.4,residents,0.20378,University Heights (South)-Morris Heights,University Heights (South)-Morris Heights,FALSE
+residents,strict_21_off,49,2262,park,40.7313395165968,-73.8515982061658,QN0602,QN0602,20805.3,residents,0.20624,Forest Hills,Forest Hills,FALSE
+residents,strict_21_off,50,2768,park,40.7570351781685,-73.8781861636394,QN0301,QN0301,20786.3,residents,0.20869,Jackson Heights,Jackson Heights,FALSE
+residents,strict_21_off,51,5812,plaza,40.6428587857153,-73.978508041687,BK1203,BK1203,20632.1,residents,0.21112,Kensington,Kensington,FALSE
+residents,strict_21_off,52,5782,plaza,40.6901395013143,-73.9830233184446,BK0202,BK0202,20596.2,residents,0.21355,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+residents,strict_21_off,53,4968,busy_street,40.8503077645828,-73.93620768488,MN1202,MN1202,20510,residents,0.21596,Washington Heights (North),Washington Heights (North),FALSE
+residents,strict_21_off,54,3442,park,40.8191886959103,-73.897630452602,BX0202,BX0202,20365.5,residents,0.21836,Longwood,Longwood,FALSE
+residents,strict_21_off,55,5734,plaza,40.6686693148695,-73.9075968122155,BK1602,BK1602,20191.5,residents,0.22074,Brownsville,Brownsville,FALSE
+residents,strict_21_off,56,4633,busy_street,40.8769496892075,-73.9063277619809,BX0802,BX0802,20182,residents,0.22312,Kingsbridge-Marble Hill,Kingsbridge-Marble Hill,FALSE
+residents,strict_21_off,57,4496,busy_street,40.832756316725,-73.8613299044454,BX0903,BX0903,19904.6,residents,0.22547,Castle Hill-Unionport,Castle Hill-Unionport,FALSE
+residents,strict_21_off,58,5773,plaza,40.7104182486811,-73.9636729684403,BK0102,BK0102,19698.4,residents,0.22779,Williamsburg,Williamsburg,FALSE
+residents,strict_21_off,59,1600,park,40.6463366110394,-74.0025261471469,BK0703,BK0703,19552.7,residents,0.2301,Sunset Park (Central),Sunset Park (Central),FALSE
+residents,strict_21_off,60,5681,busy_street,40.6767306723137,-73.9802458549263,BK0602,BK0602,19243.6,residents,0.23236,Park Slope,Park Slope,FALSE
+residents,strict_21_off,61,1969,park,40.692255323419,-73.9581624092115,BK0301,BK0301,19138.8,residents,0.23462,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),FALSE
+residents,strict_21_off,62,3562,park,40.8434867093009,-73.8815851682271,BX0601,BX0601,19030.2,residents,0.23686,West Farms,West Farms,FALSE
+residents,strict_21_off,63,3462,park,40.8232484758741,-73.9065147747252,BX0301,BX0301,19002.9,residents,0.2391,Morrisania,Morrisania,FALSE
+residents,strict_21_off,64,5811,plaza,40.6841823635824,-73.9683411317398,BK0204,BK0204,18597.1,residents,0.24129,Clinton Hill,Clinton Hill,FALSE
+residents,strict_21_off,65,1864,park,40.6733376183354,-73.9422072326221,BK0802,BK0802,18424.2,residents,0.24347,Crown Heights (North),Crown Heights (North),FALSE
+residents,strict_21_off,66,1915,park,40.6854962881019,-73.9457455739138,BK0301,BK0301,18300.3,residents,0.24562,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),FALSE
+residents,strict_21_off,67,5744,plaza,40.7986300701382,-73.9525053922077,MN1001,MN1001,18290.9,residents,0.24778,Harlem (South),Harlem (South),FALSE
+residents,strict_21_off,68,4898,busy_street,40.7282039057077,-73.9750753545496,MN0303,MN0303,18254.3,residents,0.24993,East Village,East Village,FALSE
+residents,strict_21_off,69,3538,park,40.839401770775,-73.853135699952,BX0904,BX0904,18163.9,residents,0.25207,Parkchester,Parkchester,FALSE
+residents,strict_21_off,70,3663,park,40.8529789491553,-73.9260409764917,MN1291,MN1202,18023.2,residents,0.2542,Washington Heights (North),Highbridge Park,FALSE
+residents,strict_21_off,71,5757,plaza,40.7539773520908,-73.8888707484324,QN0301,QN0301,17799.7,residents,0.25629,Jackson Heights,Jackson Heights,FALSE
+residents,strict_21_off,72,1897,park,40.6800800178776,-73.922684138182,BK0302,BK0302,17565,residents,0.25837,Bedford-Stuyvesant (East),Bedford-Stuyvesant (East),FALSE
+residents,strict_21_off,73,1539,park,40.636881193494,-74.0007526427602,BK1201,BK1201,17333.1,residents,0.26041,Sunset Park (East)-Borough Park (West),Sunset Park (East)-Borough Park (West),FALSE
+residents,strict_21_off,74,3120,park,40.7854550140232,-73.9509954325943,MN0802,MN0802,17189.6,residents,0.26243,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+residents,strict_21_off,75,1900,park,40.6814394512313,-73.9368772163761,BK0302,BK0302,17069.7,residents,0.26445,Bedford-Stuyvesant (East),Bedford-Stuyvesant (East),FALSE
+residents,strict_21_off,76,5661,busy_street,40.6658679280278,-73.9890609870852,BK0602,BK0602,17065.3,residents,0.26646,Park Slope,Park Slope,FALSE
+residents,strict_21_off,77,5303,busy_street,40.8027100406908,-73.9365398672982,MN1102,MN1102,17007.8,residents,0.26846,East Harlem (North),East Harlem (North),FALSE
+residents,strict_21_off,78,4641,busy_street,40.6747929072643,-73.9698704451899,BK0602,BK0602,16921.9,residents,0.27046,Park Slope,Park Slope,FALSE
+residents,strict_21_off,79,4519,busy_street,40.732600860968,-73.868085694408,QN0601,QN0601,16538.1,residents,0.27241,Rego Park,Rego Park,FALSE
+residents,strict_21_off,80,1549,park,40.6382200154578,-73.9475571940695,BK1702,BK1702,16519.3,residents,0.27435,East Flatbush-Farragut,East Flatbush-Farragut,FALSE
+residents,strict_21_off,81,1764,park,40.6625305281947,-73.9404427671039,BK0902,BK0902,16462.7,residents,0.27629,Prospect Lefferts Gardens-Wingate,Prospect Lefferts Gardens-Wingate,FALSE
+residents,strict_21_off,82,4636,busy_street,40.8078277499988,-73.964028044259,MN0901,MN0901,16301.3,residents,0.27822,Morningside Heights,Morningside Heights,FALSE
+residents,strict_21_off,83,2326,busy_street,40.738188947523,-73.9989779446772,MN0203,MN0203,16270.4,residents,0.28013,West Village,West Village,FALSE
+residents,strict_21_off,84,2205,park,40.7259318412181,-73.8480592114833,QN0602,QN0602,16202.8,residents,0.28204,Forest Hills,Forest Hills,FALSE
+residents,strict_21_off,85,5780,plaza,40.6792785164562,-73.8632620266311,QN1002,QN1002,15947.2,residents,0.28392,Ozone Park,Ozone Park,FALSE
+residents,strict_21_off,86,5802,plaza,40.7142226040355,-73.9548736641623,BK0102,BK0102,15871.2,residents,0.28579,Williamsburg,Williamsburg,FALSE
+residents,strict_21_off,87,5337,busy_street,40.7765523533837,-73.9556383185925,MN0802,MN0802,15830.3,residents,0.28766,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+residents,strict_21_off,88,4539,busy_street,40.7483537568098,-73.9708015340031,MN0603,MN0603,15785.4,residents,0.28952,Murray Hill-Kips Bay,Murray Hill-Kips Bay,FALSE
+residents,strict_21_off,89,3471,park,40.8245884558901,-73.8940658465271,BX0202,BX0202,15783.1,residents,0.29138,Longwood,Longwood,FALSE
+residents,strict_21_off,90,5770,plaza,40.6989011941679,-73.9186715423202,BK0401,BK0401,15694.9,residents,0.29323,Bushwick (West),Bushwick (West),FALSE
+residents,strict_21_off,91,5786,plaza,40.6685438224385,-73.9194385586936,BK1601,BK1601,15685.4,residents,0.29508,Ocean Hill,Ocean Hill,FALSE
+residents,strict_21_off,92,5768,plaza,40.7006653020617,-73.8993810720746,QN0502,QN0502,15593.3,residents,0.29692,Ridgewood,Ridgewood,FALSE
+residents,strict_21_off,93,5269,busy_street,40.7549920699815,-73.9942108061168,MN0401,MN0401,15509.1,residents,0.29875,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+residents,strict_21_off,94,4490,busy_street,40.6926246145978,-73.9908235254632,BK0202,BK0202,15413.1,residents,0.30056,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+residents,strict_21_off,95,4523,busy_street,40.6926746364766,-73.8564098659616,QN0905,QN0905,15254.8,residents,0.30236,Woodhaven,Woodhaven,FALSE
+residents,strict_21_off,96,4583,busy_street,40.6074837280315,-74.0030236853982,BK1102,BK1102,15231.2,residents,0.30416,Bath Beach,Bath Beach,FALSE
+residents,strict_21_off,97,1835,park,40.6705785425555,-73.8712478896804,BK0505,BK0505,15156,residents,0.30594,East New York-City Line,East New York-City Line,FALSE
+residents,strict_21_off,98,3380,park,40.8138147711685,-73.9385295254976,MN1002,MN1002,14976.4,residents,0.30771,Harlem (North),Harlem (North),FALSE
+residents,strict_21_off,99,1244,park,40.6085140257174,-73.9865731788009,BK1101,BK1101,14961.6,residents,0.30947,Bensonhurst,Bensonhurst,FALSE
+residents,strict_21_off,100,2642,park,40.7502100093522,-73.8231375131908,QN0706,QN0706,14904,residents,0.31123,Queensboro Hill,Queensboro Hill,FALSE
+residents,strict_21_in,1,4759,busy_street,40.7713405009496,-73.9534180392442,MN0801,MN0801,51568.1,residents,0.04996,Upper East Side-Lenox Hill-Roosevelt Island,Upper East Side-Lenox Hill-Roosevelt Island,FALSE
+residents,strict_21_in,2,5152,busy_street,40.7801229069296,-73.9501085543462,MN0803,MN0803,51326.1,residents,0.05601,Upper East Side-Yorkville,Upper East Side-Yorkville,FALSE
+residents,strict_21_in,3,4777,busy_street,40.7928505183366,-73.9730938374148,MN0702,MN0702,42278,residents,0.06099,Upper West Side (Central),Upper West Side (Central),FALSE
+residents,strict_21_in,4,4718,busy_street,40.8362450229344,-73.9432830063395,MN1201,MN1201,38087.7,residents,0.06548,Washington Heights (South),Washington Heights (South),FALSE
+residents,strict_21_in,5,4481,busy_street,40.7483441812487,-73.8771703539944,QN0401,QN0401,36664.8,residents,0.0698,Elmhurst,Elmhurst,FALSE
+residents,strict_21_in,6,4789,busy_street,40.779046892449,-73.9826609927539,MN0701,MN0701,36661.8,residents,0.07412,Upper West Side-Lincoln Square,Upper West Side-Lincoln Square,FALSE
+residents,strict_21_in,7,5342,busy_street,40.7428961805384,-73.9801844904458,MN0603,MN0603,36347.4,residents,0.07841,Murray Hill-Kips Bay,Murray Hill-Kips Bay,FALSE
+residents,strict_21_in,8,5763,plaza,40.8460919509619,-73.9380791899281,MN1201,MN1201,36291.5,residents,0.08269,Washington Heights (South),Washington Heights (South),FALSE
+residents,strict_21_in,9,4628,busy_street,40.8603916424727,-73.8982585114392,BX0503,BX0503,36236.5,residents,0.08696,Fordham Heights,Fordham Heights,FALSE
+residents,strict_21_in,10,5010,busy_street,40.7320936790649,-73.9818856074845,MN0602,MN0602,33967.2,residents,0.09096,Gramercy,Gramercy,FALSE
+residents,strict_21_in,11,4476,busy_street,40.7861031312844,-73.9782958689175,MN0702,MN0702,32831.8,residents,0.09483,Upper West Side (Central),Upper West Side (Central),FALSE
+residents,strict_21_in,12,4877,busy_street,40.8260974401112,-73.9496605030829,MN0903,MN0903,31918.3,residents,0.09859,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,FALSE
+residents,strict_21_in,13,4510,busy_street,40.7146113512816,-73.9909439870635,MN0301,MN0301,31454.1,residents,0.1023,Chinatown-Two Bridges,Chinatown-Two Bridges,FALSE
+residents,strict_21_in,14,5315,busy_street,40.7956030008089,-73.9417317482178,MN1102,MN1102,29269.3,residents,0.10575,East Harlem (North),East Harlem (North),FALSE
+residents,strict_21_in,15,4750,busy_street,40.7242443243247,-73.9877308098145,MN0303,MN0303,28979.7,residents,0.10917,East Village,East Village,FALSE
+residents,strict_21_in,16,4518,busy_street,40.8479564675068,-73.9121680487971,BX0501,BX0501,28968.7,residents,0.11258,University Heights (South)-Morris Heights,University Heights (South)-Morris Heights,FALSE
+residents,strict_21_in,17,3509,park,40.8340572378934,-73.9100563917639,BX0401,BX0401,28757.3,residents,0.11597,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+residents,strict_21_in,18,5075,busy_street,40.7449952632357,-73.9977761191913,MN0401,MN0401,28416.9,residents,0.11932,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+residents,strict_21_in,19,3292,park,40.8030181975161,-73.9598703636912,MN0901,MN0901,27127.5,residents,0.12252,Morningside Heights,Morningside Heights,FALSE
+residents,strict_21_in,20,4551,busy_street,40.866278211539,-73.9203037841477,MN1203,MN1203,27004.8,residents,0.1257,Inwood,Inwood,FALSE
+residents,strict_21_in,21,3481,park,40.8273231446815,-73.940295267877,MN0903,MN0903,26785.9,residents,0.12886,Hamilton Heights-Sugar Hill,Hamilton Heights-Sugar Hill,FALSE
+residents,strict_21_in,22,4480,busy_street,40.7415690618691,-73.880640765414,QN0401,QN0401,26436.9,residents,0.13197,Elmhurst,Elmhurst,FALSE
+residents,strict_21_in,23,2793,park,40.7583172554217,-73.824892369163,QN0707,QN0707,26210.8,residents,0.13506,Flushing-Willets Point,Flushing-Willets Point,FALSE
+residents,strict_21_in,24,4472,busy_street,40.763171751166,-73.9891797062544,MN0402,MN0402,26168.6,residents,0.13815,Hell's Kitchen,Hell's Kitchen,FALSE
+residents,strict_21_in,25,4846,busy_street,40.8089890055223,-73.9483661313527,MN1001,MN1001,25854.4,residents,0.1412,Harlem (South),Harlem (South),FALSE
+residents,strict_21_in,26,5516,busy_street,40.7293663833296,-73.9961922574639,MN0202,MN0202,25523.3,residents,0.1442,Greenwich Village,Greenwich Village,FALSE
+residents,strict_21_in,27,5758,plaza,40.7496441677116,-73.8623283265327,QN0402,QN0402,25455.1,residents,0.14721,Corona,Corona,FALSE
+residents,strict_21_in,28,4932,busy_street,40.8252846196172,-73.9175375047576,BX0401,BX0401,25453.4,residents,0.15021,Concourse-Concourse Village,Concourse-Concourse Village,FALSE
+residents,strict_21_in,29,2146,park,40.719276739532,-73.9812248492455,MN0302,MN0302,25452.8,residents,0.15321,Lower East Side,Lower East Side,FALSE
+residents,strict_21_in,30,3624,park,40.850258822289,-73.9011403063497,BX0502,BX0502,25215.8,residents,0.15618,Mount Hope,Mount Hope,FALSE
+residents,strict_21_in,31,5331,busy_street,40.7668717807458,-73.9626993254812,MN0802,MN0802,24937.6,residents,0.15912,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+residents,strict_21_in,32,3440,park,40.8192167887844,-73.9367465304543,MN1002,MN1002,24598,residents,0.16202,Harlem (North),Harlem (North),FALSE
+residents,strict_21_in,33,3136,park,40.7868025235964,-73.9438858832058,MN1101,MN1101,23966.1,residents,0.16484,East Harlem (South),East Harlem (South),FALSE
+residents,strict_21_in,34,2057,park,40.7030579020734,-73.9492810954172,BK0103,BK0103,23586.4,residents,0.16762,South Williamsburg,South Williamsburg,FALSE
+residents,strict_21_in,35,5746,plaza,40.7431795726067,-73.9187094906736,QN0202,QN0202,22853.4,residents,0.17032,Sunnyside,Sunnyside,FALSE
+residents,strict_21_in,36,5807,plaza,40.8293086221803,-73.8743116048064,BX0901,BX0901,22853.3,residents,0.17301,Soundview-Bruckner-Bronx River,Soundview-Bruckner-Bronx River,FALSE
+residents,strict_21_in,37,1974,park,40.6935991778785,-73.9421896700454,BK0302,BK0302,22837.2,residents,0.1757,Bedford-Stuyvesant (East),Bedford-Stuyvesant (East),FALSE
+residents,strict_21_in,38,1814,park,40.6679265231229,-73.9280201431941,BK0891,BK0901,22297.1,residents,0.17833,Crown Heights (South),Lincoln Terrace Park,FALSE
+residents,strict_21_in,39,5791,plaza,40.6997298033889,-73.9114377373611,BK0402,BK0402,22227.8,residents,0.18095,Bushwick (East),Bushwick (East),FALSE
+residents,strict_21_in,40,4486,busy_street,40.7468282315024,-73.8915908878595,QN0401,QN0401,21913.7,residents,0.18353,Elmhurst,Elmhurst,FALSE
+residents,strict_21_in,41,4631,busy_street,40.8652784187165,-73.8949871905491,BX0701,BX0701,21777.6,residents,0.1861,University Heights (North)-Fordham,University Heights (North)-Fordham,FALSE
+residents,strict_21_in,42,3508,park,40.8340662744891,-73.922505195952,BX0491,BX0401,21742.9,residents,0.18866,Concourse-Concourse Village,Yankee Stadium-Macombs Dam Park,FALSE
+residents,strict_21_in,43,4640,busy_street,40.8157382964349,-73.9582596167728,MN0902,MN0902,21721.8,residents,0.19122,Manhattanville-West Harlem,Manhattanville-West Harlem,FALSE
+residents,strict_21_in,44,3329,park,40.8097504491468,-73.9189780028059,BX0101,BX0101,21628.6,residents,0.19377,Mott Haven-Port Morris,Mott Haven-Port Morris,FALSE
+residents,strict_21_in,45,4095,park,40.8772513458118,-73.8779659176936,BX0703,BX0703,21424.9,residents,0.1963,Norwood,Norwood,FALSE
+residents,strict_21_in,46,4538,busy_street,40.7105128774075,-74.0125339800248,MN0101,MN0101,21338,residents,0.19881,Financial District-Battery Park City,Financial District-Battery Park City,FALSE
+residents,strict_21_in,47,5787,plaza,40.6551410186391,-73.9616167080478,BK0902,BK0902,21154.3,residents,0.20131,Prospect Lefferts Gardens-Wingate,Prospect Lefferts Gardens-Wingate,FALSE
+residents,strict_21_in,48,3707,park,40.855669045856,-73.9100271656752,BX0501,BX0501,21024.4,residents,0.20378,University Heights (South)-Morris Heights,University Heights (South)-Morris Heights,FALSE
+residents,strict_21_in,49,2262,park,40.7313395165968,-73.8515982061658,QN0602,QN0602,20805.3,residents,0.20624,Forest Hills,Forest Hills,FALSE
+residents,strict_21_in,50,2768,park,40.7570351781685,-73.8781861636394,QN0301,QN0301,20786.3,residents,0.20869,Jackson Heights,Jackson Heights,FALSE
+residents,strict_21_in,51,5812,plaza,40.6428587857153,-73.978508041687,BK1203,BK1203,20632.1,residents,0.21112,Kensington,Kensington,FALSE
+residents,strict_21_in,52,5782,plaza,40.6901395013143,-73.9830233184446,BK0202,BK0202,20596.2,residents,0.21355,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+residents,strict_21_in,53,4968,busy_street,40.8503077645828,-73.93620768488,MN1202,MN1202,20510,residents,0.21596,Washington Heights (North),Washington Heights (North),FALSE
+residents,strict_21_in,54,3442,park,40.8191886959103,-73.897630452602,BX0202,BX0202,20365.5,residents,0.21836,Longwood,Longwood,FALSE
+residents,strict_21_in,55,5734,plaza,40.6686693148695,-73.9075968122155,BK1602,BK1602,20191.5,residents,0.22074,Brownsville,Brownsville,FALSE
+residents,strict_21_in,56,4633,busy_street,40.8769496892075,-73.9063277619809,BX0802,BX0802,20182,residents,0.22312,Kingsbridge-Marble Hill,Kingsbridge-Marble Hill,FALSE
+residents,strict_21_in,57,4496,busy_street,40.832756316725,-73.8613299044454,BX0903,BX0903,19904.6,residents,0.22547,Castle Hill-Unionport,Castle Hill-Unionport,FALSE
+residents,strict_21_in,58,5773,plaza,40.7104182486811,-73.9636729684403,BK0102,BK0102,19698.4,residents,0.22779,Williamsburg,Williamsburg,FALSE
+residents,strict_21_in,59,1600,park,40.6463366110394,-74.0025261471469,BK0703,BK0703,19552.7,residents,0.2301,Sunset Park (Central),Sunset Park (Central),FALSE
+residents,strict_21_in,60,5681,busy_street,40.6767306723137,-73.9802458549263,BK0602,BK0602,19243.6,residents,0.23236,Park Slope,Park Slope,FALSE
+residents,strict_21_in,61,1969,park,40.692255323419,-73.9581624092115,BK0301,BK0301,19138.8,residents,0.23462,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),FALSE
+residents,strict_21_in,62,3562,park,40.8434867093009,-73.8815851682271,BX0601,BX0601,19030.2,residents,0.23686,West Farms,West Farms,FALSE
+residents,strict_21_in,63,3462,park,40.8232484758741,-73.9065147747252,BX0301,BX0301,19002.9,residents,0.2391,Morrisania,Morrisania,FALSE
+residents,strict_21_in,64,5811,plaza,40.6841823635824,-73.9683411317398,BK0204,BK0204,18597.1,residents,0.24129,Clinton Hill,Clinton Hill,FALSE
+residents,strict_21_in,65,1864,park,40.6733376183354,-73.9422072326221,BK0802,BK0802,18424.2,residents,0.24347,Crown Heights (North),Crown Heights (North),FALSE
+residents,strict_21_in,66,1915,park,40.6854962881019,-73.9457455739138,BK0301,BK0301,18300.3,residents,0.24562,Bedford-Stuyvesant (West),Bedford-Stuyvesant (West),FALSE
+residents,strict_21_in,67,5744,plaza,40.7986300701382,-73.9525053922077,MN1001,MN1001,18290.9,residents,0.24778,Harlem (South),Harlem (South),FALSE
+residents,strict_21_in,68,4898,busy_street,40.7282039057077,-73.9750753545496,MN0303,MN0303,18254.3,residents,0.24993,East Village,East Village,FALSE
+residents,strict_21_in,69,3538,park,40.839401770775,-73.853135699952,BX0904,BX0904,18163.9,residents,0.25207,Parkchester,Parkchester,FALSE
+residents,strict_21_in,70,3663,park,40.8529789491553,-73.9260409764917,MN1291,MN1202,18023.2,residents,0.2542,Washington Heights (North),Highbridge Park,FALSE
+residents,strict_21_in,71,5757,plaza,40.7539773520908,-73.8888707484324,QN0301,QN0301,17799.7,residents,0.25629,Jackson Heights,Jackson Heights,FALSE
+residents,strict_21_in,72,1897,park,40.6800800178776,-73.922684138182,BK0302,BK0302,17565,residents,0.25837,Bedford-Stuyvesant (East),Bedford-Stuyvesant (East),FALSE
+residents,strict_21_in,73,1539,park,40.636881193494,-74.0007526427602,BK1201,BK1201,17333.1,residents,0.26041,Sunset Park (East)-Borough Park (West),Sunset Park (East)-Borough Park (West),FALSE
+residents,strict_21_in,74,3120,park,40.7854550140232,-73.9509954325943,MN0802,MN0802,17189.6,residents,0.26243,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+residents,strict_21_in,75,1900,park,40.6814394512313,-73.9368772163761,BK0302,BK0302,17069.7,residents,0.26445,Bedford-Stuyvesant (East),Bedford-Stuyvesant (East),FALSE
+residents,strict_21_in,76,5661,busy_street,40.6658679280278,-73.9890609870852,BK0602,BK0602,17065.3,residents,0.26646,Park Slope,Park Slope,FALSE
+residents,strict_21_in,77,5303,busy_street,40.8027100406908,-73.9365398672982,MN1102,MN1102,17007.8,residents,0.26846,East Harlem (North),East Harlem (North),FALSE
+residents,strict_21_in,78,4641,busy_street,40.6747929072643,-73.9698704451899,BK0602,BK0602,16921.9,residents,0.27046,Park Slope,Park Slope,FALSE
+residents,strict_21_in,79,4519,busy_street,40.732600860968,-73.868085694408,QN0601,QN0601,16538.1,residents,0.27241,Rego Park,Rego Park,FALSE
+residents,strict_21_in,80,1549,park,40.6382200154578,-73.9475571940695,BK1702,BK1702,16519.3,residents,0.27435,East Flatbush-Farragut,East Flatbush-Farragut,FALSE
+residents,strict_21_in,81,1764,park,40.6625305281947,-73.9404427671039,BK0902,BK0902,16462.7,residents,0.27629,Prospect Lefferts Gardens-Wingate,Prospect Lefferts Gardens-Wingate,FALSE
+residents,strict_21_in,82,4636,busy_street,40.8078277499988,-73.964028044259,MN0901,MN0901,16301.3,residents,0.27822,Morningside Heights,Morningside Heights,FALSE
+residents,strict_21_in,83,2326,busy_street,40.738188947523,-73.9989779446772,MN0203,MN0203,16270.4,residents,0.28013,West Village,West Village,FALSE
+residents,strict_21_in,84,2205,park,40.7259318412181,-73.8480592114833,QN0602,QN0602,16202.8,residents,0.28204,Forest Hills,Forest Hills,FALSE
+residents,strict_21_in,85,5780,plaza,40.6792785164562,-73.8632620266311,QN1002,QN1002,15947.2,residents,0.28392,Ozone Park,Ozone Park,FALSE
+residents,strict_21_in,86,5802,plaza,40.7142226040355,-73.9548736641623,BK0102,BK0102,15871.2,residents,0.28579,Williamsburg,Williamsburg,FALSE
+residents,strict_21_in,87,5337,busy_street,40.7765523533837,-73.9556383185925,MN0802,MN0802,15830.3,residents,0.28766,Upper East Side-Carnegie Hill,Upper East Side-Carnegie Hill,FALSE
+residents,strict_21_in,88,4539,busy_street,40.7483537568098,-73.9708015340031,MN0603,MN0603,15785.4,residents,0.28952,Murray Hill-Kips Bay,Murray Hill-Kips Bay,FALSE
+residents,strict_21_in,89,3471,park,40.8245884558901,-73.8940658465271,BX0202,BX0202,15783.1,residents,0.29138,Longwood,Longwood,FALSE
+residents,strict_21_in,90,5770,plaza,40.6989011941679,-73.9186715423202,BK0401,BK0401,15694.9,residents,0.29323,Bushwick (West),Bushwick (West),FALSE
+residents,strict_21_in,91,5786,plaza,40.6685438224385,-73.9194385586936,BK1601,BK1601,15685.4,residents,0.29508,Ocean Hill,Ocean Hill,FALSE
+residents,strict_21_in,92,5768,plaza,40.7006653020617,-73.8993810720746,QN0502,QN0502,15593.3,residents,0.29692,Ridgewood,Ridgewood,FALSE
+residents,strict_21_in,93,5269,busy_street,40.7549920699815,-73.9942108061168,MN0401,MN0401,15509.1,residents,0.29875,Chelsea-Hudson Yards,Chelsea-Hudson Yards,FALSE
+residents,strict_21_in,94,4490,busy_street,40.6926246145978,-73.9908235254632,BK0202,BK0202,15413.1,residents,0.30056,Downtown Brooklyn-DUMBO-Boerum Hill,Downtown Brooklyn-DUMBO-Boerum Hill,FALSE
+residents,strict_21_in,95,4523,busy_street,40.6926746364766,-73.8564098659616,QN0905,QN0905,15254.8,residents,0.30236,Woodhaven,Woodhaven,FALSE
+residents,strict_21_in,96,4583,busy_street,40.6074837280315,-74.0030236853982,BK1102,BK1102,15231.2,residents,0.30416,Bath Beach,Bath Beach,FALSE
+residents,strict_21_in,97,1835,park,40.6705785425555,-73.8712478896804,BK0505,BK0505,15156,residents,0.30594,East New York-City Line,East New York-City Line,FALSE
+residents,strict_21_in,98,3380,park,40.8138147711685,-73.9385295254976,MN1002,MN1002,14976.4,residents,0.30771,Harlem (North),Harlem (North),FALSE
+residents,strict_21_in,99,1244,park,40.6085140257174,-73.9865731788009,BK1101,BK1101,14961.6,residents,0.30947,Bensonhurst,Bensonhurst,FALSE
+residents,strict_21_in,100,2642,park,40.7502100093522,-73.8231375131908,QN0706,QN0706,14904,residents,0.31123,Queensboro Hill,Queensboro Hill,FALSE

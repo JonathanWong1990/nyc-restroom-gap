@@ -55,7 +55,7 @@ Scripts read `data_raw/` relative to the working directory. To run from elsewher
 | `A6_empirical_bayes.R` | Per-neighbourhood posteriors, with leave-one-out. Six exceed 0.95. Sparse counts only, not reporting validity |
 | `A7_repair_vs_build.R` | Build new ($4.0M, n=68) vs reconstruct existing ($1.66M, n=108). Component work n=5, too thin to quote |
 | `A8_condition_trend.R` | Inspection condition 2022–2026, facility fixed effects, internal placebo (same seven inspectors: litter flat, structural 0.044 → 0.210) |
-| `C1_trial_power.R` | What the hours trial could detect (37% on summonses) |
+| `C1_trial_power.R` | What the hours trial could detect for the earlier 10 "close early" areas (37% rise / 27% drop on summonses; archived Merged version). The current 13 Extend areas: `analysis/layered/R/05_trial_power.R` (33% drop) |
 | `C2_report_time.R` | Is the 18:00 complaint peak real or a calling artefact? |
 | `C2_hub_open_access.R` | Walk from the 50 busiest subway hubs to the nearest restroom *open* at each hour |
 | `B1_small_maps.R` | Small maps; coverage at 3pm vs 9pm |

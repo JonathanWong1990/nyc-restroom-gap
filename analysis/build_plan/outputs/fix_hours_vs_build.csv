@@ -1,0 +1,9 @@
+objective,hour,placeholder_close,share_base_listed_operational,share_strict_quality_supply,loss_if_closed_and_failing_removed_pts,gain_reopen_long_term_closed_pts,gain_fix_failing_pts,gain_extend_all641_placeholder_to_22_pts,gain_extend_placeholder_to_22_strict_pts,gain_all_fix_and_hours_pts,gain_first100_new_builds_pts
+residents,14,16,0.7237,0.6903,3.3453,2.7721,1.7405,0,0,4.4197,7.1757
+residents,21,16,0.0439,0.0439,0,0,0,57.2878,52.2108,59.047,26.7348
+workers,14,16,0.8044,0.7899,1.4458,1.3033,0.9222,0,0,2.1851,6.4223
+workers,21,16,0.2159,0.2159,0,0,0,41.5848,39.1147,42.5542,42.4818
+subway,14,16,0.8736,0.8447,2.8868,2.405,1.2537,0,0,3.4295,10.3859
+subway,21,16,0.1274,0.1274,0,0,0,50.4936,46.3396,51.7007,69.1859
+streets,14,16,0.9697,0.9626,0.7095,0.2097,0.4998,0,0,0.7095,3.7402
+streets,21,16,0.3507,0.3507,0,0,0,40.8815,38.6836,40.9473,64.9318
