@@ -38,7 +38,10 @@ named <- list(
 L3 <- t(chol(M4$var))
 draws_rev <- lapply(seq_len(N_RANDOM), function(i) to6(as.vector(M4$coef + L3 %*% rnorm(3))))
 # (b) any weighting at all: uniform over all weight combinations (Dirichlet(1,...,1))
-draws_any <- lapply(seq_len(N_RANDOM), function(i) { g <- rgamma(6, 1); setNames(g / sum(g), K) })
+draws_any6 <- lapply(seq_len(N_RANDOM), function(i) { g <- rgamma(6, 1); setNames(g / sum(g), K) })
+# (b') random weights over the three factor GROUPS (busyness / distance / equity) -- six-factor draws hand ~2/3 of the
+#      weight to the four correlated busyness measures on average, which flatters stability (cold-read finding, 26 Sep)
+draws_any <- lapply(seq_len(N_RANDOM), function(i) to6(rgamma(3, 1)))
 
 pil <- P$pil
 blocked0 <- lengths(st_is_within_distance(cs, pil, dist = M2FT(500))) > 0
@@ -56,7 +59,11 @@ pick <- function(w) {
 run <- function(ws) { sels <- lapply(ws, pick); sels }
 cat("running named scenarios...\n"); S_named <- run(named)
 cat("running", N_RANDOM, "revealed-uncertainty draws and", N_RANDOM, "any-weight draws...\n")
-S_rev <- run(draws_rev); S_any <- run(draws_any)
+S_rev <- run(draws_rev); S_any <- run(draws_any); S_any6 <- run(draws_any6)
+# chance baseline: random scores, same borough quotas and spacing
+pr_keep <- pr
+S_rand <- lapply(seq_len(N_RANDOM), function(i) { pr <<- matrix(runif(length(pr_keep)), nrow(pr_keep), dimnames = dimnames(pr_keep)); pick(rep(1 / 6, 6)) })
+pr <- pr_keep
 
 nta_hits <- function(sels) { h <- table(unlist(lapply(sels, function(s) unique(cand$ntaname[s])))); h / length(sels) }
 site_hits <- function(sels) tabulate(unlist(sels), nbins = nrow(cand)) / length(sels)
@@ -90,13 +97,19 @@ lens <- rbindlist(lapply(seq_along(sel), function(k) {
   data.table(n_open_2pm_500m = length(open2), n_open_9pm_500m = sum(o21[j]), n_park_placeholder_500m = length(ext),
              n_broken_500m = length(broken), broken_names = paste(unique(sup$facility_name[broken]), collapse = "; "))
 }))
+sh_any6 <- NULL
 S <- cbind(cand[sel, .(ntaname, type, lon = round(lon, 5), lat = round(lat, 5), residents = round(residents), subway, dist_2pm_m = round(dist_2pm_m), dist_9pm_m = round(dist_9pm_m), poverty = round(poverty, 3))],
-           lens, stable_revealed = round(loc_share(S_rev), 2), stable_any = round(loc_share(S_any), 2))
+           lens, stable_revealed = round(loc_share(S_rev), 2), stable_any = round(loc_share(S_any), 2),
+           stable_any6 = round(loc_share(S_any6), 2), chance = round(loc_share(S_rand), 2))
 S[, rank := .I]
 S[, reality_lens := fifelse(n_broken_500m > 0, "Repair or reopen nearby first",
                     fifelse(n_open_2pm_500m > 0 & n_open_9pm_500m == 0 & n_park_placeholder_500m > 0, "Extend park hours nearby first",
                     fifelse(n_open_2pm_500m > 0 & n_open_9pm_500m == 0, "Existing restroom closes early: extend other operator's hours",
                     fifelse(n_open_2pm_500m == 0, "Build: no restroom within 500 m", "Covered day and evening: lower priority"))))]
+o21x <- { cl <- ifelse(sup$placeholder, 22, sup$w_close); sup$operational & sup$w_ok & !is.na(sup$w_open) & sup$w_open <= 21 & cl > 21 }
+S$n_open_9pm_if_parks_late <- vapply(nb_sup, function(j) sum(o21x[j]), 0L)
+cat("of the 'extend park hours' sites, still uncovered at 9pm if placeholder parks already stay open to 10pm:",
+    sum(S$reality_lens == "Extend park hours nearby first" & S$n_open_9pm_if_parks_late == 0), "of", sum(S$reality_lens == "Extend park hours nearby first"), "\n")
 print(table(S$reality_lens)); S[, borough := boro[sel]]; print(table(S$borough))
 
 fwrite(H, file.path(CM, paste0("outputs/sensitivity_neighbourhoods", SUF, ".csv")))
@@ -107,5 +120,7 @@ ov <- sapply(S_named, function(s) mean(vapply(near, function(nb) any(s %in% nb),
 print(round(ov, 2))
 fwrite(data.table(scenario = names(ov), share_of_revealed_sites_also_picked = round(ov, 2)), file.path(CM, paste0("outputs/scenario_overlap", SUF, ".csv")))
 saveRDS(list(S_named = S_named, sel = sel, H = H, S = S), file.path(CM, paste0("cache/selection", SUF, ".rds")))
+cat("mean chance overlap per location:", round(mean(S$chance), 2), "| stable_any (3-group) >=.5:", sum(S$stable_any >= .5),
+    "| stable_any6 >=.5:", sum(S$stable_any6 >= .5), "\n")
 cat("stable sites (>=80% of revealed draws):", sum(S$stable_revealed >= .8), "of", N_PICK,
     "| also >=50% of any-weight draws:", sum(S$stable_revealed >= .8 & S$stable_any >= .5), "\n")

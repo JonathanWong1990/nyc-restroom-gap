@@ -369,7 +369,7 @@ figure.chart a.zoom{display:block}
 <header class="masthead">
   <p class="eyebrow">PMBA6093 · Analytics for Managers · Final project</p>
   <h1>When nature calls, where should New York answer?</h1>
-  <p class="standfirst">New York has committed to 2,120 public restrooms by 2035 and lists 975 today. The law names the factors that make an area underserved; the City's first 17 pilot sites show how it weighs them. We learned those weights, scored every possible site in the city, and tested whether the answer survives different weightings. Then we checked each site against existing restrooms, because many need longer hours or repairs rather than a new building.</p>
+  <p class="standfirst">New York has committed to 2,120 public restrooms by 2035 and lists 975 today. Local Law 58 names the factors that make an area underserved, and the City's first 17 pilot sites show how it weighs them. We estimated those weights, scored 5,800 candidate sites on park land, plazas and busy streets, and tested how much the answer depends on the weights. Then we checked each site against existing restrooms: many need a repair or longer opening hours rather than a new building.</p>
   <div class="byline"><span>HKU MBA group project</span><span>5,800 candidate sites</span><span>Data current to September 2026</span><span class="stamp">Updated 26 September 2026</span><span>Contributions by section: Data &amp; code</span></div>
 
 </header>
@@ -397,168 +397,168 @@ figure.chart a.zoom{display:block}
 <div class="find"><strong>In one minute</strong>
 <ul>
 <li><strong>Question.</strong> New York must reach 2,120 public restrooms by 2035 and lists 975 today. Where should the next ones go?</li>
-<li><strong>Criteria.</strong> Local Law 58 names six factors that make an area underserved. The City's 17 pilot sites show how it weighs them.</li>
-<li><strong>Learn.</strong> The 17 choices point to busy places far from a restroom: busyness 65% of the weight, distance 31%, equity 4%.</li>
-<li><strong>Score.</strong> We scored about 5,800 possible sites and picked the next 50, split among boroughs by population.</li>
-<li><strong>Test.</strong> Under 4,000 different weightings, 30 of the 50 locations are still picked.</li>
-<li><strong>Refine.</strong> Checked against existing restrooms, only 23 of the 50 need a new building. 14 need longer park hours and 8 need a repair.</li>
+<li><strong>Criteria.</strong> Local Law 58 names six factors that make an area underserved. The City's 17 pilot sites show how it weighs them in practice.</li>
+<li><strong>Learn.</strong> The 17 sites sit in busy places far from a restroom: busyness 65% of the weight, distance 31%, equity 4%.</li>
+<li><strong>Score.</strong> We scored 5,800 candidate sites on park land, plazas and busy streets, and picked the next 50, split among boroughs by population.</li>
+<li><strong>Test.</strong> 41 of the 50 hold under the model's own uncertainty; 18 also hold under random weightings.</li>
+<li><strong>Check.</strong> Against existing restrooms, 23 of the 50 need a new building. The other 27: 8 repair a restroom nearby, 14 keep a park restroom open later, 4 extend another operator's hours, 1 is already covered.</li>
 </ul></div>
 
-<p>Tags mark where each result comes from: <span class="mtag in">In class · S6</span> a technique from the course; <span class="mtag out">Beyond class</span> an analytics technique outside the course; <span class="mtag src">From a source</span> a fact looked up rather than calculated.</p>
+<p>Tags show where each result comes from: <span class="mtag in">In class · S6</span> a technique from the course (S = course session); <span class="mtag out">Beyond class</span> an analytics technique outside the course; <span class="mtag src">From a source</span> a fact looked up rather than calculated.</p>
 
 <h3 id="p-question">1 — The question</h3>
 <ul>
 <li><strong>Target:</strong> Local Law 58 (2025) requires at least <strong>2,120</strong> public restrooms by 2035, at least half of them publicly owned. <span class="mtag src">From a source</span></li>
 <li><strong>Today:</strong> the City's register lists <strong>975</strong> working public restrooms, a gap of <strong>1,145</strong>.</li>
-<li><strong>The law does not say where.</strong> It asks agencies for a strategic plan and defines what makes an area "underserved" (section 3).</li>
-<li><strong>Our question:</strong> which places should come next, and do they need a new building or a fix to what already exists?</li>
+<li>The law defines what makes an area "underserved" but does not say where to build.</li>
+<li><strong>Our question:</strong> where should the next restrooms go, and does each place need a new building or a fix to one that already exists?</li>
 </ul>
 
-<h3 id="p-gap">2 — The gap is worst in the evening</h3>
-<figure class="chart"><a class="zoom" href="img/plan/f1_open_by_hour.png" target="_blank" rel="noopener"><img src="img/plan/f1_open_by_hour.png" alt="Bar chart of restrooms open at each hour of a weekday: 954 at 2pm, falling to 57 at 9pm" loading="lazy"></a></figure>
-<ul>
-<li><strong>954</strong> listed restrooms are open at 2pm on a weekday; only <strong>57</strong> at 9pm.</li>
-<li>Most are NYC Parks restrooms. <strong>641</strong> post only "8am–4pm, open later seasonally", so we assume they close at 4pm.</li>
-<li>The law counts <strong>limited opening hours</strong> as underservice, not only a missing building. This is why hours matter in the final step.</li>
-</ul>
-
-<h3 id="p-law">3 — What the law says makes an area underserved</h3>
-<p>Local Law 58: an underserved area has insufficient access "because of a lack of public bathrooms or limited opening hours", considering six factors. We measured each one at every candidate site. <span class="mtag src">From a source</span></p>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Factor in the law</th><th>How we measured it at a site</th><th>Data</th></tr></thead><tbody>
+<h3 id="p-law">2 — What makes an area underserved</h3>
+<p>Local Law 58 defines an underserved area as one with insufficient access "because of a lack of public bathrooms or limited opening hours", considering six factors. We measure each at every candidate site. <span class="mtag src">From a source</span></p>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Factor in the law</th><th>How we measure it at a site</th><th>Data</th></tr></thead><tbody>
 <tr><td>Population density</td><td>Residents within 500 m</td><td>Census ACS 2020–24</td></tr>
-<tr><td>Daily foot traffic</td><td>DOT modelled pedestrian demand on streets within 250 m</td><td>DOT <code>fwpa-qxaf</code> (Sep 2026)</td></tr>
+<tr><td>Daily foot traffic</td><td>DOT's modelled pedestrian demand for streets within 250 m (street length × demand level, 1 = baseline to 5 = global)</td><td>DOT <code>fwpa-qxaf</code> (Sep 2026)</td></tr>
 <tr><td>Public transportation</td><td>Subway entries within 500 m</td><td>MTA 2025</td></tr>
 <tr><td>Commercial and tourist land use</td><td>Jobs within 500 m</td><td>Census LEHD 2023</td></tr>
 <tr><td>Distance to existing restrooms</td><td>Distance to the nearest listed restroom open at 2pm</td><td>NYC register (Jun 2025)</td></tr>
 <tr><td>Equity</td><td>Poverty rate of the census tract</td><td>Census ACS 2020–24</td></tr>
 </tbody></table></div>
 <ul>
-<li>500 m is about a 7-minute walk, the same standard used in the archived analysis.</li>
-<li>The law gives <strong>no weights</strong>, and none have been published. The next two steps estimate them.</li>
+<li>500 m is about a 7-minute walk.</li>
+<li>Distance is measured at <strong>2pm</strong>, when nearly every restroom is open, so it captures whether a restroom exists nearby at all. Opening hours are checked separately in step 8.</li>
+<li>The law gives <strong>no weights</strong>, and none have been published. Steps 3–4 estimate them.</li>
 </ul>
 
-<h3 id="p-pilot">4 — The City's first move: 17 pilot sites</h3>
+<h3 id="p-pilot">3 — The City's first 17 sites</h3>
 <figure class="chart"><a class="zoom" href="img/plan/f2_pilot_sites.png" target="_blank" rel="noopener"><img src="img/plan/f2_pilot_sites.png" alt="Map of the City's 17 pilot sites: 6 plazas, 7 parks or playgrounds, 4 street corners" loading="lazy"></a></figure>
 <ul>
 <li>Announced 16 September 2026: <strong>17 modular units</strong>, $4M for one year, open 7am–10pm, placed by DOT and Parks with NYCEDC. <span class="mtag src">From a source</span></li>
 <li>Stated aim: "public plazas and high-traffic areas where New Yorkers currently lack reliable access to a bathroom."</li>
-<li><strong>4 per borough</strong>, and 1 on Staten Island. By type: <strong>6 public plazas, 7 parks or playgrounds, 4 street corners</strong>.</li>
-<li>These are the only real example of how the City chooses. We treat them as the <strong>answer key</strong> for learning weights, not as a cap on what we recommend.</li>
+<li>4 each in the Bronx, Brooklyn, Manhattan and Queens, and 1 on Staten Island. By type: <strong>6 public plazas, 7 parks or playgrounds, 4 street corners</strong>.</li>
+<li>These are the City's only real siting decisions so far. We use them as the <strong>answer key</strong> for learning the weights, then apply the weights citywide.</li>
 </ul>
 
-<h3 id="p-reveal">5 — What the 17 choices reveal <span class="mtag in">S6–7 · logistic regression</span></h3>
-<p><strong>Step 1: the comparison group.</strong></p>
+<h3 id="p-reveal">4 — What the 17 choices reveal <span class="mtag in">S6–7 · logistic regression</span></h3>
+<p><strong>The comparison group.</strong></p>
 <ul>
-<li><strong>5,814 candidate sites</strong>: 150 m grid points on Parks land (4,076), DOT plazas (92) and busy-street frontage (1,646).</li>
-<li>Candidates within 300 m of a pilot site are removed, leaving <strong>5,756</strong> places the City could have picked but did not.</li>
+<li><strong>5,814 candidate sites</strong>: points on a 150 m grid across Parks land (4,076), DOT plazas (92) and busy-street frontage (1,646).</li>
+<li>Candidates within 300 m of a pilot are treated as the same place and removed. That leaves <strong>5,756</strong> sites the City could have chosen.</li>
 </ul>
-<p><strong>Step 2: how the 17 differ.</strong> Each pilot site's percentile among the 5,756, median of the 17:</p>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Factor</th><th class="n">Pilot median</th><th class="n">Candidate median</th><th class="n">Pilot percentile</th></tr></thead><tbody>
+<p><strong>How the 17 differ.</strong> For each factor, we rank each pilot site among the 5,756. The last column is the median of the 17 ranks: 79 means the typical pilot site beats 79% of candidates.</p>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Factor</th><th class="n">Median, pilot sites</th><th class="n">Median, candidates</th><th class="n">Typical pilot's percentile</th></tr></thead><tbody>
 <tr><td>Residents within 500 m</td><td class="n">15,991</td><td class="n">3,649</td><td class="n">79</td></tr>
 <tr><td>Subway entries within 500 m (2025)</td><td class="n">3.9M</td><td class="n">0</td><td class="n">75</td></tr>
 <tr><td>Tract poverty rate</td><td class="n">15.7%</td><td class="n">9.3%</td><td class="n">73</td></tr>
-<tr><td>Foot traffic (DOT index)</td><td class="n">3.4</td><td class="n">0.8</td><td class="n">72</td></tr>
+<tr><td>Foot-traffic index</td><td class="n">3.4</td><td class="n">0.8</td><td class="n">72</td></tr>
 <tr><td>Jobs within 500 m</td><td class="n">4,143</td><td class="n">891</td><td class="n">68</td></tr>
 <tr><td>Distance to a restroom open at 2pm</td><td class="n">369 m</td><td class="n">317 m</td><td class="n">58</td></tr>
 </tbody></table></div>
-<p><strong>Step 3: the model.</strong></p>
+<p><strong>The model.</strong></p>
 <ul>
-<li>Logistic regression: was this site chosen (1) or not (0), explained by the factors. Because 17 is a small sample, we use Firth's small-sample correction. <span class="mtag out">Beyond class · Firth correction</span></li>
-<li><strong>Problem found:</strong> population, foot traffic, transit and jobs rise together (correlations 0.52–0.81). Entered separately, population took all the credit and foot traffic got none. That reflects the overlap, not the City's intent.</li>
-<li><strong>Fix:</strong> combine the four into one <strong>busyness</strong> index. Site type (park, plaza, street) is added as a control, so pilots are compared with sites of their own kind.</li>
+<li>Logistic regression: chosen (1) or not (0), explained by the factors. Firth's small-sample correction is used because there are only 17 chosen sites. <span class="mtag out">Beyond class · Firth correction</span></li>
+<li>Population, foot traffic, transit and jobs are strongly correlated (0.52–0.81), so the model cannot separate their effects. We combine them into one <strong>busyness index</strong>: the average of the four, each log-transformed and standardised.</li>
+<li>Site type (park, plaza, street) is a control, so each pilot is compared with sites of its own kind.</li>
 </ul>
 <figure class="chart"><a class="zoom" href="img/plan/f3_revealed_weights.png" target="_blank" rel="noopener"><img src="img/plan/f3_revealed_weights.png" alt="Coefficient chart: busyness 65% of the weight, distance to an open restroom 31%, equity 4%; complaints not a factor" loading="lazy"></a></figure>
 <div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Term (standardised)</th><th class="n">Coefficient</th><th class="n">95% CI</th><th class="n">Weight in score</th></tr></thead><tbody>
-<tr><td><strong>Busyness</strong> (population, foot traffic, transit, jobs)</td><td class="n">+2.07</td><td class="n">0.98 to 3.20</td><td class="n"><strong>65%</strong> (16% each)</td></tr>
+<tr><td><strong>Busyness</strong> (population, foot traffic, transit, jobs)</td><td class="n">+2.07</td><td class="n">0.98 to 3.20</td><td class="n"><strong>65%</strong> (about 16% each)</td></tr>
 <tr><td><strong>Distance</strong> to a restroom open at 2pm</td><td class="n">+0.98</td><td class="n">0.27 to 1.81</td><td class="n"><strong>31%</strong></td></tr>
 <tr><td><strong>Equity</strong> (tract poverty)</td><td class="n">+0.12</td><td class="n">−0.32 to 0.49</td><td class="n"><strong>4%</strong></td></tr>
 <tr><td>Plaza (vs park), control</td><td class="n">+1.68</td><td class="n">0.22 to 3.20</td><td class="n">not scored</td></tr>
 <tr><td>Street corner (vs park), control</td><td class="n">−2.46</td><td class="n">−4.26 to −0.56</td><td class="n">not scored</td></tr>
 </tbody></table></div>
 <ul>
-<li><strong>Reading:</strong> the City went where it is <strong>busy</strong> and <strong>far from a working restroom</strong>, and it preferred <strong>plazas</strong>.</li>
-<li><strong>Weights</strong> = each positive coefficient's share of the total. Equity is positive but uncertain.</li>
-<li><strong>Checks:</strong> with the six factors entered separately, population (+3.61) and distance (+1.19) still lead. Using distance to a restroom open at <strong>9pm</strong> gives the same result (+1.00).</li>
+<li><strong>Reading:</strong> the City chose places that are <strong>busy</strong> and <strong>far from a working restroom</strong>, and it favoured <strong>plazas</strong>.</li>
+<li><strong>Weights</strong> are each factor's share of the positive coefficients. Equity keeps its small weight because the law names it, although its effect is uncertain.</li>
+<li><strong>Site type is not scored.</strong> It reflects where a unit is easy to place, not one of the law's factors.</li>
+<li><strong>What the weights mean:</strong> they describe how the City has chosen so far, not a measured need. They are a starting point, tested in step 7.</li>
+<li><strong>Robustness:</strong> entering the six factors separately gives the same leaders, population (+3.61) and distance (+1.19). Distance to a restroom open at 9pm gives the same result (+1.00). Adding public-urination complaints within 500 m adds nothing (−0.45, 95% CI −1.64 to 0.65).</li>
 </ul>
 
-<h3 id="p-validate">6 — Does the model reproduce the City's choices? <span class="mtag in">S7 · train/test</span></h3>
+<h3 id="p-validate">5 — Does the model reproduce the City's choices? <span class="mtag in">S7 · train/test</span></h3>
 <figure class="chart"><a class="zoom" href="img/plan/f4_leave_one_out.png" target="_blank" rel="noopener"><img src="img/plan/f4_leave_one_out.png" alt="Dot chart: each hidden pilot site outranks between 41% and 100% of candidate sites, median 96%" loading="lazy"></a></figure>
 <ul>
-<li><strong>Leave-one-out:</strong> refit the model 17 times, each time without one pilot site, then score the hidden site against all 5,756 candidates.</li>
-<li>The hidden site outranks a median <strong>96%</strong> of candidates, so the model recovers how the City chose.</li>
-<li>Four sites fit less well (41–60%): Fulton &amp; Truxton St, 34th Ave &amp; 64th St, North Shore Esplanade, Northern Blvd &amp; 54th St. Something outside the factors probably shaped them, such as space or community requests.</li>
-<li>In-sample AUC: 0.87.</li>
+<li><strong>Leave-one-out:</strong> the model is fitted 17 times, each time without one pilot site. The hidden site is then scored against all 5,756 candidates.</li>
+<li>The hidden site outranks a median <strong>96%</strong> of candidates, with a mean of 84%. 13 of the 17 beat at least 75%.</li>
+<li>Four fit less well (41–60%): Fulton &amp; Truxton St, 34th Ave &amp; 64th St, North Shore Esplanade, and Northern Blvd &amp; 54th St. Something outside the factors probably shaped them, such as space or community requests.</li>
+<li>On the full fit, the model separates chosen from unchosen sites with an AUC of 0.87. AUC is the chance that a random chosen site scores higher than a random unchosen one.</li>
 </ul>
 
-<h3 id="p-score">7 — Score every site and pick the next 50</h3>
+<h3 id="p-score">6 — Score every site and pick the next 50</h3>
 <ul>
-<li><strong>Score</strong> = Σ weight × the site's percentile on each factor. For distance, farther from a restroom scores higher. Demand comes from busyness; the supply gap comes from distance.</li>
-<li><strong>Pick:</strong> take the top-scoring site, block everything within 500 m (including the 17 pilot sites), and repeat until there are 50.</li>
-<li><strong>Borough split by population</strong> (ACS 2020–24): Bronx <strong>8</strong> · Brooklyn <strong>15</strong> · Manhattan <strong>10</strong> · Queens <strong>14</strong> · Staten Island <strong>3</strong>.</li>
-<li><strong>Why split at all:</strong> without it, 36 of the 50 fall in Manhattan, where busyness peaks. The City split its own pilot by borough too; we split by population because it is easier to defend than an equal split.</li>
-<li><strong>Why 50:</strong> an illustrative next phase, about three times the pilot. It is not a target.</li>
+<li><strong>Score</strong> = Σ weight × the site's percentile on each factor. For distance, farther from a restroom scores higher. Percentiles put every factor on the same 0–100 scale and stop extreme values, such as Times Square's subway counts, from dominating.</li>
+<li><strong>Pick:</strong> take the top-scoring site, block every candidate within 500 m of it (and of the 17 pilot sites), and repeat until there are 50.</li>
+<li><strong>Borough split by population</strong> (ACS 2020–24): Bronx <strong>8</strong> · Brooklyn <strong>15</strong> · Manhattan <strong>10</strong> · Queens <strong>14</strong> · Staten Island <strong>3</strong>. Each borough's share tracks its residents. With no split, 36 of the 50 would fall in Manhattan, where busyness peaks.</li>
+<li><strong>Why 50:</strong> an illustrative next phase, about three times the size of the pilot.</li>
 </ul>
 
-<h3 id="p-sens">8 — Sensitivity: does the answer depend on the weights? <span class="mtag out">Beyond class · Monte Carlo sensitivity</span></h3>
-<figure class="chart"><a class="zoom" href="img/plan/f5_next50_stability.png" target="_blank" rel="noopener"><img src="img/plan/f5_next50_stability.png" alt="Map of the next 50 sites coloured by stability: 30 robust, 11 hold within model uncertainty, 9 depend on weights" loading="lazy"></a></figure>
+<h3 id="p-sens">7 — Does the answer depend on the weights? <span class="mtag out">Beyond class · Monte Carlo sensitivity</span></h3>
+<figure class="chart"><a class="zoom" href="img/plan/f5_next50_stability.png" target="_blank" rel="noopener"><img src="img/plan/f5_next50_stability.png" alt="Map of the next 50 sites coloured by stability: 18 robust, 23 hold within model uncertainty, 9 depend on weights" loading="lazy"></a></figure>
 <ul>
-<li><strong>Professor's test:</strong> assumptions are acceptable if moving them does not change the answer.</li>
-<li><strong>Test A, model uncertainty:</strong> 2,000 runs with coefficients drawn from their fitted uncertainty. <strong>41 of 50</strong> locations are picked in at least 80% of runs.</li>
-<li><strong>Test B, any weighting at all:</strong> 2,000 runs with fully random weights on the six factors. <strong>30 of 50</strong> are also picked in at least half of runs. These are the <strong>robust</strong> recommendations.</li>
-<li>A location counts as "picked" if any chosen site falls within 500 m of it.</li>
+<li><strong>The test:</strong> an assumption is acceptable if changing it does not change the answer.</li>
+<li><strong>Test A, model uncertainty:</strong> 2,000 runs, each drawing the coefficients from their fitted uncertainty. <strong>41 of 50</strong> locations are picked in at least 80% of runs.</li>
+<li><strong>Test B, any weighting:</strong> 2,000 runs, each with random weights on busyness, distance and equity. <strong>20 of 50</strong> are picked in at least half of runs.</li>
+<li><strong>Robust:</strong> <strong>18 of 50</strong> pass both tests. For comparison, random picks under the same borough split land near a given location only 2% of the time.</li>
+<li>A location counts as picked if any chosen site falls within 500 m of it.</li>
 </ul>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Alternative weighting</th><th class="n">Share of our 50 locations also picked</th></tr></thead><tbody>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Alternative weighting</th><th class="n">Share of the 50 locations also picked</th></tr></thead><tbody>
 <tr><td>Equal weights on all six factors</td><td class="n">76%</td></tr>
 <tr><td>Access-heavy (distance 40%)</td><td class="n">76%</td></tr>
 <tr><td>Transit-heavy (40%)</td><td class="n">74%</td></tr>
 <tr><td>Footfall-heavy (40%)</td><td class="n">66%</td></tr>
-<tr><td>No population at all</td><td class="n">64%</td></tr>
+<tr><td>No population</td><td class="n">64%</td></tr>
 <tr><td>Equity-heavy (40%)</td><td class="n">52%</td></tr>
 </tbody></table></div>
 <ul>
-<li><strong>Robust locations by borough:</strong> Queens 10, Manhattan 7, Brooklyn 7, Bronx 5, Staten Island 1.</li>
-<li><strong>Examples:</strong> Elmhurst, Flushing–Willets Point, Long Island City, Chelsea–Hudson Yards, Midtown, Flatiron, Park Slope, Fordham Heights, St. George.</li>
-<li><strong>The weakest assumption is equity.</strong> Weighting it heavily changes half the list, so equity is the lever a policymaker would actually be choosing.</li>
+<li><strong>Robust locations:</strong> 5 each in Brooklyn, Manhattan and Queens, 2 in the Bronx, 1 on Staten Island. They include Elmhurst, Jackson Heights, Flushing–Willets Point, Long Island City, Midtown, Chelsea–Hudson Yards, East Village, Williamsburg, Brighton Beach, Mott Haven and St. George.</li>
+<li><strong>Equity is the policy choice:</strong> weighting it heavily changes about half the list.</li>
 </ul>
 
-<h3 id="p-lens">9 — Reality lens: what does each site need first?</h3>
-<figure class="chart"><a class="zoom" href="img/plan/f6_reality_lens.png" target="_blank" rel="noopener"><img src="img/plan/f6_reality_lens.png" alt="Map of the 50 sites coloured by first action: 23 build, 14 keep a nearby park restroom open later, 8 repair or reopen, 4 nearby library or other restroom closes early, 1 already covered" loading="lazy"></a></figure>
-<p>Each site is checked against listed restrooms within 500 m, in this order (use what exists before building):</p>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Check</th><th>Then</th><th class="n">Sites</th></tr></thead><tbody>
-<tr><td>A nearby restroom is closed long-term or keeps failing inspection</td><td><strong>Repair or reopen it</strong></td><td class="n">8</td></tr>
-<tr><td>A nearby park restroom is open at 2pm but shut at 9pm</td><td><strong>Keep it open later</strong></td><td class="n">14</td></tr>
-<tr><td>A nearby library or other restroom is open by day, shut at 9pm</td><td><strong>Negotiate later hours</strong></td><td class="n">4</td></tr>
-<tr><td>No restroom at all within 500 m</td><td><strong>Build a modular unit</strong></td><td class="n">23</td></tr>
-<tr><td>Covered day and evening</td><td>Lower priority</td><td class="n">1</td></tr>
-</tbody></table></div>
+<h3 id="p-lens">8 — Checking each site against existing restrooms</h3>
+<p>A high score says a place needs better access. It does not say whether that means a new building. So each of the 50 sites is checked against the listed restrooms within 500 m.</p>
+<figure class="chart"><a class="zoom" href="img/plan/f1_open_by_hour.png" target="_blank" rel="noopener"><img src="img/plan/f1_open_by_hour.png" alt="Bar chart of restrooms open at each hour of a weekday: 954 at 2pm, falling to 57 at 9pm" loading="lazy"></a></figure>
 <ul>
-<li><strong>Broken</strong> = NYC Parks inspection data shows the restroom closed long-term, or unacceptable in at least half its inspections since January 2025 (and at least twice).</li>
+<li><strong>Hours matter:</strong> 954 listed restrooms are open at 2pm on a weekday, but only <strong>57</strong> at 9pm. The law counts limited opening hours as underservice.</li>
+<li>Most are NYC Parks restrooms. <strong>641</strong> post only "8am–4pm, open later seasonally", so we assume they close at 4pm.</li>
+</ul>
+<p>The checks run in this order, using what already exists before building:</p>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Check (restrooms within 500 m)</th><th>First action</th><th class="n">Sites</th></tr></thead><tbody>
+<tr><td>One is closed long-term or keeps failing inspection</td><td><strong>Repair or reopen it</strong></td><td class="n">8</td></tr>
+<tr><td>A park restroom is open at 2pm but shut at 9pm</td><td><strong>Keep it open later</strong></td><td class="n">14</td></tr>
+<tr><td>A library or other restroom is open at 2pm but shut at 9pm</td><td><strong>Extend that operator's hours</strong></td><td class="n">4</td></tr>
+<tr><td>None within 500 m</td><td><strong>Build a modular unit</strong></td><td class="n">23</td></tr>
+<tr><td>Open at 2pm and at 9pm</td><td>Already covered</td><td class="n">1</td></tr>
+</tbody></table></div>
+<figure class="chart"><a class="zoom" href="img/plan/f6_reality_lens.png" target="_blank" rel="noopener"><img src="img/plan/f6_reality_lens.png" alt="Map of the 50 sites coloured by first action: 23 build, 14 keep a nearby park restroom open later, 8 repair or reopen, 4 extend another operator's hours, 1 already covered" loading="lazy"></a></figure>
+<ul>
+<li><strong>Broken</strong> means NYC Parks inspection data shows the restroom closed long-term, or unacceptable in at least half its inspections since January 2025 (and at least twice).</li>
 <li><strong>Repair examples:</strong> Nelson Playground (Yankee Stadium), Grady Playground (Brighton Beach), Sternberg Park and De Hostos Playground (South Williamsburg), Hoffman Park (Elmhurst).</li>
-<li><strong>Takeaway:</strong> 27 of the 50 "build here" spots are better served by fixing or extending what exists.</li>
-<li>These checks come from the archived layered analysis: posted hours, the 500 m standard, and Parks inspections.</li>
+<li><strong>Result:</strong> 23 sites need a new building; 26 can be served by repairing or extending hours at a restroom nearby; 1 is already covered.</li>
+<li><strong>Check actual hours first.</strong> All 14 longer-hours sites depend on the 4pm assumption. If those park restrooms already stay open to 10pm in summer, none of the 14 has an evening gap.</li>
 </ul>
 
-<h3 id="p-complaints">10 — What the City's factors leave out: complaints</h3>
+<h3 id="p-complaints">9 — A second check: where complaints run high <span class="mtag out">Beyond class · negative binomial regression</span></h3>
 <figure class="chart"><a class="zoom" href="img/plan/f7_complaint_hotspots.png" target="_blank" rel="noopener"><img src="img/plan/f7_complaint_hotspots.png" alt="Map of the 29 high-complaint neighbourhoods with pilot sites and next-50 sites; 3 pilots and 5 of the 50 fall inside them" loading="lazy"></a></figure>
 <ul>
-<li>Complaints are <strong>not</strong> in the law. Added to the pilot model, they have no effect (−0.45, 95% CI −1.64 to 0.65), so there is no sign the City targeted complaint hotspots.</li>
-<li>The archived complaint model found <strong>29 neighbourhoods</strong> with at least 1.5 times the public-urination complaints their crowds predict.</li>
-<li>Only <strong>3 of the 17</strong> pilot sites and <strong>5 of our 50</strong> fall in them.</li>
-<li>Those areas deserve a separate look. The archived analysis points first to repairs (Brighton Beach, Corona, East Harlem) and longer evening hours.</li>
+<li>We modelled 311 public-urination complaints (2020–26) in each of 197 residential neighbourhoods. The model predicts each area's expected complaints from its crowds and characteristics: residents, workers, subway riders, hotels, restaurants, income and borough.</li>
+<li><strong>29 neighbourhoods</strong> file at least 1.5 times the complaints their crowds predict.</li>
+<li>Only <strong>3 of the 17</strong> pilot sites and <strong>5 of the 50</strong> fall in them. The law's factors and the complaint evidence point to largely different places.</li>
+<li>In these 29, the restroom checks point first to repairs (Brighton Beach, Corona, East Harlem) and longer evening hours.</li>
 </ul>
 
-<h3 id="p-rec">11 — Recommendation <span class="mtag in">S8–9 · A/B test design</span></h3>
+<h3 id="p-rec">10 — Recommendation <span class="mtag in">S8–9 · A/B test design</span></h3>
 <div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Step</th><th class="n">Sites</th><th>Do this</th></tr></thead><tbody>
-<tr><td><strong>1. Repair or reopen</strong></td><td class="n">8</td><td>Uses a building that already exists</td></tr>
-<tr><td><strong>2. Longer park hours</strong></td><td class="n">14</td><td>Keep nearby park restrooms open to 10pm, matching the pilot's hours</td></tr>
-<tr><td><strong>3. Build modular units</strong></td><td class="n">23</td><td>Start with the robust locations; ground-check space, access and approvals</td></tr>
-<tr><td><strong>4. Other operators' hours</strong></td><td class="n">4</td><td>Libraries and plazas: negotiate later hours</td></tr>
-<tr><td><strong>5. Complaint hotspots</strong></td><td class="n">29 areas</td><td>Assess separately, starting with repairs and evening hours</td></tr>
+<tr><td><strong>1. Repair or reopen</strong></td><td class="n">8</td><td>Restore restrooms that already exist</td></tr>
+<tr><td><strong>2. Longer park hours</strong></td><td class="n">14</td><td>Confirm actual hours; where parks close at 4pm, keep them open to 10pm, matching the pilot</td></tr>
+<tr><td><strong>3. Other operators' hours</strong></td><td class="n">4</td><td>Negotiate later hours with libraries and plaza operators</td></tr>
+<tr><td><strong>4. Build modular units</strong></td><td class="n">23</td><td>Start with the 18 robust locations; ground-check space, access and approvals</td></tr>
 </tbody></table></div>
 <ul>
+<li><strong>Complaint hotspots:</strong> assess the 29 high-complaint neighbourhoods separately, starting with repairs and evening hours.</li>
 <li><strong>Measure as you go:</strong> roll changes out in stages, in random order, so each wave can be compared with areas still waiting.</li>
 <li><strong>Judge by service:</strong> count hours open and working, not units installed.</li>
-<li><strong>Use the pilot's data</strong> (usage, uptime, cleanliness) as the first real measure of demand, then refit the weights.</li>
+<li><strong>Refit with pilot data:</strong> use the pilot's usage, uptime and cleanliness as the first direct measure of demand, then refit the weights.</li>
 </ul>
 
 <h3 id="p-sources">Sources and code</h3>
@@ -575,22 +575,22 @@ figure.chart a.zoom{display:block}
 <p class="lede">What could change the answer, how much, and what would settle it.</p>
 <h3>The weights</h3>
 <ul>
-<li><strong>17 sites is a small sample.</strong> The weights show what the City <em>valued</em> in its first 17 choices, not proven need. The sensitivity test (Walkthrough §8) is what protects the answer: 30 of 50 locations hold under any weighting.</li>
-<li><strong>Equity is uncertain</strong> (95% CI −0.32 to 0.49). Weighting it heavily changes half the list.</li>
-<li><strong>Four pilot sites fit poorly</strong> (41–60% in leave-one-out). The City used information the factors do not capture.</li>
+<li><strong>17 sites is a small sample.</strong> The weights describe what the City valued in its first choices, not measured need. The sensitivity test (Walkthrough step 7) checks how much this matters: 18 of 50 locations hold under both the model's uncertainty and random weightings.</li>
+<li><strong>Equity is uncertain</strong> (95% CI −0.32 to 0.49), and weighting it heavily changes about half the list.</li>
+<li><strong>Four pilot sites fit less well</strong> (41–60% in leave-one-out). Something outside the factors probably shaped them.</li>
 <li><strong>The comparison group</strong> includes large park interiors where few people live, which widens the busyness contrast. The site-type control reduces this but does not remove it.</li>
 </ul>
 <h3>The measures</h3>
 <ul>
 <li><strong>Distances are straight-line</strong>; real walks are longer.</li>
-<li><strong>Hours are as posted.</strong> 641 Parks restrooms with placeholder hours are assumed to close at 4pm, and 18 with unreadable hours count as closed.</li>
-<li><strong>Population counts residents</strong>; workers enter through jobs. <strong>Foot traffic is DOT's model</strong>, not counts; DOT's actual counts cover only 114 locations citywide.</li>
-<li><strong>Broken status</strong> comes from Parks inspections. Repeated failure is treated as unusable, which is a scenario, not an observation.</li>
+<li><strong>Hours are as posted.</strong> 641 Parks restrooms post only "8am–4pm, open later seasonally" and are assumed to close at 4pm; 18 with unreadable hours count as closed. All 14 longer-hours recommendations depend on this assumption.</li>
+<li><strong>Population counts residents</strong>; workers enter through jobs. <strong>Foot traffic is DOT's model</strong>, not counts: DOT's actual counts cover only 114 locations citywide.</li>
+<li><strong>Broken status</strong> comes from Parks inspections. Repeated failure is treated as unusable, which is an assumption, not a daily observation.</li>
 </ul>
 <h3>The choices we made</h3>
 <ul>
-<li><strong>50 sites</strong> and the <strong>population-based borough split</strong> are our choices. An equal split, as in the pilot, would move sites out of Brooklyn and Queens.</li>
-<li><strong>500 m spacing</strong> between sites, and a 500 m test in the reality lens.</li>
+<li><strong>50 sites</strong> and the <strong>population-based borough split</strong>. An equal split would give Staten Island as many sites as Brooklyn.</li>
+<li><strong>Spacing:</strong> 500 m between chosen sites and in the restroom checks. The 300 m exclusion around pilots only removes near-duplicates of the same place.</li>
 <li><strong>Candidate sites are grid points</strong> on Parks land, plazas and busy streets. None has been checked for space, utilities, accessibility or approval.</li>
 </ul>
 <h3>Data timing</h3>
@@ -601,83 +601,75 @@ figure.chart a.zoom{display:block}
 
 <div id="deck" hidden>
 <h2>Deck outline</h2>
-<p class="lede">How the story groups into segments for the 12-minute talk. This is not final slides: each segment will become several slides in Google Slides. Times are a rough share of 12 minutes.</p>
+<p class="lede">How the story groups into segments for the 12-minute talk. Each segment will become several slides. Times are a rough share of 12 minutes.</p>
 
 <section class="seg-card">
 <p class="seg-tag">Opening · ~1 min</p>
 <h3>The ask</h3>
 <p class="seg-msg">New York must add 1,145 restrooms by 2035. Where should the next ones go?</p>
-<ul><li>Target 2,120 vs 975 today.</li><li>The law says what "underserved" means but not where.</li></ul>
-<p class="seg-src">Walkthrough §1</p>
+<ul><li>2,120 target vs 975 today.</li><li>The law defines "underserved" but not where to build.</li></ul>
+<p class="seg-src">Walkthrough step 1</p>
 </section>
 
 <section class="seg-card">
-<p class="seg-tag">The problem · ~1.5 min</p>
-<h3>The gap is worst in the evening</h3>
-<p class="seg-msg">954 restrooms are open at 2pm; only 57 at 9pm.</p>
-<ul><li>Hours chart.</li><li>Placeholder park hours.</li><li>The law counts limited hours as underservice.</li></ul>
-<p class="seg-src">Visual ready: <a href="img/plan/f1_open_by_hour.png" target="_blank" rel="noopener">hours chart</a> · Walkthrough §2</p>
-</section>
-
-<section class="seg-card">
-<p class="seg-tag">Setup · ~1.5 min</p>
-<h3>How the City decides: the law's factors and the first 17 sites</h3>
-<p class="seg-msg">The law names six factors; the City's 17 pilot sites show how it weighs them.</p>
-<ul><li>Six factors, with how we measured each.</li><li>Pilot map: plazas and parks, 4 per borough.</li><li>"We use the City's own choices as the answer key."</li></ul>
-<p class="seg-src">Visual ready: <a href="img/plan/f2_pilot_sites.png" target="_blank" rel="noopener">pilot map</a> · Walkthrough §3–4</p>
+<p class="seg-tag">Setup · ~2 min</p>
+<h3>What the law asks for, and what the City did first</h3>
+<p class="seg-msg">Six factors in the law; 17 pilot sites show how the City weighs them.</p>
+<ul><li>The six factors, and how each is measured.</li><li>Pilot map: 4 per borough (1 on Staten Island), plazas, parks and street corners.</li><li>The City's choices are our answer key.</li></ul>
+<p class="seg-src">Visual: <a href="img/plan/f2_pilot_sites.png" target="_blank" rel="noopener">pilot map</a> · Walkthrough steps 2–3</p>
 </section>
 
 <section class="seg-card">
 <p class="seg-tag">Method and finding · ~2.5 min</p>
 <h3>What the City valued</h3>
 <p class="seg-msg">Busy places far from a working restroom: busyness 65%, distance 31%, equity 4%.</p>
-<ul><li>17 chosen vs 5,756 possible sites.</li><li>Logistic regression, the class method.</li><li>Why a busyness index (overlapping factors).</li><li>Validation: a hidden site typically ranks in the top 4%.</li></ul>
-<p class="seg-src">Visuals ready: <a href="img/plan/f3_revealed_weights.png" target="_blank" rel="noopener">weights chart</a>, <a href="img/plan/f4_leave_one_out.png" target="_blank" rel="noopener">leave-one-out</a> · Walkthrough §5–6</p>
+<ul><li>17 chosen vs 5,756 candidate sites.</li><li>Logistic regression: chosen vs not chosen.</li><li>Why the four busyness measures are combined.</li><li>Leave-one-out: a hidden pilot site typically beats 96% of candidates.</li></ul>
+<p class="seg-src">Visuals: <a href="img/plan/f3_revealed_weights.png" target="_blank" rel="noopener">weights chart</a>, <a href="img/plan/f4_leave_one_out.png" target="_blank" rel="noopener">leave-one-out</a> · Walkthrough steps 4–5</p>
 </section>
 
 <section class="seg-card">
 <p class="seg-tag">Result · ~2 min</p>
-<h3>The next 50, and they survive the weights</h3>
-<p class="seg-msg">30 of 50 locations are picked under almost any weighting.</p>
-<ul><li>Scoring and the borough split.</li><li>4,000 weightings, with the alternatives table.</li><li>Robust examples by borough.</li><li>Equity is the real policy lever.</li></ul>
-<p class="seg-src">Visual ready: <a href="img/plan/f5_next50_stability.png" target="_blank" rel="noopener">stability map</a> · Walkthrough §7–8</p>
+<h3>The next 50, and how much they depend on the weights</h3>
+<p class="seg-msg">41 of 50 hold under the model's uncertainty; 18 hold under random weightings too.</p>
+<ul><li>Scoring and the borough split.</li><li>The two tests, and the alternative-weightings table.</li><li>Robust locations by borough.</li><li>Equity is the policy choice.</li></ul>
+<p class="seg-src">Visual: <a href="img/plan/f5_next50_stability.png" target="_blank" rel="noopener">stability map</a> · Walkthrough steps 6–7</p>
 </section>
 
 <section class="seg-card">
-<p class="seg-tag">Twist · ~1.5 min</p>
-<h3>Reality lens: most sites don't need a new building</h3>
-<p class="seg-msg">Only 23 of the 50 need a building; 14 need longer park hours and 8 a repair.</p>
-<ul><li>The check order: fix and extend what exists before building.</li><li>Named repair examples.</li><li>This is where the archived analysis earns its place.</li></ul>
-<p class="seg-src">Visual ready: <a href="img/plan/f6_reality_lens.png" target="_blank" rel="noopener">reality-lens map</a> · Walkthrough §9</p>
+<p class="seg-tag">Twist · ~2 min</p>
+<h3>Most sites don't need a new building</h3>
+<p class="seg-msg">Only 57 restrooms are open at 9pm. Of the 50 sites, 23 need a building; 26 need a repair or longer hours nearby.</p>
+<ul><li>Hours chart as the setup.</li><li>The check order: repair, park hours, other operators, build.</li><li>Named repair examples.</li><li>Caveat: longer-hours sites depend on actual park hours.</li></ul>
+<p class="seg-src">Visuals: <a href="img/plan/f1_open_by_hour.png" target="_blank" rel="noopener">hours chart</a>, <a href="img/plan/f6_reality_lens.png" target="_blank" rel="noopener">action map</a> · Walkthrough step 8</p>
 </section>
 
 <section class="seg-card">
 <p class="seg-tag">Optional · ~0.5 min</p>
-<h3>What the factors miss</h3>
-<p class="seg-msg">The City's factors ignore complaint hotspots: 3 of 17 pilots and 5 of our 50 fall in them.</p>
-<ul><li>Cut first if time is short, or keep as a Q&amp;A backup.</li></ul>
-<p class="seg-src">Visual ready: <a href="img/plan/f7_complaint_hotspots.png" target="_blank" rel="noopener">hotspot map</a> · Walkthrough §10</p>
+<h3>Where complaints run high</h3>
+<p class="seg-msg">Complaint hotspots and the law's factors point to largely different places.</p>
+<ul><li>29 high-complaint neighbourhoods; 3 of 17 pilot sites and 5 of our 50 fall in them.</li><li>Cut first if time is short, or keep as a Q&amp;A backup.</li></ul>
+<p class="seg-src">Visual: <a href="img/plan/f7_complaint_hotspots.png" target="_blank" rel="noopener">hotspot map</a> · Walkthrough step 9</p>
 </section>
 
 <section class="seg-card">
-<p class="seg-tag">Close · ~1.5 min</p>
+<p class="seg-tag">Close · ~2 min</p>
 <h3>Recommendation</h3>
-<p class="seg-msg">Fix and extend first, build where nothing exists, and measure as you go.</p>
-<ul><li>Repair 8 · longer hours 14 · build 23 · other operators 4.</li><li>Staged, randomised rollout.</li><li>Judge by hours open and working.</li><li>Use the pilot's data to refit the weights.</li></ul>
-<p class="seg-src">Walkthrough §11</p>
+<p class="seg-msg">Repair and extend what exists, build where nothing exists, and measure as you go.</p>
+<ul><li>Repair 8 · park hours 14 · other operators 4 · build 23.</li><li>Staged, randomised rollout.</li><li>Judge by hours open and working.</li><li>Refit the weights with pilot data.</li></ul>
+<p class="seg-src">Walkthrough step 10</p>
 </section>
 
 <section class="seg-card">
 <p class="seg-tag">Backup · Q&amp;A</p>
 <h3>Limits and method details</h3>
-<ul><li>Small sample and the sensitivity answer.</li><li>Straight-line distance, posted hours.</li><li>Borough split choice.</li><li>"Why not a Starbucks?" (archived test: chain cafés don't change the complaint ranking).</li><li>Model table.</li></ul>
-<p class="seg-src">Limits tab · Archive</p>
+<ul><li>Small sample, and what the sensitivity test shows.</li><li>Straight-line distance and posted hours.</li><li>The borough split.</li><li>Q: Don't cafés already fill the gap? A: Adding 1,886 chain cafés and fast-food outlets as restroom options does not change the complaint ranking.</li><li>Model table.</li></ul>
+<p class="seg-src">Limits tab</p>
 </section>
 </div>
 
 <div id="walk" hidden>
 <h2>Layered walkthrough</h2>
-<p class="lede">Archived 26 September 2026. This is the earlier complaint-led analysis. Its checks on evening hours and broken restrooms now serve as the reality lens in <a href="#plan" data-tab="plan">Walkthrough</a>.</p>
+<p class="lede">Archived 26 September 2026. This is the earlier complaint-led analysis. Its checks on evening hours and broken restrooms are reused in step 8 of the <a href="#plan" data-tab="plan">Walkthrough</a>.</p>
 
 <div class="tldr">
 <p><strong>In one minute</strong></p>

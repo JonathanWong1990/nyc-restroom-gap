@@ -39,9 +39,16 @@ entries within 500 m; jobs within 500 m; distance to nearest listed restroom ope
   Truxton 41, 34th Ave & 64th St 44, North Shore Esplanade 56, Northern Blvd & 54th St 60).
 - Borough quota by population: Bronx 8, Brooklyn 15, Manhattan 10, Queens 14, Staten Island 3 (unconstrained: 36 of
   50 in Manhattan).
-- Sensitivity: 41 of 50 locations picked in >=80% of 2,000 model-uncertainty draws; 30 of 50 also in >=50% of 2,000
-  random-weight draws. Named scenarios keep 52-76% of locations.
-- Reality lens: 23 build, 14 longer park hours, 8 repair/reopen, 4 other operator closes early, 1 already covered.
+- Sensitivity: 41 of 50 locations picked in >=80% of 2,000 model-uncertainty draws (Test A). Test B, random weights
+  over the three GROUPS (busyness / distance / equity): 20 of 50 picked in >=50% of runs; 18 pass both ("robust").
+  (Random weights over the six factors gave 30 — superseded: they hand ~2/3 of the weight to the four correlated
+  busyness measures on average; cold-read finding 26 Sep.) Chance baseline (random scores, same quotas and spacing):
+  2% per location. Named scenarios keep 52-76% of locations.
+- Evening-hours dependence: if the 641 placeholder-hours park restrooms already stay open to 10pm, 0 of the 14
+  "longer park hours" sites has an evening gap -> all 14 depend on the 4pm assumption.
+- Leave-one-out mean 84% (median 96%).
+- Restroom checks (step 8): 23 build, 14 longer park hours, 8 repair/reopen, 4 other operator closes early, 1 already covered
+  (26 served by a fix or longer hours nearby).
 - Overlap with the 29 high-complaint neighbourhoods: 3 of 17 pilots, 5 of the 50.
 
 ## Caveats

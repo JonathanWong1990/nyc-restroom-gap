@@ -89,7 +89,7 @@ p5 <- base() + geom_sf(data = pil, shape = 24, size = 2.4, fill = "white", colou
   scale_fill_manual(values = setNames(c("#0b3d91", "#6f9bd1", "#d0d7e2"), levels(s50$stab)), name = "The next 50 sites") +
   labs(title = "The next 50 sites, and how many survive any weighting",
        subtitle = "Split by borough population: Bronx 8, Brooklyn 15, Manhattan 10, Queens 14, Staten Island 3.\nTriangles = the City's 17 pilot sites.",
-       caption = "Robust: picked in >=80% of 2,000 runs within the model's uncertainty AND >=50% of 2,000 runs with random weights.\nSites at least 500 m apart and from pilot sites.") + th
+       caption = "Robust: picked in >=80% of 2,000 runs within the model's uncertainty AND >=50% of 2,000 runs with random weights on busyness, distance and equity.\nSites at least 500 m apart and from pilot sites.") + th
 save(p5, "f5_next50_stability.png")
 
 # f6 -- reality lens
