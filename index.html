@@ -1480,6 +1480,7 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
 </div>
 <script>
 (function(){
+  var initialHash = (location.hash || '').replace('#','');
   var ids = {plan:'plan', plim:'plim', deck:'deck', walk:'walk', lim:'lim', data:'data', merged:'merged', original:'original'};
   var btns = {plan:'btn-plan', plim:'btn-plim', deck:'btn-deck', walk:'btn-walk', lim:'btn-lim', data:'btn-data', merged:'btn-merged', original:'btn-orig'};
   var hint = document.getElementById('hint');
@@ -1527,7 +1528,7 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
     set(t, false); try { if (history.replaceState) history.replaceState(null, '', '#' + h); } catch(e) {}
     setTimeout(function(){ el.scrollIntoView({block:'start'}); }, 30); return true; }
   window.addEventListener('hashchange', function(){ var h=norm((location.hash||'').replace('#','')); if (has(h)) set(h, true); else goAnchor(h); });
-  (function(){ var h=(location.hash||'').replace('#',''); if (h && !has(norm(h))) goAnchor(h); })();
+  if (initialHash && !has(norm(initialHash))) goAnchor(initialHash);
   document.addEventListener('click', function(ev){ var a=ev.target.closest && ev.target.closest('a[data-tab]'); if (!a) return; var t=a.getAttribute('data-tab'); if (has(t)) { ev.preventDefault(); set(t, true); } });
 })();
 </script>
