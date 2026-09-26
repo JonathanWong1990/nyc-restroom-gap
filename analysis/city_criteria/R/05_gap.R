@@ -4,10 +4,13 @@
 #  2. Demand score at every candidate site; SUPPLY = listed restrooms by time of day (500 m).
 #  3. GAP site = top third of demand AND no restroom open within 500 m at 9pm (evening), and not within 500 m of a pilot unit.
 #     Types: all-day gap (none open at 2pm either) vs evening-only gap (a restroom nearby by day, closed by 9pm).
-#  4. How many sites close the gap: greedy maximal covering -- place a unit at the candidate covering the most uncovered
-#     gap demand within 500 m, repeat until every gap site is covered. N comes out of the data.
-#  5. What each chosen site needs first: repair (broken restroom nearby) / extend hours (restroom nearby by day) / build.
-#  6. Sensitivity: random demand weights, demand threshold, evening hour, radius, park-hours assumption.
+#  4. Closing the gap in two stages (revised 26 Sep after ChatGPT review, REVIEW_FINDINGS.md #1):
+#     stage 1 -- EXISTING restrooms at their own coordinates: repair/reopen broken ones, or extend hours of ones open by
+#     day but shut in the evening; greedy maximal covering over these facilities while any adds coverage;
+#     stage 2 -- NEW units at candidate sites for whatever gap remains. Every count is a facility, deduplicated.
+#  5. Sensitivity: random demand weights, demand threshold, evening hour, radius, park-hours assumption.
+#  Demand scaling (review #2): the busyness composite is re-standardised with the fitting data's mean/sd, exactly as in
+#  the model, before the demand weights are applied (also for alternative composites in the sensitivity runs).
 options(scipen = 999, stringsAsFactors = FALSE, warn = 1)
 suppressPackageStartupMessages({library(sf); library(data.table); library(logistf)})
 sf_use_s2(FALSE)
@@ -49,98 +52,107 @@ fwrite(data.table(pilot = d[pid]$name, loo_pct = loo), file.path(CM, "outputs/ga
 wb <- max(coef(m7)["busy"], 0); we <- max(coef(m7)["z_pov"], 0); WD <- c(busy = wb, equity = we) / (wb + we)
 cat("demand weights: busyness", round(WD[1], 3), "equity", round(WD[2], 3), "\n")
 
-# ---- 2. demand at every candidate site ----------------------------------------------------------------------------
+# ---- 2. demand at every candidate site (busyness composite re-standardised as in the model) ------------------------
 cand <- X[pilot == 0]; cs <- sites[X$pilot == 0, ]; nC <- nrow(cand)
-Zc <- mk(cand, d)
-comp <- as.matrix(Zc[, .(z_pop, z_ped, z_sub, z_job)])
-demand_raw <- function(wbusy4 = rep(.25, 4), wb = WD[1], we = WD[2]) as.vector(wb * (comp %*% wbusy4) + we * Zc$z_pov)
+Zc <- mk(cand, d); Zp <- mk(X[pilot == 1], d)
+compF <- as.matrix(Zd[, .(z_pop, z_ped, z_sub, z_job)])
+demand_raw <- function(Z, w4 = rep(.25, 4), wb = WD[1], we = WD[2]) {
+  f <- as.vector(compF %*% w4); m <- mean(f); s <- sd(f)
+  wb * (as.vector(as.matrix(Z[, .(z_pop, z_ped, z_sub, z_job)]) %*% w4) - m) / s + we * Z$z_pov
+}
+stopifnot(abs(mean(as.vector(compF %*% rep(.25, 4))) - mean(bref)) < 1e-12)
 pct <- function(v) frank(v, ties.method = "average") / length(v)
-D0 <- pct(demand_raw())
+DR0 <- demand_raw(Zc); D0 <- pct(DR0)
 
 # ---- supply by time of day ---------------------------------------------------------------------------------------
 open_at <- function(h, ph_close = 16) { cl <- ifelse(sup$placeholder, ph_close, sup$w_close)
   sup$operational & sup$w_ok & !is.na(sup$w_open) & sup$w_open <= h & cl > h }
-nb_sup500 <- st_is_within_distance(cs, sup, dist = M2FT(500)); nb_sup400 <- st_is_within_distance(cs, sup, dist = M2FT(400))
+nb_sup <- list(`500` = st_is_within_distance(cs, sup, dist = M2FT(500)), `400` = st_is_within_distance(cs, sup, dist = M2FT(400)))
+nb_fac <- list(`500` = st_is_within_distance(sup, cs, dist = M2FT(500)), `400` = st_is_within_distance(sup, cs, dist = M2FT(400)))
+nb_cs  <- list(`500` = st_is_within_distance(cs, cs, dist = M2FT(500)), `400` = st_is_within_distance(cs, cs, dist = M2FT(400)))
+pil_blk <- list(`500` = lengths(st_is_within_distance(cs, P$pil, dist = M2FT(500))) > 0, `400` = lengths(st_is_within_distance(cs, P$pil, dist = M2FT(400))) > 0)
 covered <- function(ok, nb) vapply(nb, function(j) any(ok[j]), TRUE)
-pil_block500 <- lengths(st_is_within_distance(cs, P$pil, dist = M2FT(500))) > 0
-pil_block400 <- lengths(st_is_within_distance(cs, P$pil, dist = M2FT(400))) > 0
-nb500 <- st_is_within_distance(cs, cs, dist = M2FT(500)); nb400 <- st_is_within_distance(cs, cs, dist = M2FT(400))
-cov14 <- covered(open_at(14), nb_sup500); cov21 <- covered(open_at(21), nb_sup500)
+cov14 <- covered(open_at(14), nb_sup$`500`); cov21 <- covered(open_at(21), nb_sup$`500`)
 cat("candidate sites covered within 500 m: 2pm", round(mean(cov14), 3), "| 9pm", round(mean(cov21), 3), "\n")
-pc_pil <- sapply(seq_len(17), function(i) mean(demand_raw() <= as.vector(WD[1] * (as.matrix(mk(X[pilot == 1][i], d)[, .(z_pop, z_ped, z_sub, z_job)]) %*% rep(.25, 4)) + WD[2] * mk(X[pilot == 1][i], d)$z_pov)))
+pc_pil <- sapply(demand_raw(Zp), function(v) mean(DR0 <= v))
 pil9 <- X[pilot == 1]$dist_9pm_m > 500; pil2 <- X[pilot == 1]$dist_2pm_m > 500
 cat("pilots: top-third demand", sum(pc_pil >= 2 / 3), "| no 9pm restroom", sum(pil9), "| both (in our gap definition)", sum(pc_pil >= 2 / 3 & pil9),
     "| no 2pm restroom", sum(pil2), "\n")
 
-# ---- 3-4. gap and greedy cover -----------------------------------------------------------------------------------
-greedy <- function(gap, w, nb) {           # cover every gap site; unit may go on any candidate site
-  unc <- gap; gain <- vapply(nb, function(j) sum(w[j][unc[j]]), 0); sel <- integer(0)
+# ---- 3-4. gap, then two-stage cover ---------------------------------------------------------------------------------
+broken <- sup$removed_closed | sup$removed_fail | sup$reopen_add
+greedy <- function(unc, w, nb, stop_at_zero = FALSE) {      # nb: candidate -> gap-site indices
+  gain <- vapply(nb, function(j) sum(w[j][unc[j]]), 0); sel <- integer(0)
   while (any(unc)) {
-    i <- which.max(gain); sel <- c(sel, i)
-    newly <- nb[[i]][unc[nb[[i]]]]; unc[newly] <- FALSE
-    touched <- unique(unlist(nb[newly])); gain[touched] <- vapply(nb[touched], function(j) sum(w[j][unc[j]]), 0)
+    i <- which.max(gain); if (gain[i] <= 0) { if (stop_at_zero) break else stop("uncoverable gap site") }
+    sel <- c(sel, i); newly <- nb[[i]][unc[nb[[i]]]]; unc[newly] <- FALSE; gain[i] <- 0
+    # recompute gains only for candidates that could reach the newly covered sites
+    touched <- which(vapply(nb, function(j) any(j %in% newly), TRUE)); gain[touched] <- vapply(nb[touched], function(j) sum(w[j][unc[j]]), 0)
   }
-  sel
+  list(sel = sel, unc = unc)
 }
 run_gap <- function(D, thr = 2 / 3, hour = 21, rad = 500, ph_close = 16) {
-  nbs <- if (rad == 500) nb_sup500 else nb_sup400; nbc <- if (rad == 500) nb500 else nb400
-  blk <- if (rad == 500) pil_block500 else pil_block400
-  ce <- covered(open_at(hour, ph_close), nbs)
-  gap <- D >= thr & !ce & !blk
-  list(gap = gap, sel = greedy(gap, D, nbc))
+  r <- as.character(rad); ev <- open_at(hour, ph_close)
+  gap <- D >= thr & !covered(ev, nb_sup[[r]]) & !pil_blk[[r]]
+  # stage 1: existing facilities that could serve at `hour` after an intervention (not already open then)
+  day_only <- open_at(14, ph_close) & !ev & !broken
+  elig <- which((broken | day_only) & !ev)
+  action <- ifelse(broken, "Repair or reopen", ifelse(sup$placeholder, "Keep park restroom open to 10pm", "Extend other operator's hours"))
+  s1 <- greedy(gap, D, nb_fac[[r]][elig], stop_at_zero = TRUE)
+  fac <- elig[s1$sel]
+  s2 <- greedy(s1$unc, D, nb_cs[[r]])
+  list(gap = gap, fac = fac, fac_action = action[fac], new = s2$sel, left_after_s1 = sum(s1$unc))
 }
-B <- run_gap(D0); gap0 <- B$gap; sel0 <- B$sel
+B <- run_gap(D0); gap0 <- B$gap
 cat("gap sites:", sum(gap0), "of", nC, "| all-day:", sum(gap0 & !cov14), "| evening-only:", sum(gap0 & cov14), "\n")
-cat("sites needed to cover every gap site:", length(sel0), "\n")
+cat("stage 1 existing facilities:", length(B$fac), "->", table(B$fac_action), "| gap sites left:", B$left_after_s1,
+    "| stage 2 new units:", length(B$new), "\n")
+# how much of the gap stage 1 closes, and the diminishing returns
+boro_c <- P$nta$boroname[match(cand$nta2020, P$nta$nta2020)]
+sup_nta <- P$nta$ntaname[st_nearest_feature(sup, P$nta)]; sup_boro <- P$nta$boroname[st_nearest_feature(sup, P$nta)]
+cum <- cumsum(vapply(seq_along(B$fac), function(k) { prev <- if (k == 1) integer(0) else unique(unlist(nb_fac$`500`[B$fac[1:(k - 1)]]))
+  sum(setdiff(nb_fac$`500`[[B$fac[k]]], prev) %in% which(gap0)) }, 0L))
+cat("stage 1 covers", tail(cum, 1), "gap sites; first 50 facilities cover", cum[min(50, length(cum))], "\n")
+Fac <- data.table(order = seq_along(B$fac), facility_id = sup$facility_id[B$fac], facility_name = sup$facility_name[B$fac], operator = sup$operator[B$fac],
+                  action = B$fac_action, ntaname = sup_nta[B$fac], borough = sup_boro[B$fac], gap_sites_newly_covered = diff(c(0, cum)),
+                  cumulative_gap_sites = cum)
+ll <- st_coordinates(st_transform(sup[B$fac, ], 4326)); Fac[, `:=`(lon = round(ll[, 1], 5), lat = round(ll[, 2], 5))]
+New <- cbind(cand[B$new, .(ntaname, type, lon = round(lon, 5), lat = round(lat, 5), residents = round(residents))],
+             borough = boro_c[B$new], demand_pct = round(100 * D0[B$new]), gap_type = ifelse(cov14[B$new], "evening-only", "all-day"))
+print(table(Fac$action)); print(table(Fac$borough)); print(table(New$borough))
+# independent check: all chosen facilities (after intervention) + new units cover every gap site
+ok_after <- open_at(21); ok_after[B$fac] <- TRUE
+chk <- covered(ok_after, nb_sup$`500`) | vapply(seq_len(nC), function(i) any(nb_cs$`500`[[i]] %in% B$new), TRUE)
+stopifnot(all(chk[gap0]))
+cat("check: every gap site covered by the chosen facilities + new units\n")
 
-# ---- 5. what each chosen site needs first --------------------------------------------------------------------------
-o14 <- open_at(14); o21 <- open_at(21)
-fix <- rbindlist(lapply(sel0, function(i) {
-  j <- nb_sup500[[i]]
-  broken <- j[sup$removed_closed[j] | sup$removed_fail[j] | sup$reopen_add[j]]
-  day <- j[o14[j] & !o21[j] & !(sup$removed_closed[j] | sup$removed_fail[j])]
-  data.table(n_broken = length(broken), n_day_only = length(day), n_day_only_park = sum(sup$placeholder[day]),
-             broken_names = paste(unique(sup$facility_name[broken]), collapse = "; "),
-             day_names = paste(unique(sup$facility_name[day]), collapse = "; "))
-}))
-boro <- P$nta$boroname[match(cand$nta2020, P$nta$nta2020)]
-S <- cbind(cand[sel0, .(ntaname, type, lon = round(lon, 5), lat = round(lat, 5), residents = round(residents), subway, jobs = round(jobs),
-                        dist_2pm_m = round(dist_2pm_m), dist_9pm_m = round(dist_9pm_m), poverty = round(poverty, 3))],
-           borough = boro[sel0], demand_pct = round(100 * D0[sel0]), gap_type = ifelse(cov14[sel0], "evening-only", "all-day"), fix)
-S[, first_action := fifelse(n_broken > 0, "Repair or reopen nearby",
-                    fifelse(n_day_only_park > 0, "Keep a nearby park restroom open later",
-                    fifelse(n_day_only > 0, "Extend another operator's hours", "Build a new unit")))]
-S[, order := .I]
-print(table(S$first_action)); print(table(S$borough)); print(table(S$gap_type))
-
-# ---- 6. sensitivity ----------------------------------------------------------------------------------------------
-near0 <- nb500[sel0]
-loc_hit <- function(sel) vapply(near0, function(nb) any(sel %in% nb), TRUE)
-R <- list()
-cat("sensitivity: random demand weights...\n")
-for (r in 1:300) { g <- rgamma(4, 1); w4 <- g / sum(g); we_r <- runif(1, 0, 0.5)
-  D <- pct(demand_raw(w4, 1 - we_r, we_r)); o <- run_gap(D)
-  R[[length(R) + 1]] <- list(kind = "random weights", n = length(o$sel), hit = loc_hit(o$sel)) }
+# ---- 5. sensitivity ----------------------------------------------------------------------------------------------
+fac_hit <- function(o) B$fac %in% o$fac                                   # exact facility retained
+near_new <- nb_cs$`500`[B$new]
+new_hit <- function(o) vapply(near_new, function(nb) any(o$new %in% nb), TRUE)   # area-level within 500 m
+summ <- function(o) data.table(gap_sites = sum(o$gap), existing = length(o$fac), repair = sum(o$fac_action == "Repair or reopen"),
+                               park_hours = sum(o$fac_action == "Keep park restroom open to 10pm"),
+                               other_hours = sum(o$fac_action == "Extend other operator's hours"), new_units = length(o$new))
+RW <- list(); FH <- list(); NH <- list()
+cat("sensitivity: random demand weights (200 runs)...\n")
+for (r in 1:200) { g <- rgamma(4, 1); w4 <- g / sum(g); we_r <- runif(1, 0, 0.5)
+  o <- run_gap(pct(demand_raw(Zc, w4, 1 - we_r, we_r))); RW[[r]] <- summ(o); FH[[r]] <- fac_hit(o); NH[[r]] <- new_hit(o) }
+RW <- rbindlist(RW)
 cat("sensitivity: settings grid...\n")
+SG <- list()
 for (thr in c(0.5, 2 / 3, 0.75)) for (hour in c(20, 21, 22)) for (rad in c(400, 500)) for (ph in c(16, 22)) {
-  o <- run_gap(D0, thr, hour, rad, ph)
-  R[[length(R) + 1]] <- list(kind = "settings", thr = thr, hour = hour, rad = rad, ph = ph, n = length(o$sel), hit = loc_hit(o$sel), ngap = sum(o$gap)) }
-rw <- Filter(function(x) x$kind == "random weights", R); sg <- Filter(function(x) x$kind == "settings", R)
-S$stable_weights <- round(rowMeans(sapply(rw, `[[`, "hit")), 2)
-S$stable_settings <- round(rowMeans(sapply(sg, `[[`, "hit")), 2)
-nrw <- sapply(rw, `[[`, "n"); cat("N under random weights: median", median(nrw), "range", range(nrw), "\n")
-SG <- rbindlist(lapply(sg, function(x) data.table(threshold = round(x$thr, 2), hour = x$hour, radius = x$rad, park_close = x$ph, gap_sites = x$ngap, sites_needed = x$n,
-                                                  share_of_base_locations = round(mean(x$hit), 2))))
-print(SG[order(threshold, hour, radius, park_close)])
-cat("locations hit in >=80% of random-weight runs:", sum(S$stable_weights >= .8), "of", nrow(S),
-    "| >=50% of settings runs:", sum(S$stable_settings >= .5), "| both:", sum(S$stable_weights >= .8 & S$stable_settings >= .5), "\n")
-# chance baseline: same number of sites placed at random candidates (spaced 500 m)
-rnd <- replicate(300, { o <- sample(nC); b <- rep(FALSE, nC); s <- integer(0)
-  for (i in o) { if (b[i]) next; s <- c(s, i); b[nb500[[i]]] <- TRUE; if (length(s) == length(sel0)) break }; mean(loc_hit(s)) })
-cat("chance: share of base locations hit by the same number of random sites:", round(mean(rnd), 3), "\n")
+  if (hour == 22 && ph == 22) next                                       # identical to ph 16 at 10pm
+  o <- run_gap(D0, thr, hour, rad, ph); SG[[length(SG) + 1]] <- cbind(data.table(threshold = round(thr, 2), hour, radius = rad, park_close = ph), summ(o)) }
+SG <- rbindlist(SG); print(SG)
+Fac$kept_random_weights <- round(rowMeans(do.call(cbind, FH)), 2)
+New$area_kept_random_weights <- round(rowMeans(do.call(cbind, NH)), 2)
+cat("random weights: existing", paste(range(RW$existing), collapse = "-"), "(median", median(RW$existing), ") | new units",
+    paste(range(RW$new_units), collapse = "-"), "(median", median(RW$new_units), ")\n")
+cat("base facilities kept in >=80% of random-weight runs:", sum(Fac$kept_random_weights >= .8), "of", nrow(Fac),
+    "| new-unit areas kept (500 m) in >=80%:", sum(New$area_kept_random_weights >= .8), "of", nrow(New), "\n")
 
-fwrite(S, file.path(CM, "outputs/gap_sites_selected.csv")); fwrite(SG, file.path(CM, "outputs/gap_sensitivity_settings.csv"))
-fwrite(data.table(run = seq_along(nrw), sites_needed = nrw), file.path(CM, "outputs/gap_sensitivity_random_weights.csv"))
-saveRDS(list(D0 = D0, gap0 = gap0, cov14 = cov14, cov21 = cov21, sel0 = sel0, S = S, WD = WD, M7 = M7, loo = loo,
-             pc_pil = pc_pil, pil9 = pil9, pil2 = pil2, chance = mean(rnd), nrw = nrw, SG = SG),
+fwrite(Fac, file.path(CM, "outputs/gap_existing_facilities.csv")); fwrite(New, file.path(CM, "outputs/gap_new_units.csv"))
+fwrite(SG, file.path(CM, "outputs/gap_sensitivity_settings.csv")); fwrite(RW, file.path(CM, "outputs/gap_sensitivity_random_weights.csv"))
+saveRDS(list(D0 = D0, gap0 = gap0, cov14 = cov14, cov21 = cov21, B = B, Fac = Fac, New = New, WD = WD, M7 = M7, loo = loo,
+             pc_pil = pc_pil, pil9 = pil9, pil2 = pil2, RW = RW, SG = SG, cum = cum),
         file.path(CM, "cache/gap.rds"))

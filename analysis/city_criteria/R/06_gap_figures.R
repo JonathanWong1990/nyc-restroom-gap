@@ -89,43 +89,67 @@ p7 <- base() + geom_sf(data = cp[!G$gap0, ], colour = "#dcdcd8", size = 0.35) +
        caption = "Gap sites within 500 m of a pilot unit (open 7am-10pm) are treated as already served.") + th
 save(p7, "g7_gap.png")
 
-# g8 -- sites needed and what each needs first
-S <- G$S; sp <- pts(S)
-A <- c("Keep a nearby park restroom open later", "Repair or reopen nearby", "Extend another operator's hours", "Build a new unit")
-sp$a <- factor(S$first_action, levels = A); k8 <- table(sp$a); levels(sp$a) <- sprintf("%s (%d)", levels(sp$a), as.integer(k8))
-p8 <- base() + geom_sf(data = pil, shape = 24, size = 2.2, fill = "white", colour = "#333333") +
-  geom_sf(data = sp, aes(fill = a), shape = 21, size = 3, colour = "white", stroke = 0.4) +
-  scale_fill_manual(values = setNames(c("#eda100", "#2a78d6", "#4a3aa7", "#c0392b"), levels(sp$a)), name = sprintf("%d locations close the gap. First action:", nrow(S))) +
-  labs(title = sprintf("%d locations close the gap; only %d need a new building", nrow(S), as.integer(k8[4])),
-       subtitle = "Each location covers gap sites within 500 m; placed one at a time where they cover the most demand",
-       caption = "First action from restrooms within 500 m: broken (Parks long-term closed or failing >=50% of inspections since Jan 2025) -> repair;\nopen by day but not at 9pm -> extend hours; none at all -> build. Triangles = pilot sites.") + th
+# g8 -- closing the gap: existing restrooms first, then new units
+Fac <- G$Fac; New <- G$New
+fp <- st_transform(st_as_sf(Fac, coords = c("lon", "lat"), crs = 4326), 2263); np <- pts(New)
+A <- c("Keep park restroom open to 10pm", "Extend other operator's hours", "Repair or reopen")
+fp$a <- factor(Fac$action, levels = A); k8 <- table(fp$a)
+levels(fp$a) <- sprintf("%s (%d)", c("Keep a park restroom open to 10pm", "Extend another operator's hours", "Repair or reopen"), as.integer(k8))
+p8 <- base() + geom_sf(data = cp[G$gap0, ], colour = "#f1d9a8", size = 0.5) +
+  geom_sf(data = fp, aes(fill = a), shape = 21, size = 2.8, colour = "white", stroke = 0.4) +
+  geom_sf(data = np, aes(shape = sprintf("New modular unit (%d)", nrow(New))), size = 3.6, fill = "#c0392b", colour = "white", stroke = 0.6) +
+  scale_fill_manual(values = setNames(c("#eda100", "#4a3aa7", "#2a78d6"), levels(fp$a)), name = sprintf("Stage 1: %d existing restrooms", nrow(Fac))) +
+  scale_shape_manual(values = 23, name = "Stage 2") +
+  guides(fill = guide_legend(order = 1, override.aes = list(size = 4)), shape = guide_legend(order = 2)) +
+  labs(title = sprintf("Closing the gap: %d existing restrooms, then %d new units", nrow(Fac), nrow(New)),
+       subtitle = sprintf("Existing restrooms placed first, at their own locations (they cover %d of %d gap sites);\nnew units only where no existing restroom can reach. Pale = gap sites.",
+                          max(G$cum), sum(G$gap0)),
+       caption = "Both stages: greedy maximal covering within 500 m, weighted by demand.\nBroken = Parks long-term closed, or failing >=50% of inspections since Jan 2025.") + th
 save(p8, "g8_sites_and_actions.png")
 
-# g9 -- sensitivity of the number of locations
-SG <- copy(G$SG)[!(hour == 22 & park_close == 22)]
+# g8b -- diminishing returns of stage 1
+cu <- data.table(k = seq_along(G$cum), share = G$cum / sum(G$gap0))
+p8b <- ggplot(cu, aes(k, share)) + geom_line(linewidth = 1.1, colour = "#0b3d91") +
+  geom_point(data = cu[k %in% c(25, 50, 100)], size = 3, colour = "#c0392b") +
+  geom_text(data = cu[k %in% c(25, 50, 100)], aes(label = sprintf("%d restrooms: %d%%", k, round(100 * share))), hjust = -0.1, vjust = 1.4, size = 4) +
+  scale_y_continuous(labels = function(x) paste0(round(100 * x), "%"), limits = c(0, 1)) +
+  labs(title = "The first 50 existing restrooms close three-quarters of the gap",
+       subtitle = "Share of the 9pm gap covered as existing restrooms are added, most useful first", x = "Existing restrooms repaired or kept open later", y = NULL) + thb
+save(p8b, "g8b_diminishing_returns.png", 9, 5.2)
+
+# g9 -- sensitivity: existing restrooms and new units by setting
+SG <- copy(G$SG)
 SG[, setting := sprintf("demand top %s · %dpm · %d m", c(`0.5` = "half", `0.67` = "third", `0.75` = "quarter")[as.character(threshold)], hour - 12, radius)]
 SG[, parks := ifelse(park_close == 16, "Parks close 4pm (assumed)", "Parks open to 10pm")]
-p9 <- ggplot(SG, aes(sites_needed, reorder(setting, sites_needed), colour = parks)) + geom_point(size = 3.2) +
-  geom_vline(xintercept = nrow(S), linetype = 2, colour = "grey40") +
-  annotate("text", x = nrow(S) + 8, y = 1, hjust = 0, label = sprintf("base: %d", nrow(S)), size = 3.8, colour = "grey30") +
+L9 <- melt(SG[, .(setting, parks, `Existing restrooms used` = existing, `New units` = new_units)], id.vars = c("setting", "parks"))
+ordr <- SG[park_close == 16][order(new_units, existing)]$setting
+L9[, setting := factor(setting, levels = unique(ordr))]
+base_ex <- nrow(G$Fac); base_new <- nrow(G$New)
+L9[, base := ifelse(variable == "New units", base_new, base_ex)]
+p9 <- ggplot(L9, aes(value, setting, colour = parks)) + geom_point(size = 3) +
+  geom_vline(aes(xintercept = base), linetype = 2, colour = "grey45") + facet_wrap(~variable, scales = "free_x") +
   scale_colour_manual(values = c("Parks close 4pm (assumed)" = "#0b3d91", "Parks open to 10pm" = "#eda100"), name = NULL) +
-  labs(title = "How many locations: the park-hours assumption matters most",
-       subtitle = sprintf("Locations needed to cover every gap site, by setting.\nRandom demand weights (300 runs): %d-%d, median %d.",
-                          min(G$nrw), max(G$nrw), as.integer(median(G$nrw))), x = "Locations needed", y = NULL) + thb + theme(legend.position = "top")
-save(p9, "g9_sensitivity.png", 9.5, 7.5)
+  labs(title = "Park hours change the existing restrooms needed, not the new units",
+       subtitle = sprintf("Dashed = base case. Random demand weights (200 runs): existing %d-%d, new units %d-%d.",
+                          min(G$RW$existing), max(G$RW$existing), min(G$RW$new_units), max(G$RW$new_units)),
+       x = NULL, y = NULL) + thb + theme(legend.position = "top", strip.text = element_text(face = "bold", size = 12))
+save(p9, "g9_sensitivity.png", 11, 7.5)
 
 # g10 -- complaint hotspots
 in29 <- nta[nta$nta2020 %in% D29$nta2020, ]
-sp$in29 <- lengths(st_intersects(sp, in29)) > 0; pil$in29 <- lengths(st_intersects(pil, in29)) > 0
+fp$in29 <- lengths(st_intersects(fp, in29)) > 0; np$in29 <- lengths(st_intersects(np, in29)) > 0; pil$in29 <- lengths(st_intersects(pil, in29)) > 0
 p10 <- base() + geom_sf(data = in29, fill = "#f3d3cf", colour = "#c0392b", linewidth = 0.3) +
   geom_sf(data = pil, shape = 24, size = 2.6, fill = "white", colour = "#333333") +
-  geom_sf(data = sp, shape = 21, size = 2.4, fill = "#0b3d91", colour = "white") +
+  geom_sf(data = fp, shape = 21, size = 2.2, fill = "#0b3d91", colour = "white") +
+  geom_sf(data = np, shape = 23, size = 3, fill = "#c0392b", colour = "white") +
   labs(title = "Complaint hotspots are a separate question",
-       subtitle = sprintf("Pink = 29 neighbourhoods with 1.5x+ the complaints their crowds predict.\n%d of the 17 pilot sites and %d of the %d locations fall inside them.", sum(pil$in29), sum(sp$in29), nrow(S)),
+       subtitle = sprintf("Pink = 29 neighbourhoods with 1.5x+ the complaints their crowds predict. Inside them:\n%d of 17 pilot sites (triangles), %d of %d existing restrooms (circles), %d of %d new units (diamonds).",
+                          sum(pil$in29), sum(fp$in29), nrow(fp), sum(np$in29), nrow(np)),
        caption = "Complaint model: negative binomial regression of 311 public-urination complaints (2020-26) in 197 residential neighbourhoods.") + th
 save(p10, "g10_complaints.png")
-fwrite(data.table(pilots_in_29 = sum(pil$in29), locations_in_29 = sum(sp$in29), locations = nrow(S)), file.path(CM, "outputs/gap_overlap_with_29.csv"))
+fwrite(data.table(pilots_in_29 = sum(pil$in29), existing_in_29 = sum(fp$in29), existing = nrow(fp), new_in_29 = sum(np$in29), new = nrow(np)),
+       file.path(CM, "outputs/gap_overlap_with_29.csv"))
 
 # complaints added to the pilot model (for the text)
 Zd <- NULL
-cat("figures written; pilots in 29:", sum(pil$in29), "| locations in 29:", sum(sp$in29), "\n")
+cat("figures written; pilots in 29:", sum(pil$in29), "| existing in 29:", sum(fp$in29), "| new in 29:", sum(np$in29), "\n")

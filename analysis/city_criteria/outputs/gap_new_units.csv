@@ -1,0 +1,25 @@
+ntaname,type,lon,lat,residents,borough,demand_pct,gap_type,area_kept_random_weights
+Chelsea-Hudson Yards,busy_street,-73.9972,40.74494,25750,Manhattan,92,all-day,1
+Upper East Side-Yorkville,busy_street,-73.95278,40.78005,44051,Manhattan,79,all-day,0.84
+Long Island City-Hunters Point,busy_street,-73.94123,40.74755,9857,Queens,81,all-day,1
+Inwood,park,-73.92069,40.86243,18115,Manhattan,76,all-day,1
+Upper West Side (Central),park,-73.9741,40.78006,16448,Manhattan,74,evening-only,0.38
+Jackson Heights,busy_street,-73.8716,40.74893,25582,Queens,76,all-day,1
+Upper East Side-Carnegie Hill,park,-73.96522,40.76925,16426,Manhattan,82,all-day,0.7
+Gravesend (East)-Homecrest,park,-73.95822,40.60445,11692,Brooklyn,82,all-day,1
+Flushing-Willets Point,busy_street,-73.83555,40.75833,7480,Queens,78,all-day,1
+Midtown-Times Square,busy_street,-73.99187,40.7517,8600,Manhattan,96,evening-only,1
+Long Island City-Hunters Point,busy_street,-73.9521,40.74283,9427,Queens,79,all-day,0.7
+Park Slope,busy_street,-73.98834,40.6666,14915,Brooklyn,78,evening-only,0.96
+Washington Heights (South),park,-73.9474,40.83813,16389,Manhattan,63,all-day,1
+Carroll Gardens-Cobble Hill-Gowanus-Red Hook,park,-73.99366,40.67065,6464,Brooklyn,75,all-day,0.47
+Tribeca-Civic Center,park,-74.00608,40.72198,11045,Manhattan,71,all-day,0.37
+Ridgewood,busy_street,-73.90764,40.69996,19334,Queens,69,all-day,0.36
+Westchester Square,park,-73.84246,40.84074,4092,Bronx,66,evening-only,0.96
+Carroll Gardens-Cobble Hill-Gowanus-Red Hook,park,-73.98478,40.6801,11861,Brooklyn,69,all-day,0.38
+Mapleton-Midwood (West),park,-73.97061,40.62607,9110,Brooklyn,68,all-day,0.24
+Flushing Meadows-Corona Park,park,-73.85156,40.74755,6485,Queens,61,evening-only,0.36
+Stuyvesant Town-Peter Cooper Village,busy_street,-73.97412,40.73278,17617,Manhattan,61,all-day,0.3
+University Heights (South)-Morris Heights,park,-73.91359,40.85162,25694,Bronx,68,evening-only,0.86
+Crotona Park East,park,-73.88518,40.82458,11244,Bronx,65,evening-only,0.92
+Ozone Park,plaza,-73.86326,40.67928,15947,Queens,67,all-day,0.56

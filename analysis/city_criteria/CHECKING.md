@@ -16,8 +16,8 @@ Scripts use absolute local paths (`BASE <- ".../Final Project"`). To rerun, work
 
 ## Run order (R 4.6, packages: sf, data.table, logistf, ggplot2, patchwork)
 1. `R/01_features.R` — measures the factors at 5,814 candidate sites + 17 pilot sites -> `cache/features.rds`
-2. `R/05_gap.R` — **the current analysis**: pilot model (M7), demand, supply by hour, gap, greedy count, fix per
-   location, sensitivity -> `cache/gap.rds`, `outputs/gap_*.csv` (~15 s)
+2. `R/05_gap.R` — **the current analysis**: pilot model (M7), demand, supply by hour, gap, two-stage cover
+   (existing restrooms, then new units), sensitivity -> `cache/gap.rds`, `outputs/gap_*.csv` (~2 min)
 3. `R/06_gap_figures.R` — figures g3–g10 (f1 hours chart and f2 pilot map come from `R/04_figures.R`)
 
 `R/02_*`, `R/02b_*`, `R/03_*` are the superseded "next 50" version (kept for the record; not on the page).
@@ -27,19 +27,18 @@ Scripts use absolute local paths (`BASE <- ".../Final Project"`). To rerun, work
 |---|---|---|
 | 1 | 2,120 · 975 · 1,145 | LL58 text (`Restroom_Rebuild/data_raw/ll58_2025_text_20260926.pdf`); register `nycrestrooms_i7jb-7jku_20260920.csv` |
 | 2 | 5,814 sites (4,076 / 92 / 1,646) | `Build_Plan/prototype/cache/prep.rds` `$cand` |
-| 3 | 17 pilots, 6/7/4 by type | `01_features.R` console; Mayor's release saved as `data_raw/nycgov_mayor_pilot_release_20260923.html` |
-| 4 | coefficients, CIs; demand weights 95/5; six-factor check; complaints −0.38 | `05_gap.R` console; `outputs/gap_pilot_model.csv` |
-| 5 | LOO median 95, mean 87; AUC 0.91 | `05_gap.R` console; `outputs/gap_leave_one_out.csv` |
-| 6 | top third; 1,566 / 189 / 111 / 73 / 0 | `05_gap.R` objects `D0` × borough |
+| 3 | 17 pilots, 6/7/4 by type | `01_features.R` console; `data_raw/nycgov_mayor_pilot_release_20260923.html` |
+| 4 | coefficients, CIs; weights 95/5; six-factor check; complaints −0.38 | `05_gap.R` console; `outputs/gap_pilot_model.csv` |
+| 5 | LOO median 95, mean 87; in-sample AUC 0.91 | `05_gap.R` console; `outputs/gap_leave_one_out.csv` |
+| 6 | top third 1,939; 1,570 / 185 / 111 / 73 / 0 | `cache/gap.rds` `D0` × borough |
 | 7 | 954 / 57; 71% / 16%; pilots 13/17, 1/17 | `05_gap.R` console |
-| 8 | 1,249 gap (1,184 / 65); 14 of 17 pilots | `05_gap.R` console |
-| 9 | 156; borough 68/36/27/25/0; 378 at top half | `outputs/gap_sites_selected.csv`; `outputs/gap_sensitivity_settings.csv` |
-| 10 | 150–225 (median 182); 127 / 131 / 109 of 156; chance 34%; 355 gap / 46 locations if parks open to 10pm | `05_gap.R` console; `outputs/gap_sensitivity_*.csv` |
-| 11 | 101 / 27 / 12 / 16 | `outputs/gap_sites_selected.csv` column `first_action` |
-| 12 | 29 areas; 3 of 17; 20 of 156 | `Build_Plan/layered/outputs/diagnosis_29_final.csv`; `outputs/gap_overlap_with_29.csv` |
+| 8 | 1,247 gap (1,182 / 65); 14 of 17 | `05_gap.R` console |
+| 9 | 154 existing (103/35/16), 1,183 covered; 24 new; boroughs; 56/74/89% | `outputs/gap_existing_facilities.csv`, `outputs/gap_new_units.csv` |
+| 10 | scenario table; threshold/radius/hour rows; random-weight ranges; 103/154, 13/24 | `outputs/gap_sensitivity_settings.csv`, `outputs/gap_sensitivity_random_weights.csv`, stability columns in the two CSVs above |
+| 11 | 29 areas; 3/17, 24/154, 2/24 | `Build_Plan/layered/outputs/diagnosis_29_final.csv`; `outputs/gap_overlap_with_29.csv` |
 
 ## Things worth probing
-- Supply at 9pm rests on the 4pm assumption for 641 Parks restrooms (biggest lever: 156 -> 46).
+- Supply at 9pm rests on the 4pm assumption for 641 Parks restrooms (154 -> 29 existing restrooms; new units unchanged).
 - Demand is ranked citywide, so the top third is 81% Manhattan.
-- Greedy covering is not a guaranteed optimum; the count is an upper-bound-style estimate for full coverage.
+- Greedy covering is not a guaranteed optimum. Stage 1 keeps adding existing restrooms while any adds coverage.
 - Weights come from 17 sites; equity's CI crosses zero.

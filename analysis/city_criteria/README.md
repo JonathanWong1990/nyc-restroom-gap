@@ -3,24 +3,27 @@
 **Current version (26 Sep, owner-approved): DEMAND minus SUPPLY** — scripts `R/01_features.R`, `R/05_gap.R`,
 `R/06_gap_figures.R`. See `CHECKING.md` for run order and where every page number comes from.
 
-## Current results (05_gap.R)
+## Current results (05_gap.R, revised 26 Sep after REVIEW_FINDINGS.md)
 - Pilot model M7 (Firth logistic, 17 pilots vs 5,756 candidates, site-type controls): busyness +2.60 (1.39 to 3.84),
   distance to restroom open at 2pm +0.78 (0.13 to 1.56), at 9pm +0.96 (0.19 to 1.84), equity +0.13 (−0.36 to 0.53);
-  plaza +1.58, street −2.20. AUC 0.91; leave-one-out median 95%, mean 87%. Complaints added: −0.38 (−1.59 to 0.72).
-- Demand weights: busyness 95%, equity 5%. Top third of demand = 1,939 sites, 1,566 in Manhattan; contains 14 of 17 pilots.
+  plaza +1.58, street −2.20. In-sample AUC 0.91; leave-one-out median 95%, mean 87%. Complaints added: −0.38 (−1.59 to 0.72).
+  These are associations with pilot selection, not the City's decision rule.
+- Model-derived demand weights: busyness 95%, equity 5%; busyness composite re-standardised with fitting-data mean/sd
+  before weighting (review #2). Top third of demand = 1,939 sites (1,570 Manhattan); contains 14 of 17 pilots.
 - Supply (500 m): 71% of candidates covered at 2pm, 16% at 9pm. Pilots: 13/17 covered at 2pm, 1/17 at 9pm.
-- Gap = top-third demand AND nothing open within 500 m at 9pm (sites within 500 m of a pilot count as served):
-  1,249 sites (1,184 evening-only, 65 all-day).
-- Greedy maximal covering (500 m): 156 locations cover every gap site (MN 68, BK 36, BX 27, QN 25, SI 0).
-- First action: 101 keep a nearby park restroom open later, 27 repair/reopen, 12 extend another operator's hours, 16 build.
-- Sensitivity: random demand weights (300) -> 150–225 locations (median 182), 127/156 locations hit in >=80% of runs;
-  36 settings (threshold, hour, radius, park hours) -> 131/156 hit in >=50%; 109 pass both; chance 34%.
-  Park hours are the biggest lever: if the 641 placeholder-hours parks stay open to 10pm, gap 355 sites, 46 locations.
-- Overlap with the 29 high-complaint neighbourhoods: 3 of 17 pilots, 20 of 156 locations.
+- Gap = top-third demand AND nothing open within 500 m at 9pm (not within 500 m of a pilot): 1,247 (1,182 evening-only, 65 all-day).
+- Two-stage cover (review #1): stage 1 existing restrooms at their own coordinates -> 154 (103 park hours to 10pm,
+  35 other operators' hours, 16 repair/reopen), covering 1,183 of 1,247; stage 2 new units -> 24. First 25/50/100
+  existing restrooms cover 56/74/89%. Independent check in script: every gap site covered.
+- Scenarios: parks already open to 10pm -> gap 355, 29 existing (28 other hours, 1 repair), 24 new units.
+  Top quarter 97 + 13; top half 344 + 76; 400 m 191 + 56; 8pm/10pm 149/161 existing, 24 new.
+- Random demand weights (200): existing 151–211 (median 180), new 16–38 (median 27); 103/154 existing restrooms kept
+  exactly in >=80% of runs; 13/24 new-unit areas kept (within 500 m, area-level) in >=80%.
+- Overlap with the 29 high-complaint neighbourhoods: 3/17 pilots, 24/154 existing, 2/24 new.
 
 ---
 
-# Superseded: "next 50" version (02/02b/03/04 scripts; kept for the record)
+# Superseded: "next 50" version (02/02b/03 scripts; kept for the record). The one-stage 156-location version of 05 was also superseded (review #1).
 
 The team's new direction after the professor meeting (25 Sep): learn which factors the City weighed when it sited the
 17 modular pilot toilets, score every candidate site in the city on those factors, test the answer against many
