@@ -1,8 +1,10 @@
+> **Updated 26 Sep 2026** after the supply-rule fix (broken restrooms excluded). Current values: `outputs/private_supply_scenarios.csv` (base gap 1,246; 155 existing; 24 new; all-outlets 32/18/2; late-night 266/61/12; 50% access 451/91/14).
+
 # Do chain outlets already fill the gap? (26 Sep 2026, `R/07_private_supply.R`)
 
 **What we tested.** We added 1,854 chain food outlets (DOHMH inspections, 13 chains) as extra supply within 500 m, then re-ran the 05 gap and two-stage cover unchanged. The base case matches 05 exactly (asserted in the script). We dropped 28 rows with no coordinates and 4 that are not the chain.
 
-**How close the chains are.** 1,215 of 1,247 gap sites have a chain outlet within 500 m. 979 have a late-night fast-food outlet (McDonald's, Burger King, Wendy's, Popeyes, KFC, Taco Bell). 21 of the 24 new-unit sites have a chain nearby, 13 of them late-night.
+**How close the chains are.** 1,214 of 1,246 gap sites have a chain outlet within 500 m. 980 have a late-night fast-food outlet (McDonald's, Burger King, Wendy's, Popeyes, KFC, Taco Bell). 21 of the 24 new-unit sites have a chain nearby, 13 of them late-night.
 
 | Scenario | Gap (evening-only / all-day) | Existing (repair / park hrs / other hrs) | New | Base existing not chosen / redundant | Base new areas not needed |
 |---|---|---|---|---|---|

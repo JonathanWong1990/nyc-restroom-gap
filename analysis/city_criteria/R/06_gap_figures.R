@@ -59,18 +59,18 @@ p5 <- base() + geom_sf(data = cp[order(G$D0), ], aes(colour = dem), size = 0.55)
 save(p5, "g5_demand.png")
 
 # g6 -- supply by time of day
-sup <- P$sup; op <- function(h) { cl <- ifelse(sup$placeholder, 16, sup$w_close); sup$operational & sup$w_ok & !is.na(sup$w_open) & sup$w_open <= h & cl > h }
+sup <- P$sup; op <- function(h) { cl <- ifelse(sup$placeholder, 16, sup$w_close); sup$operational & !sup$removed_closed & !sup$removed_fail & sup$w_ok & !is.na(sup$w_open) & sup$w_open <= h & cl > h }
 mkp <- function(cov, h, ttl) {
   cp$c <- factor(ifelse(cov, "Restroom open within 500 m", "None open within 500 m"), levels = c("Restroom open within 500 m", "None open within 500 m"))
   base() + geom_sf(data = cp, aes(colour = c), size = 0.45) + geom_sf(data = sup[op(h), ], shape = 16, size = 0.5, colour = "#111111") +
     scale_colour_manual(values = c("Restroom open within 500 m" = "#9fc5a8", "None open within 500 m" = "#c0392b"), name = NULL, drop = FALSE) +
     guides(colour = guide_legend(override.aes = list(size = 4))) +
-    labs(title = ttl, subtitle = sprintf("%d restrooms open · %d%% of sites covered", sum(op(h)), round(100 * mean(cov)))) + th +
+    labs(title = ttl, subtitle = sprintf("%d working restrooms open · %d%% of sites covered", sum(op(h)), round(100 * mean(cov)))) + th +
     theme(plot.title = element_text(size = 15), legend.position = c(0.01, 0.9))
 }
 p6 <- (mkp(G$cov14, 14, "Supply at 2pm") | mkp(G$cov21, 21, "Supply at 9pm")) +
   plot_annotation(title = "Supply: by day most sites have a restroom nearby; by 9pm few do",
-                  caption = "Listed restrooms by posted hours (register June 2025); Parks restrooms posting only '8am-4pm, open later seasonally' assumed to close at 4pm.",
+                  caption = "Listed restrooms by posted hours (register June 2025), excluding those Parks records as closed long-term or repeatedly failing inspection.\nParks restrooms posting only '8am-4pm, open later seasonally' assumed to close at 4pm.",
                   theme = theme(plot.title = element_text(face = "bold", size = 17), plot.caption = element_text(size = 9, colour = "grey40", hjust = 0),
                                 plot.background = element_rect(fill = "white", colour = NA)))
 save(p6, "g6_supply_day_evening.png", 14, 7.6)
@@ -94,7 +94,7 @@ Fac <- G$Fac; New <- G$New
 fp <- st_transform(st_as_sf(Fac, coords = c("lon", "lat"), crs = 4326), 2263); np <- pts(New)
 A <- c("Keep park restroom open to 10pm", "Extend other operator's hours", "Repair or reopen")
 fp$a <- factor(Fac$action, levels = A); k8 <- table(fp$a)
-levels(fp$a) <- sprintf("%s (%d)", c("Keep a park restroom open to 10pm", "Extend another operator's hours", "Repair or reopen"), as.integer(k8))
+levels(fp$a) <- sprintf("%s (%d)", c("Keep a park restroom open to 10pm", "Extend another operator's hours to 10pm", "Repair, then keep open to 10pm"), as.integer(k8))
 p8 <- base() + geom_sf(data = cp[G$gap0, ], colour = "#f1d9a8", size = 0.5) +
   geom_sf(data = fp, aes(fill = a), shape = 21, size = 2.8, colour = "white", stroke = 0.4) +
   geom_sf(data = np, aes(shape = sprintf("New modular unit (%d)", nrow(New))), size = 3.6, fill = "#c0392b", colour = "white", stroke = 0.6) +

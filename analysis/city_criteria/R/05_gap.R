@@ -66,7 +66,7 @@ DR0 <- demand_raw(Zc); D0 <- pct(DR0)
 
 # ---- supply by time of day ---------------------------------------------------------------------------------------
 open_at <- function(h, ph_close = 16) { cl <- ifelse(sup$placeholder, ph_close, sup$w_close)
-  sup$operational & sup$w_ok & !is.na(sup$w_open) & sup$w_open <= h & cl > h }
+  sup$operational & !sup$removed_closed & !sup$removed_fail & sup$w_ok & !is.na(sup$w_open) & sup$w_open <= h & cl > h }   # broken excluded (audit 26 Sep)
 nb_sup <- list(`500` = st_is_within_distance(cs, sup, dist = M2FT(500)), `400` = st_is_within_distance(cs, sup, dist = M2FT(400)))
 nb_fac <- list(`500` = st_is_within_distance(sup, cs, dist = M2FT(500)), `400` = st_is_within_distance(sup, cs, dist = M2FT(400)))
 nb_cs  <- list(`500` = st_is_within_distance(cs, cs, dist = M2FT(500)), `400` = st_is_within_distance(cs, cs, dist = M2FT(400)))
@@ -91,9 +91,9 @@ greedy <- function(unc, w, nb, stop_at_zero = FALSE) {      # nb: candidate -> g
   }
   list(sel = sel, unc = unc)
 }
-run_gap <- function(D, thr = 2 / 3, hour = 21, rad = 500, ph_close = 16) {
+run_gap <- function(D, thr = 2 / 3, hour = 21, rad = 500, ph_close = 16, pilots_open = TRUE) {
   r <- as.character(rad); ev <- open_at(hour, ph_close)
-  gap <- D >= thr & !covered(ev, nb_sup[[r]]) & !pil_blk[[r]]
+  gap <- D >= thr & !covered(ev, nb_sup[[r]]) & !(pilots_open & pil_blk[[r]])   # pilots assumed operating 7am-10pm
   # stage 1: existing facilities that could serve at `hour` after an intervention (not already open then)
   day_only <- open_at(14, ph_close) & !ev & !broken
   elig <- which((broken | day_only) & !ev)
@@ -144,6 +144,8 @@ for (thr in c(0.5, 2 / 3, 0.75)) for (hour in c(20, 21, 22)) for (rad in c(400, 
   if (hour == 22 && ph == 22) next                                       # identical to ph 16 at 10pm
   o <- run_gap(D0, thr, hour, rad, ph); SG[[length(SG) + 1]] <- cbind(data.table(threshold = round(thr, 2), hour, radius = rad, park_close = ph), summ(o)) }
 SG <- rbindlist(SG); print(SG)
+o_np <- run_gap(D0, pilots_open = FALSE); PS <- rbind(cbind(scenario = "all 17 pilot units operating", summ(B)), cbind(scenario = "no pilot unit operating yet", summ(o_np)))
+print(PS); fwrite(PS, file.path(CM, "outputs/gap_pilot_scenario.csv"))
 Fac$kept_random_weights <- round(rowMeans(do.call(cbind, FH)), 2)
 New$area_kept_random_weights <- round(rowMeans(do.call(cbind, NH)), 2)
 cat("random weights: existing", paste(range(RW$existing), collapse = "-"), "(median", median(RW$existing), ") | new units",

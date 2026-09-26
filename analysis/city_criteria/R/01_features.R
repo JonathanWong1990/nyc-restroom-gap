@@ -47,7 +47,8 @@ ht <- unique(ht, by = "bbl"); hts <- st_transform(st_as_sf(ht, coords = c("longi
 f_hot <- lengths(st_is_within_distance(sites, hts, dist = M2FT(500)))
 # 5 distance to existing public bathrooms: nearest listed-operational restroom open at 2pm, and at 9pm (LL58: "limited opening hours")
 sup <- P$sup
-open_at <- function(h) { cl <- ifelse(sup$placeholder, 16, sup$w_close); sup$operational & sup$w_ok & !is.na(sup$w_open) & sup$w_open <= h & cl > h }
+open_at <- function(h) { cl <- ifelse(sup$placeholder, 16, sup$w_close)   # broken restrooms excluded (audit 26 Sep)
+  sup$operational & !sup$removed_closed & !sup$removed_fail & sup$w_ok & !is.na(sup$w_open) & sup$w_open <= h & cl > h }
 nn_m <- function(ok) { s <- sup[ok, ]; as.numeric(st_distance(sites, s[st_nearest_feature(sites, s), ], by_element = TRUE)) * FT }
 f_d14 <- nn_m(open_at(14)); f_d21 <- nn_m(open_at(21))
 cat("restrooms open 2pm:", sum(open_at(14)), " 9pm:", sum(open_at(21)), "\n")

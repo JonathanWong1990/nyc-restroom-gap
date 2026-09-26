@@ -9,7 +9,7 @@ this folder. The **Deck outline** tab is out of date on purpose (frozen while th
 | Scripts | `City_Criteria_Model/R/` | `analysis/city_criteria/R/` |
 | Outputs (CSV) | `City_Criteria_Model/outputs/` | `analysis/city_criteria/outputs/` |
 | Figures | `City_Criteria_Model/outputs/fig/` | `img/plan/` |
-| Inputs | `Restroom_Rebuild/data_raw/`, `Build_Plan/prototype/cache/prep.rds`, `Pedestrian_Demand_Test/data/` | most raw files in `analysis/data_raw/`; **prep.rds is not on GitHub** |
+| Inputs | `Restroom_Rebuild/data_raw/`, `Build_Plan/prototype/cache/prep.rds`, `Pedestrian_Demand_Test/data/` | most raw files in `analysis/data_raw/`; prep.rds is on GitHub at `analysis/city_criteria/cache/prep.rds` |
 | Page text | — | `index.html`, `<div id="plan">` (Walkthrough) and `<div id="plim">` (Limits) |
 
 Scripts use absolute local paths (`BASE <- ".../Final Project"`). To rerun, work in the local folder.
@@ -36,7 +36,7 @@ Scripts use absolute local paths (`BASE <- ".../Final Project"`). To rerun, work
 | 5 | coefficients, CIs; weights 95/5; six-factor check; complaints −0.38 | `05_gap.R` console; `outputs/gap_pilot_model.csv` |
 | 6 | LOO median 95, mean 87; in-sample AUC 0.91 | `05_gap.R` console; `outputs/gap_leave_one_out.csv` |
 | 7 | top third 1,939; 1,570 / 185 / 111 / 73 / 0 | `cache/gap.rds` `D0` × borough |
-| 8 | 954 / 57; 641; 20.1% (archived Z0 key); 34 / 47 / 41; 71% / 16%; pilots 13/17, 1/17 | `05_gap.R` console; `prep.rds` `$sup` flags |
+| 8 | 954 / 57 (scheduled); 873 working at 2pm; 641; 20.1%; 34 / 47 / 41; 70% / 16%; pilots 13/17, 1/17 | `05_gap.R` console; `prep.rds` `$sup` flags |
 | 9 | 1,247 gap (1,182 / 65); 14 of 17 | `05_gap.R` console |
 | 10 | 154 existing (103/35/16), 1,183 covered; 24 new; boroughs; 56/74/89% | `outputs/gap_existing_facilities.csv`, `outputs/gap_new_units.csv` |
 | 11 | park-hours table; private-toilet table; threshold/radius/hour; random weights; 103/154, 13/24 | `outputs/gap_sensitivity_*.csv`; `outputs/private_supply_scenarios.csv` |

@@ -3,28 +3,20 @@
 **Current version (26 Sep, owner-approved): DEMAND minus SUPPLY** — scripts `R/01_features.R`, `R/05_gap.R`,
 `R/06_gap_figures.R`. See `CHECKING.md` for run order and where every page number comes from.
 
-## Current results (05_gap.R, revised 26 Sep after REVIEW_FINDINGS.md)
-- Pilot model M7 (Firth logistic, 17 pilots vs 5,756 candidates, site-type controls): busyness +2.60 (1.39 to 3.84),
-  distance to restroom open at 2pm +0.78 (0.13 to 1.56), at 9pm +0.96 (0.19 to 1.84), equity +0.13 (−0.36 to 0.53);
-  plaza +1.58, street −2.20. In-sample AUC 0.91; leave-one-out median 95%, mean 87%. Complaints added: −0.38 (−1.59 to 0.72).
-  These are associations with pilot selection, not the City's decision rule.
-- Model-derived demand weights: busyness 95%, equity 5%; busyness composite re-standardised with fitting-data mean/sd
-  before weighting (review #2). Top third of demand = 1,939 sites (1,570 Manhattan); contains 14 of 17 pilots.
-- Supply (500 m): 71% of candidates covered at 2pm, 16% at 9pm. Pilots: 13/17 covered at 2pm, 1/17 at 9pm.
-- Gap = top-third demand AND nothing open within 500 m at 9pm (not within 500 m of a pilot): 1,247 (1,182 evening-only, 65 all-day).
-- Two-stage cover (review #1): stage 1 existing restrooms at their own coordinates -> 154 (103 park hours to 10pm,
-  35 other operators' hours, 16 repair/reopen), covering 1,183 of 1,247; stage 2 new units -> 24. First 25/50/100
-  existing restrooms cover 56/74/89%. Independent check in script: every gap site covered.
-- Scenarios: parks already open to 10pm -> gap 355, 29 existing (28 other hours, 1 repair), 24 new units.
-  Top quarter 97 + 13; top half 344 + 76; 400 m 191 + 56; 8pm/10pm 149/161 existing, 24 new.
-- Random demand weights (200): existing 151–211 (median 180), new 16–38 (median 27); 103/154 existing restrooms kept
-  exactly in >=80% of runs; 13/24 new-unit areas kept (within 500 m, area-level) in >=80%.
-- Overlap with the 29 high-complaint neighbourhoods: 3/17 pilots, 24/154 existing, 2/24 new.
-- Private toilets (07, sub-agent, 26 Sep): chain outlets as supply -> new units 2 (all outlets open to all at 9pm) /
-  12 (late-night fast food only at 9pm) / 14 (same, 50% access); see PRIVATE_SUPPLY_FINDINGS.md.
-- Residents (09): 72% covered at 2pm, 4% at 9pm; 761 existing restrooms (457 park hours, 207 other, 97 repair) bring
-  9pm to 73%; new units anywhere residents live: 38 -> 80%, 171 -> 90%, 296 -> 95%, 830 -> 100%. Same order as LL58's
-  1,145; steep diminishing returns. (08: covering every CANDIDATE site needs 443 + 231 but reaches only 56% of residents.)
+## Current results (26 Sep, after ChatGPT audit: broken restrooms excluded from supply; see REVIEW_RESPONSE.md)
+- Supply = listed operational AND scheduled open AND not flagged long-term closed / repeatedly failing (873 open at 2pm, 57 at 9pm).
+- Pilot model M7: busyness +2.55 (1.35 to 3.79); distance 2pm +0.71 (0.08 to 1.46); 9pm +0.96 (0.19 to 1.84); equity +0.12
+  (−0.37 to 0.52); plaza +1.61; street −2.13. AUC 0.91 (in-sample); LOO median 97%, mean 88%. Complaints −0.37 (−1.58 to 0.73).
+- Demand weights 95/5. Top third 1,939 (MN 1,570, BK 186, BX 111, QN 72); contains 14 of 17 pilots (consistency check only).
+- Supply coverage of candidates: 70% at 2pm, 16% at 9pm. Pilots 13/17 vs 1/17.
+- Gap (pilots assumed operating): 1,246 (1,163 evening-only, 83 all-day). Pilots not operating: 1,357 / 162 existing / 25 new.
+- Two-stage: 155 existing (105 park hours, 34 other operators, 16 repair AND keep open to 10pm) cover 1,183; 24 new units.
+- Sensitivity: parks open to 10pm -> 396 / 37 / 24; top quarter 95 + 13; top half 344 + 76; 400 m 192 + 56; 8pm/10pm 150/162 existing,
+  24 new. Random weights: existing 151–211 (median 180), new 16–38 (median 27); 103/155 kept exactly; 13/24 new-unit areas (500 m).
+- Private supply: 32/18/2 (all outlets), 266/61/12 (late-night only), 451/91/14 (50% access).
+- Residents: 69% at 2pm, 4% at 9pm; 761 existing (457 park, 207 other, 97 repair+hours) -> 73%; new 38/171/296/830 for 80/90/95/100%
+  (greedy scenario, not a minimum). With the 24 fixed first: 75% start; 53/181/307/837 total.
+- Overlap with 29 complaint areas: 3/17, 24/155, 2/24.
 
 ---
 

@@ -13,3 +13,19 @@ All five findings accepted; owner approved the changes.
 4. **Park hours.** Now a two-scenario table (4pm vs 10pm) and step 1 of the recommendation. Under the redesign, park
    hours change the existing restrooms needed (154 vs 29), not the new units (24 in both). Greedy = workable, not minimum.
 5. **Stability.** Existing restrooms: exact retention (103/154). New units: labelled area-level within 500 m (13/24).
+
+---
+
+# Response to LOGIC_REVIEW and NUMBERS_SCRIPTS_DATA_AUDIT (26 Sep 2026)
+
+All accepted. Verified independently: all 16 repair picks have 4pm placeholder hours; 34 long-term-closed and 47
+repeatedly failing listed restrooms were counted as open at 2pm.
+- **Supply rule:** broken restrooms (long-term closed or repeatedly failing) excluded from supply in 01, 05, 06, 07, 08, 09;
+  954 / 57 kept only as a register statistic ("scheduled open"). Base now 1,246 gap, 155 existing, 24 new.
+- **Repair = repair AND keep open to 10pm**, relabelled everywhere.
+- **Pilots:** assumption stated; "none operating" scenario added (1,357 / 162 / 25).
+- **24 + residents:** combined run added to 09 (837 total incl. the 24).
+- **830:** now "about 830 in this scenario", not a floor or minimum; greedy caveat stated.
+- **Existing restrooms:** described as a list to verify (hours, operator agreement, access, repair scope, cost).
+- **Wording:** "answer key" -> reference; "solves" -> "based on"; gap sites are points, not people.
+- **Reproducibility:** prep.rds (3.5 MB) added to the repository.

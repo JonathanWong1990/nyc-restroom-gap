@@ -1,0 +1,3 @@
+scenario,gap_sites,existing,repair,park_hours,other_hours,new_units
+all 17 pilot units operating,1246,155,16,105,34,24
+no pilot unit operating yet,1357,162,16,108,38,25

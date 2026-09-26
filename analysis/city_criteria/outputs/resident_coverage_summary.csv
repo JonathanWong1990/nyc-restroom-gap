@@ -1,4 +1,5 @@
-scenario,residents_covered_now,existing_restrooms,park_hours,other_hours,repair,covered_after_existing,72.4%,80%,90%,95%,100%
-"9pm, parks close 4pm",0.044,761,457,207,97,0.734,0,38,171,296,830
-"9pm, parks open to 10pm",0.617,226,0,195,31,0.734,0,38,171,296,830
-2pm (daytime),0.724,28,0,0,28,0.734,0,38,171,296,830
+scenario,residents_covered_now,existing_restrooms,park_hours,other_hours,repair,covered_after_existing,covered_after_fixed,80%,90%,95%,100%
+"9pm, parks close 4pm",0.044,761,457,207,97,0.734,0.734,38,171,296,830
+"9pm, parks open to 10pm",0.566,287,0,196,91,0.734,0.734,38,171,296,830
+2pm (daytime),0.69,88,0,0,88,0.734,0.734,38,171,296,830
+"9pm, the 24 busiest-area units built first",0.044,761,457,207,97,0.734,0.751,53,181,307,837

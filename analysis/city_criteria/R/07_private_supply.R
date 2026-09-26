@@ -3,7 +3,7 @@
 #  two-stage cover from 05_gap.R are re-run unchanged (demand, threshold, radius, pilots, stage-1 eligibility all as in 05).
 #  Data: Restroom_Rebuild/data_raw/commercial_chains_dohmh_20260920.csv (DOHMH inspections). It has NO opening hours and
 #  NO information on whether a toilet exists or is open to non-customers, so every scenario below is an ASSUMPTION:
-#   A  none (base, must reproduce 05: gap 1,247; stage 1 = 154 existing; stage 2 = 24 new)
+#   A  none (base, must reproduce 05 exactly)
 #   B  every outlet counts at 2pm and 9pm (upper bound: all open at 9pm, all let anyone use the toilet)
 #   C  by day every outlet counts; at 9pm only late-night fast food (burger / fried chicken / taco chains) counts
 #   C+ C plus the fast-casual chains that often close ~10pm (Chipotle, Shake Shack, Subway) -- extra sensitivity row
@@ -22,7 +22,7 @@ stopifnot(length(D0) == nC)
 
 # ---- copied from 05_gap.R (verbatim except run_gap gains two chain-supply arguments, default = none) ---------------
 open_at <- function(h, ph_close = 16) { cl <- ifelse(sup$placeholder, ph_close, sup$w_close)
-  sup$operational & sup$w_ok & !is.na(sup$w_open) & sup$w_open <= h & cl > h }
+  sup$operational & !sup$removed_closed & !sup$removed_fail & sup$w_ok & !is.na(sup$w_open) & sup$w_open <= h & cl > h }   # broken excluded (audit 26 Sep)
 nb_sup <- list(`500` = st_is_within_distance(cs, sup, dist = M2FT(500)))
 nb_fac <- list(`500` = st_is_within_distance(sup, cs, dist = M2FT(500)))
 nb_cs  <- list(`500` = st_is_within_distance(cs, cs, dist = M2FT(500)))
@@ -55,12 +55,8 @@ run_gap <- function(D, thr = 2 / 3, hour = 21, rad = 500, ph_close = 16, ch9 = r
 # ---- 1. base case must reproduce 05 --------------------------------------------------------------------------------
 cov14 <- covered(open_at(14), nb_sup$`500`)
 A <- run_gap(D0)
-stopifnot(identical(A$gap, G$gap0), sum(A$gap) == 1247, identical(A$fac, G$B$fac), length(A$fac) == 154,
-          identical(A$new, G$B$new), length(A$new) == 24, identical(cov14, G$cov14),
-          sum(A$gap & !cov14) == 65, sum(A$gap & cov14) == 1182,
-          sum(A$fac_action == "Keep park restroom open to 10pm") == 103, sum(A$fac_action == "Extend other operator's hours") == 35,
-          sum(A$fac_action == "Repair or reopen") == 16)
-cat("base reproduced: gap 1247 (1182 evening-only, 65 all-day) | stage 1: 154 (103/35/16) | stage 2: 24\n")
+stopifnot(identical(A$gap, G$gap0), identical(A$fac, G$B$fac), identical(A$new, G$B$new), identical(cov14, G$cov14))
+cat("base reproduced: gap", sum(A$gap), "(", sum(A$gap & cov14), "evening-only,", sum(A$gap & !cov14), "all-day) | stage 1:", length(A$fac), "| stage 2:", length(A$new), "\n")
 
 # ---- 2. chain outlets --------------------------------------------------------------------------------------------
 ch <- fread(file.path(BASE, "Restroom_Rebuild/data_raw/commercial_chains_dohmh_20260920.csv"), encoding = "UTF-8")

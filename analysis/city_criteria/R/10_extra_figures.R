@@ -24,18 +24,18 @@ p <- ggplot() + geom_sf(data = nta, fill = "#ecebe8", colour = "white", linewidt
 ggsave(file.path(FIG, "g2c_candidate_sites.png"), p, width = 8.5, height = 9, dpi = 150)
 
 C <- fread(file.path(CM, "outputs/resident_coverage_curves.csv"))[scenario == "9pm, parks close 4pm"]
-S <- fread(file.path(CM, "outputs/resident_coverage_summary.csv"))[scenario == "9pm, parks close 4pm"]
+S0 <- fread(file.path(CM, "outputs/resident_coverage_summary.csv")); S <- S0[scenario == "9pm, parks close 4pm"]; D14 <- S0[scenario == "2pm (daytime)"]$residents_covered_now
 C <- rbind(data.table(scenario = C$scenario[1], new_units = 0, residents_covered = S$covered_after_existing), C)
-mk <- data.table(n = c(38, 171, 296, 830), y = c(.80, .90, .95, 1.00))
+mk <- data.table(n = as.integer(unlist(S[, .(`80%`, `90%`, `95%`, `100%`)])), y = c(.80, .90, .95, 1.00))
 p2 <- ggplot(C, aes(new_units, residents_covered)) + geom_line(linewidth = 1.1, colour = "#0b3d91") +
-  geom_hline(yintercept = 0.724, linetype = 2, colour = "grey45") +
-  annotate("text", x = 830, y = 0.724, label = "daytime coverage today: 72%", hjust = 1, vjust = -0.6, size = 3.8, colour = "grey30") +
+  geom_hline(yintercept = D14, linetype = 2, colour = "grey45") +
+  annotate("text", x = max(mk$n), y = D14, label = sprintf("daytime coverage today: %d%%", round(100 * D14)), hjust = 1, vjust = -0.6, size = 3.8, colour = "grey30") +
   geom_point(data = mk, aes(n, y), size = 3, colour = "#c0392b") +
   geom_text(data = mk, aes(n, y, label = sprintf("%d units: %d%%", n, round(100 * y))), hjust = c(-0.15, -0.15, -0.15, 1.1), vjust = c(1.3, 1.3, 1.3, 1.6), size = 4) +
-  scale_y_continuous(labels = function(x) paste0(round(100 * x), "%"), limits = c(0.7, 1.005)) +
-  labs(title = "Full evening coverage for every resident: about 830 new units",
+  scale_y_continuous(labels = function(x) paste0(round(100 * x), "%"), limits = c(0.66, 1.005)) +
+  labs(title = sprintf("Evening coverage for every resident: about %d new units in this scenario", max(mk$n)),
        subtitle = sprintf("Residents with a restroom open within 500 m at 9pm, after existing restrooms are kept open or repaired (%d%%),\nas new units are added where they reach the most residents", round(100 * S$covered_after_existing)),
        x = "New units", y = NULL,
-       caption = "New units may go at any residential grid point (a coverage bound, not a siting plan). Straight-line 500 m; residents from Census ACS 2020-24.") + thb
+       caption = "Greedy placement at any residential grid point: a modelled scenario, not a proven minimum or a siting plan. Straight-line 500 m; residents from Census ACS 2020-24.") + thb
 ggsave(file.path(FIG, "g12_resident_coverage.png"), p2, width = 9.5, height = 5.6, dpi = 150)
 cat("done\n")
