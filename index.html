@@ -13,7 +13,7 @@
   --bg:#F3F5F1; --surface:#FFFFFF; --surface-2:#EAEEE7;
   --ink:#151E19; --ink-2:#48564D; --muted:#79877D;
   --rule:#D9DFD5; --rule-strong:#BCC5B7;
-  --accent:#14684A; --accent-soft:#DCEDE4;
+  --accent:#1D4E9E; --accent-soft:#E3EAF6;
   --alert:#A93A2C; --alert-soft:#F6E2DE;
   --warn:#8A6A12;
   --shadow:0 1px 2px rgba(21,30,25,.06),0 8px 24px rgba(21,30,25,.05);
@@ -31,7 +31,7 @@
     --bg:#101410; --surface:#171D18; --surface-2:#1F261F;
     --ink:#E9EFE7; --ink-2:#B4BFB4; --muted:#8B978C;
     --rule:#293129; --rule-strong:#3A443B;
-    --accent:#4FBE8A; --accent-soft:#16301F;
+    --accent:#8AB0F0; --accent-soft:#17243B;
     --alert:#E0776A; --alert-soft:#33201C;
     --warn:#D6AC4B;
     --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
@@ -43,7 +43,7 @@
   --bg:#101410; --surface:#171D18; --surface-2:#1F261F;
   --ink:#E9EFE7; --ink-2:#B4BFB4; --muted:#8B978C;
   --rule:#293129; --rule-strong:#3A443B;
-  --accent:#4FBE8A; --accent-soft:#16301F;
+  --accent:#8AB0F0; --accent-soft:#17243B;
   --alert:#E0776A; --alert-soft:#33201C;
   --warn:#D6AC4B;
   --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
@@ -381,12 +381,22 @@ figure.chart a.zoom{display:block}
   .seg button .tab-badge{display:none}
   .modehint{font-size:11px}
 }
+
+/* ---------- archive keeps the original green; current analysis is blue ---------- */
+#walk,#lim,#data,#merged,#original{--accent:#14684A; --accent-soft:#DCEDE4}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) #walk,:root:not([data-theme="light"]) #lim,:root:not([data-theme="light"]) #data,:root:not([data-theme="light"]) #merged,:root:not([data-theme="light"]) #original{--accent:#4FBE8A; --accent-soft:#16301F}}
+:root[data-theme="dark"] #walk,:root[data-theme="dark"] #lim,:root[data-theme="dark"] #data,:root[data-theme="dark"] #merged,:root[data-theme="dark"] #original{--accent:#4FBE8A; --accent-soft:#16301F}
+.arch-banner{font-family:var(--f-mono); font-size:12px; letter-spacing:.03em; color:var(--muted); background:var(--surface-2);
+  border:1px dashed var(--rule-strong); border-radius:6px; padding:9px 12px; margin:0 0 22px}
+.arch-banner a{color:var(--muted); text-decoration:underline}
+.rev-badge{display:inline-block; margin-left:8px; padding:2px 8px; border-radius:999px; background:var(--accent); color:var(--surface);
+  font-family:var(--f-mono); font-size:10.5px; letter-spacing:.06em; vertical-align:1px}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header class="masthead">
-  <p class="eyebrow">PMBA6093 · Analytics for Managers · Final project</p>
+  <p class="eyebrow">PMBA6093 · Analytics for Managers · Final project <span class="rev-badge">REVISED ANALYSIS · 26 SEP 2026</span></p>
   <h1>When nature calls, where should New York answer?</h1>
   <p class="standfirst">New York has committed to 2,120 public restrooms by 2035 and lists 975 today. We estimate demand from the factors Local Law 58 names, weighted by what the City's first 17 pilot sites have in common, and subtract the restrooms actually open. The access shortage is mostly in the evening, and much of it can be met by keeping existing restrooms open or repairing them, though that adds nothing to the law's count. For the count, reaching every resident needs at least about 830 new restrooms, with steep diminishing returns: about 300 reach 95% of residents.</p>
   <div class="byline"><span>HKU MBA group project</span><span>5,800 candidate sites</span><span>Data current to September 2026</span><span class="stamp">Updated 26 September 2026</span><span>Contributions by section: Data &amp; code</span></div>
@@ -829,6 +839,7 @@ An area is underserved when it has insufficient access "because of a lack of pub
 </div>
 
 <div id="walk" hidden>
+<p class="arch-banner">Archived: the earlier complaint-led analysis, kept for reference. The current analysis is in <a href="#plan" data-tab="plan">Walkthrough</a>.</p>
 <h2>Layered walkthrough</h2>
 <p class="lede">Archived 26 September 2026. This is the earlier complaint-led analysis. Its checks on evening hours and broken restrooms are reused in step 8 of the <a href="#plan" data-tab="plan">Walkthrough</a>.</p>
 
@@ -944,6 +955,7 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <p>Field checks and controlled trials should decide which of these actions go further.</p>
 </div>
 <div id="lim" hidden>
+<p class="arch-banner">Archived: the earlier complaint-led analysis, kept for reference. The current analysis is in <a href="#plan" data-tab="plan">Walkthrough</a>.</p>
 <h2>Limits and open questions</h2>
 <p>What could change the answer in the Walkthrough, how much it matters, and what would settle it. The study identifies priorities for field checks and trials; it does not show that access gaps cause complaints or that any action will reduce them.</p>
 
@@ -1441,6 +1453,7 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <p>Every limitation, with the arithmetic, is in <strong>Limits</strong> — the second tab. The three that matter most: the ranking orders places but does not sort them into categories; complaints measure complainers; and the gap between prediction and reality is the one quantity nobody can validate, here or anywhere.</p>
 </section>
 <div id="data" hidden>
+<p class="arch-banner">Archived: the earlier complaint-led analysis, kept for reference. The current analysis is in <a href="#plan" data-tab="plan">Walkthrough</a>.</p>
 <h2>Data and code</h2>
 <p>Everything behind this analysis is public and can be run: 57 R scripts, every dataset exactly as pulled, and the models that failed alongside the ones that worked.</p>
 <h3>Run it yourself</h3>
