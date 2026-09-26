@@ -1,5 +1,27 @@
 # City Criteria Model (started 26 Sep 2026)
 
+**Current version (26 Sep, owner-approved): DEMAND minus SUPPLY** — scripts `R/01_features.R`, `R/05_gap.R`,
+`R/06_gap_figures.R`. See `CHECKING.md` for run order and where every page number comes from.
+
+## Current results (05_gap.R)
+- Pilot model M7 (Firth logistic, 17 pilots vs 5,756 candidates, site-type controls): busyness +2.60 (1.39 to 3.84),
+  distance to restroom open at 2pm +0.78 (0.13 to 1.56), at 9pm +0.96 (0.19 to 1.84), equity +0.13 (−0.36 to 0.53);
+  plaza +1.58, street −2.20. AUC 0.91; leave-one-out median 95%, mean 87%. Complaints added: −0.38 (−1.59 to 0.72).
+- Demand weights: busyness 95%, equity 5%. Top third of demand = 1,939 sites, 1,566 in Manhattan; contains 14 of 17 pilots.
+- Supply (500 m): 71% of candidates covered at 2pm, 16% at 9pm. Pilots: 13/17 covered at 2pm, 1/17 at 9pm.
+- Gap = top-third demand AND nothing open within 500 m at 9pm (sites within 500 m of a pilot count as served):
+  1,249 sites (1,184 evening-only, 65 all-day).
+- Greedy maximal covering (500 m): 156 locations cover every gap site (MN 68, BK 36, BX 27, QN 25, SI 0).
+- First action: 101 keep a nearby park restroom open later, 27 repair/reopen, 12 extend another operator's hours, 16 build.
+- Sensitivity: random demand weights (300) -> 150–225 locations (median 182), 127/156 locations hit in >=80% of runs;
+  36 settings (threshold, hour, radius, park hours) -> 131/156 hit in >=50%; 109 pass both; chance 34%.
+  Park hours are the biggest lever: if the 641 placeholder-hours parks stay open to 10pm, gap 355 sites, 46 locations.
+- Overlap with the 29 high-complaint neighbourhoods: 3 of 17 pilots, 20 of 156 locations.
+
+---
+
+# Superseded: "next 50" version (02/02b/03/04 scripts; kept for the record)
+
 The team's new direction after the professor meeting (25 Sep): learn which factors the City weighed when it sited the
 17 modular pilot toilets, score every candidate site in the city on those factors, test the answer against many
 weightings (professor: assumptions are fine *if* sensitivity shows the recommendation holds), then refine each site
