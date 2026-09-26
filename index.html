@@ -377,6 +377,7 @@ figure.chart a.zoom{display:block}
   <div class="seg" role="group" aria-label="Section">
     <button id="btn-plan" aria-pressed="true">Walkthrough<span class="tab-badge">Latest</span></button>
     <button id="btn-plim" aria-pressed="false">Limits</button>
+    <button id="btn-pdata" aria-pressed="false">Data &amp; code</button>
     <button id="btn-deck" aria-pressed="false">Deck outline</button>
     <button id="btn-arch" aria-pressed="false">Archive</button>
   </div>
@@ -646,6 +647,7 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <li>Pilot sites: <a href="https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-brings-17-new-public-bathrooms-to-neighborhoods-ac" target="_blank" rel="noopener">Mayor's Office, 16 Sep 2026</a>; <a href="https://edc.nyc/press-release/nycedc-selects-throne-labs-pilot-high-quality-modular-public-restrooms-citywide" target="_blank" rel="noopener">NYCEDC, June 2026</a></li>
 <li>Data: NYC public restrooms <code>i7jb-7jku</code>; DOT pedestrian demand <code>fwpa-qxaf</code>; DOT plazas <code>k5k6-6jex</code>; Parks properties and inspections; restaurant inspections <code>43nn-pn8j</code> (chain outlets); MTA ridership; Census ACS 2020–24 and LEHD 2023; 311 <code>erm2-nwe9</code></li>
 <li>Maximal covering location model: Church, R. &amp; ReVelle, C. (1974), <em>Papers of the Regional Science Association</em> 32.</li>
+<li>Every dataset, script and contribution: <a href="#pdata" data-tab="pdata">Data &amp; code</a> tab.</li>
 <li>Code and outputs: <a href="https://github.com/JonathanWong1990/nyc-restroom-gap/tree/main/analysis/city_criteria" target="_blank" rel="noopener">GitHub repository</a>. A reviewer guide (<a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/CHECKING.md" target="_blank" rel="noopener">CHECKING.md</a>) maps each result on this page to the script that produces it.</li>
 </ul>
 </div>
@@ -687,6 +689,56 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <ul>
 <li>Register June 2025 · inspections to June 2026 · ACS 2020–24 · LEHD 2023 · MTA 2025 · DOT pedestrian demand September 2026 · restaurant inspections September 2026 · pilot list 16 September 2026. Restroom status and hours should be refreshed before acting.</li>
 </ul>
+</div>
+
+<div id="pdata" hidden>
+<h2>Data &amp; code</h2>
+<p class="lede">Every dataset and script behind the Walkthrough, how to rerun it, and who contributed what.</p>
+
+<h3 id="d-data">Datasets</h3>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Dataset</th><th>Source</th><th>Used for</th><th>Walkthrough step</th></tr></thead><tbody>
+<tr><td>Local Law 58 of 2025 (text)</td><td><a href="https://intro.nyc/local-laws/2025-58" target="_blank" rel="noopener">intro.nyc</a></td><td>The 2,120 target; the definition and factors of an underserved area</td><td class="n">1–2</td></tr>
+<tr><td>Modular pilot: 17 sites, hours, cost</td><td><a href="https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-brings-17-new-public-bathrooms-to-neighborhoods-ac" target="_blank" rel="noopener">Mayor's Office, 16 Sep 2026</a>; <a href="https://edc.nyc/press-release/nycedc-selects-throne-labs-pilot-high-quality-modular-public-restrooms-citywide" target="_blank" rel="noopener">NYCEDC</a></td><td>The answer key; the pilot's 7am–10pm hours; $4M cost</td><td class="n">4–6, 12</td></tr>
+<tr><td>Public restrooms register</td><td><a href="https://data.cityofnewyork.us/d/i7jb-7jku" target="_blank" rel="noopener">NYC Open Data <code>i7jb-7jku</code></a></td><td>Supply: location, status, posted hours of 975 restrooms</td><td class="n">8–12</td></tr>
+<tr><td>Pedestrian demand (Pedestrian Mobility Plan)</td><td><a href="https://data.cityofnewyork.us/d/fwpa-qxaf" target="_blank" rel="noopener">NYC DOT <code>fwpa-qxaf</code></a></td><td>Foot-traffic factor; busy-street candidate sites</td><td class="n">2–3, 5</td></tr>
+<tr><td>Pedestrian plazas</td><td><a href="https://data.cityofnewyork.us/d/k5k6-6jex" target="_blank" rel="noopener">NYC DOT <code>k5k6-6jex</code></a></td><td>Plaza candidate sites; site type</td><td class="n">3, 5</td></tr>
+<tr><td>Parks properties</td><td><a href="https://data.cityofnewyork.us/d/enfh-gkve" target="_blank" rel="noopener">NYC Parks <code>enfh-gkve</code></a></td><td>Parks-land candidate sites; site type</td><td class="n">3, 5</td></tr>
+<tr><td>Parks Inspection Program: restrooms, sites and inspections</td><td>NYC Parks <a href="https://data.cityofnewyork.us/d/9byw-znpj" target="_blank" rel="noopener"><code>9byw-znpj</code></a>, <a href="https://data.cityofnewyork.us/d/buk3-3qpr" target="_blank" rel="noopener"><code>buk3-3qpr</code></a>, <a href="https://data.cityofnewyork.us/d/yg3y-7juh" target="_blank" rel="noopener"><code>yg3y-7juh</code></a>, <a href="https://data.cityofnewyork.us/d/mp8v-wjtf" target="_blank" rel="noopener"><code>mp8v-wjtf</code></a></td><td>Broken restrooms: long-term closures, repeated inspection failures</td><td class="n">8, 10</td></tr>
+<tr><td>American Community Survey 5-year (2020–24), census tracts</td><td><a href="https://www.census.gov/data/developers/data-sets/acs-5year.html" target="_blank" rel="noopener">US Census Bureau</a></td><td>Residents (population factor, step 12 coverage); poverty rate (equity)</td><td class="n">2, 5, 12</td></tr>
+<tr><td>LEHD Origin-Destination Employment Statistics (2023)</td><td><a href="https://lehd.ces.census.gov/data/" target="_blank" rel="noopener">US Census Bureau</a></td><td>Jobs (commercial land use)</td><td class="n">2, 5</td></tr>
+<tr><td>Subway ridership by station</td><td><a href="https://data.ny.gov/d/ak4z-sape" target="_blank" rel="noopener">MTA <code>ak4z-sape</code></a></td><td>Transit factor (2025 entries)</td><td class="n">2, 5</td></tr>
+<tr><td>Census tracts and Neighborhood Tabulation Areas (2020)</td><td><a href="https://data.cityofnewyork.us/d/63ge-mke6" target="_blank" rel="noopener"><code>63ge-mke6</code></a>, <a href="https://data.cityofnewyork.us/d/9nt8-h7nd" target="_blank" rel="noopener"><code>9nt8-h7nd</code></a></td><td>Geography: tract poverty, borough and neighbourhood labels</td><td class="n">5, 7, 10</td></tr>
+<tr><td>Restaurant inspections (chain outlets)</td><td><a href="https://data.cityofnewyork.us/d/43nn-pn8j" target="_blank" rel="noopener">NYC DOHMH <code>43nn-pn8j</code></a></td><td>1,854 chain outlets as private-toilet supply scenarios</td><td class="n">11</td></tr>
+<tr><td>311 service requests: "Urinating in Public"</td><td><a href="https://data.cityofnewyork.us/d/erm2-nwe9" target="_blank" rel="noopener">NYC 311 <code>erm2-nwe9</code></a></td><td>Complaint check in the pilot model; complaint hotspots</td><td class="n">5, 13</td></tr>
+<tr><td>Parks inspection results, January–June 2026</td><td>Parks Inspection Program (above)</td><td>"One in five inspections unacceptable"</td><td class="n">8</td></tr>
+</tbody></table></div>
+<p class="note">Files were downloaded 20–25 September 2026. The restroom register was last updated in June 2025.</p>
+
+<h3 id="d-code">Scripts</h3>
+<p>All code is R (4.6; packages sf, data.table, logistf, ggplot2, patchwork). Scripts and outputs are in the <a href="https://github.com/JonathanWong1990/nyc-restroom-gap/tree/main/analysis/city_criteria" target="_blank" rel="noopener">repository</a>. A <a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/CHECKING.md" target="_blank" rel="noopener">reviewer guide</a> maps each number on the Walkthrough to the file that produces it.</p>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Script</th><th>What it does</th><th>Walkthrough step</th></tr></thead><tbody>
+<tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/build_plan/R/01_prep.R" target="_blank" rel="noopener"><code>build_plan/01_prep.R</code></a></td><td>Builds the 5,814 candidate sites, the resident grid, and the restroom register with hours and inspection flags</td><td class="n">3, 8</td></tr>
+<tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/01_features.R" target="_blank" rel="noopener"><code>01_features.R</code></a></td><td>Measures the law's factors at every candidate site and the 17 pilot sites</td><td class="n">2–5</td></tr>
+<tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/05_gap.R" target="_blank" rel="noopener"><code>05_gap.R</code></a></td><td>Pilot model, leave-one-out test, demand score, supply by hour, the gap, two-stage cover, sensitivity</td><td class="n">5–11</td></tr>
+<tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/07_private_supply.R" target="_blank" rel="noopener"><code>07_private_supply.R</code></a></td><td>Chain outlets as supply under four scenarios</td><td class="n">11</td></tr>
+<tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/08_citywide.R" target="_blank" rel="noopener"><code>08_citywide.R</code></a>, <a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/09_resident_coverage.R" target="_blank" rel="noopener"><code>09_resident_coverage.R</code></a></td><td>Coverage beyond the busiest third; residents covered at 9pm and new restrooms needed</td><td class="n">12</td></tr>
+<tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/04_figures.R" target="_blank" rel="noopener"><code>04_figures.R</code></a>, <a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/06_gap_figures.R" target="_blank" rel="noopener"><code>06_gap_figures.R</code></a>, <a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/10_extra_figures.R" target="_blank" rel="noopener"><code>10_extra_figures.R</code></a></td><td>All figures on the Walkthrough</td><td class="n">all</td></tr>
+</tbody></table></div>
+<p><strong>To rerun:</strong> run <code>01_features.R</code>, then <code>05_gap.R</code> (about 2 minutes), then <code>07</code>–<code>10</code> in order. The scripts read inputs from the team's project folder; the prepared inputs file (<code>prep.rds</code>, built by <code>build_plan/01_prep.R</code>) is not in the repository because of its size.</p>
+
+<h3 id="d-credit">Contributions</h3>
+<p>Who found or built what, and where it appears.</p>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Contributor</th><th>Contribution</th><th>Where it appears</th></tr></thead><tbody>
+<tr><td>Giorgia</td><td>Direction: learn the City's criteria from the 17 pilot sites, then score and allocate locations; the 500 m service standard</td><td>The core approach (Walkthrough steps 4–10); 500 m throughout</td></tr>
+<tr><td>Steph, Giorgia</td><td>The 17-unit pilot and its site list (<a href="https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-brings-17-new-public-bathrooms-to-neighborhoods-ac" target="_blank" rel="noopener">Mayor's Office</a>)</td><td>The answer key (steps 4–6); pilot cost (step 12)</td></tr>
+<tr><td>Steph</td><td>Source review identifying DOT's modelled pedestrian demand (<code>fwpa-qxaf</code>)</td><td>Foot-traffic factor and busy-street candidate sites (steps 2–3, 5)</td></tr>
+<tr><td>Steph</td><td>Subway-station distance screen (424 complexes, 42 priority hubs)</td><td>Archived analysis; the Walkthrough measures distance from every candidate site instead</td></tr>
+<tr><td>Steph, Candy</td><td>City Council "Good to Go?" audit (<a href="https://council.nyc.gov/data/public-restroom-analysis/" target="_blank" rel="noopener">NYC Council</a>): 36 of 337 restrooms locked during posted hours</td><td>Archived analysis; supports the broken-restroom point (step 8)</td></tr>
+<tr><td>Steph</td><td>Research pack: Local Laws 114 and 92, per-person standards, peer-city operating models, pilot cost per open hour</td><td>Background and Q&amp;A; peer-city partner toilets (step 14)</td></tr>
+<tr><td>Shawn</td><td>Like-for-like comparison with other cities' public toilets per resident</td><td>Archived analysis (Merged)</td></tr>
+<tr><td>Jonathan</td><td>Complaint model and layered analysis of 29 high-complaint neighbourhoods; hours and inspection checks</td><td>Complaint check (step 13); hours and broken-restroom checks (steps 8, 10)</td></tr>
+</tbody></table></div>
+<p class="note">Earlier analyses (the layered complaint walkthrough, its Limits and Data &amp; code, and the Merged and Original versions) are kept under Archive.</p>
 </div>
 
 <div id="deck" hidden>
@@ -1481,8 +1533,8 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
 <script>
 (function(){
   var initialHash = (location.hash || '').replace('#','');
-  var ids = {plan:'plan', plim:'plim', deck:'deck', walk:'walk', lim:'lim', data:'data', merged:'merged', original:'original'};
-  var btns = {plan:'btn-plan', plim:'btn-plim', deck:'btn-deck', walk:'btn-walk', lim:'btn-lim', data:'btn-data', merged:'btn-merged', original:'btn-orig'};
+  var ids = {plan:'plan', plim:'plim', pdata:'pdata', deck:'deck', walk:'walk', lim:'lim', data:'data', merged:'merged', original:'original'};
+  var btns = {plan:'btn-plan', plim:'btn-plim', pdata:'btn-pdata', deck:'btn-deck', walk:'btn-walk', lim:'btn-lim', data:'btn-data', merged:'btn-merged', original:'btn-orig'};
   var hint = document.getElementById('hint');
   var archbar = document.getElementById('archbar');
   var btnArch = document.getElementById('btn-arch');
@@ -1490,6 +1542,7 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
   var hints = {
     plan:'From the law to the next 50 sites, step by step.',
     plim:'What could change the answer, and what would settle it.',
+    pdata:'Every dataset and script, how to rerun it, and who contributed what.',
     deck:'How the story groups into segments for the talk (not final slides).',
     walk:'Archive: the layered complaint analysis (25 Sep), now used as the reality lens.',
     lim:'Archive: limits of the layered analysis.',
@@ -1500,7 +1553,7 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
   function set(v, scroll){
     for (var k in ids) document.getElementById(ids[k]).hidden = (k !== v);
     for (var b in btns) document.getElementById(btns[b]).setAttribute('aria-pressed', String(b === v));
-    var top = (v === 'plan' || v === 'plim' || v === 'deck');
+    var top = (v === 'plan' || v === 'plim' || v === 'pdata' || v === 'deck');
     archbar.hidden = top; if (!top) lastArch = v;
     btnArch.setAttribute('aria-pressed', String(!top));
     hint.textContent = hints[v];
