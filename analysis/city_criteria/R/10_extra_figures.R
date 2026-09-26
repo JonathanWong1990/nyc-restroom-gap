@@ -36,6 +36,6 @@ p2 <- ggplot(C, aes(new_units, residents_covered)) + geom_line(linewidth = 1.1, 
   labs(title = sprintf("Evening coverage for every resident: about %d new units in this scenario", max(mk$n)),
        subtitle = sprintf("Residents with a restroom open within 500 m at 9pm, after existing restrooms are kept open or repaired (%d%%),\nas new units are added where they reach the most residents", round(100 * S$covered_after_existing)),
        x = "New units", y = NULL,
-       caption = "Greedy placement at any residential grid point: a modelled scenario, not a proven minimum or a siting plan. Straight-line 500 m; residents from Census ACS 2020-24.") + thb
+       caption = "Greedy placement at any residential grid point: a modelled scenario, not a proven minimum or a siting plan.\nStraight-line 500 m; residents from Census ACS 2020-24.") + thb
 ggsave(file.path(FIG, "g12_resident_coverage.png"), p2, width = 9.5, height = 5.6, dpi = 150)
 cat("done\n")
