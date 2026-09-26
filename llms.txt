@@ -1,6 +1,6 @@
 # NYC Restroom Gap — plain-text edition for AI assistants
 
-Generated from index.html of https://jonathanwong1990.github.io/nyc-restroom-gap/ (last updated 25 September 2026) by tools/build_llms.py.
+Generated from index.html of https://jonathanwong1990.github.io/nyc-restroom-gap/ (last updated 26 September 2026) by tools/build_llms.py.
 Do not edit by hand. The web page embeds large SVG maps that are useless to a language
 model; everything else from all three tabs is below. Read all three before answering
 questions about reliability: the Walkthrough states findings, the Limits tab bounds them
@@ -19,7 +19,9 @@ Authoritative sources, in order (the first outranks this file):
 
 ---
 
-## Walkthrough
+## Layered walkthrough
+
+Archived 26 September 2026. This is the earlier complaint-led analysis. Its checks on evening hours and broken restrooms now serve as the reality lens in New direction.
 
 **In one minute**
 

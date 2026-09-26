@@ -347,6 +347,22 @@ figure.chart a.zoom{display:block}
 .mtag.out{color:#4a3aa8;background:rgba(110,90,220,.12);border-color:rgba(110,90,220,.45)}
 .mtag.src{color:#6b6b6b;background:rgba(127,127,127,.12);border-color:rgba(127,127,127,.45)}
 @media (prefers-color-scheme:dark){.mtag.in{color:#7fdcaa}.mtag.out{color:#b9aefc}.mtag.src{color:#bdbdbd}}
+
+/* ---------- new-direction slides ---------- */
+#plan .slide{border-top:1px solid var(--rule); padding-top:18px; margin-top:34px}
+#plan .slide-no{font-family:var(--f-mono); font-size:11.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); margin:0 0 4px}
+#plan .slide h3{margin-top:0}
+#plan .find{background:var(--accent-soft); border-left:3px solid var(--accent); padding:13px 16px; margin:20px 0; border-radius:0 3px 3px 0; color:var(--ink)}
+#plan .find strong{color:var(--accent)}
+#plan details{margin:10px 0 0; border:1px solid var(--rule); border-radius:4px; background:var(--surface); padding:0 14px}
+#plan details[open]{padding-bottom:10px}
+#plan summary{cursor:pointer; font-family:var(--f-mono); font-size:12px; letter-spacing:.04em; color:var(--muted); padding:9px 0}
+#plan details p,#plan details li{font-size:14px; color:var(--ink-2)}
+#plan table{font-size:13px}
+#plan .plan-src{border-top:1px solid var(--rule); padding-top:20px; margin-top:40px}
+.subbar[hidden]{display:none !important}
+.subbar{top:calc(env(safe-area-inset-top,0px) + 62px); z-index:19; min-height:46px; margin-top:-30px; padding-block:6px; margin-bottom:28px}
+.subbar .seg button{font-size:12.5px}
 </style>
 </head>
 <body>
@@ -354,22 +370,205 @@ figure.chart a.zoom{display:block}
 <header class="masthead">
   <p class="eyebrow">PMBA6093 · Analytics for Managers · Final project</p>
   <h1>When nature calls, where should New York answer?</h1>
-  <p class="standfirst">New York has committed to 2,120 public restrooms by 2035; its register lists 975. We asked where the City should act first. Complaints about public urination, adjusted for how crowded each area is, point to 29 neighbourhoods. For each, we checked whether a restroom is missing, closed in the evening, or out of order. The result is a shortlist of repairs to prioritise, longer-hours trials, and six areas for new-site feasibility checks.</p>
-  <div class="byline"><span>HKU MBA group project</span><span>197 neighbourhoods</span><span>Data current to September 2026</span><span class="stamp">Updated 25 September 2026</span><span>Contributions by section: Data &amp; code</span></div>
+  <p class="standfirst">New York has committed to 2,120 public restrooms by 2035 and lists 975 today. The law names the factors that make an area underserved; the City's first 17 pilot sites show how it weighs them. We learned those weights, scored every possible site in the city, and tested whether the answer survives different weightings. Then we checked each site against existing restrooms, because many need longer hours or repairs rather than a new building.</p>
+  <div class="byline"><span>HKU MBA group project</span><span>5,800 candidate sites</span><span>Data current to September 2026</span><span class="stamp">Updated 26 September 2026</span><span>Contributions by section: Data &amp; code</span></div>
 
 </header>
 <div class="modebar">
-  <div class="seg" role="group" aria-label="Level of detail">
-    <button id="btn-walk" aria-pressed="true">Walkthrough<span class="tab-badge">Latest</span></button>
+  <div class="seg" role="group" aria-label="Section">
+    <button id="btn-plan" aria-pressed="true">New direction<span class="tab-badge">Latest</span></button>
+    <button id="btn-arch" aria-pressed="false">Archive</button>
+  </div>
+  <span class="modehint" id="hint" role="status" aria-live="polite">Where the next 50 go, one section per slide.</span>
+</div>
+<div class="modebar subbar" id="archbar" hidden>
+  <div class="seg" role="group" aria-label="Archived versions">
+    <button id="btn-walk" aria-pressed="false">Layered walkthrough</button>
     <button id="btn-lim" aria-pressed="false">Limits</button>
     <button id="btn-data" aria-pressed="false">Data &amp; code</button>
-    <button id="btn-merged" aria-pressed="false">Merged<span class="tab-badge">Archive</span></button>
-    <button id="btn-orig" aria-pressed="false">Original<span class="tab-badge">Archive</span></button>
+    <button id="btn-merged" aria-pressed="false">Merged</button>
+    <button id="btn-orig" aria-pressed="false">Original</button>
   </div>
-  <span class="modehint" id="hint" role="status" aria-live="polite">The City's four decisions, answered in turn.</span>
 </div>
+<div id="plan" hidden>
+<h2>Where the next 50 go</h2>
+<p class="lede">One section per slide. The top of each section is what goes on the slide; <em>Details</em> holds the method, numbers and sources for the team.</p>
+
+<div class="find"><strong>In one minute.</strong> The law says where restrooms are needed: busy places, far from a restroom, including where restrooms close early. The City's 17 pilot sites show how it weighs those factors. We learned the weights from those 17 choices, scored about 5,800 possible sites, and picked the next 50. When we varied the weights in 4,000 different ways, 30 of the 50 locations were still picked. A final check against existing restrooms shows only 23 of the 50 need a new building. The rest are cheaper fixes: longer park hours for 14, repairs for 8.</div>
+
+<section class="slide" id="s1">
+<p class="slide-no">Slide 1 · The ask</p>
+<h3>New York must reach 2,120 public restrooms by 2035. Where should the next ones go?</h3>
+<ul>
+<li>Local Law 58 (2025) sets the target; the City's register lists 975 today.</li>
+<li>The law does not say where. It does say what makes an area underserved.</li>
+</ul>
+<details><summary>Details</summary>
+<p>Target: "no less than 2,120 public bathrooms, of which at least half shall be publicly owned", by 2035. The first strategic planning report was due 1 September 2026. Register: NYC Open Data public restrooms (<code>i7jb-7jku</code>), last updated June 2025, with 975 listed as operational.</p>
+</details>
+</section>
+
+<section class="slide" id="s2">
+<p class="slide-no">Slide 2 · The gap</p>
+<h3>Of 975 listed restrooms, only 57 are open at 9pm</h3>
+<figure class="chart"><a class="zoom" href="img/plan/f1_open_by_hour.png" target="_blank" rel="noopener"><img src="img/plan/f1_open_by_hour.png" alt="Bar chart of restrooms open at each hour of a weekday: 954 at 2pm, falling to 57 at 9pm" loading="lazy"></a></figure>
+<ul>
+<li>Most are Parks restrooms that post "8am–4pm, open later seasonally".</li>
+<li>The law counts <em>limited opening hours</em> as a gap, not only a missing building.</li>
+</ul>
+<details><summary>Details</summary>
+<p>Posted hours were parsed hour by hour. The 641 Parks restrooms with only the placeholder hours are assumed to close at 4pm. If some stay open later in summer, the evening numbers improve somewhat. 18 restrooms with blank or unreadable hours count as closed.</p>
+</details>
+</section>
+
+<section class="slide" id="s3">
+<p class="slide-no">Slide 3 · The City's first move, and the law's factors</p>
+<h3>The City placed 17 modular toilets in September; the law names six factors to consider</h3>
+<figure class="chart"><a class="zoom" href="img/plan/f2_pilot_sites.png" target="_blank" rel="noopener"><img src="img/plan/f2_pilot_sites.png" alt="Map of the City's 17 pilot sites: 6 plazas, 7 parks or playgrounds, 4 street corners, four per borough and one on Staten Island" loading="lazy"></a></figure>
+<ul>
+<li><strong>Pilot:</strong> $4M, one year, open 7am–10pm, "public plazas and high-traffic areas where New Yorkers currently lack reliable access".</li>
+<li><strong>The law's factors:</strong> population density · foot traffic · public transport · distance to existing restrooms · commercial and tourist land use · equity.</li>
+</ul>
+<details><summary>Details</summary>
+<p>Local Law 58 defines an underserved area as one with insufficient access "because of a lack of public bathrooms or limited opening hours ... considering factors such as population density, estimated daily foot traffic, public transportation routes, distance to existing public bathrooms by walking or using a mobility device, land use including current commercial and tourist corridors, and equity concerns". Sites were chosen by DOT and Parks with NYCEDC. No weights have been published.</p>
+<p>How we measured each factor at a site: residents within 500 m (Census ACS 2020–24); DOT modelled pedestrian demand on streets within 250 m; subway entries within 500 m (MTA 2025); jobs within 500 m (Census LEHD 2023); distance to the nearest listed restroom open at 2pm; the poverty rate of the census tract.</p>
+</details>
+</section>
+
+<section class="slide" id="s4">
+<p class="slide-no">Slide 4 · What the City valued <span class="mtag in">S6–7 · logistic regression</span></p>
+<h3>The City went where it is busy and far from a restroom</h3>
+<figure class="chart"><a class="zoom" href="img/plan/f3_revealed_weights.png" target="_blank" rel="noopener"><img src="img/plan/f3_revealed_weights.png" alt="Coefficient chart: busyness 65% of the weight, distance to an open restroom 31%, equity 4%; complaints not a factor" loading="lazy"></a></figure>
+<ul>
+<li>We compared the 17 chosen sites with about 5,800 sites the City could have chosen.</li>
+<li>Implied weights: <strong>busyness 65%</strong>, <strong>distance to an open restroom 31%</strong>, <strong>equity 4%</strong>.</li>
+<li>The City also preferred public plazas, which are easy places to put a unit.</li>
+</ul>
+<details><summary>Details</summary>
+<p><strong>Method.</strong> Logistic regression with pilot site (1) or not (0) as the outcome, fitted on 17 pilot sites against 5,756 candidate sites: Parks land, DOT plazas and busy-street frontage, excluding sites within 300 m of a pilot. Because 17 is a small number of cases, we use Firth's small-sample correction. Predictors are standardised so their coefficients can be compared. Site type (park, plaza or street) is a control. Weights are each positive coefficient's share of the total.</p>
+<p><strong>Why "busyness".</strong> Population, foot traffic, transit and jobs move together (correlations 0.52–0.81). Entered separately, the model gave nearly all the credit to population and none to foot traffic. That says only that they overlap, not that the City ignored foot traffic. Combining the four into one index fixes this; in the score each part gets a quarter of busyness's weight. Results: busyness +2.07 (95% CI 0.98 to 3.20); distance +0.98 (0.27 to 1.81); equity +0.12 (−0.32 to 0.49); plaza +1.68 and street −2.46, each relative to park.</p>
+<p><strong>Checks.</strong> Without site-type controls, and with the six factors entered separately, population and distance still lead. Using distance to a restroom open at 9pm instead of 2pm gives the same answer (+1.00). The pilot sites' median percentile among candidates, factor by factor: residents 79, transit 75, poverty 73, foot traffic 72, jobs 68, distance to an open restroom 58.</p>
+</details>
+</section>
+
+<section class="slide" id="s5">
+<p class="slide-no">Slide 5 · Does it reproduce the City's choices? <span class="mtag in">S7 · train/test</span></p>
+<h3>Hide one pilot site and refit: the hidden site typically still ranks in the top 4%</h3>
+<figure class="chart"><a class="zoom" href="img/plan/f4_leave_one_out.png" target="_blank" rel="noopener"><img src="img/plan/f4_leave_one_out.png" alt="Dot chart: each hidden pilot site outranks between 41% and 100% of candidate sites, median 96%" loading="lazy"></a></figure>
+<ul>
+<li>We refitted the model 17 times, each time leaving one pilot site out.</li>
+<li>The hidden site outranks a median <strong>96%</strong> of the candidates. Four sites (41–60%) fit the factors less well.</li>
+</ul>
+<details><summary>Details</summary>
+<p>This is leave-one-out validation: train on 16 sites, test on the 17th. The in-sample AUC is 0.87. The weakest fits are Fulton &amp; Truxton Street (41%), 34th Avenue &amp; 64th Street (44%), North Shore Esplanade (56%) and Northern Boulevard &amp; 54th Street (60%). Something the factors do not capture probably shaped these picks, such as available space or community requests; we cannot see which.</p>
+</details>
+</section>
+
+<section class="slide" id="s6">
+<p class="slide-no">Slide 6 · Scoring the city</p>
+<h3>The next 50 sites, shared among boroughs by population</h3>
+<figure class="chart"><a class="zoom" href="img/plan/f5_next50_stability.png" target="_blank" rel="noopener"><img src="img/plan/f5_next50_stability.png" alt="Map of the next 50 sites coloured by stability: 30 robust, 11 hold within model uncertainty, 9 depend on weights" loading="lazy"></a></figure>
+<ul>
+<li>Every candidate site gets a score: the weighted factors, with demand from busyness and the supply gap from distance to an open restroom.</li>
+<li>Bronx 8 · Brooklyn 15 · Manhattan 10 · Queens 14 · Staten Island 3, in line with each borough's population.</li>
+<li>Sites are at least 500 m apart, and at least 500 m from the pilot sites.</li>
+</ul>
+<details><summary>Details</summary>
+<p>Score = Σ weight × percentile of each factor among all candidates. Distance counts as farther = more underserved. Selection is greedy: take the top score, block everything within 500 m, repeat. Without a borough split, 36 of the 50 fall in Manhattan. We split by population, which is more defensible than copying the pilot's equal split by borough. 50 is an illustrative next phase, not a target.</p>
+</details>
+</section>
+
+<section class="slide" id="s7">
+<p class="slide-no">Slide 7 · Sensitivity <span class="mtag out">Beyond class · Monte Carlo sensitivity</span></p>
+<h3>We moved the weights 4,000 ways; 30 of the 50 locations kept being picked</h3>
+<ul>
+<li><strong>41 of 50</strong> hold across 2,000 runs within the model's own uncertainty.</li>
+<li><strong>30 of 50</strong> are also picked in at least half of 2,000 runs with <em>completely random</em> weights. These are the strongest recommendations.</li>
+<li>Named alternatives keep 52–76% of the same locations: equal weights 76%, access-heavy 76%, transit-heavy 74%, footfall-heavy 66%, no population 64%, equity-heavy 52%.</li>
+</ul>
+<details><summary>Details</summary>
+<p>This follows the professor's guidance: assumptions are acceptable if the answer does not depend on them. We ran two kinds of test:</p>
+<ul>
+<li><strong>Model uncertainty:</strong> 2,000 draws of the three coefficients from their fitted covariance.</li>
+<li><strong>Any weighting at all:</strong> 2,000 draws spread uniformly over every possible six-factor weighting.</li>
+</ul>
+<p>A location counts as "picked" when any selected site falls within 500 m of it, because exact points shift between runs.</p>
+<p>Robust locations by borough: Queens 10, Manhattan 7, Brooklyn 7, Bronx 5, Staten Island 1. Examples: Elmhurst, Flushing–Willets Point, Long Island City, Chelsea–Hudson Yards, Midtown, Flatiron, Park Slope, Fordham Heights, St. George.</p>
+</details>
+</section>
+
+<section class="slide" id="s8">
+<p class="slide-no">Slide 8 · Reality lens</p>
+<h3>Only 23 of the 50 need a new building</h3>
+<figure class="chart"><a class="zoom" href="img/plan/f6_reality_lens.png" target="_blank" rel="noopener"><img src="img/plan/f6_reality_lens.png" alt="Map of the 50 sites coloured by first action: 23 build, 14 keep a nearby park restroom open later, 8 repair or reopen, 4 nearby library or other restroom closes early, 1 already covered" loading="lazy"></a></figure>
+<ul>
+<li><strong>Build 23:</strong> no restroom within 500 m.</li>
+<li><strong>Longer park hours 14:</strong> a park restroom nearby is open by day but shut at 9pm.</li>
+<li><strong>Repair or reopen 8:</strong> a nearby restroom is closed long-term or keeps failing inspection.</li>
+<li><strong>Other operator 4:</strong> a nearby library or other restroom closes early. <strong>Already covered 1.</strong></li>
+</ul>
+<details><summary>Details</summary>
+<p>Checks run in this order: broken first, then evening-only coverage, then none at all. Broken means NYC Parks inspection data shows a restroom closed long-term, or failing at least half its inspections since January 2025 (and at least twice). Repair sites include Nelson Playground (Yankee Stadium), Grady Playground (Brighton Beach), Sternberg Park and De Hostos Playground (South Williamsburg), and Hoffman Park (Elmhurst). The lens reuses the archived layered analysis: posted hours, the 500 m standard, and the Parks inspection records.</p>
+</details>
+</section>
+
+<section class="slide" id="s9">
+<p class="slide-no">Slide 9 · What the factors leave out</p>
+<h3>The City's factors do not point to where complaints run high</h3>
+<figure class="chart"><a class="zoom" href="img/plan/f7_complaint_hotspots.png" target="_blank" rel="noopener"><img src="img/plan/f7_complaint_hotspots.png" alt="Map of the 29 high-complaint neighbourhoods with pilot sites and next-50 sites; 3 pilots and 5 of the 50 fall inside them" loading="lazy"></a></figure>
+<ul>
+<li>Complaints are not in the law, and the City's choices show no sign of targeting them.</li>
+<li>Only 3 of the 17 pilot sites and 5 of our 50 fall in the 29 neighbourhoods with the most unexplained complaints.</li>
+<li>Those areas deserve a separate look, starting with repairs and evening hours.</li>
+</ul>
+<details><summary>Details</summary>
+<p>Added to the pilot model, complaints within 500 m have no effect (−0.45, 95% CI −1.64 to 0.65). The 29 areas come from the earlier complaint model: 311 public-urination complaints compared with what crowds predict. That analysis is kept in full under Archive.</p>
+</details>
+</section>
+
+<section class="slide" id="s10">
+<p class="slide-no">Slide 10 · Recommendation <span class="mtag in">S8–9 · A/B test design</span></p>
+<h3>Fix and extend first, build where nothing exists, and measure as you go</h3>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Action</th><th class="n">Sites</th><th>How</th></tr></thead><tbody>
+<tr><td><strong>Repair or reopen</strong></td><td class="n">8</td><td>Cheapest: the building exists</td></tr>
+<tr><td><strong>Longer park hours</strong></td><td class="n">14</td><td>Keep nearby park restrooms open to 10pm, matching the pilot's hours</td></tr>
+<tr><td><strong>Build modular units</strong></td><td class="n">23</td><td>Start with the robust locations; ground-check space and access</td></tr>
+<tr><td><strong>Other operators' hours</strong></td><td class="n">4</td><td>Libraries and plazas: negotiate later hours</td></tr>
+</tbody></table></div>
+<ul>
+<li>Roll the changes out in stages, in random order, and judge them by hours <em>open and working</em>, not units installed.</li>
+</ul>
+<details><summary>Details</summary>
+<p>A staggered rollout gives a fair before-and-after comparison. The pilot's own data (usage, uptime, cleanliness) would give the first real measure of demand. That is the answer key this analysis does not yet have.</p>
+</details>
+</section>
+
+<section class="slide" id="s11">
+<p class="slide-no">Slide 11 · Limits</p>
+<h3>What this can and cannot claim</h3>
+<ul>
+<li><strong>17 sites is a small sample.</strong> The weights show what the City valued, not proven need. The sensitivity test is what protects the answer.</li>
+<li><strong>Candidate sites are grid points</strong> on Parks land, plazas and busy streets. None has been checked for space, utilities or approval.</li>
+<li><strong>Distances are straight-line</strong> and hours are as posted, with the 4pm park placeholder. Population counts residents; foot traffic is DOT's model, not counts.</li>
+<li><strong>The borough split and "50" are our choices</strong>, stated openly.</li>
+</ul>
+<details><summary>Details</summary>
+<p>Sources span different dates: restroom register June 2025, inspections to June 2026, ACS 2020–24, LEHD 2023, DOT pedestrian demand September 2026, pilot list 16 September 2026. The candidate pool includes large park interiors, which widens the busyness contrast; the site-type control reduces this. Four pilot sites fit the factors less well (slide 5).</p>
+</details>
+</section>
+
+<h3 class="plan-src">Sources and code</h3>
+<ul class="note">
+<li>Local Law 58 of 2025: <a href="https://intro.nyc/local-laws/2025-58" target="_blank" rel="noopener">text (intro.nyc)</a></li>
+<li>Pilot sites: <a href="https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-brings-17-new-public-bathrooms-to-neighborhoods-ac" target="_blank" rel="noopener">Mayor's Office, 16 Sep 2026</a>; <a href="https://edc.nyc/press-release/nycedc-selects-throne-labs-pilot-high-quality-modular-public-restrooms-citywide" target="_blank" rel="noopener">NYCEDC, June 2026</a></li>
+<li>Data: NYC public restrooms <code>i7jb-7jku</code>; DOT pedestrian demand <code>fwpa-qxaf</code>; DOT plazas <code>k5k6-6jex</code>; Parks properties and inspections; MTA ridership; Census ACS 2020–24 and LEHD 2023; 311 <code>erm2-nwe9</code></li>
+<li>Code and outputs: <a href="https://github.com/JonathanWong1990/nyc-restroom-gap/tree/main/analysis/city_criteria" target="_blank" rel="noopener">analysis/city_criteria</a> (scripts 01–04, README)</li>
+</ul>
+</div>
+
 <div id="walk" hidden>
-<h2>Walkthrough</h2>
+<h2>Layered walkthrough</h2>
+<p class="lede">Archived 26 September 2026. This is the earlier complaint-led analysis. Its checks on evening hours and broken restrooms now serve as the reality lens in <a href="#plan" data-tab="plan">New direction</a>.</p>
 
 <div class="tldr">
 <p><strong>In one minute</strong></p>
@@ -1079,7 +1278,7 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
 <ul><li><a href="https://github.com/JonathanWong1990/nyc-restroom-gap">Repository</a></li><li><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/METHODS.md">Methods, script by script</a></li><li><a href="llms.txt">Plain-text edition (llms.txt)</a></li><li><a href="maps/unmet-need.html">Interactive map: unmet need</a></li><li><a href="maps/coverage-gap.html">Interactive map: coverage gap</a></li></ul>
 </div>
 <footer>
-  <div class="updated">Last updated <strong>25 September 2026</strong> · <a href="https://github.com/JonathanWong1990/nyc-restroom-gap/commits/main">see what changed</a></div>
+  <div class="updated">Last updated <strong>26 September 2026</strong> · <a href="https://github.com/JonathanWong1990/nyc-restroom-gap/commits/main">see what changed</a></div>
   Built from primary sources · NYC Open Data · data.ny.gov · US Census ACS &amp; LEHD<br>
   Every number: <a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/outputs/headline_numbers.json">headline_numbers.json</a> ·
   <a href="https://github.com/JonathanWong1990/nyc-restroom-gap">code and data</a> ·
@@ -1090,37 +1289,44 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
 </div>
 <script>
 (function(){
-  var ids = {walk:'walk', lim:'lim', data:'data', merged:'merged', original:'original'};
-  var btns = {walk:'btn-walk', lim:'btn-lim', data:'btn-data', merged:'btn-merged', original:'btn-orig'};
+  var ids = {plan:'plan', walk:'walk', lim:'lim', data:'data', merged:'merged', original:'original'};
+  var btns = {plan:'btn-plan', walk:'btn-walk', lim:'btn-lim', data:'btn-data', merged:'btn-merged', original:'btn-orig'};
   var hint = document.getElementById('hint');
+  var archbar = document.getElementById('archbar');
+  var btnArch = document.getElementById('btn-arch');
+  var lastArch = 'walk';
   var hints = {
-    walk:'From the question to a recommendation, in nine steps.',
-    lim:'Where the analysis is weak and what it cannot claim.',
-    data:'Every dataset and script, and how to run it yourself.',
-    merged:'The 24 Sep merged walkthrough, archived for comparison.',
-    original:'The 22 Sep walkthrough, archived for comparison.'
+    plan:'Where the next 50 go, one section per slide.',
+    walk:'Archive: the layered complaint analysis (25 Sep), now used as the reality lens.',
+    lim:'Archive: limits of the layered analysis.',
+    data:'Archive: every dataset and script of the earlier analyses.',
+    merged:'Archive: the 24 Sep merged walkthrough.',
+    original:'Archive: the 22 Sep walkthrough.'
   };
   function set(v, scroll){
     for (var k in ids) document.getElementById(ids[k]).hidden = (k !== v);
     for (var b in btns) document.getElementById(btns[b]).setAttribute('aria-pressed', String(b === v));
+    archbar.hidden = (v === 'plan'); if (v !== 'plan') lastArch = v;
+    btnArch.setAttribute('aria-pressed', String(v !== 'plan'));
     hint.textContent = hints[v];
     try { if (history.replaceState) history.replaceState(null, '', '#' + v); } catch(e) {}
-    try { localStorage.setItem('restroom-view', v); } catch(e) {}
+    try { localStorage.setItem('restroom-view2', v); } catch(e) {}
     if (scroll) {
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'});
     }
   }
+  btnArch.addEventListener('click', function(){ set(lastArch, true); });
   Object.keys(btns).forEach(function(k){
     document.getElementById(btns[k]).addEventListener('click', function(){ set(k, true); });
   });
-  var alias = {limits:'lim', orig:'original', 'original-walkthrough':'original', code:'data', pivot:'walk'};
+  var alias = {limits:'lim', orig:'original', 'original-walkthrough':'original', code:'data', pivot:'walk', archive:'walk', proposal:'plan', 'new':'plan'};
   var has = function(k){ return Object.prototype.hasOwnProperty.call(btns, k); };
   var norm = function(k){ return alias[k] || k; };
   var start = null;
   try { var h = norm((location.hash || '').replace('#','')); if (has(h)) start = h; } catch(e) {}
-  if (start === null) { try { var s = localStorage.getItem('restroom-view'); if (s && has(s)) start = s; } catch(e) {} }
-  if (start === null) start = 'walk';
+  if (start === null) { try { var s = localStorage.getItem('restroom-view2'); if (s && has(s)) start = s; } catch(e) {} }
+  if (start === null) start = 'plan';
   set(start, false);
   window.addEventListener('hashchange', function(){ var h=norm((location.hash||'').replace('#','')); if (has(h)) set(h, true); });
   document.addEventListener('click', function(ev){ var a=ev.target.closest && ev.target.closest('a[data-tab]'); if (!a) return; var t=a.getAttribute('data-tab'); if (has(t)) { ev.preventDefault(); set(t, true); } });

@@ -1,0 +1,51 @@
+ntaname,type,lon,lat,residents,subway,dist_2pm_m,dist_9pm_m,poverty,n_open_2pm_500m,n_open_9pm_500m,n_park_placeholder_500m,n_broken_500m,broken_names,stable_revealed,stable_any,rank,reality_lens,borough
+Chelsea-Hudson Yards,busy_street,-73.99778,40.745,28417,20049875,598,973,0.144,0,0,0,0,"",1,0.97,1,Build: no restroom within 500 m,Manhattan
+Midtown-Times Square,busy_street,-73.98435,40.75828,9332,94957703,491,562,0.458,2,0,1,0,"",1,0.91,2,Extend park hours nearby first,Manhattan
+Midtown-Times Square,busy_street,-73.9886,40.75505,7710,61633928,511,885,0.544,0,0,0,0,"",1,0.85,3,Build: no restroom within 500 m,Manhattan
+East Village,busy_street,-73.98606,40.73282,34759,33754926,456,517,0.187,3,0,2,0,"",1,0.92,4,Extend park hours nearby first,Manhattan
+Chelsea-Hudson Yards,busy_street,-73.99942,40.74018,25598,25533762,467,738,0.072,1,0,1,0,"",1,0.9,5,Extend park hours nearby first,Manhattan
+Midtown South-Flatiron-Union Square,busy_street,-73.98299,40.74764,18605,32932583,472,620,0.135,4,0,0,0,"",1,0.74,6,Existing restroom closes early: extend other operator's hours,Manhattan
+Midtown-Times Square,busy_street,-73.98299,40.7652,21852,46926767,469,658,0.077,2,0,1,0,"",0.93,0.32,7,Extend park hours nearby first,Manhattan
+Murray Hill-Kips Bay,busy_street,-73.97284,40.75009,25264,36369834,379,505,0.1,3,0,1,0,"",0.74,0.39,8,Extend park hours nearby first,Manhattan
+Greenwich Village,busy_street,-73.99442,40.73634,25586,36046003,382,382,0.106,4,1,1,0,"",0.71,0.44,9,Covered day and evening: lower priority,Manhattan
+Midtown South-Flatiron-Union Square,busy_street,-73.9901,40.74494,15833,21155463,422,943,0.136,2,0,0,0,"",0.81,0.78,10,Existing restroom closes early: extend other operator's hours,Manhattan
+Jackson Heights,busy_street,-73.8716,40.74893,25582,11461377,761,1972,0.296,0,0,0,0,"",1,0.99,11,Build: no restroom within 500 m,Queens
+Long Island City-Hunters Point,busy_street,-73.93946,40.74817,11018,14208738,804,2129,0.102,0,0,0,0,"",1,0.98,12,Build: no restroom within 500 m,Queens
+Gravesend (East)-Homecrest,park,-73.95822,40.60445,11692,4503120,777,3804,0.321,0,0,0,0,"",1,0.99,13,Build: no restroom within 500 m,Brooklyn
+Elmhurst,busy_street,-73.89159,40.74683,21914,16060789,480,3217,0.157,1,0,1,0,"",1,0.96,14,Extend park hours nearby first,Queens
+Flushing-Willets Point,busy_street,-73.83498,40.75798,9513,15017678,515,844,0.244,0,0,0,0,"",1,0.98,15,Build: no restroom within 500 m,Queens
+Williamsburg,busy_street,-73.95914,40.71491,20939,9837921,412,692,0.21,2,0,2,1,Jaime Campiz Playground,1,0.98,16,Repair or reopen nearby first,Brooklyn
+University Heights (South)-Morris Heights,busy_street,-73.91217,40.84796,29770,3172546,472,950,0.383,2,0,0,0,"",1,0.95,17,Existing restroom closes early: extend other operator's hours,Bronx
+Mott Haven-Port Morris,busy_street,-73.91721,40.81588,18227,4326279,398,2542,0.471,2,0,2,0,"",1,0.96,18,Extend park hours nearby first,Bronx
+Fordham Heights,busy_street,-73.89826,40.86039,36237,3999924,360,2325,0.332,3,0,2,0,"",0.99,0.93,19,Extend park hours nearby first,Bronx
+Park Slope,busy_street,-73.98906,40.66587,17065,1432173,508,2271,0.133,0,0,0,0,"",1,0.82,20,Build: no restroom within 500 m,Brooklyn
+Carroll Gardens-Cobble Hill-Gowanus-Red Hook,park,-73.99366,40.67065,6464,4228398,809,2534,0.036,0,0,0,0,"",0.93,0.31,21,Build: no restroom within 500 m,Brooklyn
+Long Island City-Hunters Point,busy_street,-73.9521,40.74283,9427,5886234,561,1942,0.051,0,0,0,0,"",0.96,0.4,22,Build: no restroom within 500 m,Queens
+Sunnyside,plaza,-73.91871,40.74318,22853,5935513,359,3651,0.187,2,0,1,0,"",1,0.93,23,Extend park hours nearby first,Queens
+Ridgewood,busy_street,-73.90764,40.69996,19334,6348452,567,4465,0.1,0,0,0,0,"",0.99,0.53,24,Build: no restroom within 500 m,Queens
+Flushing-Willets Point,plaza,-73.82789,40.76037,17984,15017678,300,1429,0.244,3,0,2,0,"",0.96,0.91,25,Extend park hours nearby first,Queens
+University Heights (South)-Morris Heights,park,-73.91181,40.85297,25509,3189989,538,1469,0.288,0,0,0,0,"",0.97,0.41,26,Build: no restroom within 500 m,Bronx
+Downtown Brooklyn-DUMBO-Boerum Hill,plaza,-73.98302,40.69014,20596,21275504,416,1525,0.163,1,0,1,0,"",1,0.69,27,Extend park hours nearby first,Brooklyn
+Mapleton-Midwood (West),park,-73.97061,40.62607,9110,347315,710,2798,0.074,0,0,0,0,"",0.93,0.24,28,Build: no restroom within 500 m,Brooklyn
+Yankee Stadium-Macombs Dam Park,park,-73.92251,40.83407,24331,3686433,362,822,0.397,2,0,1,1,Nelson Playground,0.96,0.69,29,Repair or reopen nearby first,Bronx
+Bedford Park,park,-73.88508,40.87861,13231,1494474,587,1825,0.203,0,0,0,1,Mosholu Parkway Zone 2 (PIP X033-ZN02),0.91,0.24,30,Repair or reopen nearby first,Bronx
+Forest Hills,park,-73.84806,40.72593,20755,1845040,371,2912,0.109,1,0,1,0,"",0.97,0.62,31,Extend park hours nearby first,Queens
+Carroll Gardens-Cobble Hill-Gowanus-Red Hook,park,-73.98478,40.6801,11861,2005303,569,1952,0.118,0,0,0,0,"",0.98,0.33,32,Build: no restroom within 500 m,Brooklyn
+Williamsburg,plaza,-73.95233,40.71735,14282,14582348,424,522,0.053,1,0,1,1,Jaime Campiz Playground,0.85,0.31,33,Repair or reopen nearby first,Brooklyn
+Bedford-Stuyvesant (West),busy_street,-73.94864,40.68034,18291,4317977,421,3710,0.234,1,0,1,0,"",1,0.87,34,Extend park hours nearby first,Brooklyn
+Concourse-Concourse Village,busy_street,-73.92119,40.82641,21936,6323559,305,1596,0.341,1,0,0,2,Railroad Park; Joyce Kilmer Park,0.9,0.82,35,Repair or reopen nearby first,Bronx
+Crotona Park East,park,-73.88517,40.82728,14221,392495,580,1601,0.321,0,0,0,0,"",0.77,0.22,36,Build: no restroom within 500 m,Bronx
+Park Slope,busy_street,-73.97764,40.68058,18372,12302456,331,2378,0.094,4,0,2,0,"",0.86,0.53,37,Extend park hours nearby first,Brooklyn
+Ozone Park,plaza,-73.86326,40.67928,15947,2149479,563,8250,0.197,0,0,0,0,"",0.96,0.47,38,Build: no restroom within 500 m,Queens
+Long Island City-Hunters Point,plaza,-73.93859,40.74358,2408,0,962,2511,0.633,0,0,0,0,"",0.81,0.77,39,Build: no restroom within 500 m,Queens
+Brighton Beach,park,-73.96532,40.58284,13466,0,757,1863,0.229,0,0,0,1,Grady Playground,0.81,0.42,40,Repair or reopen nearby first,Brooklyn
+Flushing Meadows-Corona Park,park,-73.84978,40.7516,4486,5958200,547,819,0.17,0,0,0,0,"",0.9,0.48,41,Build: no restroom within 500 m,Queens
+Elmhurst,busy_street,-73.87446,40.73472,15032,9056441,316,3447,0.116,2,0,1,1,Hoffman Park,0.83,0.64,42,Repair or reopen nearby first,Queens
+South Williamsburg,park,-73.94928,40.70306,23586,2995714,357,1978,0.484,1,0,1,2,Sternberg Park; De Hostos Playground,0.81,0.78,43,Repair or reopen nearby first,Brooklyn
+Flatbush,busy_street,-73.94722,40.63242,13020,4169321,371,2859,0.092,1,0,0,0,"",0.61,0.28,44,Existing restroom closes early: extend other operator's hours,Brooklyn
+Flatlands,park,-73.9387,40.62876,10569,0,944,3657,0.062,0,0,0,0,"",0.54,0.14,45,Build: no restroom within 500 m,Brooklyn
+East New York (North),park,-73.89431,40.67195,9893,1235880,612,6821,0.362,0,0,0,0,"",0.63,0.41,46,Build: no restroom within 500 m,Brooklyn
+Flushing Meadows-Corona Park,park,-73.8321,40.71916,5546,785198,558,3649,0.086,0,0,0,0,"",0.21,0.07,47,Build: no restroom within 500 m,Queens
+St. George-New Brighton,park,-74.08941,40.63685,5780,0,785,5636,0.32,0,0,0,0,"",0.93,0.92,48,Build: no restroom within 500 m,Staten Island
+New Springville-Willowbrook-Bulls Head-Travis,park,-74.15137,40.59356,2201,0,1780,3870,0.095,0,0,0,0,"",0.77,0.14,49,Build: no restroom within 500 m,Staten Island
+Westerleigh-Castleton Corners,park,-74.13371,40.6233,3825,0,1065,6836,0.105,0,0,0,0,"",0.55,0.14,50,Build: no restroom within 500 m,Staten Island

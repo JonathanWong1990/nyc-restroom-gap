@@ -1,0 +1,34 @@
+model,term,coef,ci_low,ci_high,p,auc
+M1 six factors (as 02),z_pop,3.61,1.42,6.03,0.00034,0.896
+M1 six factors (as 02),z_ped,-0.43,-1.19,0.38,0.29,0.896
+M1 six factors (as 02),z_sub,0.63,-0.14,1.63,0.12,0.896
+M1 six factors (as 02),z_job,-0.63,-2.15,0.76,0.38,0.896
+M1 six factors (as 02),z_dist,1.19,0.4,2.09,0.0018,0.896
+M1 six factors (as 02),z_pov,0.35,-0.12,0.71,0.13,0.896
+M2 six factors + site type,z_pop,4.08,1.61,6.87,0.00038,0.92
+M2 six factors + site type,z_ped,0.31,-0.5,1.16,0.45,0.92
+M2 six factors + site type,z_sub,0.59,-0.17,1.57,0.14,0.92
+M2 six factors + site type,z_job,-0.58,-2.1,0.87,0.44,0.92
+M2 six factors + site type,z_dist,1.34,0.52,2.32,0.00062,0.92
+M2 six factors + site type,z_pov,0.22,-0.28,0.62,0.35,0.92
+M2 six factors + site type,plaza,1.52,0.19,2.87,0.025,0.92
+M2 six factors + site type,street,-2.14,-3.88,-0.4,0.016,0.92
+M3 busyness index,busy,1.04,0.48,1.68,0.00021,0.809
+M3 busyness index,z_dist,0.84,0.15,1.61,0.015,0.809
+M3 busyness index,z_pov,0.33,-0.09,0.65,0.11,0.809
+M4 busyness index + site type,busy,2.07,0.98,3.2,0.00014,0.866
+M4 busyness index + site type,z_dist,0.98,0.27,1.81,0.0048,0.866
+M4 busyness index + site type,z_pov,0.12,-0.32,0.49,0.56,0.866
+M4 busyness index + site type,plaza,1.68,0.22,3.2,0.024,0.866
+M4 busyness index + site type,street,-2.46,-4.26,-0.56,0.012,0.866
+"M5 as M4, distance to restroom open at 9pm",busy,2.05,0.94,3.21,0.0002,0.889
+"M5 as M4, distance to restroom open at 9pm",z_dist9,1,0.27,1.84,0.0051,0.889
+"M5 as M4, distance to restroom open at 9pm",z_pov,0.1,-0.4,0.5,0.65,0.889
+"M5 as M4, distance to restroom open at 9pm",plaza,2.01,0.7,3.37,0.0031,0.889
+"M5 as M4, distance to restroom open at 9pm",street,-1.55,-3.23,0.16,0.074,0.889
+M6 as M4 + complaints,busy,2.48,0.98,4.07,0.00066,0.873
+M6 as M4 + complaints,z_dist,0.94,0.24,1.75,0.0065,0.873
+M6 as M4 + complaints,z_pov,0.11,-0.34,0.48,0.59,0.873
+M6 as M4 + complaints,plaza,1.85,0.33,3.44,0.017,0.873
+M6 as M4 + complaints,street,-2.37,-4.2,-0.41,0.019,0.873
+M6 as M4 + complaints,z_311,-0.45,-1.64,0.65,0.44,0.873

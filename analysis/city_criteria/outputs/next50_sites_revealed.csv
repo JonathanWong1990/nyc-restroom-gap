@@ -1,0 +1,51 @@
+ntaname,type,lon,lat,residents,subway,dist_2pm_m,dist_9pm_m,poverty,n_open_2pm_500m,n_open_9pm_500m,n_park_placeholder_500m,n_broken_500m,broken_names,stable_revealed,stable_any,rank,reality_lens,borough
+Chelsea-Hudson Yards,busy_street,-73.99778,40.745,28417,20049875,598,973,0.144,0,0,0,0,"",1,1,1,Build: no restroom within 500 m,Manhattan
+Midtown-Times Square,busy_street,-73.98435,40.75828,9332,94957703,491,562,0.458,2,0,1,0,"",1,0.98,2,Extend park hours nearby first,Manhattan
+Midtown-Times Square,busy_street,-73.9886,40.75505,7710,61633928,511,885,0.544,0,0,0,0,"",1,0.97,3,Build: no restroom within 500 m,Manhattan
+East Village,busy_street,-73.98606,40.73282,34759,33754926,456,517,0.187,3,0,2,0,"",1,0.99,4,Extend park hours nearby first,Manhattan
+Chelsea-Hudson Yards,busy_street,-73.99942,40.74018,25598,25533762,467,738,0.072,1,0,1,0,"",1,0.99,5,Extend park hours nearby first,Manhattan
+Midtown South-Flatiron-Union Square,busy_street,-73.98299,40.74764,18605,32932583,472,620,0.135,4,0,0,0,"",1,0.96,6,Existing restroom closes early: extend other operator's hours,Manhattan
+Midtown-Times Square,busy_street,-73.98299,40.7652,21852,46926767,469,658,0.077,2,0,1,0,"",1,0.75,7,Extend park hours nearby first,Manhattan
+Murray Hill-Kips Bay,busy_street,-73.97284,40.75009,25264,36369834,379,505,0.1,3,0,1,0,"",1,0.8,8,Extend park hours nearby first,Manhattan
+Greenwich Village,busy_street,-73.99442,40.73634,25586,36046003,382,382,0.106,4,1,1,0,"",1,0.84,9,Covered day and evening: lower priority,Manhattan
+Midtown South-Flatiron-Union Square,busy_street,-73.9901,40.74494,15833,21155463,422,943,0.136,2,0,0,0,"",1,0.96,10,Existing restroom closes early: extend other operator's hours,Manhattan
+Upper East Side-Yorkville,busy_street,-73.95056,40.77949,49936,17663785,632,1478,0.067,0,0,0,0,"",1,0.78,11,Build: no restroom within 500 m,Manhattan
+Jackson Heights,busy_street,-73.8716,40.74893,25582,11461377,761,1972,0.296,0,0,0,0,"",0.99,0.78,12,Build: no restroom within 500 m,Queens
+Upper East Side-Lenox Hill-Roosevelt Island,busy_street,-73.9632,40.76217,30599,16726007,421,421,0.016,2,1,0,1,Twenty-Four Sycamores Park,0.99,0.68,13,Repair or reopen nearby first,Manhattan
+Long Island City-Hunters Point,busy_street,-73.93946,40.74817,11018,14208738,804,2129,0.102,0,0,0,0,"",0.99,0.74,14,Build: no restroom within 500 m,Queens
+Upper East Side-Carnegie Hill,busy_street,-73.96036,40.77009,31921,19610817,520,675,0.031,0,0,0,0,"",0.97,0.49,15,Build: no restroom within 500 m,Manhattan
+Gravesend (East)-Homecrest,park,-73.95822,40.60445,11692,4503120,777,3804,0.321,0,0,0,0,"",0.99,0.72,16,Build: no restroom within 500 m,Brooklyn
+Chelsea-Hudson Yards,busy_street,-73.99523,40.75542,15898,20316282,390,968,0.15,1,0,1,0,"",1,0.93,17,Extend park hours nearby first,Manhattan
+Upper West Side-Lincoln Square,busy_street,-73.97811,40.77712,30991,12786660,521,547,0.044,0,0,0,0,"",0.91,0.34,18,Build: no restroom within 500 m,Manhattan
+Harlem (South),busy_street,-73.95047,40.80988,23997,9687632,427,1981,0.187,3,0,3,1,St. Nicholas Playground South,1,0.97,19,Repair or reopen nearby first,Manhattan
+Midtown South-Flatiron-Union Square,busy_street,-73.98455,40.74272,26663,25386756,319,830,0.2,2,0,0,0,"",0.99,0.94,20,Existing restroom closes early: extend other operator's hours,Manhattan
+East Harlem (North),busy_street,-73.94061,40.79714,27959,5577323,450,1880,0.393,0,0,0,1,P.S. 155 Playground,1,0.92,21,Repair or reopen nearby first,Manhattan
+East Midtown-Turtle Bay,busy_street,-73.96583,40.75538,30716,13389402,337,350,0.121,5,2,1,0,"",0.99,0.77,22,Covered day and evening: lower priority,Manhattan
+Financial District-Battery Park City,busy_street,-74.01093,40.7067,19992,38818055,453,484,0.038,2,1,0,0,"",0.95,0.5,23,Covered day and evening: lower priority,Manhattan
+Elmhurst,busy_street,-73.89159,40.74683,21914,16060789,480,3217,0.157,1,0,1,0,"",0.99,0.61,24,Extend park hours nearby first,Queens
+East Midtown-Turtle Bay,busy_street,-73.97449,40.75494,11765,49759236,337,350,0.065,6,4,0,0,"",0.99,0.8,25,Covered day and evening: lower priority,Manhattan
+Flushing-Willets Point,busy_street,-73.83498,40.75798,9513,15017678,515,844,0.244,0,0,0,0,"",0.99,0.66,26,Build: no restroom within 500 m,Queens
+Upper East Side-Carnegie Hill,busy_street,-73.96981,40.76578,9953,20584715,400,516,0.192,2,0,0,0,"",1,0.78,27,Existing restroom closes early: extend other operator's hours,Manhattan
+Washington Heights (South),park,-73.94562,40.84083,15387,5447621,658,2348,0.192,0,0,0,0,"",0.94,0.42,28,Build: no restroom within 500 m,Manhattan
+East Harlem (South),park,-73.94743,40.79491,23040,5352240,419,2234,0.267,2,0,2,1,Poor Richard's Playground,1,0.93,29,Repair or reopen nearby first,Manhattan
+Upper East Side-Lenox Hill-Roosevelt Island,busy_street,-73.95462,40.76722,33278,7615798,398,996,0.054,3,0,1,0,"",0.96,0.83,30,Extend park hours nearby first,Manhattan
+Inwood,busy_street,-73.91904,40.86449,19979,3322313,524,1229,0.358,0,0,0,0,"",0.97,0.75,31,Build: no restroom within 500 m,Manhattan
+Williamsburg,busy_street,-73.95914,40.71491,20939,9837921,412,692,0.21,2,0,2,1,Jaime Campiz Playground,1,0.87,32,Repair or reopen nearby first,Brooklyn
+Chelsea-Hudson Yards,busy_street,-74.00346,40.74739,20635,5127597,354,425,0.124,3,1,1,0,"",0.98,0.6,33,Covered day and evening: lower priority,Manhattan
+Upper West Side-Lincoln Square,busy_street,-73.98387,40.77955,36408,10124348,439,940,0.052,1,0,1,0,"",0.9,0.56,34,Extend park hours nearby first,Manhattan
+University Heights (South)-Morris Heights,busy_street,-73.91217,40.84796,29770,3172546,472,950,0.383,2,0,0,0,"",0.95,0.65,35,Existing restroom closes early: extend other operator's hours,Bronx
+Mott Haven-Port Morris,busy_street,-73.91721,40.81588,18227,4326279,398,2542,0.471,2,0,2,0,"",0.99,0.82,36,Extend park hours nearby first,Bronx
+Washington Heights (South),busy_street,-73.9442,40.83499,38060,3358880,381,2311,0.315,2,0,1,0,"",0.99,0.75,37,Extend park hours nearby first,Manhattan
+Midtown South-Flatiron-Union Square,busy_street,-73.9901,40.73954,18137,41775616,274,343,0.058,4,1,1,0,"",0.78,0.67,38,Covered day and evening: lower priority,Manhattan
+Upper West Side-Lincoln Square,busy_street,-73.98654,40.76926,28455,17440119,306,375,0.061,4,1,3,0,"",0.7,0.57,39,Covered day and evening: lower priority,Manhattan
+East Village,busy_street,-73.97655,40.72881,27175,7329341,368,1411,0.195,2,0,1,0,"",0.97,0.82,40,Extend park hours nearby first,Manhattan
+Tribeca-Civic Center,plaza,-74.00235,40.71079,16377,28147630,419,668,0.659,1,0,1,1,Alfred E. Smith Playground,0.95,0.75,41,Repair or reopen nearby first,Manhattan
+Washington Heights (North),busy_street,-73.93621,40.85031,34411,7034997,334,1198,0.111,2,0,1,0,"",0.8,0.43,42,Extend park hours nearby first,Manhattan
+Fordham Heights,busy_street,-73.89826,40.86039,36237,3999924,360,2325,0.332,3,0,2,0,"",0.86,0.67,43,Extend park hours nearby first,Bronx
+Park Slope,busy_street,-73.98906,40.66587,17065,1432173,508,2271,0.133,0,0,0,0,"",0.77,0.16,44,Build: no restroom within 500 m,Brooklyn
+Carroll Gardens-Cobble Hill-Gowanus-Red Hook,park,-73.99366,40.67065,6464,4228398,809,2534,0.036,0,0,0,0,"",0.58,0.09,45,Build: no restroom within 500 m,Brooklyn
+Long Island City-Hunters Point,busy_street,-73.9521,40.74283,9427,5886234,561,1942,0.051,0,0,0,0,"",0.59,0.09,46,Build: no restroom within 500 m,Queens
+Upper East Side-Carnegie Hill,busy_street,-73.95564,40.77655,45307,24267538,327,960,0.054,1,0,0,0,"",0.94,0.7,47,Existing restroom closes early: extend other operator's hours,Manhattan
+Sunnyside,plaza,-73.91871,40.74318,22853,5935513,359,3651,0.187,2,0,1,0,"",0.64,0.38,48,Extend park hours nearby first,Queens
+Ridgewood,busy_street,-73.90764,40.69996,19334,6348452,567,4465,0.1,0,0,0,0,"",0.49,0.08,49,Build: no restroom within 500 m,Queens
+Midtown South-Flatiron-Union Square,busy_street,-73.99039,40.75002,8795,68289064,232,1043,0.188,3,0,0,0,"",0.52,0.7,50,Existing restroom closes early: extend other operator's hours,Manhattan

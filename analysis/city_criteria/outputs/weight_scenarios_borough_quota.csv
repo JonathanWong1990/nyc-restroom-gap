@@ -1,0 +1,8 @@
+scenario,population,foot_traffic,transit,land_use,distance_2pm,equity
+revealed_by_pilots,0.16,0.16,0.16,0.16,0.31,0.04
+equal_law_factors,0.17,0.17,0.17,0.17,0.17,0.17
+footfall_heavy,0.12,0.4,0.12,0.12,0.12,0.12
+transit_heavy,0.12,0.12,0.4,0.12,0.12,0.12
+equity_heavy,0.12,0.12,0.12,0.12,0.12,0.4
+access_heavy,0.12,0.12,0.12,0.12,0.4,0.12
+no_population,0,0.2,0.2,0.2,0.2,0.2

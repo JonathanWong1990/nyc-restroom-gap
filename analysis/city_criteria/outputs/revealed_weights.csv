@@ -1,0 +1,14 @@
+model,factor,coef,ci_low,ci_high,p,weight
+LL58 factors,population,3.61,1.42,6.03,0.00034,0.62
+LL58 factors,foot_traffic,-0.43,-1.19,0.38,0.29,0
+LL58 factors,transit,0.63,-0.14,1.63,0.12,0.11
+LL58 factors,land_use,-0.63,-2.15,0.76,0.38,0
+LL58 factors,distance_2pm,1.19,0.4,2.09,0.0018,0.21
+LL58 factors,equity,0.35,-0.12,0.71,0.13,0.06
+LL58 factors + complaints,population,4.87,2.31,7.71,0.000051,0.66
+LL58 factors + complaints,foot_traffic,-0.29,-1.09,0.57,0.5,0
+LL58 factors + complaints,transit,0.95,0.1,1.97,0.026,0.13
+LL58 factors + complaints,land_use,-0.14,-1.78,1.43,0.86,0
+LL58 factors + complaints,distance_2pm,1.25,0.45,2.18,0.0012,0.17
+LL58 factors + complaints,equity,0.29,-0.19,0.67,0.22,0.04
+LL58 factors + complaints,complaints,-1.2,-2.35,0,0.05,0

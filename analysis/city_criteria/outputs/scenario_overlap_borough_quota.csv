@@ -1,0 +1,8 @@
+scenario,share_of_revealed_sites_also_picked
+revealed_by_pilots,1
+equal_law_factors,0.76
+footfall_heavy,0.66
+transit_heavy,0.74
+equity_heavy,0.52
+access_heavy,0.76
+no_population,0.64
