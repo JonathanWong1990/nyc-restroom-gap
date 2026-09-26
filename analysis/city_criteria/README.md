@@ -20,6 +20,11 @@
 - Random demand weights (200): existing 151–211 (median 180), new 16–38 (median 27); 103/154 existing restrooms kept
   exactly in >=80% of runs; 13/24 new-unit areas kept (within 500 m, area-level) in >=80%.
 - Overlap with the 29 high-complaint neighbourhoods: 3/17 pilots, 24/154 existing, 2/24 new.
+- Private toilets (07, sub-agent, 26 Sep): chain outlets as supply -> new units 2 (all outlets open to all at 9pm) /
+  12 (late-night fast food only at 9pm) / 14 (same, 50% access); see PRIVATE_SUPPLY_FINDINGS.md.
+- Residents (09): 72% covered at 2pm, 4% at 9pm; 761 existing restrooms (457 park hours, 207 other, 97 repair) bring
+  9pm to 73%; new units anywhere residents live: 38 -> 80%, 171 -> 90%, 296 -> 95%, 830 -> 100%. Same order as LL58's
+  1,145; steep diminishing returns. (08: covering every CANDIDATE site needs 443 + 231 but reaches only 56% of residents.)
 
 ---
 

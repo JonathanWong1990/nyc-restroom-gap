@@ -1,0 +1,9 @@
+demand,park_close,gap_9pm,existing_9pm,park_hours,other_hours,repair,new_9pm,gap_2pm,new_2pm_only
+all sites,16,4747,443,308,84,51,231,1663,231
+all sites,22,2244,85,0,71,14,231,1663,231
+top two-thirds,16,2975,417,294,74,49,156,568,156
+top two-thirds,22,980,76,0,63,13,156,568,156
+top half,16,2084,344,243,57,44,76,197,76
+top half,22,527,56,0,46,10,76,197,76
+top third,16,1247,154,103,35,16,24,65,24
+top third,22,355,29,0,28,1,24,65,24

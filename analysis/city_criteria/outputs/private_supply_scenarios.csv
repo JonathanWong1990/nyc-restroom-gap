@@ -1,0 +1,8 @@
+scenario,gap_sites,gap_all_day,gap_evening_only,existing,repair,park_hours,other_hours,new_units,base_gap_no_longer_gap,base_existing_not_needed,base_existing_redundant,base_new_areas_not_needed,base_new_redundant
+A: none (base),1247,65,1182,154,16,103,35,24,0,0,0,0,0
+"B: all outlets, 2pm and 9pm (upper bound)",32,2,30,18,3,15,0,2,1215,139,134,22,22
+C: all by day; late-night fast food only at 9pm,268,2,266,61,6,47,8,12,979,103,76,12,12
+"C+: C plus Chipotle, Shake Shack, Subway at 9pm",114,2,112,39,6,29,4,8,1133,126,108,16,15
+D: C with 50% non-customer access - median of 200,452,7,444,90,8,68,14,14,795,75,47,10,8
+D: min of 200,347,2,340,80,5,59,8,12,683,63,36,6,4
+D: max of 200,564,17,557,100,13,77,24,18,900,86,59,12,12

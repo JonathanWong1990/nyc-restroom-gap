@@ -1,0 +1,2491 @@
+scenario,new_units,residents_covered
+"9pm, parks close 4pm",1,0.7375
+"9pm, parks close 4pm",2,0.7404
+"9pm, parks close 4pm",3,0.7431
+"9pm, parks close 4pm",4,0.7454
+"9pm, parks close 4pm",5,0.7477
+"9pm, parks close 4pm",6,0.7499
+"9pm, parks close 4pm",7,0.7521
+"9pm, parks close 4pm",8,0.7542
+"9pm, parks close 4pm",9,0.7563
+"9pm, parks close 4pm",10,0.7583
+"9pm, parks close 4pm",11,0.7602
+"9pm, parks close 4pm",12,0.7621
+"9pm, parks close 4pm",13,0.764
+"9pm, parks close 4pm",14,0.7658
+"9pm, parks close 4pm",15,0.7677
+"9pm, parks close 4pm",16,0.7693
+"9pm, parks close 4pm",17,0.7709
+"9pm, parks close 4pm",18,0.7725
+"9pm, parks close 4pm",19,0.7741
+"9pm, parks close 4pm",20,0.7757
+"9pm, parks close 4pm",21,0.7772
+"9pm, parks close 4pm",22,0.7787
+"9pm, parks close 4pm",23,0.7802
+"9pm, parks close 4pm",24,0.7816
+"9pm, parks close 4pm",25,0.783
+"9pm, parks close 4pm",26,0.7844
+"9pm, parks close 4pm",27,0.7858
+"9pm, parks close 4pm",28,0.7872
+"9pm, parks close 4pm",29,0.7886
+"9pm, parks close 4pm",30,0.79
+"9pm, parks close 4pm",31,0.7913
+"9pm, parks close 4pm",32,0.7926
+"9pm, parks close 4pm",33,0.7939
+"9pm, parks close 4pm",34,0.7951
+"9pm, parks close 4pm",35,0.7964
+"9pm, parks close 4pm",36,0.7976
+"9pm, parks close 4pm",37,0.7989
+"9pm, parks close 4pm",38,0.8
+"9pm, parks close 4pm",39,0.8012
+"9pm, parks close 4pm",40,0.8024
+"9pm, parks close 4pm",41,0.8035
+"9pm, parks close 4pm",42,0.8046
+"9pm, parks close 4pm",43,0.8057
+"9pm, parks close 4pm",44,0.8068
+"9pm, parks close 4pm",45,0.8079
+"9pm, parks close 4pm",46,0.809
+"9pm, parks close 4pm",47,0.81
+"9pm, parks close 4pm",48,0.8111
+"9pm, parks close 4pm",49,0.8121
+"9pm, parks close 4pm",50,0.8131
+"9pm, parks close 4pm",51,0.8142
+"9pm, parks close 4pm",52,0.8152
+"9pm, parks close 4pm",53,0.8162
+"9pm, parks close 4pm",54,0.8172
+"9pm, parks close 4pm",55,0.8182
+"9pm, parks close 4pm",56,0.8192
+"9pm, parks close 4pm",57,0.8202
+"9pm, parks close 4pm",58,0.8212
+"9pm, parks close 4pm",59,0.8221
+"9pm, parks close 4pm",60,0.8231
+"9pm, parks close 4pm",61,0.8241
+"9pm, parks close 4pm",62,0.825
+"9pm, parks close 4pm",63,0.826
+"9pm, parks close 4pm",64,0.8269
+"9pm, parks close 4pm",65,0.8279
+"9pm, parks close 4pm",66,0.8288
+"9pm, parks close 4pm",67,0.8298
+"9pm, parks close 4pm",68,0.8307
+"9pm, parks close 4pm",69,0.8316
+"9pm, parks close 4pm",70,0.8325
+"9pm, parks close 4pm",71,0.8334
+"9pm, parks close 4pm",72,0.8343
+"9pm, parks close 4pm",73,0.8352
+"9pm, parks close 4pm",74,0.836
+"9pm, parks close 4pm",75,0.8369
+"9pm, parks close 4pm",76,0.8378
+"9pm, parks close 4pm",77,0.8386
+"9pm, parks close 4pm",78,0.8394
+"9pm, parks close 4pm",79,0.8403
+"9pm, parks close 4pm",80,0.8411
+"9pm, parks close 4pm",81,0.8419
+"9pm, parks close 4pm",82,0.8428
+"9pm, parks close 4pm",83,0.8436
+"9pm, parks close 4pm",84,0.8444
+"9pm, parks close 4pm",85,0.8452
+"9pm, parks close 4pm",86,0.8461
+"9pm, parks close 4pm",87,0.8469
+"9pm, parks close 4pm",88,0.8477
+"9pm, parks close 4pm",89,0.8485
+"9pm, parks close 4pm",90,0.8493
+"9pm, parks close 4pm",91,0.85
+"9pm, parks close 4pm",92,0.8508
+"9pm, parks close 4pm",93,0.8516
+"9pm, parks close 4pm",94,0.8524
+"9pm, parks close 4pm",95,0.8532
+"9pm, parks close 4pm",96,0.8539
+"9pm, parks close 4pm",97,0.8547
+"9pm, parks close 4pm",98,0.8554
+"9pm, parks close 4pm",99,0.8561
+"9pm, parks close 4pm",100,0.8569
+"9pm, parks close 4pm",101,0.8576
+"9pm, parks close 4pm",102,0.8583
+"9pm, parks close 4pm",103,0.859
+"9pm, parks close 4pm",104,0.8598
+"9pm, parks close 4pm",105,0.8605
+"9pm, parks close 4pm",106,0.8612
+"9pm, parks close 4pm",107,0.8619
+"9pm, parks close 4pm",108,0.8626
+"9pm, parks close 4pm",109,0.8633
+"9pm, parks close 4pm",110,0.864
+"9pm, parks close 4pm",111,0.8647
+"9pm, parks close 4pm",112,0.8654
+"9pm, parks close 4pm",113,0.8661
+"9pm, parks close 4pm",114,0.8667
+"9pm, parks close 4pm",115,0.8674
+"9pm, parks close 4pm",116,0.8681
+"9pm, parks close 4pm",117,0.8688
+"9pm, parks close 4pm",118,0.8694
+"9pm, parks close 4pm",119,0.8701
+"9pm, parks close 4pm",120,0.8707
+"9pm, parks close 4pm",121,0.8714
+"9pm, parks close 4pm",122,0.8721
+"9pm, parks close 4pm",123,0.8727
+"9pm, parks close 4pm",124,0.8734
+"9pm, parks close 4pm",125,0.874
+"9pm, parks close 4pm",126,0.8746
+"9pm, parks close 4pm",127,0.8752
+"9pm, parks close 4pm",128,0.8759
+"9pm, parks close 4pm",129,0.8765
+"9pm, parks close 4pm",130,0.8771
+"9pm, parks close 4pm",131,0.8778
+"9pm, parks close 4pm",132,0.8784
+"9pm, parks close 4pm",133,0.879
+"9pm, parks close 4pm",134,0.8796
+"9pm, parks close 4pm",135,0.8802
+"9pm, parks close 4pm",136,0.8808
+"9pm, parks close 4pm",137,0.8814
+"9pm, parks close 4pm",138,0.882
+"9pm, parks close 4pm",139,0.8826
+"9pm, parks close 4pm",140,0.8832
+"9pm, parks close 4pm",141,0.8838
+"9pm, parks close 4pm",142,0.8844
+"9pm, parks close 4pm",143,0.885
+"9pm, parks close 4pm",144,0.8856
+"9pm, parks close 4pm",145,0.8861
+"9pm, parks close 4pm",146,0.8867
+"9pm, parks close 4pm",147,0.8873
+"9pm, parks close 4pm",148,0.8879
+"9pm, parks close 4pm",149,0.8884
+"9pm, parks close 4pm",150,0.889
+"9pm, parks close 4pm",151,0.8896
+"9pm, parks close 4pm",152,0.8901
+"9pm, parks close 4pm",153,0.8907
+"9pm, parks close 4pm",154,0.8912
+"9pm, parks close 4pm",155,0.8918
+"9pm, parks close 4pm",156,0.8923
+"9pm, parks close 4pm",157,0.8929
+"9pm, parks close 4pm",158,0.8934
+"9pm, parks close 4pm",159,0.8939
+"9pm, parks close 4pm",160,0.8945
+"9pm, parks close 4pm",161,0.895
+"9pm, parks close 4pm",162,0.8956
+"9pm, parks close 4pm",163,0.8961
+"9pm, parks close 4pm",164,0.8966
+"9pm, parks close 4pm",165,0.8972
+"9pm, parks close 4pm",166,0.8977
+"9pm, parks close 4pm",167,0.8982
+"9pm, parks close 4pm",168,0.8987
+"9pm, parks close 4pm",169,0.8993
+"9pm, parks close 4pm",170,0.8998
+"9pm, parks close 4pm",171,0.9003
+"9pm, parks close 4pm",172,0.9008
+"9pm, parks close 4pm",173,0.9013
+"9pm, parks close 4pm",174,0.9018
+"9pm, parks close 4pm",175,0.9023
+"9pm, parks close 4pm",176,0.9028
+"9pm, parks close 4pm",177,0.9033
+"9pm, parks close 4pm",178,0.9038
+"9pm, parks close 4pm",179,0.9043
+"9pm, parks close 4pm",180,0.9048
+"9pm, parks close 4pm",181,0.9053
+"9pm, parks close 4pm",182,0.9057
+"9pm, parks close 4pm",183,0.9062
+"9pm, parks close 4pm",184,0.9067
+"9pm, parks close 4pm",185,0.9072
+"9pm, parks close 4pm",186,0.9077
+"9pm, parks close 4pm",187,0.9082
+"9pm, parks close 4pm",188,0.9086
+"9pm, parks close 4pm",189,0.9091
+"9pm, parks close 4pm",190,0.9096
+"9pm, parks close 4pm",191,0.9101
+"9pm, parks close 4pm",192,0.9105
+"9pm, parks close 4pm",193,0.911
+"9pm, parks close 4pm",194,0.9115
+"9pm, parks close 4pm",195,0.9119
+"9pm, parks close 4pm",196,0.9124
+"9pm, parks close 4pm",197,0.9128
+"9pm, parks close 4pm",198,0.9133
+"9pm, parks close 4pm",199,0.9138
+"9pm, parks close 4pm",200,0.9142
+"9pm, parks close 4pm",201,0.9147
+"9pm, parks close 4pm",202,0.9151
+"9pm, parks close 4pm",203,0.9155
+"9pm, parks close 4pm",204,0.916
+"9pm, parks close 4pm",205,0.9164
+"9pm, parks close 4pm",206,0.9169
+"9pm, parks close 4pm",207,0.9173
+"9pm, parks close 4pm",208,0.9177
+"9pm, parks close 4pm",209,0.9182
+"9pm, parks close 4pm",210,0.9186
+"9pm, parks close 4pm",211,0.919
+"9pm, parks close 4pm",212,0.9195
+"9pm, parks close 4pm",213,0.9199
+"9pm, parks close 4pm",214,0.9203
+"9pm, parks close 4pm",215,0.9207
+"9pm, parks close 4pm",216,0.9212
+"9pm, parks close 4pm",217,0.9216
+"9pm, parks close 4pm",218,0.922
+"9pm, parks close 4pm",219,0.9224
+"9pm, parks close 4pm",220,0.9228
+"9pm, parks close 4pm",221,0.9233
+"9pm, parks close 4pm",222,0.9237
+"9pm, parks close 4pm",223,0.9241
+"9pm, parks close 4pm",224,0.9245
+"9pm, parks close 4pm",225,0.9249
+"9pm, parks close 4pm",226,0.9253
+"9pm, parks close 4pm",227,0.9258
+"9pm, parks close 4pm",228,0.9262
+"9pm, parks close 4pm",229,0.9266
+"9pm, parks close 4pm",230,0.927
+"9pm, parks close 4pm",231,0.9274
+"9pm, parks close 4pm",232,0.9278
+"9pm, parks close 4pm",233,0.9282
+"9pm, parks close 4pm",234,0.9286
+"9pm, parks close 4pm",235,0.929
+"9pm, parks close 4pm",236,0.9294
+"9pm, parks close 4pm",237,0.9298
+"9pm, parks close 4pm",238,0.9301
+"9pm, parks close 4pm",239,0.9305
+"9pm, parks close 4pm",240,0.9309
+"9pm, parks close 4pm",241,0.9313
+"9pm, parks close 4pm",242,0.9317
+"9pm, parks close 4pm",243,0.9321
+"9pm, parks close 4pm",244,0.9324
+"9pm, parks close 4pm",245,0.9328
+"9pm, parks close 4pm",246,0.9332
+"9pm, parks close 4pm",247,0.9336
+"9pm, parks close 4pm",248,0.9339
+"9pm, parks close 4pm",249,0.9343
+"9pm, parks close 4pm",250,0.9347
+"9pm, parks close 4pm",251,0.935
+"9pm, parks close 4pm",252,0.9354
+"9pm, parks close 4pm",253,0.9358
+"9pm, parks close 4pm",254,0.9361
+"9pm, parks close 4pm",255,0.9365
+"9pm, parks close 4pm",256,0.9369
+"9pm, parks close 4pm",257,0.9372
+"9pm, parks close 4pm",258,0.9376
+"9pm, parks close 4pm",259,0.9379
+"9pm, parks close 4pm",260,0.9383
+"9pm, parks close 4pm",261,0.9387
+"9pm, parks close 4pm",262,0.939
+"9pm, parks close 4pm",263,0.9394
+"9pm, parks close 4pm",264,0.9397
+"9pm, parks close 4pm",265,0.9401
+"9pm, parks close 4pm",266,0.9404
+"9pm, parks close 4pm",267,0.9407
+"9pm, parks close 4pm",268,0.9411
+"9pm, parks close 4pm",269,0.9414
+"9pm, parks close 4pm",270,0.9418
+"9pm, parks close 4pm",271,0.9421
+"9pm, parks close 4pm",272,0.9424
+"9pm, parks close 4pm",273,0.9428
+"9pm, parks close 4pm",274,0.9431
+"9pm, parks close 4pm",275,0.9434
+"9pm, parks close 4pm",276,0.9437
+"9pm, parks close 4pm",277,0.9441
+"9pm, parks close 4pm",278,0.9444
+"9pm, parks close 4pm",279,0.9447
+"9pm, parks close 4pm",280,0.945
+"9pm, parks close 4pm",281,0.9453
+"9pm, parks close 4pm",282,0.9457
+"9pm, parks close 4pm",283,0.946
+"9pm, parks close 4pm",284,0.9463
+"9pm, parks close 4pm",285,0.9466
+"9pm, parks close 4pm",286,0.9469
+"9pm, parks close 4pm",287,0.9472
+"9pm, parks close 4pm",288,0.9475
+"9pm, parks close 4pm",289,0.9479
+"9pm, parks close 4pm",290,0.9482
+"9pm, parks close 4pm",291,0.9485
+"9pm, parks close 4pm",292,0.9488
+"9pm, parks close 4pm",293,0.9491
+"9pm, parks close 4pm",294,0.9494
+"9pm, parks close 4pm",295,0.9497
+"9pm, parks close 4pm",296,0.95
+"9pm, parks close 4pm",297,0.9503
+"9pm, parks close 4pm",298,0.9506
+"9pm, parks close 4pm",299,0.9509
+"9pm, parks close 4pm",300,0.9512
+"9pm, parks close 4pm",301,0.9515
+"9pm, parks close 4pm",302,0.9518
+"9pm, parks close 4pm",303,0.9521
+"9pm, parks close 4pm",304,0.9524
+"9pm, parks close 4pm",305,0.9527
+"9pm, parks close 4pm",306,0.953
+"9pm, parks close 4pm",307,0.9533
+"9pm, parks close 4pm",308,0.9536
+"9pm, parks close 4pm",309,0.9539
+"9pm, parks close 4pm",310,0.9541
+"9pm, parks close 4pm",311,0.9544
+"9pm, parks close 4pm",312,0.9547
+"9pm, parks close 4pm",313,0.955
+"9pm, parks close 4pm",314,0.9553
+"9pm, parks close 4pm",315,0.9556
+"9pm, parks close 4pm",316,0.9558
+"9pm, parks close 4pm",317,0.9561
+"9pm, parks close 4pm",318,0.9564
+"9pm, parks close 4pm",319,0.9567
+"9pm, parks close 4pm",320,0.9569
+"9pm, parks close 4pm",321,0.9572
+"9pm, parks close 4pm",322,0.9575
+"9pm, parks close 4pm",323,0.9578
+"9pm, parks close 4pm",324,0.958
+"9pm, parks close 4pm",325,0.9583
+"9pm, parks close 4pm",326,0.9586
+"9pm, parks close 4pm",327,0.9588
+"9pm, parks close 4pm",328,0.9591
+"9pm, parks close 4pm",329,0.9594
+"9pm, parks close 4pm",330,0.9596
+"9pm, parks close 4pm",331,0.9599
+"9pm, parks close 4pm",332,0.9601
+"9pm, parks close 4pm",333,0.9604
+"9pm, parks close 4pm",334,0.9606
+"9pm, parks close 4pm",335,0.9609
+"9pm, parks close 4pm",336,0.9611
+"9pm, parks close 4pm",337,0.9614
+"9pm, parks close 4pm",338,0.9616
+"9pm, parks close 4pm",339,0.9619
+"9pm, parks close 4pm",340,0.9621
+"9pm, parks close 4pm",341,0.9623
+"9pm, parks close 4pm",342,0.9626
+"9pm, parks close 4pm",343,0.9628
+"9pm, parks close 4pm",344,0.963
+"9pm, parks close 4pm",345,0.9633
+"9pm, parks close 4pm",346,0.9635
+"9pm, parks close 4pm",347,0.9637
+"9pm, parks close 4pm",348,0.964
+"9pm, parks close 4pm",349,0.9642
+"9pm, parks close 4pm",350,0.9644
+"9pm, parks close 4pm",351,0.9646
+"9pm, parks close 4pm",352,0.9649
+"9pm, parks close 4pm",353,0.9651
+"9pm, parks close 4pm",354,0.9653
+"9pm, parks close 4pm",355,0.9655
+"9pm, parks close 4pm",356,0.9658
+"9pm, parks close 4pm",357,0.966
+"9pm, parks close 4pm",358,0.9662
+"9pm, parks close 4pm",359,0.9664
+"9pm, parks close 4pm",360,0.9667
+"9pm, parks close 4pm",361,0.9669
+"9pm, parks close 4pm",362,0.9671
+"9pm, parks close 4pm",363,0.9673
+"9pm, parks close 4pm",364,0.9675
+"9pm, parks close 4pm",365,0.9677
+"9pm, parks close 4pm",366,0.9679
+"9pm, parks close 4pm",367,0.9681
+"9pm, parks close 4pm",368,0.9683
+"9pm, parks close 4pm",369,0.9686
+"9pm, parks close 4pm",370,0.9688
+"9pm, parks close 4pm",371,0.969
+"9pm, parks close 4pm",372,0.9692
+"9pm, parks close 4pm",373,0.9694
+"9pm, parks close 4pm",374,0.9696
+"9pm, parks close 4pm",375,0.9698
+"9pm, parks close 4pm",376,0.97
+"9pm, parks close 4pm",377,0.9702
+"9pm, parks close 4pm",378,0.9703
+"9pm, parks close 4pm",379,0.9705
+"9pm, parks close 4pm",380,0.9707
+"9pm, parks close 4pm",381,0.9709
+"9pm, parks close 4pm",382,0.9711
+"9pm, parks close 4pm",383,0.9713
+"9pm, parks close 4pm",384,0.9715
+"9pm, parks close 4pm",385,0.9717
+"9pm, parks close 4pm",386,0.9719
+"9pm, parks close 4pm",387,0.9721
+"9pm, parks close 4pm",388,0.9722
+"9pm, parks close 4pm",389,0.9724
+"9pm, parks close 4pm",390,0.9726
+"9pm, parks close 4pm",391,0.9728
+"9pm, parks close 4pm",392,0.973
+"9pm, parks close 4pm",393,0.9732
+"9pm, parks close 4pm",394,0.9733
+"9pm, parks close 4pm",395,0.9735
+"9pm, parks close 4pm",396,0.9737
+"9pm, parks close 4pm",397,0.9739
+"9pm, parks close 4pm",398,0.9741
+"9pm, parks close 4pm",399,0.9742
+"9pm, parks close 4pm",400,0.9744
+"9pm, parks close 4pm",401,0.9746
+"9pm, parks close 4pm",402,0.9748
+"9pm, parks close 4pm",403,0.9749
+"9pm, parks close 4pm",404,0.9751
+"9pm, parks close 4pm",405,0.9753
+"9pm, parks close 4pm",406,0.9755
+"9pm, parks close 4pm",407,0.9756
+"9pm, parks close 4pm",408,0.9758
+"9pm, parks close 4pm",409,0.976
+"9pm, parks close 4pm",410,0.9761
+"9pm, parks close 4pm",411,0.9763
+"9pm, parks close 4pm",412,0.9765
+"9pm, parks close 4pm",413,0.9766
+"9pm, parks close 4pm",414,0.9768
+"9pm, parks close 4pm",415,0.977
+"9pm, parks close 4pm",416,0.9771
+"9pm, parks close 4pm",417,0.9773
+"9pm, parks close 4pm",418,0.9774
+"9pm, parks close 4pm",419,0.9776
+"9pm, parks close 4pm",420,0.9778
+"9pm, parks close 4pm",421,0.9779
+"9pm, parks close 4pm",422,0.9781
+"9pm, parks close 4pm",423,0.9782
+"9pm, parks close 4pm",424,0.9784
+"9pm, parks close 4pm",425,0.9786
+"9pm, parks close 4pm",426,0.9787
+"9pm, parks close 4pm",427,0.9789
+"9pm, parks close 4pm",428,0.979
+"9pm, parks close 4pm",429,0.9792
+"9pm, parks close 4pm",430,0.9793
+"9pm, parks close 4pm",431,0.9795
+"9pm, parks close 4pm",432,0.9796
+"9pm, parks close 4pm",433,0.9798
+"9pm, parks close 4pm",434,0.9799
+"9pm, parks close 4pm",435,0.9801
+"9pm, parks close 4pm",436,0.9802
+"9pm, parks close 4pm",437,0.9804
+"9pm, parks close 4pm",438,0.9805
+"9pm, parks close 4pm",439,0.9807
+"9pm, parks close 4pm",440,0.9808
+"9pm, parks close 4pm",441,0.981
+"9pm, parks close 4pm",442,0.9811
+"9pm, parks close 4pm",443,0.9812
+"9pm, parks close 4pm",444,0.9814
+"9pm, parks close 4pm",445,0.9815
+"9pm, parks close 4pm",446,0.9817
+"9pm, parks close 4pm",447,0.9818
+"9pm, parks close 4pm",448,0.982
+"9pm, parks close 4pm",449,0.9821
+"9pm, parks close 4pm",450,0.9822
+"9pm, parks close 4pm",451,0.9824
+"9pm, parks close 4pm",452,0.9825
+"9pm, parks close 4pm",453,0.9826
+"9pm, parks close 4pm",454,0.9828
+"9pm, parks close 4pm",455,0.9829
+"9pm, parks close 4pm",456,0.983
+"9pm, parks close 4pm",457,0.9832
+"9pm, parks close 4pm",458,0.9833
+"9pm, parks close 4pm",459,0.9834
+"9pm, parks close 4pm",460,0.9836
+"9pm, parks close 4pm",461,0.9837
+"9pm, parks close 4pm",462,0.9838
+"9pm, parks close 4pm",463,0.9839
+"9pm, parks close 4pm",464,0.9841
+"9pm, parks close 4pm",465,0.9842
+"9pm, parks close 4pm",466,0.9843
+"9pm, parks close 4pm",467,0.9844
+"9pm, parks close 4pm",468,0.9845
+"9pm, parks close 4pm",469,0.9847
+"9pm, parks close 4pm",470,0.9848
+"9pm, parks close 4pm",471,0.9849
+"9pm, parks close 4pm",472,0.985
+"9pm, parks close 4pm",473,0.9851
+"9pm, parks close 4pm",474,0.9852
+"9pm, parks close 4pm",475,0.9853
+"9pm, parks close 4pm",476,0.9855
+"9pm, parks close 4pm",477,0.9856
+"9pm, parks close 4pm",478,0.9857
+"9pm, parks close 4pm",479,0.9858
+"9pm, parks close 4pm",480,0.9859
+"9pm, parks close 4pm",481,0.986
+"9pm, parks close 4pm",482,0.9861
+"9pm, parks close 4pm",483,0.9862
+"9pm, parks close 4pm",484,0.9864
+"9pm, parks close 4pm",485,0.9865
+"9pm, parks close 4pm",486,0.9866
+"9pm, parks close 4pm",487,0.9867
+"9pm, parks close 4pm",488,0.9868
+"9pm, parks close 4pm",489,0.9869
+"9pm, parks close 4pm",490,0.987
+"9pm, parks close 4pm",491,0.9871
+"9pm, parks close 4pm",492,0.9872
+"9pm, parks close 4pm",493,0.9873
+"9pm, parks close 4pm",494,0.9874
+"9pm, parks close 4pm",495,0.9875
+"9pm, parks close 4pm",496,0.9876
+"9pm, parks close 4pm",497,0.9877
+"9pm, parks close 4pm",498,0.9878
+"9pm, parks close 4pm",499,0.9879
+"9pm, parks close 4pm",500,0.988
+"9pm, parks close 4pm",501,0.9881
+"9pm, parks close 4pm",502,0.9882
+"9pm, parks close 4pm",503,0.9883
+"9pm, parks close 4pm",504,0.9884
+"9pm, parks close 4pm",505,0.9885
+"9pm, parks close 4pm",506,0.9886
+"9pm, parks close 4pm",507,0.9887
+"9pm, parks close 4pm",508,0.9888
+"9pm, parks close 4pm",509,0.9889
+"9pm, parks close 4pm",510,0.989
+"9pm, parks close 4pm",511,0.9891
+"9pm, parks close 4pm",512,0.9892
+"9pm, parks close 4pm",513,0.9893
+"9pm, parks close 4pm",514,0.9894
+"9pm, parks close 4pm",515,0.9895
+"9pm, parks close 4pm",516,0.9896
+"9pm, parks close 4pm",517,0.9897
+"9pm, parks close 4pm",518,0.9898
+"9pm, parks close 4pm",519,0.9898
+"9pm, parks close 4pm",520,0.9899
+"9pm, parks close 4pm",521,0.99
+"9pm, parks close 4pm",522,0.9901
+"9pm, parks close 4pm",523,0.9902
+"9pm, parks close 4pm",524,0.9903
+"9pm, parks close 4pm",525,0.9904
+"9pm, parks close 4pm",526,0.9904
+"9pm, parks close 4pm",527,0.9905
+"9pm, parks close 4pm",528,0.9906
+"9pm, parks close 4pm",529,0.9907
+"9pm, parks close 4pm",530,0.9908
+"9pm, parks close 4pm",531,0.9909
+"9pm, parks close 4pm",532,0.9909
+"9pm, parks close 4pm",533,0.991
+"9pm, parks close 4pm",534,0.9911
+"9pm, parks close 4pm",535,0.9912
+"9pm, parks close 4pm",536,0.9913
+"9pm, parks close 4pm",537,0.9913
+"9pm, parks close 4pm",538,0.9914
+"9pm, parks close 4pm",539,0.9915
+"9pm, parks close 4pm",540,0.9916
+"9pm, parks close 4pm",541,0.9917
+"9pm, parks close 4pm",542,0.9917
+"9pm, parks close 4pm",543,0.9918
+"9pm, parks close 4pm",544,0.9919
+"9pm, parks close 4pm",545,0.992
+"9pm, parks close 4pm",546,0.992
+"9pm, parks close 4pm",547,0.9921
+"9pm, parks close 4pm",548,0.9922
+"9pm, parks close 4pm",549,0.9923
+"9pm, parks close 4pm",550,0.9923
+"9pm, parks close 4pm",551,0.9924
+"9pm, parks close 4pm",552,0.9925
+"9pm, parks close 4pm",553,0.9926
+"9pm, parks close 4pm",554,0.9926
+"9pm, parks close 4pm",555,0.9927
+"9pm, parks close 4pm",556,0.9928
+"9pm, parks close 4pm",557,0.9929
+"9pm, parks close 4pm",558,0.9929
+"9pm, parks close 4pm",559,0.993
+"9pm, parks close 4pm",560,0.9931
+"9pm, parks close 4pm",561,0.9931
+"9pm, parks close 4pm",562,0.9932
+"9pm, parks close 4pm",563,0.9933
+"9pm, parks close 4pm",564,0.9933
+"9pm, parks close 4pm",565,0.9934
+"9pm, parks close 4pm",566,0.9935
+"9pm, parks close 4pm",567,0.9935
+"9pm, parks close 4pm",568,0.9936
+"9pm, parks close 4pm",569,0.9937
+"9pm, parks close 4pm",570,0.9937
+"9pm, parks close 4pm",571,0.9938
+"9pm, parks close 4pm",572,0.9939
+"9pm, parks close 4pm",573,0.9939
+"9pm, parks close 4pm",574,0.994
+"9pm, parks close 4pm",575,0.9941
+"9pm, parks close 4pm",576,0.9941
+"9pm, parks close 4pm",577,0.9942
+"9pm, parks close 4pm",578,0.9943
+"9pm, parks close 4pm",579,0.9943
+"9pm, parks close 4pm",580,0.9944
+"9pm, parks close 4pm",581,0.9944
+"9pm, parks close 4pm",582,0.9945
+"9pm, parks close 4pm",583,0.9946
+"9pm, parks close 4pm",584,0.9946
+"9pm, parks close 4pm",585,0.9947
+"9pm, parks close 4pm",586,0.9947
+"9pm, parks close 4pm",587,0.9948
+"9pm, parks close 4pm",588,0.9949
+"9pm, parks close 4pm",589,0.9949
+"9pm, parks close 4pm",590,0.995
+"9pm, parks close 4pm",591,0.995
+"9pm, parks close 4pm",592,0.9951
+"9pm, parks close 4pm",593,0.9951
+"9pm, parks close 4pm",594,0.9952
+"9pm, parks close 4pm",595,0.9952
+"9pm, parks close 4pm",596,0.9953
+"9pm, parks close 4pm",597,0.9953
+"9pm, parks close 4pm",598,0.9954
+"9pm, parks close 4pm",599,0.9954
+"9pm, parks close 4pm",600,0.9955
+"9pm, parks close 4pm",601,0.9955
+"9pm, parks close 4pm",602,0.9956
+"9pm, parks close 4pm",603,0.9956
+"9pm, parks close 4pm",604,0.9957
+"9pm, parks close 4pm",605,0.9957
+"9pm, parks close 4pm",606,0.9958
+"9pm, parks close 4pm",607,0.9958
+"9pm, parks close 4pm",608,0.9959
+"9pm, parks close 4pm",609,0.9959
+"9pm, parks close 4pm",610,0.9959
+"9pm, parks close 4pm",611,0.996
+"9pm, parks close 4pm",612,0.996
+"9pm, parks close 4pm",613,0.9961
+"9pm, parks close 4pm",614,0.9961
+"9pm, parks close 4pm",615,0.9962
+"9pm, parks close 4pm",616,0.9962
+"9pm, parks close 4pm",617,0.9963
+"9pm, parks close 4pm",618,0.9963
+"9pm, parks close 4pm",619,0.9963
+"9pm, parks close 4pm",620,0.9964
+"9pm, parks close 4pm",621,0.9964
+"9pm, parks close 4pm",622,0.9965
+"9pm, parks close 4pm",623,0.9965
+"9pm, parks close 4pm",624,0.9965
+"9pm, parks close 4pm",625,0.9966
+"9pm, parks close 4pm",626,0.9966
+"9pm, parks close 4pm",627,0.9967
+"9pm, parks close 4pm",628,0.9967
+"9pm, parks close 4pm",629,0.9967
+"9pm, parks close 4pm",630,0.9968
+"9pm, parks close 4pm",631,0.9968
+"9pm, parks close 4pm",632,0.9969
+"9pm, parks close 4pm",633,0.9969
+"9pm, parks close 4pm",634,0.9969
+"9pm, parks close 4pm",635,0.997
+"9pm, parks close 4pm",636,0.997
+"9pm, parks close 4pm",637,0.9971
+"9pm, parks close 4pm",638,0.9971
+"9pm, parks close 4pm",639,0.9971
+"9pm, parks close 4pm",640,0.9972
+"9pm, parks close 4pm",641,0.9972
+"9pm, parks close 4pm",642,0.9972
+"9pm, parks close 4pm",643,0.9973
+"9pm, parks close 4pm",644,0.9973
+"9pm, parks close 4pm",645,0.9974
+"9pm, parks close 4pm",646,0.9974
+"9pm, parks close 4pm",647,0.9974
+"9pm, parks close 4pm",648,0.9975
+"9pm, parks close 4pm",649,0.9975
+"9pm, parks close 4pm",650,0.9975
+"9pm, parks close 4pm",651,0.9976
+"9pm, parks close 4pm",652,0.9976
+"9pm, parks close 4pm",653,0.9976
+"9pm, parks close 4pm",654,0.9977
+"9pm, parks close 4pm",655,0.9977
+"9pm, parks close 4pm",656,0.9977
+"9pm, parks close 4pm",657,0.9978
+"9pm, parks close 4pm",658,0.9978
+"9pm, parks close 4pm",659,0.9978
+"9pm, parks close 4pm",660,0.9979
+"9pm, parks close 4pm",661,0.9979
+"9pm, parks close 4pm",662,0.9979
+"9pm, parks close 4pm",663,0.998
+"9pm, parks close 4pm",664,0.998
+"9pm, parks close 4pm",665,0.998
+"9pm, parks close 4pm",666,0.9981
+"9pm, parks close 4pm",667,0.9981
+"9pm, parks close 4pm",668,0.9981
+"9pm, parks close 4pm",669,0.9982
+"9pm, parks close 4pm",670,0.9982
+"9pm, parks close 4pm",671,0.9982
+"9pm, parks close 4pm",672,0.9983
+"9pm, parks close 4pm",673,0.9983
+"9pm, parks close 4pm",674,0.9983
+"9pm, parks close 4pm",675,0.9983
+"9pm, parks close 4pm",676,0.9984
+"9pm, parks close 4pm",677,0.9984
+"9pm, parks close 4pm",678,0.9984
+"9pm, parks close 4pm",679,0.9984
+"9pm, parks close 4pm",680,0.9985
+"9pm, parks close 4pm",681,0.9985
+"9pm, parks close 4pm",682,0.9985
+"9pm, parks close 4pm",683,0.9985
+"9pm, parks close 4pm",684,0.9986
+"9pm, parks close 4pm",685,0.9986
+"9pm, parks close 4pm",686,0.9986
+"9pm, parks close 4pm",687,0.9986
+"9pm, parks close 4pm",688,0.9987
+"9pm, parks close 4pm",689,0.9987
+"9pm, parks close 4pm",690,0.9987
+"9pm, parks close 4pm",691,0.9987
+"9pm, parks close 4pm",692,0.9988
+"9pm, parks close 4pm",693,0.9988
+"9pm, parks close 4pm",694,0.9988
+"9pm, parks close 4pm",695,0.9988
+"9pm, parks close 4pm",696,0.9988
+"9pm, parks close 4pm",697,0.9989
+"9pm, parks close 4pm",698,0.9989
+"9pm, parks close 4pm",699,0.9989
+"9pm, parks close 4pm",700,0.9989
+"9pm, parks close 4pm",701,0.9989
+"9pm, parks close 4pm",702,0.999
+"9pm, parks close 4pm",703,0.999
+"9pm, parks close 4pm",704,0.999
+"9pm, parks close 4pm",705,0.999
+"9pm, parks close 4pm",706,0.999
+"9pm, parks close 4pm",707,0.9991
+"9pm, parks close 4pm",708,0.9991
+"9pm, parks close 4pm",709,0.9991
+"9pm, parks close 4pm",710,0.9991
+"9pm, parks close 4pm",711,0.9991
+"9pm, parks close 4pm",712,0.9992
+"9pm, parks close 4pm",713,0.9992
+"9pm, parks close 4pm",714,0.9992
+"9pm, parks close 4pm",715,0.9992
+"9pm, parks close 4pm",716,0.9992
+"9pm, parks close 4pm",717,0.9993
+"9pm, parks close 4pm",718,0.9993
+"9pm, parks close 4pm",719,0.9993
+"9pm, parks close 4pm",720,0.9993
+"9pm, parks close 4pm",721,0.9993
+"9pm, parks close 4pm",722,0.9993
+"9pm, parks close 4pm",723,0.9994
+"9pm, parks close 4pm",724,0.9994
+"9pm, parks close 4pm",725,0.9994
+"9pm, parks close 4pm",726,0.9994
+"9pm, parks close 4pm",727,0.9994
+"9pm, parks close 4pm",728,0.9994
+"9pm, parks close 4pm",729,0.9994
+"9pm, parks close 4pm",730,0.9995
+"9pm, parks close 4pm",731,0.9995
+"9pm, parks close 4pm",732,0.9995
+"9pm, parks close 4pm",733,0.9995
+"9pm, parks close 4pm",734,0.9995
+"9pm, parks close 4pm",735,0.9995
+"9pm, parks close 4pm",736,0.9995
+"9pm, parks close 4pm",737,0.9996
+"9pm, parks close 4pm",738,0.9996
+"9pm, parks close 4pm",739,0.9996
+"9pm, parks close 4pm",740,0.9996
+"9pm, parks close 4pm",741,0.9996
+"9pm, parks close 4pm",742,0.9996
+"9pm, parks close 4pm",743,0.9996
+"9pm, parks close 4pm",744,0.9996
+"9pm, parks close 4pm",745,0.9997
+"9pm, parks close 4pm",746,0.9997
+"9pm, parks close 4pm",747,0.9997
+"9pm, parks close 4pm",748,0.9997
+"9pm, parks close 4pm",749,0.9997
+"9pm, parks close 4pm",750,0.9997
+"9pm, parks close 4pm",751,0.9997
+"9pm, parks close 4pm",752,0.9997
+"9pm, parks close 4pm",753,0.9997
+"9pm, parks close 4pm",754,0.9998
+"9pm, parks close 4pm",755,0.9998
+"9pm, parks close 4pm",756,0.9998
+"9pm, parks close 4pm",757,0.9998
+"9pm, parks close 4pm",758,0.9998
+"9pm, parks close 4pm",759,0.9998
+"9pm, parks close 4pm",760,0.9998
+"9pm, parks close 4pm",761,0.9998
+"9pm, parks close 4pm",762,0.9998
+"9pm, parks close 4pm",763,0.9998
+"9pm, parks close 4pm",764,0.9998
+"9pm, parks close 4pm",765,0.9999
+"9pm, parks close 4pm",766,0.9999
+"9pm, parks close 4pm",767,0.9999
+"9pm, parks close 4pm",768,0.9999
+"9pm, parks close 4pm",769,0.9999
+"9pm, parks close 4pm",770,0.9999
+"9pm, parks close 4pm",771,0.9999
+"9pm, parks close 4pm",772,0.9999
+"9pm, parks close 4pm",773,0.9999
+"9pm, parks close 4pm",774,0.9999
+"9pm, parks close 4pm",775,0.9999
+"9pm, parks close 4pm",776,0.9999
+"9pm, parks close 4pm",777,0.9999
+"9pm, parks close 4pm",778,0.9999
+"9pm, parks close 4pm",779,1
+"9pm, parks close 4pm",780,1
+"9pm, parks close 4pm",781,1
+"9pm, parks close 4pm",782,1
+"9pm, parks close 4pm",783,1
+"9pm, parks close 4pm",784,1
+"9pm, parks close 4pm",785,1
+"9pm, parks close 4pm",786,1
+"9pm, parks close 4pm",787,1
+"9pm, parks close 4pm",788,1
+"9pm, parks close 4pm",789,1
+"9pm, parks close 4pm",790,1
+"9pm, parks close 4pm",791,1
+"9pm, parks close 4pm",792,1
+"9pm, parks close 4pm",793,1
+"9pm, parks close 4pm",794,1
+"9pm, parks close 4pm",795,1
+"9pm, parks close 4pm",796,1
+"9pm, parks close 4pm",797,1
+"9pm, parks close 4pm",798,1
+"9pm, parks close 4pm",799,1
+"9pm, parks close 4pm",800,1
+"9pm, parks close 4pm",801,1
+"9pm, parks close 4pm",802,1
+"9pm, parks close 4pm",803,1
+"9pm, parks close 4pm",804,1
+"9pm, parks close 4pm",805,1
+"9pm, parks close 4pm",806,1
+"9pm, parks close 4pm",807,1
+"9pm, parks close 4pm",808,1
+"9pm, parks close 4pm",809,1
+"9pm, parks close 4pm",810,1
+"9pm, parks close 4pm",811,1
+"9pm, parks close 4pm",812,1
+"9pm, parks close 4pm",813,1
+"9pm, parks close 4pm",814,1
+"9pm, parks close 4pm",815,1
+"9pm, parks close 4pm",816,1
+"9pm, parks close 4pm",817,1
+"9pm, parks close 4pm",818,1
+"9pm, parks close 4pm",819,1
+"9pm, parks close 4pm",820,1
+"9pm, parks close 4pm",821,1
+"9pm, parks close 4pm",822,1
+"9pm, parks close 4pm",823,1
+"9pm, parks close 4pm",824,1
+"9pm, parks close 4pm",825,1
+"9pm, parks close 4pm",826,1
+"9pm, parks close 4pm",827,1
+"9pm, parks close 4pm",828,1
+"9pm, parks close 4pm",829,1
+"9pm, parks close 4pm",830,1
+"9pm, parks open to 10pm",1,0.7375
+"9pm, parks open to 10pm",2,0.7404
+"9pm, parks open to 10pm",3,0.7431
+"9pm, parks open to 10pm",4,0.7454
+"9pm, parks open to 10pm",5,0.7477
+"9pm, parks open to 10pm",6,0.7499
+"9pm, parks open to 10pm",7,0.7521
+"9pm, parks open to 10pm",8,0.7542
+"9pm, parks open to 10pm",9,0.7563
+"9pm, parks open to 10pm",10,0.7583
+"9pm, parks open to 10pm",11,0.7602
+"9pm, parks open to 10pm",12,0.7621
+"9pm, parks open to 10pm",13,0.764
+"9pm, parks open to 10pm",14,0.7658
+"9pm, parks open to 10pm",15,0.7677
+"9pm, parks open to 10pm",16,0.7693
+"9pm, parks open to 10pm",17,0.7709
+"9pm, parks open to 10pm",18,0.7725
+"9pm, parks open to 10pm",19,0.7741
+"9pm, parks open to 10pm",20,0.7757
+"9pm, parks open to 10pm",21,0.7772
+"9pm, parks open to 10pm",22,0.7787
+"9pm, parks open to 10pm",23,0.7802
+"9pm, parks open to 10pm",24,0.7816
+"9pm, parks open to 10pm",25,0.783
+"9pm, parks open to 10pm",26,0.7844
+"9pm, parks open to 10pm",27,0.7858
+"9pm, parks open to 10pm",28,0.7872
+"9pm, parks open to 10pm",29,0.7886
+"9pm, parks open to 10pm",30,0.79
+"9pm, parks open to 10pm",31,0.7913
+"9pm, parks open to 10pm",32,0.7926
+"9pm, parks open to 10pm",33,0.7939
+"9pm, parks open to 10pm",34,0.7951
+"9pm, parks open to 10pm",35,0.7964
+"9pm, parks open to 10pm",36,0.7976
+"9pm, parks open to 10pm",37,0.7989
+"9pm, parks open to 10pm",38,0.8
+"9pm, parks open to 10pm",39,0.8012
+"9pm, parks open to 10pm",40,0.8024
+"9pm, parks open to 10pm",41,0.8035
+"9pm, parks open to 10pm",42,0.8046
+"9pm, parks open to 10pm",43,0.8057
+"9pm, parks open to 10pm",44,0.8068
+"9pm, parks open to 10pm",45,0.8079
+"9pm, parks open to 10pm",46,0.809
+"9pm, parks open to 10pm",47,0.81
+"9pm, parks open to 10pm",48,0.8111
+"9pm, parks open to 10pm",49,0.8121
+"9pm, parks open to 10pm",50,0.8131
+"9pm, parks open to 10pm",51,0.8142
+"9pm, parks open to 10pm",52,0.8152
+"9pm, parks open to 10pm",53,0.8162
+"9pm, parks open to 10pm",54,0.8172
+"9pm, parks open to 10pm",55,0.8182
+"9pm, parks open to 10pm",56,0.8192
+"9pm, parks open to 10pm",57,0.8202
+"9pm, parks open to 10pm",58,0.8212
+"9pm, parks open to 10pm",59,0.8221
+"9pm, parks open to 10pm",60,0.8231
+"9pm, parks open to 10pm",61,0.8241
+"9pm, parks open to 10pm",62,0.825
+"9pm, parks open to 10pm",63,0.826
+"9pm, parks open to 10pm",64,0.8269
+"9pm, parks open to 10pm",65,0.8279
+"9pm, parks open to 10pm",66,0.8288
+"9pm, parks open to 10pm",67,0.8298
+"9pm, parks open to 10pm",68,0.8307
+"9pm, parks open to 10pm",69,0.8316
+"9pm, parks open to 10pm",70,0.8325
+"9pm, parks open to 10pm",71,0.8334
+"9pm, parks open to 10pm",72,0.8343
+"9pm, parks open to 10pm",73,0.8352
+"9pm, parks open to 10pm",74,0.836
+"9pm, parks open to 10pm",75,0.8369
+"9pm, parks open to 10pm",76,0.8378
+"9pm, parks open to 10pm",77,0.8386
+"9pm, parks open to 10pm",78,0.8394
+"9pm, parks open to 10pm",79,0.8403
+"9pm, parks open to 10pm",80,0.8411
+"9pm, parks open to 10pm",81,0.8419
+"9pm, parks open to 10pm",82,0.8428
+"9pm, parks open to 10pm",83,0.8436
+"9pm, parks open to 10pm",84,0.8444
+"9pm, parks open to 10pm",85,0.8452
+"9pm, parks open to 10pm",86,0.8461
+"9pm, parks open to 10pm",87,0.8469
+"9pm, parks open to 10pm",88,0.8477
+"9pm, parks open to 10pm",89,0.8485
+"9pm, parks open to 10pm",90,0.8493
+"9pm, parks open to 10pm",91,0.85
+"9pm, parks open to 10pm",92,0.8508
+"9pm, parks open to 10pm",93,0.8516
+"9pm, parks open to 10pm",94,0.8524
+"9pm, parks open to 10pm",95,0.8532
+"9pm, parks open to 10pm",96,0.8539
+"9pm, parks open to 10pm",97,0.8547
+"9pm, parks open to 10pm",98,0.8554
+"9pm, parks open to 10pm",99,0.8561
+"9pm, parks open to 10pm",100,0.8569
+"9pm, parks open to 10pm",101,0.8576
+"9pm, parks open to 10pm",102,0.8583
+"9pm, parks open to 10pm",103,0.859
+"9pm, parks open to 10pm",104,0.8598
+"9pm, parks open to 10pm",105,0.8605
+"9pm, parks open to 10pm",106,0.8612
+"9pm, parks open to 10pm",107,0.8619
+"9pm, parks open to 10pm",108,0.8626
+"9pm, parks open to 10pm",109,0.8633
+"9pm, parks open to 10pm",110,0.864
+"9pm, parks open to 10pm",111,0.8647
+"9pm, parks open to 10pm",112,0.8654
+"9pm, parks open to 10pm",113,0.8661
+"9pm, parks open to 10pm",114,0.8667
+"9pm, parks open to 10pm",115,0.8674
+"9pm, parks open to 10pm",116,0.8681
+"9pm, parks open to 10pm",117,0.8688
+"9pm, parks open to 10pm",118,0.8694
+"9pm, parks open to 10pm",119,0.8701
+"9pm, parks open to 10pm",120,0.8707
+"9pm, parks open to 10pm",121,0.8714
+"9pm, parks open to 10pm",122,0.8721
+"9pm, parks open to 10pm",123,0.8727
+"9pm, parks open to 10pm",124,0.8734
+"9pm, parks open to 10pm",125,0.874
+"9pm, parks open to 10pm",126,0.8746
+"9pm, parks open to 10pm",127,0.8752
+"9pm, parks open to 10pm",128,0.8759
+"9pm, parks open to 10pm",129,0.8765
+"9pm, parks open to 10pm",130,0.8771
+"9pm, parks open to 10pm",131,0.8778
+"9pm, parks open to 10pm",132,0.8784
+"9pm, parks open to 10pm",133,0.879
+"9pm, parks open to 10pm",134,0.8796
+"9pm, parks open to 10pm",135,0.8802
+"9pm, parks open to 10pm",136,0.8808
+"9pm, parks open to 10pm",137,0.8814
+"9pm, parks open to 10pm",138,0.882
+"9pm, parks open to 10pm",139,0.8826
+"9pm, parks open to 10pm",140,0.8832
+"9pm, parks open to 10pm",141,0.8838
+"9pm, parks open to 10pm",142,0.8844
+"9pm, parks open to 10pm",143,0.885
+"9pm, parks open to 10pm",144,0.8856
+"9pm, parks open to 10pm",145,0.8861
+"9pm, parks open to 10pm",146,0.8867
+"9pm, parks open to 10pm",147,0.8873
+"9pm, parks open to 10pm",148,0.8879
+"9pm, parks open to 10pm",149,0.8884
+"9pm, parks open to 10pm",150,0.889
+"9pm, parks open to 10pm",151,0.8896
+"9pm, parks open to 10pm",152,0.8901
+"9pm, parks open to 10pm",153,0.8907
+"9pm, parks open to 10pm",154,0.8912
+"9pm, parks open to 10pm",155,0.8918
+"9pm, parks open to 10pm",156,0.8923
+"9pm, parks open to 10pm",157,0.8929
+"9pm, parks open to 10pm",158,0.8934
+"9pm, parks open to 10pm",159,0.8939
+"9pm, parks open to 10pm",160,0.8945
+"9pm, parks open to 10pm",161,0.895
+"9pm, parks open to 10pm",162,0.8956
+"9pm, parks open to 10pm",163,0.8961
+"9pm, parks open to 10pm",164,0.8966
+"9pm, parks open to 10pm",165,0.8972
+"9pm, parks open to 10pm",166,0.8977
+"9pm, parks open to 10pm",167,0.8982
+"9pm, parks open to 10pm",168,0.8987
+"9pm, parks open to 10pm",169,0.8993
+"9pm, parks open to 10pm",170,0.8998
+"9pm, parks open to 10pm",171,0.9003
+"9pm, parks open to 10pm",172,0.9008
+"9pm, parks open to 10pm",173,0.9013
+"9pm, parks open to 10pm",174,0.9018
+"9pm, parks open to 10pm",175,0.9023
+"9pm, parks open to 10pm",176,0.9028
+"9pm, parks open to 10pm",177,0.9033
+"9pm, parks open to 10pm",178,0.9038
+"9pm, parks open to 10pm",179,0.9043
+"9pm, parks open to 10pm",180,0.9048
+"9pm, parks open to 10pm",181,0.9053
+"9pm, parks open to 10pm",182,0.9057
+"9pm, parks open to 10pm",183,0.9062
+"9pm, parks open to 10pm",184,0.9067
+"9pm, parks open to 10pm",185,0.9072
+"9pm, parks open to 10pm",186,0.9077
+"9pm, parks open to 10pm",187,0.9082
+"9pm, parks open to 10pm",188,0.9086
+"9pm, parks open to 10pm",189,0.9091
+"9pm, parks open to 10pm",190,0.9096
+"9pm, parks open to 10pm",191,0.9101
+"9pm, parks open to 10pm",192,0.9105
+"9pm, parks open to 10pm",193,0.911
+"9pm, parks open to 10pm",194,0.9115
+"9pm, parks open to 10pm",195,0.9119
+"9pm, parks open to 10pm",196,0.9124
+"9pm, parks open to 10pm",197,0.9128
+"9pm, parks open to 10pm",198,0.9133
+"9pm, parks open to 10pm",199,0.9138
+"9pm, parks open to 10pm",200,0.9142
+"9pm, parks open to 10pm",201,0.9147
+"9pm, parks open to 10pm",202,0.9151
+"9pm, parks open to 10pm",203,0.9155
+"9pm, parks open to 10pm",204,0.916
+"9pm, parks open to 10pm",205,0.9164
+"9pm, parks open to 10pm",206,0.9169
+"9pm, parks open to 10pm",207,0.9173
+"9pm, parks open to 10pm",208,0.9177
+"9pm, parks open to 10pm",209,0.9182
+"9pm, parks open to 10pm",210,0.9186
+"9pm, parks open to 10pm",211,0.919
+"9pm, parks open to 10pm",212,0.9195
+"9pm, parks open to 10pm",213,0.9199
+"9pm, parks open to 10pm",214,0.9203
+"9pm, parks open to 10pm",215,0.9207
+"9pm, parks open to 10pm",216,0.9212
+"9pm, parks open to 10pm",217,0.9216
+"9pm, parks open to 10pm",218,0.922
+"9pm, parks open to 10pm",219,0.9224
+"9pm, parks open to 10pm",220,0.9228
+"9pm, parks open to 10pm",221,0.9233
+"9pm, parks open to 10pm",222,0.9237
+"9pm, parks open to 10pm",223,0.9241
+"9pm, parks open to 10pm",224,0.9245
+"9pm, parks open to 10pm",225,0.9249
+"9pm, parks open to 10pm",226,0.9253
+"9pm, parks open to 10pm",227,0.9258
+"9pm, parks open to 10pm",228,0.9262
+"9pm, parks open to 10pm",229,0.9266
+"9pm, parks open to 10pm",230,0.927
+"9pm, parks open to 10pm",231,0.9274
+"9pm, parks open to 10pm",232,0.9278
+"9pm, parks open to 10pm",233,0.9282
+"9pm, parks open to 10pm",234,0.9286
+"9pm, parks open to 10pm",235,0.929
+"9pm, parks open to 10pm",236,0.9294
+"9pm, parks open to 10pm",237,0.9298
+"9pm, parks open to 10pm",238,0.9301
+"9pm, parks open to 10pm",239,0.9305
+"9pm, parks open to 10pm",240,0.9309
+"9pm, parks open to 10pm",241,0.9313
+"9pm, parks open to 10pm",242,0.9317
+"9pm, parks open to 10pm",243,0.9321
+"9pm, parks open to 10pm",244,0.9324
+"9pm, parks open to 10pm",245,0.9328
+"9pm, parks open to 10pm",246,0.9332
+"9pm, parks open to 10pm",247,0.9336
+"9pm, parks open to 10pm",248,0.9339
+"9pm, parks open to 10pm",249,0.9343
+"9pm, parks open to 10pm",250,0.9347
+"9pm, parks open to 10pm",251,0.935
+"9pm, parks open to 10pm",252,0.9354
+"9pm, parks open to 10pm",253,0.9358
+"9pm, parks open to 10pm",254,0.9361
+"9pm, parks open to 10pm",255,0.9365
+"9pm, parks open to 10pm",256,0.9369
+"9pm, parks open to 10pm",257,0.9372
+"9pm, parks open to 10pm",258,0.9376
+"9pm, parks open to 10pm",259,0.9379
+"9pm, parks open to 10pm",260,0.9383
+"9pm, parks open to 10pm",261,0.9387
+"9pm, parks open to 10pm",262,0.939
+"9pm, parks open to 10pm",263,0.9394
+"9pm, parks open to 10pm",264,0.9397
+"9pm, parks open to 10pm",265,0.9401
+"9pm, parks open to 10pm",266,0.9404
+"9pm, parks open to 10pm",267,0.9407
+"9pm, parks open to 10pm",268,0.9411
+"9pm, parks open to 10pm",269,0.9414
+"9pm, parks open to 10pm",270,0.9418
+"9pm, parks open to 10pm",271,0.9421
+"9pm, parks open to 10pm",272,0.9424
+"9pm, parks open to 10pm",273,0.9428
+"9pm, parks open to 10pm",274,0.9431
+"9pm, parks open to 10pm",275,0.9434
+"9pm, parks open to 10pm",276,0.9437
+"9pm, parks open to 10pm",277,0.9441
+"9pm, parks open to 10pm",278,0.9444
+"9pm, parks open to 10pm",279,0.9447
+"9pm, parks open to 10pm",280,0.945
+"9pm, parks open to 10pm",281,0.9453
+"9pm, parks open to 10pm",282,0.9457
+"9pm, parks open to 10pm",283,0.946
+"9pm, parks open to 10pm",284,0.9463
+"9pm, parks open to 10pm",285,0.9466
+"9pm, parks open to 10pm",286,0.9469
+"9pm, parks open to 10pm",287,0.9472
+"9pm, parks open to 10pm",288,0.9475
+"9pm, parks open to 10pm",289,0.9479
+"9pm, parks open to 10pm",290,0.9482
+"9pm, parks open to 10pm",291,0.9485
+"9pm, parks open to 10pm",292,0.9488
+"9pm, parks open to 10pm",293,0.9491
+"9pm, parks open to 10pm",294,0.9494
+"9pm, parks open to 10pm",295,0.9497
+"9pm, parks open to 10pm",296,0.95
+"9pm, parks open to 10pm",297,0.9503
+"9pm, parks open to 10pm",298,0.9506
+"9pm, parks open to 10pm",299,0.9509
+"9pm, parks open to 10pm",300,0.9512
+"9pm, parks open to 10pm",301,0.9515
+"9pm, parks open to 10pm",302,0.9518
+"9pm, parks open to 10pm",303,0.9521
+"9pm, parks open to 10pm",304,0.9524
+"9pm, parks open to 10pm",305,0.9527
+"9pm, parks open to 10pm",306,0.953
+"9pm, parks open to 10pm",307,0.9533
+"9pm, parks open to 10pm",308,0.9536
+"9pm, parks open to 10pm",309,0.9539
+"9pm, parks open to 10pm",310,0.9541
+"9pm, parks open to 10pm",311,0.9544
+"9pm, parks open to 10pm",312,0.9547
+"9pm, parks open to 10pm",313,0.955
+"9pm, parks open to 10pm",314,0.9553
+"9pm, parks open to 10pm",315,0.9556
+"9pm, parks open to 10pm",316,0.9558
+"9pm, parks open to 10pm",317,0.9561
+"9pm, parks open to 10pm",318,0.9564
+"9pm, parks open to 10pm",319,0.9567
+"9pm, parks open to 10pm",320,0.9569
+"9pm, parks open to 10pm",321,0.9572
+"9pm, parks open to 10pm",322,0.9575
+"9pm, parks open to 10pm",323,0.9578
+"9pm, parks open to 10pm",324,0.958
+"9pm, parks open to 10pm",325,0.9583
+"9pm, parks open to 10pm",326,0.9586
+"9pm, parks open to 10pm",327,0.9588
+"9pm, parks open to 10pm",328,0.9591
+"9pm, parks open to 10pm",329,0.9594
+"9pm, parks open to 10pm",330,0.9596
+"9pm, parks open to 10pm",331,0.9599
+"9pm, parks open to 10pm",332,0.9601
+"9pm, parks open to 10pm",333,0.9604
+"9pm, parks open to 10pm",334,0.9606
+"9pm, parks open to 10pm",335,0.9609
+"9pm, parks open to 10pm",336,0.9611
+"9pm, parks open to 10pm",337,0.9614
+"9pm, parks open to 10pm",338,0.9616
+"9pm, parks open to 10pm",339,0.9619
+"9pm, parks open to 10pm",340,0.9621
+"9pm, parks open to 10pm",341,0.9623
+"9pm, parks open to 10pm",342,0.9626
+"9pm, parks open to 10pm",343,0.9628
+"9pm, parks open to 10pm",344,0.963
+"9pm, parks open to 10pm",345,0.9633
+"9pm, parks open to 10pm",346,0.9635
+"9pm, parks open to 10pm",347,0.9637
+"9pm, parks open to 10pm",348,0.964
+"9pm, parks open to 10pm",349,0.9642
+"9pm, parks open to 10pm",350,0.9644
+"9pm, parks open to 10pm",351,0.9646
+"9pm, parks open to 10pm",352,0.9649
+"9pm, parks open to 10pm",353,0.9651
+"9pm, parks open to 10pm",354,0.9653
+"9pm, parks open to 10pm",355,0.9655
+"9pm, parks open to 10pm",356,0.9658
+"9pm, parks open to 10pm",357,0.966
+"9pm, parks open to 10pm",358,0.9662
+"9pm, parks open to 10pm",359,0.9664
+"9pm, parks open to 10pm",360,0.9667
+"9pm, parks open to 10pm",361,0.9669
+"9pm, parks open to 10pm",362,0.9671
+"9pm, parks open to 10pm",363,0.9673
+"9pm, parks open to 10pm",364,0.9675
+"9pm, parks open to 10pm",365,0.9677
+"9pm, parks open to 10pm",366,0.9679
+"9pm, parks open to 10pm",367,0.9681
+"9pm, parks open to 10pm",368,0.9683
+"9pm, parks open to 10pm",369,0.9686
+"9pm, parks open to 10pm",370,0.9688
+"9pm, parks open to 10pm",371,0.969
+"9pm, parks open to 10pm",372,0.9692
+"9pm, parks open to 10pm",373,0.9694
+"9pm, parks open to 10pm",374,0.9696
+"9pm, parks open to 10pm",375,0.9698
+"9pm, parks open to 10pm",376,0.97
+"9pm, parks open to 10pm",377,0.9702
+"9pm, parks open to 10pm",378,0.9703
+"9pm, parks open to 10pm",379,0.9705
+"9pm, parks open to 10pm",380,0.9707
+"9pm, parks open to 10pm",381,0.9709
+"9pm, parks open to 10pm",382,0.9711
+"9pm, parks open to 10pm",383,0.9713
+"9pm, parks open to 10pm",384,0.9715
+"9pm, parks open to 10pm",385,0.9717
+"9pm, parks open to 10pm",386,0.9719
+"9pm, parks open to 10pm",387,0.9721
+"9pm, parks open to 10pm",388,0.9722
+"9pm, parks open to 10pm",389,0.9724
+"9pm, parks open to 10pm",390,0.9726
+"9pm, parks open to 10pm",391,0.9728
+"9pm, parks open to 10pm",392,0.973
+"9pm, parks open to 10pm",393,0.9732
+"9pm, parks open to 10pm",394,0.9733
+"9pm, parks open to 10pm",395,0.9735
+"9pm, parks open to 10pm",396,0.9737
+"9pm, parks open to 10pm",397,0.9739
+"9pm, parks open to 10pm",398,0.9741
+"9pm, parks open to 10pm",399,0.9742
+"9pm, parks open to 10pm",400,0.9744
+"9pm, parks open to 10pm",401,0.9746
+"9pm, parks open to 10pm",402,0.9748
+"9pm, parks open to 10pm",403,0.9749
+"9pm, parks open to 10pm",404,0.9751
+"9pm, parks open to 10pm",405,0.9753
+"9pm, parks open to 10pm",406,0.9755
+"9pm, parks open to 10pm",407,0.9756
+"9pm, parks open to 10pm",408,0.9758
+"9pm, parks open to 10pm",409,0.976
+"9pm, parks open to 10pm",410,0.9761
+"9pm, parks open to 10pm",411,0.9763
+"9pm, parks open to 10pm",412,0.9765
+"9pm, parks open to 10pm",413,0.9766
+"9pm, parks open to 10pm",414,0.9768
+"9pm, parks open to 10pm",415,0.977
+"9pm, parks open to 10pm",416,0.9771
+"9pm, parks open to 10pm",417,0.9773
+"9pm, parks open to 10pm",418,0.9774
+"9pm, parks open to 10pm",419,0.9776
+"9pm, parks open to 10pm",420,0.9778
+"9pm, parks open to 10pm",421,0.9779
+"9pm, parks open to 10pm",422,0.9781
+"9pm, parks open to 10pm",423,0.9782
+"9pm, parks open to 10pm",424,0.9784
+"9pm, parks open to 10pm",425,0.9786
+"9pm, parks open to 10pm",426,0.9787
+"9pm, parks open to 10pm",427,0.9789
+"9pm, parks open to 10pm",428,0.979
+"9pm, parks open to 10pm",429,0.9792
+"9pm, parks open to 10pm",430,0.9793
+"9pm, parks open to 10pm",431,0.9795
+"9pm, parks open to 10pm",432,0.9796
+"9pm, parks open to 10pm",433,0.9798
+"9pm, parks open to 10pm",434,0.9799
+"9pm, parks open to 10pm",435,0.9801
+"9pm, parks open to 10pm",436,0.9802
+"9pm, parks open to 10pm",437,0.9804
+"9pm, parks open to 10pm",438,0.9805
+"9pm, parks open to 10pm",439,0.9807
+"9pm, parks open to 10pm",440,0.9808
+"9pm, parks open to 10pm",441,0.981
+"9pm, parks open to 10pm",442,0.9811
+"9pm, parks open to 10pm",443,0.9812
+"9pm, parks open to 10pm",444,0.9814
+"9pm, parks open to 10pm",445,0.9815
+"9pm, parks open to 10pm",446,0.9817
+"9pm, parks open to 10pm",447,0.9818
+"9pm, parks open to 10pm",448,0.982
+"9pm, parks open to 10pm",449,0.9821
+"9pm, parks open to 10pm",450,0.9822
+"9pm, parks open to 10pm",451,0.9824
+"9pm, parks open to 10pm",452,0.9825
+"9pm, parks open to 10pm",453,0.9826
+"9pm, parks open to 10pm",454,0.9828
+"9pm, parks open to 10pm",455,0.9829
+"9pm, parks open to 10pm",456,0.983
+"9pm, parks open to 10pm",457,0.9832
+"9pm, parks open to 10pm",458,0.9833
+"9pm, parks open to 10pm",459,0.9834
+"9pm, parks open to 10pm",460,0.9836
+"9pm, parks open to 10pm",461,0.9837
+"9pm, parks open to 10pm",462,0.9838
+"9pm, parks open to 10pm",463,0.9839
+"9pm, parks open to 10pm",464,0.9841
+"9pm, parks open to 10pm",465,0.9842
+"9pm, parks open to 10pm",466,0.9843
+"9pm, parks open to 10pm",467,0.9844
+"9pm, parks open to 10pm",468,0.9845
+"9pm, parks open to 10pm",469,0.9847
+"9pm, parks open to 10pm",470,0.9848
+"9pm, parks open to 10pm",471,0.9849
+"9pm, parks open to 10pm",472,0.985
+"9pm, parks open to 10pm",473,0.9851
+"9pm, parks open to 10pm",474,0.9852
+"9pm, parks open to 10pm",475,0.9853
+"9pm, parks open to 10pm",476,0.9855
+"9pm, parks open to 10pm",477,0.9856
+"9pm, parks open to 10pm",478,0.9857
+"9pm, parks open to 10pm",479,0.9858
+"9pm, parks open to 10pm",480,0.9859
+"9pm, parks open to 10pm",481,0.986
+"9pm, parks open to 10pm",482,0.9861
+"9pm, parks open to 10pm",483,0.9862
+"9pm, parks open to 10pm",484,0.9864
+"9pm, parks open to 10pm",485,0.9865
+"9pm, parks open to 10pm",486,0.9866
+"9pm, parks open to 10pm",487,0.9867
+"9pm, parks open to 10pm",488,0.9868
+"9pm, parks open to 10pm",489,0.9869
+"9pm, parks open to 10pm",490,0.987
+"9pm, parks open to 10pm",491,0.9871
+"9pm, parks open to 10pm",492,0.9872
+"9pm, parks open to 10pm",493,0.9873
+"9pm, parks open to 10pm",494,0.9874
+"9pm, parks open to 10pm",495,0.9875
+"9pm, parks open to 10pm",496,0.9876
+"9pm, parks open to 10pm",497,0.9877
+"9pm, parks open to 10pm",498,0.9878
+"9pm, parks open to 10pm",499,0.9879
+"9pm, parks open to 10pm",500,0.988
+"9pm, parks open to 10pm",501,0.9881
+"9pm, parks open to 10pm",502,0.9882
+"9pm, parks open to 10pm",503,0.9883
+"9pm, parks open to 10pm",504,0.9884
+"9pm, parks open to 10pm",505,0.9885
+"9pm, parks open to 10pm",506,0.9886
+"9pm, parks open to 10pm",507,0.9887
+"9pm, parks open to 10pm",508,0.9888
+"9pm, parks open to 10pm",509,0.9889
+"9pm, parks open to 10pm",510,0.989
+"9pm, parks open to 10pm",511,0.9891
+"9pm, parks open to 10pm",512,0.9892
+"9pm, parks open to 10pm",513,0.9893
+"9pm, parks open to 10pm",514,0.9894
+"9pm, parks open to 10pm",515,0.9895
+"9pm, parks open to 10pm",516,0.9896
+"9pm, parks open to 10pm",517,0.9897
+"9pm, parks open to 10pm",518,0.9898
+"9pm, parks open to 10pm",519,0.9898
+"9pm, parks open to 10pm",520,0.9899
+"9pm, parks open to 10pm",521,0.99
+"9pm, parks open to 10pm",522,0.9901
+"9pm, parks open to 10pm",523,0.9902
+"9pm, parks open to 10pm",524,0.9903
+"9pm, parks open to 10pm",525,0.9904
+"9pm, parks open to 10pm",526,0.9904
+"9pm, parks open to 10pm",527,0.9905
+"9pm, parks open to 10pm",528,0.9906
+"9pm, parks open to 10pm",529,0.9907
+"9pm, parks open to 10pm",530,0.9908
+"9pm, parks open to 10pm",531,0.9909
+"9pm, parks open to 10pm",532,0.9909
+"9pm, parks open to 10pm",533,0.991
+"9pm, parks open to 10pm",534,0.9911
+"9pm, parks open to 10pm",535,0.9912
+"9pm, parks open to 10pm",536,0.9913
+"9pm, parks open to 10pm",537,0.9913
+"9pm, parks open to 10pm",538,0.9914
+"9pm, parks open to 10pm",539,0.9915
+"9pm, parks open to 10pm",540,0.9916
+"9pm, parks open to 10pm",541,0.9917
+"9pm, parks open to 10pm",542,0.9917
+"9pm, parks open to 10pm",543,0.9918
+"9pm, parks open to 10pm",544,0.9919
+"9pm, parks open to 10pm",545,0.992
+"9pm, parks open to 10pm",546,0.992
+"9pm, parks open to 10pm",547,0.9921
+"9pm, parks open to 10pm",548,0.9922
+"9pm, parks open to 10pm",549,0.9923
+"9pm, parks open to 10pm",550,0.9923
+"9pm, parks open to 10pm",551,0.9924
+"9pm, parks open to 10pm",552,0.9925
+"9pm, parks open to 10pm",553,0.9926
+"9pm, parks open to 10pm",554,0.9926
+"9pm, parks open to 10pm",555,0.9927
+"9pm, parks open to 10pm",556,0.9928
+"9pm, parks open to 10pm",557,0.9929
+"9pm, parks open to 10pm",558,0.9929
+"9pm, parks open to 10pm",559,0.993
+"9pm, parks open to 10pm",560,0.9931
+"9pm, parks open to 10pm",561,0.9931
+"9pm, parks open to 10pm",562,0.9932
+"9pm, parks open to 10pm",563,0.9933
+"9pm, parks open to 10pm",564,0.9933
+"9pm, parks open to 10pm",565,0.9934
+"9pm, parks open to 10pm",566,0.9935
+"9pm, parks open to 10pm",567,0.9935
+"9pm, parks open to 10pm",568,0.9936
+"9pm, parks open to 10pm",569,0.9937
+"9pm, parks open to 10pm",570,0.9937
+"9pm, parks open to 10pm",571,0.9938
+"9pm, parks open to 10pm",572,0.9939
+"9pm, parks open to 10pm",573,0.9939
+"9pm, parks open to 10pm",574,0.994
+"9pm, parks open to 10pm",575,0.9941
+"9pm, parks open to 10pm",576,0.9941
+"9pm, parks open to 10pm",577,0.9942
+"9pm, parks open to 10pm",578,0.9943
+"9pm, parks open to 10pm",579,0.9943
+"9pm, parks open to 10pm",580,0.9944
+"9pm, parks open to 10pm",581,0.9944
+"9pm, parks open to 10pm",582,0.9945
+"9pm, parks open to 10pm",583,0.9946
+"9pm, parks open to 10pm",584,0.9946
+"9pm, parks open to 10pm",585,0.9947
+"9pm, parks open to 10pm",586,0.9947
+"9pm, parks open to 10pm",587,0.9948
+"9pm, parks open to 10pm",588,0.9949
+"9pm, parks open to 10pm",589,0.9949
+"9pm, parks open to 10pm",590,0.995
+"9pm, parks open to 10pm",591,0.995
+"9pm, parks open to 10pm",592,0.9951
+"9pm, parks open to 10pm",593,0.9951
+"9pm, parks open to 10pm",594,0.9952
+"9pm, parks open to 10pm",595,0.9952
+"9pm, parks open to 10pm",596,0.9953
+"9pm, parks open to 10pm",597,0.9953
+"9pm, parks open to 10pm",598,0.9954
+"9pm, parks open to 10pm",599,0.9954
+"9pm, parks open to 10pm",600,0.9955
+"9pm, parks open to 10pm",601,0.9955
+"9pm, parks open to 10pm",602,0.9956
+"9pm, parks open to 10pm",603,0.9956
+"9pm, parks open to 10pm",604,0.9957
+"9pm, parks open to 10pm",605,0.9957
+"9pm, parks open to 10pm",606,0.9958
+"9pm, parks open to 10pm",607,0.9958
+"9pm, parks open to 10pm",608,0.9959
+"9pm, parks open to 10pm",609,0.9959
+"9pm, parks open to 10pm",610,0.9959
+"9pm, parks open to 10pm",611,0.996
+"9pm, parks open to 10pm",612,0.996
+"9pm, parks open to 10pm",613,0.9961
+"9pm, parks open to 10pm",614,0.9961
+"9pm, parks open to 10pm",615,0.9962
+"9pm, parks open to 10pm",616,0.9962
+"9pm, parks open to 10pm",617,0.9963
+"9pm, parks open to 10pm",618,0.9963
+"9pm, parks open to 10pm",619,0.9963
+"9pm, parks open to 10pm",620,0.9964
+"9pm, parks open to 10pm",621,0.9964
+"9pm, parks open to 10pm",622,0.9965
+"9pm, parks open to 10pm",623,0.9965
+"9pm, parks open to 10pm",624,0.9965
+"9pm, parks open to 10pm",625,0.9966
+"9pm, parks open to 10pm",626,0.9966
+"9pm, parks open to 10pm",627,0.9967
+"9pm, parks open to 10pm",628,0.9967
+"9pm, parks open to 10pm",629,0.9967
+"9pm, parks open to 10pm",630,0.9968
+"9pm, parks open to 10pm",631,0.9968
+"9pm, parks open to 10pm",632,0.9969
+"9pm, parks open to 10pm",633,0.9969
+"9pm, parks open to 10pm",634,0.9969
+"9pm, parks open to 10pm",635,0.997
+"9pm, parks open to 10pm",636,0.997
+"9pm, parks open to 10pm",637,0.9971
+"9pm, parks open to 10pm",638,0.9971
+"9pm, parks open to 10pm",639,0.9971
+"9pm, parks open to 10pm",640,0.9972
+"9pm, parks open to 10pm",641,0.9972
+"9pm, parks open to 10pm",642,0.9972
+"9pm, parks open to 10pm",643,0.9973
+"9pm, parks open to 10pm",644,0.9973
+"9pm, parks open to 10pm",645,0.9974
+"9pm, parks open to 10pm",646,0.9974
+"9pm, parks open to 10pm",647,0.9974
+"9pm, parks open to 10pm",648,0.9975
+"9pm, parks open to 10pm",649,0.9975
+"9pm, parks open to 10pm",650,0.9975
+"9pm, parks open to 10pm",651,0.9976
+"9pm, parks open to 10pm",652,0.9976
+"9pm, parks open to 10pm",653,0.9976
+"9pm, parks open to 10pm",654,0.9977
+"9pm, parks open to 10pm",655,0.9977
+"9pm, parks open to 10pm",656,0.9977
+"9pm, parks open to 10pm",657,0.9978
+"9pm, parks open to 10pm",658,0.9978
+"9pm, parks open to 10pm",659,0.9978
+"9pm, parks open to 10pm",660,0.9979
+"9pm, parks open to 10pm",661,0.9979
+"9pm, parks open to 10pm",662,0.9979
+"9pm, parks open to 10pm",663,0.998
+"9pm, parks open to 10pm",664,0.998
+"9pm, parks open to 10pm",665,0.998
+"9pm, parks open to 10pm",666,0.9981
+"9pm, parks open to 10pm",667,0.9981
+"9pm, parks open to 10pm",668,0.9981
+"9pm, parks open to 10pm",669,0.9982
+"9pm, parks open to 10pm",670,0.9982
+"9pm, parks open to 10pm",671,0.9982
+"9pm, parks open to 10pm",672,0.9983
+"9pm, parks open to 10pm",673,0.9983
+"9pm, parks open to 10pm",674,0.9983
+"9pm, parks open to 10pm",675,0.9983
+"9pm, parks open to 10pm",676,0.9984
+"9pm, parks open to 10pm",677,0.9984
+"9pm, parks open to 10pm",678,0.9984
+"9pm, parks open to 10pm",679,0.9984
+"9pm, parks open to 10pm",680,0.9985
+"9pm, parks open to 10pm",681,0.9985
+"9pm, parks open to 10pm",682,0.9985
+"9pm, parks open to 10pm",683,0.9985
+"9pm, parks open to 10pm",684,0.9986
+"9pm, parks open to 10pm",685,0.9986
+"9pm, parks open to 10pm",686,0.9986
+"9pm, parks open to 10pm",687,0.9986
+"9pm, parks open to 10pm",688,0.9987
+"9pm, parks open to 10pm",689,0.9987
+"9pm, parks open to 10pm",690,0.9987
+"9pm, parks open to 10pm",691,0.9987
+"9pm, parks open to 10pm",692,0.9988
+"9pm, parks open to 10pm",693,0.9988
+"9pm, parks open to 10pm",694,0.9988
+"9pm, parks open to 10pm",695,0.9988
+"9pm, parks open to 10pm",696,0.9988
+"9pm, parks open to 10pm",697,0.9989
+"9pm, parks open to 10pm",698,0.9989
+"9pm, parks open to 10pm",699,0.9989
+"9pm, parks open to 10pm",700,0.9989
+"9pm, parks open to 10pm",701,0.9989
+"9pm, parks open to 10pm",702,0.999
+"9pm, parks open to 10pm",703,0.999
+"9pm, parks open to 10pm",704,0.999
+"9pm, parks open to 10pm",705,0.999
+"9pm, parks open to 10pm",706,0.999
+"9pm, parks open to 10pm",707,0.9991
+"9pm, parks open to 10pm",708,0.9991
+"9pm, parks open to 10pm",709,0.9991
+"9pm, parks open to 10pm",710,0.9991
+"9pm, parks open to 10pm",711,0.9991
+"9pm, parks open to 10pm",712,0.9992
+"9pm, parks open to 10pm",713,0.9992
+"9pm, parks open to 10pm",714,0.9992
+"9pm, parks open to 10pm",715,0.9992
+"9pm, parks open to 10pm",716,0.9992
+"9pm, parks open to 10pm",717,0.9993
+"9pm, parks open to 10pm",718,0.9993
+"9pm, parks open to 10pm",719,0.9993
+"9pm, parks open to 10pm",720,0.9993
+"9pm, parks open to 10pm",721,0.9993
+"9pm, parks open to 10pm",722,0.9993
+"9pm, parks open to 10pm",723,0.9994
+"9pm, parks open to 10pm",724,0.9994
+"9pm, parks open to 10pm",725,0.9994
+"9pm, parks open to 10pm",726,0.9994
+"9pm, parks open to 10pm",727,0.9994
+"9pm, parks open to 10pm",728,0.9994
+"9pm, parks open to 10pm",729,0.9994
+"9pm, parks open to 10pm",730,0.9995
+"9pm, parks open to 10pm",731,0.9995
+"9pm, parks open to 10pm",732,0.9995
+"9pm, parks open to 10pm",733,0.9995
+"9pm, parks open to 10pm",734,0.9995
+"9pm, parks open to 10pm",735,0.9995
+"9pm, parks open to 10pm",736,0.9995
+"9pm, parks open to 10pm",737,0.9996
+"9pm, parks open to 10pm",738,0.9996
+"9pm, parks open to 10pm",739,0.9996
+"9pm, parks open to 10pm",740,0.9996
+"9pm, parks open to 10pm",741,0.9996
+"9pm, parks open to 10pm",742,0.9996
+"9pm, parks open to 10pm",743,0.9996
+"9pm, parks open to 10pm",744,0.9996
+"9pm, parks open to 10pm",745,0.9997
+"9pm, parks open to 10pm",746,0.9997
+"9pm, parks open to 10pm",747,0.9997
+"9pm, parks open to 10pm",748,0.9997
+"9pm, parks open to 10pm",749,0.9997
+"9pm, parks open to 10pm",750,0.9997
+"9pm, parks open to 10pm",751,0.9997
+"9pm, parks open to 10pm",752,0.9997
+"9pm, parks open to 10pm",753,0.9997
+"9pm, parks open to 10pm",754,0.9998
+"9pm, parks open to 10pm",755,0.9998
+"9pm, parks open to 10pm",756,0.9998
+"9pm, parks open to 10pm",757,0.9998
+"9pm, parks open to 10pm",758,0.9998
+"9pm, parks open to 10pm",759,0.9998
+"9pm, parks open to 10pm",760,0.9998
+"9pm, parks open to 10pm",761,0.9998
+"9pm, parks open to 10pm",762,0.9998
+"9pm, parks open to 10pm",763,0.9998
+"9pm, parks open to 10pm",764,0.9998
+"9pm, parks open to 10pm",765,0.9999
+"9pm, parks open to 10pm",766,0.9999
+"9pm, parks open to 10pm",767,0.9999
+"9pm, parks open to 10pm",768,0.9999
+"9pm, parks open to 10pm",769,0.9999
+"9pm, parks open to 10pm",770,0.9999
+"9pm, parks open to 10pm",771,0.9999
+"9pm, parks open to 10pm",772,0.9999
+"9pm, parks open to 10pm",773,0.9999
+"9pm, parks open to 10pm",774,0.9999
+"9pm, parks open to 10pm",775,0.9999
+"9pm, parks open to 10pm",776,0.9999
+"9pm, parks open to 10pm",777,0.9999
+"9pm, parks open to 10pm",778,0.9999
+"9pm, parks open to 10pm",779,1
+"9pm, parks open to 10pm",780,1
+"9pm, parks open to 10pm",781,1
+"9pm, parks open to 10pm",782,1
+"9pm, parks open to 10pm",783,1
+"9pm, parks open to 10pm",784,1
+"9pm, parks open to 10pm",785,1
+"9pm, parks open to 10pm",786,1
+"9pm, parks open to 10pm",787,1
+"9pm, parks open to 10pm",788,1
+"9pm, parks open to 10pm",789,1
+"9pm, parks open to 10pm",790,1
+"9pm, parks open to 10pm",791,1
+"9pm, parks open to 10pm",792,1
+"9pm, parks open to 10pm",793,1
+"9pm, parks open to 10pm",794,1
+"9pm, parks open to 10pm",795,1
+"9pm, parks open to 10pm",796,1
+"9pm, parks open to 10pm",797,1
+"9pm, parks open to 10pm",798,1
+"9pm, parks open to 10pm",799,1
+"9pm, parks open to 10pm",800,1
+"9pm, parks open to 10pm",801,1
+"9pm, parks open to 10pm",802,1
+"9pm, parks open to 10pm",803,1
+"9pm, parks open to 10pm",804,1
+"9pm, parks open to 10pm",805,1
+"9pm, parks open to 10pm",806,1
+"9pm, parks open to 10pm",807,1
+"9pm, parks open to 10pm",808,1
+"9pm, parks open to 10pm",809,1
+"9pm, parks open to 10pm",810,1
+"9pm, parks open to 10pm",811,1
+"9pm, parks open to 10pm",812,1
+"9pm, parks open to 10pm",813,1
+"9pm, parks open to 10pm",814,1
+"9pm, parks open to 10pm",815,1
+"9pm, parks open to 10pm",816,1
+"9pm, parks open to 10pm",817,1
+"9pm, parks open to 10pm",818,1
+"9pm, parks open to 10pm",819,1
+"9pm, parks open to 10pm",820,1
+"9pm, parks open to 10pm",821,1
+"9pm, parks open to 10pm",822,1
+"9pm, parks open to 10pm",823,1
+"9pm, parks open to 10pm",824,1
+"9pm, parks open to 10pm",825,1
+"9pm, parks open to 10pm",826,1
+"9pm, parks open to 10pm",827,1
+"9pm, parks open to 10pm",828,1
+"9pm, parks open to 10pm",829,1
+"9pm, parks open to 10pm",830,1
+2pm (daytime),1,0.7375
+2pm (daytime),2,0.7404
+2pm (daytime),3,0.7431
+2pm (daytime),4,0.7454
+2pm (daytime),5,0.7477
+2pm (daytime),6,0.7499
+2pm (daytime),7,0.7521
+2pm (daytime),8,0.7542
+2pm (daytime),9,0.7563
+2pm (daytime),10,0.7583
+2pm (daytime),11,0.7602
+2pm (daytime),12,0.7621
+2pm (daytime),13,0.764
+2pm (daytime),14,0.7658
+2pm (daytime),15,0.7677
+2pm (daytime),16,0.7693
+2pm (daytime),17,0.7709
+2pm (daytime),18,0.7725
+2pm (daytime),19,0.7741
+2pm (daytime),20,0.7757
+2pm (daytime),21,0.7772
+2pm (daytime),22,0.7787
+2pm (daytime),23,0.7802
+2pm (daytime),24,0.7816
+2pm (daytime),25,0.783
+2pm (daytime),26,0.7844
+2pm (daytime),27,0.7858
+2pm (daytime),28,0.7872
+2pm (daytime),29,0.7886
+2pm (daytime),30,0.79
+2pm (daytime),31,0.7913
+2pm (daytime),32,0.7926
+2pm (daytime),33,0.7939
+2pm (daytime),34,0.7951
+2pm (daytime),35,0.7964
+2pm (daytime),36,0.7976
+2pm (daytime),37,0.7989
+2pm (daytime),38,0.8
+2pm (daytime),39,0.8012
+2pm (daytime),40,0.8024
+2pm (daytime),41,0.8035
+2pm (daytime),42,0.8046
+2pm (daytime),43,0.8057
+2pm (daytime),44,0.8068
+2pm (daytime),45,0.8079
+2pm (daytime),46,0.809
+2pm (daytime),47,0.81
+2pm (daytime),48,0.8111
+2pm (daytime),49,0.8121
+2pm (daytime),50,0.8131
+2pm (daytime),51,0.8142
+2pm (daytime),52,0.8152
+2pm (daytime),53,0.8162
+2pm (daytime),54,0.8172
+2pm (daytime),55,0.8182
+2pm (daytime),56,0.8192
+2pm (daytime),57,0.8202
+2pm (daytime),58,0.8212
+2pm (daytime),59,0.8221
+2pm (daytime),60,0.8231
+2pm (daytime),61,0.8241
+2pm (daytime),62,0.825
+2pm (daytime),63,0.826
+2pm (daytime),64,0.8269
+2pm (daytime),65,0.8279
+2pm (daytime),66,0.8288
+2pm (daytime),67,0.8298
+2pm (daytime),68,0.8307
+2pm (daytime),69,0.8316
+2pm (daytime),70,0.8325
+2pm (daytime),71,0.8334
+2pm (daytime),72,0.8343
+2pm (daytime),73,0.8352
+2pm (daytime),74,0.836
+2pm (daytime),75,0.8369
+2pm (daytime),76,0.8378
+2pm (daytime),77,0.8386
+2pm (daytime),78,0.8394
+2pm (daytime),79,0.8403
+2pm (daytime),80,0.8411
+2pm (daytime),81,0.8419
+2pm (daytime),82,0.8428
+2pm (daytime),83,0.8436
+2pm (daytime),84,0.8444
+2pm (daytime),85,0.8452
+2pm (daytime),86,0.8461
+2pm (daytime),87,0.8469
+2pm (daytime),88,0.8477
+2pm (daytime),89,0.8485
+2pm (daytime),90,0.8493
+2pm (daytime),91,0.85
+2pm (daytime),92,0.8508
+2pm (daytime),93,0.8516
+2pm (daytime),94,0.8524
+2pm (daytime),95,0.8532
+2pm (daytime),96,0.8539
+2pm (daytime),97,0.8547
+2pm (daytime),98,0.8554
+2pm (daytime),99,0.8561
+2pm (daytime),100,0.8569
+2pm (daytime),101,0.8576
+2pm (daytime),102,0.8583
+2pm (daytime),103,0.859
+2pm (daytime),104,0.8598
+2pm (daytime),105,0.8605
+2pm (daytime),106,0.8612
+2pm (daytime),107,0.8619
+2pm (daytime),108,0.8626
+2pm (daytime),109,0.8633
+2pm (daytime),110,0.864
+2pm (daytime),111,0.8647
+2pm (daytime),112,0.8654
+2pm (daytime),113,0.8661
+2pm (daytime),114,0.8667
+2pm (daytime),115,0.8674
+2pm (daytime),116,0.8681
+2pm (daytime),117,0.8688
+2pm (daytime),118,0.8694
+2pm (daytime),119,0.8701
+2pm (daytime),120,0.8707
+2pm (daytime),121,0.8714
+2pm (daytime),122,0.8721
+2pm (daytime),123,0.8727
+2pm (daytime),124,0.8734
+2pm (daytime),125,0.874
+2pm (daytime),126,0.8746
+2pm (daytime),127,0.8752
+2pm (daytime),128,0.8759
+2pm (daytime),129,0.8765
+2pm (daytime),130,0.8771
+2pm (daytime),131,0.8778
+2pm (daytime),132,0.8784
+2pm (daytime),133,0.879
+2pm (daytime),134,0.8796
+2pm (daytime),135,0.8802
+2pm (daytime),136,0.8808
+2pm (daytime),137,0.8814
+2pm (daytime),138,0.882
+2pm (daytime),139,0.8826
+2pm (daytime),140,0.8832
+2pm (daytime),141,0.8838
+2pm (daytime),142,0.8844
+2pm (daytime),143,0.885
+2pm (daytime),144,0.8856
+2pm (daytime),145,0.8861
+2pm (daytime),146,0.8867
+2pm (daytime),147,0.8873
+2pm (daytime),148,0.8879
+2pm (daytime),149,0.8884
+2pm (daytime),150,0.889
+2pm (daytime),151,0.8896
+2pm (daytime),152,0.8901
+2pm (daytime),153,0.8907
+2pm (daytime),154,0.8912
+2pm (daytime),155,0.8918
+2pm (daytime),156,0.8923
+2pm (daytime),157,0.8929
+2pm (daytime),158,0.8934
+2pm (daytime),159,0.8939
+2pm (daytime),160,0.8945
+2pm (daytime),161,0.895
+2pm (daytime),162,0.8956
+2pm (daytime),163,0.8961
+2pm (daytime),164,0.8966
+2pm (daytime),165,0.8972
+2pm (daytime),166,0.8977
+2pm (daytime),167,0.8982
+2pm (daytime),168,0.8987
+2pm (daytime),169,0.8993
+2pm (daytime),170,0.8998
+2pm (daytime),171,0.9003
+2pm (daytime),172,0.9008
+2pm (daytime),173,0.9013
+2pm (daytime),174,0.9018
+2pm (daytime),175,0.9023
+2pm (daytime),176,0.9028
+2pm (daytime),177,0.9033
+2pm (daytime),178,0.9038
+2pm (daytime),179,0.9043
+2pm (daytime),180,0.9048
+2pm (daytime),181,0.9053
+2pm (daytime),182,0.9057
+2pm (daytime),183,0.9062
+2pm (daytime),184,0.9067
+2pm (daytime),185,0.9072
+2pm (daytime),186,0.9077
+2pm (daytime),187,0.9082
+2pm (daytime),188,0.9086
+2pm (daytime),189,0.9091
+2pm (daytime),190,0.9096
+2pm (daytime),191,0.9101
+2pm (daytime),192,0.9105
+2pm (daytime),193,0.911
+2pm (daytime),194,0.9115
+2pm (daytime),195,0.9119
+2pm (daytime),196,0.9124
+2pm (daytime),197,0.9128
+2pm (daytime),198,0.9133
+2pm (daytime),199,0.9138
+2pm (daytime),200,0.9142
+2pm (daytime),201,0.9147
+2pm (daytime),202,0.9151
+2pm (daytime),203,0.9155
+2pm (daytime),204,0.916
+2pm (daytime),205,0.9164
+2pm (daytime),206,0.9169
+2pm (daytime),207,0.9173
+2pm (daytime),208,0.9177
+2pm (daytime),209,0.9182
+2pm (daytime),210,0.9186
+2pm (daytime),211,0.919
+2pm (daytime),212,0.9195
+2pm (daytime),213,0.9199
+2pm (daytime),214,0.9203
+2pm (daytime),215,0.9207
+2pm (daytime),216,0.9212
+2pm (daytime),217,0.9216
+2pm (daytime),218,0.922
+2pm (daytime),219,0.9224
+2pm (daytime),220,0.9228
+2pm (daytime),221,0.9233
+2pm (daytime),222,0.9237
+2pm (daytime),223,0.9241
+2pm (daytime),224,0.9245
+2pm (daytime),225,0.9249
+2pm (daytime),226,0.9253
+2pm (daytime),227,0.9258
+2pm (daytime),228,0.9262
+2pm (daytime),229,0.9266
+2pm (daytime),230,0.927
+2pm (daytime),231,0.9274
+2pm (daytime),232,0.9278
+2pm (daytime),233,0.9282
+2pm (daytime),234,0.9286
+2pm (daytime),235,0.929
+2pm (daytime),236,0.9294
+2pm (daytime),237,0.9298
+2pm (daytime),238,0.9301
+2pm (daytime),239,0.9305
+2pm (daytime),240,0.9309
+2pm (daytime),241,0.9313
+2pm (daytime),242,0.9317
+2pm (daytime),243,0.9321
+2pm (daytime),244,0.9324
+2pm (daytime),245,0.9328
+2pm (daytime),246,0.9332
+2pm (daytime),247,0.9336
+2pm (daytime),248,0.9339
+2pm (daytime),249,0.9343
+2pm (daytime),250,0.9347
+2pm (daytime),251,0.935
+2pm (daytime),252,0.9354
+2pm (daytime),253,0.9358
+2pm (daytime),254,0.9361
+2pm (daytime),255,0.9365
+2pm (daytime),256,0.9369
+2pm (daytime),257,0.9372
+2pm (daytime),258,0.9376
+2pm (daytime),259,0.9379
+2pm (daytime),260,0.9383
+2pm (daytime),261,0.9387
+2pm (daytime),262,0.939
+2pm (daytime),263,0.9394
+2pm (daytime),264,0.9397
+2pm (daytime),265,0.9401
+2pm (daytime),266,0.9404
+2pm (daytime),267,0.9407
+2pm (daytime),268,0.9411
+2pm (daytime),269,0.9414
+2pm (daytime),270,0.9418
+2pm (daytime),271,0.9421
+2pm (daytime),272,0.9424
+2pm (daytime),273,0.9428
+2pm (daytime),274,0.9431
+2pm (daytime),275,0.9434
+2pm (daytime),276,0.9437
+2pm (daytime),277,0.9441
+2pm (daytime),278,0.9444
+2pm (daytime),279,0.9447
+2pm (daytime),280,0.945
+2pm (daytime),281,0.9453
+2pm (daytime),282,0.9457
+2pm (daytime),283,0.946
+2pm (daytime),284,0.9463
+2pm (daytime),285,0.9466
+2pm (daytime),286,0.9469
+2pm (daytime),287,0.9472
+2pm (daytime),288,0.9475
+2pm (daytime),289,0.9479
+2pm (daytime),290,0.9482
+2pm (daytime),291,0.9485
+2pm (daytime),292,0.9488
+2pm (daytime),293,0.9491
+2pm (daytime),294,0.9494
+2pm (daytime),295,0.9497
+2pm (daytime),296,0.95
+2pm (daytime),297,0.9503
+2pm (daytime),298,0.9506
+2pm (daytime),299,0.9509
+2pm (daytime),300,0.9512
+2pm (daytime),301,0.9515
+2pm (daytime),302,0.9518
+2pm (daytime),303,0.9521
+2pm (daytime),304,0.9524
+2pm (daytime),305,0.9527
+2pm (daytime),306,0.953
+2pm (daytime),307,0.9533
+2pm (daytime),308,0.9536
+2pm (daytime),309,0.9539
+2pm (daytime),310,0.9541
+2pm (daytime),311,0.9544
+2pm (daytime),312,0.9547
+2pm (daytime),313,0.955
+2pm (daytime),314,0.9553
+2pm (daytime),315,0.9556
+2pm (daytime),316,0.9558
+2pm (daytime),317,0.9561
+2pm (daytime),318,0.9564
+2pm (daytime),319,0.9567
+2pm (daytime),320,0.9569
+2pm (daytime),321,0.9572
+2pm (daytime),322,0.9575
+2pm (daytime),323,0.9578
+2pm (daytime),324,0.958
+2pm (daytime),325,0.9583
+2pm (daytime),326,0.9586
+2pm (daytime),327,0.9588
+2pm (daytime),328,0.9591
+2pm (daytime),329,0.9594
+2pm (daytime),330,0.9596
+2pm (daytime),331,0.9599
+2pm (daytime),332,0.9601
+2pm (daytime),333,0.9604
+2pm (daytime),334,0.9606
+2pm (daytime),335,0.9609
+2pm (daytime),336,0.9611
+2pm (daytime),337,0.9614
+2pm (daytime),338,0.9616
+2pm (daytime),339,0.9619
+2pm (daytime),340,0.9621
+2pm (daytime),341,0.9623
+2pm (daytime),342,0.9626
+2pm (daytime),343,0.9628
+2pm (daytime),344,0.963
+2pm (daytime),345,0.9633
+2pm (daytime),346,0.9635
+2pm (daytime),347,0.9637
+2pm (daytime),348,0.964
+2pm (daytime),349,0.9642
+2pm (daytime),350,0.9644
+2pm (daytime),351,0.9646
+2pm (daytime),352,0.9649
+2pm (daytime),353,0.9651
+2pm (daytime),354,0.9653
+2pm (daytime),355,0.9655
+2pm (daytime),356,0.9658
+2pm (daytime),357,0.966
+2pm (daytime),358,0.9662
+2pm (daytime),359,0.9664
+2pm (daytime),360,0.9667
+2pm (daytime),361,0.9669
+2pm (daytime),362,0.9671
+2pm (daytime),363,0.9673
+2pm (daytime),364,0.9675
+2pm (daytime),365,0.9677
+2pm (daytime),366,0.9679
+2pm (daytime),367,0.9681
+2pm (daytime),368,0.9683
+2pm (daytime),369,0.9686
+2pm (daytime),370,0.9688
+2pm (daytime),371,0.969
+2pm (daytime),372,0.9692
+2pm (daytime),373,0.9694
+2pm (daytime),374,0.9696
+2pm (daytime),375,0.9698
+2pm (daytime),376,0.97
+2pm (daytime),377,0.9702
+2pm (daytime),378,0.9703
+2pm (daytime),379,0.9705
+2pm (daytime),380,0.9707
+2pm (daytime),381,0.9709
+2pm (daytime),382,0.9711
+2pm (daytime),383,0.9713
+2pm (daytime),384,0.9715
+2pm (daytime),385,0.9717
+2pm (daytime),386,0.9719
+2pm (daytime),387,0.9721
+2pm (daytime),388,0.9722
+2pm (daytime),389,0.9724
+2pm (daytime),390,0.9726
+2pm (daytime),391,0.9728
+2pm (daytime),392,0.973
+2pm (daytime),393,0.9732
+2pm (daytime),394,0.9733
+2pm (daytime),395,0.9735
+2pm (daytime),396,0.9737
+2pm (daytime),397,0.9739
+2pm (daytime),398,0.9741
+2pm (daytime),399,0.9742
+2pm (daytime),400,0.9744
+2pm (daytime),401,0.9746
+2pm (daytime),402,0.9748
+2pm (daytime),403,0.9749
+2pm (daytime),404,0.9751
+2pm (daytime),405,0.9753
+2pm (daytime),406,0.9755
+2pm (daytime),407,0.9756
+2pm (daytime),408,0.9758
+2pm (daytime),409,0.976
+2pm (daytime),410,0.9761
+2pm (daytime),411,0.9763
+2pm (daytime),412,0.9765
+2pm (daytime),413,0.9766
+2pm (daytime),414,0.9768
+2pm (daytime),415,0.977
+2pm (daytime),416,0.9771
+2pm (daytime),417,0.9773
+2pm (daytime),418,0.9774
+2pm (daytime),419,0.9776
+2pm (daytime),420,0.9778
+2pm (daytime),421,0.9779
+2pm (daytime),422,0.9781
+2pm (daytime),423,0.9782
+2pm (daytime),424,0.9784
+2pm (daytime),425,0.9786
+2pm (daytime),426,0.9787
+2pm (daytime),427,0.9789
+2pm (daytime),428,0.979
+2pm (daytime),429,0.9792
+2pm (daytime),430,0.9793
+2pm (daytime),431,0.9795
+2pm (daytime),432,0.9796
+2pm (daytime),433,0.9798
+2pm (daytime),434,0.9799
+2pm (daytime),435,0.9801
+2pm (daytime),436,0.9802
+2pm (daytime),437,0.9804
+2pm (daytime),438,0.9805
+2pm (daytime),439,0.9807
+2pm (daytime),440,0.9808
+2pm (daytime),441,0.981
+2pm (daytime),442,0.9811
+2pm (daytime),443,0.9812
+2pm (daytime),444,0.9814
+2pm (daytime),445,0.9815
+2pm (daytime),446,0.9817
+2pm (daytime),447,0.9818
+2pm (daytime),448,0.982
+2pm (daytime),449,0.9821
+2pm (daytime),450,0.9822
+2pm (daytime),451,0.9824
+2pm (daytime),452,0.9825
+2pm (daytime),453,0.9826
+2pm (daytime),454,0.9828
+2pm (daytime),455,0.9829
+2pm (daytime),456,0.983
+2pm (daytime),457,0.9832
+2pm (daytime),458,0.9833
+2pm (daytime),459,0.9834
+2pm (daytime),460,0.9836
+2pm (daytime),461,0.9837
+2pm (daytime),462,0.9838
+2pm (daytime),463,0.9839
+2pm (daytime),464,0.9841
+2pm (daytime),465,0.9842
+2pm (daytime),466,0.9843
+2pm (daytime),467,0.9844
+2pm (daytime),468,0.9845
+2pm (daytime),469,0.9847
+2pm (daytime),470,0.9848
+2pm (daytime),471,0.9849
+2pm (daytime),472,0.985
+2pm (daytime),473,0.9851
+2pm (daytime),474,0.9852
+2pm (daytime),475,0.9853
+2pm (daytime),476,0.9855
+2pm (daytime),477,0.9856
+2pm (daytime),478,0.9857
+2pm (daytime),479,0.9858
+2pm (daytime),480,0.9859
+2pm (daytime),481,0.986
+2pm (daytime),482,0.9861
+2pm (daytime),483,0.9862
+2pm (daytime),484,0.9864
+2pm (daytime),485,0.9865
+2pm (daytime),486,0.9866
+2pm (daytime),487,0.9867
+2pm (daytime),488,0.9868
+2pm (daytime),489,0.9869
+2pm (daytime),490,0.987
+2pm (daytime),491,0.9871
+2pm (daytime),492,0.9872
+2pm (daytime),493,0.9873
+2pm (daytime),494,0.9874
+2pm (daytime),495,0.9875
+2pm (daytime),496,0.9876
+2pm (daytime),497,0.9877
+2pm (daytime),498,0.9878
+2pm (daytime),499,0.9879
+2pm (daytime),500,0.988
+2pm (daytime),501,0.9881
+2pm (daytime),502,0.9882
+2pm (daytime),503,0.9883
+2pm (daytime),504,0.9884
+2pm (daytime),505,0.9885
+2pm (daytime),506,0.9886
+2pm (daytime),507,0.9887
+2pm (daytime),508,0.9888
+2pm (daytime),509,0.9889
+2pm (daytime),510,0.989
+2pm (daytime),511,0.9891
+2pm (daytime),512,0.9892
+2pm (daytime),513,0.9893
+2pm (daytime),514,0.9894
+2pm (daytime),515,0.9895
+2pm (daytime),516,0.9896
+2pm (daytime),517,0.9897
+2pm (daytime),518,0.9898
+2pm (daytime),519,0.9898
+2pm (daytime),520,0.9899
+2pm (daytime),521,0.99
+2pm (daytime),522,0.9901
+2pm (daytime),523,0.9902
+2pm (daytime),524,0.9903
+2pm (daytime),525,0.9904
+2pm (daytime),526,0.9904
+2pm (daytime),527,0.9905
+2pm (daytime),528,0.9906
+2pm (daytime),529,0.9907
+2pm (daytime),530,0.9908
+2pm (daytime),531,0.9909
+2pm (daytime),532,0.9909
+2pm (daytime),533,0.991
+2pm (daytime),534,0.9911
+2pm (daytime),535,0.9912
+2pm (daytime),536,0.9913
+2pm (daytime),537,0.9913
+2pm (daytime),538,0.9914
+2pm (daytime),539,0.9915
+2pm (daytime),540,0.9916
+2pm (daytime),541,0.9917
+2pm (daytime),542,0.9917
+2pm (daytime),543,0.9918
+2pm (daytime),544,0.9919
+2pm (daytime),545,0.992
+2pm (daytime),546,0.992
+2pm (daytime),547,0.9921
+2pm (daytime),548,0.9922
+2pm (daytime),549,0.9923
+2pm (daytime),550,0.9923
+2pm (daytime),551,0.9924
+2pm (daytime),552,0.9925
+2pm (daytime),553,0.9926
+2pm (daytime),554,0.9926
+2pm (daytime),555,0.9927
+2pm (daytime),556,0.9928
+2pm (daytime),557,0.9929
+2pm (daytime),558,0.9929
+2pm (daytime),559,0.993
+2pm (daytime),560,0.9931
+2pm (daytime),561,0.9931
+2pm (daytime),562,0.9932
+2pm (daytime),563,0.9933
+2pm (daytime),564,0.9933
+2pm (daytime),565,0.9934
+2pm (daytime),566,0.9935
+2pm (daytime),567,0.9935
+2pm (daytime),568,0.9936
+2pm (daytime),569,0.9937
+2pm (daytime),570,0.9937
+2pm (daytime),571,0.9938
+2pm (daytime),572,0.9939
+2pm (daytime),573,0.9939
+2pm (daytime),574,0.994
+2pm (daytime),575,0.9941
+2pm (daytime),576,0.9941
+2pm (daytime),577,0.9942
+2pm (daytime),578,0.9943
+2pm (daytime),579,0.9943
+2pm (daytime),580,0.9944
+2pm (daytime),581,0.9944
+2pm (daytime),582,0.9945
+2pm (daytime),583,0.9946
+2pm (daytime),584,0.9946
+2pm (daytime),585,0.9947
+2pm (daytime),586,0.9947
+2pm (daytime),587,0.9948
+2pm (daytime),588,0.9949
+2pm (daytime),589,0.9949
+2pm (daytime),590,0.995
+2pm (daytime),591,0.995
+2pm (daytime),592,0.9951
+2pm (daytime),593,0.9951
+2pm (daytime),594,0.9952
+2pm (daytime),595,0.9952
+2pm (daytime),596,0.9953
+2pm (daytime),597,0.9953
+2pm (daytime),598,0.9954
+2pm (daytime),599,0.9954
+2pm (daytime),600,0.9955
+2pm (daytime),601,0.9955
+2pm (daytime),602,0.9956
+2pm (daytime),603,0.9956
+2pm (daytime),604,0.9957
+2pm (daytime),605,0.9957
+2pm (daytime),606,0.9958
+2pm (daytime),607,0.9958
+2pm (daytime),608,0.9959
+2pm (daytime),609,0.9959
+2pm (daytime),610,0.9959
+2pm (daytime),611,0.996
+2pm (daytime),612,0.996
+2pm (daytime),613,0.9961
+2pm (daytime),614,0.9961
+2pm (daytime),615,0.9962
+2pm (daytime),616,0.9962
+2pm (daytime),617,0.9963
+2pm (daytime),618,0.9963
+2pm (daytime),619,0.9963
+2pm (daytime),620,0.9964
+2pm (daytime),621,0.9964
+2pm (daytime),622,0.9965
+2pm (daytime),623,0.9965
+2pm (daytime),624,0.9965
+2pm (daytime),625,0.9966
+2pm (daytime),626,0.9966
+2pm (daytime),627,0.9967
+2pm (daytime),628,0.9967
+2pm (daytime),629,0.9967
+2pm (daytime),630,0.9968
+2pm (daytime),631,0.9968
+2pm (daytime),632,0.9969
+2pm (daytime),633,0.9969
+2pm (daytime),634,0.9969
+2pm (daytime),635,0.997
+2pm (daytime),636,0.997
+2pm (daytime),637,0.9971
+2pm (daytime),638,0.9971
+2pm (daytime),639,0.9971
+2pm (daytime),640,0.9972
+2pm (daytime),641,0.9972
+2pm (daytime),642,0.9972
+2pm (daytime),643,0.9973
+2pm (daytime),644,0.9973
+2pm (daytime),645,0.9974
+2pm (daytime),646,0.9974
+2pm (daytime),647,0.9974
+2pm (daytime),648,0.9975
+2pm (daytime),649,0.9975
+2pm (daytime),650,0.9975
+2pm (daytime),651,0.9976
+2pm (daytime),652,0.9976
+2pm (daytime),653,0.9976
+2pm (daytime),654,0.9977
+2pm (daytime),655,0.9977
+2pm (daytime),656,0.9977
+2pm (daytime),657,0.9978
+2pm (daytime),658,0.9978
+2pm (daytime),659,0.9978
+2pm (daytime),660,0.9979
+2pm (daytime),661,0.9979
+2pm (daytime),662,0.9979
+2pm (daytime),663,0.998
+2pm (daytime),664,0.998
+2pm (daytime),665,0.998
+2pm (daytime),666,0.9981
+2pm (daytime),667,0.9981
+2pm (daytime),668,0.9981
+2pm (daytime),669,0.9982
+2pm (daytime),670,0.9982
+2pm (daytime),671,0.9982
+2pm (daytime),672,0.9983
+2pm (daytime),673,0.9983
+2pm (daytime),674,0.9983
+2pm (daytime),675,0.9983
+2pm (daytime),676,0.9984
+2pm (daytime),677,0.9984
+2pm (daytime),678,0.9984
+2pm (daytime),679,0.9984
+2pm (daytime),680,0.9985
+2pm (daytime),681,0.9985
+2pm (daytime),682,0.9985
+2pm (daytime),683,0.9985
+2pm (daytime),684,0.9986
+2pm (daytime),685,0.9986
+2pm (daytime),686,0.9986
+2pm (daytime),687,0.9986
+2pm (daytime),688,0.9987
+2pm (daytime),689,0.9987
+2pm (daytime),690,0.9987
+2pm (daytime),691,0.9987
+2pm (daytime),692,0.9988
+2pm (daytime),693,0.9988
+2pm (daytime),694,0.9988
+2pm (daytime),695,0.9988
+2pm (daytime),696,0.9988
+2pm (daytime),697,0.9989
+2pm (daytime),698,0.9989
+2pm (daytime),699,0.9989
+2pm (daytime),700,0.9989
+2pm (daytime),701,0.9989
+2pm (daytime),702,0.999
+2pm (daytime),703,0.999
+2pm (daytime),704,0.999
+2pm (daytime),705,0.999
+2pm (daytime),706,0.999
+2pm (daytime),707,0.9991
+2pm (daytime),708,0.9991
+2pm (daytime),709,0.9991
+2pm (daytime),710,0.9991
+2pm (daytime),711,0.9991
+2pm (daytime),712,0.9992
+2pm (daytime),713,0.9992
+2pm (daytime),714,0.9992
+2pm (daytime),715,0.9992
+2pm (daytime),716,0.9992
+2pm (daytime),717,0.9993
+2pm (daytime),718,0.9993
+2pm (daytime),719,0.9993
+2pm (daytime),720,0.9993
+2pm (daytime),721,0.9993
+2pm (daytime),722,0.9993
+2pm (daytime),723,0.9994
+2pm (daytime),724,0.9994
+2pm (daytime),725,0.9994
+2pm (daytime),726,0.9994
+2pm (daytime),727,0.9994
+2pm (daytime),728,0.9994
+2pm (daytime),729,0.9994
+2pm (daytime),730,0.9995
+2pm (daytime),731,0.9995
+2pm (daytime),732,0.9995
+2pm (daytime),733,0.9995
+2pm (daytime),734,0.9995
+2pm (daytime),735,0.9995
+2pm (daytime),736,0.9995
+2pm (daytime),737,0.9996
+2pm (daytime),738,0.9996
+2pm (daytime),739,0.9996
+2pm (daytime),740,0.9996
+2pm (daytime),741,0.9996
+2pm (daytime),742,0.9996
+2pm (daytime),743,0.9996
+2pm (daytime),744,0.9996
+2pm (daytime),745,0.9997
+2pm (daytime),746,0.9997
+2pm (daytime),747,0.9997
+2pm (daytime),748,0.9997
+2pm (daytime),749,0.9997
+2pm (daytime),750,0.9997
+2pm (daytime),751,0.9997
+2pm (daytime),752,0.9997
+2pm (daytime),753,0.9997
+2pm (daytime),754,0.9998
+2pm (daytime),755,0.9998
+2pm (daytime),756,0.9998
+2pm (daytime),757,0.9998
+2pm (daytime),758,0.9998
+2pm (daytime),759,0.9998
+2pm (daytime),760,0.9998
+2pm (daytime),761,0.9998
+2pm (daytime),762,0.9998
+2pm (daytime),763,0.9998
+2pm (daytime),764,0.9998
+2pm (daytime),765,0.9999
+2pm (daytime),766,0.9999
+2pm (daytime),767,0.9999
+2pm (daytime),768,0.9999
+2pm (daytime),769,0.9999
+2pm (daytime),770,0.9999
+2pm (daytime),771,0.9999
+2pm (daytime),772,0.9999
+2pm (daytime),773,0.9999
+2pm (daytime),774,0.9999
+2pm (daytime),775,0.9999
+2pm (daytime),776,0.9999
+2pm (daytime),777,0.9999
+2pm (daytime),778,0.9999
+2pm (daytime),779,1
+2pm (daytime),780,1
+2pm (daytime),781,1
+2pm (daytime),782,1
+2pm (daytime),783,1
+2pm (daytime),784,1
+2pm (daytime),785,1
+2pm (daytime),786,1
+2pm (daytime),787,1
+2pm (daytime),788,1
+2pm (daytime),789,1
+2pm (daytime),790,1
+2pm (daytime),791,1
+2pm (daytime),792,1
+2pm (daytime),793,1
+2pm (daytime),794,1
+2pm (daytime),795,1
+2pm (daytime),796,1
+2pm (daytime),797,1
+2pm (daytime),798,1
+2pm (daytime),799,1
+2pm (daytime),800,1
+2pm (daytime),801,1
+2pm (daytime),802,1
+2pm (daytime),803,1
+2pm (daytime),804,1
+2pm (daytime),805,1
+2pm (daytime),806,1
+2pm (daytime),807,1
+2pm (daytime),808,1
+2pm (daytime),809,1
+2pm (daytime),810,1
+2pm (daytime),811,1
+2pm (daytime),812,1
+2pm (daytime),813,1
+2pm (daytime),814,1
+2pm (daytime),815,1
+2pm (daytime),816,1
+2pm (daytime),817,1
+2pm (daytime),818,1
+2pm (daytime),819,1
+2pm (daytime),820,1
+2pm (daytime),821,1
+2pm (daytime),822,1
+2pm (daytime),823,1
+2pm (daytime),824,1
+2pm (daytime),825,1
+2pm (daytime),826,1
+2pm (daytime),827,1
+2pm (daytime),828,1
+2pm (daytime),829,1
+2pm (daytime),830,1

@@ -1,0 +1,5 @@
+plan,residents_covered
+today (9pm),0.044
+today (2pm),0.724
+top-third plan (154 + 24),0.333
+all-sites plan (443 + 231),0.563
