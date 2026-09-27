@@ -85,30 +85,33 @@ cp$gt <- factor(ifelse(!G$gap0, NA, ifelse(G$cov14, "Evening-only gap: a restroo
                 levels = c("Evening-only gap: a restroom nearby by day, none by 9pm", "All-day gap: no restroom nearby at any time"))
 k <- table(cp$gt); levels(cp$gt) <- sprintf("%s (%d)", levels(cp$gt), as.integer(k))
 p7 <- base() + geom_sf(data = cp[!G$gap0, ], colour = "#dcdcd8", size = 0.35) +
-  geom_sf(data = cp[G$gap0, ], aes(colour = gt), size = 0.9) +
+  geom_sf(data = cp[G$gap0, ], aes(colour = gt, shape = gt), size = 1.1) +
   geom_sf(data = pil, shape = 24, size = 2.6, fill = "white", colour = "#111111") +
   scale_colour_manual(values = setNames(c("#eda100", "#c0392b"), levels(cp$gt)), name = sprintf("Gap: top-third demand, nothing open at 9pm (%d sites)", sum(G$gap0))) +
+  scale_shape_manual(values = setNames(c(16, 15), levels(cp$gt)), name = sprintf("Gap: top-third demand, nothing open at 9pm (%d sites)", sum(G$gap0))) +
   guides(colour = guide_legend(override.aes = list(size = 4))) +
   labs(title = "Demand minus supply: the gap is an evening gap",
        subtitle = sprintf("Triangles = the City's 17 pilot sites; %d of them fall inside this gap definition.", sum(G$pc_pil >= 2 / 3 & G$pil9)),
        caption = "Gap sites within 500 m of a pilot unit (open 7am-10pm) are treated as already served.") + th
 save(p7, "g7_gap.png")
 
-# g8 -- closing the gap: existing restrooms first, then new units
+# g8 -- closing the gap: existing restrooms first, then new units (one legend; shapes differ as well as colours)
 Fac <- G$Fac; New <- G$New
 fp <- st_transform(st_as_sf(Fac, coords = c("lon", "lat"), crs = 4326), 2263); np <- pts(New)
 A <- c("Keep park restroom open to 10pm", "Extend other operator's hours", "Repair or reopen")
-fp$a <- factor(Fac$action, levels = A); k8 <- table(fp$a)
-levels(fp$a) <- sprintf("%s (%d)", c("Keep a park restroom open to 10pm", "Extend another operator's hours to 10pm", "Repair, then keep open to 10pm"), as.integer(k8))
+LAB <- c(sprintf("Keep a park restroom open to 10pm (%d)", sum(Fac$action == A[1])),
+         sprintf("Extend another operator's hours to 10pm (%d)", sum(Fac$action == A[2])),
+         sprintf("Repair, then keep open to 10pm (%d)", sum(Fac$action == A[3])),
+         sprintf("New modular unit (%d)", nrow(New)))
+allp <- rbind(st_sf(a = LAB[match(Fac$action, A)], geometry = st_geometry(fp)), st_sf(a = rep(LAB[4], nrow(np)), geometry = st_geometry(np)))
+allp$a <- factor(allp$a, levels = LAB)
 p8 <- base() + geom_sf(data = cp[G$gap0, ], colour = "#f1d9a8", size = 0.5) +
-  geom_sf(data = fp, aes(fill = a), shape = 21, size = 2.8, colour = "white", stroke = 0.4) +
-  geom_sf(data = np, aes(shape = sprintf("New modular unit (%d)", nrow(New))), size = 3.6, fill = "#c0392b", colour = "white", stroke = 0.6) +
-  scale_fill_manual(values = setNames(c("#eda100", "#4a3aa7", "#2a78d6"), levels(fp$a)), name = sprintf("Stage 1: %d existing restrooms", nrow(Fac))) +
-  scale_shape_manual(values = 23, name = "Stage 2") +
-  guides(fill = guide_legend(order = 1, override.aes = list(size = 4)), shape = guide_legend(order = 2)) +
+  geom_sf(data = allp[order(allp$a == LAB[4]), ], aes(fill = a, shape = a, size = a), colour = "white", stroke = 0.5) +
+  scale_fill_manual(values = setNames(c("#eda100", "#4a3aa7", "#2a78d6", "#c0392b"), LAB), name = "Stage 1: existing restrooms · Stage 2: new units") +
+  scale_shape_manual(values = setNames(c(21, 22, 24, 23), LAB), name = "Stage 1: existing restrooms · Stage 2: new units") +
+  scale_size_manual(values = setNames(c(2.8, 2.8, 3, 3.8), LAB), name = "Stage 1: existing restrooms · Stage 2: new units") +
   labs(title = sprintf("Closing the gap: %d existing restrooms, then %d new units", nrow(Fac), nrow(New)),
-       subtitle = sprintf("Existing restrooms placed first, at their own locations (they cover %d of %d gap sites);\nnew units only where no existing restroom can reach. Pale = gap sites.",
-                          max(G$cum), sum(G$gap0)),
+       subtitle = sprintf("Existing restrooms placed first, at their own locations (they cover %d of %d gap sites);\nnew units only where no existing restroom can reach. Pale = gap sites.", max(G$cum), sum(G$gap0)),
        caption = "Both stages: greedy maximal covering within 500 m, weighted by demand.\nBroken = Parks long-term closed, or failing >=50% of inspections since Jan 2025.") + th
 save(p8, "g8_sites_and_actions.png")
 

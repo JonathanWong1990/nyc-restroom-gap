@@ -391,6 +391,25 @@ figure.chart a.zoom{display:block}
 .arch-banner a{color:var(--muted); text-decoration:underline}
 .rev-badge{display:inline-block; margin-left:8px; padding:2px 8px; border-radius:999px; background:var(--accent); color:var(--surface);
   font-family:var(--f-mono); font-size:10.5px; letter-spacing:.06em; vertical-align:1px}
+
+/* ---------- current tabs: text cells wrap; number cells stay on one line ---------- */
+#plan td,#plim td,#pdata td{white-space:normal; vertical-align:top}
+#plan td.n,#plim td.n,#pdata td.n{white-space:nowrap}
+#plan th,#plim th,#pdata th{white-space:normal; vertical-align:bottom}
+@media (max-width:640px){
+  #plan td,#plim td,#pdata td,#plan th,#plim th,#pdata th{white-space:normal; padding:8px 8px; overflow-wrap:anywhere}
+  #plan td.n,#plim td.n,#pdata td.n{white-space:normal}
+  #plan table,#plim table,#pdata table{font-size:12.5px}
+}
+
+/* ---------- phones: jump back to the tabs ---------- */
+#totabs{display:none}
+@media (max-width:640px){
+  #totabs{position:fixed; left:14px; bottom:16px; z-index:30; padding:9px 13px; border-radius:999px; border:0;
+    background:var(--accent); color:var(--surface); font-family:var(--f-display); font-weight:600; font-size:13px;
+    box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  #totabs.show{display:block}
+}
 </style>
 </head>
 <body>
@@ -399,7 +418,7 @@ figure.chart a.zoom{display:block}
   <p class="eyebrow">PMBA6093 · Analytics for Managers · Final project <span class="rev-badge">REVISED ANALYSIS · 26 SEP 2026</span></p>
   <h1>When nature calls, where should New York answer?</h1>
   <p class="standfirst">New York has committed to 2,120 public restrooms by 2035 and lists 975 today. We estimate demand from the factors Local Law 58 names, weighted by what the City's first 17 pilot sites have in common, and subtract the restrooms actually open. The access shortage is mostly in the evening, and much of it can be met by keeping existing restrooms open or repairing them, though that adds nothing to the law's count. For the count, reaching every resident takes about 830 new restrooms in our scenario, with steep diminishing returns: about 300 reach 95% of residents.</p>
-  <div class="byline"><span>HKU MBA group project</span><span>5,800 candidate sites</span><span>Data current to September 2026</span><span class="stamp">Updated 26 September 2026</span><span>Contributions by section: Data &amp; code</span></div>
+  <div class="byline"><span>HKU MBA group project</span><span>5,800 candidate sites</span><span>Data current to September 2026</span><span class="stamp">Updated 26 September 2026</span><span>Contributions: <a href="#d-credit">Data &amp; code</a></span></div>
 
 </header>
 <div class="modebar">
@@ -415,8 +434,8 @@ figure.chart a.zoom{display:block}
 <div class="modebar subbar" id="archbar" hidden>
   <div class="seg" role="group" aria-label="Archived versions">
     <button id="btn-walk" aria-pressed="false">Layered walkthrough</button>
-    <button id="btn-lim" aria-pressed="false">Limits</button>
-    <button id="btn-data" aria-pressed="false">Data &amp; code</button>
+    <button id="btn-lim" aria-pressed="false">Layered limits</button>
+    <button id="btn-data" aria-pressed="false">Layered data &amp; code</button>
     <button id="btn-merged" aria-pressed="false">Merged</button>
     <button id="btn-orig" aria-pressed="false">Original</button>
   </div>
@@ -449,9 +468,9 @@ figure.chart a.zoom{display:block}
 An area is underserved when it has insufficient access "because of a lack of public bathrooms or limited opening hours of existing public bathrooms, relative to localized needs", considering "population density, estimated daily foot traffic, public transportation routes, distance to existing public bathrooms by walking or using a mobility device, land use including current commercial and tourist corridors, and equity concerns".<br>
 <a href="https://intro.nyc/local-laws/2025-58" target="_blank" rel="noopener">Read the law (intro.nyc)</a> · <a href="#p-law" data-anchor="p-law">Link to this step</a></div>
 <p>The law's factors fall on two sides: what creates the need for a restroom (demand), and what already meets it (supply).</p>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Side</th><th>Factor in the law</th><th>How we measure it at a site</th><th>Data</th></tr></thead><tbody>
+<div class="tbox" tabindex="0" role="group" aria-label="Table"><table><thead><tr><th>Side</th><th>Factor in the law</th><th>How we measure it at a site</th><th>Data</th></tr></thead><tbody>
 <tr><td rowspan="5"><strong>Demand</strong></td><td>Population density</td><td>Residents within 500 m</td><td>Census ACS 2020–24</td></tr>
-<tr><td>Daily foot traffic</td><td>DOT's modelled pedestrian demand for streets within 250 m (street length × demand level, 1 = lowest to 5 = citywide destinations)</td><td>DOT pedestrian demand (Sep 2026)</td></tr>
+<tr><td>Daily foot traffic</td><td>Modelled pedestrian demand on streets within 250 m¹</td><td>DOT pedestrian demand (Sep 2026)</td></tr>
 <tr><td>Public transportation</td><td>Subway entries within 500 m</td><td>MTA 2025</td></tr>
 <tr><td>Commercial and tourist land use</td><td>Jobs within 500 m</td><td>Census LEHD 2023</td></tr>
 <tr><td>Equity</td><td>Poverty rate of the census tract (a Census area of about 4,000 people)</td><td>Census ACS 2020–24</td></tr>
@@ -459,6 +478,7 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <tr><td>Limited opening hours</td></tr>
 </tbody></table></div>
 <ul>
+<li>¹ Each street is weighted by its length and its DOT demand level, from 1 (lowest) to 5 (citywide destinations).</li>
 <li>500 m is about a 7-minute walk.</li>
 <li>The law gives <strong>no weights</strong> for these factors, and none have been published. Steps 4–6 estimate them. Opening hours enter through supply: a restroom counts only while it is open.</li>
 </ul>
@@ -497,8 +517,8 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <li><strong>Busyness:</strong> population, foot traffic, transit and jobs rise and fall together (correlations 0.52–0.81), so the model cannot tell their effects apart. We put each on the same scale (logged, then standardised) and average them into one <strong>busyness index</strong>.</li>
 <li><strong>Controls:</strong> distance to a restroom open at 2pm and at 9pm (supply), and site type (park, plaza or street), so each pilot site is compared with sites of its own kind.</li>
 </ul>
-<figure class="chart"><a class="zoom" href="img/plan/g3_pilot_model.png" target="_blank" rel="noopener"><img src="img/plan/g3_pilot_model.png" alt="Chart of what the 17 pilot sites have in common: busier about 12.8 times as likely, farther from a restroom open at 2pm about 2.0 times, at 9pm about 2.6 times, poorer area no clear effect" loading="lazy"></a></figure>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>A site that is…</th><th>Side</th><th class="n">Coefficient (95% CI)</th><th class="n">…is roughly this much more likely to be picked</th></tr></thead><tbody>
+<figure class="chart"><a class="zoom" href="img/plan/g3_pilot_model.png" target="_blank" rel="noopener"><img src="img/plan/g3_pilot_model.png" alt="Chart of what the 17 pilot sites have in common: busier about 13 times as likely, farther from a restroom open at 2pm about 2.0 times, at 9pm about 2.6 times, poorer area no clear effect" loading="lazy"></a></figure>
+<div class="tbox" tabindex="0" role="group" aria-label="Table"><table><thead><tr><th>A site that is…</th><th>Side</th><th class="n">Coefficient (95% CI)</th><th class="n">…is roughly this much more likely to be picked</th></tr></thead><tbody>
 <tr><td><strong>busier</strong> (population, foot traffic, transit, jobs)</td><td>Demand</td><td class="n">+2.55 (1.35 to 3.79)</td><td class="n"><strong>13×</strong></td></tr>
 <tr><td><strong>in a poorer area</strong> (tract poverty)</td><td>Demand</td><td class="n">+0.12 (−0.37 to 0.52)</td><td class="n">no clear effect</td></tr>
 <tr><td><strong>farther from a restroom open at 2pm</strong></td><td>Supply</td><td class="n">+0.71 (0.08 to 1.46)</td><td class="n"><strong>2×</strong></td></tr>
@@ -555,11 +575,11 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <ul>
 <li>NYC Parks inspects its restrooms on a schedule. In January–June 2026, one in five inspections (20.1%) found the restroom unacceptable. <span class="mtag src">From a source</span></li>
 <li>Among listed restrooms, <strong>34</strong> are recorded by Parks as closed long-term and <strong>47</strong> fail repeatedly: unacceptable in at least half their inspections since January 2025, and at least twice. Another <strong>41</strong> Parks restrooms are closed and not listed at all.</li>
-<li>These 122 restrooms exist but do not reliably serve anyone, so the 81 listed ones are <strong>not counted as supply</strong>. That leaves 873 working restrooms open at 2pm. All 122 are candidates for repair in step 10.</li>
+<li>That is <strong>122</strong> restrooms in all (34 + 47 listed, 41 unlisted) that exist but do not reliably serve anyone. The 81 listed ones are <strong>removed from supply</strong>, leaving 873 working restrooms open at 2pm. All 122 are candidates for repair in step 10.</li>
 </ul>
 <p><strong>What that leaves.</strong> A working restroom open within 500 m:</p>
 <figure class="chart"><a class="zoom" href="img/plan/g6_supply_day_evening.png" target="_blank" rel="noopener"><img src="img/plan/g6_supply_day_evening.png" alt="Two maps: at 2pm 70% of candidate sites have a working restroom open within 500 m; at 9pm 16%" loading="lazy"></a></figure>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Already had a working restroom open within 500 m…</th><th class="n">All 5,814 candidate sites</th><th class="n">The 17 places the City chose for pilot units</th></tr></thead><tbody>
+<div class="tbox" tabindex="0" role="group" aria-label="Table"><table><thead><tr><th>Already had a working restroom open within 500 m…</th><th class="n">All 5,814 candidate sites</th><th class="n">The 17 places the City chose for pilot units</th></tr></thead><tbody>
 <tr><td>at 2pm</td><td class="n">70%</td><td class="n">13 of 17</td></tr>
 <tr><td>at 9pm</td><td class="n">16%</td><td class="n"><strong>1 of 17</strong></td></tr>
 </tbody></table></div>
@@ -589,7 +609,7 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <li><strong>Stage 2: new units</strong> at candidate sites, only where no existing restroom can reach.</li>
 </ul>
 <figure class="chart"><a class="zoom" href="img/plan/g8_sites_and_actions.png" target="_blank" rel="noopener"><img src="img/plan/g8_sites_and_actions.png" alt="Map: 155 existing restrooms (105 park restrooms kept open to 10pm, 34 other operators' hours extended, 16 repaired and kept open to 10pm) and 24 new modular units" loading="lazy"></a></figure>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Stage</th><th>Action</th><th class="n">Restrooms</th></tr></thead><tbody>
+<div class="tbox" tabindex="0" role="group" aria-label="Table"><table><thead><tr><th>Stage</th><th>Action</th><th class="n">Restrooms</th></tr></thead><tbody>
 <tr><td rowspan="3">1 · Existing</td><td><strong>Keep a park restroom open to 10pm</strong></td><td class="n">105</td></tr>
 <tr><td><strong>Extend another operator's hours to 10pm</strong>, mostly public libraries (NYPL 20, Brooklyn Public Library 4)</td><td class="n">34</td></tr>
 <tr><td><strong>Repair or reopen, then keep open to 10pm</strong></td><td class="n">16</td></tr>
@@ -610,7 +630,7 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <h3 id="p-sens">11 — Does the answer survive different assumptions? <span class="mtag out">Beyond class · Monte Carlo sensitivity</span></h3>
 <p>The analysis rests on choices: the weights, the high-demand cut-off, the radius, the evening hour and what counts as supply. Here we change each one, in many random runs (Monte Carlo) where needed, and see how much the answer moves.</p>
 <p><strong>Park hours.</strong> The 641 Parks restrooms with vague posted hours may already stay open later in summer.</p>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Park restrooms with vague hours…</th><th class="n">Gap sites</th><th class="n">Existing restrooms</th><th class="n">New units</th></tr></thead><tbody>
+<div class="tbox" tabindex="0" role="group" aria-label="Table"><table><thead><tr><th>Park restrooms with vague hours…</th><th class="n">Gap sites</th><th class="n">Existing restrooms</th><th class="n">New units</th></tr></thead><tbody>
 <tr><td>close at 4pm (posted hours)</td><td class="n">1,246</td><td class="n">155</td><td class="n">24</td></tr>
 <tr><td>stay open to 10pm</td><td class="n">396</td><td class="n">37</td><td class="n">24</td></tr>
 </tbody></table></div>
@@ -618,7 +638,7 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <li>Park hours decide how much work falls on existing restrooms, not how many new units are needed.</li>
 </ul>
 <p><strong>Pilot units.</strong> The City said installation of the 17 units began on 16 September; not all may be open yet.</p>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Pilot units…</th><th class="n">Gap sites</th><th class="n">Existing restrooms</th><th class="n">New units</th></tr></thead><tbody>
+<div class="tbox" tabindex="0" role="group" aria-label="Table"><table><thead><tr><th>Pilot units…</th><th class="n">Gap sites</th><th class="n">Existing restrooms</th><th class="n">New units</th></tr></thead><tbody>
 <tr><td>all 17 operating 7am–10pm</td><td class="n">1,246</td><td class="n">155</td><td class="n">24</td></tr>
 <tr><td>none operating yet</td><td class="n">1,357</td><td class="n">162</td><td class="n">25</td></tr>
 </tbody></table></div>
@@ -626,7 +646,7 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <li>The pilot assumption changes the gap by about 110 sites but the new units by one.</li>
 </ul>
 <p><strong>Private toilets.</strong> Cafés and fast-food outlets have toilets, usually for customers. We added the 1,854 chain outlets in the City's restaurant inspection data (Dunkin', Starbucks, McDonald's, Subway, Popeyes, Chipotle and others) as supply. The data has no opening hours, so each row is a scenario.</p>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Chain toilets count as supply…</th><th class="n">Gap sites</th><th class="n">Existing restrooms</th><th class="n">New units</th></tr></thead><tbody>
+<div class="tbox" tabindex="0" role="group" aria-label="Table"><table><thead><tr><th>Chain toilets count as supply…</th><th class="n">Gap sites</th><th class="n">Existing restrooms</th><th class="n">New units</th></tr></thead><tbody>
 <tr><td>not at all (public restrooms only)</td><td class="n">1,246</td><td class="n">155</td><td class="n">24</td></tr>
 <tr><td>all outlets, open to anyone until 9pm (upper bound)</td><td class="n">32</td><td class="n">18</td><td class="n">2</td></tr>
 <tr><td>all by day; at 9pm only late-night fast food (McDonald's, Burger King, Wendy's, Popeyes, KFC, Taco Bell)</td><td class="n">266</td><td class="n">61</td><td class="n">12</td></tr>
@@ -649,7 +669,7 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <h3 id="p-scale">12 — Beyond the busiest third: access for every resident, and the law's count</h3>
 <p>This step changes two things. It covers the whole city, not just the busiest third. And it counts <strong>residents</strong> (Census population on a 150 m grid), not candidate sites. The question: how many New Yorkers have a restroom open within 500 m, and what would it take to reach all of them?</p>
 <figure class="chart"><a class="zoom" href="img/plan/g12_resident_coverage.png" target="_blank" rel="noopener"><img src="img/plan/g12_resident_coverage.png" alt="Curve of residents covered at 9pm as new units are added: 38 units reach 80%, 171 reach 90%, 296 reach 95%, 830 reach 100%" loading="lazy"></a></figure>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Residents with a restroom open within 500 m</th><th class="n">What it takes</th></tr></thead><tbody>
+<div class="tbox" tabindex="0" role="group" aria-label="Table"><table><thead><tr><th>Residents with a restroom open within 500 m</th><th class="n">What it takes</th></tr></thead><tbody>
 <tr><td>Today, 2pm</td><td class="n">69%</td></tr>
 <tr><td>Today, 9pm</td><td class="n">4%</td></tr>
 <tr><td>9pm, existing restrooms kept open to 10pm or repaired</td><td class="n">73%, using 761 existing restrooms and no new units</td></tr>
@@ -678,12 +698,12 @@ An area is underserved when it has insufficient access "because of a lack of pub
 
 <h3 id="p-rec">14 — Recommendation <span class="mtag in">S8–9 · A/B test design</span></h3>
 <div class="find"><strong>Two goals, two tools.</strong> The evening access gap could largely be closed with restrooms that already exist, by keeping them open or repairing them, if that proves feasible. The law's count can only be met by building; build in order of how many people each new restroom reaches.</div>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Step</th><th>Do this</th><th>Scale</th></tr></thead><tbody>
-<tr><td><strong>1. Verify the list</strong></td><td>Confirm which park restrooms are actually open in the evening; for each of the 155, check the operator's agreement, access, repair scope and cost</td><td>Decides whether up to 105 park extensions are needed in the busiest areas</td></tr>
-<tr><td><strong>2. Open what exists in the evening</strong></td><td>Keep park restrooms open to 10pm, matching the pilot; negotiate later hours with libraries and plaza operators</td><td>139 in the busiest areas; up to 664 citywide</td></tr>
-<tr><td><strong>3. Repair or reopen</strong></td><td>Restore restrooms that are closed long-term or failing inspection, and keep them open to 10pm</td><td>16 in the busiest areas; up to 97 citywide</td></tr>
-<tr><td><strong>4. Partner toilets</strong></td><td>Pay businesses on busy streets to open their toilets to everyone</td><td>Where chain outlets already sit on the evening gap</td></tr>
-<tr><td><strong>5. Build toward the count</strong></td><td>First the 24 in the busiest areas; then in order of residents reached</td><td>About 300 reach 95% of residents; about 830 in our scenario to reach all</td></tr>
+<div class="tbox" tabindex="0" role="group" aria-label="Table"><table><thead><tr><th>Action</th><th>Do this</th><th>Scale</th></tr></thead><tbody>
+<tr><td><strong>A. Verify the list</strong></td><td>Confirm which park restrooms are actually open in the evening; for each of the 155, check the operator's agreement, access, repair scope and cost</td><td>Decides whether up to 105 park extensions are needed in the busiest areas</td></tr>
+<tr><td><strong>B. Open what exists in the evening</strong></td><td>Keep park restrooms open to 10pm, matching the pilot; negotiate later hours with libraries and plaza operators</td><td>139 in the busiest areas; up to 664 citywide</td></tr>
+<tr><td><strong>C. Repair or reopen</strong></td><td>Restore restrooms that are closed long-term or failing inspection, and keep them open to 10pm</td><td>16 in the busiest areas; up to 97 citywide</td></tr>
+<tr><td><strong>D. Partner toilets</strong></td><td>Pay businesses on busy streets to open their toilets to everyone</td><td>Where chain outlets already sit on the evening gap</td></tr>
+<tr><td><strong>E. Build toward the count</strong></td><td>First the 24 in the busiest areas; then in order of residents reached</td><td>About 300 reach 95% of residents; about 830 in our scenario to reach all</td></tr>
 </tbody></table></div>
 <ul>
 <li><strong>Decide the last stretch separately:</strong> whether the final ~530 units, each reaching few residents, are a better use of roughly $125M a year than added capacity in the busiest places. The cost of longer opening hours is not known and should be estimated with Parks.</li>
@@ -718,7 +738,7 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <ul>
 <li><strong>The analysis stops at the evening.</strong> Demand is measured by place, not by hour, and the gap is tested at 9pm, inside the pilot's 7am–10pm hours. Late night is not covered.</li>
 </ul>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th></th><th class="n">6–10pm</th><th class="n">10pm–midnight</th><th class="n">Midnight–6am</th></tr></thead><tbody>
+<div class="tbox" tabindex="0" role="group" aria-label="Table"><table><thead><tr><th></th><th class="n">6–10pm</th><th class="n">10pm–midnight</th><th class="n">Midnight–6am</th></tr></thead><tbody>
 <tr><td>Weekday subway entries (share of the day)</td><td class="n">18.8%</td><td class="n">3.8%</td><td class="n">3.4%</td></tr>
 <tr><td>Public-urination complaints filed (2020–26)</td><td class="n">23%</td><td class="n"><strong>7.1%</strong></td><td class="n"><strong>6.9%</strong></td></tr>
 <tr><td>Working public restrooms open (weekday)</td><td class="n">57 at 9pm</td><td class="n">41 at 10pm, 22 at 11pm</td><td class="n"><strong>7 at midnight</strong>, 8 at 2am</td></tr>
@@ -732,7 +752,7 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <ul>
 <li><strong>17 sites is a small sample.</strong> The weights summarise what the first pilot sites share; they are not a measure of need. Across 200 random weightings, 103 of the 155 existing restrooms stay on the list.</li>
 <li><strong>No independent check of need.</strong> The pilot sites supply both the weights and the consistency checks (14 of 17 in the top third and in the gap). The complaint evidence in step 13 points largely elsewhere. Usage data from the pilot would be the first independent test.</li>
-<li><strong>Equity is uncertain</strong> (95% CI −0.36 to 0.53) and carries 5% of demand.</li>
+<li><strong>Equity is uncertain</strong> (95% CI −0.37 to 0.52) and carries 5% of demand.</li>
 <li><strong>Validation is limited:</strong> the AUC of 0.91 is in-sample. The leave-one-out ranking (median 97%) is the held-out check. Admiral Farragut Playground fits poorly (37%).</li>
 <li><strong>The comparison group</strong> includes large park interiors where few people live, which widens the busyness contrast. The site-type control reduces this but does not remove it.</li>
 </ul>
@@ -762,7 +782,7 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <p class="lede">Every dataset and script behind the Walkthrough, how to rerun it, and who contributed what.</p>
 
 <h3 id="d-data">Datasets</h3>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Dataset</th><th>Source</th><th>Used for</th><th>Walkthrough step</th></tr></thead><tbody>
+<div class="tbox" tabindex="0" role="group" aria-label="Table"><table><thead><tr><th>Dataset</th><th>Source</th><th>Used for</th><th>Walkthrough step</th></tr></thead><tbody>
 <tr><td>Local Law 58 of 2025 (text)</td><td><a href="https://intro.nyc/local-laws/2025-58" target="_blank" rel="noopener">intro.nyc</a></td><td>The 2,120 target; the definition and factors of an underserved area</td><td class="n">1–2</td></tr>
 <tr><td>Modular pilot: 17 sites, hours, cost</td><td><a href="https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-brings-17-new-public-bathrooms-to-neighborhoods-ac" target="_blank" rel="noopener">Mayor's Office, 16 Sep 2026</a>; <a href="https://edc.nyc/press-release/nycedc-selects-throne-labs-pilot-high-quality-modular-public-restrooms-citywide" target="_blank" rel="noopener">NYCEDC</a></td><td>Reference for weighting the factors; the pilot's 7am–10pm hours; $4M cost</td><td class="n">4–6, 12</td></tr>
 <tr><td>Public restrooms register</td><td><a href="https://data.cityofnewyork.us/d/i7jb-7jku" target="_blank" rel="noopener">NYC Open Data <code>i7jb-7jku</code></a></td><td>Supply: location, status, posted hours of 975 restrooms</td><td class="n">8–12</td></tr>
@@ -783,7 +803,7 @@ An area is underserved when it has insufficient access "because of a lack of pub
 
 <h3 id="d-code">Scripts</h3>
 <p>All code is R (4.6; packages sf, data.table, logistf, ggplot2, patchwork). Scripts and outputs are in the <a href="https://github.com/JonathanWong1990/nyc-restroom-gap/tree/main/analysis/city_criteria" target="_blank" rel="noopener">repository</a>. A <a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/CHECKING.md" target="_blank" rel="noopener">reviewer guide</a> maps each number on the Walkthrough to the file that produces it.</p>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Script</th><th>What it does</th><th>Walkthrough step</th></tr></thead><tbody>
+<div class="tbox" tabindex="0" role="group" aria-label="Table"><table><thead><tr><th>Script</th><th>What it does</th><th>Walkthrough step</th></tr></thead><tbody>
 <tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/build_plan/R/01_prep.R" target="_blank" rel="noopener"><code>build_plan/01_prep.R</code></a></td><td>Builds the 5,814 candidate sites, the resident grid, and the restroom register with hours and inspection flags</td><td class="n">3, 8</td></tr>
 <tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/01_features.R" target="_blank" rel="noopener"><code>01_features.R</code></a></td><td>Measures the law's factors at every candidate site and the 17 pilot sites</td><td class="n">2–5</td></tr>
 <tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/05_gap.R" target="_blank" rel="noopener"><code>05_gap.R</code></a></td><td>Pilot model, leave-one-out test, demand score, supply by hour, the gap, two-stage cover, sensitivity</td><td class="n">5–11</td></tr>
@@ -792,11 +812,11 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/11_late_night.R" target="_blank" rel="noopener"><code>11_late_night.R</code></a></td><td>Subway entries, complaints and open restrooms after 10pm</td><td class="n">Limits</td></tr>
 <tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/04_figures.R" target="_blank" rel="noopener"><code>04_figures.R</code></a>, <a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/06_gap_figures.R" target="_blank" rel="noopener"><code>06_gap_figures.R</code></a>, <a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/10_extra_figures.R" target="_blank" rel="noopener"><code>10_extra_figures.R</code></a></td><td>All figures on the Walkthrough</td><td class="n">all</td></tr>
 </tbody></table></div>
-<p><strong>To rerun:</strong> run <code>01_features.R</code>, then <code>05_gap.R</code> (about 2 minutes), then <code>07</code>–<code>10</code> in order. The scripts read inputs from the team's project folder; the prepared inputs file (<code>prep.rds</code>, built by <code>build_plan/01_prep.R</code>) is in the repository under <code>analysis/city_criteria/cache/</code>.</p>
+<p><strong>To rerun:</strong> <code>build_plan/01_prep.R</code> (builds <code>prep.rds</code>; optional, since the file is included), then <code>01_features.R</code>, <code>05_gap.R</code> (about 2 minutes), <code>06</code>, <code>07</code>, <code>08</code>, <code>09</code>, <code>10</code> and <code>11_late_night.R</code>, in that order. The scripts read inputs from the team's project folder; the prepared inputs file (<code>prep.rds</code>, built by <code>build_plan/01_prep.R</code>) is in the repository under <code>analysis/city_criteria/cache/</code>.</p>
 
 <h3 id="d-credit">Contributions</h3>
 <p>Who found or built what, and where it appears.</p>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Contributor</th><th>Contribution</th><th>Where it appears</th></tr></thead><tbody>
+<div class="tbox" tabindex="0" role="group" aria-label="Table"><table><thead><tr><th>Contributor</th><th>Contribution</th><th>Where it appears</th></tr></thead><tbody>
 <tr><td>Giorgia</td><td>Direction: learn the City's criteria from the 17 pilot sites, then score and allocate locations; the 500 m service standard</td><td>The core approach (Walkthrough steps 4–10); 500 m throughout</td></tr>
 <tr><td>Steph, Giorgia</td><td>The 17-unit pilot and its site list (<a href="https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-brings-17-new-public-bathrooms-to-neighborhoods-ac" target="_blank" rel="noopener">Mayor's Office</a>)</td><td>Reference sites for the weights (steps 4–6); pilot cost (step 12)</td></tr>
 <tr><td>Steph</td><td>Source review identifying DOT's modelled pedestrian demand (<code>fwpa-qxaf</code>)</td><td>Foot-traffic factor and busy-street candidate sites (steps 2–3, 5)</td></tr>
@@ -810,6 +830,7 @@ An area is underserved when it has insufficient access "because of a lack of pub
 </div>
 
 <div id="deck" hidden>
+<p class="arch-banner">Draft outline, not yet updated: figures and step numbers may differ from the current <a href="#plan" data-tab="plan">Walkthrough</a>.</p>
 <h2>Deck outline</h2>
 <p class="lede">How the story groups into segments for the 12-minute talk. Each segment will become several slides. Times are a rough share of 12 minutes.</p>
 
@@ -1364,7 +1385,7 @@ An area is underserved when it has insufficient access "because of a lack of pub
 </section>
 <section id="original" data-archive="true" hidden>
 <p class="archive-note" role="note">Archived version of 22 Sep 2026, kept for comparison. Some figures are superseded — current figures are in the Walkthrough.</p>
-<h2>Walkthrough</h2>
+<h2>Walkthrough (22 Sep)</h2>
 <p>The whole project, step by step, with the arithmetic shown at each stage.</p>
 <p><strong>The answer, up front:</strong> twenty-nine neighbourhoods need attention. Nine need a building, ten need only to stay open four hours later, and the rest need repairs to what is already there. Before committing the capital, spend $1.9M finding out whether any of it works.</p>
 <h3>The situation</h3>
@@ -1591,6 +1612,7 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
 <h3>Links</h3>
 <ul><li><a href="https://github.com/JonathanWong1990/nyc-restroom-gap">Repository</a></li><li><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/METHODS.md">Methods, script by script</a></li><li><a href="llms.txt">Plain-text edition (llms.txt)</a></li><li><a href="maps/unmet-need.html">Interactive map: unmet need</a></li><li><a href="maps/coverage-gap.html">Interactive map: coverage gap</a></li></ul>
 </div>
+<button id="totabs" type="button" aria-label="Back to the tabs">↑ Tabs</button>
 <footer>
   <div class="updated">Last updated <strong>26 September 2026</strong> · <a href="https://github.com/JonathanWong1990/nyc-restroom-gap/commits/main">see what changed</a></div>
   Built from primary sources · NYC Open Data · data.ny.gov · US Census ACS &amp; LEHD<br>
@@ -1618,7 +1640,7 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
     plim:'What could change the answer, and what would settle it.',
     pdata:'Every dataset and script, how to rerun it, and who contributed what.',
     deck:'Draft, not yet updated: how the story groups into segments for the talk.',
-    walk:'Archive: the layered complaint analysis (25 Sep), now used as the reality lens.',
+    walk:'Archive: the layered complaint analysis (25 Sep). Its hours and inspection checks are reused in the current Walkthrough.',
     lim:'Archive: limits of the layered analysis.',
     data:'Archive: every dataset and script of the earlier analyses.',
     merged:'Archive: the 24 Sep merged walkthrough.',
@@ -1736,6 +1758,13 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
     var n; do { n=Math.floor(Math.random()*spots.length); } while(n===i); i=n;
     loo.style.right=spots[n][0]+'px'; loo.style.bottom=spots[n][1]+'px';
   });
+})();
+</script>
+<script>
+(function(){ var b=document.getElementById('totabs'), mb=document.querySelector('.modebar'); if(!b||!mb) return;
+  function upd(){ var r=mb.getBoundingClientRect(); b.classList.toggle('show', r.bottom < 0); }
+  window.addEventListener('scroll', upd, {passive:true}); upd();
+  b.addEventListener('click', function(){ mb.scrollIntoView({behavior:'smooth', block:'start'}); });
 })();
 </script>
 </body>
