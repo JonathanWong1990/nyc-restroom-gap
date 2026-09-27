@@ -747,7 +747,7 @@ An area is underserved when it has insufficient access "because of a lack of pub
     <button type="button" class="gv-btn" id="gv-next" aria-label="Next step">Next →</button>
   </div>
   <p class="gv-title" id="gv-title"></p>
-  <figure class="chart gv-fig"><a class="zoom" id="gv-link" href="img/guide/v1.png" target="_blank" rel="noopener"><img id="gv-img" src="img/guide/v1.png" alt="" width="1200" height="1290"></a></figure>
+  <figure class="chart gv-fig"><a class="zoom" id="gv-link" href="img/guide/v1.png?v=20260927" target="_blank" rel="noopener"><img id="gv-img" src="img/guide/v1.png?v=20260927" alt="" width="1200" height="1290"></a></figure>
   <p class="gv-cap" id="gv-cap"></p>
   <p class="gv-more"><a id="gv-more" href="#p-cand">Read this step in the Walkthrough</a></p>
 </div>
@@ -1817,8 +1817,8 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
   if(!img) return;
   S.forEach(function(x,k){ var b=document.createElement('button'); b.type='button'; b.className='gv-dot'; b.textContent=k+1;
     b.setAttribute('aria-label','Step '+(k+1)+': '+x.t); b.addEventListener('click',function(){ go(k); }); dots.appendChild(b); });
-  S.forEach(function(x,k){ var p=new Image(); p.src='img/guide/v'+(k+1)+'.png'; });
-  function go(k){ i=Math.max(0,Math.min(S.length-1,k)); var f='img/guide/v'+(i+1)+'.png';
+  S.forEach(function(x,k){ var p=new Image(); p.src='img/guide/v'+(k+1)+'.png?v=20260927'; });
+  function go(k){ i=Math.max(0,Math.min(S.length-1,k)); var f='img/guide/v'+(i+1)+'.png?v=20260927';
     img.src=f; link.href=f; img.alt='Step '+(i+1)+': '+S[i].t+'. '+S[i].c; t.textContent='Step '+(i+1)+' of '+S.length+' · '+S[i].t;
     c.textContent=S[i].c; more.href='#'+S[i].a; more.setAttribute('data-anchor',S[i].a);
     [].forEach.call(dots.children,function(d,k){ if(k===i) d.setAttribute('aria-current','step'); else d.removeAttribute('aria-current'); });
