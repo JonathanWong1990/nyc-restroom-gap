@@ -714,6 +714,13 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <li><strong>Pilot units</strong> are assumed to be operating 7am–10pm. If none were open yet, the gap would be 1,357 sites, with 162 existing restrooms and 25 new units. Pilot locations are geocoded from the published place names, so their exact points are approximate.</li>
 <li>18 restrooms with unreadable hours count as closed. Hours are posted, not observed.</li>
 </ul>
+<h3>After 10pm</h3>
+<ul>
+<li><strong>The analysis stops at the evening.</strong> Demand is measured by place, not by hour, and the gap is tested at 9pm, inside the pilot's 7am–10pm hours. Late night is not covered.</li>
+<li><strong>Late night is a smaller but sharper problem.</strong> On a weekday, 7.2% of subway entries happen between 10pm and 6am (about 290,000 entries; 11.7% on Saturdays). But 14% of public-urination complaints are filed in those hours (7.1% before midnight, 6.9% after), about twice the late-night share of riders. Working public restrooms fall from 57 at 9pm to 41 at 10pm, 22 at 11pm and 7 at midnight.</li>
+<li><strong>Complaint times are filing times,</strong> not incident times; late incidents reported the next morning would make the late-night share higher still.</li>
+<li><strong>The City has not said why the pilot units close at 10pm.</strong> Cost, safety and servicing are common reasons elsewhere. A late-night recommendation, such as a few 24-hour units at nightlife and transit hubs, would be a separate question.</li>
+</ul>
 <h3>The weights</h3>
 <ul>
 <li><strong>17 sites is a small sample.</strong> The weights summarise what the first pilot sites share; they are not a measure of need. Across 200 random weightings, 103 of the 155 existing restrooms stay on the list.</li>
@@ -761,6 +768,7 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <tr><td>Subway ridership by station</td><td><a href="https://data.ny.gov/d/ak4z-sape" target="_blank" rel="noopener">MTA <code>ak4z-sape</code></a></td><td>Transit factor (2025 entries)</td><td class="n">2, 5</td></tr>
 <tr><td>Census tracts and Neighborhood Tabulation Areas (2020)</td><td><a href="https://data.cityofnewyork.us/d/63ge-mke6" target="_blank" rel="noopener"><code>63ge-mke6</code></a>, <a href="https://data.cityofnewyork.us/d/9nt8-h7nd" target="_blank" rel="noopener"><code>9nt8-h7nd</code></a></td><td>Geography: tract poverty, borough and neighbourhood labels</td><td class="n">5, 7, 10</td></tr>
 <tr><td>Restaurant inspections (chain outlets)</td><td><a href="https://data.cityofnewyork.us/d/43nn-pn8j" target="_blank" rel="noopener">NYC DOHMH <code>43nn-pn8j</code></a></td><td>1,854 chain outlets as private-toilet supply scenarios</td><td class="n">11</td></tr>
+<tr><td>Subway entries by hour of day (2025 averages)</td><td>MTA ridership, via the team research package (Steph)</td><td>Late-night activity</td><td class="n">Limits</td></tr>
 <tr><td>311 service requests: "Urinating in Public"</td><td><a href="https://data.cityofnewyork.us/d/erm2-nwe9" target="_blank" rel="noopener">NYC 311 <code>erm2-nwe9</code></a></td><td>Complaint check in the pilot model; complaint hotspots</td><td class="n">5, 13</td></tr>
 <tr><td>Parks inspection results, January–June 2026</td><td>Parks Inspection Program (above)</td><td>"One in five inspections unacceptable"</td><td class="n">8</td></tr>
 </tbody></table></div>
@@ -774,6 +782,7 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/05_gap.R" target="_blank" rel="noopener"><code>05_gap.R</code></a></td><td>Pilot model, leave-one-out test, demand score, supply by hour, the gap, two-stage cover, sensitivity</td><td class="n">5–11</td></tr>
 <tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/07_private_supply.R" target="_blank" rel="noopener"><code>07_private_supply.R</code></a></td><td>Chain outlets as supply under four scenarios</td><td class="n">11</td></tr>
 <tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/08_citywide.R" target="_blank" rel="noopener"><code>08_citywide.R</code></a>, <a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/09_resident_coverage.R" target="_blank" rel="noopener"><code>09_resident_coverage.R</code></a></td><td>Coverage beyond the busiest third; residents covered at 9pm and new restrooms needed</td><td class="n">12</td></tr>
+<tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/11_late_night.R" target="_blank" rel="noopener"><code>11_late_night.R</code></a></td><td>Subway entries, complaints and open restrooms after 10pm</td><td class="n">Limits</td></tr>
 <tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/04_figures.R" target="_blank" rel="noopener"><code>04_figures.R</code></a>, <a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/06_gap_figures.R" target="_blank" rel="noopener"><code>06_gap_figures.R</code></a>, <a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/10_extra_figures.R" target="_blank" rel="noopener"><code>10_extra_figures.R</code></a></td><td>All figures on the Walkthrough</td><td class="n">all</td></tr>
 </tbody></table></div>
 <p><strong>To rerun:</strong> run <code>01_features.R</code>, then <code>05_gap.R</code> (about 2 minutes), then <code>07</code>–<code>10</code> in order. The scripts read inputs from the team's project folder; the prepared inputs file (<code>prep.rds</code>, built by <code>build_plan/01_prep.R</code>) is in the repository under <code>analysis/city_criteria/cache/</code>.</p>

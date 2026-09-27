@@ -1,0 +1,16 @@
+measure,value
+"weekday subway entries, share 6-10pm",18.8
+"weekday subway entries, share 10pm-midnight",3.8
+"weekday subway entries, share midnight-6am",3.4
+weekday subway entries 10pm-6am (count),289981
+"Saturday subway entries, share 10pm-6am",11.7
+Saturday subway entries 10pm-6am (count),316768
+complaints filed 6-10pm (%),23
+complaints filed 10pm-midnight (%),7.1
+complaints filed midnight-6am (%),6.9
+complaints (n),7926
+working restrooms open 9pm,57
+10pm,41
+11pm,22
+midnight,7
+2am,8
