@@ -458,32 +458,30 @@ figure.chart a.zoom{display:block}
 <h2>Walkthrough</h2>
 
 <div class="find"><strong>In one minute</strong>
-<p><strong>The answer:</strong> open about 155 existing restrooms in the evening (longer hours or repair), build 24 new units where nothing exists in the busiest areas, then grow toward the law's count in order of residents reached.</p>
+<p><strong>The answer:</strong> open about 155 existing restrooms in the evening (longer hours or repair), build 24 new units in the busiest areas, then grow toward the law's count in order of residents reached.</p>
 <ul>
-<li><strong>Question.</strong> New York must reach 2,120 public restrooms by 2035 and lists 975 today. Where is access missing, and does each place need a new restroom or an existing one kept open or repaired?</li>
-<li><strong>Demand.</strong> Local Law 58 names the factors that make an area underserved. The City's first 17 pilot sites suggest how to weigh them: busyness (population, foot traffic, transit and jobs combined) counts most.</li>
-<li><strong>Supply.</strong> Existing restrooms, counted only when open. At 2pm, 70% of candidate sites (places where a restroom could go) have a working one within 500 m; at 9pm, 16%.</li>
-<li><strong>Gap.</strong> Among the busiest third of candidate sites, 1,246 have nothing open nearby at 9pm, and almost all of them have a restroom nearby by day.</li>
-<li><strong>Close it.</strong> Keeping 105 park restrooms open to 10pm, extending hours at 34 others and repairing 16 (and keeping them open to 10pm) could cover 95% of that gap, if those changes prove feasible; 24 new units cover the rest.</li>
-<li><strong>Scale.</strong> Citywide, existing restrooms alone can bring evening access for residents up to daytime levels, but that adds nothing to the law's count. Reaching every resident takes about 830 new restrooms in our scenario, roughly three-quarters of the 1,145 more the law requires.</li>
-<li><strong>Does it hold?</strong> Across 200 random weightings, new units stay in the dozens (16–38), and the 24 do not change with park hours. How many existing restrooms need action does: 155 if parks close at 4pm, 37 if they stay open to 10pm.</li>
+<li><strong>Question.</strong> The law requires 2,120 public restrooms by 2035; 975 are listed. Where is access missing, and what fixes it?</li>
+<li><strong>Demand.</strong> The law's factors, weighted by what the City's 17 pilot sites share: mostly busyness.</li>
+<li><strong>Supply.</strong> A working restroom open within 500 m: 70% of candidate sites at 2pm, 16% at 9pm.</li>
+<li><strong>Gap.</strong> 1,246 of the busiest third have nothing open within 500 m at 9pm; almost all have one by day.</li>
+<li><strong>Close it.</strong> 155 existing restrooms (105 park, 34 other operators, 16 repaired, all open to 10pm) cover 95%, if feasible; 24 new units the rest.</li>
+<li><strong>Scale.</strong> About 830 new restrooms reach every resident in our scenario: roughly three-quarters of the 1,145 the law requires.</li>
+<li><strong>Does it hold?</strong> Across 200 random weightings, new units stay in the dozens (16–38). Actual park hours decide whether 155 existing restrooms need action, or 37.</li>
 </ul></div>
-
-<p>Tags show where each result comes from: <span class="mtag in">In class · S6</span> a technique from the course (S = course session); <span class="mtag out">Beyond class</span> an analytics technique outside the course; <span class="mtag src">From a source</span> a fact looked up rather than calculated.</p>
+<p class="note">Tags: <span class="mtag in">In class · S6</span> course technique (S = session) · <span class="mtag out">Beyond class</span> technique outside the course · <span class="mtag src">From a source</span> fact looked up, not calculated.</p>
 
 <h3 id="p-question">1 — The question</h3>
 <ul>
-<li><strong>The target:</strong> Local Law 58 (2025) requires at least <strong>2,120</strong> public restrooms by 2035, at least half of them publicly owned. The City's register lists <strong>975</strong> today, so the law requires <strong>1,145 more</strong>. <span class="mtag src">From a source</span></li>
-<li><strong>What the target leaves open:</strong> the law sets a count but does not say where restrooms should go, or whether an area lacks a restroom altogether or has one that is closed or broken.</li>
-<li><strong>Our question:</strong> where is access missing, and what does each place need: a new restroom, or an existing one kept open later or repaired?</li>
-<li><strong>Approach:</strong> estimate demand, subtract the restrooms that are actually available, map what is left, then close it using existing restrooms first. Step 11 compares the result with the law's count; step 12 tests whether it holds.</li>
+<li><strong>Target:</strong> Local Law 58 (2025) requires at least <strong>2,120</strong> public restrooms by 2035, at least half publicly owned. The register lists <strong>975</strong>, so <strong>1,145 more</strong> are needed. <span class="mtag src">From a source</span></li>
+<li><strong>What the law leaves open:</strong> where they go, and whether a place lacks a restroom or has one that is closed or broken.</li>
+<li><strong>Our question:</strong> where is access missing, and does each place need a new restroom or an existing one kept open or repaired?</li>
+<li><strong>Approach:</strong> demand minus supply = gap; close it with existing restrooms first, then new units.</li>
 </ul>
 
 <h3 id="p-law">2 — What the law says makes an area underserved</h3>
 <div class="find"><strong>Source: Local Law 58 of 2025</strong> <span class="mtag src">From a source</span><br>
 An area is underserved when it has insufficient access "because of a lack of public bathrooms or limited opening hours of existing public bathrooms, relative to localized needs", considering "population density, estimated daily foot traffic, public transportation routes, distance to existing public bathrooms by walking or using a mobility device, land use including current commercial and tourist corridors, and equity concerns".<br>
 <a href="https://intro.nyc/local-laws/2025-58" target="_blank" rel="noopener">Read the law (intro.nyc)</a> · <a href="#p-law" data-anchor="p-law">Link to this step</a></div>
-<p>The law's factors fall on two sides: what creates the need for a restroom (demand), and what already meets it (supply).</p>
 <div class="tbox" tabindex="0" role="group" aria-label="Table"><table><thead><tr><th>Side</th><th>Factor in the law</th><th>How we measure it at a site</th><th>Data</th></tr></thead><tbody>
 <tr><td rowspan="5"><strong>Demand</strong></td><td>Population density</td><td>Residents within 500 m</td><td>Census ACS 2020–24</td></tr>
 <tr><td>Daily foot traffic</td><td>Modelled pedestrian demand on streets within 250 m¹</td><td>DOT pedestrian demand (Sep 2026)</td></tr>
@@ -494,44 +492,34 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <tr><td>Limited opening hours</td></tr>
 </tbody></table></div>
 <ul>
-<li>¹ Each street is weighted by its length and its DOT demand level, from 1 (lowest) to 5 (citywide destinations).</li>
-<li>500 m is about a 7-minute walk.</li>
-<li>The law gives <strong>no weights</strong> for these factors, and none have been published. Steps 4–6 estimate them. Opening hours enter through supply: a restroom counts only while it is open.</li>
+<li>¹ Each street weighted by length and DOT demand level (1 = lowest, 5 = citywide destination). 500 m ≈ a 7-minute walk.</li>
+<li>The law gives <strong>no weights</strong>, and none are published. Steps 4–6 estimate them.</li>
 </ul>
 
 <h3 id="p-cand">3 — Candidate sites: where a restroom could go</h3>
 <figure class="chart"><a class="zoom" href="img/plan/g2c_candidate_sites.png" target="_blank" rel="noopener"><img src="img/plan/g2c_candidate_sites.png" alt="Map of 5,814 candidate sites: Parks land, busy-street frontage and DOT pedestrian plazas" loading="lazy"></a></figure>
 <ul>
-<li>To compare places, we need a list of them. We lay a grid of points 150 m apart over the whole city and keep the points where a modular unit could plausibly go:
-  <ul>
-  <li><strong>Parks land:</strong> 4,076 points;</li>
-  <li><strong>busy-street frontage</strong>, the streets DOT rates highest for pedestrian demand: 1,646 points;</li>
-  <li><strong>DOT pedestrian plazas:</strong> 92 points.</li>
-  </ul></li>
-<li>That gives <strong>5,814 candidate sites</strong>. Each factor in step 2 is measured at every one of them.</li>
-<li>The candidate sites have two roles:
-  <ul>
-  <li><strong>Steps 4–6:</strong> they are the places the City could have picked for its pilot, compared with the places it did pick.</li>
-  <li><strong>Steps 7–10:</strong> they are the places we score, and where new units can go.</li>
-  </ul></li>
-<li>None has been checked for space, utilities or permits. They mark plausible locations, not approved sites.</li>
+<li>A 150 m grid over the city, kept where a modular unit could plausibly go: <strong>Parks land</strong> 4,076 points; <strong>busy-street frontage</strong> (DOT's highest pedestrian-demand streets) 1,646; <strong>DOT plazas</strong> 92.</li>
+<li><strong>5,814 candidate sites.</strong> Every factor in step 2 is measured at each.</li>
+<li>Used twice: as the places the City could have picked for its pilot (steps 4–6), and as the places we score and where new units can go (steps 7–10).</li>
+<li>Plausible locations, not approved sites: none checked for space, utilities or permits.</li>
 </ul>
 
 <h3 id="p-pilot">4 — The City's first 17 sites</h3>
 <figure class="chart"><a class="zoom" href="img/plan/f2_pilot_sites.png" target="_blank" rel="noopener"><img src="img/plan/f2_pilot_sites.png" alt="Map of the City's 17 pilot sites: 6 plazas, 7 parks or playgrounds, 4 street corners" loading="lazy"></a></figure>
 <ul>
-<li>On 16 September 2026 the City began installing <strong>17 modular units</strong>: $4M for one year, open 7am–10pm, sited by DOT and Parks with NYCEDC. <span class="mtag src">From a source</span></li>
+<li>16 September 2026: the City began installing <strong>17 modular units</strong>; $4M for one year, open 7am–10pm, sited by DOT and Parks with NYCEDC. <span class="mtag src">From a source</span></li>
 <li>Stated aim: "public plazas and high-traffic areas where New Yorkers currently lack reliable access to a bathroom."</li>
-<li>4 each in the Bronx, Brooklyn, Manhattan and Queens, and 1 on Staten Island. By type: <strong>6 public plazas, 7 parks or playgrounds, 4 street corners</strong>.</li>
-<li>These are the City's only siting decisions so far. We use them as a <strong>reference</strong> for how the City weighs the factors in practice.</li>
+<li>4 each in the Bronx, Brooklyn, Manhattan and Queens; 1 on Staten Island. <strong>6 plazas, 7 parks or playgrounds, 4 street corners</strong>.</li>
+<li>The City's only siting decisions so far, so we use them as a <strong>reference</strong> for how it weighs the factors.</li>
 </ul>
 
 <h3 id="p-reveal">5 — What the pilot sites have in common <span class="mtag in">S6–7 · logistic regression</span></h3>
-<p>We compare the 17 pilot sites with the 5,756 candidate sites more than 300 m from any of them (closer points are treated as the same place), and ask which factors separate the two groups.</p>
 <ul>
-<li><strong>Model:</strong> logistic regression, where each site is either picked (1) or not (0), explained by the factors. Because only 17 sites were picked, we use Firth's correction, which keeps estimates stable in small samples. <span class="mtag out">Beyond class · Firth correction</span></li>
-<li><strong>Busyness:</strong> population, foot traffic, transit and jobs rise and fall together (correlations 0.52–0.81), so the model cannot tell their effects apart. We put each on the same scale (logged, then standardised) and average them into one <strong>busyness index</strong>.</li>
-<li><strong>Controls:</strong> distance to a restroom open at 2pm and at 9pm (supply), and site type (park, plaza or street), so each pilot site is compared with sites of its own kind.</li>
+<li><strong>Comparison:</strong> the 17 pilot sites vs the 5,756 candidate sites more than 300 m from any of them.</li>
+<li><strong>Model:</strong> logistic regression, picked (1) or not (0). Firth's correction for the small number of picks. <span class="mtag out">Beyond class · Firth correction</span></li>
+<li><strong>Busyness index:</strong> population, foot traffic, transit and jobs move together (correlations 0.52–0.81), so they are logged, standardised and averaged into one measure.</li>
+<li><strong>Controls:</strong> distance to a restroom open at 2pm and at 9pm (supply), and site type (park, plaza, street).</li>
 </ul>
 <figure class="chart"><a class="zoom" href="img/plan/g3_pilot_model.png" target="_blank" rel="noopener"><img src="img/plan/g3_pilot_model.png" alt="Chart of what the 17 pilot sites have in common: busier about 13 times as likely, farther from a restroom open at 2pm about 2.0 times, at 9pm about 2.6 times, poorer area no clear effect" loading="lazy"></a></figure>
 <div class="tbox" tabindex="0" role="group" aria-label="Table"><table><thead><tr><th>A site that is…</th><th>Side</th><th class="n">Coefficient (95% CI)</th><th class="n">…is roughly this much more likely to be picked</th></tr></thead><tbody>
@@ -543,86 +531,69 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <tr><td>a street corner rather than park land</td><td>Site type</td><td class="n">−2.13 (−3.90 to −0.31)</td><td class="n"><strong>8× less</strong></td></tr>
 </tbody></table></div>
 <ul>
-<li><strong>How to read it:</strong> each row compares two sites that are the same except for that measure, one typical step apart (one standard deviation), or plaza versus park. The multiplier is e raised to the coefficient (in Excel, <code>=EXP(2.55)</code> ≈ 12.8), an odds ratio from logistic regression. Because picks are rare, it reads as "times as likely".</li>
-<li><strong>The multipliers stack on a tiny starting chance.</strong> Only 17 of about 5,770 sites were picked (0.3%). In the model, an ordinary park site with average busyness has a 0.15% chance; one step busier, about 1.8%; two steps busier, about 19%. Being also far from an open restroom and on a plaza pushes it much higher. The typical pilot site scores about 1.35%, against about 0.1% for the typical candidate. The model ranks which kinds of places look like the City's picks; it does not name exact corners.</li>
-</ul>
-<ul>
-<li><strong>Demand weights:</strong> the two demand terms become the weights for the demand score. Busyness gets <strong>95%</strong> and equity <strong>5%</strong>, each term's share of the two coefficients. Equity gets a small weight because the law names it, although its interval crosses zero.</li>
-<li><strong>Supply:</strong> pilot sites are also farther than other sites from a restroom that is open, by day and especially in the evening. Supply is not weighted into demand; steps 8–9 subtract it directly.</li>
-<li><strong>What the model shows:</strong> what the 17 sites share. Space, permits and local requests probably also shaped the City's choices.</li>
-<li><strong>Other checks:</strong> entering the four busyness measures separately, population has the largest demand coefficient (+3.82), and distance stays positive (+1.12 at 2pm, +0.65 at 9pm). Adding public-urination complaints within 500 m does not improve the model (−0.37, 95% CI −1.58 to 0.73); <a href="#l-complaints">Limits</a> looks at complaints separately.</li>
-<li>Step 12 tests how much the final answer depends on these weights.</li>
+<li><strong>Reading the table:</strong> two sites alike except one measure, one standard deviation apart (or plaza vs park). Multiplier = e<sup>coefficient</sup> (Excel <code>=EXP(2.55)</code> ≈ 12.8), an odds ratio; with rare picks it reads as "times as likely".</li>
+<li><strong>From a tiny base:</strong> 17 of about 5,770 sites were picked (0.3%). An average park site has a 0.15% chance; one step busier, 1.8%; two steps, 19%. The model ranks kinds of places; it does not name corners.</li>
+<li><strong>Demand weights:</strong> busyness <strong>95%</strong>, equity <strong>5%</strong> (each term's share of the two coefficients). Equity is kept because the law names it; its interval crosses zero.</li>
+<li><strong>Supply:</strong> pilot sites sit farther from an open restroom, especially in the evening. Supply is subtracted in steps 8–9, not weighted into demand.</li>
+<li><strong>Caveat:</strong> the model shows what the 17 sites share. Space, permits and local requests probably shaped them too.</li>
+<li><strong>Other checks:</strong> with the four busyness measures entered separately, population leads (+3.82) and distance stays positive (+1.12 at 2pm, +0.65 at 9pm). Public-urination complaints add nothing (−0.37, 95% CI −1.58 to 0.73); see <a href="#l-complaints">Limits</a>.</li>
 </ul>
 
 <h3 id="p-validate">6 — Does the model hold up? <span class="mtag in">S7 · train/test</span></h3>
 <figure class="chart"><a class="zoom" href="img/plan/g4_leave_one_out.png" target="_blank" rel="noopener"><img src="img/plan/g4_leave_one_out.png" alt="Dot chart: each hidden pilot site outranks between 37% and 100% of candidate sites, median 97%" loading="lazy"></a></figure>
 <ul>
-<li><strong>Why test at all:</strong> the model learned its weights from the 17 pilot sites, so it will naturally rate those same sites highly. The fair test is whether it rates highly a pilot site it has never seen, the train/test idea from class.</li>
-<li><strong>One round, step by step</strong> (for example, hiding Plaza Alianza Dominicana):
-  <ol>
-  <li>Fit the model on the other 16 pilot sites (picked) and the 5,756 candidate sites (not picked). The hidden site is left out entirely.</li>
-  <li>Use those weights to score every candidate site, and the hidden site.</li>
-  <li>Count how many of the 5,756 candidates score below the hidden site. If 5,730 do, the hidden site outranks 5,730 ÷ 5,756 ≈ 99.5%, about 27th place.</li>
-  </ol></li>
-<li><strong>Repeat 17 times</strong>, hiding a different pilot site each time (leave-one-out). Each dot on the chart is one round. 100% means the hidden site beat every candidate; 50% is what a random guess would average.</li>
-<li><strong>Result:</strong> the typical hidden site ranks above <strong>97%</strong> of candidates (median; mean 88%). 12 of the 17 rank above at least 85%.</li>
-<li>The weakest fit is Admiral Farragut Playground (37%). Four others sit at 69–75%: 34th Ave &amp; 64th St, Mapes Park, Fulton &amp; Truxton St and the North Shore Esplanade.</li>
-<li>In-sample AUC is 0.91: the chance that a picked site outscores an unpicked one. Because it uses the fitting data, the held-out ranking above is the better test.</li>
+<li><strong>Leave-one-out:</strong> refit 17 times, each time hiding one pilot site, then ask what share of the 5,756 candidates it outranks. 50% = random guess; 100% = beats every candidate.</li>
+<li><strong>Result:</strong> the typical hidden site outranks <strong>97%</strong> (median; mean 88%). 12 of 17 outrank at least 85%.</li>
+<li><strong>Weakest:</strong> Admiral Farragut Playground (37%); then 34th Ave &amp; 64th St, Mapes Park, Fulton &amp; Truxton St and the North Shore Esplanade (69–75%).</li>
+<li>In-sample AUC 0.91; the held-out ranking is the fairer test.</li>
 </ul>
 
 <h3 id="p-demand">7 — Demand across the city</h3>
 <figure class="chart"><a class="zoom" href="img/plan/g5_demand.png" target="_blank" rel="noopener"><img src="img/plan/g5_demand.png" alt="Map of demand at 5,814 candidate sites; the top third is mostly in Manhattan" loading="lazy"></a></figure>
 <ul>
-<li><strong>Demand score</strong> = 95% busyness + 5% equity, calculated for all 5,814 candidate sites and ranked from 0 to 100.</li>
-<li><strong>High demand</strong> = the top third of that ranking. 14 of the 17 pilot sites fall in it. This is a consistency check rather than independent evidence, since the weights come from the same 17 sites.</li>
-<li>The top third is mostly Manhattan: 1,570 of its 1,939 sites. Brooklyn has 186, the Bronx 111, Queens 72 and Staten Island none.</li>
-<li>Steps 8–10 focus on this top third. Step 11 widens the view to every resident.</li>
+<li><strong>Demand score</strong> = 95% busyness + 5% equity, for all 5,814 sites, ranked 0–100.</li>
+<li><strong>High demand</strong> = top third. It holds 14 of the 17 pilot sites: a consistency check, not independent evidence, since the weights come from the same sites.</li>
+<li>Mostly Manhattan: 1,570 of 1,939. Brooklyn 186, the Bronx 111, Queens 72, Staten Island none.</li>
 </ul>
 
 <h3 id="p-supply">8 — Supply: existing restrooms, when they are open and whether they work</h3>
-<p>Steps 4–7 measured demand. Supply is the restrooms that already exist. A restroom only counts as supply when it is open and working.</p>
 <p><strong>When they are open.</strong></p>
 <figure class="chart"><a class="zoom" href="img/plan/f1_open_by_hour.png" target="_blank" rel="noopener"><img src="img/plan/f1_open_by_hour.png" alt="Bar chart of restrooms open at each hour of a weekday: 954 at 2pm, falling to 57 at 9pm" loading="lazy"></a></figure>
 <ul>
-<li>By posted hours, <strong>954</strong> of the 975 listed restrooms are scheduled open at 2pm on a weekday; only <strong>57</strong> at 9pm.</li>
-<li>Most are NYC Parks restrooms. <strong>641</strong> post only "8am–4pm, open later seasonally"; we treat them as closing at 4pm. Step 12 tests the opposite assumption.</li>
+<li>By posted hours, <strong>954</strong> of 975 listed restrooms are open at 2pm on a weekday; <strong>57</strong> at 9pm.</li>
+<li><strong>641</strong> Parks restrooms post only "8am–4pm, open later seasonally"; we use 4pm. Step 12 tests 10pm.</li>
 </ul>
 <p><strong>Whether they work.</strong></p>
 <ul>
-<li>NYC Parks inspects its restrooms on a schedule. In January–June 2026, one in five inspections (20.1%) found the restroom unacceptable. <span class="mtag src">From a source</span></li>
-<li>Among listed restrooms, <strong>34</strong> are recorded by Parks as closed long-term and <strong>47</strong> fail repeatedly: unacceptable in at least half their inspections since January 2025, and at least twice. Another <strong>41</strong> Parks restrooms are closed and not listed at all.</li>
-<li>That is <strong>122</strong> restrooms in all (34 + 47 listed, 41 unlisted) that exist but do not reliably serve anyone. The 81 listed ones are <strong>removed from supply</strong>, leaving 873 working restrooms open at 2pm. All 122 are candidates for repair in step 10.</li>
+<li>Parks inspections, January–June 2026: one in five inspections (20.1%) found the restroom unacceptable. <span class="mtag src">From a source</span></li>
+<li>Listed but not working: <strong>34</strong> closed long-term, <strong>47</strong> failing repeatedly (at least half their inspections since January 2025, and at least twice). Another <strong>41</strong> are closed and unlisted: <strong>122</strong> in all.</li>
+<li>The 81 listed ones are <strong>removed from supply</strong>, leaving 873 working at 2pm. All 122 are repair candidates in step 10.</li>
 </ul>
-<p><strong>What that leaves.</strong> A working restroom open within 500 m:</p>
+<p><strong>What that leaves:</strong> a working restroom open within 500 m.</p>
 <figure class="chart"><a class="zoom" href="img/plan/g6_supply_day_evening.png" target="_blank" rel="noopener"><img src="img/plan/g6_supply_day_evening.png" alt="Two maps: at 2pm 70% of candidate sites have a working restroom open within 500 m; at 9pm 16%" loading="lazy"></a></figure>
 <div class="tbox" tabindex="0" role="group" aria-label="Table"><table><thead><tr><th>Already had a working restroom open within 500 m…</th><th class="n">All 5,814 candidate sites</th><th class="n">The 17 places the City chose for pilot units</th></tr></thead><tbody>
 <tr><td>at 2pm</td><td class="n">70%</td><td class="n">13 of 17</td></tr>
 <tr><td>at 9pm</td><td class="n">16%</td><td class="n"><strong>1 of 17</strong></td></tr>
 </tbody></table></div>
-<p class="note">The right-hand column asks what was already around the 17 pilot locations, not counting the pilot units themselves.</p>
+<p class="note">Right-hand column: what was already around the 17 pilot locations, not counting the units themselves.</p>
 <ul>
-<li>Most of the places the City chose already had a restroom nearby by day, but almost none had one in the evening, and the pilot units stay open until 10pm. The shortage the pilot addresses is an evening shortage.</li>
-<li>We therefore measure supply at 9pm, the hour the pilot units are designed to serve.</li>
+<li>The City's pilot sites had restrooms nearby by day but almost none at night, and the units stay open to 10pm: an evening shortage. So supply is measured at <strong>9pm</strong>.</li>
 </ul>
 
 <h3 id="p-gap">9 — The gap: demand minus supply</h3>
 <figure class="chart"><a class="zoom" href="img/plan/g7_gap.png" target="_blank" rel="noopener"><img src="img/plan/g7_gap.png" alt="Map of 1,246 gap sites: 1,163 evening-only and 83 all-day, concentrated in Manhattan; pilot sites shown as triangles" loading="lazy"></a></figure>
 <ul>
-<li><strong>Gap site</strong> = high demand (top third) <strong>and</strong> no restroom open within 500 m at 9pm. Sites within 500 m of a pilot unit count as served, assuming all 17 announced units are operating 7am–10pm (installation began on 16 September); step 12 tests the opposite.</li>
-<li><strong>1,246 gap sites</strong>, 21% of all candidates:
-  <ul>
-  <li><strong>1,163 evening-only</strong>: a restroom nearby by day, none by 9pm;</li>
-  <li><strong>83 all-day</strong>: no working restroom nearby at any time.</li>
-  </ul></li>
-<li><strong>Consistency check:</strong> before the pilot units themselves are counted as supply, 14 of the 17 pilot sites meet this definition, against 23% of candidate sites on the same basis.</li>
-<li><strong>What the gap is:</strong> mostly restrooms that exist but are shut in the evening, rather than places with no restroom at all. Gap sites are candidate points, not people; step 11 counts residents.</li>
+<li><strong>Gap site</strong> = top-third demand <strong>and</strong> no restroom open within 500 m at 9pm. Pilot units count as supply, assuming all 17 operate 7am–10pm (installation began 16 September); step 12 tests the opposite.</li>
+<li><strong>1,246 gap sites</strong> (21% of candidates): <strong>1,163 evening-only</strong> (restroom nearby by day, none by 9pm) and <strong>83 all-day</strong> (none at any time).</li>
+<li><strong>Consistency check:</strong> before the pilot units count as supply, 14 of the 17 pilot sites meet this definition, against 23% of candidates.</li>
+<li>Gap sites are points, not people; step 11 counts residents.</li>
 </ul>
 
 <h3 id="p-close">10 — Closing the gap in the busiest areas: existing restrooms first, then new units <span class="mtag out">Beyond class · maximal covering</span></h3>
 <ul>
-<li><strong>Method:</strong> add one restroom at a time, each time choosing the one that covers the most remaining gap within 500 m, weighted by demand. This step-by-step ("greedy") approach is based on the maximal covering location model (Church &amp; ReVelle 1974); it finds a workable set, not a proven minimum.</li>
-<li><strong>Stage 1: existing restrooms</strong>, at their own locations. Either keep one that is open by day open until 10pm (the pilot's closing time), or repair or reopen a broken one and keep it open until 10pm. Each restroom is counted once.</li>
-<li><strong>Stage 2: new units</strong> at candidate sites, only where no existing restroom can reach.</li>
+<li><strong>Method:</strong> greedy maximal covering (Church &amp; ReVelle 1974): add one restroom at a time, whichever covers the most remaining demand-weighted gap within 500 m. A workable set, not a proven minimum.</li>
+<li><strong>Stage 1, existing restrooms</strong> at their own locations: keep a daytime one open to 10pm (the pilot's closing time), or repair a broken one and keep it open to 10pm.</li>
+<li><strong>Stage 2, new units</strong> at candidate sites, only where nothing existing reaches.</li>
 </ul>
 <figure class="chart"><a class="zoom" href="img/plan/g8_sites_and_actions.png" target="_blank" rel="noopener"><img src="img/plan/g8_sites_and_actions.png" alt="Map: 155 existing restrooms (105 park restrooms kept open to 10pm, 34 other operators' hours extended, 16 repaired and kept open to 10pm) and 24 new modular units" loading="lazy"></a></figure>
 <div class="tbox" tabindex="0" role="group" aria-label="Table"><table><thead><tr><th>Stage</th><th>Action</th><th class="n">Restrooms</th></tr></thead><tbody>
@@ -632,19 +603,18 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <tr><td>2 · New</td><td><strong>Build a modular unit</strong></td><td class="n">24</td></tr>
 </tbody></table></div>
 <ul>
-<li><strong>Stage 1</strong> covers <strong>1,183 of the 1,246</strong> gap sites (95%), if every selected change goes ahead. The <strong>24 new units</strong> in stage 2 cover the other 63.</li>
-<li><strong>By borough:</strong> existing restrooms are in Manhattan (75), Brooklyn (34), the Bronx (27) and Queens (19); new units in Manhattan (9), Queens (7), Brooklyn (5) and the Bronx (3).</li>
+<li>Stage 1 covers <strong>1,183 of the 1,246</strong> gap sites (95%); the <strong>24 new units</strong> cover the other 63. Together: every gap site within 500 m.</li>
+<li><strong>If feasible:</strong> each of the 155 still needs its actual hours, operator agreement, access, repair scope and cost checked.</li>
+<li><strong>By borough:</strong> existing in Manhattan 75, Brooklyn 34, the Bronx 27, Queens 19; new in Manhattan 9, Queens 7, Brooklyn 5, the Bronx 3.</li>
 <li><strong>Examples.</strong> Longer park hours: Bryant Park, Chelsea Park, Hester St Playground, Riverbank Playground. Repair: St. Nicholas Playground, Marcus Garvey Park, Asser Levy Park. New units: Long Island City, Jackson Heights, Flushing, Park Slope, Chelsea–Hudson Yards.</li>
-<li><strong>Check:</strong> with every chosen restroom open to 10pm and the 24 new units in place, every gap site has a restroom within 500 m.</li>
-<li><strong>A list to verify, not a finished plan:</strong> each of the 155 depends on actual current hours, the operator's agreement, physical access, the scope of any repair, and cost.</li>
 </ul>
 <figure class="chart"><a class="zoom" href="img/plan/g8b_diminishing_returns.png" target="_blank" rel="noopener"><img src="img/plan/g8b_diminishing_returns.png" alt="Line chart: the first 25 existing restrooms cover 56% of the gap, the first 50 cover 74%, the first 100 cover 89%" loading="lazy"></a></figure>
 <ul>
-<li><strong>Most of the gain comes early:</strong> the first 25 existing restrooms cover 56% of the gap, the first 50 cover 74%, and the first 100 cover 89%.</li>
+<li><strong>Most of the gain comes early:</strong> the first 25 existing restrooms cover 56% of the gap, 50 cover 74%, 100 cover 89%.</li>
 </ul>
 
 <h3 id="p-scale">11 — Beyond the busiest third: access for every resident, and the law's count</h3>
-<p>This step changes two things. It covers the whole city, not just the busiest third. And it counts <strong>residents</strong> (Census population on a 150 m grid), not candidate sites. The question: how many New Yorkers have a restroom open within 500 m, and what would it take to reach all of them?</p>
+<p>Whole city, counting <strong>residents</strong> (Census population on a 150 m grid) instead of candidate sites.</p>
 <figure class="chart"><a class="zoom" href="img/plan/g12_resident_coverage.png" target="_blank" rel="noopener"><img src="img/plan/g12_resident_coverage.png" alt="Curve of residents covered at 9pm as new units are added: 38 units reach 80%, 171 reach 90%, 296 reach 95%, 830 reach 100%" loading="lazy"></a></figure>
 <div class="tbox" tabindex="0" role="group" aria-label="Table"><table><thead><tr><th>Residents with a restroom open within 500 m</th><th class="n">What it takes</th></tr></thead><tbody>
 <tr><td>Today, 2pm</td><td class="n">69%</td></tr>
@@ -656,61 +626,55 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <tr><td>100%</td><td class="n">+ 830</td></tr>
 </tbody></table></div>
 <ul>
-<li><strong>Access:</strong> existing restrooms could bring evening access above today's daytime level (69%) without building anything, if the changes are feasible. That takes 761 of them: 457 park restrooms kept open later, 207 other operators' hours extended and 97 repaired.</li>
-<li><strong>The count:</strong> keeping restrooms open later improves access but adds nothing toward the law's 2,120. The count grows only with new restrooms.</li>
-<li><strong>Full coverage:</strong> reaching every resident takes about 830 new restrooms in this scenario, roughly three-quarters of the 1,145 the law requires. That would bring the total to about 1,805 against the target of 2,120.</li>
-<li><strong>Building the 24 busiest-area units first changes little:</strong> resident coverage then starts at 75%, and reaching every resident takes 837 new restrooms in total, including the 24.</li>
-<li><strong>830 is a modelled scenario, not a minimum or an estimate of need.</strong> The step-by-step method may use more units than strictly necessary. On the other hand, the scenario counts residents only (not workers or visitors), lets new units go anywhere residents live, and measures reach rather than capacity, all of which would push a real requirement up. The 100% end is also sensitive to how residents are spread on the grid.</li>
-<li><strong>Diminishing returns:</strong> about 300 new restrooms reach 95% of residents; the last 5% takes about 530 more. At the pilot's cost, $4M for 17 units for one year (about $235,000 per unit per year, including servicing), those last 530 would cost roughly $125M a year. <span class="mtag src">From a source</span></li>
+<li><strong>Access without building:</strong> 761 existing restrooms (457 park kept open later, 207 other operators extended, 97 repaired) lift evening access above today's daytime 69%, if the changes are feasible.</li>
+<li><strong>But the count</strong> grows only with new restrooms. Every resident takes about 830: roughly three-quarters of the 1,145 required, for a total near 1,805 against 2,120.</li>
+<li><strong>Building the 24 busiest-area units first</strong> changes little: 837 in total, including the 24.</li>
+<li><strong>830 is a modelled scenario, not a minimum.</strong> The greedy method may overshoot, but the scenario counts only residents and measures reach, not capacity, so real need is likely higher. The 100% end is sensitive to how residents are spread on the grid.</li>
+<li><strong>Diminishing returns:</strong> about 300 new restrooms reach 95%; the last 5% takes about 530 more. At the pilot's cost ($4M for 17 units a year, about $235,000 per unit per year including servicing), that is roughly $125M a year. <span class="mtag src">From a source</span></li>
 </ul>
 
 <h3 id="p-sens">12 — Does the answer hold? Stress-testing our assumptions <span class="mtag out">Beyond class · Monte Carlo sensitivity</span></h3>
-<div class="find"><strong>In one sentence.</strong> However the law's factors are weighted, the evening gap in the busiest areas is closed mainly by existing restrooms plus a few dozen new units. The biggest unknown, how late park restrooms really stay open, changes how many existing restrooms need action, not the 24 new units.</div>
-<p>Three assumptions could change the answer: the weights we estimated from 17 pilot sites, the park hours we took from the register, and the walking distance we chose. Each is varied below while everything else stays as in steps 7–10.</p>
+<p>Tests step 10's answer (155 existing, 24 new). The 830 in step 11 is a scenario with its own caveats.</p>
 
-<p><strong>1. The weights: the main uncertainty in the method.</strong></p>
+<p><strong>1. The weights</strong> (from only 17 pilot sites)</p>
 <ul>
-<li>The demand weights (busyness 95%, equity 5%) come from only 17 pilot sites. So we reran the whole analysis <strong>200 times</strong>, each time with random weights on the four busyness measures and equity: new demand ranking, new gap, new choice of restrooms and units.</li>
-<li><strong>Result:</strong> 151–211 existing restrooms (median 180) and 16–38 new units (median 27). The base case (155 and 24) sits near the low, more optimistic end of both ranges.</li>
-<li><strong>The conclusions hold in all 200 runs:</strong> the gap is mostly an evening gap, existing restrooms do most of the work, and new units in the busiest areas number in the dozens.</li>
-<li><strong>A no-regret shortlist:</strong> 103 of the 155 existing restrooms are chosen in at least 80% of runs; they are worth acting on whatever the weights. For new units, 13 of 24 areas get a unit within 500 m of the same spot in at least 80% of runs.</li>
-<li>This test varies only the weights. Park hours and the walking distance are tested next; how much of the city to cover is a choice for the City, set out in the recommendation.</li>
+<li>Whole analysis rerun <strong>200 times</strong> with random weights on the four busyness measures and equity.</li>
+<li><strong>Result:</strong> 151–211 existing restrooms (median 180), 16–38 new units (median 27). The base case sits near the optimistic end.</li>
+<li>In every run: the gap is mostly evening, existing restrooms do most of the work, new units number in the dozens.</li>
+<li><strong>No-regret shortlist:</strong> 103 of the 155 are chosen in at least 80% of runs. For new units, 13 of 24 areas keep a unit within 500 m in at least 80%.</li>
 </ul>
 
-<p><strong>2. Park hours: the biggest unknown about the facts.</strong> The City's register lists 641 park restrooms as "8am–4pm, open later seasonally". We use 4pm, but the register itself says this is wrong for part of the year.</p>
+<p><strong>2. Park hours</strong> (the biggest unknown about the facts). We use 4pm, but the register itself ("8am–4pm, open later seasonally") says that is wrong for part of the year.</p>
 <div class="tbox" tabindex="0" role="group" aria-label="Table"><table><thead><tr><th>Park restrooms with vague hours…</th><th class="n">Gap sites</th><th class="n">Existing restrooms</th><th class="n">New units</th></tr></thead><tbody>
 <tr><td>close at 4pm (posted hours, base)</td><td class="n">1,246</td><td class="n">155</td><td class="n">24</td></tr>
 <tr><td>stay open to 10pm</td><td class="n">396</td><td class="n">37</td><td class="n">24</td></tr>
 </tbody></table></div>
 <ul>
-<li><strong>This assumption matters.</strong> If parks already stay open to 10pm, the evening gap is about a third of our estimate and only 37 existing restrooms need action instead of 155. Our figure for existing restrooms depends on it.</li>
-<li><strong>The new units do not:</strong> 24 either way, because they go where no restroom, park or otherwise, is within reach.</li>
-<li>So the first action is to find out: verify actual hours, then commit to and publish 10pm park hours. If parks already stay open late, the job is to guarantee and signpost those hours rather than extend them.</li>
+<li>If parks already stay open to 10pm, the gap is about a third as large and 37 existing restrooms need action, not 155.</li>
+<li>The 24 new units are unchanged: they go where nothing is within reach.</li>
+<li>So: verify actual hours first. If parks already stay open late, the job is to guarantee and signpost those hours.</li>
 </ul>
 
-<p><strong>3. Walking distance: a standard we chose.</strong></p>
+<p><strong>3. Walking distance</strong> (a standard we chose)</p>
 <ul>
-<li>A 7-minute walk (500 m) needs 155 existing restrooms and 24 new units; a 5-minute walk (400 m) needs 192 and 56.</li>
-<li>A stricter standard roughly doubles the new units. The shape of the answer holds (existing restrooms first, then a few dozen new units), but the number of new units is sensitive to this choice.</li>
+<li>500 m (7 minutes): 155 existing, 24 new. 400 m (5 minutes): 192 and 56.</li>
+<li>Same shape; roughly double the new units.</li>
 </ul>
-<p class="note">Also tested, with little effect: the evening test hour (8pm or 10pm instead of 9pm: 150 or 162 existing restrooms, 24 new units either way) and the pilot units (if none were open yet: 1,357 gap sites, 162 existing restrooms, 25 new units). All combinations of settings are charted in <a href="#pdata" data-tab="pdata">Data &amp; code</a>.</p>
+<p class="note">Also tested, little effect: 8pm or 10pm instead of 9pm (150 or 162 existing, 24 new either way); no pilot units open yet (1,357 gap sites, 162 existing, 25 new). How much of the city to cover is a choice, not an uncertainty: see step 13. All combinations are charted in <a href="#pdata" data-tab="pdata">Data &amp; code</a>.</p>
 
-<h3 id="p-rec">13 — Recommendation <span class="mtag in">S8–9 · A/B test design</span></h3>
-<div class="find"><strong>Two goals, two horizons.</strong> Now: close the evening gap in the busiest areas, mostly with restrooms that already exist, if the changes prove feasible. Later: meet the law's count, which only building can do, adding new restrooms in order of how many residents each one reaches.</div>
-
-<p><strong>Now: the evening gap in the busiest areas.</strong></p>
+<h3 id="p-rec">13 — Recommendation</h3>
+<p><strong>Now: the evening gap in the busiest areas</strong>, mostly with restrooms that already exist, if the changes prove feasible.</p>
 <div class="tbox" tabindex="0" role="group" aria-label="Table"><table><thead><tr><th>Action</th><th>Do this</th><th>Scale</th></tr></thead><tbody>
-<tr><td><strong>A. Verify</strong></td><td>Confirm which park restrooms are actually open in the evening; for each of the 155, check the operator's agreement, access, repair scope and cost. Start with the 103 that recur in at least 80% of runs</td><td>Decides whether 155 existing restrooms need action, or nearer 37 (step 12)</td></tr>
+<tr><td><strong>A. Verify</strong></td><td>Actual park hours; for each of the 155, operator agreement, access, repair scope and cost. Start with the no-regret 103</td><td>155, or nearer 37 (step 12)</td></tr>
 <tr><td><strong>B. Open what exists in the evening</strong></td><td>Commit to and publish 10pm park hours, matching the pilot; negotiate later hours with libraries and plaza operators</td><td>139 (105 park, 34 other operators)</td></tr>
 <tr><td><strong>C. Repair or reopen</strong></td><td>Restore restrooms that are closed long-term or failing inspection, and keep them open to 10pm</td><td>16</td></tr>
-<tr><td><strong>D. Build where nothing exists</strong></td><td>New modular units where no existing restroom can reach</td><td>24; 13 of the 24 areas are chosen in at least 80% of runs</td></tr>
+<tr><td><strong>D. Build where nothing exists</strong></td><td>New modular units where no existing restroom can reach</td><td>24</td></tr>
 </tbody></table></div>
 
 <p><strong>A cheaper option to test: partner toilets.</strong></p>
 <ul>
-<li>Café and fast-food toilets are not public. Starbucks has required a purchase since January 2025; McDonald's leaves it to each franchise; New York gives no general right to use a business's toilet. 44% of Americans have bought something just to use a restroom (YouGov, 2022). <span class="mtag src">From a source</span></li>
-<li>Cities that rely on business toilets pay for access: about half of London's boroughs pay businesses roughly £500–£1,200 a year each to open their toilets to everyone, and about 210 German cities run a similar scheme. NYC has no such scheme yet. <span class="mtag src">From a source</span></li>
-<li>If NYC paid chain outlets near the evening gap to open their toilets:</li>
+<li>Café and fast-food toilets are not public: Starbucks requires a purchase (since January 2025); McDonald's leaves it to franchisees; NYC gives no general right of use. <span class="mtag src">From a source</span></li>
+<li>London (about half its boroughs) and about 210 German cities pay businesses to open their toilets, in London roughly £500–£1,200 a year each. NYC has no scheme. <span class="mtag src">From a source</span></li>
 </ul>
 <div class="tbox" tabindex="0" role="group" aria-label="Table"><table><thead><tr><th>Scenario (1,854 chain outlets)</th><th class="n">Gap sites</th><th class="n">Existing restrooms</th><th class="n">New units</th></tr></thead><tbody>
 <tr><td>No partner scheme (base)</td><td class="n">1,246</td><td class="n">155</td><td class="n">24</td></tr>
@@ -718,7 +682,7 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <tr><td>Every outlet joins; late-night fast food counts at 9pm</td><td class="n">266</td><td class="n">61</td><td class="n">12</td></tr>
 </tbody></table></div>
 <ul>
-<li>A partner scheme could replace roughly 10 of the 24 new units, at a small fraction of a unit's cost (the pilot costs about $235,000 per unit per year). Opening hours of the outlets are not in the data, so these are scenarios.</li>
+<li>Could replace roughly 10 of the 24 new units, at a fraction of a unit's cost. Outlet hours are not in the data, so these are scenarios.</li>
 </ul>
 
 <p><strong>Later: toward the law's count.</strong> How much of the city to cover is the City's choice; each step up costs more.</p>
@@ -729,14 +693,14 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <tr><td>Every resident (step 11; counts residents, not candidate sites)</td><td class="n">761</td><td class="n">about 830</td></tr>
 </tbody></table></div>
 <ul>
-<li><strong>E. Build toward the count</strong> in order of residents reached: about 300 new restrooms reach 95% of residents; about 830 reach all of them in our scenario (step 11). Citywide, up to 664 existing restrooms kept open later and 97 repaired would lift evening access for residents to daytime levels, but add nothing to the count.</li>
-<li><strong>Decide the last stretch separately:</strong> whether the final ~530 units, each reaching few residents, are a better use of roughly $125M a year than added capacity in the busiest places. The cost of longer opening hours is not known and should be estimated with Parks.</li>
+<li><strong>E. Build toward the count</strong> in order of residents reached (step 11).</li>
+<li><strong>Decide the last stretch separately:</strong> is roughly $125M a year better spent on the final ~530 units, each reaching few residents, or on added capacity in the busiest places? The cost of longer hours is unknown; estimate it with Parks.</li>
 </ul>
 
 <p><strong>Throughout.</strong></p>
 <ul>
-<li><strong>Measure as you go:</strong> roll changes out in stages, in random order, so each wave can be compared with areas still waiting. Compare outcomes, not activity: restroom use, public-urination complaints and inspection pass rates.</li>
-<li><strong>Refit with pilot data:</strong> the pilot's usage, uptime and cleanliness are the first direct measure of demand; use them to refit the weights.</li>
+<li><strong>Measure as you go</strong> <span class="mtag in">S8–9 · A/B test design</span>: roll out in stages, in random order, and compare each wave with areas still waiting, on outcomes: restroom use, public-urination complaints, inspection pass rates.</li>
+<li><strong>Refit with pilot data:</strong> usage, uptime and cleanliness are the first direct measure of demand.</li>
 </ul>
 
 <h3 id="p-sources">Sources and code</h3>
