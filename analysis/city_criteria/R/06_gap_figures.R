@@ -21,32 +21,37 @@ pts <- function(d) st_transform(st_as_sf(d, coords = c("lon", "lat"), crs = 4326
 save <- function(p, f, w = 8.5, h = 9) ggsave(file.path(FIG, f), p, width = w, height = h, dpi = 150)
 cp <- pts(cand); pil <- pts(X[pilot == 1])
 
-# g3 -- the pilot model
+# g3 -- the pilot model (labels state the direction; "x as likely" = exp(coefficient))
 M <- copy(G$M7)[term %in% c("busy", "z_d2", "z_d9", "z_pov")]
-M[, lab := c(busy = "Busyness\n(population, foot traffic,\ntransit, jobs)", z_d2 = "Distance to a restroom\nopen at 2pm",
-             z_d9 = "Distance to a restroom\nopen at 9pm", z_pov = "Equity\n(tract poverty rate)")[term]]
+M[, lab := c(busy = "Busier\n(population, foot traffic,\ntransit, jobs)", z_d2 = "Farther from a restroom\nopen at 2pm",
+             z_d9 = "Farther from a restroom\nopen at 9pm", z_pov = "Poorer area\n(tract poverty rate)")[term]]
 M[, grp := c(busy = "Demand", z_d2 = "Supply", z_d9 = "Supply", z_pov = "Demand")[term]]
+M[, mult := ifelse(ci_low > 0, sprintf("about %.1f\u00d7 as likely", exp(coef)), "no clear effect")]
 M[, lab := factor(lab, levels = rev(lab))]
 p3 <- ggplot(M, aes(coef, lab, colour = grp)) + geom_vline(xintercept = 0, colour = "grey50") +
   geom_errorbar(aes(xmin = ci_low, xmax = ci_high), width = 0.18, linewidth = 0.9, orientation = "y") + geom_point(size = 4) +
+  geom_text(aes(label = mult), nudge_y = 0.33, size = 3.9, colour = "grey20") +
   scale_colour_manual(values = c(Demand = "#0b3d91", Supply = "#c0392b"), name = NULL) +
-  labs(title = "The City chose busy places with no restroom open nearby, day or evening",
-       subtitle = "Effect on the chance a site was chosen (standardised logistic coefficient, 95% interval)",
-       x = "Pushes a site toward being chosen  →", y = NULL,
-       caption = "Firth logistic regression: 17 pilot sites vs 5,756 candidate sites, controlling for site type (park / plaza / street).") +
+  labs(title = "What the City's 17 picks have in common",
+       subtitle = "Each row: a site that is one typical step higher on this measure is this much more likely to be picked.\nDot = best estimate; line = 95% range. A line crossing 0 means no clear effect.",
+       x = "Standardised logistic coefficient (0 = no effect; right = more likely to be picked)", y = NULL,
+       caption = "Firth logistic regression: 17 pilot sites vs 5,756 candidate sites, controlling for site type (park / plaza / street).\n'x as likely' = e to the power of the coefficient (an odds ratio; close to a probability ratio because picks are rare).") +
   thb + theme(legend.position = "top")
-save(p3, "g3_pilot_model.png", 9, 5.8)
+save(p3, "g3_pilot_model.png", 9.5, 6.4)
 
 # g4 -- leave-one-out
 L <- fread(file.path(CM, "outputs/gap_leave_one_out.csv")); L[, name := factor(pilot, levels = pilot[order(loo_pct)])]
 p4 <- ggplot(L, aes(loo_pct, name)) + geom_segment(aes(x = 0, xend = loo_pct, yend = name), colour = "grey75") +
+  geom_vline(xintercept = 50, linetype = 3, colour = "grey45") +
+  annotate("text", x = 49, y = nrow(L) + 0.4, hjust = 1, label = "random guess: 50%", colour = "grey35", size = 3.8) +
   geom_point(size = 3.5, colour = "#0b3d91") + geom_vline(xintercept = median(L$loo_pct), linetype = 2, colour = "#c0392b") +
   annotate("text", x = median(L$loo_pct) - 1, y = 1.5, hjust = 1, label = sprintf("median %d%%", median(L$loo_pct)), colour = "#c0392b", size = 4.2) +
   scale_x_continuous(limits = c(0, 100), labels = function(x) paste0(x, "%")) +
+  scale_y_discrete(expand = expansion(add = c(0.6, 1))) +
   labs(title = "Hide one pilot site, refit, and it still ranks near the top",
-       subtitle = "Share of 5,756 candidate sites each hidden pilot site outranks", x = NULL, y = NULL,
-       caption = "Leave-one-out: the model is refitted 17 times, each time without one pilot site, which is then scored against all candidates.") + thb
-save(p4, "g4_leave_one_out.png", 9, 6)
+       subtitle = "Share of the 5,756 candidate sites that each hidden pilot site outranks", x = NULL, y = NULL,
+       caption = "Leave-one-out: the model is refitted 17 times, each time without one pilot site,\nwhich is then scored against all candidate sites.") + thb
+save(p4, "g4_leave_one_out.png", 9, 6.4)
 
 # g5 -- demand
 cp$dem <- cut(G$D0, c(0, 1 / 3, 2 / 3, 1), labels = c("Lower third", "Middle third", "Top third"), include.lowest = TRUE)

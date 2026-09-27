@@ -497,15 +497,19 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <li><strong>Busyness:</strong> population, foot traffic, transit and jobs rise and fall together (correlations 0.52–0.81), so the model cannot tell their effects apart. We put each on the same scale (logged, then standardised) and average them into one <strong>busyness index</strong>.</li>
 <li><strong>Controls:</strong> distance to a restroom open at 2pm and at 9pm (supply), and site type (park, plaza or street), so each pilot site is compared with sites of its own kind.</li>
 </ul>
-<figure class="chart"><a class="zoom" href="img/plan/g3_pilot_model.png" target="_blank" rel="noopener"><img src="img/plan/g3_pilot_model.png" alt="Coefficient chart: busyness +2.55, distance to a restroom open at 2pm +0.71, at 9pm +0.96, equity +0.12" loading="lazy"></a></figure>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Term (standardised)</th><th>Side</th><th class="n">Coefficient</th><th class="n">95% CI</th></tr></thead><tbody>
-<tr><td><strong>Busyness</strong> (population, foot traffic, transit, jobs)</td><td>Demand</td><td class="n">+2.55</td><td class="n">1.35 to 3.79</td></tr>
-<tr><td><strong>Equity</strong> (tract poverty)</td><td>Demand</td><td class="n">+0.12</td><td class="n">−0.37 to 0.52</td></tr>
-<tr><td><strong>Distance</strong> to a restroom open at 2pm</td><td>Supply</td><td class="n">+0.71</td><td class="n">0.08 to 1.46</td></tr>
-<tr><td><strong>Distance</strong> to a restroom open at 9pm</td><td>Supply</td><td class="n">+0.96</td><td class="n">0.19 to 1.84</td></tr>
-<tr><td>Plaza (vs park)</td><td>Site type</td><td class="n">+1.61</td><td class="n">0.23 to 3.04</td></tr>
-<tr><td>Street corner (vs park)</td><td>Site type</td><td class="n">−2.13</td><td class="n">−3.90 to −0.31</td></tr>
+<figure class="chart"><a class="zoom" href="img/plan/g3_pilot_model.png" target="_blank" rel="noopener"><img src="img/plan/g3_pilot_model.png" alt="Chart of what the 17 pilot sites have in common: busier about 12.8 times as likely, farther from a restroom open at 2pm about 2.0 times, at 9pm about 2.6 times, poorer area no clear effect" loading="lazy"></a></figure>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>A site that is…</th><th>Side</th><th class="n">Coefficient (95% CI)</th><th class="n">…is roughly this much more likely to be picked</th></tr></thead><tbody>
+<tr><td><strong>busier</strong> (population, foot traffic, transit, jobs)</td><td>Demand</td><td class="n">+2.55 (1.35 to 3.79)</td><td class="n"><strong>13×</strong></td></tr>
+<tr><td><strong>in a poorer area</strong> (tract poverty)</td><td>Demand</td><td class="n">+0.12 (−0.37 to 0.52)</td><td class="n">no clear effect</td></tr>
+<tr><td><strong>farther from a restroom open at 2pm</strong></td><td>Supply</td><td class="n">+0.71 (0.08 to 1.46)</td><td class="n"><strong>2×</strong></td></tr>
+<tr><td><strong>farther from a restroom open at 9pm</strong></td><td>Supply</td><td class="n">+0.96 (0.19 to 1.84)</td><td class="n"><strong>2.6×</strong></td></tr>
+<tr><td>a plaza rather than park land</td><td>Site type</td><td class="n">+1.61 (0.23 to 3.04)</td><td class="n"><strong>5×</strong></td></tr>
+<tr><td>a street corner rather than park land</td><td>Site type</td><td class="n">−2.13 (−3.90 to −0.31)</td><td class="n"><strong>8× less</strong></td></tr>
 </tbody></table></div>
+<ul>
+<li><strong>How to read it:</strong> each row compares two sites that are the same except for that measure, one typical step apart (one standard deviation), or plaza versus park. The multiplier is e raised to the coefficient (in Excel, <code>=EXP(2.55)</code> ≈ 12.8), an odds ratio from logistic regression. Because picks are rare, it reads as "times as likely".</li>
+<li><strong>The multipliers stack on a tiny starting chance.</strong> Only 17 of about 5,770 sites were picked (0.3%). In the model, an ordinary park site with average busyness has a 0.15% chance; one step busier, about 1.8%; two steps busier, about 19%. Being also far from an open restroom and on a plaza pushes it much higher. The typical pilot site scores about 1.35%, against about 0.1% for the typical candidate. The model ranks which kinds of places look like the City's picks; it does not name exact corners.</li>
+</ul>
 <ul>
 <li><strong>Demand weights:</strong> the two demand terms become the weights for the demand score. Busyness gets <strong>95%</strong> and equity <strong>5%</strong>, each term's share of the two coefficients. Equity gets a small weight because the law names it, although its interval crosses zero.</li>
 <li><strong>Supply:</strong> pilot sites are also farther than other sites from a restroom that is open, by day and especially in the evening. Supply is not weighted into demand; steps 8–9 subtract it directly.</li>
@@ -517,7 +521,14 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <h3 id="p-validate">6 — Does the model hold up? <span class="mtag in">S7 · train/test</span></h3>
 <figure class="chart"><a class="zoom" href="img/plan/g4_leave_one_out.png" target="_blank" rel="noopener"><img src="img/plan/g4_leave_one_out.png" alt="Dot chart: each hidden pilot site outranks between 37% and 100% of candidate sites, median 97%" loading="lazy"></a></figure>
 <ul>
-<li><strong>The test:</strong> hide one pilot site, fit the model on the other 16, and see where the hidden site ranks among all 5,756 candidates. Repeat for each of the 17. With only 17 sites, each is held out in turn (leave-one-out).</li>
+<li><strong>Why test at all:</strong> the model learned its weights from the 17 pilot sites, so it will naturally rate those same sites highly. The fair test is whether it rates highly a pilot site it has never seen, the train/test idea from class.</li>
+<li><strong>One round, step by step</strong> (for example, hiding Plaza Alianza Dominicana):
+  <ol>
+  <li>Fit the model on the other 16 pilot sites (picked) and the 5,756 candidate sites (not picked). The hidden site is left out entirely.</li>
+  <li>Use those weights to score every candidate site, and the hidden site.</li>
+  <li>Count how many of the 5,756 candidates score below the hidden site. If 5,730 do, the hidden site outranks 5,730 ÷ 5,756 ≈ 99.5%, about 27th place.</li>
+  </ol></li>
+<li><strong>Repeat 17 times</strong>, hiding a different pilot site each time (leave-one-out). Each dot on the chart is one round. 100% means the hidden site beat every candidate; 50% is what a random guess would average.</li>
 <li><strong>Result:</strong> the typical hidden site ranks above <strong>97%</strong> of candidates (median; mean 88%). 12 of the 17 rank above at least 85%.</li>
 <li>The weakest fit is Admiral Farragut Playground (37%). Four others sit at 69–75%: 34th Ave &amp; 64th St, Mapes Park, Fulton &amp; Truxton St and the North Shore Esplanade.</li>
 <li>In-sample AUC is 0.91: the chance that a picked site outscores an unpicked one. Because it uses the fitting data, the held-out ranking above is the better test.</li>
@@ -548,12 +559,13 @@ An area is underserved when it has insufficient access "because of a lack of pub
 </ul>
 <p><strong>What that leaves.</strong> A working restroom open within 500 m:</p>
 <figure class="chart"><a class="zoom" href="img/plan/g6_supply_day_evening.png" target="_blank" rel="noopener"><img src="img/plan/g6_supply_day_evening.png" alt="Two maps: at 2pm 70% of candidate sites have a working restroom open within 500 m; at 9pm 16%" loading="lazy"></a></figure>
-<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>A restroom open within 500 m</th><th class="n">Candidate sites</th><th class="n">The City's 17 pilot sites</th></tr></thead><tbody>
-<tr><td>At 2pm</td><td class="n">70%</td><td class="n">13 of 17</td></tr>
-<tr><td>At 9pm</td><td class="n">16%</td><td class="n"><strong>1 of 17</strong></td></tr>
+<div class="tbox" tabindex="0" role="group" aria-label="Table, scrolls horizontally"><table><thead><tr><th>Already had a working restroom open within 500 m…</th><th class="n">All 5,814 candidate sites</th><th class="n">The 17 places the City chose for pilot units</th></tr></thead><tbody>
+<tr><td>at 2pm</td><td class="n">70%</td><td class="n">13 of 17</td></tr>
+<tr><td>at 9pm</td><td class="n">16%</td><td class="n"><strong>1 of 17</strong></td></tr>
 </tbody></table></div>
+<p class="note">The right-hand column asks what was already around the 17 pilot locations, not counting the pilot units themselves.</p>
 <ul>
-<li>Most pilot sites already have a restroom nearby by day, but almost none have one in the evening, and the pilot units stay open until 10pm. The shortage the pilot addresses is an evening shortage.</li>
+<li>Most of the places the City chose already had a restroom nearby by day, but almost none had one in the evening, and the pilot units stay open until 10pm. The shortage the pilot addresses is an evening shortage.</li>
 <li>We therefore measure supply at 9pm, the hour the pilot units are designed to serve.</li>
 </ul>
 
