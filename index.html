@@ -850,71 +850,86 @@ An area is underserved when it has insufficient access "because of a lack of pub
 </div>
 
 <div id="deck" hidden>
-<p class="arch-banner">Draft outline, not yet updated: figures and step numbers may differ from the current <a href="#plan" data-tab="plan">Walkthrough</a>.</p>
+<p class="arch-banner">Draft flow, 28 September: text and placeholders only, for team comment. Numbers follow the current <a href="#plan" data-tab="plan">Walkthrough</a>.</p>
 <h2>Deck outline</h2>
-<p class="lede">How the story groups into segments for the 12-minute talk. Each segment will become several slides. Times are a rough share of 12 minutes.</p>
+<p class="lede">36 quick slides for 12 minutes (about 20 seconds each): one message per slide, few words, then move on. Each slide lists what goes on it, a placeholder for the visual, and what to say.</p>
 
 <section class="seg-card">
-<p class="seg-tag">Opening · ~1 min</p>
-<h3>The ask</h3>
-<p class="seg-msg">New York must add 1,145 restrooms by 2035. Where should the next ones go?</p>
-<ul><li>2,120 target vs 975 today.</li><li>The law defines "underserved" but not where to build.</li></ul>
-<p class="seg-src">Walkthrough step 1</p>
+<p class="seg-tag">Act 1 · Hook · ~1.5 min</p>
+<h3>Where do you go?</h3>
+<p class="seg-msg">Everyone needs one; in New York, finding one is hard, especially at night.</p>
+<p><strong>1 · Title: The NYC Restroom Gap</strong><br>On slide: "Where do you go in New York?" · team names<br>[Visual: city street at night]<br><em>Say:</em> Open with the question every visitor and New Yorker has asked.</p>
+<p><strong>2 · You can't just walk into a café</strong><br>On slide: "Customers only"<br>[Visual: a "restrooms for customers only" sign]<br><em>Say:</em> Starbucks has required a purchase since January 2025; McDonald's leaves it to each franchise. There is no general right to use a business's toilet.</p>
+<p><strong>3 · So people pay to pee</strong><br>On slide: "44%"<br>[Visual: one big number]<br><em>Say:</em> 44% of Americans have bought something just to use a restroom (YouGov, 2022).</p>
+<p><strong>4 · The City's own list</strong><br>On slide: "975 public restrooms"<br>[Visual: a public restroom photo, or a register screenshot]<br><em>Say:</em> That's the City's own count of public restrooms today, for a city of millions. Hold that number.</p>
 </section>
 
 <section class="seg-card">
-<p class="seg-tag">Setup · ~2 min</p>
-<h3>What the law asks for, and what the City did first</h3>
-<p class="seg-msg">Six factors in the law; 17 pilot sites show how the City weighs them.</p>
-<ul><li>The six factors, and how each is measured.</li><li>Pilot map: 4 per borough (1 on Staten Island), plazas, parks and street corners.</li><li>The City's choices are our answer key.</li></ul>
-<p class="seg-src">Visual: <a href="img/plan/f2_pilot_sites.png" target="_blank" rel="noopener">pilot map</a> · Walkthrough steps 2–3</p>
+<p class="seg-tag">Act 2 · The case · ~1.5 min</p>
+<h3>What the City has to do</h3>
+<p class="seg-msg">A law sets the count. It doesn't say where.</p>
+<p><strong>5 · The law</strong><br>On slide: "2,120 by 2035"<br>[Visual: one big number]<br><em>Say:</em> Local Law 58 (2025): at least 2,120 public restrooms by 2035, half publicly owned.</p>
+<p><strong>6 · The gap in the count</strong><br>On slide: "975 → 2,120: 1,145 to go"<br>[Visual: simple bar or arrow]<br><em>Say:</em> 1,145 more in ten years. The question is where.</p>
+<p><strong>7 · The law names the factors, not the weights</strong><br>On slide: Population · foot traffic · transit · distance to a restroom · commercial & tourist areas · equity<br>[Visual: six icons in a row]<br><em>Say:</em> The law says what makes an area underserved, including "limited opening hours". It gives no weights and no map.</p>
+<p><strong>8 · The City's first move</strong><br>On slide: "17 pilot units · $4M · 7am–10pm"<br>[Visual: photo of a modular unit]<br><em>Say:</em> Installation began 16 September 2026, in plazas, parks and on street corners.</p>
+<p><strong>9 · Where the City put them</strong><br>On slide: 4 per borough, 1 on Staten Island<br>[Visual: pilot map]<br><em>Say:</em> These 17 are the City's only siting decisions so far. They're our clue.</p>
+<p><strong>10 · Our question</strong><br>On slide: "Where is access missing, and does it need a new restroom or an existing one kept open?"<br>[Visual: text only]<br><em>Say:</em> Not just where to build, but whether building is the answer at all.</p>
 </section>
 
 <section class="seg-card">
-<p class="seg-tag">Method and finding · ~2.5 min</p>
-<h3>What the City valued</h3>
-<p class="seg-msg">Busy places far from a working restroom: busyness 65%, distance 31%, equity 4%.</p>
-<ul><li>17 chosen vs 5,756 candidate sites.</li><li>Logistic regression: chosen vs not chosen.</li><li>Why the four busyness measures are combined.</li><li>Leave-one-out: a hidden pilot site typically beats 96% of candidates.</li></ul>
-<p class="seg-src">Visuals: <a href="img/plan/f3_revealed_weights.png" target="_blank" rel="noopener">weights chart</a>, <a href="img/plan/f4_leave_one_out.png" target="_blank" rel="noopener">leave-one-out</a> · Walkthrough steps 4–5</p>
+<p class="seg-tag">Act 3 · How we worked it out · ~4 min</p>
+<h3>Demand minus supply</h3>
+<p class="seg-msg">Learn the City's priorities from its own picks, then subtract what already exists.</p>
+<p><strong>11 · The idea</strong><br>On slide: "Demand − Supply = Gap"<br>[Visual: three-box diagram]<br><em>Say:</em> Everything that follows is this one line.</p>
+<p><strong>12 · Where could a restroom go?</strong><br>On slide: "5,814 candidate sites"<br>[Visual: candidate-site map]<br><em>Say:</em> A point every 150 m on park land, plazas and busy streets.</p>
+<p><strong>13 · Use the City's picks as an answer key</strong><br>On slide: "17 picked vs 5,756 not picked"<br>[Visual: two groups of dots]<br><em>Say:</em> Giorgia's idea: if we know which places were picked, we can ask what they have in common, like learning "cat" from labelled photos. Logistic regression (S6–7).</p>
+<p><strong>14 · Busyness wins</strong><br>On slide: "Busier site: ~13× as likely to be picked"<br>[Visual: one bar, or the model chart]<br><em>Say:</em> Population, foot traffic, subway and jobs combined. Busyness gets 95% of the demand weight, equity 5%.</p>
+<p><strong>15 · …and far from an open restroom, especially at night</strong><br>On slide: "9pm distance: ~2.6×"<br>[Visual: model chart, supply bars highlighted]<br><em>Say:</em> The City picked places where nothing is open in the evening. Remember this.</p>
+<p><strong>16 · Does the model hold up?</strong><br>On slide: "Hide a site: it still ranks in the top 3%"<br>[Visual: leave-one-out dot chart]<br><em>Say:</em> Refit 17 times, hiding one pilot each time; the typical hidden site outranks 97% of candidates. Train/test from S7.</p>
+<p><strong>17 · Demand across the city</strong><br>On slide: "Top third: mostly Manhattan"<br>[Visual: demand map]<br><em>Say:</em> 1,570 of the 1,939 busiest sites are in Manhattan.</p>
+<p><strong>18 · Supply: the twist</strong><br>On slide: "2pm: 954 open · 9pm: 57"<br>[Visual: hours bar chart]<br><em>Say:</em> Most restrooms are park restrooms that close at 4pm.</p>
+<p><strong>19 · And not all of them work</strong><br>On slide: "1 in 5 inspections: unacceptable"<br>[Visual: photo of a locked or broken restroom]<br><em>Say:</em> 122 restrooms are closed long-term or failing repeatedly. We don't count them.</p>
+<p><strong>20 · One neighbourhood at 2pm</strong><br>On slide: Lower Manhattan: almost every point covered<br>[Visual: Visual guide map 6 (2pm circles)]<br><em>Say:</em> Each circle is 500 m, a 7-minute walk. By day, fine.</p>
+<p><strong>21 · The same neighbourhood at 9pm</strong><br>On slide: The circles disappear<br>[Visual: Visual guide map 7 (9pm); flip quickly from the last slide]<br><em>Say:</em> Same streets, same people, nothing open.</p>
+<p><strong>22 · Citywide</strong><br>On slide: "70% → 16%"<br>[Visual: day vs evening maps]<br><em>Say:</em> Share of candidate sites with a working restroom within 500 m. And the pilot sites: 13 of 17 had one by day, 1 of 17 at night.</p>
+<p><strong>23 · The gap</strong><br>On slide: "1,246 busy places with nothing open at 9pm"<br>[Visual: gap map]<br><em>Say:</em> 93% of them have a restroom nearby by day. It's an evening gap.</p>
 </section>
 
 <section class="seg-card">
-<p class="seg-tag">Result · ~2 min</p>
-<h3>The next 50, and how much they depend on the weights</h3>
-<p class="seg-msg">41 of 50 hold under the model's uncertainty; 18 hold under random weightings too.</p>
-<ul><li>Scoring and the borough split.</li><li>The two tests, and the alternative-weightings table.</li><li>Robust locations by borough.</li><li>Equity is the policy choice.</li></ul>
-<p class="seg-src">Visual: <a href="img/plan/f5_next50_stability.png" target="_blank" rel="noopener">stability map</a> · Walkthrough steps 6–7</p>
+<p class="seg-tag">Act 4 · Closing the gap · ~2.5 min</p>
+<h3>Use what exists first</h3>
+<p class="seg-msg">Most of the gap is restrooms that are already there, just closed.</p>
+<p><strong>24 · Closing it, one neighbourhood</strong><br>On slide: Keep open → extend → repair → then build<br>[Visual: Visual guide map 9]<br><em>Say:</em> Existing restrooms first; a new unit only where nothing can reach.</p>
+<p><strong>25 · Citywide answer</strong><br>On slide: "155 existing + 24 new"<br>[Visual: action map]<br><em>Say:</em> 105 park restrooms kept open to 10pm, 34 other operators' hours extended, 16 repaired: 95% of the gap, if feasible. 24 new units cover the rest.</p>
+<p><strong>26 · Most of the gain comes early</strong><br>On slide: "First 50 → 74% of the gap"<br>[Visual: diminishing-returns curve]<br><em>Say:</em> You don't need all 155 to make a dent.</p>
+<p><strong>27 · But the law wants a count</strong><br>On slide: "Every resident: ~830 new units"<br>[Visual: resident-coverage curve]<br><em>Say:</em> Longer hours add nothing to the 2,120. Reaching every resident takes about 830 new restrooms in our scenario, roughly three-quarters of the 1,145.</p>
+<p><strong>28 · The last stretch is expensive</strong><br>On slide: "Last 5% of residents ≈ $125M a year"<br>[Visual: same curve, tail highlighted]<br><em>Say:</em> About 300 units reach 95%; the last 530 cost roughly $125M a year at the pilot's price.</p>
+<p><strong>29 · Does it hold?</strong><br>On slide: "200 random weightings: 16–38 new units"<br>[Visual: range bar]<br><em>Say:</em> Whatever the weights, it's existing restrooms first and a few dozen new units.</p>
+<p><strong>30 · The one fact that matters</strong><br>On slide: "Parks close at 4pm? 155. Open to 10pm? 37."<br>[Visual: two numbers side by side]<br><em>Say:</em> Actual park hours decide the size of the existing-restroom job. The 24 new units don't change.</p>
 </section>
 
 <section class="seg-card">
-<p class="seg-tag">Twist · ~2 min</p>
-<h3>Most sites don't need a new building</h3>
-<p class="seg-msg">Only 57 restrooms are open at 9pm. Of the 50 sites, 23 need a building; 26 need a repair or longer hours nearby.</p>
-<ul><li>Hours chart as the setup.</li><li>The check order: repair, park hours, other operators, build.</li><li>Named repair examples.</li><li>Caveat: longer-hours sites depend on actual park hours.</li></ul>
-<p class="seg-src">Visuals: <a href="img/plan/f1_open_by_hour.png" target="_blank" rel="noopener">hours chart</a>, <a href="img/plan/f6_reality_lens.png" target="_blank" rel="noopener">action map</a> · Walkthrough step 8</p>
+<p class="seg-tag">Act 5 · Recommendation · ~2 min</p>
+<h3>Open, fix, build, then grow</h3>
+<p class="seg-msg">Now: open what exists and build 24. Later: build toward the count by residents reached.</p>
+<p><strong>31 · Step 0: check the hours</strong><br>On slide: "Verify, then publish 10pm park hours"<br>[Visual: text only]<br><em>Say:</em> Start with the 103 restrooms chosen in at least 80% of runs.</p>
+<p><strong>32 · Now</strong><br>On slide: Open 139 · Fix 16 · Build 24<br>[Visual: three icons]<br><em>Say:</em> The busiest areas, in the evening.</p>
+<p><strong>33 · A cheaper option to test</strong><br>On slide: "Pay businesses to open their toilets"<br>[Visual: London Community Toilet Scheme logo or photo]<br><em>Say:</em> London pays roughly £500–£1,200 a year per business. A scheme here could replace about 10 of the 24 new units: a scenario, since outlet hours aren't in the data.</p>
+<p><strong>34 · Later</strong><br>On slide: "Build toward 2,120, in order of residents reached"<br>[Visual: resident curve (small)]<br><em>Say:</em> And decide separately whether the last stretch is worth ~$125M a year.</p>
+<p><strong>35 · Measure as you go</strong><br>On slide: "Roll out in waves, in random order"<br>[Visual: timeline]<br><em>Say:</em> Compare each wave with areas still waiting: use, complaints, inspection pass rates (A/B testing, S8–9). Refit the weights with pilot usage data.</p>
+<p><strong>36 · Close</strong><br>On slide: "Most of tonight's gap is already built. It's just locked."<br>[Visual: callback to the opening photo]<br><em>Say:</em> One line to end on, then Q&amp;A.</p>
 </section>
 
 <section class="seg-card">
-<p class="seg-tag">Optional · ~0.5 min</p>
-<h3>Where complaints run high</h3>
-<p class="seg-msg">Complaint hotspots and the law's factors point to largely different places.</p>
-<ul><li>29 high-complaint neighbourhoods; 3 of 17 pilot sites and 5 of our 50 fall in them.</li><li>Cut first if time is short, or keep as a Q&amp;A backup.</li></ul>
-<p class="seg-src">Visual: <a href="img/plan/f7_complaint_hotspots.png" target="_blank" rel="noopener">hotspot map</a> · Walkthrough step 9</p>
-</section>
-
-<section class="seg-card">
-<p class="seg-tag">Close · ~2 min</p>
-<h3>Recommendation</h3>
-<p class="seg-msg">Repair and extend what exists, build where nothing exists, and measure as you go.</p>
-<ul><li>Repair 8 · park hours 14 · other operators 4 · build 23.</li><li>Staged, randomised rollout.</li><li>Judge by hours open and working.</li><li>Refit the weights with pilot data.</li></ul>
-<p class="seg-src">Walkthrough step 10</p>
-</section>
-
-<section class="seg-card">
-<p class="seg-tag">Backup · Q&amp;A</p>
-<h3>Limits and method details</h3>
-<ul><li>Small sample, and what the sensitivity test shows.</li><li>Straight-line distance and posted hours.</li><li>The borough split.</li><li>Q: Don't cafés already fill the gap? A: Adding 1,886 chain cafés and fast-food outlets as restroom options does not change the complaint ranking.</li><li>Model table.</li></ul>
-<p class="seg-src">Limits tab</p>
+<p class="seg-tag">Backup · Q&amp;A slides</p>
+<h3>Ready if asked</h3>
+<ul>
+<li>Why not put restrooms where people complain? Complaint hotspots map (Limits).</li>
+<li>What about after 10pm? Late-night table (Limits).</li>
+<li>What if the pilots aren't open yet? 1,357 gap sites, 162 existing, 25 new.</li>
+<li>Why 500 m? At 400 m: 192 existing, 56 new.</li>
+<li>The full model table, and the sensitivity grid (Data &amp; code).</li>
+</ul>
 </section>
 </div>
 
