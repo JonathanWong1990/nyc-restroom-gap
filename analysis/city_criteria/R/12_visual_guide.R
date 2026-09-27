@@ -2,7 +2,7 @@
 # Same frame for every panel so the steps can be flipped through (site tab "Visual guide", and slides).
 # Uses exactly the objects of 01/05 (candidate sites, demand score, supply rule, gap, chosen restrooms and new units).
 options(scipen = 999, stringsAsFactors = FALSE, warn = 1)
-suppressPackageStartupMessages({library(sf); library(data.table); library(ggplot2)})
+suppressPackageStartupMessages({library(sf); library(data.table); library(ggplot2); library(maptiles); library(terra)})
 sf_use_s2(FALSE)
 BASE <- "/Users/jonathanwong/Desktop/MBA/PMBA6093 Analytics for Managers/Final Project"; CM <- file.path(BASE, "City_Criteria_Model")
 D <- file.path(BASE, "Restroom_Rebuild/data_raw"); FIG <- file.path(CM, "outputs/fig"); FT <- 0.3048006096; M2FT <- function(m) m / FT
@@ -19,6 +19,22 @@ box <- st_as_sfc(st_bbox(BB, crs = st_crs(2263)))
 inw <- function(g) { xy <- st_coordinates(st_centroid(st_geometry(g))); xy[, 1] > BB["xmin"] & xy[, 1] < BB["xmax"] & xy[, 2] > BB["ymin"] & xy[, 2] < BB["ymax"] }
 wide <- st_buffer(box, M2FT(600))
 clipw <- function(g) suppressWarnings(st_intersection(st_make_valid(g), wide))
+
+# ---- basemap tiles: Esri World Light Gray (base + street-name reference layer), reprojected to the plotting CRS ----------
+tile_annot <- function(provider) {
+  bb4 <- st_transform(st_buffer(box, M2FT(200)), 4326)
+  r <- get_tiles(bb4, provider = provider, zoom = 16, crop = TRUE, cachedir = file.path(CM, "cache/tiles"))
+  r <- terra::project(r, "EPSG:2263", method = "bilinear")
+  v <- terra::values(r); v[is.na(v)] <- 0
+  a <- if (terra::nlyr(r) >= 4) v[, 4] else rep(255, nrow(v))
+  col <- matrix(rgb(v[, 1], v[, 2], v[, 3], pmin(255, pmax(0, a)), maxColorValue = 255), nrow = terra::nrow(r), byrow = TRUE)
+  e <- as.vector(terra::ext(r))
+  annotation_raster(col, xmin = e["xmin"], xmax = e["xmax"], ymin = e["ymin"], ymax = e["ymax"], interpolate = TRUE)
+}
+dir.create(file.path(CM, "cache/tiles"), showWarnings = FALSE)
+TILE_BASE <- tile_annot("Esri.WorldGrayCanvas")
+TILE_REF  <- tile_annot(create_provider(name = "EsriGrayRef", citation = "Esri",
+  url = "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}"))
 
 # ---- base layers ----------------------------------------------------------------------------------------------------
 land <- clipw(st_union(P$nta))
@@ -54,14 +70,13 @@ cat("example:", exrow$ntaname, "| residents", round(exrow$residents), "| jobs", 
 
 # ---- drawing helpers ---------------------------------------------------------------------------------------------
 COL <- list(water = "#dfe7ee", land = "#f4f2ee", park = "#cfe3c8", plaza = "#e5d8f0", street = "#d9c7a6")
-basemap <- function() ggplot() +
-  geom_sf(data = box, fill = COL$water, colour = NA) + geom_sf(data = land, fill = COL$land, colour = NA) +
-  geom_sf(data = parks, fill = COL$park, colour = NA) + geom_sf(data = plz, fill = COL$plaza, colour = NA) +
-  geom_sf(data = seg, colour = COL$street, linewidth = 0.9)
+basemap <- function() ggplot() + TILE_BASE +
+  geom_sf(data = parks, fill = alpha("#8cc58a", 0.55), colour = NA) + geom_sf(data = plz, fill = alpha("#b48be0", 0.7), colour = NA) +
+  geom_sf(data = seg, colour = "#c9a063", linewidth = 1.2) + TILE_REF
 frame <- function(p, n, title, sub) {
   p + coord_sf(xlim = BB[c("xmin", "xmax")], ylim = BB[c("ymin", "ymax")], expand = FALSE, datum = NA) +
     labs(title = sprintf("Step %d · %s", n, title), subtitle = sub,
-         caption = "Lower Manhattan: Tribeca, SoHo, Civic Center and Chinatown (2.5 km square). Green = parks, lilac = pedestrian plazas, tan = busy streets.") +
+         caption = "Lower Manhattan from Washington Square to City Hall (2.5 km square). Green = parks, lilac = pedestrian plazas,\ntan = busy street blocks. Basemap: Esri World Light Gray (Esri, HERE, Garmin, OpenStreetMap contributors).") +
     theme_void(base_size = 12) +
     theme(plot.title = element_text(face = "bold", size = 17), plot.subtitle = element_text(size = 12.5, colour = "grey25", lineheight = 1.1),
           plot.caption = element_text(size = 9, colour = "grey45", hjust = 0), legend.position = "bottom", legend.text = element_text(size = 11),
@@ -71,7 +86,7 @@ sv <- function(p, i) ggsave(file.path(FIG, sprintf("v%d.png", i)), p, width = 8,
 TYPE <- c(park = "Candidate site: park land", plaza = "Candidate site: plaza", busy_street = "Candidate site: busy street")
 
 # 1 -- the area
-sv(frame(basemap(), 1, "The area", "Parks, pedestrian plazas and busy streets: the places where a restroom could stand."), 1)
+sv(frame(basemap(), 1, "The area", "Pins can only go on green (parks), lilac (pedestrian plazas) or tan (the busiest street blocks).\nEverything else (buildings, ordinary streets) is left out."), 1)
 
 # 2 -- candidate sites
 p <- basemap() + geom_sf(data = cw, aes(fill = factor(TYPE[type], levels = TYPE)), shape = 21, size = 2.6, colour = "white", stroke = 0.4) +
