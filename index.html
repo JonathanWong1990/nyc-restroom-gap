@@ -410,6 +410,19 @@ figure.chart a.zoom{display:block}
     box-shadow:0 2px 8px rgba(0,0,0,.25)}
   #totabs.show{display:block}
 }
+
+/* ---------- visual guide stepper ---------- */
+#pguide .gv-nav{display:flex; align-items:center; gap:10px; margin:6px 0 10px; flex-wrap:wrap}
+#pguide .gv-btn{font-family:var(--f-display); font-weight:600; font-size:13px; padding:7px 14px; border-radius:7px; border:1px solid var(--rule-strong); background:var(--surface); color:var(--ink); cursor:pointer}
+#pguide .gv-btn:disabled{opacity:.4; cursor:default}
+#pguide .gv-dots{display:flex; gap:6px; flex-wrap:wrap}
+#pguide .gv-dot{width:30px; height:30px; border-radius:999px; border:1px solid var(--rule-strong); background:var(--surface); color:var(--muted); font-family:var(--f-mono); font-size:12px; cursor:pointer}
+#pguide .gv-dot[aria-current="step"]{background:var(--accent); color:var(--surface); border-color:var(--accent)}
+#pguide .gv-title{font-family:var(--f-display); font-weight:700; font-size:18px; margin:6px 0 0}
+#pguide .gv-fig img{width:100%; height:auto}
+#pguide .gv-cap{font-size:15.5px; max-width:none}
+#pguide .gv-more{font-family:var(--f-mono); font-size:12px}
+@media (max-width:640px){ #pguide .gv-dot{width:26px; height:26px} #pguide .gv-btn{padding:6px 10px} }
 </style>
 </head>
 <body>
@@ -424,6 +437,7 @@ figure.chart a.zoom{display:block}
 <div class="modebar">
   <div class="seg" role="group" aria-label="Section">
     <button id="btn-plan" aria-pressed="true">Walkthrough<span class="tab-badge">Latest</span></button>
+    <button id="btn-pguide" aria-pressed="false">Visual guide</button>
     <button id="btn-plim" aria-pressed="false">Limits</button>
     <button id="btn-pdata" aria-pressed="false">Data &amp; code</button>
     <button id="btn-deck" class="muted" aria-pressed="false">Deck outline<span class="tab-badge">Draft</span></button>
@@ -723,6 +737,23 @@ An area is underserved when it has insufficient access "because of a lack of pub
 </ul>
 </div>
 
+<div id="pguide" hidden>
+<h2>Visual guide</h2>
+<p class="lede">The method on one neighbourhood, one step at a time: from an empty map to demand, supply, the gap, and how it is closed. Use the arrows or the numbers; each map can be opened full size for slides.</p>
+<div class="gv" id="gv">
+  <div class="gv-nav" role="group" aria-label="Guide steps">
+    <button type="button" class="gv-btn" id="gv-prev" aria-label="Previous step">← Back</button>
+    <div class="gv-dots" id="gv-dots"></div>
+    <button type="button" class="gv-btn" id="gv-next" aria-label="Next step">Next →</button>
+  </div>
+  <p class="gv-title" id="gv-title"></p>
+  <figure class="chart gv-fig"><a class="zoom" id="gv-link" href="img/guide/v1.png" target="_blank" rel="noopener"><img id="gv-img" src="img/guide/v1.png" alt="" width="1200" height="1290"></a></figure>
+  <p class="gv-cap" id="gv-cap"></p>
+  <p class="gv-more"><a id="gv-more" href="#p-cand">Read this step in the Walkthrough</a></p>
+</div>
+<noscript><p>Images: img/guide/v1.png to v9.png.</p></noscript>
+</div>
+
 <div id="plim" hidden>
 <h2>Limits</h2>
 <p class="lede">What could change the answer, how much, and what would settle it.</p>
@@ -809,6 +840,7 @@ An area is underserved when it has insufficient access "because of a lack of pub
 <tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/05_gap.R" target="_blank" rel="noopener"><code>05_gap.R</code></a></td><td>Pilot model, leave-one-out test, demand score, supply by hour, the gap, two-stage cover, sensitivity</td><td class="n">5–11</td></tr>
 <tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/07_private_supply.R" target="_blank" rel="noopener"><code>07_private_supply.R</code></a></td><td>Chain outlets as supply under four scenarios</td><td class="n">11</td></tr>
 <tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/08_citywide.R" target="_blank" rel="noopener"><code>08_citywide.R</code></a>, <a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/09_resident_coverage.R" target="_blank" rel="noopener"><code>09_resident_coverage.R</code></a></td><td>Coverage beyond the busiest third; residents covered at 9pm and new restrooms needed</td><td class="n">12</td></tr>
+<tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/12_visual_guide.R" target="_blank" rel="noopener"><code>12_visual_guide.R</code></a></td><td>The nine step-by-step maps of Lower Manhattan</td><td class="n">Visual guide</td></tr>
 <tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/11_late_night.R" target="_blank" rel="noopener"><code>11_late_night.R</code></a></td><td>Subway entries, complaints and open restrooms after 10pm</td><td class="n">Limits</td></tr>
 <tr><td><a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/04_figures.R" target="_blank" rel="noopener"><code>04_figures.R</code></a>, <a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/06_gap_figures.R" target="_blank" rel="noopener"><code>06_gap_figures.R</code></a>, <a href="https://github.com/JonathanWong1990/nyc-restroom-gap/blob/main/analysis/city_criteria/R/10_extra_figures.R" target="_blank" rel="noopener"><code>10_extra_figures.R</code></a></td><td>All figures on the Walkthrough</td><td class="n">all</td></tr>
 </tbody></table></div>
@@ -1626,8 +1658,8 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
 <script>
 (function(){
   var initialHash = (location.hash || '').replace('#','');
-  var ids = {plan:'plan', plim:'plim', pdata:'pdata', deck:'deck', walk:'walk', lim:'lim', data:'data', merged:'merged', original:'original'};
-  var btns = {plan:'btn-plan', plim:'btn-plim', pdata:'btn-pdata', deck:'btn-deck', walk:'btn-walk', lim:'btn-lim', data:'btn-data', merged:'btn-merged', original:'btn-orig'};
+  var ids = {plan:'plan', pguide:'pguide', plim:'plim', pdata:'pdata', deck:'deck', walk:'walk', lim:'lim', data:'data', merged:'merged', original:'original'};
+  var btns = {plan:'btn-plan', pguide:'btn-pguide', plim:'btn-plim', pdata:'btn-pdata', deck:'btn-deck', walk:'btn-walk', lim:'btn-lim', data:'btn-data', merged:'btn-merged', original:'btn-orig'};
   var hint = document.getElementById('hint');
   var archbar = document.getElementById('archbar');
   var btnArch = document.getElementById('btn-arch');
@@ -1637,6 +1669,7 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
   window.addEventListener('resize', placeArch);
   var hints = {
     plan:'From the law to the gap, and how to close it, step by step.',
+    pguide:'The method on one neighbourhood, step by step: demand, supply, the gap.',
     plim:'What could change the answer, and what would settle it.',
     pdata:'Every dataset and script, how to rerun it, and who contributed what.',
     deck:'Draft, not yet updated: how the story groups into segments for the talk.',
@@ -1649,7 +1682,7 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
   function set(v, scroll){
     for (var k in ids) document.getElementById(ids[k]).hidden = (k !== v);
     for (var b in btns) document.getElementById(btns[b]).setAttribute('aria-pressed', String(b === v));
-    var top = (v === 'plan' || v === 'plim' || v === 'pdata' || v === 'deck');
+    var top = (v === 'plan' || v === 'pguide' || v === 'plim' || v === 'pdata' || v === 'deck');
     archbar.hidden = top; if (!top) lastArch = v;
     btnArch.setAttribute('aria-pressed', String(!top));
     placeArch();
@@ -1665,7 +1698,7 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
   Object.keys(btns).forEach(function(k){
     document.getElementById(btns[k]).addEventListener('click', function(){ set(k, true); });
   });
-  var alias = {limits:'lim', orig:'original', 'original-walkthrough':'original', code:'data', pivot:'walk', archive:'walk', proposal:'plan', 'new':'plan', outline:'deck', slides:'deck'};
+  var alias = {limits:'lim', orig:'original', 'original-walkthrough':'original', code:'data', pivot:'walk', archive:'walk', proposal:'plan', 'new':'plan', outline:'deck', slides:'deck', guide:'pguide', visual:'pguide'};
   var has = function(k){ return Object.prototype.hasOwnProperty.call(btns, k); };
   var norm = function(k){ return alias[k] || k; };
   var start = null;
@@ -1765,6 +1798,34 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
   function upd(){ var r=mb.getBoundingClientRect(); b.classList.toggle('show', r.bottom < 0); }
   window.addEventListener('scroll', upd, {passive:true}); upd();
   b.addEventListener('click', function(){ mb.scrollIntoView({behavior:'smooth', block:'start'}); });
+})();
+</script>
+<script>
+(function(){ var S=[{t:'The area',c:'A 2.5 km square of Lower Manhattan: Tribeca, SoHo, Civic Center and Chinatown. Green is park land, lilac is pedestrian plazas, and tan lines are the busiest streets. These are the places where a new restroom could stand.',a:'p-cand'},
+{t:'Candidate sites',c:'We place a pin every 150 m on park land, plazas and busy streets. There are 74 pins in this square and 5,814 across the city. Every later step measures something at these pins.',a:'p-cand'},
+{t:'Demand: what is around one pin',c:'For one pin, draw a 500 m circle, about a 7-minute walk, and count what is inside: residents, jobs, subway riders and foot traffic. This pin in SoHo has about 12,100 residents, 59,900 jobs and 13 million subway entries a year nearby, which puts it at 76 out of 100 for demand.',a:'p-demand'},
+{t:'Demand at every pin',c:'The same count is made for every pin in the city, then ranked. Dark blue pins are in the top third, the busy places. Most pins in Lower Manhattan are.',a:'p-demand'},
+{t:"Supply: the restrooms on the City's list",c:'Black squares are listed public restrooms. Red crosses are listed restrooms that Parks records as closed long-term or repeatedly failing inspection; they are not counted as supply.',a:'p-supply'},
+{t:'Supply at 2pm',c:'Each working restroom open at 2pm gets its own 500 m circle. A pin inside any circle is served. Almost every pin here is: by day, Lower Manhattan is well covered. The circle around a restroom and the circle around a pin ask the same question: is a restroom within 500 m?',a:'p-supply'},
+{t:'Supply at 9pm',c:'The same map at 9pm. Most restrooms have closed, so their circles disappear (dotted). Only a handful are still open, and almost every pin becomes unserved.',a:'p-supply'},
+{t:'Demand minus supply: the gap',c:'Keep only the pins that are busy (top third) and not served at 9pm. Orange pins had a restroom nearby by day that is shut by 9pm; the red square had none at any time. The triangle is a City pilot unit, open to 10pm, which counts as supply.',a:'p-gap'},
+{t:'Closing the gap',c:"First, existing restrooms: park restrooms kept open to 10pm (orange circles), another operator's restroom open later (purple square), and a repaired restroom (blue triangle). Then one new unit (red diamond) where nothing existing can reach. Every gap pin in this square ends up within 500 m of an open restroom.",a:'p-close'}];
+  var i=0, img=document.getElementById('gv-img'), link=document.getElementById('gv-link'), t=document.getElementById('gv-title'),
+      c=document.getElementById('gv-cap'), more=document.getElementById('gv-more'), dots=document.getElementById('gv-dots'),
+      prev=document.getElementById('gv-prev'), next=document.getElementById('gv-next');
+  if(!img) return;
+  S.forEach(function(x,k){ var b=document.createElement('button'); b.type='button'; b.className='gv-dot'; b.textContent=k+1;
+    b.setAttribute('aria-label','Step '+(k+1)+': '+x.t); b.addEventListener('click',function(){ go(k); }); dots.appendChild(b); });
+  S.forEach(function(x,k){ var p=new Image(); p.src='img/guide/v'+(k+1)+'.png'; });
+  function go(k){ i=Math.max(0,Math.min(S.length-1,k)); var f='img/guide/v'+(i+1)+'.png';
+    img.src=f; link.href=f; img.alt='Step '+(i+1)+': '+S[i].t+'. '+S[i].c; t.textContent='Step '+(i+1)+' of '+S.length+' · '+S[i].t;
+    c.textContent=S[i].c; more.href='#'+S[i].a; more.setAttribute('data-anchor',S[i].a);
+    [].forEach.call(dots.children,function(d,k){ if(k===i) d.setAttribute('aria-current','step'); else d.removeAttribute('aria-current'); });
+    prev.disabled=(i===0); next.disabled=(i===S.length-1); }
+  prev.addEventListener('click',function(){ go(i-1); }); next.addEventListener('click',function(){ go(i+1); });
+  document.addEventListener('keydown',function(e){ var g=document.getElementById('pguide'); if(!g||g.hidden) return;
+    if(e.key==='ArrowRight') go(i+1); if(e.key==='ArrowLeft') go(i-1); });
+  go(0);
 })();
 </script>
 </body>
