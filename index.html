@@ -437,6 +437,7 @@ figure.chart a.zoom{display:block}
 <div class="modebar">
   <div class="seg" role="group" aria-label="Section">
     <button id="btn-plan" aria-pressed="true">Walkthrough<span class="tab-badge">Latest</span></button>
+    <button id="btn-prep" aria-pressed="false">Model prep</button>
     <button id="btn-pguide" aria-pressed="false">Visual guide</button>
     <button id="btn-plim" aria-pressed="false">Limits</button>
     <button id="btn-pdata" aria-pressed="false">Data &amp; code</button>
@@ -956,6 +957,293 @@ An area is underserved when it has insufficient access "because of a lack of pub
 </ul></section>
 </div>
 
+<div id="prep" hidden>
+<style>
+#prep{max-width:760px; margin:0 auto}
+#prep .pp-toc{display:flex; flex-wrap:wrap; gap:6px; margin:6px 0 18px}
+#prep .pp-toc a{font-family:var(--f-mono); font-size:12px; padding:5px 9px; border:1px solid var(--rule-strong); border-radius:14px; color:var(--ink); text-decoration:none; background:var(--surface)}
+#prep h2{font-family:var(--f-display); font-size:21px; line-height:1.2; margin:30px 0 8px; scroll-margin-top:90px}
+#prep h2 .pp-n{font-family:var(--f-mono); font-size:12px; color:var(--accent); display:block; letter-spacing:.04em; margin-bottom:2px}
+#prep h3{font-family:var(--f-display); font-size:16px; margin:16px 0 6px}
+#prep ul{padding-left:20px; margin:6px 0 10px} #prep li{margin:4px 0; line-height:1.45}
+#prep .pp-card{background:var(--surface); border:1px solid var(--rule); border-radius:6px; padding:12px 14px; margin:12px 0}
+#prep .pp-key{background:var(--accent-soft); border-color:transparent}
+#prep .pp-say{border-left:3px solid var(--accent); padding:6px 0 6px 12px; margin:10px 0; font-style:italic}
+#prep .pp-say b{font-style:normal; font-family:var(--f-mono); font-size:11px; color:var(--accent); display:block; letter-spacing:.05em}
+#prep .pp-big{font-family:var(--f-display); font-weight:800; font-size:30px; line-height:1; color:var(--accent)}
+#prep .pp-row{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin:10px 0}
+#prep .pp-row > div{background:var(--surface); border:1px solid var(--rule); border-radius:6px; padding:10px 12px}
+#prep .pp-row small{display:block; color:var(--ink-2); font-size:13px; margin-top:4px; line-height:1.3}
+#prep details{background:var(--surface); border:1px solid var(--rule); border-radius:6px; padding:10px 14px; margin:8px 0}
+#prep summary{cursor:pointer; font-family:var(--f-display); font-weight:700; font-size:15px; line-height:1.35}
+#prep details[open] summary{margin-bottom:6px}
+#prep .pp-chain{font-family:var(--f-mono); font-size:13px; line-height:1.7}
+#prep table{font-size:13px} #prep td,#prep th{padding:6px 8px; white-space:nowrap}
+#prep .pp-wrap td{white-space:normal}
+@media (max-width:640px){ #prep h2{font-size:19px} #prep .pp-big{font-size:26px} }
+</style>
+
+<p class="note">The demand and supply model in point form: the data, the method, the numbers and the checks behind them. For preparing Q&amp;A; the full write-up is in the <a href="#plan" data-tab="plan">Walkthrough</a>.</p>
+<nav class="pp-toc" aria-label="Sections">
+<a href="#pp-30">30 seconds</a><a href="#pp-data">Data</a><a href="#pp-spots">1 Spots</a><a href="#pp-measure">2 Measure</a><a href="#pp-model">3 Model</a><a href="#pp-results">4 Results</a><a href="#pp-hold">5 Holds up?</a><a href="#pp-score">6 Score</a><a href="#pp-supply">7 Supply</a><a href="#pp-gap">8 Gap</a><a href="#pp-checks">Checks</a><a href="#pp-class">In class?</a><a href="#pp-terms">Terms</a><a href="#pp-qa">Q&amp;A</a>
+</nav>
+
+<h2 id="pp-30"><span class="pp-n">THE WHOLE THING IN 30 SECONDS</span>Demand − Supply = Gap</h2>
+<div class="pp-card pp-key pp-chain">
+① 5,814 possible spots (where a restroom could go)<br>
+② measure crowds + need around each one<br>
+③ logistic regression on the City's 17 pilot picks → weights<br>
+④ score every spot: 95% crowds + 5% need<br>
+⑤ top third = busy: 1,939 spots<br>
+⑥ supply = working restrooms open within 500 m<br>
+⑦ gap = busy spots with nothing open at 9pm: <b>1,246</b> (only 83 at 2pm)
+</div>
+<ul>
+<li><b>Question:</b> Local Law 58 wants 2,120 public restrooms by 2035; 975 are listed. Where is access missing?</li>
+<li><b>The law</b> names six factors but <b>no weights</b>.</li>
+<li><b>Our idea:</b> learn the weights from the City's own first decisions, its 17 pilot sites.</li>
+<li><b>Finding:</b> the shortage is mostly in the <b>evening</b>: 93% of gap spots had a restroom nearby by day.</li>
+</ul>
+
+<h2 id="pp-data"><span class="pp-n">THE DATA</span>Eight sources, all public</h2>
+<div class="tbox"><table class="pp-wrap">
+<thead><tr><th>Dataset</th><th>From</th><th>Date</th><th>Used for</th></tr></thead>
+<tbody>
+<tr><td>Public restroom register</td><td>NYC Open Data (i7jb-7jku)</td><td>Jun 2025</td><td>975 restrooms, operator, hours</td></tr>
+<tr><td>Parks inspections</td><td>NYC Parks</td><td>to Jun 2026</td><td>which restrooms are broken or closed</td></tr>
+<tr><td>Residents, poverty</td><td>US Census ACS</td><td>2020–24</td><td>population; equity (need)</td></tr>
+<tr><td>Jobs</td><td>US Census LEHD</td><td>2023</td><td>commercial &amp; tourist areas</td></tr>
+<tr><td>Subway entries</td><td>MTA</td><td>2025</td><td>transit</td></tr>
+<tr><td>Pedestrian demand</td><td>NYC DOT (fwpa-qxaf)</td><td>Sep 2026</td><td>foot traffic</td></tr>
+<tr><td>Parks land, plazas</td><td>NYC Parks; DOT (k5k6-6jex)</td><td>2026</td><td>where a spot can go</td></tr>
+<tr><td>17 pilot sites</td><td>Mayor's Office</td><td>16 Sep 2026</td><td>the outcome the model learns from</td></tr>
+</tbody></table></div>
+
+<h3>Snippet · the spots table (one row per spot)</h3>
+<div class="tbox"><table>
+<thead><tr><th>Spot</th><th>Type</th><th>Pilot?</th><th>Residents</th><th>Jobs</th><th>Subway / yr</th><th>Poverty</th><th>Nearest open 9pm</th></tr></thead>
+<tbody>
+<tr><td>A · SoHo</td><td>busy street</td><td>0</td><td>12,053</td><td>59,879</td><td>13.1M</td><td>4%</td><td>731 m</td></tr>
+<tr><td>B · Chinatown</td><td>park</td><td>0</td><td>18,730</td><td>16,207</td><td>0</td><td>54%</td><td>959 m</td></tr>
+<tr><td>Yankee Stadium</td><td>park</td><td><b>1</b></td><td>12,810</td><td>2,639</td><td>6.3M</td><td>40%</td><td>1,494 m</td></tr>
+<tr><td>Cooper Square</td><td>plaza</td><td><b>1</b></td><td>29,223</td><td>35,028</td><td>19.2M</td><td>8%</td><td>955 m</td></tr>
+<tr><td>Marine Park</td><td>park</td><td>0</td><td>2,633</td><td>1,319</td><td>0</td><td>27%</td><td>2,054 m</td></tr>
+</tbody></table></div>
+<ul><li>Counts are <b>within 500 m</b> of the spot (foot traffic: streets within 250 m). Poverty = the spot's census tract.</li>
+<li><b>Pilot? = 1</b> for the City's 17 sites: the 0/1 outcome of the regression.</li></ul>
+
+<h3>Snippet · the restroom register</h3>
+<div class="tbox"><table class="pp-wrap">
+<thead><tr><th>Restroom</th><th>Operator</th><th>Posted hours</th></tr></thead>
+<tbody>
+<tr><td>Ben Abrams Playground</td><td>NYC Parks</td><td>8am–4pm, open later seasonally</td></tr>
+<tr><td>Castle Clinton</td><td>Battery Conservancy</td><td>9am–4:30pm</td></tr>
+<tr><td>Grand Central Pkwy Gas</td><td>Parks concessionaire</td><td>24 hours</td></tr>
+<tr><td>A public library branch</td><td>NYPL</td><td>Mon–Thu 9am–7pm; Sun closed</td></tr>
+</tbody></table></div>
+<ul>
+<li>975 listed: <b>NYC Parks 656</b>, NYPL 84, Parks concessionaires 71, Queens Library 60, Brooklyn Library 55, others.</li>
+<li><b>641</b> Parks restrooms post only "8am–4pm, open later seasonally" → we use <b>4pm</b> (biggest assumption; tested).</li>
+</ul>
+
+<h2 id="pp-spots"><span class="pp-n">STEP 1</span>5,814 possible spots</h2>
+<ul>
+<li>A pin every <b>150 m</b>, only on public space a modular unit could use:
+<ul><li>Parks land <b>4,076</b> · busy-street frontage <b>1,646</b> · DOT plazas <b>92</b></li></ul></li>
+<li>Same kinds of places as the City's 17 (6 plazas, 7 parks, 4 street corners).</li>
+<li><b>Spots, not restrooms.</b> None checked for space, utilities or permits.</li>
+<li>Lower Manhattan example square: <b>97</b> spots.</li>
+</ul>
+
+<h2 id="pp-measure"><span class="pp-n">STEP 2</span>Measure the law's six factors at every spot</h2>
+<div class="tbox"><table class="pp-wrap">
+<thead><tr><th>Law's factor</th><th>We measure</th><th>Role</th></tr></thead>
+<tbody>
+<tr><td>Population density</td><td>residents within 500 m</td><td rowspan="4"><b>Crowds</b> (busyness)</td></tr>
+<tr><td>Foot traffic</td><td>DOT pedestrian demand</td></tr>
+<tr><td>Public transport</td><td>subway entries within 500 m</td></tr>
+<tr><td>Commercial &amp; tourist</td><td>jobs within 500 m</td></tr>
+<tr><td>Equity</td><td>tract poverty rate</td><td><b>Need</b></td></tr>
+<tr><td>Distance to restroom</td><td>to nearest open at 2pm / 9pm</td><td><b>Supply</b></td></tr>
+</tbody></table></div>
+<h3>Two transformations (why: the units are wildly different)</h3>
+<ul>
+<li><b>Log</b> the counts: subway runs from 0 to millions; log stops a few giants dominating.</li>
+<li><b>z-score</b> each one: 0 = a typical spot, +1 = one standard deviation (SD) above.</li>
+<li>The four crowd measures move together (correlation <b>0.52–0.81</b>) → averaged, then re-standardised, into <b>one busyness score</b>.</li>
+</ul>
+<div class="pp-card"><b>Worked example (z-scores)</b>
+<ul>
+<li>SoHo: residents +0.68 · foot −0.05 · subway <b>+1.39</b> · jobs <b>+1.33</b> → crowds <b>+0.95</b> · poverty −0.68</li>
+<li>Chinatown: residents +0.82 · foot −0.10 · subway −0.74 · jobs +0.89 → crowds <b>+0.25</b> · poverty <b>+2.87</b></li>
+</ul></div>
+
+<h2 id="pp-model"><span class="pp-n">STEP 3</span>The model: logistic regression (Firth)</h2>
+<ul>
+<li><b>Outcome:</b> picked by the City for its pilot? <b>1 = yes (17 sites), 0 = no</b>.</li>
+<li><b>Compared against:</b> 5,756 possible spots more than 300 m from any pilot (5,773 rows in total).</li>
+<li><b>Inputs:</b> crowds · distance to an open restroom at 2pm · at 9pm · poverty · site type (plaza / street vs park).</li>
+<li><b>Fitted in R</b> with <code>logistf</code>.</li>
+</ul>
+<div class="pp-card pp-key"><b>Logistic regression (in class, S6)</b>
+<ul>
+<li>Like linear regression, but the outcome is <b>yes/no</b>.</li>
+<li>Predicts the <b>log-odds</b> of "yes"; turned into a probability between 0 and 1.</li>
+<li>Each coefficient = change in log-odds for <b>+1 SD</b> of that input, <b>holding the other inputs fixed</b> (plaza / street: vs a park spot).</li>
+<li>e<sup>coefficient</sup> = <b>odds ratio</b> ("times the odds").</li>
+</ul></div>
+<div class="pp-card pp-key"><b>Firth correction (beyond class)</b>
+<ul>
+<li>Same logistic regression, with a small <b>penalty</b> added to the fitting (penalised likelihood).</li>
+<li><b>Why:</b> only 17 "yes" out of 5,773. With so few events, ordinary logistic regression gives estimates <b>biased away from zero</b>, or infinite ones (<i>separation</i>).</li>
+<li>Firth <b>shrinks them towards zero</b>: more conservative, more stable.</li>
+<li>A common fix for <b>small samples and separation</b> (Firth 1993; widely used in medicine).</li>
+<li>Caveat: with rare events it can nudge predicted <b>probabilities</b> slightly upwards, so treat 0.15% / 1.5% / 0.4% as approximate.</li>
+<li>Read the output exactly like normal logistic regression.</li>
+</ul></div>
+<div class="pp-say"><b>SAY IT LIKE THIS</b>"Logistic regression, from class, with Firth's correction: it's built for rare events like ours, 17 picks out of almost 6,000, and makes the estimates more conservative."</div>
+
+<h2 id="pp-results"><span class="pp-n">STEP 4</span>The results</h2>
+<div class="tbox"><table>
+<thead><tr><th>Input</th><th>Coef.</th><th>p</th><th>Odds ×</th><th>95% CI</th></tr></thead>
+<tbody>
+<tr><td><b>Crowds</b></td><td><b>2.55</b></td><td>&lt;0.001</td><td><b>12.9</b></td><td>1.35 to 3.79</td></tr>
+<tr><td>Distance, 2pm</td><td>0.71</td><td>0.03</td><td>2.0</td><td>0.08 to 1.46</td></tr>
+<tr><td>Distance, 9pm</td><td>0.96</td><td>0.01</td><td>2.6</td><td>0.19 to 1.84</td></tr>
+<tr><td><b>Need</b></td><td>0.12</td><td><b>0.59</b></td><td>1.1</td><td>−0.37 to 0.52</td></tr>
+<tr><td>Plaza vs park</td><td>1.61</td><td>0.02</td><td>5.0</td><td>0.23 to 3.04</td></tr>
+<tr><td>Street vs park</td><td>−2.13</td><td>0.02</td><td>0.12</td><td>−3.90 to −0.31</td></tr>
+</tbody></table></div>
+<ul>
+<li><b>Crowds dominate:</b> +1 SD busier → about <b>13× the odds</b> of being picked (95% CI: ×3.8 to ×44).</li>
+<li><b>Distance matters:</b> the City picked spots farther from an open restroom (both distances combined: 1.67, CI 0.70–2.77).</li>
+<li><b>Need: not significant.</b> CI crosses zero → no clear pattern with poverty, <i>either way</i>.</li>
+<li>Intercept −6.53 → an average park spot: <b>0.15%</b> chance. Average across all spots: 17/5,800 ≈ <b>0.3%</b>.</li>
+<li>A spot with SoHo's crowds and need (as a park at average distance): <b>1.5%</b>, 5× the average · Chinatown's: <b>0.4%</b>.</li>
+</ul>
+<div class="pp-say"><b>SAY IT LIKE THIS</b>"The bar is the 95% confidence interval. Clear of zero means statistically significant. Crowds and distance are; need crosses zero."</div>
+<div class="pp-card"><b>Careful with words</b>
+<ul><li>"Not significant" ≠ "no effect". It means <b>the data can't tell</b> (and 17 is small).</li>
+<li>We can't know the City's intent, only what its picks have in common.</li></ul></div>
+
+<h2 id="pp-hold"><span class="pp-n">STEP 5</span>Does it hold up? Leave-one-out cross-validation</h2>
+<ul>
+<li><b>Test:</b> hide 1 pilot site → refit the model on the other 16 → where does the hidden site rank among ~5,800 spots? Repeat 17 times.</li>
+<li>Same idea as <b>train/test</b> (S7), with each site as its own test set.</li>
+</ul>
+<div class="pp-row">
+<div><span class="pp-big">97%</span><small>typical hidden site outranks (median) → top 3%</small></div>
+<div><span class="pp-big">16/17</span><small>beat a random guess (50%)</small></div>
+<div><span class="pp-big">9/17</span><small>in the top 3% · 12/17 in the top 15%</small></div>
+</div>
+<ul>
+<li><b>One miss:</b> Admiral Farragut Playground, 37%.</li>
+<li><b>One-liners:</b> the full model (<b>97%</b>) beats ranking by subway riders alone (<b>75%</b>). Population inside the same model: <b>93%</b> (close; we keep all four because the law names them).</li>
+<li><b>Honest caveat:</b> the people-only score we map ranks hidden pilots at about the <b>73rd percentile</b>, no better than raw crowds. The model's edge comes from distance and site type; distance we use as supply.</li>
+<li>In-sample AUC <b>0.91</b>; the leave-one-out ranking is the fairer test.</li>
+</ul>
+
+<h2 id="pp-score"><span class="pp-n">STEP 6</span>From model to a score for every spot</h2>
+<ul>
+<li>Take the <b>people</b> part of the model only: crowds 2.55, need 0.12.</li>
+<li>Shares: 2.55 ÷ (2.55 + 0.12) = <b>95% crowds</b> · 0.12 ÷ 2.67 = <b>5% need</b>.</li>
+<li><b>Score = 0.95 × crowds + 0.05 × need</b> → rank all 5,814 → <b>top third = busy (1,939)</b>.</li>
+</ul>
+<div class="tbox"><table>
+<thead><tr><th>Spot</th><th>Crowds</th><th>Need</th><th>Score</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>Union Square</td><td>+1.73</td><td>−0.27</td><td>1.63</td><td>#55</td></tr>
+<tr><td>A · SoHo</td><td>+0.95</td><td>−0.68</td><td>0.87</td><td>#1,412 busy</td></tr>
+<tr><td>Prospect Park (cut-off)</td><td>+0.52</td><td>+0.28</td><td>0.51</td><td>#1,939</td></tr>
+<tr><td>B · Chinatown</td><td>+0.25</td><td>+2.87</td><td>0.38</td><td>#2,088 just misses</td></tr>
+<tr><td>Marine Park</td><td>−1.84</td><td>−1.00</td><td>−1.80</td><td>#5,814</td></tr>
+</tbody></table></div>
+<ul><li>Scores shown recompute from the rounded 0.95 / 0.05 formula; ranks use the exact weights.</li>
+<li>Busy spots: <b>1,570 of 1,939 in Manhattan</b>; 14 of the 17 pilot sites are in the top third (expected: the weights came from them).</li></ul>
+<details><summary>Why is distance in the model but NOT in the score?</summary>
+<ul>
+<li><b>Model's job:</b> understand why the City picked its 17. It looked at people <i>and</i> at existing restrooms, so the model needs both to separate them.</li>
+<li><b>Score's job:</b> how many people need a restroom here. Distance isn't about people → it's <b>supply</b>.</li>
+<li><b>Hiring analogy:</b> rank candidates on <b>skills</b>, then check the <b>commute</b> separately. Add "lives close" into the skills score and a weak candidate next door passes both tests for the same reason.</li>
+<li><b>Tested:</b> distance in the score → 109 empty Staten Island spots become "busy" (e.g. a park with 105 residents, 6.4 km from a restroom); gap 1,246 → 1,486.</li>
+</ul></details>
+
+<h2 id="pp-supply"><span class="pp-n">STEP 7</span>Supply: what's actually open</h2>
+<div class="pp-chain pp-card">975 listed<br>− 81 broken (34 closed long-term + 47 failing inspections)<br>= 894 working<br>open at 2pm: <b>873</b> · at 9pm: <b>57</b></div>
+<ul>
+<li><b>Hours</b> parsed from posted text into hour-by-hour availability; the few unreadable ones count as closed.</li>
+<li><b>Pilot units</b> count as supply, open 7am–10pm.</li>
+<li><b>Served</b> = a working restroom open within <b>500 m</b> (~7-minute walk, straight line).</li>
+<li>All possible spots served (before pilot units): <b>70%</b> at 2pm → <b>16%</b> at 9pm.</li>
+</ul>
+
+<h2 id="pp-gap"><span class="pp-n">STEP 8</span>The gap</h2>
+<div class="pp-row">
+<div><span class="pp-big">83</span><small>busy spots with nothing open within 500 m at 2pm</small></div>
+<div><span class="pp-big">1,246</span><small>at 9pm = <b>the gap</b> (of 1,939 busy)</small></div>
+<div><span class="pp-big">93%</span><small>had a restroom by day (1,163 evening-only)</small></div>
+</div>
+<ul>
+<li><b>Lower Manhattan square:</b> 97 spots → 93 busy → 92 served at 2pm → <b>55</b> with nothing open at 9pm.</li>
+<li><b>City's own 17 sites</b> (before their units): 13 had a restroom nearby by day, <b>1 at 9pm</b>.</li>
+<li>Gap spots are <b>places, not restrooms</b>: one restroom covers many spots.</li>
+<li>Three-quarters of the gap is in Manhattan, where the busy spots are.</li>
+</ul>
+<div class="pp-say"><b>SAY IT LIKE THIS</b>"The problem is when, not only where: almost every gap spot had a restroom by day. It's closed at night."</div>
+
+<h2 id="pp-checks"><span class="pp-n">CHECKS</span>Did we stress it? Yes</h2>
+<div class="tbox"><table class="pp-wrap">
+<thead><tr><th>If someone asks…</th><th>We tested</th><th>Result</th></tr></thead>
+<tbody>
+<tr><td>Borough quota (4 each, 1 SI)?</td><td>model within each borough</td><td>crowds 3.04 (stronger); <b>99%</b> of gap same</td></tr>
+<tr><td>Busy at 9pm?</td><td>evening subway (6–10pm), no jobs</td><td><b>93–98%</b> of gap same</td></tr>
+<tr><td>More weight on need?</td><td>25% / 50% equity</td><td><b>92%</b> / <b>75%</b> same</td></tr>
+<tr><td>Different weights?</td><td>200 random weightings</td><td>gap stays evening-led</td></tr>
+<tr><td>One measure only?</td><td>rank by each alone</td><td>83–91% of gap same</td></tr>
+<tr><td>Does the mapped score pass the test?</td><td>leave-one-out, people-only score</td><td>~73rd percentile; 16/17 beat a guess</td></tr>
+<tr><td>Parks open to 10pm?</td><td>change 4pm → 10pm</td><td>gap 396; 24 new units unchanged</td></tr>
+<tr><td>Pilots not open yet?</td><td>remove them from supply</td><td>gap 1,357</td></tr>
+<tr><td>400 m not 500 m?</td><td>shorter walk</td><td>same pattern; more units</td></tr>
+<tr><td>Use 311 complaints?</td><td>add to the model</td><td>adds nothing (−0.37, n.s.)</td></tr>
+</tbody></table></div>
+
+<h2 id="pp-class"><span class="pp-n">IN CLASS OR NOT?</span>Map to the course</h2>
+<div class="tbox"><table class="pp-wrap">
+<thead><tr><th>We used</th><th>Where from</th></tr></thead>
+<tbody>
+<tr><td>Confidence intervals, significance</td><td><b>In class</b> · S3</td></tr>
+<tr><td>Regression, standardised inputs</td><td><b>In class</b> · S4–5</td></tr>
+<tr><td>Logistic regression; spatial distance</td><td><b>In class</b> · S6</td></tr>
+<tr><td>Train/test → leave-one-out</td><td><b>In class</b> · S7 (variant)</td></tr>
+<tr><td>Firth correction</td><td><b>Beyond class</b>: rare-event fix</td></tr>
+<tr><td>Parsing posted hours into hourly availability</td><td><b>Beyond class</b>: data engineering</td></tr>
+<tr><td>Maximal covering (closing the gap, Act 4)</td><td><b>Beyond class</b>: facility location</td></tr>
+</tbody></table></div>
+
+<h2 id="pp-terms"><span class="pp-n">TERMS</span>Glossary</h2>
+<ul>
+<li><b>Log-odds:</b> log(p ÷ (1−p)). What logistic regression predicts. 0 = 50/50.</li>
+<li><b>Odds ratio:</b> e<sup>coef</sup>. 12.9 = "12.9 times the odds".</li>
+<li><b>Standard deviation (SD) / z-score:</b> how far from typical; "one step" in our charts.</li>
+<li><b>95% confidence interval:</b> a range built so that, in 95 of 100 repeat samples, it would capture the true effect. Values inside it fit the data.</li>
+<li><b>p-value:</b> chance of a result at least this strong if there were truly no effect. &lt;0.05 = significant.</li>
+<li><b>Firth / penalised likelihood:</b> logistic regression adjusted for rare events.</li>
+<li><b>Leave-one-out cross-validation:</b> train on all but one, test on the one left out; repeat.</li>
+<li><b>AUC:</b> chance the model ranks a random picked site above a random non-picked one (0.5 = guessing).</li>
+<li><b>Census tract:</b> small Census area of about 4,000 people.</li>
+<li><b>Busy spot:</b> top third by demand score (1,939). <b>Gap:</b> busy + nothing open within 500 m at 9pm.</li>
+</ul>
+
+<h2 id="pp-qa"><span class="pp-n">Q&amp;A</span>The ones to have ready</h2>
+<details><summary>"Isn't learning from the City's picks circular?"</summary><ul><li>The weights describe <b>what the City's picks have in common</b>, not proof of need.</li><li>Used for demand only. Our finding is about <b>supply</b> (closed at night), which doesn't depend on the weights.</li></ul></details>
+<details><summary>"17 is tiny."</summary><ul><li>Firth correction for rare events.</li><li>Leave-one-out: top 3% typical, 16/17 beat a guess.</li></ul></details>
+<details><summary>"Why not just population?"</summary><ul><li>Inside the full model, population alone ranks almost as well (93% vs 97%); raw subway ranking only 75%.</li><li>We keep all four: the law names them, and the data can't separate them.</li></ul></details>
+<details><summary>"Does the model ignore poor areas?"</summary><ul><li>Need isn't significant in the City's picks; kept at 5% because the law names equity.</li><li>At 25% weight, 92% of the gap is unchanged; for individual places it decides (Chinatown gets in). A value choice for the City.</li></ul></details>
+<details><summary>"What's Firth? Is it in class?"</summary><ul><li>Logistic regression (in class) + a penalty that stops estimates blowing up with very few events.</li><li>Same reading of coefficients; more conservative.</li></ul></details>
+<details><summary>"Where's the data from?"</summary><ul><li>NYC Open Data (restrooms, DOT, Parks), US Census (ACS, LEHD), MTA, Mayor's Office pilot list. See <a href="#pp-data">Data</a>.</li></ul></details>
+<details><summary>"Do parks really close at 4pm?"</summary><ul><li>Posted rule; biggest uncertainty. At 10pm the gap is 396 and only 37 existing restrooms need action; still 24 new units.</li></ul></details>
+<details><summary>"Why not count cafés?"</summary><ul><li>Not public (purchase rules, no right of use). A paid partner scheme is a scenario in the recommendation, not supply.</li></ul></details>
+</div>
 <div id="walk" hidden>
 <p class="arch-banner">Archived: the earlier complaint-led analysis, kept for reference. The current analysis is in <a href="#plan" data-tab="plan">Walkthrough</a>.</p>
 <h2>Layered walkthrough</h2>
@@ -1684,8 +1972,8 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
 <script>
 (function(){
   var initialHash = (location.hash || '').replace('#','');
-  var ids = {plan:'plan', pguide:'pguide', plim:'plim', pdata:'pdata', deck:'deck', walk:'walk', lim:'lim', data:'data', merged:'merged', original:'original'};
-  var btns = {plan:'btn-plan', pguide:'btn-pguide', plim:'btn-plim', pdata:'btn-pdata', deck:'btn-deck', walk:'btn-walk', lim:'btn-lim', data:'btn-data', merged:'btn-merged', original:'btn-orig'};
+  var ids = {plan:'plan', prep:'prep', pguide:'pguide', plim:'plim', pdata:'pdata', deck:'deck', walk:'walk', lim:'lim', data:'data', merged:'merged', original:'original'};
+  var btns = {plan:'btn-plan', prep:'btn-prep', pguide:'btn-pguide', plim:'btn-plim', pdata:'btn-pdata', deck:'btn-deck', walk:'btn-walk', lim:'btn-lim', data:'btn-data', merged:'btn-merged', original:'btn-orig'};
   var hint = document.getElementById('hint');
   var archbar = document.getElementById('archbar');
   var btnArch = document.getElementById('btn-arch');
@@ -1695,6 +1983,7 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
   window.addEventListener('resize', placeArch);
   var hints = {
     plan:'From the law to the gap, and how to close it, step by step.',
+    prep:'The demand and supply model in point form: data, method, numbers, checks and likely questions.',
     pguide:'The method on one neighbourhood, step by step: demand, supply, the gap.',
     plim:'What could change the answer, and what would settle it.',
     pdata:'Every dataset and script, how to rerun it, and who contributed what.',
@@ -1708,7 +1997,7 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
   function set(v, scroll){
     for (var k in ids) document.getElementById(ids[k]).hidden = (k !== v);
     for (var b in btns) document.getElementById(btns[b]).setAttribute('aria-pressed', String(b === v));
-    var top = (v === 'plan' || v === 'pguide' || v === 'plim' || v === 'pdata' || v === 'deck');
+    var top = (v === 'plan' || v === 'prep' || v === 'pguide' || v === 'plim' || v === 'pdata' || v === 'deck');
     archbar.hidden = top; if (!top) lastArch = v;
     btnArch.setAttribute('aria-pressed', String(!top));
     placeArch();
@@ -1724,7 +2013,7 @@ Rscript R/Z0_headline_numbers.R   # rebuilds every number quoted on this site</c
   Object.keys(btns).forEach(function(k){
     document.getElementById(btns[k]).addEventListener('click', function(){ set(k, true); });
   });
-  var alias = {limits:'lim', orig:'original', 'original-walkthrough':'original', code:'data', pivot:'walk', archive:'walk', proposal:'plan', 'new':'plan', outline:'deck', slides:'deck', guide:'pguide', visual:'pguide'};
+  var alias = {limits:'lim', orig:'original', 'original-walkthrough':'original', code:'data', pivot:'walk', archive:'walk', proposal:'plan', 'new':'plan', outline:'deck', slides:'deck', guide:'pguide', visual:'pguide', model:'prep', qa:'prep'};
   var has = function(k){ return Object.prototype.hasOwnProperty.call(btns, k); };
   var norm = function(k){ return alias[k] || k; };
   var start = null;
